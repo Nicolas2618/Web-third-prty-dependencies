@@ -1,5 +1,6 @@
 import dns.resolver
 import re
+import csv
 
 def get_ns(domain: str) -> list[str]:
     """
@@ -37,17 +38,21 @@ def extract_provider(nameserver: str) -> str:
 
 def get_ns_lst_with_providers():
     """Get DNS records and extract provider names for each domain."""
-
-    dns_lst = ['netflix.com']
     
-    '''dns_lst = ["google.com", "github.com", "googleapis.com", "cloudflare.com", "gstatic.com",
+    dns_lst = ["google.com", "github.com", "googleapis.com", "cloudflare.com", "gstatic.com",
     "apple.com", "microsoft.com", "facebook.com", "amazonaws.com", "googlevideo.com",
     "fbcdn.net", "amazon.com", "youtube.com", "instagram.com", "whatsapp.net",
     "live.com", "doubleclick.net", "bing.com", "apple-dns.net", "netflix.com",
     "akadns.net", "ntp.org", "googleusercontent.com", "icloud.com", "googlesyndication.com",
     "cdninstagram.com", "chatgpt.com", "cloudflare-dns.com", "akamai.net", "aaplimg.com",
     "tiktokcdn.com", "tiktokv.com", "cloudfront.net", "ui.com", "ytimg.com",
-    "akamaiedge.net", "edgcdn.net", "yahoo.com", "gvt2.com"]'''
+    "akamaiedge.net", "edgcdn.net", "yahoo.com", "gvt2.com"]
+
+    with open('Cloudflare_Top100_Domains', newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+
+        for row in reader:
+            print(row0)
     
     results = {}
     for domain in dns_lst:
