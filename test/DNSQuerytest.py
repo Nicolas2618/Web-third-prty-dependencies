@@ -6,6 +6,7 @@ from unittest.mock import patch, MagicMock
 
 from src.DNSQuery import create_dns_query, parse_dns_response, dns_query, get_ns
 
+#region Domains
 # ── Domains to loop over ─────────────────────────────────────────────────────
 DOMAINS = [
     "google.com",
@@ -111,8 +112,9 @@ DOMAINS = [
     "reddit.com",
 ]
 # ─────────────────────────────────────────────────────────────────────────────
+#endregion
 
-
+#region Helpers
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -139,8 +141,9 @@ def build_fake_response(ip: str, domain: str) -> bytes:
     )
 
     return header + question + answer
+#endregion
 
-
+#region Test DNSQuery Packet Structure
 # ---------------------------------------------------------------------------
 # TestCreateDnsQuery — packet structure
 # ---------------------------------------------------------------------------
@@ -180,8 +183,9 @@ class TestCreateDnsQuery(unittest.TestCase):
         qtype, qclass = struct.unpack('>HH', pkt[-4:])
         self.assertEqual(qtype, 1)
         self.assertEqual(qclass, 1)
+#endregion
 
-
+#region Test Parser correctness
 # ---------------------------------------------------------------------------
 # TestParseDnsResponse — parser correctness
 # ---------------------------------------------------------------------------
@@ -210,8 +214,9 @@ class TestParseDnsResponse(unittest.TestCase):
         header = struct.pack('>HHHHHH', 0x1234, 0x8180, 1, 0, 0, 0)
         question = b'\x07example\x03com\x00' + struct.pack('>HH', 1, 1)
         self.assertIsNone(parse_dns_response(header + question))
+#endregion
 
-
+#regiion Test get nameserver
 # ---------------------------------------------------------------------------
 # TestGetNs — nameserver resolution
 # ---------------------------------------------------------------------------
@@ -255,8 +260,9 @@ class TestGetNs(unittest.TestCase):
         mock_resolve.return_value = []
         get_ns("example.com")
         mock_resolve.assert_called_once_with("example.com", 'NS')
+#endregion
 
-
+#region SocketTest
 # ---------------------------------------------------------------------------
 # SocketTest — mocked socket, looped over all DOMAINS
 # ---------------------------------------------------------------------------
@@ -313,11 +319,13 @@ def make_socket_test(domain: str):
     SocketTest.__name__ = f"SocketTest_{domain.replace('.', '_').replace('-', '_')}"
     SocketTest.__qualname__ = SocketTest.__name__
     return SocketTest
+#endregion
 
-
+#region extras
 for _domain in DOMAINS:
     globals()[f"SocketTest_{_domain.replace('.', '_').replace('-', '_')}"] = make_socket_test(_domain)
 
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
+#endregion
