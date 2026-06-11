@@ -38,38 +38,34 @@ def extract_provider(nameserver: str) -> str:
 
 def get_ns_lst_with_providers():
     """Get DNS records and extract provider names for each domain."""
-    
-    dns_lst = ["google.com", "github.com", "googleapis.com", "cloudflare.com", "gstatic.com",
-    "apple.com", "microsoft.com", "facebook.com", "amazonaws.com", "googlevideo.com",
-    "fbcdn.net", "amazon.com", "youtube.com", "instagram.com", "whatsapp.net",
-    "live.com", "doubleclick.net", "bing.com", "apple-dns.net", "netflix.com",
-    "akadns.net", "ntp.org", "googleusercontent.com", "icloud.com", "googlesyndication.com",
-    "cdninstagram.com", "chatgpt.com", "cloudflare-dns.com", "akamai.net", "aaplimg.com",
-    "tiktokcdn.com", "tiktokv.com", "cloudfront.net", "ui.com", "ytimg.com",
-    "akamaiedge.net", "edgcdn.net", "yahoo.com", "gvt2.com"]
 
-    with open('Cloudflare_Top100_Domains', newline='') as csvfile:
-        reader = csv.DictReader(csvfile)
+    # gets the information from the uploaded csv file with all the domains. 
+    with open("src/Source_Data/Cloudflare_Top100_Domains.csv", "r", newline='') as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader)
 
+        #for row in reader:
+            #print(row)
+        
+        results = {}
         for row in reader:
-            print(row0)
-    
-    results = {}
-    for domain in dns_lst:
-        ns_records = get_ns(domain)
-        providers = [extract_provider(ns) for ns in ns_records if ns]
-        results[domain] = {
+            domain_name = row[1]
+
+            ns_records = get_ns(domain_name)
+
+            providers = [extract_provider(ns) for ns in ns_records if ns]
+            #print(f'{providers}')
+            results[domain_name] = {
             'nameservers': ns_records,
             'providers': providers
         }
-        print(f"{domain}:\n")
-        print(f"  Nameservers: {ns_records}\n")
-        print(f"  Providers: {providers}\n")
+
+            print(f"{domain_name}:\n")
+            print(f"  Nameservers: {ns_records}\n")
+            print(f"  Providers: {providers}\n")
     
     return results
 
-
-# Example usage
 if __name__ == "__main__":
     results = get_ns_lst_with_providers()
     print("Final Results:", results)
