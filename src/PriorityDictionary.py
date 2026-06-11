@@ -1,6 +1,7 @@
 import dns.resolver
 import re
 import csv
+import gsan
 
 def get_ns(domain: str) -> list[str]:
     """
@@ -66,10 +67,6 @@ def get_ns_lst_with_providers():
     
     return results
 
-if __name__ == "__main__":
-    results = get_ns_lst_with_providers()
-    print("Final Results:", results)
-
 def get_lst_of_dns_providers():
     results = []
     with open("src/Source_Data/Cloudflare_Top100_Domains.csv", "r", newline='') as csvfile:
@@ -82,10 +79,6 @@ def get_lst_of_dns_providers():
             providers = [extract_provider(ns) for ns in ns_records if ns]
             results.append(providers)
     return results
-            
-if __name__ == "__main__":
-    results = get_lst_of_dns_providers()
-    print("Final Results:", results)
 
 def get_big_lst_of_providers_and_counts():
     """Get a list of dns providers and their counts from the csv file."""
@@ -102,5 +95,7 @@ def get_big_lst_of_providers_and_counts():
     return provider_counts
 
 if __name__ == "__main__":
-    results = get_big_lst_of_providers_and_counts()
-    print("Final Results:", results)
+    results1 = get_ns_lst_with_providers()
+    results2 = get_lst_of_dns_providers()
+    results3 = get_big_lst_of_providers_and_counts()
+    print("Final Results:", results3)
