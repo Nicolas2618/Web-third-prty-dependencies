@@ -216,7 +216,7 @@ class TestParseDnsResponse(unittest.TestCase):
         self.assertIsNone(parse_dns_response(header + question))
 #endregion
 
-#regiion Test get nameserver
+#region Test get nameserver
 # ---------------------------------------------------------------------------
 # TestGetNs — nameserver resolution
 # ---------------------------------------------------------------------------
