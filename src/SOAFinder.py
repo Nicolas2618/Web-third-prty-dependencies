@@ -14,13 +14,10 @@ import csv
 import sys
 import ssl
 import socket
-import argparse
 import dns.resolver
 import dns.query
 import dns.zone
 import dns.name
-import requests
-from collections import Counter
 from dataclasses import dataclass, field
 from typing import Optional
 
@@ -237,7 +234,7 @@ def classify_domain(domain: str, description: str) -> DomainResult:
 
 def process_csv(input_path: str, output_path: str,
                 domain_col: str = "domain",
-                desc_col: str = "description") -> None:
+                desc_col: str = "categories") -> None:
     results: list[DomainResult] = []
 
     with open(input_path, newline="", encoding="utf-8") as f:
@@ -274,25 +271,13 @@ def process_csv(input_path: str, output_path: str,
 # ---------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Classify nameservers for domains listed in a CSV file."
-    )
-    parser.add_argument("input", help="Input CSV file path")
-    parser.add_argument(
-        "-o", "--output", default="ns_results.csv",
-        help="Output CSV file path (default: ns_results.csv)"
-    )
-    parser.add_argument(
-        "--domain-col", default="domain",
-        help="Name of the domain column in the CSV (default: 'domain')"
-    )
-    parser.add_argument(
-        "--desc-col", default="description",
-        help="Name of the description column in the CSV (default: 'description')"
-    )
-    args = parser.parse_args()
+    if len(sys.argv) != 2:
+        print("Usage: python ns_classifier.py <input.csv>")
+        sys.exit(1)
 
-    process_csv(args.input, args.output, args.domain_col, args.desc_col)
+    input_path = sys.argv[1]
+    output_path = "ns_results.csv"
+    process_csv(input_path, output_path)
 
 
 if __name__ == "__main__":
