@@ -2,6 +2,7 @@ import dns.resolver
 import re
 import csv
 import gsan
+import gsan
 
 def get_ns(domain: str) -> list[str]:
     """
@@ -61,13 +62,13 @@ def get_ns_lst_with_providers():
             'providers': providers
         }
 
-            print(f"{domain_name}:\n")
-            print(f"  Nameservers: {ns_records}\n")
-            print(f"  Providers: {providers}\n")
+            #print(f"{domain_name}:\n")
+            #print(f"  Nameservers: {ns_records}\n")
+            #print(f"  Providers: {providers}\n")
     
     return results
 
-def get_lst_of_dns_providers():
+def get_lst_of_dns_providers() -> list[str]:
     results = []
     with open("src/Source_Data/Cloudflare_Top100_Domains.csv", "r", newline='') as csvfile:
         reader = csv.reader(csvfile)
