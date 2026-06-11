@@ -8,37 +8,39 @@ def get_ns(domain: str) -> list[str]:
     gets the nameservers for a specific domain. Uses the dns library installed through a virtual environment that would 
     help us to internally store it for our specific usage. """
     try:
+        # Uses the DNS library so that we can get the desired 
         answers = dns.resolver.resolve(domain, 'NS')
         answers_lst = [str(rdata) for rdata in answers]
         return answers_lst
+    # returns an empty list if there is not domain available or there are no more DNS to take from.
     except dns.resolver.NoAnswer:
         return []
     except dns.resolver.NXDOMAIN:
         return []
         
 def extract_provider(nameserver: str) -> str:
-    """Extract provider name from a nameserver string."""
+    """Extract provider name from a nameserver string. e.g google.com would return google as their nameserver. """
     # Remove trailing dot
     ns = nameserver.rstrip('.')
-
+    # Splits the nameserver by parts, most of the time the nameserver is located in the second part of the dns. 
     nameserver_parts = ns.split('.')
 
     # Examples: 'awsdns-43' -> 'awsdns', 'apple' -> 'apple', 'google' -> 'google'
     for part in nameserver_parts:
         match = re.search(r'([a-z]+)', part)
-
+        # if else statements to get the appropriate nameserver, in some scenarios it is not at the second position, so it 
+        # accounts for that. 
         if match:
             token = match.group(1)
             if token == "ns" or len(token) <= 2 or token == "dns":
                 continue
             return token
-
+    # Returns nothing in case there is no nameserver. 
     return None
 
-######################################################## Example Usage ##########################################
 
 def get_ns_lst_with_providers():
-    """Get DNS records and extract provider names for each domain."""
+    """Get DNS records and extract provider names for each domain. It is a function that just calls the """
 
     # gets the information from the uploaded csv file with all the domains. 
     with open("src/Source_Data/Cloudflare_Top100_Domains.csv", "r", newline='') as csvfile:
