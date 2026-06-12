@@ -433,7 +433,7 @@ tiktok.com,Social Networks;Video Streaming,a13-67.akam.net,third,"different SOA 
 tiktok.com,Social Networks;Video Streaming,a12-66.akam.net,third,"different SOA (domain=a9-66.akam.net, ns=internal.akam.net)",
 tiktok.com,Social Networks;Video Streaming,a9-66.akam.net,third,"different SOA (domain=a9-66.akam.net, ns=internal.akam.net)",
 tiktok.com,Social Networks;Video Streaming,a1-97.akam.net,third,"different SOA (domain=a9-66.akam.net, ns=internal.akam.net)",
-tiktok.com,Social Networks;Video Streaming,a18-64.akam.net,third,"different SOA (domain=a9-66.akam.net, ns=internal.akam.net)",
+tiktok.com,Social Networks;Video Streaming,a18-64.akam.net,third,"differDent SOA (domain=a9-66.akam.net, ns=internal.akam.net)",
 tiktok.com,Social Networks;Video Streaming,a6-65.akam.net,third,"different SOA (domain=a9-66.akam.net, ns=internal.akam.net)",
 aws.dev,Content Servers,ns-964.awsdns-56.net,third,"different SOA (domain=ns-1918.awsdns-47.co.uk, ns=g-ns-1400.awsdns-56.net)",
 aws.dev,Content Servers,ns-1108.awsdns-10.org,third,"different SOA (domain=ns-1918.awsdns-47.co.uk, ns=g-ns-1610.awsdns-10.org)",
