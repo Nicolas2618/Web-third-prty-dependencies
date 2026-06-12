@@ -14,7 +14,6 @@ import csv
 import sys
 import ssl
 import socket
-from turtle import pd
 import dns.resolver
 import dns.query
 import dns.zone
@@ -55,18 +54,15 @@ def dig_ns(domain: str) -> list[str]:
         answers = dns.resolver.resolve(domain, "NS")
         return [str(r.target).rstrip(".") for r in answers]
     except Exception as e:
-        raise RuntimeError(f"NS lookup failed for {domain}: {e}")'''
+        raise RuntimeError(f"NS lookup failed for {domain}: {e}")
     
-    # This is the solution we have been working with since the beginning. 
+def get_auth_ns_set(domain: str) -> frozenset[str]:
+    """Return the set of authoritative NS TLDs for a domain."""
     try:
-        # Uses the DNS library so that we can get the desired 
-        answers = dns.resolver.resolve(domain, 'NS')
-        return[str(rdata) for rdata in answers]
-    # returns an empty list if there is not domain available or there are no more DNS to take from.
-    except dns.resolver.NoAnswer:
-        return []
-    except dns.resolver.NXDOMAIN:
-        return []
+        answers = dns.resolver.resolve(domain, "NS")
+        return frozenset(get_tld(str(r.target).rstrip(".")) for r in answers)
+    except Exception:
+        return frozenset()
 
 def get_tld(hostname: str) -> str:
     """
@@ -185,6 +181,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     Apply the classification algorithm to a single nameserver.
     Returns (type, reason).
     """
+
     ns_tld = get_tld(ns)
 
     # Rule 1: same TLD
@@ -194,6 +191,12 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     # Rule 2: HTTPS + SAN
     if domain_https and ns_tld in domain_san:
         return "private", "ns TLD found in domain's TLS SAN"
+
+    # Rule 2.5: shared authoritative nameservers  ← moved up
+    domain_auth_ns = get_auth_ns_set(domain)
+    ns_auth_ns = get_auth_ns_set(get_tld(ns))
+    if domain_auth_ns and ns_auth_ns and domain_auth_ns == ns_auth_ns:
+        return "private", "same authoritative nameservers"
 
     # Rule 3: different SOA
     ns_soa = get_soa(ns)
