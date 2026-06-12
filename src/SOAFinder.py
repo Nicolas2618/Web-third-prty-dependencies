@@ -272,7 +272,7 @@ def process_csv(input_path: str, output_path: str,
 # ---------------------------------------------------------------------------
 
 def main():
-    input_path = "C:/Users/sinnjo3/Desktop/Web-third-prty-dependencies/src/Source_Data/Cloudflare_Top100_Domains.csv"
+    input_path = "src/Source_Data/Cloudflare_Top100_Domains.csv"
     output_path = "ns_results.csv"
 
     global SAMPLE_DOMAINS
@@ -283,7 +283,7 @@ def main():
     process_csv(input_path, output_path)
     #Use pandas to read the output csv file and put it into a new CSV that is more nicely formatted.
     df = pa.read_csv("ns_results.csv")
-    print(df)
+    print(df.to_string())
 
 if __name__ == "__main__":
     main()
