@@ -50,7 +50,7 @@ class DomainResult:
 
 def dig_ns(domain: str) -> list[str]:
     """Return list of nameserver hostnames for domain."""
-    '''try:
+    try:
         answers = dns.resolver.resolve(domain, "NS")
         return [str(r.target).rstrip(".") for r in answers]
     except Exception as e:
