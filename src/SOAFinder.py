@@ -168,8 +168,11 @@ def concentration(ns: str) -> float:
 # Core classification algorithm
 # ---------------------------------------------------------------------------
 
-def classify_ns(ns: str, domain: str, domain_tld: str,
-                domain_https: bool, domain_san: set[str],
+def classify_ns(ns: str, 
+                domain: str, 
+                domain_tld: str,
+                domain_https: bool, 
+                domain_san: set[str],
                 domain_soa: Optional[str]) -> tuple[str, str]:
     """
     Apply the classification algorithm to a single nameserver.
@@ -186,10 +189,10 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     if domain_https and ns_tld in domain_san:
         return "private", "ns TLD found in domain's TLS SAN"
 
-    # Rule 2.5: shared authoritative nameservers  ← moved up yo
-    domain_auth_ns = get_auth_ns_set(domain)
+    # Rule 2.5: shared authoritative nameservers  ← moved up
+    domain_auth_ns = [get_auth_ns_set(domain)]
     ns_auth_ns = get_auth_ns_set(get_tld(ns))
-    if domain_auth_ns and ns_auth_ns and domain_auth_ns == ns_auth_ns:
+    if ns_auth_ns in domain_auth_ns:
         return "private", "same authoritative nameservers"
 
     # Rule 3: different SOA

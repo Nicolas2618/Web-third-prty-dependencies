@@ -1,10 +1,10 @@
 rank,domain,categories
-1,google.com,Search Engines
+1,microsoft.com,Information Technology;Business
 2,googleapis.com,Information Technology;Content Servers
 3,cloudflare.com,Technology
 4,gstatic.com,Content Servers
 5,apple.com,Information Technology;Technology
-6,microsoft.com,Information Technology;Business
+6,google.com,Search Engines
 7,facebook.com,Social Networks
 8,amazonaws.com,Technology
 9,googlevideo.com,Search Engines;Video Streaming
