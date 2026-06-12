@@ -1,13 +1,13 @@
 """
 Nameserver Classifier
-Reads a CSV with columns: domain, description
-Classifies each domain's nameservers as 'private', 'third', or 'unknown'
-using the algorithm:
-  1. Same TLD as domain → private
-  2. HTTPS cert SAN contains ns TLD → private
-  3. Different SOA → third
-  4. Concentration >= 50 → third
-  5. Otherwise → unknown
+Reads a CSV file with columns: rank, domain, description
+Classifies each domain's nameservers as 'private', 'third', or 'unknown' based on the algorithm from 
+the paper:
+    1. If the Top Level Domain (TLD) of the nameserver is equal to the website's domain, we check for private.
+    2. Else if HTTPS and TLD is contained in the SAN, we also check for private.
+    3. Else if There is a different Start of Authority (SOA) record, We check for third-party.
+    4. Else if the concentration is >= 50, we check for third party.
+    5. Finally, we check for unknown. 
 """
 
 import csv
@@ -28,6 +28,8 @@ from typing import Optional
 
 @dataclass
 class NameserverResult:
+    """ Sets the nameserver values into base, unknown values so that we are able to manipulate them as 
+        veritication continues. """
     ns: str
     ns_type: str = "unknown"
     reason: str = ""
@@ -35,6 +37,8 @@ class NameserverResult:
 
 @dataclass
 class DomainResult:
+    """ This are the parameters of how it would appear un the csv file after factoring all of the results 
+        and checking for all of the websites. """
     domain: str
     description: str
     nameservers: list[NameserverResult] = field(default_factory=list)
@@ -47,11 +51,22 @@ class DomainResult:
 
 def dig_ns(domain: str) -> list[str]:
     """Return list of nameserver hostnames for domain."""
-    try:
+    '''try:
         answers = dns.resolver.resolve(domain, "NS")
         return [str(r.target).rstrip(".") for r in answers]
     except Exception as e:
-        raise RuntimeError(f"NS lookup failed for {domain}: {e}")
+        raise RuntimeError(f"NS lookup failed for {domain}: {e}")'''
+    
+    # This is the solution we have been working with since the beginning. 
+    try:
+        # Uses the DNS library so that we can get the desired 
+        answers = dns.resolver.resolve(domain, 'NS')
+        return[str(rdata) for rdata in answers]
+    # returns an empty list if there is not domain available or there are no more DNS to take from.
+    except dns.resolver.NoAnswer:
+        return []
+    except dns.resolver.NXDOMAIN:
+        return []
 
 
 def get_tld(hostname: str) -> str:
@@ -62,8 +77,10 @@ def get_tld(hostname: str) -> str:
     Falls back to the last two labels if tldextract is unavailable.
     """
     try:
+        # Uses another external library that extracts the top level domain (suffix) and the webpage domain. 
         import tldextract
         ext = tldextract.extract(hostname)
+        # e.g. domain = google & suffix(TLD) = .com
         if ext.domain and ext.suffix:
             return f"{ext.domain}.{ext.suffix}"
         return hostname
@@ -139,6 +156,10 @@ def get_san_tlds(domain: str) -> set[str]:
 _concentration_cache: dict[str, float] = {}
 
 # A small representative sample – replace with a full dataset in production.
+############ NEED TO CHANGE THIS ####################
+with open("src/Source_Data/Cloudflare_Top100_Domains.csv", "r", newline='') as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader)
 SAMPLE_DOMAINS = [
     "google.com", "youtube.com", "facebook.com", "twitter.com",
     "amazon.com", "wikipedia.org", "instagram.com", "linkedin.com",
