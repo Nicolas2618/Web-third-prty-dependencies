@@ -192,7 +192,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     if domain_https and ns_tld in domain_san:
         return "private", "ns TLD found in domain's TLS SAN"
 
-    # Rule 2.5: shared authoritative nameservers  ← moved up
+    # Rule 2.5: shared authoritative nameservers  ← moved up yo
     domain_auth_ns = get_auth_ns_set(domain)
     ns_auth_ns = get_auth_ns_set(get_tld(ns))
     if domain_auth_ns and ns_auth_ns and domain_auth_ns == ns_auth_ns:
