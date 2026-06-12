@@ -134,12 +134,6 @@ def get_san_tlds(domain: str) -> set[str]:
 _concentration_cache: dict[str, float] = {}
 
 # A small representative sample – replace with a full dataset in production.
-SAMPLE_DOMAINS = [
-    "google.com", "youtube.com", "facebook.com", "twitter.com",
-    "amazon.com", "wikipedia.org", "instagram.com", "linkedin.com",
-    "reddit.com", "netflix.com", "microsoft.com", "apple.com",
-    "github.com", "stackoverflow.com", "wordpress.com",
-]
 
 def concentration(ns: str) -> float:
     """
@@ -263,8 +257,14 @@ def process_csv(input_path: str, output_path: str,
 def main():
     input_path = "C:/Users/sinnjo3/Desktop/Web-third-prty-dependencies/src/Source_Data/Cloudflare_Top100_Domains.csv"
     output_path = "ns_results.csv"
+
+    global SAMPLE_DOMAINS
+    with open(input_path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        SAMPLE_DOMAINS = [row["domain"].strip() for row in reader if row.get("domain", "").strip()]
+
     process_csv(input_path, output_path)
-    #Use pandas to read the output csv file and print the results in a nice format.
+    #Use pandas to read the output csv file and put it into a new CSV that is more nicely formatted.
     df = pa.read_csv("ns_results.csv")
     print(df)
 
