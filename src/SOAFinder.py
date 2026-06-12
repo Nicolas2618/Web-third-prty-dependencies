@@ -14,7 +14,6 @@ import csv
 import sys
 import ssl
 import socket
-from turtle import pd
 import dns.resolver
 import dns.query
 import dns.zone
@@ -176,6 +175,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     Apply the classification algorithm to a single nameserver.
     Returns (type, reason).
     """
+
     ns_tld = get_tld(ns)
 
     # Rule 1: same TLD
@@ -185,23 +185,23 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     # Rule 2: HTTPS + SAN
     if domain_https and ns_tld in domain_san:
         return "private", "ns TLD found in domain's TLS SAN"
-    
-    # Rule 3: different SOA
-    ns_soa = get_soa(ns)
-    if ns_soa is not None and domain_soa is not None and ns_soa != domain_soa:
-        return "third", f"different SOA (domain={domain_soa}, ns={ns_soa})"
-    
-    # Rule 4: concentration
-    conc = concentration(ns)
-    if conc >= 50:
-        return "third", f"high concentration score ({conc:.1f}%)"
-    
-    # Rule 3.5: shared authoritative nameservers
+
+    # Rule 2.5: shared authoritative nameservers  ← moved up
     domain_auth_ns = get_auth_ns_set(domain)
     ns_auth_ns = get_auth_ns_set(get_tld(ns))
     if domain_auth_ns and ns_auth_ns and domain_auth_ns == ns_auth_ns:
         return "private", "same authoritative nameservers"
-    
+
+    # Rule 3: different SOA
+    ns_soa = get_soa(ns)
+    if ns_soa is not None and domain_soa is not None and ns_soa != domain_soa:
+        return "third", f"different SOA (domain={domain_soa}, ns={ns_soa})"
+
+    # Rule 4: concentration
+    conc = concentration(ns)
+    if conc >= 50:
+        return "third", f"high concentration score ({conc:.1f}%)"
+
     return "unknown", "no rule matched"
 
 def classify_domain(domain: str, description: str) -> DomainResult:
