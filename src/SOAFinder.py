@@ -1,13 +1,13 @@
 """
 Nameserver Classifier
-Reads a CSV with columns: domain, description
-Classifies each domain's nameservers as 'private', 'third', or 'unknown'
-using the algorithm:
-  1. Same TLD as domain → private
-  2. HTTPS cert SAN contains ns TLD → private
-  3. Different SOA → third
-  4. Concentration >= 50 → third
-  5. Otherwise → unknown
+Reads a CSV file with columns: rank, domain, description
+Classifies each domain's nameservers as 'private', 'third', or 'unknown' based on the algorithm from 
+the paper:
+    1. If the Top Level Domain (TLD) of the nameserver is equal to the website's domain, we check for private.
+    2. Else if HTTPS and TLD is contained in the SAN, we also check for private.
+    3. Else if There is a different Start of Authority (SOA) record, We check for third-party.
+    4. Else if the concentration is >= 50, we check for third party.
+    5. Finally, we check for unknown. 
 """
 
 import csv
@@ -29,12 +29,16 @@ import pandas as pa
 
 @dataclass
 class NameserverResult:
+    """ Sets the nameserver values into base, unknown values so that we are able to manipulate them as 
+        veritication continues. """
     ns: str
     ns_type: str = "unknown"
     reason: str = ""
 
 @dataclass
 class DomainResult:
+    """ This are the parameters of how it would appear un the csv file after factoring all of the results 
+        and checking for all of the websites. """
     domain: str
     description: str
     nameservers: list[NameserverResult] = field(default_factory=list)
@@ -46,7 +50,7 @@ class DomainResult:
 
 def dig_ns(domain: str) -> list[str]:
     """Return list of nameserver hostnames for domain."""
-    try:
+    '''try:
         answers = dns.resolver.resolve(domain, "NS")
         return [str(r.target).rstrip(".") for r in answers]
     except Exception as e:
@@ -68,8 +72,10 @@ def get_tld(hostname: str) -> str:
     Falls back to the last two labels if tldextract is unavailable.
     """
     try:
+        # Uses another external library that extracts the top level domain (suffix) and the webpage domain. 
         import tldextract
         ext = tldextract.extract(hostname)
+        # e.g. domain = google & suffix(TLD) = .com
         if ext.domain and ext.suffix:
             return f"{ext.domain}.{ext.suffix}"
         return hostname
@@ -283,7 +289,7 @@ def main():
     process_csv(input_path, output_path)
     #Use pandas to read the output csv file and put it into a new CSV that is more nicely formatted.
     df = pa.read_csv("ns_results.csv")
-    print(df)
+    print(df.to_string())
 
 if __name__ == "__main__":
     main()
