@@ -14,13 +14,15 @@ import csv
 import sys
 import ssl
 import socket
+from turtle import pd
 import dns.resolver
 import dns.query
 import dns.zone
 import dns.name
 from dataclasses import dataclass, field
 from typing import Optional
-
+import numpy as np
+import pandas as pa
 
 # ---------------------------------------------------------------------------
 # Data structures
@@ -34,7 +36,6 @@ class NameserverResult:
     ns_type: str = "unknown"
     reason: str = ""
 
-
 @dataclass
 class DomainResult:
     """ This are the parameters of how it would appear un the csv file after factoring all of the results 
@@ -43,7 +44,6 @@ class DomainResult:
     description: str
     nameservers: list[NameserverResult] = field(default_factory=list)
     error: Optional[str] = None
-
 
 # ---------------------------------------------------------------------------
 # DNS helpers
@@ -68,7 +68,6 @@ def dig_ns(domain: str) -> list[str]:
     except dns.resolver.NXDOMAIN:
         return []
 
-
 def get_tld(hostname: str) -> str:
     """
     Return the registered domain (eTLD+1) as a rough TLD proxy.
@@ -87,7 +86,6 @@ def get_tld(hostname: str) -> str:
     except ImportError:
         parts = hostname.rstrip(".").split(".")
         return ".".join(parts[-2:]) if len(parts) >= 2 else hostname
-
 
 def get_soa(hostname: str) -> Optional[str]:
     """
@@ -109,7 +107,6 @@ def get_soa(hostname: str) -> Optional[str]:
                 continue
         return None
 
-
 def is_https(domain: str) -> bool:
     """Return True if the domain responds on HTTPS (port 443)."""
     try:
@@ -121,7 +118,6 @@ def is_https(domain: str) -> bool:
             return True
     except Exception:
         return False
-
 
 def get_san_tlds(domain: str) -> set[str]:
     """
@@ -144,7 +140,6 @@ def get_san_tlds(domain: str) -> set[str]:
         pass
     return sans
 
-
 # ---------------------------------------------------------------------------
 # Concentration: fraction of Alexa/common domains sharing this nameserver
 # expressed as a percentage (0–100).  Without a real dataset we approximate
@@ -156,21 +151,10 @@ def get_san_tlds(domain: str) -> set[str]:
 _concentration_cache: dict[str, float] = {}
 
 # A small representative sample – replace with a full dataset in production.
-############ NEED TO CHANGE THIS ####################
-with open("src/Source_Data/Cloudflare_Top100_Domains.csv", "r", newline='') as csvfile:
-        reader = csv.reader(csvfile)
-        next(reader)
-SAMPLE_DOMAINS = [
-    "google.com", "youtube.com", "facebook.com", "twitter.com",
-    "amazon.com", "wikipedia.org", "instagram.com", "linkedin.com",
-    "reddit.com", "netflix.com", "microsoft.com", "apple.com",
-    "github.com", "stackoverflow.com", "wordpress.com",
-]
-
 
 def concentration(ns: str) -> float:
     """
-    Return an estimated concentration score (0–100) for a nameserver.
+    Return an estimated concentration score (0-100) for a nameserver.
     Score = percentage of sample domains whose NS TLD matches ns's TLD.
     """
     ns_tld = get_tld(ns)
@@ -189,7 +173,6 @@ def concentration(ns: str) -> float:
     score = (matches / len(SAMPLE_DOMAINS)) * 100
     _concentration_cache[ns_tld] = score
     return score
-
 
 # ---------------------------------------------------------------------------
 # Core classification algorithm
@@ -224,7 +207,6 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
 
     return "unknown", "no rule matched"
 
-
 def classify_domain(domain: str, description: str) -> DomainResult:
     result = DomainResult(domain=domain, description=description)
 
@@ -247,7 +229,6 @@ def classify_domain(domain: str, description: str) -> DomainResult:
         result.nameservers.append(NameserverResult(ns=ns, ns_type=ns_type, reason=reason))
 
     return result
-
 
 # ---------------------------------------------------------------------------
 # CSV I/O
@@ -286,20 +267,23 @@ def process_csv(input_path: str, output_path: str,
 
     print(f"\nDone. Results written to {output_path}")
 
-
 # ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
 
 def main():
-    if len(sys.argv) != 2:
-        print("Usage: python ns_classifier.py <input.csv>")
-        sys.exit(1)
-
-    input_path = sys.argv[1]
+    input_path = "C:/Users/sinnjo3/Desktop/Web-third-prty-dependencies/src/Source_Data/Cloudflare_Top100_Domains.csv"
     output_path = "ns_results.csv"
-    process_csv(input_path, output_path)
 
+    global SAMPLE_DOMAINS
+    with open(input_path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        SAMPLE_DOMAINS = [row["domain"].strip() for row in reader if row.get("domain", "").strip()]
+
+    process_csv(input_path, output_path)
+    #Use pandas to read the output csv file and put it into a new CSV that is more nicely formatted.
+    df = pa.read_csv("ns_results.csv")
+    print(df)
 
 if __name__ == "__main__":
     main()
