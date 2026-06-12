@@ -52,6 +52,14 @@ def dig_ns(domain: str) -> list[str]:
         return [str(r.target).rstrip(".") for r in answers]
     except Exception as e:
         raise RuntimeError(f"NS lookup failed for {domain}: {e}")
+    
+def get_auth_ns_set(domain: str) -> frozenset[str]:
+    """Return the set of authoritative NS TLDs for a domain."""
+    try:
+        answers = dns.resolver.resolve(domain, "NS")
+        return frozenset(get_tld(str(r.target).rstrip(".")) for r in answers)
+    except Exception:
+        return frozenset()
 
 def get_tld(hostname: str) -> str:
     """
@@ -177,17 +185,23 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     # Rule 2: HTTPS + SAN
     if domain_https and ns_tld in domain_san:
         return "private", "ns TLD found in domain's TLS SAN"
-
+    
     # Rule 3: different SOA
     ns_soa = get_soa(ns)
     if ns_soa is not None and domain_soa is not None and ns_soa != domain_soa:
         return "third", f"different SOA (domain={domain_soa}, ns={ns_soa})"
-
+    
     # Rule 4: concentration
     conc = concentration(ns)
     if conc >= 50:
         return "third", f"high concentration score ({conc:.1f}%)"
-
+    
+    # Rule 3.5: shared authoritative nameservers
+    domain_auth_ns = get_auth_ns_set(domain)
+    ns_auth_ns = get_auth_ns_set(get_tld(ns))
+    if domain_auth_ns and ns_auth_ns and domain_auth_ns == ns_auth_ns:
+        return "private", "same authoritative nameservers"
+    
     return "unknown", "no rule matched"
 
 def classify_domain(domain: str, description: str) -> DomainResult:
@@ -255,7 +269,7 @@ def process_csv(input_path: str, output_path: str,
 # ---------------------------------------------------------------------------
 
 def main():
-    input_path = "C:/Users/sinnjo3/Desktop/Web-third-prty-dependencies/src/Source_Data/Cloudflare_Top100_Domains.csv"
+    input_path = "src/Source_Data/Cloudflare_Top100_Domains.csv"
     output_path = "ns_results.csv"
 
     global SAMPLE_DOMAINS
