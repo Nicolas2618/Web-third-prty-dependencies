@@ -11,6 +11,7 @@ the paper:
 """
 
 import csv
+import re
 import sys
 import ssl
 import socket
@@ -22,6 +23,7 @@ from dataclasses import dataclass, field
 from typing import Optional
 import numpy as np
 import pandas as pa
+import whois
 
 # ---------------------------------------------------------------------------
 # Data structures
@@ -63,6 +65,56 @@ def get_auth_ns_set(domain: str) -> frozenset[str]:
         return frozenset(get_tld(str(r.target).rstrip(".")) for r in answers)
     except Exception:
         return frozenset()
+    
+def normalize_whois_string(value) -> Optional[str]:
+    if isinstance(value, (list, tuple)):
+        for item in value:
+            normalized = normalize_whois_string(item)
+            if normalized:
+                return normalized
+        return None
+    if value is None:
+        return None
+    text = str(value).strip().lower()
+    if not text:
+        return None
+    text = re.sub(r"[^a-z0-9]+", " ", text).strip()
+    return text if text else None
+
+def extract_org(info) -> Optional[str]:
+    return normalize_whois_string(getattr(info, "org", None))
+
+# Terms that are too generic to use for reliable WHOIS ownership matching.
+# This helps avoid false positive token matches like "Inc", "LLC", or "Registrar".
+WHOIS_STOP_WORDS = {
+    "inc", "ltd", "llc", "corp", "corporation", "company", "co", "limited",
+    "the", "domain", "registrar", "name", "tag", "department", "legal",
+    "services", "service", "group", "incorporated", "technology", "systems",
+}
+
+def whois_identity_keys(info) -> set[str]:
+    # Collect normalized WHOIS owner fields as exact identity strings.
+    # These are used for a strict match when both sides expose the same normalized value.
+    keys: set[str] = set()
+    for field_name in ("org", "name", "registrar"):
+        value = normalize_whois_string(getattr(info, field_name, None))
+        if value:
+            keys.add(value)
+    return keys
+
+def whois_identity_terms(info) -> set[str]:
+    # Collect normalized WHOIS tokens from owner fields.
+    # This supports partial token overlap when exact WHOIS strings are absent.
+    terms: set[str] = set()
+    for field_name in ("org", "name", "registrar"):
+        value = normalize_whois_string(getattr(info, field_name, None))
+        if not value:
+            continue
+        for token in value.split():
+            if len(token) < 3 or token in WHOIS_STOP_WORDS:
+                continue
+            terms.add(token)
+    return terms
 
 def get_tld(hostname: str) -> str:
     """
@@ -72,10 +124,11 @@ def get_tld(hostname: str) -> str:
     Falls back to the last two labels if tldextract is unavailable.
     """
     try:
-        # Uses another external library that extracts the top level domain (suffix) and the webpage domain. 
+        # Use tldextract to get the public suffix / registered domain.
+        # Passing cache_dir=None avoids creating a cache file and prevents
+        # permission errors in environments where the package install path is read-only.
         import tldextract
-        ext = tldextract.extract(hostname)
-        # e.g. domain = google & suffix(TLD) = .com
+        ext = tldextract.TLDExtract(cache_dir=None)(hostname)
         if ext.domain and ext.suffix:
             return f"{ext.domain}.{ext.suffix}"
         return hostname
@@ -147,6 +200,7 @@ def get_san_tlds(domain: str) -> set[str]:
 _concentration_cache: dict[str, float] = {}
 
 # A small representative sample – replace with a full dataset in production.
+SAMPLE_DOMAINS: list[str] = []
 
 def concentration(ns: str) -> float:
     """
@@ -158,6 +212,7 @@ def concentration(ns: str) -> float:
         return _concentration_cache[ns_tld]
 
     matches = 0
+    total = len(SAMPLE_DOMAINS)
     for sample in SAMPLE_DOMAINS:
         try:
             sample_ns_list = dig_ns(sample)
@@ -166,7 +221,7 @@ def concentration(ns: str) -> float:
         except Exception:
             pass
 
-    score = (matches / len(SAMPLE_DOMAINS)) * 100
+    score = (matches / total) * 100 if total else 0.0
     _concentration_cache[ns_tld] = score
     return score
 
@@ -174,17 +229,9 @@ def concentration(ns: str) -> float:
 # Core classification algorithm
 # ---------------------------------------------------------------------------
 
-def classify_ns(ns: str, 
-                domain: str, 
-                domain_tld: str,
-                domain_https: bool, 
-                domain_san: set[str],
+def classify_ns(ns: str, domain: str, domain_tld: str,
+                domain_https: bool, domain_san: set[str],
                 domain_soa: Optional[str]) -> tuple[str, str]:
-    """
-    Apply the classification algorithm to a single nameserver.
-    Returns (type, reason).
-    """
-
     ns_tld = get_tld(ns)
 
     # Rule 1: same TLD
@@ -194,11 +241,34 @@ def classify_ns(ns: str,
     # Rule 2: HTTPS + SAN
     if domain_https and ns_tld in domain_san:
         return "private", "ns TLD found in domain's TLS SAN"
+    
+    # Rule 5: WHOIS identity match (last resort, slow)
+    try:
+        dn_info = whois.whois(domain)
+        dn_keys = whois_identity_keys(dn_info)
+        dn_terms = whois_identity_terms(dn_info)
 
-    # Rule 2.5: shared authoritative nameservers  ← moved up
-    domain_auth_ns = [get_auth_ns_set(domain)]
-    ns_auth_ns = get_auth_ns_set(get_tld(ns))
-    if ns_auth_ns in domain_auth_ns:
+        # First try WHOIS on the TLD extracted from the nameserver.
+        ms_info = whois.whois(ns_tld)
+        ms_keys = whois_identity_keys(ms_info)
+        ms_terms = whois_identity_terms(ms_info)
+
+        # If the NS-TLD lookup returned no identity fields, fall back to the raw NS hostname.
+        if not ms_terms:
+            ms_info = whois.whois(ns)
+            ms_keys = whois_identity_keys(ms_info)
+            ms_terms = whois_identity_terms(ms_info)
+
+        # Match either exact normalized WHOIS values or overlapping identity tokens.
+        if (dn_keys and ms_keys and dn_keys & ms_keys) or (dn_terms and ms_terms and dn_terms & ms_terms):
+            return "private", "same organization in whois"
+    except Exception:
+        pass
+
+    # Rule 2.5: shared authoritative nameservers
+    domain_auth_ns = get_auth_ns_set(domain)
+    ns_auth_ns = get_auth_ns_set(ns_tld)
+    if domain_auth_ns and ns_auth_ns and domain_auth_ns == ns_auth_ns:
         return "private", "same authoritative nameservers"
 
     # Rule 3: different SOA
@@ -209,7 +279,7 @@ def classify_ns(ns: str,
     # Rule 4: concentration
     conc = concentration(ns)
     if conc >= 50:
-        return "third", f"high concentration score ({conc:.1f}%)"
+        return "third", f"high concentration score ({conc:.1f}%)"    
 
     return "unknown", "no rule matched"
 
@@ -290,6 +360,10 @@ def main():
     #Use pandas to read the output csv file and put it into a new CSV that is more nicely formatted.
     df = pa.read_csv("ns_results.csv")
     print(df.to_string())
+
+# def main():
+#     w = whois.whois("dns-external-route53.us-east-1.amazonaws.com")
+#     print(w)
 
 if __name__ == "__main__":
     main()
