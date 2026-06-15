@@ -237,6 +237,7 @@ def concentration(ns: str) -> float:
 def classify_ns(ns: str, domain: str, domain_tld: str,
                 domain_https: bool, domain_san: set[str],
                 domain_soa: Optional[str]) -> tuple[str, str]:
+    
     ns_tld = get_tld(ns)
 
     # Rule 1: same TLD
@@ -266,7 +267,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
 
         # Match either exact normalized WHOIS values or overlapping identity tokens.
         if (dn_keys and ms_keys and dn_keys & ms_keys) or (dn_terms and ms_terms and dn_terms & ms_terms):
-            return "private", "same organization in whois"
+            return "third", f"different SOA (domain={domain_soa}, ns={ns_soa})"
     except Exception:
         pass
 
@@ -275,7 +276,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     ns_auth_ns = get_auth_ns_set(ns_tld)
     if domain_auth_ns and ns_auth_ns and domain_auth_ns == ns_auth_ns:
         return "private", "same authoritative nameservers"
-
+    
     # Rule 4: different SOA
     ns_soa = get_soa(ns)
 
@@ -286,7 +287,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
         if ns_provider and domain_provider and ns_provider == domain_provider:
             return "private", "same nameserver provider despite different SOA"
         return "third", f"different SOA (domain={domain_soa}, ns={ns_soa})"
-
+    
     # Rule 5: concentration
     conc = concentration(ns)
     if conc >= 50:
@@ -370,11 +371,7 @@ def main():
     process_csv(input_path, output_path)
     #Use pandas to read the output csv file and put it into a new CSV that is more nicely formatted.
     df = pa.read_csv("ns_results.csv")
-    print(df.to_string())
-
-# def main():
-#     w = whois.whois("dns-external-route53.us-east-1.amazonaws.com")
-#     print(w)
+    #print(df.to_string())
 
 if __name__ == "__main__":
     main()
