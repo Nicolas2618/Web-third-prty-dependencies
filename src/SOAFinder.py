@@ -242,11 +242,11 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
 
     # Rule 1: same TLD
     if ns_tld == domain_tld:
-        return "private", "same TLD as domain"
+        return "private", f"same TLD as domain (domain={domain_soa}, ns={ns_soa})"
 
     # Rule 2: HTTPS + SAN
     if domain_https and ns_tld in domain_san:
-        return "private", "ns TLD found in domain's TLS SAN"
+        return "private", f"ns TLD found in domain's TLS SAN (domain={domain_soa}, ns={ns_soa})"
     
     # Rule 3: WHOIS identity match (last resort, slow)
     try:
@@ -267,7 +267,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
 
         # Match either exact normalized WHOIS values or overlapping identity tokens.
         if (dn_keys and ms_keys and dn_keys & ms_keys) or (dn_terms and ms_terms and dn_terms & ms_terms):
-            return "third", f"different SOA (domain={domain_soa}, ns={ns_soa})"
+            return "third", f"WHOIS (domain={domain_soa}, ns={ns_soa})"
     except Exception:
         pass
 
@@ -275,7 +275,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     domain_auth_ns = get_auth_ns_set(domain)
     ns_auth_ns = get_auth_ns_set(ns_tld)
     if domain_auth_ns and ns_auth_ns and domain_auth_ns == ns_auth_ns:
-        return "private", "same authoritative nameservers"
+        return "private", f"same authoritative nameservers (domain={domain_soa}, ns={ns_soa})"
     
     # Rule 4: different SOA
     ns_soa = get_soa(ns)
@@ -291,7 +291,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     # Rule 5: concentration
     conc = concentration(ns)
     if conc >= 50:
-        return "third", f"high concentration score ({conc:.1f}%)"    
+        return "third", f"high concentration score ({conc:.1f}%) (domain={domain_soa}, ns={ns_soa})"    
 
     return "unknown", "no rule matched"
 
