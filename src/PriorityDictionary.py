@@ -1,8 +1,6 @@
 import dns.resolver
 import re
 import csv
-import gsan
-import gsan
 
 def get_ns(domain: str) -> list[str]:
     """
