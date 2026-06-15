@@ -12,6 +12,7 @@ the paper:
 import re
 import csv
 import ssl
+import time
 import whois
 import socket
 import numpy as np
@@ -160,38 +161,45 @@ def regular_expression_nameserver(retrieved_SOA: str) -> str:
         nameserver = pd.extract_provider(retrieved_SOA)
         return nameserver
     return None
+    
 
-def is_https(domain: str) -> bool:
+def is_https(domain: str, retries: int = 2, timeout: int = 10) -> bool:
     """Return True if the domain responds on HTTPS (port 443)."""
-    try:
-        ctx = ssl.create_default_context()
-        with ctx.wrap_socket(
-            socket.create_connection((domain, 443), timeout=5),
-            server_hostname=domain,
-        ):
-            return True
-    except Exception:
-        return False
+    for attempt in range(retries):
+        try:
+            ctx = ssl.create_default_context()
+            conn = socket.create_connection((domain, 443), timeout=timeout)
+            with ctx.wrap_socket(conn, server_hostname=domain):
+                return True
+        except (ConnectionResetError, BrokenPipeError):
+            if attempt < retries - 1:
+                time.sleep(1)
+            continue
+        except Exception:
+            return False
+    return False
 
-def get_san_tlds(domain: str) -> set[str]:
-    """
-    Return the set of registered domains found in the TLS certificate's
-    Subject Alternative Names for `domain`.
-    """
+
+def get_san_tlds(domain: str, retries: int = 2, timeout: int = 10) -> set[str]:
+    """Return registered domains from TLS SAN for `domain`."""
     sans: set[str] = set()
-    try:
-        ctx = ssl.create_default_context()
-        with ctx.wrap_socket(
-            socket.create_connection((domain, 443), timeout=5),
-            server_hostname=domain,
-        ) as ssock:
-            cert = ssock.getpeercert()
-            for kind, value in cert.get("subjectAltName", []):
-                if kind == "DNS":
-                    clean = value.lstrip("*.")
-                    sans.add(get_tld(clean))
-    except Exception:
-        pass
+    for attempt in range(retries):
+        try:
+            ctx = ssl.create_default_context()
+            conn = socket.create_connection((domain, 443), timeout=timeout)
+            with ctx.wrap_socket(conn, server_hostname=domain) as ssock:
+                cert = ssock.getpeercert()
+                for kind, value in cert.get("subjectAltName", []):
+                    if kind == "DNS":
+                        clean = value.lstrip("*.")
+                        sans.add(get_tld(clean))
+                return sans  # success — exit early
+        except (ConnectionResetError, BrokenPipeError):
+            if attempt < retries - 1:
+                time.sleep(1)
+            continue
+        except Exception:
+            break
     return sans
 
 # ---------------------------------------------------------------------------
@@ -268,6 +276,8 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
         # Match either exact normalized WHOIS values or overlapping identity tokens.
         if (dn_keys and ms_keys and dn_keys & ms_keys) or (dn_terms and ms_terms and dn_terms & ms_terms):
             return "third", f"different SOA (domain={domain_soa}, ns={ns_soa})"
+    except (ConnectionResetError, BrokenPipeError, OSError):
+        pass  # WHOIS unavailable; skip to next rule
     except Exception:
         pass
 
