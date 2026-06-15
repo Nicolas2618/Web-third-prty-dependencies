@@ -9,23 +9,17 @@ the paper:
     4. Else if the concentration is >= 50, we check for third party.
     5. Finally, we check for unknown. 
 """
-
+import re
 import csv
-import re
-import sys
 import ssl
-import socket
-import dns.resolver
-import dns.query
-import dns.zone
-import dns.name
-from dataclasses import dataclass, field
-from typing import Optional
-import numpy as np
-import pandas as pa
-import re
-import PriorityDictionary as pd
 import whois
+import socket
+import numpy as np
+import dns.resolver
+import pandas as pa
+from typing import Optional
+import PriorityDictionary as pd
+from dataclasses import dataclass, field
 
 # ---------------------------------------------------------------------------
 # Data structures
@@ -253,7 +247,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     if domain_https and ns_tld in domain_san:
         return "private", "ns TLD found in domain's TLS SAN"
     
-    # Rule 5: WHOIS identity match (last resort, slow)
+    # Rule 3: WHOIS identity match (last resort, slow)
     try:
         dn_info = whois.whois(domain)
         dn_keys = whois_identity_keys(dn_info)
@@ -276,13 +270,13 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     except Exception:
         pass
 
-    # Rule 2.5: shared authoritative nameservers
+    # Rule 3.5: shared authoritative nameservers
     domain_auth_ns = get_auth_ns_set(domain)
     ns_auth_ns = get_auth_ns_set(ns_tld)
     if domain_auth_ns and ns_auth_ns and domain_auth_ns == ns_auth_ns:
         return "private", "same authoritative nameservers"
 
-    # Rule 3: different SOA
+    # Rule 4: different SOA
     ns_soa = get_soa(ns)
 
     if ns_soa is not None and domain_soa is not None and ns_soa != domain_soa:
@@ -293,7 +287,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
             return "private", "same nameserver provider despite different SOA"
         return "third", f"different SOA (domain={domain_soa}, ns={ns_soa})"
 
-    # Rule 4: concentration
+    # Rule 5: concentration
     conc = concentration(ns)
     if conc >= 50:
         return "third", f"high concentration score ({conc:.1f}%)"    
