@@ -22,6 +22,8 @@ from dataclasses import dataclass, field
 from typing import Optional
 import numpy as np
 import pandas as pa
+import re
+import PriorityDictionary as pd
 
 # ---------------------------------------------------------------------------
 # Data structures
@@ -102,6 +104,15 @@ def get_soa(hostname: str) -> Optional[str]:
             except Exception:
                 continue
         return None
+    
+def regular_expression_nameserver(retrieved_SOA: str) -> str:
+    '''we get the nameserver domain based on the SOA expression we obtain from the get_soa function, 
+    so that we can trail the information and match elements later on. '''
+    if get_soa(retrieved_SOA):
+        # we inherit form the priority dictionary
+        nameserver = pd.extract_provider(retrieved_SOA)
+        return nameserver
+    return None
 
 def is_https(domain: str) -> bool:
     """Return True if the domain responds on HTTPS (port 443)."""
@@ -195,15 +206,21 @@ def classify_ns(ns: str,
     if domain_https and ns_tld in domain_san:
         return "private", "ns TLD found in domain's TLS SAN"
 
-    # Rule 2.5: shared authoritative nameservers  ← moved up
-    domain_auth_ns = [get_auth_ns_set(domain)]
+    # Rule 2.5: shared authoritative nameservers ← moved up
+    domain_auth_ns = get_auth_ns_set(domain)
     ns_auth_ns = get_auth_ns_set(get_tld(ns))
     if ns_auth_ns in domain_auth_ns:
         return "private", "same authoritative nameservers"
 
     # Rule 3: different SOA
     ns_soa = get_soa(ns)
+
     if ns_soa is not None and domain_soa is not None and ns_soa != domain_soa:
+        # ↓ Add this block before returning "third"
+        ns_provider = regular_expression_nameserver(ns_soa)
+        domain_provider = regular_expression_nameserver(domain_soa)
+        if ns_provider and domain_provider and ns_provider == domain_provider:
+            return "private", "same nameserver provider despite different SOA"
         return "third", f"different SOA (domain={domain_soa}, ns={ns_soa})"
 
     # Rule 4: concentration
