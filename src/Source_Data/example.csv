@@ -1,8 +1,4 @@
 rank,domain,categories
-1,reddit.com,Forums
-2,microsoft.com,Information Technology;Business
-3,amazon.com,Ecommerce
-4,google.com,Search Engines
-5,gstatic.com,Content Servers
-6,google-analytics.com,Business;Technology
-7,dns.google,Information Technology
+3,microsoft.com,Information Technology;Business
+4,amazon.com,Ecommerce
+2,chirpbooks.com,Content Servers

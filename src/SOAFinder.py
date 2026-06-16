@@ -70,7 +70,7 @@ def get_auth_ns_set(domain: str) -> frozenset[str]:
     except Exception:
         return frozenset()
     
-'''def normalize_whois_string(value) -> Optional[str]:
+def normalize_whois_string(value) -> Optional[str]:
     if isinstance(value, (list, tuple)):
         for item in value:
             normalized = normalize_whois_string(item)
@@ -100,7 +100,7 @@ def whois_identity_keys(info) -> set[str]:
     # Collect normalized WHOIS owner fields as exact identity strings.
     # These are used for a strict match when both sides expose the same normalized value.
     keys: set[str] = set()
-    for field_name in ("org", "name", "registrar"):
+    for field_name in ("org", "name"):
         value = normalize_whois_string(getattr(info, field_name, None))
         if value:
             keys.add(value)
@@ -110,7 +110,7 @@ def whois_identity_terms(info) -> set[str]:
     # Collect normalized WHOIS tokens from owner fields.
     # This supports partial token overlap when exact WHOIS strings are absent.
     terms: set[str] = set()
-    for field_name in ("org", "name", "registrar"):
+    for field_name in ("org", "name"):
         value = normalize_whois_string(getattr(info, field_name, None))
         if not value:
             continue
@@ -118,7 +118,7 @@ def whois_identity_terms(info) -> set[str]:
             if len(token) < 3 or token in WHOIS_STOP_WORDS:
                 continue
             terms.add(token)
-    return terms'''
+    return terms
 
 def get_tld(hostname: str) -> str:
     """
@@ -340,20 +340,8 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     ns_tld = get_tld(ns)
     ns_soa = get_soa(ns)
 
-    # Rule 1: same TLD
-    if ns_tld == domain_tld:
-        return "private", f"same TLD as domain (domain={domain_soa}, ns={ns_soa})"
-
-    # Rule 2: HTTPS + SAN
-    if domain_https and ns_tld in domain_san:
-        return "private", f"ns TLD found in domain's TLS SAN (domain={domain_soa}, ns={ns_soa})"
-    
-    # Rule 3.75: connected DNS provider via BuiltWith
-    if builtwith_dns_provider_match(domain, ns_tld):
-        return "private", f"domain connected to nameserver provider via BuiltWith (domain={domain}, ns={ns_tld})"
-    
     # Rule 3: WHOIS identity match (last resort, slow)
-    '''try:
+    try:
         dn_info = whois.whois(domain)
         dn_keys = whois_identity_keys(dn_info)
         dn_terms = whois_identity_terms(dn_info)
@@ -371,26 +359,34 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
 
         # Match either exact normalized WHOIS values or overlapping identity tokens.
         if (dn_keys and ms_keys and dn_keys & ms_keys) or (dn_terms and ms_terms and dn_terms & ms_terms):
-            return "private", "same organization in whois"
+            return "private", f"same organization in whois(domain={domain_soa}, ns={ns_soa})"
     except (ConnectionResetError, BrokenPipeError, OSError):
         pass  # WHOIS unavailable; skip to next rule
     except Exception:
-        pass'''
+        pass
+    
+    # Rule 1: same TLD
+    if ns_tld == domain_tld:
+        return "private", f"same TLD as domain (domain={domain_soa}, ns={ns_soa})"
+
+    # Rule 2: HTTPS + SAN
+    if domain_https and ns_tld in domain_san:
+        return "private", f"ns TLD found in domain's TLS SAN (domain={domain_soa}, ns={ns_soa})"
+    
+    # Rule 2.5: different SOA
+    if ns_soa is not None and domain_soa is not None and ns_soa != domain_soa:
+        # ↓ Add this block before returning "third"
+        #ns_provider = regular_expression_nameserver(ns_soa)
+        #domain_provider = regular_expression_nameserver(domain_soa)
+        #if ns_provider and domain_provider and ns_provider == domain_provider:
+        #    return "private", f"same nameserver provider despite different SOA (domain={domain_soa}, ns={ns_soa})"
+        return "third", f"different SOA (domain={domain_soa}, ns={ns_soa})"
 
     # Rule 3.5: shared authoritative nameservers
     domain_auth_ns = get_auth_ns_set(domain)
     ns_auth_ns = get_auth_ns_set(ns_tld)
     if domain_auth_ns and ns_auth_ns and domain_auth_ns == ns_auth_ns:
         return "private", f"same authoritative nameservers (domain={domain_soa}, ns={ns_soa})"
-    
-    # Rule 4: different SOA
-    if ns_soa is not None and domain_soa is not None and ns_soa != domain_soa:
-        # ↓ Add this block before returning "third"
-        ns_provider = regular_expression_nameserver(ns_soa)
-        domain_provider = regular_expression_nameserver(domain_soa)
-        if ns_provider and domain_provider and ns_provider == domain_provider:
-            return "private", f"same nameserver provider despite different SOA (domain={domain_soa}, ns={ns_soa})"
-        return "third", f"different SOA (domain={domain_soa}, ns={ns_soa})"
     
     # Rule 5: concentration
     conc = concentration(ns)
@@ -464,11 +460,11 @@ def process_csv(input_path: str, output_path: str,
 # ---------------------------------------------------------------------------
 
 def main():
-    input_path = "src/Source_Data/Cloudflare_Top100_Domains.csv"
-    output_path = "ns_results.csv"
+    #input_path = "src/Source_Data/Cloudflare_Top100_Domains.csv"
+    #output_path = "ns_results.csv"
     
-    #input_path = "src/Source_Data/example.csv"
-    #output_path = "example_results.csv"
+    input_path = "src/Source_Data/example.csv"
+    output_path = "example_results1.csv"
 
     global SAMPLE_DOMAINS
     with open(input_path, newline="", encoding="utf-8") as f:
