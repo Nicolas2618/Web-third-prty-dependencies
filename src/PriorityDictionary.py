@@ -1,23 +1,9 @@
-#import csv
-import dns.resolver
-'''import re
+import re
 import csv
+import tldextract
+import pandas as pd
+import dns.resolver
 
-def get_ns(domain: str) -> list[str]:
-    """
-    gets the nameservers for a specific domain. Uses the dns library installed through a virtual environment that would 
-    help us to internally store it for our specific usage. """
-    try:
-        # Uses the DNS library so that we can get the desired 
-        answers = dns.resolver.resolve(domain, 'NS')
-        answers_lst = [str(rdata) for rdata in answers]
-        return answers_lst
-    # returns an empty list if there is not domain available or there are no more DNS to take from.
-    except dns.resolver.NoAnswer:
-        return []
-    except dns.resolver.NXDOMAIN:
-        return []
-        
 def extract_provider(nameserver: str) -> str:
     """Extract provider name from a nameserver string. e.g google.com would return google as their nameserver. """
     # Remove trailing dot
@@ -38,75 +24,6 @@ def extract_provider(nameserver: str) -> str:
     # Returns nothing in case there is no nameserver. 
     return None
 
-
-def get_ns_lst_with_providers():
-    """Get DNS records and extract provider names for each domain. It is a function that just calls the """
-
-    # gets the information from the uploaded csv file with all the domains. 
-    with open("src/Source_Data/Cloudflare_Top100_Domains.csv", "r", newline='') as csvfile:
-        reader = csv.reader(csvfile)
-        next(reader)
-
-        #for row in reader:
-            #print(row)
-        
-        results = {}
-        for row in reader:
-            domain_name = row[1]
-
-            ns_records = get_ns(domain_name)
-
-            providers = [extract_provider(ns) for ns in ns_records if ns]
-            #print(f'{providers}')
-            results[domain_name] = {
-            'nameservers': ns_records,
-            'providers': providers
-        }
-
-            #print(f"{domain_name}:\n")
-            #print(f"  Nameservers: {ns_records}\n")
-            #print(f"  Providers: {providers}\n")
-    
-    return results
-
-def get_lst_of_dns_providers() -> list[str]:
-    results = []
-    with open("src/Source_Data/Cloudflare_Top100_Domains.csv", "r", newline='') as csvfile:
-        reader = csv.reader(csvfile)
-        next(reader)
-
-        for row in reader:
-            domain_name = row[1]
-            ns_records = get_ns(domain_name)
-            providers = [extract_provider(ns) for ns in ns_records if ns]
-            results.append(providers)
-    return results
-
-def get_big_lst_of_providers_and_counts():
-    """Get a list of dns providers and their counts from the csv file."""
-    providernestedlist = get_lst_of_dns_providers()
-    provider_counts = {}
-
-    for providerlst in providernestedlist:
-        for provider in providerlst:
-            if provider in provider_counts:
-                provider_counts[provider] += 1
-            else:
-                provider_counts[provider] = 1
-
-    return provider_counts
-
-if __name__ == "__main__":
-    results1 = get_ns_lst_with_providers()
-    results2 = get_lst_of_dns_providers()
-    results3 = get_big_lst_of_providers_and_counts()
-    print("Final Results:", results3)'''
-
-import re
-import csv
-import pandas as pd
-import dns.resolver
-
 def get_soa(domain: str) -> dict:
     """
     Gets the SOA record for a specific domain.
@@ -122,9 +39,58 @@ def get_soa(domain: str) -> dict:
     except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN):
         return None
 
+def get_tld(hostname: str) -> str:
+    """
+    Return the registered domain (eTLD+1) as a rough TLD proxy.
+    e.g. 'ns1.example.com' → 'example.com'
+         'ns1.cloudflare.com' → 'cloudflare.com'
+    Falls back to the last two labels if tldextract is unavailable.
+    """
+    try:
+        # Use tldextract to get the public suffix / registered domain.
+        # Passing cache_dir=None avoids creating a cache file and prevents
+        # permission errors in environments where the package install path is read-only.
+        ext = tldextract.TLDExtract(cache_dir=None)(hostname)
+        if ext.domain and ext.suffix:
+            return f"{ext.domain}.{ext.suffix}"
+        return hostname
+    except ImportError:
+        parts = hostname.rstrip(".").split(".")
+        return ".".join(parts[-2:]) if len(parts) >= 2 else hostname
+    
+
+def classify_by_soa(domain: str, soa: dict) -> tuple[str, str]:
+    """
+    Classify a domain as private or third-party using SOA mname and rname.
+    """
+    if soa is None:
+        return "unknown", "no SOA record"
+
+    domain_tld = get_tld(domain)
+    mname_tld  = get_tld(soa["mname"])
+    rname_tld  = get_tld(soa["rname"])
+
+    # Both point to the same owner — definitely private
+    if mname_tld == domain_tld and rname_tld == domain_tld:
+        return "private", f"SOA mname and rname both match domain"
+
+    # mname is third party — strongest signal
+    if mname_tld != domain_tld:
+        provider = extract_provider(soa["mname"])
+        return "third", f"SOA mname points to third party: {provider}"
+    
+    if rname_tld != domain_tld:
+        provider = extract_provider(soa["rname"])
+        return "managed by third party", f"SOA rname points to: {provider}"
+    
+    return "no rule matched"
+
+
 
 def main():
-    input_path = "src/Source_Data/Cloudflare_Top100_Domains.csv"
+    input_path  = "src/Source_Data/Cloudflare_Top100_Domains.csv"
+    output_path = "src/Source_Data/soa_results.csv"
+
     results = []
 
     with open(input_path, "r", newline='') as csvfile:
@@ -132,22 +98,33 @@ def main():
 
         for row in reader:
             domain_name = row["domain"].strip()
-            soa = get_soa(domain_name)
+            soa         = get_soa(domain_name)
+            ns_type, reason = classify_by_soa(domain_name, soa)
 
-            if soa:
-                print(f"Domain: {domain_name}")
-                print(f"  Mname: {soa['mname']}")
-                print(f"  Rname: {soa['rname']}")
-            else:
-                print(f"Domain: {domain_name} — no SOA record found")
+            print(f"Domain:  {domain_name}")
+            print(f"  Mname:  {soa['mname'] if soa else 'N/A'}")
+            print(f"  Rname:  {soa['rname'] if soa else 'N/A'}")
+            print(f"  Type:   {ns_type}")
+            print(f"  Reason: {reason}")
+            print("-" * 40)
 
             results.append({
                 "domain_name": domain_name,
-                "mname": soa["mname"] if soa else None,
-                "rname": soa["rname"] if soa else None,
+                "mname":       soa["mname"] if soa else None,
+                "rname":       soa["rname"] if soa else None,
+                "type":        ns_type,
+                "reason":      reason,
             })
 
+    # Write output
+    with open(output_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["domain_name", "mname", "rname", "type", "reason"])
+        writer.writeheader()
+        writer.writerows(results)
+
+    print(f"\nDone. Results written to {output_path}")
 
 
 if __name__ == "__main__":
     main()
+    
