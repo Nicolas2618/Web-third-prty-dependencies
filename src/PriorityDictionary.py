@@ -1,5 +1,6 @@
+#import csv
 import dns.resolver
-import re
+'''import re
 import csv
 
 def get_ns(domain: str) -> list[str]:
@@ -99,4 +100,54 @@ if __name__ == "__main__":
     results1 = get_ns_lst_with_providers()
     results2 = get_lst_of_dns_providers()
     results3 = get_big_lst_of_providers_and_counts()
-    print("Final Results:", results3)
+    print("Final Results:", results3)'''
+
+import re
+import csv
+import pandas as pd
+import dns.resolver
+
+def get_soa(domain: str) -> dict:
+    """
+    Gets the SOA record for a specific domain.
+    Returns a dict with mname and rname, or None if unavailable.
+    """
+    try:
+        answers = dns.resolver.resolve(domain, 'SOA')
+        for rdata in answers:
+            return {
+                "mname": str(rdata.mname).rstrip('.').lower(),
+                "rname": str(rdata.rname).rstrip('.').lower(),
+            }
+    except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN):
+        return None
+
+
+def main():
+    input_path = "src/Source_Data/Cloudflare_Top100_Domains.csv"
+    results = []
+
+    with open(input_path, "r", newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+
+        for row in reader:
+            domain_name = row["domain"].strip()
+            soa = get_soa(domain_name)
+
+            if soa:
+                print(f"Domain: {domain_name}")
+                print(f"  Mname: {soa['mname']}")
+                print(f"  Rname: {soa['rname']}")
+            else:
+                print(f"Domain: {domain_name} — no SOA record found")
+
+            results.append({
+                "domain_name": domain_name,
+                "mname": soa["mname"] if soa else None,
+                "rname": soa["rname"] if soa else None,
+            })
+
+
+
+if __name__ == "__main__":
+    main()
