@@ -22,5 +22,12 @@ def main2():
     data = r.json()
     print(data)
 
+#WHOIS
+import whois
+
+def main3():
+    whoisinfo = whois.whois("chirpbooks.com")
+    print(whoisinfo)
+
 if __name__ == "__main__":
-    main2()
+    main3()
