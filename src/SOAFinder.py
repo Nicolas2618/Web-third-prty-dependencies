@@ -13,13 +13,20 @@ import re
 import csv
 import ssl
 import time
+import os
+import json
 import whois
 import socket
+import urllib.request
+import urllib.parse
 import numpy as np
 import dns.resolver
 import pandas as pa
-from typing import Optional
-import PriorityDictionary as pd
+from typing import Optional, Any
+try:
+    from . import PriorityDictionary as pd
+except ImportError:
+    import PriorityDictionary as pd
 from dataclasses import dataclass, field
 
 # ---------------------------------------------------------------------------
@@ -132,6 +139,91 @@ def get_tld(hostname: str) -> str:
     except ImportError:
         parts = hostname.rstrip(".").split(".")
         return ".".join(parts[-2:]) if len(parts) >= 2 else hostname
+
+BUILTWITH_API_KEY = "66555be8-0edc-4f46-8b3e-c5fc11866402"
+BUILTWITH_API_URL = "https://api.builtwith.com/rv4/api.json"
+
+
+def _extract_domains_from_value(value: Any) -> set[str]:
+    domains: set[str] = set()
+    if isinstance(value, dict):
+        for item in value.values():
+            domains |= _extract_domains_from_value(item)
+    elif isinstance(value, list):
+        for item in value:
+            domains |= _extract_domains_from_value(item)
+    elif isinstance(value, str):
+        for match in re.findall(r"\b([A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z]{2,})+)\b", value):
+            if "@" in match:
+                continue
+            domains.add(get_tld(match))
+    return domains
+
+
+def _hostname_tokens(value: str) -> set[str]:
+    return set(re.findall(r"[a-z0-9]{3,}", value.lower()))
+
+
+def builtwith_query(domain: str) -> Optional[dict[str, Any]]:
+    if not BUILTWITH_API_KEY:
+        return None
+    lookup = urllib.parse.quote(domain, safe="")
+    url = f"{BUILTWITH_API_URL}?KEY={BUILTWITH_API_KEY}&LOOKUP={lookup}"
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            text = resp.read().decode("utf-8", errors="replace")
+
+        if text.lstrip().startswith("{"):
+            payload = json.loads(text)
+            if isinstance(payload, dict) and payload.get("Errors"):
+                return None
+            return payload
+
+        rows = list(csv.DictReader(text.splitlines()))
+        return {"rows": rows}
+    except Exception:
+        return None
+
+def builtwith_domains(domain: str) -> set[str]:
+    payload = builtwith_query(domain)
+    return _extract_domains_from_value(payload) if payload else set()
+
+def builtwith_dns_providers(domain: str) -> set[str]:
+    """Return DNS provider names/domains BuiltWith reports for this domain."""
+    payload = builtwith_query(domain)
+    if not payload:
+        return set()
+    
+    providers: set[str] = set()
+    # BuiltWith nests tech under Results > Result > Paths > Technologies
+    for result in payload.get("Results", []):
+        for path in result.get("Result", {}).get("Paths", []):
+            for tech in path.get("Technologies", []):
+                # Filter to DNS category only
+                cats = [c.get("Name", "") for c in tech.get("Categories", [])]
+                if any("dns" in c.lower() for c in cats):
+                    name = tech.get("Name", "").lower()
+                    tag = tech.get("Tag", "").lower()
+                    if name:
+                        providers.add(name)
+                    if tag:
+                        providers.add(tag)
+    return providers
+
+def builtwith_dns_provider_match(domain: str, ns: str) -> bool:
+    """Return True if BuiltWith reports a DNS provider that matches the nameserver."""
+    providers = builtwith_dns_providers(domain)
+    if not providers:
+        return False
+    
+    ns_tokens = set(re.findall(r"[a-z0-9]{3,}", ns.lower()))
+    
+    for provider in providers:
+        provider_tokens = set(re.findall(r"[a-z0-9]{3,}", provider))
+        if ns_tokens & provider_tokens:
+            return True
+    return False
 
 def get_soa(hostname: str) -> Optional[str]:
     """
@@ -247,6 +339,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
                 domain_soa: Optional[str]) -> tuple[str, str]:
     
     ns_tld = get_tld(ns)
+    ns_soa = get_soa(ns)
 
     # Rule 1: same TLD
     if ns_tld == domain_tld:
@@ -255,6 +348,10 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     # Rule 2: HTTPS + SAN
     if domain_https and ns_tld in domain_san:
         return "private", f"ns TLD found in domain's TLS SAN (domain={domain_soa}, ns={ns_soa})"
+    
+    # Rule 3.75: connected DNS provider via BuiltWith
+    if builtwith_dns_provider_match(domain, ns_tld):
+        return "private", f"domain connected to nameserver provider via BuiltWith (domain={domain}, ns={ns_tld})"
     
     # Rule 3: WHOIS identity match (last resort, slow)
     try:
@@ -275,7 +372,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
 
         # Match either exact normalized WHOIS values or overlapping identity tokens.
         if (dn_keys and ms_keys and dn_keys & ms_keys) or (dn_terms and ms_terms and dn_terms & ms_terms):
-            return "third", f"different SOA (domain={domain_soa}, ns={ns_soa})"
+            return "private", "same organization in whois"
     except (ConnectionResetError, BrokenPipeError, OSError):
         pass  # WHOIS unavailable; skip to next rule
     except Exception:
@@ -288,14 +385,12 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
         return "private", f"same authoritative nameservers (domain={domain_soa}, ns={ns_soa})"
     
     # Rule 4: different SOA
-    ns_soa = get_soa(ns)
-
     if ns_soa is not None and domain_soa is not None and ns_soa != domain_soa:
         # ↓ Add this block before returning "third"
         ns_provider = regular_expression_nameserver(ns_soa)
         domain_provider = regular_expression_nameserver(domain_soa)
         if ns_provider and domain_provider and ns_provider == domain_provider:
-            return "private", "same nameserver provider despite different SOA"
+            return "private", f"same nameserver provider despite different SOA (domain={domain_soa}, ns={ns_soa})"
         return "third", f"different SOA (domain={domain_soa}, ns={ns_soa})"
     
     # Rule 5: concentration
@@ -372,6 +467,9 @@ def process_csv(input_path: str, output_path: str,
 def main():
     input_path = "src/Source_Data/Cloudflare_Top100_Domains.csv"
     output_path = "ns_results.csv"
+    
+    #input_path = "src/Source_Data/example.csv"
+    #output_path = "example_results.csv"
 
     global SAMPLE_DOMAINS
     with open(input_path, newline="", encoding="utf-8") as f:
@@ -380,7 +478,7 @@ def main():
 
     process_csv(input_path, output_path)
     #Use pandas to read the output csv file and put it into a new CSV that is more nicely formatted.
-    df = pa.read_csv("ns_results.csv")
+    #df = pa.read_csv("ns_results.csv")
     #print(df.to_string())
 
 if __name__ == "__main__":
