@@ -63,7 +63,7 @@ def get_auth_ns_set(domain: str) -> frozenset[str]:
     except Exception:
         return frozenset()
     
-def normalize_whois_string(value) -> Optional[str]:
+'''def normalize_whois_string(value) -> Optional[str]:
     if isinstance(value, (list, tuple)):
         for item in value:
             normalized = normalize_whois_string(item)
@@ -111,7 +111,7 @@ def whois_identity_terms(info) -> set[str]:
             if len(token) < 3 or token in WHOIS_STOP_WORDS:
                 continue
             terms.add(token)
-    return terms
+    return terms'''
 
 def get_tld(hostname: str) -> str:
     """
@@ -162,28 +162,27 @@ def regular_expression_nameserver(retrieved_SOA: str) -> str:
         return nameserver
     return None
     
-
 def is_https(domain: str, retries: int = 2, timeout: int = 10) -> bool:
     """Return True if the domain responds on HTTPS (port 443)."""
-    for attempt in range(retries):
+    for attempt in range(retries + 1):  # +1 so retries=2 means 3 total attempts
         try:
             ctx = ssl.create_default_context()
             conn = socket.create_connection((domain, 443), timeout=timeout)
             with ctx.wrap_socket(conn, server_hostname=domain):
                 return True
         except (ConnectionResetError, BrokenPipeError):
-            if attempt < retries - 1:
+            if attempt < retries:
                 time.sleep(1)
             continue
         except Exception:
-            return False
+            return False  # non-transient error, don't retry
     return False
 
 
 def get_san_tlds(domain: str, retries: int = 2, timeout: int = 10) -> set[str]:
     """Return registered domains from TLS SAN for `domain`."""
     sans: set[str] = set()
-    for attempt in range(retries):
+    for attempt in range(retries + 1):  # +1 so retries=2 means 3 total attempts
         try:
             ctx = ssl.create_default_context()
             conn = socket.create_connection((domain, 443), timeout=timeout)
@@ -195,11 +194,11 @@ def get_san_tlds(domain: str, retries: int = 2, timeout: int = 10) -> set[str]:
                         sans.add(get_tld(clean))
                 return sans  # success — exit early
         except (ConnectionResetError, BrokenPipeError):
-            if attempt < retries - 1:
+            if attempt < retries:
                 time.sleep(1)
-            continue
+            continue  # transient — retry
         except Exception:
-            break
+            break  # permanent failure (no HTTPS, bad cert, etc.) — don't retry
     return sans
 
 # ---------------------------------------------------------------------------
@@ -257,7 +256,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
         return "private", "ns TLD found in domain's TLS SAN"
     
     # Rule 3: WHOIS identity match (last resort, slow)
-    try:
+    '''try:
         dn_info = whois.whois(domain)
         dn_keys = whois_identity_keys(dn_info)
         dn_terms = whois_identity_terms(dn_info)
@@ -279,7 +278,7 @@ def classify_ns(ns: str, domain: str, domain_tld: str,
     except (ConnectionResetError, BrokenPipeError, OSError):
         pass  # WHOIS unavailable; skip to next rule
     except Exception:
-        pass
+        pass'''
 
     # Rule 3.5: shared authoritative nameservers
     domain_auth_ns = get_auth_ns_set(domain)
@@ -385,3 +384,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
