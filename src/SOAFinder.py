@@ -464,7 +464,7 @@ def main():
     #output_path = "ns_results.csv"
     
     input_path = "src/Source_Data/example.csv"
-    output_path = "example_results1.csv"
+    output_path = "example_results.csv"
 
     global SAMPLE_DOMAINS
     with open(input_path, newline="", encoding="utf-8") as f:
