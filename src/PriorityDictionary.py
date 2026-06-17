@@ -69,7 +69,7 @@ def classify_by_soa(domain: str, soa: dict) -> tuple[str, str]:
     domain_tld = get_tld(domain)
     mname_tld  = get_tld(soa["mname"])
     rname_tld  = get_tld(soa["rname"])
-
+    
     # Both point to the same owner — definitely private
     if mname_tld == domain_tld and rname_tld == domain_tld:
         return "private", f"SOA mname and rname both match domain"
