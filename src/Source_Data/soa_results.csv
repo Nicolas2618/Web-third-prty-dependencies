@@ -1,102 +1,476 @@
-domain_name,mname,rname,type,reason
-microsoft.com,ns1-39.azure-dns.com,azuredns-hostmaster.microsoft.com,third,SOA mname points to third party: azure
-googleapis.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-cloudflare.com,ns3.cloudflare.com,dns.cloudflare.com,private,SOA mname and rname both match domain
-gstatic.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-apple.com,ns-ext-prod.jackfruit.apple.com,dnscontact.apple.com,private,SOA mname and rname both match domain
-google.com,ns1.google.com,dns-admin.google.com,private,SOA mname and rname both match domain
-facebook.com,a.ns.facebook.com,dns.facebook.com,private,SOA mname and rname both match domain
-amazonaws.com,dns-external-route53.us-east-1.amazonaws.com,hostmaster.amazon.com,managed by third party,SOA rname points to: hostmaster
-googlevideo.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-fbcdn.net,a.ns.facebook.com,dns.facebook.com,third,SOA mname points to third party: facebook
-amazon.com,dns-external-route53.us-east-1.amazonaws.com,root.amazon.com,third,SOA mname points to third party: amazonaws
-youtube.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-instagram.com,a.ns.instagram.com,dns.facebook.com,managed by third party,SOA rname points to: facebook
-whatsapp.net,a.ns.whatsapp.net,dns.whatsapp.net,private,SOA mname and rname both match domain
-live.com,ns1-37.azure-dns.com,msnhst.microsoft.com,third,SOA mname points to third party: azure
-doubleclick.net,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-bing.com,ns1-204.azure-dns.com,azuredns-hostmaster.microsoft.com,third,SOA mname points to third party: azure
-apple-dns.net,ns-ext-prod.jackfruit.apple.com,dnscontact.apple.com,third,SOA mname points to third party: jackfruit
-netflix.com,ns-81.awsdns-10.com,awsdns-hostmaster.amazon.com,third,SOA mname points to third party: awsdns
-akadns.net,internal.akadns.net,hostmaster.akamai.com,managed by third party,SOA rname points to: hostmaster
-ntp.org,ns1.everett.org,postmaster.ntp.org,third,SOA mname points to third party: everett
-googleusercontent.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-icloud.com,ns-ext-prod.jackfruit.apple.com,dnscontact.apple.com,third,SOA mname points to third party: jackfruit
-googlesyndication.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-cdninstagram.com,a.ns.instagram.com,dns.facebook.com,third,SOA mname points to third party: instagram
-chatgpt.com,hassan.ns.cloudflare.com,dns.cloudflare.com,third,SOA mname points to third party: hassan
-cloudflare-dns.com,ns1.cloudflare-dns.com,dns.cloudflare.com,managed by third party,SOA rname points to: cloudflare
-akamai.net,internal.akamaitech.net,hostmaster.akamai.com,third,SOA mname points to third party: internal
-aaplimg.com,ns-ext-prod.jackfruit.apple.com,dnscontact.apple.com,third,SOA mname points to third party: jackfruit
-tiktokcdn.com,a9-66.akam.net,hostmaster.akamai.com,third,SOA mname points to third party: akam
-tiktokv.com,a9-66.akam.net,hostmaster.akamai.com,third,SOA mname points to third party: akam
-cloudfront.net,ns-418.awsdns-52.com,hostmaster.cloudfront.net,third,SOA mname points to third party: awsdns
-ui.com,ns-1849.awsdns-39.co.uk,awsdns-hostmaster.amazon.com,third,SOA mname points to third party: awsdns
-ytimg.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-akamaiedge.net,internal.akamaiedge.net,hostmaster.akamai.com,managed by third party,SOA rname points to: hostmaster
-edgcdn.net,treasure.ns.cloudflare.com,dns.cloudflare.com,third,SOA mname points to third party: treasure
-yahoo.com,ns1.yahoo.com,hostmaster.yahoo-inc.com,managed by third party,SOA rname points to: hostmaster
-gvt2.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-spotify.com,dns1.p07.nsone.net,hostmaster.nsone.net,third,SOA mname points to third party: nsone
-fastly.net,ns1.fastly.net,hostmaster.fastly.com,managed by third party,SOA rname points to: hostmaster
-samsung.com,dns02.cst.ic,ssdomain.samsung.com,third,SOA mname points to third party: cst
-roblox.com,dns1.p06.nsone.net,hostmaster.nsone.net,third,SOA mname points to third party: nsone
-baidu.com,dns.baidu.com,sa.baidu.com,private,SOA mname and rname both match domain
-office.com,ns1-05.azure-dns.com,msnhst.microsoft.com,third,SOA mname points to third party: azure
-sentry.io,ns-cloud-d1.googledomains.com,cloud-dns-hostmaster.google.com,third,SOA mname points to third party: googledomains
-wikipedia.org,ns0.wikimedia.org,hostmaster.wikimedia.org,third,SOA mname points to third party: wikimedia
-criteo.com,ns1.criteo.com,dns.criteo.com,private,SOA mname and rname both match domain
-app-analytics-services.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-app-measurement.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-gvt1.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-prodregistryv2.org,ns-1528.awsdns-63.org,awsdns-hostmaster.amazon.com,third,SOA mname points to third party: awsdns
-steamserver.net,ns1.valvesoftware.com,admin.valvesoftware.com,third,SOA mname points to third party: valvesoftware
-dns.google,ns1.zdns.google,cloud-dns-hostmaster.google.com,third,SOA mname points to third party: zdns
-one.one,a.b-one-dns.net,hostmaster.one.com,third,SOA mname points to third party: net
-google-analytics.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-msftncsi.com,ns1-34.azure-dns.com,azuredns-hostmaster.microsoft.com,third,SOA mname points to third party: azure
-snapchat.com,ns-220.awsdns-27.com,awsdns-hostmaster.amazon.com,third,SOA mname points to third party: awsdns
-applovin.com,ns-cloud-c1.googledomains.com,hostmaster.akamai.com,third,SOA mname points to third party: googledomains
-3gppnetwork.org,dns51.cloudns.net,support.cloudns.net,third,SOA mname points to third party: cloudns
-appsflyersdk.com,ns-1430.awsdns-50.org,awsdns-hostmaster.amazon.com,third,SOA mname points to third party: awsdns
-trafficmanager.net,tm1.dns-tm.com,hostmaster.trafficmanager.net,third,SOA mname points to third party: com
-azure.com,ns1-39.azure-dns.com,azuredns-hostmaster.microsoft.com,third,SOA mname points to third party: azure
-whatsapp.com,a.ns.whatsapp.net,dns.whatsapp.net,third,SOA mname points to third party: whatsapp
-googletagmanager.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-windows.com,ns1-205.azure-dns.com,azuredns-hostmaster.microsoft.com,third,SOA mname points to third party: azure
-amazon-adsystem.com,dns-external-route53.us-east-1.amazonaws.com,root.amazon.com,third,SOA mname points to third party: amazonaws
-msn.com,ns1-204.azure-dns.com,azuredns-hostmaster.microsoft.com,third,SOA mname points to third party: azure
-googleadservices.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-ggpht.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-oxylabs.io,brit.ns.cloudflare.com,dns.cloudflare.com,third,SOA mname points to third party: brit
-amazon.dev,ns-729.awsdns-27.net,awsdns-hostmaster.amazon.com,third,SOA mname points to third party: awsdns
-linkedin.com,ns1-42.azure-dns.com,hostmaster.linkedin.com,third,SOA mname points to third party: azure
-windows.net,ns1-39.azure-dns.com,azuredns-hostmaster.microsoft.com,third,SOA mname points to third party: azure
-unity3d.com,use4.akam.net,hostmaster.akamai.com,third,SOA mname points to third party: use
-microsoftonline.com,ns1-38.azure-dns.com,msnhst.microsoft.com,third,SOA mname points to third party: azure
-a2z.com,dns-external-route53.us-east-1.amazonaws.com,root.amazon.com,third,SOA mname points to third party: amazonaws
-adtrafficquality.google,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-xiaomi.com,ns3.dnsv5.com,enterprise3dnsadmin.dnspod.com,third,SOA mname points to third party: dnsv
-playstation.net,ns00.playstation.net,root.ns00.playstation.net,private,SOA mname and rname both match domain
-skype.com,ns1-205.azure-dns.com,azuredns-hostmaster.microsoft.com,third,SOA mname points to third party: azure
-rubiconproject.com,ns-644.awsdns-16.net,awsdns-hostmaster.amazon.com,third,SOA mname points to third party: awsdns
-capcutapi.com,a1-156.akam.net,hostmaster.capcutapi.com,third,SOA mname points to third party: akam
-vungle.com,vungle.com,root.vungle.com,private,SOA mname and rname both match domain
-msftconnecttest.com,ns1-32.azure-dns.com,azuredns-hostmaster.microsoft.com,third,SOA mname points to third party: azure
-taboola.com,dns1.p05.nsone.net,hostmaster.nsone.net,third,SOA mname points to third party: nsone
-windowsupdate.com,ns1-205.azure-dns.com,azuredns-hostmaster.microsoft.com,third,SOA mname points to third party: azure
-digicert.com,ns20.digicertdns.com,dns.digicertdns.com,third,SOA mname points to third party: digicertdns
-gmail.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-cloud.microsoft,ns1-33.azure-dns.com,azuredns-hostmaster.microsoft.com,third,SOA mname points to third party: azure
-qq.com,ns1.qq.com,webmaster.qq.com,private,SOA mname and rname both match domain
-tiktok.com,a9-66.akam.net,hostmaster.akamai.com,third,SOA mname points to third party: akam
-aws.dev,ns-1918.awsdns-47.co.uk,awsdns-hostmaster.amazon.com,third,SOA mname points to third party: awsdns
-miui.com,ns3.dnsv5.com,enterprise3dnsadmin.dnspod.com,third,SOA mname points to third party: dnsv
-cdn-apple.com,ns-ext-prod.jackfruit.apple.com,dnscontact.apple.com,third,SOA mname points to third party: jackfruit
-pubmatic.com,dns1.p01.nsone.net,hostmaster.nsone.net,third,SOA mname points to third party: nsone
-adsrvr.org,dns1.p08.nsone.net,hostmaster.nsone.net,third,SOA mname points to third party: nsone
-avast.com,a1-182.akam.net,hostmaster.avast.com,third,SOA mname points to third party: akam
-avsxappcaptiveportal.com,ns-1205.awsdns-22.org,awsdns-hostmaster.amazon.com,third,SOA mname points to third party: awsdns
-android.com,ns1.google.com,dns-admin.google.com,third,SOA mname points to third party: google
-reddit.com,ns-557.awsdns-05.net,awsdns-hostmaster.amazon.com,third,SOA mname points to third party: awsdns
-chirpbooks.com,ns-1378.awsdns-44.org,awsdns-hostmaster.amazon.com,third,SOA mname points to third party: awsdns
+domain,nameserver,type,reason
+microsoft.com,ns4-39.azure-dns.info,third,SOA mname points to third party: azure
+microsoft.com,ns1-39.azure-dns.com,third,SOA mname points to third party: azure
+microsoft.com,ns2-39.azure-dns.net,third,SOA mname points to third party: azure
+microsoft.com,ns3-39.azure-dns.org,third,SOA mname points to third party: azure
+googleapis.com,ns3.google.com,third,SOA mname points to third party: google
+googleapis.com,ns4.google.com,third,SOA mname points to third party: google
+googleapis.com,ns1.google.com,third,SOA mname points to third party: google
+googleapis.com,ns2.google.com,third,SOA mname points to third party: google
+cloudflare.com,ns5.cloudflare.com,private,NS TLD matches domain TLD
+cloudflare.com,ns6.cloudflare.com,private,NS TLD matches domain TLD
+cloudflare.com,ns7.cloudflare.com,private,NS TLD matches domain TLD
+cloudflare.com,ns3.cloudflare.com,private,NS TLD matches domain TLD
+cloudflare.com,ns4.cloudflare.com,private,NS TLD matches domain TLD
+gstatic.com,ns2.google.com,third,SOA mname points to third party: google
+gstatic.com,ns1.google.com,third,SOA mname points to third party: google
+gstatic.com,ns3.google.com,third,SOA mname points to third party: google
+gstatic.com,ns4.google.com,third,SOA mname points to third party: google
+apple.com,d.ns.apple.com,private,NS TLD matches domain TLD
+apple.com,a.ns.apple.com,private,NS TLD matches domain TLD
+apple.com,b.ns.apple.com,private,NS TLD matches domain TLD
+apple.com,c.ns.apple.com,private,NS TLD matches domain TLD
+google.com,ns2.google.com,private,NS TLD matches domain TLD
+google.com,ns3.google.com,private,NS TLD matches domain TLD
+google.com,ns1.google.com,private,NS TLD matches domain TLD
+google.com,ns4.google.com,private,NS TLD matches domain TLD
+facebook.com,c.ns.facebook.com,private,NS TLD matches domain TLD
+facebook.com,b.ns.facebook.com,private,NS TLD matches domain TLD
+facebook.com,d.ns.facebook.com,private,NS TLD matches domain TLD
+facebook.com,a.ns.facebook.com,private,NS TLD matches domain TLD
+amazonaws.com,ns-1670.awsdns-16.co.uk,third,SOA rname points to: hostmaster
+amazonaws.com,ns-27.awsdns-03.com,third,SOA rname points to: hostmaster
+amazonaws.com,ns-967.awsdns-56.net,third,SOA rname points to: hostmaster
+amazonaws.com,ns-1321.awsdns-37.org,third,SOA rname points to: hostmaster
+googlevideo.com,ns2.google.com,third,SOA mname points to third party: google
+googlevideo.com,ns4.google.com,third,SOA mname points to third party: google
+googlevideo.com,ns1.google.com,third,SOA mname points to third party: google
+googlevideo.com,ns3.google.com,third,SOA mname points to third party: google
+fbcdn.net,c.ns.facebook.com,third,SOA mname points to third party: facebook
+fbcdn.net,a.ns.facebook.com,third,SOA mname points to third party: facebook
+fbcdn.net,b.ns.facebook.com,third,SOA mname points to third party: facebook
+fbcdn.net,d.ns.facebook.com,third,SOA mname points to third party: facebook
+amazon.com,ns-1707.awsdns-21.co.uk,third,SOA mname points to third party: amazonaws
+amazon.com,ns-264.awsdns-33.com,third,SOA mname points to third party: amazonaws
+amazon.com,ns-521.awsdns-01.net,third,SOA mname points to third party: amazonaws
+amazon.com,ns-1447.awsdns-52.org,third,SOA mname points to third party: amazonaws
+youtube.com,ns3.google.com,third,SOA mname points to third party: google
+youtube.com,ns1.google.com,third,SOA mname points to third party: google
+youtube.com,ns2.google.com,third,SOA mname points to third party: google
+youtube.com,ns4.google.com,third,SOA mname points to third party: google
+instagram.com,c.ns.instagram.com,private,NS TLD matches domain TLD
+instagram.com,b.ns.instagram.com,private,NS TLD matches domain TLD
+instagram.com,d.ns.instagram.com,private,NS TLD matches domain TLD
+instagram.com,a.ns.instagram.com,private,NS TLD matches domain TLD
+whatsapp.net,d.ns.whatsapp.net,private,NS TLD matches domain TLD
+whatsapp.net,a.ns.whatsapp.net,private,NS TLD matches domain TLD
+whatsapp.net,c.ns.whatsapp.net,private,NS TLD matches domain TLD
+whatsapp.net,b.ns.whatsapp.net,private,NS TLD matches domain TLD
+live.com,ns1-37.azure-dns.com,third,SOA mname points to third party: azure
+live.com,ns2-37.azure-dns.net,third,SOA mname points to third party: azure
+live.com,ns3-37.azure-dns.org,third,SOA mname points to third party: azure
+live.com,ns4-37.azure-dns.info,third,SOA mname points to third party: azure
+doubleclick.net,ns1.google.com,third,SOA mname points to third party: google
+doubleclick.net,ns2.google.com,third,SOA mname points to third party: google
+doubleclick.net,ns3.google.com,third,SOA mname points to third party: google
+doubleclick.net,ns4.google.com,third,SOA mname points to third party: google
+bing.com,ns3-204.azure-dns.org,third,SOA mname points to third party: azure
+bing.com,ns4-204.azure-dns.info,third,SOA mname points to third party: azure
+bing.com,dns1.p09.nsone.net,third,SOA mname points to third party: azure
+bing.com,dns2.p09.nsone.net,third,SOA mname points to third party: azure
+bing.com,dns3.p09.nsone.net,third,SOA mname points to third party: azure
+bing.com,dns4.p09.nsone.net,third,SOA mname points to third party: azure
+bing.com,ns1-204.azure-dns.com,third,SOA mname points to third party: azure
+bing.com,ns2-204.azure-dns.net,third,SOA mname points to third party: azure
+apple-dns.net,d.ns.apple.com,third,SOA mname points to third party: jackfruit
+apple-dns.net,a.ns.apple.com,third,SOA mname points to third party: jackfruit
+apple-dns.net,b.ns.apple.com,third,SOA mname points to third party: jackfruit
+apple-dns.net,c.ns.apple.com,third,SOA mname points to third party: jackfruit
+netflix.com,ns-81.awsdns-10.com,third,SOA mname points to third party: awsdns
+netflix.com,ns-1372.awsdns-43.org,third,SOA mname points to third party: awsdns
+netflix.com,ns-1984.awsdns-56.co.uk,third,SOA mname points to third party: awsdns
+netflix.com,ns-659.awsdns-18.net,third,SOA mname points to third party: awsdns
+akadns.net,a8-130.akadns.net,private,NS TLD matches domain TLD
+akadns.net,a46-129.akadns.net,private,NS TLD matches domain TLD
+akadns.net,a3-129.akadns.net,private,NS TLD matches domain TLD
+akadns.net,a42-130.akagtm.org,third,SOA rname points to: hostmaster
+akadns.net,a44-131.akadns.net,private,NS TLD matches domain TLD
+akadns.net,a1-128.akadns.net,private,NS TLD matches domain TLD
+akadns.net,a7-130.akagtm.org,third,SOA rname points to: hostmaster
+akadns.net,a28-129.akagtm.org,third,SOA rname points to: hostmaster
+akadns.net,a18-128.akagtm.org,third,SOA rname points to: hostmaster
+ntp.org,ns1.everett.org,third,SOA mname points to third party: everett
+ntp.org,dns1.udel.edu,third,SOA mname points to third party: everett
+ntp.org,dns2.udel.edu,third,SOA mname points to third party: everett
+ntp.org,anyns.pch.net,third,SOA mname points to third party: everett
+googleusercontent.com,ns1.google.com,third,SOA mname points to third party: google
+googleusercontent.com,ns3.google.com,third,SOA mname points to third party: google
+googleusercontent.com,ns2.google.com,third,SOA mname points to third party: google
+googleusercontent.com,ns4.google.com,third,SOA mname points to third party: google
+icloud.com,d.ns.apple.com,third,SOA mname points to third party: jackfruit
+icloud.com,a.ns.apple.com,third,SOA mname points to third party: jackfruit
+icloud.com,b.ns.apple.com,third,SOA mname points to third party: jackfruit
+icloud.com,c.ns.apple.com,third,SOA mname points to third party: jackfruit
+googlesyndication.com,ns3.google.com,third,SOA mname points to third party: google
+googlesyndication.com,ns2.google.com,third,SOA mname points to third party: google
+googlesyndication.com,ns4.google.com,third,SOA mname points to third party: google
+googlesyndication.com,ns1.google.com,third,SOA mname points to third party: google
+cdninstagram.com,a.ns.instagram.com,third,SOA mname points to third party: instagram
+cdninstagram.com,d.ns.instagram.com,third,SOA mname points to third party: instagram
+cdninstagram.com,c.ns.instagram.com,third,SOA mname points to third party: instagram
+cdninstagram.com,b.ns.instagram.com,third,SOA mname points to third party: instagram
+chatgpt.com,savanna.ns.cloudflare.com,third,SOA mname points to third party: hassan
+chatgpt.com,hassan.ns.cloudflare.com,third,SOA mname points to third party: hassan
+cloudflare-dns.com,ns3.cloudflare-dns.com,private,NS TLD matches domain TLD
+cloudflare-dns.com,ns1.cloudflare-dns.com,private,NS TLD matches domain TLD
+cloudflare-dns.com,ns2.cloudflare-dns.com,private,NS TLD matches domain TLD
+akamai.net,a6-193.akamaitech.net,third,SOA mname points to third party: internal
+akamai.net,zc.akamaitech.net,third,SOA mname points to third party: internal
+akamai.net,ns5-193.akamaitech.net,third,SOA mname points to third party: internal
+akamai.net,a12-193.akamaitech.net,third,SOA mname points to third party: internal
+akamai.net,a1-193.akamaitech.net,third,SOA mname points to third party: internal
+akamai.net,ns4-193.akamaitech.net,third,SOA mname points to third party: internal
+akamai.net,ns3-193.akamaitech.net,third,SOA mname points to third party: internal
+akamai.net,zd.akamaitech.net,third,SOA mname points to third party: internal
+akamai.net,zb.akamaitech.net,third,SOA mname points to third party: internal
+akamai.net,a5-193.akamaitech.net,third,SOA mname points to third party: internal
+akamai.net,a3-193.akamaitech.net,third,SOA mname points to third party: internal
+akamai.net,a22-193.akamaitech.net,third,SOA mname points to third party: internal
+akamai.net,ns2-193.akamaitech.net,third,SOA mname points to third party: internal
+aaplimg.com,b.ns.apple.com,third,SOA mname points to third party: jackfruit
+aaplimg.com,c.ns.apple.com,third,SOA mname points to third party: jackfruit
+aaplimg.com,d.ns.apple.com,third,SOA mname points to third party: jackfruit
+aaplimg.com,a.ns.apple.com,third,SOA mname points to third party: jackfruit
+tiktokcdn.com,a12-66.akam.net,third,SOA mname points to third party: akam
+tiktokcdn.com,a6-65.akam.net,third,SOA mname points to third party: akam
+tiktokcdn.com,a13-67.akam.net,third,SOA mname points to third party: akam
+tiktokcdn.com,a9-66.akam.net,third,SOA mname points to third party: akam
+tiktokcdn.com,a18-64.akam.net,third,SOA mname points to third party: akam
+tiktokcdn.com,a1-97.akam.net,third,SOA mname points to third party: akam
+tiktokv.com,a13-67.akam.net,third,SOA mname points to third party: akam
+tiktokv.com,a1-97.akam.net,third,SOA mname points to third party: akam
+tiktokv.com,a18-64.akam.net,third,SOA mname points to third party: akam
+tiktokv.com,a6-65.akam.net,third,SOA mname points to third party: akam
+tiktokv.com,a9-66.akam.net,third,SOA mname points to third party: akam
+tiktokv.com,a12-66.akam.net,third,SOA mname points to third party: akam
+cloudfront.net,ns-1597.awsdns-07.co.uk,third,SOA mname points to third party: awsdns
+cloudfront.net,ns-418.awsdns-52.com,third,SOA mname points to third party: awsdns
+cloudfront.net,ns-666.awsdns-19.net,third,SOA mname points to third party: awsdns
+cloudfront.net,ns-1306.awsdns-35.org,third,SOA mname points to third party: awsdns
+ui.com,ns-277.awsdns-34.com,third,SOA mname points to third party: awsdns
+ui.com,ns-656.awsdns-18.net,third,SOA mname points to third party: awsdns
+ui.com,ns-1469.awsdns-55.org,third,SOA mname points to third party: awsdns
+ui.com,ns-1849.awsdns-39.co.uk,third,SOA mname points to third party: awsdns
+ytimg.com,ns3.google.com,third,SOA mname points to third party: google
+ytimg.com,ns4.google.com,third,SOA mname points to third party: google
+ytimg.com,ns1.google.com,third,SOA mname points to third party: google
+ytimg.com,ns2.google.com,third,SOA mname points to third party: google
+akamaiedge.net,ns3-194.akamaiedge.net,private,NS TLD matches domain TLD
+akamaiedge.net,a12-192.akamaiedge.net,private,NS TLD matches domain TLD
+akamaiedge.net,a28-192.akamaiedge.net,private,NS TLD matches domain TLD
+akamaiedge.net,a6-192.akamaiedge.net,private,NS TLD matches domain TLD
+akamaiedge.net,a1-192.akamaiedge.net,private,NS TLD matches domain TLD
+akamaiedge.net,la1.akamaiedge.net,private,NS TLD matches domain TLD
+akamaiedge.net,la3.akamaiedge.net,private,NS TLD matches domain TLD
+akamaiedge.net,lar2.akamaiedge.net,private,NS TLD matches domain TLD
+edgcdn.net,treasure.ns.cloudflare.com,third,SOA mname points to third party: treasure
+edgcdn.net,will.ns.cloudflare.com,third,SOA mname points to third party: treasure
+yahoo.com,ns4.yahoo.com,private,NS TLD matches domain TLD
+yahoo.com,ns5.yahoo.com,private,NS TLD matches domain TLD
+yahoo.com,ns2.yahoo.com,private,NS TLD matches domain TLD
+yahoo.com,ns1.yahoo.com,private,NS TLD matches domain TLD
+yahoo.com,ns3.yahoo.com,private,NS TLD matches domain TLD
+gvt2.com,ns3.google.com,third,SOA mname points to third party: google
+gvt2.com,ns4.google.com,third,SOA mname points to third party: google
+gvt2.com,ns2.google.com,third,SOA mname points to third party: google
+gvt2.com,ns1.google.com,third,SOA mname points to third party: google
+spotify.com,ns-cloud-a4.googledomains.com,third,SOA mname points to third party: nsone
+spotify.com,ns-cloud-a2.googledomains.com,third,SOA mname points to third party: nsone
+spotify.com,ns-cloud-a1.googledomains.com,third,SOA mname points to third party: nsone
+spotify.com,ns-cloud-a3.googledomains.com,third,SOA mname points to third party: nsone
+spotify.com,dns1.p07.nsone.net,third,SOA mname points to third party: nsone
+fastly.net,ns2.fastly.net,private,NS TLD matches domain TLD
+fastly.net,ns3.fastly.net,private,NS TLD matches domain TLD
+fastly.net,ns4.fastly.net,private,NS TLD matches domain TLD
+fastly.net,ns1.fastly.net,private,NS TLD matches domain TLD
+samsung.com,auth01.sam.ic,third,SOA mname points to third party: sam
+samsung.com,dns-gi2.samsung.com,private,NS TLD matches domain TLD
+samsung.com,dns-awskr1.samsung.com,private,NS TLD matches domain TLD
+samsung.com,dns-gi1.samsung.com,private,NS TLD matches domain TLD
+samsung.com,dnsst2.samsung.com,private,NS TLD matches domain TLD
+samsung.com,dnssm2.samsung.com,private,NS TLD matches domain TLD
+samsung.com,dnsst.samsung.com,private,NS TLD matches domain TLD
+samsung.com,dnssm.samsung.com,private,NS TLD matches domain TLD
+roblox.com,dns2.p06.nsone.net,third,SOA mname points to third party: nsone
+roblox.com,dns3.p06.nsone.net,third,SOA mname points to third party: nsone
+roblox.com,dns4.p06.nsone.net,third,SOA mname points to third party: nsone
+roblox.com,ns01.rbxinfra.net,third,SOA mname points to third party: nsone
+roblox.com,ns02.rbxinfra.net,third,SOA mname points to third party: nsone
+roblox.com,ns03.rbxinfra.net,third,SOA mname points to third party: nsone
+roblox.com,ns04.rbxinfra.net,third,SOA mname points to third party: nsone
+roblox.com,dns1.p06.nsone.net,third,SOA mname points to third party: nsone
+baidu.com,ns3.baidu.com,private,NS TLD matches domain TLD
+baidu.com,ns2.baidu.com,private,NS TLD matches domain TLD
+baidu.com,ns7.baidu.com,private,NS TLD matches domain TLD
+baidu.com,ns4.baidu.com,private,NS TLD matches domain TLD
+baidu.com,dns.baidu.com,private,NS TLD matches domain TLD
+office.com,ns1-05.azure-dns.com,third,SOA mname points to third party: azure
+office.com,ns2-05.azure-dns.net,third,SOA mname points to third party: azure
+office.com,ns3-05.azure-dns.org,third,SOA mname points to third party: azure
+office.com,ns4-05.azure-dns.info,third,SOA mname points to third party: azure
+sentry.io,ns-cloud-d2.googledomains.com,third,SOA mname points to third party: googledomains
+sentry.io,ns-cloud-d1.googledomains.com,third,SOA mname points to third party: googledomains
+sentry.io,ns-cloud-d4.googledomains.com,third,SOA mname points to third party: googledomains
+sentry.io,ns-cloud-d3.googledomains.com,third,SOA mname points to third party: googledomains
+wikipedia.org,ns0.wikimedia.org,third,SOA mname points to third party: wikimedia
+wikipedia.org,ns1.wikimedia.org,third,SOA mname points to third party: wikimedia
+wikipedia.org,ns2.wikimedia.org,third,SOA mname points to third party: wikimedia
+criteo.com,ns2.criteo.com,private,NS TLD matches domain TLD
+criteo.com,ns1.criteo.com,private,NS TLD matches domain TLD
+app-analytics-services.com,ns1.google.com,third,SOA mname points to third party: google
+app-analytics-services.com,ns4.google.com,third,SOA mname points to third party: google
+app-analytics-services.com,ns3.google.com,third,SOA mname points to third party: google
+app-analytics-services.com,ns2.google.com,third,SOA mname points to third party: google
+app-measurement.com,ns1.google.com,third,SOA mname points to third party: google
+app-measurement.com,ns4.google.com,third,SOA mname points to third party: google
+app-measurement.com,ns3.google.com,third,SOA mname points to third party: google
+app-measurement.com,ns2.google.com,third,SOA mname points to third party: google
+gvt1.com,ns2.google.com,third,SOA mname points to third party: google
+gvt1.com,ns4.google.com,third,SOA mname points to third party: google
+gvt1.com,ns3.google.com,third,SOA mname points to third party: google
+gvt1.com,ns1.google.com,third,SOA mname points to third party: google
+prodregistryv2.org,ns-1528.awsdns-63.org,third,SOA mname points to third party: awsdns
+prodregistryv2.org,ns-1800.awsdns-33.co.uk,third,SOA mname points to third party: awsdns
+prodregistryv2.org,ns-479.awsdns-59.com,third,SOA mname points to third party: awsdns
+prodregistryv2.org,ns-854.awsdns-42.net,third,SOA mname points to third party: awsdns
+steamserver.net,a22-67.akam.net,third,SOA mname points to third party: valvesoftware
+steamserver.net,a9-66.akam.net,third,SOA mname points to third party: valvesoftware
+steamserver.net,a1-194.akam.net,third,SOA mname points to third party: valvesoftware
+steamserver.net,a7-66.akam.net,third,SOA mname points to third party: valvesoftware
+steamserver.net,a2-64.akam.net,third,SOA mname points to third party: valvesoftware
+steamserver.net,a24-64.akam.net,third,SOA mname points to third party: valvesoftware
+dns.google,ns2.zdns.google,third,SOA mname points to third party: zdns
+dns.google,ns3.zdns.google,third,SOA mname points to third party: zdns
+dns.google,ns4.zdns.google,third,SOA mname points to third party: zdns
+dns.google,ns1.zdns.google,third,SOA mname points to third party: zdns
+one.one,auth.g1-dns.com,third,SOA mname points to third party: net
+one.one,auth.g1-dns.one,third,SOA mname points to third party: net
+google-analytics.com,ns4.google.com,third,SOA mname points to third party: google
+google-analytics.com,ns1.google.com,third,SOA mname points to third party: google
+google-analytics.com,ns3.google.com,third,SOA mname points to third party: google
+google-analytics.com,ns2.google.com,third,SOA mname points to third party: google
+msftncsi.com,ns1-34.azure-dns.com,third,SOA mname points to third party: azure
+msftncsi.com,ns2-34.azure-dns.net,third,SOA mname points to third party: azure
+msftncsi.com,ns3-34.azure-dns.org,third,SOA mname points to third party: azure
+msftncsi.com,ns4-34.azure-dns.info,third,SOA mname points to third party: azure
+snapchat.com,ns-1468.awsdns-55.org,third,SOA mname points to third party: awsdns
+snapchat.com,ns-1892.awsdns-44.co.uk,third,SOA mname points to third party: awsdns
+snapchat.com,ns-220.awsdns-27.com,third,SOA mname points to third party: awsdns
+snapchat.com,ns-530.awsdns-02.net,third,SOA mname points to third party: awsdns
+applovin.com,ns-cloud-c4.googledomains.com,third,SOA mname points to third party: googledomains
+applovin.com,ns-cloud-c1.googledomains.com,third,SOA mname points to third party: googledomains
+applovin.com,ns-cloud-c2.googledomains.com,third,SOA mname points to third party: googledomains
+applovin.com,ns-cloud-c3.googledomains.com,third,SOA mname points to third party: googledomains
+3gppnetwork.org,nn-ac.3gppnetwork.org,private,NS TLD matches domain TLD
+3gppnetwork.org,nn-eu.3gppnetwork.org,private,NS TLD matches domain TLD
+3gppnetwork.org,nn-se.3gppnetwork.org,private,NS TLD matches domain TLD
+3gppnetwork.org,ns1.1630167.cloudns.net,third,SOA mname points to third party: cloudns
+3gppnetwork.org,ns1.dnsimple.com,third,SOA mname points to third party: cloudns
+3gppnetwork.org,ns2.1630167.cloudns.com,third,SOA mname points to third party: cloudns
+3gppnetwork.org,ns2.dnsimple-edge.net,third,SOA mname points to third party: cloudns
+3gppnetwork.org,ns3.1630167.cloudns.net,third,SOA mname points to third party: cloudns
+3gppnetwork.org,ns3.dnsimple.com,third,SOA mname points to third party: cloudns
+3gppnetwork.org,ns4.1630167.cloudns.uk,third,SOA mname points to third party: cloudns
+3gppnetwork.org,ns4.dnsimple-edge.org,third,SOA mname points to third party: cloudns
+appsflyersdk.com,ns-1430.awsdns-50.org,third,SOA mname points to third party: awsdns
+appsflyersdk.com,ns-1786.awsdns-31.co.uk,third,SOA mname points to third party: awsdns
+appsflyersdk.com,ns-314.awsdns-39.com,third,SOA mname points to third party: awsdns
+appsflyersdk.com,ns-597.awsdns-10.net,third,SOA mname points to third party: awsdns
+trafficmanager.net,tm2.dns-tm.com,third,SOA mname points to third party: com
+trafficmanager.net,tm1.edgedns-tm.info,third,SOA mname points to third party: com
+trafficmanager.net,tm2.edgedns-tm.info,third,SOA mname points to third party: com
+trafficmanager.net,tm1.dns-tm.com,third,SOA mname points to third party: com
+azure.com,ns1-39.azure-dns.com,third,SOA mname points to third party: azure
+azure.com,ns2-39.azure-dns.net,third,SOA mname points to third party: azure
+azure.com,ns3-39.azure-dns.org,third,SOA mname points to third party: azure
+azure.com,ns4-39.azure-dns.info,third,SOA mname points to third party: azure
+whatsapp.com,c.ns.whatsapp.net,third,SOA mname points to third party: whatsapp
+whatsapp.com,d.ns.whatsapp.net,third,SOA mname points to third party: whatsapp
+whatsapp.com,b.ns.whatsapp.net,third,SOA mname points to third party: whatsapp
+whatsapp.com,a.ns.whatsapp.net,third,SOA mname points to third party: whatsapp
+googletagmanager.com,ns2.google.com,third,SOA mname points to third party: google
+googletagmanager.com,ns4.google.com,third,SOA mname points to third party: google
+googletagmanager.com,ns3.google.com,third,SOA mname points to third party: google
+googletagmanager.com,ns1.google.com,third,SOA mname points to third party: google
+windows.com,ns1-205.azure-dns.com,third,SOA mname points to third party: azure
+windows.com,ns2-205.azure-dns.net,third,SOA mname points to third party: azure
+windows.com,ns3-205.azure-dns.org,third,SOA mname points to third party: azure
+windows.com,ns4-205.azure-dns.info,third,SOA mname points to third party: azure
+amazon-adsystem.com,ns-2034.awsdns-62.co.uk,third,SOA mname points to third party: amazonaws
+amazon-adsystem.com,ns-249.awsdns-31.com,third,SOA mname points to third party: amazonaws
+amazon-adsystem.com,ns-806.awsdns-36.net,third,SOA mname points to third party: amazonaws
+amazon-adsystem.com,ns-1532.awsdns-63.org,third,SOA mname points to third party: amazonaws
+msn.com,ns1-204.azure-dns.com,third,SOA mname points to third party: azure
+msn.com,ns2-204.azure-dns.net,third,SOA mname points to third party: azure
+msn.com,ns3-204.azure-dns.org,third,SOA mname points to third party: azure
+msn.com,ns4-204.azure-dns.info,third,SOA mname points to third party: azure
+msn.com,dns1.p08.nsone.net,third,SOA mname points to third party: azure
+msn.com,dns2.p08.nsone.net,third,SOA mname points to third party: azure
+msn.com,dns3.p08.nsone.net,third,SOA mname points to third party: azure
+msn.com,dns4.p08.nsone.net,third,SOA mname points to third party: azure
+googleadservices.com,ns3.google.com,third,SOA mname points to third party: google
+googleadservices.com,ns2.google.com,third,SOA mname points to third party: google
+googleadservices.com,ns1.google.com,third,SOA mname points to third party: google
+googleadservices.com,ns4.google.com,third,SOA mname points to third party: google
+ggpht.com,ns3.google.com,third,SOA mname points to third party: google
+ggpht.com,ns1.google.com,third,SOA mname points to third party: google
+ggpht.com,ns4.google.com,third,SOA mname points to third party: google
+ggpht.com,ns2.google.com,third,SOA mname points to third party: google
+oxylabs.io,brit.ns.cloudflare.com,third,SOA mname points to third party: brit
+oxylabs.io,hank.ns.cloudflare.com,third,SOA mname points to third party: brit
+amazon.dev,ns-101.awsdns-12.com,third,SOA mname points to third party: awsdns
+amazon.dev,ns-1373.awsdns-43.org,third,SOA mname points to third party: awsdns
+amazon.dev,ns-1648.awsdns-14.co.uk,third,SOA mname points to third party: awsdns
+amazon.dev,ns-729.awsdns-27.net,third,SOA mname points to third party: awsdns
+linkedin.com,dns1.p09.nsone.net,third,SOA mname points to third party: azure
+linkedin.com,dns2.p09.nsone.net,third,SOA mname points to third party: azure
+linkedin.com,dns3.p09.nsone.net,third,SOA mname points to third party: azure
+linkedin.com,dns4.p09.nsone.net,third,SOA mname points to third party: azure
+linkedin.com,ns1-42.azure-dns.com,third,SOA mname points to third party: azure
+linkedin.com,ns2-42.azure-dns.net,third,SOA mname points to third party: azure
+linkedin.com,ns3-42.azure-dns.org,third,SOA mname points to third party: azure
+linkedin.com,ns4-42.azure-dns.info,third,SOA mname points to third party: azure
+windows.net,ns1-39.azure-dns.com,third,SOA mname points to third party: azure
+windows.net,ns2-39.azure-dns.net,third,SOA mname points to third party: azure
+windows.net,ns3-39.azure-dns.org,third,SOA mname points to third party: azure
+windows.net,ns4-39.azure-dns.info,third,SOA mname points to third party: azure
+unity3d.com,eur2.akam.net,third,SOA mname points to third party: use
+unity3d.com,ns1-105.akam.net,third,SOA mname points to third party: use
+unity3d.com,ns1-8.akam.net,third,SOA mname points to third party: use
+unity3d.com,eur5.akam.net,third,SOA mname points to third party: use
+unity3d.com,usc4.akam.net,third,SOA mname points to third party: use
+unity3d.com,asia3.akam.net,third,SOA mname points to third party: use
+unity3d.com,usw4.akam.net,third,SOA mname points to third party: use
+unity3d.com,use4.akam.net,third,SOA mname points to third party: use
+microsoftonline.com,ns1-38.azure-dns.com,third,SOA mname points to third party: azure
+microsoftonline.com,ns2-38.azure-dns.net,third,SOA mname points to third party: azure
+microsoftonline.com,ns3-38.azure-dns.org,third,SOA mname points to third party: azure
+microsoftonline.com,ns4-38.azure-dns.info,third,SOA mname points to third party: azure
+a2z.com,ns-1791.awsdns-31.co.uk,third,SOA mname points to third party: amazonaws
+a2z.com,ns-255.awsdns-31.com,third,SOA mname points to third party: amazonaws
+a2z.com,ns-767.awsdns-31.net,third,SOA mname points to third party: amazonaws
+a2z.com,ns-1279.awsdns-31.org,third,SOA mname points to third party: amazonaws
+adtrafficquality.google,ns2.google.com,third,SOA mname points to third party: google
+adtrafficquality.google,ns1.google.com,third,SOA mname points to third party: google
+adtrafficquality.google,ns3.google.com,third,SOA mname points to third party: google
+adtrafficquality.google,ns4.google.com,third,SOA mname points to third party: google
+xiaomi.com,ns4.dnsv5.com,third,SOA mname points to third party: dnsv
+xiaomi.com,ns3.dnsv5.com,third,SOA mname points to third party: dnsv
+playstation.net,ns32.playstation.net,private,NS TLD matches domain TLD
+playstation.net,ns35.playstation.net,private,NS TLD matches domain TLD
+playstation.net,ns31.playstation.net,private,NS TLD matches domain TLD
+playstation.net,ns42.playstation.net,private,NS TLD matches domain TLD
+playstation.net,ns36.playstation.net,private,NS TLD matches domain TLD
+playstation.net,ns43.playstation.net,private,NS TLD matches domain TLD
+playstation.net,ns33.playstation.net,private,NS TLD matches domain TLD
+playstation.net,ns34.playstation.net,private,NS TLD matches domain TLD
+playstation.net,ns44.playstation.net,private,NS TLD matches domain TLD
+playstation.net,ns41.playstation.net,private,NS TLD matches domain TLD
+skype.com,ns1-205.azure-dns.com,third,SOA mname points to third party: azure
+skype.com,ns2-205.azure-dns.net,third,SOA mname points to third party: azure
+skype.com,ns3-205.azure-dns.org,third,SOA mname points to third party: azure
+skype.com,ns4-205.azure-dns.info,third,SOA mname points to third party: azure
+rubiconproject.com,ns-1150.awsdns-15.org,third,SOA mname points to third party: awsdns
+rubiconproject.com,ns-1722.awsdns-23.co.uk,third,SOA mname points to third party: awsdns
+rubiconproject.com,ns-483.awsdns-60.com,third,SOA mname points to third party: awsdns
+rubiconproject.com,ns-644.awsdns-16.net,third,SOA mname points to third party: awsdns
+capcutapi.com,a2-67.akam.net,third,SOA mname points to third party: akam
+capcutapi.com,a12-65.akam.net,third,SOA mname points to third party: akam
+capcutapi.com,a7-65.akam.net,third,SOA mname points to third party: akam
+capcutapi.com,a1-156.akam.net,third,SOA mname points to third party: akam
+capcutapi.com,a16-66.akam.net,third,SOA mname points to third party: akam
+capcutapi.com,a3-64.akam.net,third,SOA mname points to third party: akam
+vungle.com,a1-5.akam.net,private,SOA mname and rname both match domain
+vungle.com,a9-66.akam.net,private,SOA mname and rname both match domain
+vungle.com,a28-67.akam.net,private,SOA mname and rname both match domain
+vungle.com,a2-66.akam.net,private,SOA mname and rname both match domain
+vungle.com,a7-65.akam.net,private,SOA mname and rname both match domain
+vungle.com,a4-64.akam.net,private,SOA mname and rname both match domain
+msftconnecttest.com,ns1-32.azure-dns.com,third,SOA mname points to third party: azure
+msftconnecttest.com,ns2-32.azure-dns.net,third,SOA mname points to third party: azure
+msftconnecttest.com,ns3-32.azure-dns.org,third,SOA mname points to third party: azure
+msftconnecttest.com,ns4-32.azure-dns.info,third,SOA mname points to third party: azure
+taboola.com,dns1.p05.nsone.net,third,SOA mname points to third party: nsone
+taboola.com,dns2.p05.nsone.net,third,SOA mname points to third party: nsone
+taboola.com,dns3.p05.nsone.net,third,SOA mname points to third party: nsone
+taboola.com,dns4.p05.nsone.net,third,SOA mname points to third party: nsone
+taboola.com,ns01.dnsfaster.com,third,SOA mname points to third party: nsone
+taboola.com,ns02.dnsfaster.com,third,SOA mname points to third party: nsone
+taboola.com,ns03.dnsfaster.com,third,SOA mname points to third party: nsone
+taboola.com,ns04.dnsfaster.com,third,SOA mname points to third party: nsone
+windowsupdate.com,ns1-205.azure-dns.com,third,SOA mname points to third party: azure
+windowsupdate.com,ns2-205.azure-dns.net,third,SOA mname points to third party: azure
+windowsupdate.com,ns3-205.azure-dns.org,third,SOA mname points to third party: azure
+windowsupdate.com,ns4-205.azure-dns.info,third,SOA mname points to third party: azure
+digicert.com,ns21.digicertdns.com,third,SOA mname points to third party: digicertdns
+digicert.com,ns22.digicertdns.com,third,SOA mname points to third party: digicertdns
+digicert.com,ns23.digicertdns.net,third,SOA mname points to third party: digicertdns
+digicert.com,pdns196.ultradns.biz,third,SOA mname points to third party: digicertdns
+digicert.com,ns25.digicertdns.net,third,SOA mname points to third party: digicertdns
+digicert.com,ns20.digicertdns.com,third,SOA mname points to third party: digicertdns
+digicert.com,pdns196.ultradns.com,third,SOA mname points to third party: digicertdns
+digicert.com,pdns196.ultradns.net,third,SOA mname points to third party: digicertdns
+digicert.com,pdns196.ultradns.org,third,SOA mname points to third party: digicertdns
+digicert.com,ns24.digicertdns.net,third,SOA mname points to third party: digicertdns
+gmail.com,ns4.google.com,third,SOA mname points to third party: google
+gmail.com,ns2.google.com,third,SOA mname points to third party: google
+gmail.com,ns3.google.com,third,SOA mname points to third party: google
+gmail.com,ns1.google.com,third,SOA mname points to third party: google
+cloud.microsoft,ns1-33.azure-dns.com,third,SOA mname points to third party: azure
+cloud.microsoft,ns2-33.azure-dns.net,third,SOA mname points to third party: azure
+cloud.microsoft,ns3-33.azure-dns.org,third,SOA mname points to third party: azure
+cloud.microsoft,ns4-33.azure-dns.info,third,SOA mname points to third party: azure
+qq.com,ns4.qq.com,private,NS TLD matches domain TLD
+qq.com,ns1.qq.com,private,NS TLD matches domain TLD
+qq.com,ns2.qq.com,private,NS TLD matches domain TLD
+qq.com,ns3.qq.com,private,NS TLD matches domain TLD
+tiktok.com,a18-64.akam.net,third,SOA mname points to third party: akam
+tiktok.com,a13-67.akam.net,third,SOA mname points to third party: akam
+tiktok.com,a9-66.akam.net,third,SOA mname points to third party: akam
+tiktok.com,a6-65.akam.net,third,SOA mname points to third party: akam
+tiktok.com,a1-97.akam.net,third,SOA mname points to third party: akam
+tiktok.com,a12-66.akam.net,third,SOA mname points to third party: akam
+aws.dev,ns-1108.awsdns-10.org,third,SOA mname points to third party: awsdns
+aws.dev,ns-1918.awsdns-47.co.uk,third,SOA mname points to third party: awsdns
+aws.dev,ns-399.awsdns-49.com,third,SOA mname points to third party: awsdns
+aws.dev,ns-964.awsdns-56.net,third,SOA mname points to third party: awsdns
+miui.com,ns3.dnsv5.com,third,SOA mname points to third party: dnsv
+miui.com,ns4.dnsv5.com,third,SOA mname points to third party: dnsv
+cdn-apple.com,a.ns.apple.com,third,SOA mname points to third party: jackfruit
+cdn-apple.com,b.ns.apple.com,third,SOA mname points to third party: jackfruit
+cdn-apple.com,c.ns.apple.com,third,SOA mname points to third party: jackfruit
+cdn-apple.com,d.ns.apple.com,third,SOA mname points to third party: jackfruit
+pubmatic.com,dns1.p01.nsone.net,third,SOA mname points to third party: nsone
+pubmatic.com,dns2.p01.nsone.net,third,SOA mname points to third party: nsone
+pubmatic.com,dns3.p01.nsone.net,third,SOA mname points to third party: nsone
+pubmatic.com,dns4.p01.nsone.net,third,SOA mname points to third party: nsone
+adsrvr.org,dns1.p08.nsone.net,third,SOA mname points to third party: nsone
+adsrvr.org,dns2.p08.nsone.net,third,SOA mname points to third party: nsone
+adsrvr.org,dns3.p08.nsone.net,third,SOA mname points to third party: nsone
+adsrvr.org,dns4.p08.nsone.net,third,SOA mname points to third party: nsone
+adsrvr.org,ns01.ttddnnss.com,third,SOA mname points to third party: nsone
+adsrvr.org,ns02.ttddnnss.com,third,SOA mname points to third party: nsone
+adsrvr.org,ns03.ttddnnss.com,third,SOA mname points to third party: nsone
+adsrvr.org,ns04.ttddnnss.com,third,SOA mname points to third party: nsone
+avast.com,a20-66.akam.net,third,SOA mname points to third party: akam
+avast.com,a11-66.akam.net,third,SOA mname points to third party: akam
+avast.com,a6-67.akam.net,third,SOA mname points to third party: akam
+avast.com,a1-182.akam.net,third,SOA mname points to third party: akam
+avast.com,a13-65.akam.net,third,SOA mname points to third party: akam
+avast.com,a26-67.akam.net,third,SOA mname points to third party: akam
+avsxappcaptiveportal.com,ns-1205.awsdns-22.org,third,SOA mname points to third party: awsdns
+avsxappcaptiveportal.com,ns-1811.awsdns-34.co.uk,third,SOA mname points to third party: awsdns
+avsxappcaptiveportal.com,ns-483.awsdns-60.com,third,SOA mname points to third party: awsdns
+avsxappcaptiveportal.com,ns-676.awsdns-20.net,third,SOA mname points to third party: awsdns
+android.com,ns4.google.com,third,SOA mname points to third party: google
+android.com,ns3.google.com,third,SOA mname points to third party: google
+android.com,ns1.google.com,third,SOA mname points to third party: google
+android.com,ns2.google.com,third,SOA mname points to third party: google
+reddit.com,ns-1029.awsdns-00.org,third,SOA mname points to third party: awsdns
+reddit.com,ns-1887.awsdns-43.co.uk,third,SOA mname points to third party: awsdns
+reddit.com,ns-378.awsdns-47.com,third,SOA mname points to third party: awsdns
+reddit.com,ns-557.awsdns-05.net,third,SOA mname points to third party: awsdns
+chirpbooks.com,ns-1378.awsdns-44.org,third,SOA mname points to third party: awsdns
+chirpbooks.com,ns-1578.awsdns-05.co.uk,third,SOA mname points to third party: awsdns
+chirpbooks.com,ns-400.awsdns-50.com,third,SOA mname points to third party: awsdns
+chirpbooks.com,ns-863.awsdns-43.net,third,SOA mname points to third party: awsdns
