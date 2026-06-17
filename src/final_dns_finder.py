@@ -21,6 +21,10 @@ import numpy as np
 import dns.resolver
 import pandas as pa
 from typing import Optional, Any
+try:
+    from . import PriorityDictionary as pd
+except ImportError:
+    import PriorityDictionary as pd
 from PriorityDictionary import classify_by_soa
 from dataclasses import dataclass, field
 
@@ -65,56 +69,6 @@ def get_auth_ns_set(domain: str) -> frozenset[str]:
     except Exception:
         return frozenset()
     
-def normalize_whois_string(value) -> Optional[str]:
-    if isinstance(value, (list, tuple)):
-        for item in value:
-            normalized = normalize_whois_string(item)
-            if normalized:
-                return normalized
-        return None
-    if value is None:
-        return None
-    text = str(value).strip().lower()
-    if not text:
-        return None
-    text = re.sub(r"[^a-z0-9]+", " ", text).strip()
-    return text if text else None
-
-def extract_org(info) -> Optional[str]:
-    return normalize_whois_string(getattr(info, "org", None))
-
-# Terms that are too generic to use for reliable WHOIS ownership matching.
-# This helps avoid false positive token matches like "Inc", "LLC", or "Registrar".
-WHOIS_STOP_WORDS = {
-    "inc", "ltd", "llc", "corp", "corporation", "company", "co", "limited",
-    "the", "domain", "registrar", "name", "tag", "department", "legal",
-    "services", "service", "group", "incorporated", "technology", "systems",
-}
-
-def whois_identity_keys(info) -> set[str]:
-    # Collect normalized WHOIS owner fields as exact identity strings.
-    # These are used for a strict match when both sides expose the same normalized value.
-    keys: set[str] = set()
-    for field_name in ("org", "name"):
-        value = normalize_whois_string(getattr(info, field_name, None))
-        if value:
-            keys.add(value)
-    return keys
-
-def whois_identity_terms(info) -> set[str]:
-    # Collect normalized WHOIS tokens from owner fields.
-    # This supports partial token overlap when exact WHOIS strings are absent.
-    terms: set[str] = set()
-    for field_name in ("org", "name"):
-        value = normalize_whois_string(getattr(info, field_name, None))
-        if not value:
-            continue
-        for token in value.split():
-            if len(token) < 3 or token in WHOIS_STOP_WORDS:
-                continue
-            terms.add(token)
-    return terms
-
 def get_tld(hostname: str) -> str:
     """
     Return the registered domain (eTLD+1) as a rough TLD proxy.
@@ -134,77 +88,6 @@ def get_tld(hostname: str) -> str:
     except ImportError:
         parts = hostname.rstrip(".").split(".")
         return ".".join(parts[-2:]) if len(parts) >= 2 else hostname
-
-BUILTWITH_API_KEY = "66555be8-0edc-4f46-8b3e-c5fc11866402"
-BUILTWITH_API_URL = "https://api.builtwith.com/rv4/api.json"
-
-
-def _extract_domains_from_value(value: Any) -> set[str]:
-    domains: set[str] = set()
-    if isinstance(value, dict):
-        for item in value.values():
-            domains |= _extract_domains_from_value(item)
-    elif isinstance(value, list):
-        for item in value:
-            domains |= _extract_domains_from_value(item)
-    elif isinstance(value, str):
-        for match in re.findall(r"\b([A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z]{2,})+)\b", value):
-            if "@" in match:
-                continue
-            domains.add(get_tld(match))
-    return domains
-
-
-def _hostname_tokens(value: str) -> set[str]:
-    return set(re.findall(r"[a-z0-9]{3,}", value.lower()))
-
-
-def builtwith_query(domain: str) -> Optional[dict[str, Any]]:
-    if not BUILTWITH_API_KEY:
-        return None
-    lookup = urllib.parse.quote(domain, safe="")
-    url = f"{BUILTWITH_API_URL}?KEY={BUILTWITH_API_KEY}&LOOKUP={lookup}"
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            text = resp.read().decode("utf-8", errors="replace")
-
-        if text.lstrip().startswith("{"):
-            payload = json.loads(text)
-            if isinstance(payload, dict) and payload.get("Errors"):
-                return None
-            return payload
-
-        rows = list(csv.DictReader(text.splitlines()))
-        return {"rows": rows}
-    except Exception:
-        return None
-
-def builtwith_domains(domain: str) -> set[str]:
-    payload = builtwith_query(domain)
-    return _extract_domains_from_value(payload) if payload else set()
-
-def builtwith_dns_providers(domain: str) -> set[str]:
-    """Return DNS provider names/domains BuiltWith reports for this domain."""
-    payload = builtwith_query(domain)
-    if not payload:
-        return set()
-    
-    providers: set[str] = set()
-    # BuiltWith nests tech under Results > Result > Paths > Technologies
-    for result in payload.get("Results", []):
-        for path in result.get("Result", {}).get("Paths", []):
-            for tech in path.get("Technologies", []):
-                # Filter to DNS category only
-                cats = [c.get("Name", "") for c in tech.get("Categories", [])]
-                if any("dns" in c.lower() for c in cats):
-                    name = tech.get("Name", "").lower()
-                    tag = tech.get("Tag", "").lower()
-                    if name:
-                        providers.add(name)
-                    if tag:
-                        providers.add(tag)
-    return providers
 
 def get_soa(hostname: str) -> Optional[str]:
     """
