@@ -1,3 +1,19 @@
+import re
+import csv
+import ssl
+import time
+import json
+import socket
+import urllib.request
+import tldextract
+import urllib.parse
+import numpy as np
+import dns.resolver
+import pandas as pa
+from typing import Optional, Any
+from PriorityDictionary import classify_by_soa
+from dataclasses import dataclass, field
+
 """
 Nameserver Classifier
 Reads a CSV file with columns: rank, domain, description
@@ -29,9 +45,9 @@ from PriorityDictionary import classify_by_soa
 from dataclasses import dataclass, field
 
 # ---------------------------------------------------------------------------
-# Data structures
+# Data structures we are going to use, for the first one we are setting the nameserver to be empty or 'unknown'
+# that way we can manipulate the data. The second method indicates the data types of the results.
 # ---------------------------------------------------------------------------
-
 @dataclass
 class NameserverResult:
     """ Sets the nameserver values into base, unknown values so that we are able to manipulate them as 
@@ -39,7 +55,6 @@ class NameserverResult:
     ns: str
     ns_type: str = "unknown"
     reason: str = ""
-
 @dataclass
 class DomainResult:
     """ This are the parameters of how it would appear un the csv file after factoring all of the results 
@@ -49,44 +64,54 @@ class DomainResult:
     nameservers: list[NameserverResult] = field(default_factory=list)
     error: Optional[str] = None
 
-# ---------------------------------------------------------------------------
-# DNS helpers
-# ---------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------
+# Helper Functions that would help us develop the overall part of the algorithm (DNS Helpers).
+# --------------------------------------------------------------------------------------------
 
-def dig_ns(domain: str) -> list[str]:
-    """Return list of nameserver hostnames for domain."""
+def get_ns(domain: str) -> list[str]:
+    """
+    Gets the nameservers for a specific domain. Uses the dns library installed through a virtual environment that would 
+    help us to internally store it for our specific usage. 
+    """
     try:
-        answers = dns.resolver.resolve(domain, "NS")
-        return [str(r.target).rstrip(".") for r in answers]
-    except Exception as e:
-        raise RuntimeError(f"NS lookup failed for {domain}: {e}")
+        answers = dns.resolver.resolve(domain, 'NS')
+        return [str(rdata).rstrip('.').lower() for rdata in answers]
+    except dns.resolver.NoAnswer:
+        return []
+    except dns.resolver.NXDOMAIN:
+        return []
     
-def get_auth_ns_set(domain: str) -> frozenset[str]:
-    """Return the set of authoritative NS TLDs for a domain."""
+def get_soa(domain: str) -> dict:
+    """
+    Gets the SOA record for a specific domain.
+    Returns a dict with mname and rname, or None if unavailable.
+    """
     try:
-        answers = dns.resolver.resolve(domain, "NS")
-        return frozenset(get_tld(str(r.target).rstrip(".")) for r in answers)
-    except Exception:
-        return frozenset()
+        # USes DNS resolver library to just get the SOA. 
+        answers = dns.resolver.resolve(domain, 'SOA')
+        for rdata in answers:
+            return {
+                "mname": str(rdata.mname).rstrip('.').lower(),
+                "rname": str(rdata.rname).rstrip('.').lower(),
+            }
+    except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN):
+        return None
     
 def get_tld(hostname: str) -> str:
     """
-    Return the registered domain (eTLD+1) as a rough TLD proxy.
-    e.g. 'ns1.example.com' → 'example.com'
-         'ns1.cloudflare.com' → 'cloudflare.com'
-    Falls back to the last two labels if tldextract is unavailable.
+    Return the registered domain (eTLD+1). 
+    e.g. 'ns1.example.com' → 'example.com' 'ns1.cloudflare.com' → 'cloudflare.com'
     """
     try:
-        # Use tldextract to get the public suffix / registered domain.
-        # Passing cache_dir=None avoids creating a cache file and prevents
-        # permission errors in environments where the package install path is read-only.
-        import tldextract
+        # Use tldextract to get the public suffix / registered domain. Passing cache_dir=None avoids creating a cache file 
+        # and prevents permission errors in environments where the package install path is read-only.
         ext = tldextract.TLDExtract(cache_dir=None)(hostname)
         if ext.domain and ext.suffix:
             return f"{ext.domain}.{ext.suffix}"
         return hostname
     except ImportError:
         parts = hostname.rstrip(".").split(".")
+        # For this exception it returns the las two parts of the domain and suffix. e.g domain.com 
         return ".".join(parts[-2:]) if len(parts) >= 2 else hostname
 
 def get_soa(hostname: str) -> Optional[str]:
@@ -134,7 +159,7 @@ def is_https(domain: str, retries: int = 2, timeout: int = 10) -> bool:
             return False  # non-transient error, don't retry
     return False
 
-
+    
 def get_san_tlds(domain: str, retries: int = 2, timeout: int = 10) -> set[str]:
     """Return registered domains from TLS SAN for `domain`."""
     sans: set[str] = set()
@@ -158,88 +183,166 @@ def get_san_tlds(domain: str, retries: int = 2, timeout: int = 10) -> set[str]:
     return sans
 
 # ---------------------------------------------------------------------------
-# Concentration: fraction of Alexa/common domains sharing this nameserver
-# expressed as a percentage (0–100).  Without a real dataset we approximate
-# by querying how many of a sample of the Alexa top-1000 share the same
-# nameserver TLD.  In production, replace this with a precomputed lookup.
+# Provider name extraction
 # ---------------------------------------------------------------------------
 
-# Simple in-process cache so we don't re-query for the same NS repeatedly.
+def extract_provider(nameserver: str) -> str:
+    """Extract provider name from a nameserver string. e.g google.com would return google as their nameserver. """
+    # Remove trailing dot
+    ns = nameserver.rstrip('.')
+    # Splits the nameserver by parts, most of the time the nameserver is located in the second part of the dns. 
+    nameserver_parts = ns.split('.')
+
+    # Examples: 'awsdns-43' -> 'awsdns', 'apple' -> 'apple', 'google' -> 'google'
+    for part in nameserver_parts:
+        match = re.search(r'([a-z]+)', part)
+        # if else statements to get the appropriate nameserver, in some scenarios it is not at the second position, so it 
+        # accounts for that. 
+        if match:
+            token = match.group(1)
+            if token == "ns" or len(token) <= 2 or token == "dns":
+                continue
+            return token
+    # Returns nothing in case there is no nameserver. 
+    return None
+
+# ---------------------------------------------------------------------------
+# Concentration score
+# ---------------------------------------------------------------------------
+
+# Simple in-process cache so the same NS TLD is not re-queried.
 _concentration_cache: dict[str, float] = {}
-
-# A small representative sample – replace with a full dataset in production.
+ 
+# Replace with a full dataset in production.
 SAMPLE_DOMAINS: list[str] = []
-
+ 
 def concentration(ns: str) -> float:
     """
-    Return an estimated concentration score (0-100) for a nameserver.
-    Score = percentage of sample domains whose NS TLD matches ns's TLD.
+    Return an estimated concentration score (0–100) for a nameserver.
+    Score = percentage of SAMPLE_DOMAINS whose NS TLD matches this NS's TLD.
     """
     ns_tld = get_tld(ns)
     if ns_tld in _concentration_cache:
         return _concentration_cache[ns_tld]
-
-    matches = 0
+ 
     total = len(SAMPLE_DOMAINS)
-    for sample in SAMPLE_DOMAINS:
-        try:
-            sample_ns_list = dig_ns(sample)
-            if any(get_tld(s) == ns_tld for s in sample_ns_list):
-                matches += 1
-        except Exception:
-            pass
+    if total == 0:
+        return 0.0
+ 
+    matches = sum(
+        1
+        for sample in SAMPLE_DOMAINS
+        if any(get_tld(s) == ns_tld for s in get_ns(sample))
+    )
 
-    score = (matches / total) * 100 if total else 0.0
+    score = (matches / total) * 100
     _concentration_cache[ns_tld] = score
     return score
 
-def get_soa(domain: str) -> dict:
-    """
-    Gets the SOA record for a specific domain.
-    Returns a dict with mname and rname, or None if unavailable.
-    """
-    try:
-        answers = dns.resolver.resolve(domain, 'SOA')
-        for rdata in answers:
-            return {
-                "mname": str(rdata.mname).rstrip('.').lower(),
-                "rname": str(rdata.rname).rstrip('.').lower(),
-            }
-    except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN):
-        return None
-
 # ---------------------------------------------------------------------------
-# Core classification algorithm
+# SOA-based classification
 # ---------------------------------------------------------------------------
 
-def classify_soa(ns: str, domain: str) -> tuple[str, str]:
-    
+def classify_by_soa(domain: str, soa: dict) -> tuple[str, str]:
+    """
+    Classify a domain as private or third-party using SOA mname and rname.
+    """
+    if soa is None:
+        return "unknown", "no SOA record"
+
     domain_tld = get_tld(domain)
-    domain_https = is_https(domain)
-    domain_san = get_san_tlds(domain) if domain_https else set()
-    domain_soa = get_soa(domain)
+    mname_tld  = get_tld(soa["mname"])
+    rname_tld  = get_tld(soa["rname"])
     
+    # Both point to the same owner — definitely private
+    if mname_tld == domain_tld and rname_tld == domain_tld:
+        return "private", f"SOA mname and rname both match domain"
+
+    # mname is third party — strongest signal
+    if mname_tld != domain_tld:
+        provider = extract_provider(soa["mname"])
+        return "third", f"SOA mname points to third party: {provider}"
+    
+    if rname_tld != domain_tld:
+        provider = extract_provider(soa["rname"])
+        return "third", f"SOA rname points to: {provider}"
+    
+    return "no rule matched"
+
+# ---------------------------------------------------------------------------
+# Per-nameserver classification  (the 5-step algorithm)
+# ---------------------------------------------------------------------------
+
+def classify_name_server(ns: str, domain: str, domain_tld: str, soa: Optional[dict], https_enabled: bool,
+    san_tlds: set[str],) -> NameserverResult:
+    """
+    Classify a single nameserver for the given domain using the 5-step algorithm. All expensive lookups (SOA, HTTPS, SAN) 
+    are pre-computed and passed in so they are not repeated for each NS of the same domain.
+    """
+    result = NameserverResult(ns=ns)
     ns_tld = get_tld(ns)
-    ns_soa = get_soa(ns)
-    
-    # Rule 1: same TLD
+
+    # Step 1 — NS TLD matches the domain itself
     if ns_tld == domain_tld:
-        return "private", f"same TLD as domain (domain={domain_soa}, ns={ns_soa})"
-
-    # Rule 2: HTTPS + SAN
-    if domain_https and ns_tld in domain_san:
-        return "private", f"ns TLD found in domain's TLS SAN (domain={domain_soa}, ns={ns_soa})"
+        result.ns_type = "private"
+        result.reason  = "NS TLD matches domain TLD"
+        return result
     
-    soa_result = classify_by_soa(domain, domain_soa)
-    if (soa_result != "no rule matched"):
-        return soa_result
+    # Step 2 — Domain uses HTTPS and NS TLD appears in its SAN
+    if https_enabled and domain_tld in san_tlds:
+        result.ns_type = "private"
+        result.reason = "Domain has HTTPS and NS TLD is contained in SAN"
+        return result
     
-    # Rule 5: concentration
-    conc = concentration(ns)
-    if conc >= 50:
-        return "third", f"high concentration score ({conc:.1f}%) (domain={domain_soa}, ns={ns_soa})"    
+    # Step 3 — SOA record indicates a different owner
+    soa_type, soa_reason = classify_by_soa(domain, soa)
+    if soa_type != "unknown":
+        result.ns_type = soa_type
+        result.reason  = soa_reason
+        return result
+    
+    # Step 4 — NS is widely shared (high concentration → third-party provider)
+    if concentration(ns) >= 50:
+        result.ns_type = "third"
+        result.reason  = f"NS concentration >= 50 for {get_tld(ns)}"
+        return result
+ 
+    # Step 5 — Could not determine
+    result.ns_type = "unknown"
+    result.reason  = "no rule matched"
+    return result
 
-    return "unknown", "no rule matched"
+# ---------------------------------------------------------------------------
+# Per-Domain classification  (the 5-step algorithm)
+# ---------------------------------------------------------------------------
+
+def classify_domain(domain: str, description: str = "") -> DomainResult:
+    """
+    Run all lookups for a domain once, then classify each of its nameservers.
+    Returns a DomainResult with one NameserverResult per NS.
+    """
+    result = DomainResult(domain=domain, description=description)
+    # We get the tld of the domain.
+    domain_tld = get_tld(domain)
+    
+    # Here we get the nameservers based on the domain
+    name_servers = get_ns(domain)
+    if not name_servers:
+        result.error = "no nameservers found"
+        return result
+ 
+    # Expensive lookups happen once per domain, not once per NS
+    soa          = get_soa(domain)
+    https_active = is_https(domain)
+    san_tlds     = get_san_tlds(domain) if https_active else set()
+ 
+    # Here we make the specific lookup of the individual nameservers based on the domain. 
+    for ns in name_servers:
+        ns_result = classify_name_server(ns=ns, domain=domain, domain_tld=domain_tld, soa=soa, https_enabled=https_active,
+                                         san_tlds=san_tlds,)
+        result.nameservers.append(ns_result)
+ 
+    return result
 
 # ---------------------------------------------------------------------------
 # Entry point
@@ -248,58 +351,44 @@ def classify_soa(ns: str, domain: str) -> tuple[str, str]:
 def main():
     input_path  = "src/Source_Data/Cloudflare_Top100_Domains.csv"
     output_path = "src/Source_Data/soa_results.csv"
-
-    results = []
-
-    with open(input_path, "r", newline='') as csvfile:
+ 
+    rows = []
+ 
+    with open(input_path, "r", newline="") as csvfile:
         reader = csv.DictReader(csvfile)
-
+ 
         for row in reader:
             domain_name = row["domain"].strip()
-            soa = get_soa(domain_name)
-
-            try:
-                ns_list = dig_ns(domain_name)
-            except RuntimeError as e:
-                print(f"Domain:  {domain_name}")
-                print(f"  Error:  {e}")
-                print("-" * 40)
-                results.append({
-                    "domain_name": domain_name,
-                    "mname":       soa["mname"] if soa else None,
-                    "rname":       soa["rname"] if soa else None,
-                    "type":        None,
-                    "reason":      str(e),
-                })
+            description = row.get("description", "").strip()
+ 
+            domain_result = classify_domain(domain_name, description)
+ 
+            if domain_result.error:
+                print(f"[{domain_name}] ERROR: {domain_result.error}")
                 continue
-
-            for ns in ns_list:
-                ns_type, reason = classify_soa(ns, domain_name)
-
-                print(f"Domain:  {domain_name}")
-                print(f"  NS:     {ns}")
-                print(f"  Mname:  {soa['mname'] if soa else 'N/A'}")
-                print(f"  Rname:  {soa['rname'] if soa else 'N/A'}")
-                print(f"  Type:   {ns_type}")
-                print(f"  Reason: {reason}")
-                print("-" * 40)
-
-                results.append({
-                    "domain_name": domain_name,
-                    "mname":       soa["mname"] if soa else None,
-                    "rname":       soa["rname"] if soa else None,
-                    "type":        ns_type,
-                    "reason":      reason,
+ 
+            for ns_result in domain_result.nameservers:
+                print(
+                    f"Domain:  {domain_name}\n"
+                    f"  NS:    {ns_result.ns}\n"
+                    f"  Type:  {ns_result.ns_type}\n"
+                    f"  Why:   {ns_result.reason}\n"
+                    f"{'-' * 40}"
+                )
+                rows.append({
+                    "domain":      domain_name,
+                    "nameserver":  ns_result.ns,
+                    "type":        ns_result.ns_type,
+                    "reason":      ns_result.reason,
                 })
-
-    # Write output
+ 
     with open(output_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["domain_name", "mname", "rname", "type", "reason"])
+        writer = csv.DictWriter(f, fieldnames=["domain", "nameserver", "type", "reason"])
         writer.writeheader()
-        writer.writerows(results)
-
+        writer.writerows(rows)
+ 
     print(f"\nDone. Results written to {output_path}")
-
+ 
+ 
 if __name__ == "__main__":
     main()
-
