@@ -27,7 +27,6 @@ from dataclasses import dataclass, field
 # ---------------------------------------------------------------------------
 # Data structures
 # ---------------------------------------------------------------------------
-
 @dataclass
 class NameserverResult:
     """ Sets the nameserver values into base, unknown values so that we are able to manipulate them as 
