@@ -1,0 +1,101 @@
+domain,CA Name,type
+googleapis.com,Google Trust Services,third
+microsoft.com,Microsoft Corporation,private
+cloudflare.com,Google Trust Services,third
+gstatic.com,Google Trust Services,third
+apple.com,Apple Inc.,private
+google.com,Google Trust Services,private
+facebook.com,DigiCert Inc,third
+amazonaws.com,Amazon,third
+googlevideo.com,Google Trust Services,third
+fbcdn.net,DigiCert Inc,third
+amazon.com,DigiCert Inc,third
+youtube.com,Google Trust Services,third
+instagram.com,DigiCert Inc,third
+whatsapp.net,DigiCert Inc,third
+live.com,Microsoft Corporation,third
+doubleclick.net,Google Trust Services,third
+bing.com,Microsoft Corporation,private
+apple-dns.net,,unknown
+netflix.com,DigiCert Inc,third
+akadns.net,,unknown
+ntp.org,Let's Encrypt,third
+googleusercontent.com,Google Trust Services,third
+icloud.com,Apple Inc.,third
+googlesyndication.com,Google Trust Services,third
+cdninstagram.com,,unknown
+chatgpt.com,Google Trust Services,third
+cloudflare-dns.com,SSL Corp,third
+akamai.net,,unknown
+aaplimg.com,,unknown
+tiktokcdn.com,,unknown
+tiktokv.com,DigiCert Inc,third
+cloudfront.net,,unknown
+ui.com,Amazon,third
+ytimg.com,,unknown
+akamaiedge.net,,unknown
+edgcdn.net,,unknown
+yahoo.com,DigiCert Inc,third
+gvt2.com,,unknown
+spotify.com,DigiCert Inc,third
+fastly.net,Certainly,third
+roblox.com,Sectigo Limited,third
+baidu.com,GlobalSign nv-sa,third
+office.com,Microsoft Corporation,third
+sentry.io,DigiCert Inc,third
+wikipedia.org,Let's Encrypt,third
+criteo.com,Let's Encrypt,third
+app-analytics-services.com,Google Trust Services,third
+app-measurement.com,Google Trust Services,third
+gvt1.com,,unknown
+prodregistryv2.org,Let's Encrypt,third
+steamserver.net,,unknown
+dns.google,Google Trust Services,third
+one.one,Let's Encrypt,third
+google-analytics.com,Google Trust Services,third
+msftncsi.com,,unknown
+snapchat.com,DigiCert Inc,third
+applovin.com,Google Trust Services,third
+3gppnetwork.org,,unknown
+appsflyersdk.com,Amazon,third
+trafficmanager.net,,unknown
+azure.com,Microsoft Corporation,private
+whatsapp.com,DigiCert Inc,third
+googletagmanager.com,Google Trust Services,third
+windows.com,Microsoft Corporation,third
+amazon-adsystem.com,Amazon,third
+msn.com,Microsoft Corporation,third
+googleadservices.com,Google Trust Services,third
+ggpht.com,,unknown
+oxylabs.io,Google Trust Services,third
+amazon.dev,,unknown
+linkedin.com,DigiCert Inc,third
+windows.net,Microsoft Corporation,unknown
+unity3d.com,DigiCert Inc,third
+microsoftonline.com,,unknown
+a2z.com,,unknown
+adtrafficquality.google,Google Trust Services,third
+xiaomi.com,DigiCert Inc,third
+playstation.net,,unknown
+skype.com,Microsoft Corporation,private
+rubiconproject.com,Amazon,third
+capcutapi.com,,unknown
+vungle.com,Let's Encrypt,third
+msftconnecttest.com,,unknown
+taboola.com,DigiCert Inc,third
+windowsupdate.com,,unknown
+digicert.com,DigiCert Inc,private
+gmail.com,Google Trust Services,third
+cloud.microsoft,Microsoft Corporation,third
+qq.com,"DigiCert, Inc.",third
+tiktok.com,DigiCert Inc,third
+aws.dev,,unknown
+miui.com,DigiCert Inc,third
+cdn-apple.com,,unknown
+pubmatic.com,Amazon,third
+adsrvr.org,GlobalSign nv-sa,third
+avast.com,Sectigo Limited,third
+avsxappcaptiveportal.com,,unknown
+android.com,Google Trust Services,third
+reddit.com,DigiCert Inc,third
+chirpbooks.com,Amazon,third
