@@ -11,7 +11,6 @@ import numpy as np
 import dns.resolver
 import pandas as pa
 from typing import Optional, Any
-from PriorityDictionary import classify_by_soa
 from dataclasses import dataclass, field
 
 """
@@ -25,24 +24,6 @@ the paper:
     4. Else if the concentration is >= 50, we check for third party.
     5. Finally, we check for unknown. 
 """
-import re
-import csv
-import ssl
-import time
-import json
-import socket
-import urllib.request
-import urllib.parse
-import numpy as np
-import dns.resolver
-import pandas as pa
-from typing import Optional, Any
-try:
-    from . import PriorityDictionary as pd
-except ImportError:
-    import PriorityDictionary as pd
-from PriorityDictionary import classify_by_soa
-from dataclasses import dataclass, field
 
 # ---------------------------------------------------------------------------
 # Data structures we are going to use, for the first one we are setting the nameserver to be empty or 'unknown'
@@ -113,36 +94,10 @@ def get_tld(hostname: str) -> str:
         parts = hostname.rstrip(".").split(".")
         # For this exception it returns the las two parts of the domain and suffix. e.g domain.com 
         return ".".join(parts[-2:]) if len(parts) >= 2 else hostname
-
-def get_soa(hostname: str) -> Optional[str]:
-    """
-    Return the SOA MNAME (primary nameserver) for the zone that hosts
-    `hostname`, or None on failure.
-    """
-    try:
-        answers = dns.resolver.resolve(hostname, "SOA")
-        return str(answers[0].mname).rstrip(".")
-    except Exception:
-        # Walk up the tree: try the domain itself, then parent zones
-        parts = hostname.split(".")
-        for i in range(len(parts) - 1):
-            candidate = ".".join(parts[i:])
-            try:
-                answers = dns.resolver.resolve(candidate, "SOA")
-                return str(answers[0].mname).rstrip(".")
-            except Exception:
-                continue
-        return None
     
-def regular_expression_nameserver(retrieved_SOA: str) -> str:
-    '''we get the nameserver domain based on the SOA expression we obtain from the get_soa function, 
-    so that we can trail the information and match elements later on. '''
-    if get_soa(retrieved_SOA):
-        # we inherit form the priority dictionary
-        nameserver = pd.extract_provider(retrieved_SOA)
-        return nameserver
-    return None
-    
+# ---------------------------------------------------------------------------
+# HTTPS / TLS helpers
+# ---------------------------------------------------------------------------
 def is_https(domain: str, retries: int = 2, timeout: int = 10) -> bool:
     """Return True if the domain responds on HTTPS (port 443)."""
     for attempt in range(retries + 1):  # +1 so retries=2 means 3 total attempts
@@ -205,6 +160,77 @@ def extract_provider(nameserver: str) -> str:
             return token
     # Returns nothing in case there is no nameserver. 
     return None
+
+# ---------------------------------------------------------------------------
+# Dictionary that contains some of the somains that are corporate owned 
+# ---------------------------------------------------------------------------
+
+# Maps a nameserver's registered domain → the parent company's registered domains.
+# If a website's domain TLD resolves to the same parent, it's private.
+CORPORATE_NS_OWNERS: dict[str, set[str]] = {
+    "azure-dns.com":    {"microsoft.com"},
+    "azure-dns.net":    {"microsoft.com"},
+    "azure-dns.org":    {"microsoft.com"},
+    "azure-dns.info":   {"microsoft.com"},
+    "awsdns-01.com":    {"amazon.com", "amazonaws.com"},
+    "awsdns-01.net":    {"amazon.com", "amazonaws.com"},
+    "awsdns-01.org":    {"amazon.com", "amazonaws.com"},
+    "awsdns-01.co.uk":  {"amazon.com", "amazonaws.com"},
+    "awsdns-56.net":    {"amazon.com", "amazonaws.com"},
+    "awsdns-37.org":    {"amazon.com", "amazonaws.com"},
+    "googledomains.com":{"google.com", "alphabet.com"},
+    "p-ns.facebook.com":{"facebook.com", "meta.com"},
+    "cloudflare.com":   set(),  # pure third-party CDN, never private
+}
+
+def get_ns_parent(ns_tld: str) -> set[str]:
+    """Return the set of corporate parent domains for a known NS TLD, or empty set."""
+    return CORPORATE_NS_OWNERS.get(ns_tld, set())
+
+def _extract_name_token(hostname: str) -> Optional[str]:
+    """
+    Pull the meaningful brand token out of a hostname.
+    'googledomains.com' → 'googledomains'
+    'ns1.google.com'    → 'google'
+    'azure-dns.org'     → 'azure'   (stops at the hyphen)
+    """
+    ext = tldextract.TLDExtract(cache_dir=None)(hostname)
+    token = ext.domain.lower()  # e.g. 'googledomains', 'google', 'azure'
+    if not token or len(token) <= 2:
+        return None
+    return token
+
+def name_recognition(domain: str, ns: str):
+    """ 
+    This is a checker for containment, it will extract the name as tokens for comparison.
+    it will check if the domain name or token is inside the the Nameserver name, and also it will check 
+    if the whole word is inside the domain. 
+    """
+    domain_token = _extract_name_token(domain)
+    ns_token     = _extract_name_token(ns)
+
+    if not domain_token or not ns_token:
+        return False
+
+    # Exact match — same token on both sides (e.g. azure / azure)
+    if domain_token == ns_token:
+        return True
+
+    def whole_word(needle: str, haystack: str) -> bool:
+        pattern = rf'(?<![a-z0-9]){re.escape(needle)}(?![a-z0-9])'
+        return bool(re.search(pattern, haystack))
+
+    # Direction A: domain token inside the NS hostname
+    # 'azure' inside 'ns3-39.azure-dns.org' → True
+    if whole_word(domain_token, ns):
+        return True
+
+    # Direction B: NS token inside the domain hostname
+    # 'google' inside 'googledomains.com' → True
+    if whole_word(ns_token, domain):
+        return True
+
+    return False
 
 # ---------------------------------------------------------------------------
 # Concentration score
@@ -288,10 +314,29 @@ def classify_name_server(ns: str, domain: str, domain_tld: str, soa: Optional[di
         result.reason  = "NS TLD matches domain TLD"
         return result
     
+    # Step 1.5a - Domain name is contained in the nameserver.
+    if name_recognition(domain, ns):
+        result.ns_type = "private"
+        result.reason = f'DOmanin name is contained in the nameserver, signaling ownership'
+        return result
+    
+    # Step 1.5b — NS belongs to a known corporate subsidiary of the domain owner
+    parent_domains = get_ns_parent(ns_tld)
+    if domain_tld in parent_domains:
+        result.ns_type = "private"
+        result.reason  = f"NS TLD {ns_tld} is a known subsidiary of {domain_tld}"
+        return result
+    
     # Step 2 — Domain uses HTTPS and NS TLD appears in its SAN
     if https_enabled and domain_tld in san_tlds:
         result.ns_type = "private"
         result.reason = "Domain has HTTPS and NS TLD is contained in SAN"
+        return result
+    
+    # Step 2.5?? - Domain before the tld is contained in the nameserver
+    if domain in ns:
+        result.ns_type = "private"
+        result.reason = " Hosts the same name."
         return result
     
     # Step 3 — SOA record indicates a different owner
@@ -350,7 +395,7 @@ def classify_domain(domain: str, description: str = "") -> DomainResult:
 
 def main():
     input_path  = "src/Source_Data/Cloudflare_Top100_Domains.csv"
-    output_path = "src/Source_Data/soa_results.csv"
+    output_path = "src/Source_Data/DNS_Identifier_Results.csv"
  
     rows = []
  
