@@ -220,15 +220,23 @@ def name_recognition(domain: str, ns: str):
         pattern = rf'(?<![a-z0-9]){re.escape(needle)}(?![a-z0-9])'
         return bool(re.search(pattern, haystack))
 
-    # Direction A: domain token inside the NS hostname
+    if domain_token in ns_token:
+        return True
+    # Direction A: domain token as whole word inside NS hostname
     # 'azure' inside 'ns3-39.azure-dns.org' → True
     if whole_word(domain_token, ns):
         return True
 
-    # Direction B: NS token inside the domain hostname
-    # 'google' inside 'googledomains.com' → True
+    # Direction B: NS token as substring inside domain token
+    # 'google' inside 'googleapis' → True  (substring, not whole-word)
+    if ns_token in domain_token:
+        return True
+
+    # Direction C: NS token as whole word inside full domain hostname
+    # 'google' inside 'google-domains.com' → True
     if whole_word(ns_token, domain):
         return True
+    
 
     return False
 
@@ -317,7 +325,7 @@ def classify_name_server(ns: str, domain: str, domain_tld: str, soa: Optional[di
     # Step 1.5a - Domain name is contained in the nameserver.
     if name_recognition(domain, ns):
         result.ns_type = "private"
-        result.reason = f'DOmanin name is contained in the nameserver, signaling ownership'
+        result.reason = f'Domanin name is contained in the nameserver, signaling ownership'
         return result
     
     # Step 1.5b — NS belongs to a known corporate subsidiary of the domain owner
