@@ -27,23 +27,209 @@ class CAResult:
     critical_dependency: bool = False  # True if third-party CA AND no OCSP stapling
 #endregion
 
-#region Already Made Helpers
+# ---------------------------------------------------------------------------
+# Corporate family table
+# ---------------------------------------------------------------------------
+# Maps every known subsidiary / product domain to a canonical owner token.
+# Add rows freely — the token strings just need to match within a family.
+# Keys are registered domains (eTLD+1); values are arbitrary owner labels.
+ 
+CORPORATE_FAMILY: dict[str, str] = {
+    # Google / Alphabet
+    "google.com":       "google",
+    "googleapis.com":   "google",
+    "gstatic.com":      "google",
+    "googleusercontent.com": "google",
+    "googlevideo.com":  "google",
+    "goog":             "google",
+    "pki.goog":         "google",
+    "youtube.com":      "google",
+    "youtu.be":         "google",
+    "gmail.com":        "google",
+    "googlemail.com":   "google",
+    "googlesyndication.com": "google",
+    "googletagmanager.com":  "google",
+    "doubleclick.net":  "google",
+    "ggpht.com":        "google",
+    "chromium.org":     "google",
+ 
+    # Meta / Facebook
+    "facebook.com":     "meta",
+    "fb.com":           "meta",
+    "fbcdn.net":        "meta",
+    "instagram.com":    "meta",
+    "whatsapp.com":     "meta",
+    "whatsapp.net":     "meta",
+    "messenger.com":    "meta",
+    "oculus.com":       "meta",
+ 
+    # Microsoft
+    "microsoft.com":    "microsoft",
+    "microsoftonline.com": "microsoft",
+    "azure.com":        "microsoft",
+    "azureedge.net":    "microsoft",
+    "msecnd.net":       "microsoft",
+    "windows.net":      "microsoft",
+    "msftconnecttest.com": "microsoft",
+    "office.com":       "microsoft",
+    "office365.com":    "microsoft",
+    "live.com":         "microsoft",
+    "hotmail.com":      "microsoft",
+    "outlook.com":      "microsoft",
+    "sharepoint.com":   "microsoft",
+    "skype.com":        "microsoft",
+    "xbox.com":         "microsoft",
+    "linkedin.com":     "microsoft",  # acquired 2016
+ 
+    # Amazon / AWS
+    "amazon.com":       "amazon",
+    "amazonaws.com":    "amazon",
+    "aws.amazon.com":   "amazon",
+    "cloudfront.net":   "amazon",
+    "awsstatic.com":    "amazon",
+    "amazonvideo.com":  "amazon",
+    "primevideo.com":   "amazon",
+    "audible.com":      "amazon",
+    "imdb.com":         "amazon",
+    "twitch.tv":        "amazon",   # acquired 2014
+    "goodreads.com":    "amazon",
+ 
+    # Apple
+    "apple.com":        "apple",
+    "icloud.com":       "apple",
+    "me.com":           "apple",
+    "mac.com":          "apple",
+    "mzstatic.com":     "apple",
+    "apple-dns.net":    "apple",
+    "aaplimg.com":      "apple",
+ 
+    # Cloudflare
+    "cloudflare.com":   "cloudflare",
+    "cloudflare.net":   "cloudflare",
+    "cloudflarestorage.com": "cloudflare",
+    "1dot1dot1dot1.cloudflare-dns.com": "cloudflare",
+ 
+    # Yahoo / Oath / Verizon Media
+    "yahoo.com":        "yahoo",
+    "yimg.com":         "yahoo",
+    "yahooapis.com":    "yahoo",
+    "oath.com":         "yahoo",
+    "aol.com":          "yahoo",
+    "tumblr.com":       "yahoo",
+ 
+    # Alibaba
+    "alibaba.com":      "alibaba",
+    "alicdn.com":       "alibaba",
+    "alibabadns.com":   "alibaba",
+    "aliyun.com":       "alibaba",
+    "alikunlun.com":    "alibaba",
+    "taobao.com":       "alibaba",
+    "tmall.com":        "alibaba",
+ 
+    # Tencent
+    "tencent.com":      "tencent",
+    "qq.com":           "tencent",
+    "wechat.com":       "tencent",
+    "weixin.qq.com":    "tencent",
+    "qcloud.com":       "tencent",
+ 
+    # Twitter / X
+    "twitter.com":      "twitter",
+    "x.com":            "twitter",
+    "twimg.com":        "twitter",
+    "t.co":             "twitter",
+ 
+    # Spotify
+    "spotify.com":      "spotify",
+    "scdn.co":          "spotify",
+    "spotifycdn.com":   "spotify",
+ 
+    # Netflix
+    "netflix.com":      "netflix",
+    "nflximg.com":      "netflix",
+    "nflxvideo.net":    "netflix",
+    "nflxext.com":      "netflix",
+    "fast.com":         "netflix",
+ 
+    # Adobe
+    "adobe.com":        "adobe",
+    "adobedtm.com":     "adobe",
+    "2o7.net":          "adobe",
+    "omtrdc.net":       "adobe",
+    "scene7.com":       "adobe",
+ 
+    # Salesforce
+    "salesforce.com":   "salesforce",
+    "force.com":        "salesforce",
+    "exacttarget.com":  "salesforce",
+    "pardot.com":       "salesforce",
+ 
+    # WordPress / Automattic
+    "wordpress.com":    "automattic",
+    "wordpress.org":    "automattic",
+    "wp.com":           "automattic",
+    "gravatar.com":     "automattic",
+}
+
 def get_tld(hostname: str) -> str:
-    """
-    Return the registered domain (eTLD+1). 
-    e.g. 'ns1.example.com' → 'example.com' 'ns1.cloudflare.com' → 'cloudflare.com'
-    """
+    """Return the registered domain (eTLD+1) for a hostname."""
     try:
-        # Use tldextract to get the public suffix / registered domain. Passing cache_dir=None avoids creating a cache file 
-        # and prevents permission errors in environments where the package install path is read-only.
         ext = tldextract.TLDExtract(cache_dir=None)(hostname)
         if ext.domain and ext.suffix:
             return f"{ext.domain}.{ext.suffix}"
         return hostname
-    except ImportError:
+    except Exception:
         parts = hostname.rstrip(".").split(".")
-        # For this exception it returns the las two parts of the domain and suffix. e.g domain.com 
         return ".".join(parts[-2:]) if len(parts) >= 2 else hostname
+ 
+ 
+def owner_of(domain: str) -> Optional[str]:
+    """
+    Return the corporate owner token for *domain*, or None if unknown.
+    Checks the exact registered domain first, then walks up suffix variants
+    so that e.g. 'ocsp.pki.goog' → registered domain 'pki.goog' → 'google'.
+    """
+    tld = get_tld(domain.lower().lstrip("*."))
+    return CORPORATE_FAMILY.get(tld)
+ 
+ 
+def same_corporate_family(domain_a: str, domain_b: str) -> bool:
+    """
+    Return True if both domains belong to the same corporate family,
+    e.g. same_corporate_family('googleapis.com', 'google.com') → True.
+    """
+    owner_a = owner_of(domain_a)
+    owner_b = owner_of(domain_b)
+    # Both must be known and identical
+    return bool(owner_a and owner_b and owner_a == owner_b)
+    
+# ---------------------------------------------------------------------------
+# Public CA keyword list (unchanged from your original)
+# ---------------------------------------------------------------------------
+ 
+PUBLIC_CA_KEYWORDS = [
+    "digicert",
+    "let's encrypt",
+    "letsencrypt",
+    "sectigo",
+    "globalsign",
+    "global sign",
+    "geotrust",
+    "rapidssl",
+    "comodo",
+    "thawte",
+    "symantec",
+    "ssl corp",
+    "starfield",
+    "quovadis",
+    "trustwave",
+    "amazon trust",
+    "google trust services",
+    "certum",
+    "buypass",
+    "zerossl",
+    "entrust",
+]
 
 def is_https(domain: str, retries: int = 2, timeout: int = 10) -> bool:
     """Return True if the domain responds on HTTPS (port 443)."""
@@ -83,26 +269,6 @@ def get_san_tlds(domain: str, retries: int = 2, timeout: int = 10) -> set[str]:
             break  # permanent failure (no HTTPS, bad cert, etc.) — don't retry
     return sans
 
-def get_soa(hostname: str) -> Optional[str]:
-    """
-    Return the SOA MNAME (primary nameserver) for the zone that hosts
-    `hostname`, or None on failure.
-    """
-    try:
-        answers = dns.resolver.resolve(hostname, "SOA")
-        return str(answers[0].mname).rstrip(".")
-    except Exception:
-        # Walk up the tree: try the domain itself, then parent zones
-        parts = hostname.split(".")
-        for i in range(len(parts) - 1):
-            candidate = ".".join(parts[i:])
-            try:
-                answers = dns.resolver.resolve(candidate, "SOA")
-                return str(answers[0].mname).rstrip(".")
-            except Exception:
-                continue
-        return None
-
 def dig_ns(domain: str, timeout: int = 5) -> list[str]:
     """Return nameserver hostnames for *domain* via DNS query."""
     try:
@@ -111,16 +277,28 @@ def dig_ns(domain: str, timeout: int = 5) -> list[str]:
     except Exception:
         return []
 
-
-def dig_soa(domain: str, timeout: int = 5) -> Optional[str]:
-    """Return the SOA MNAME (master nameserver) for *domain*."""
+# ---------------------------------------------------------------------------
+# SOA helper (kept local so this module is self-contained)
+# ---------------------------------------------------------------------------
+ 
+def _dig_soa(domain: str, timeout: int = 5) -> Optional[str]:
     try:
         answers = dns.resolver.resolve(domain, "SOA", lifetime=timeout)
-        for r in answers:
-            return str(r.mname).rstrip(".").lower()
+        return str(answers[0].mname).rstrip(".").lower()
     except Exception:
+        parts = domain.split(".")
+        for i in range(1, len(parts) - 1):
+            candidate = ".".join(parts[i:])
+            try:
+                answers = dns.resolver.resolve(candidate, "SOA", lifetime=timeout)
+                return str(answers[0].mname).rstrip(".").lower()
+            except Exception:
+                continue
         return None
-
+    
+def is_public_ca_name(ca_name: str) -> bool:
+    name = (ca_name or "").lower()
+    return any(kw in name for kw in PUBLIC_CA_KEYWORDS)
 
 def dig_cname(domain: str, timeout: int = 5) -> Optional[str]:
     """Return the first CNAME target for *domain*."""
@@ -298,54 +476,78 @@ def is_public_ca_name(ca_name: str) -> bool:
     return any(keyword in name for keyword in PUBLIC_CA_KEYWORDS)
 
 
-def classify_ca(ca_url: str, website: str, san_tlds: list[str], ca_name: str = "") -> str:
-    """Classify a CA as 'private' or 'third'."""
-    if not ca_url and not ca_name:
-        return "unknown"
-
-    ca_tld = get_tld(ca_url) if ca_url else ""
-    w_tld = get_tld(website)
-    website_root = w_tld.lower()
+# ---------------------------------------------------------------------------
+# classify_ca — updated with corporate-family check
+# ---------------------------------------------------------------------------
+ 
+def classify_ca(
+    ca_url: str,
+    website: str,
+    san_tlds: list[str],
+    ca_name: str = "",
+) -> str:
+    """
+    Classify a CA as 'private', 'third', or 'unknown'.
+ 
+    Priority order (stops at first conclusive result):
+      1. Known public CA name keyword                     → third
+      2. Corporate family match on ca_url vs website      → private  ← NEW
+      3. Company name in CA name string                   → private
+      4. TLD match (ca_url == website registered domain)  → private
+      5. CA TLD in website SAN list                       → private
+      6. SOA mismatch between ca_url and website          → third
+      7. ca_url doesn't contain website TLD               → third
+      8. Fallback                                         → unknown
+    """
     ca_name_lower = (ca_name or "").lower()
-
-    # Extract company/domain name (e.g. "google" from "google.com")
-    domain_parts = website_root.split(".")
-    company_name = domain_parts[0] if domain_parts else ""
-
-    # Check if CA name contains domain company name (e.g. "Google Trust Services" for google.com)
-    if company_name and company_name in ca_name_lower:
-        return "private"
-
-    if website_root and website_root in ca_name_lower:
-        return "private"
-
-    if ca_url and website_root and website_root in ca_url.lower():
-        return "private"
-
+    w_tld = get_tld(website)
+    domain_root = w_tld.split(".")[0]  # e.g. "google" from "google.com"
+ 
+    # 1. Definitively public CA by name — check first so well-known CAs are
+    #    never accidentally classified as private (e.g. "Google Trust Services"
+    #    for a non-Google site).
     if is_public_ca_name(ca_name_lower):
+        # Exception: if the public CA is actually owned by the same company
+        # (e.g. Google Trust Services for google.com) treat as private.
+        if ca_url and same_corporate_family(ca_url, website):
+            return "private"
+        if ca_url and owner_of(website) and owner_of(website) in ca_name_lower:
+            return "private"
         return "third"
-
-    if ca_url:
-        ca_host = ca_url.lower()
-        if any(keyword in ca_host for keyword in PUBLIC_CA_KEYWORDS):
-            return "third"
-
-    if ca_tld and ca_tld == w_tld:
+ 
+    # 2. Corporate family match on the CA issuer URL.
+    #    Catches googleapis.com, gstatic.com, fbcdn.net, etc.
+    if ca_url and same_corporate_family(ca_url, website):
         return "private"
-
-    if ca_tld in san_tlds:
+ 
+    # 3. Company/domain name appears inside the CA name string.
+    if domain_root and domain_root in ca_name_lower:
         return "private"
-
+    if w_tld and w_tld in ca_name_lower:
+        return "private"
+    if ca_url and w_tld and w_tld in ca_url.lower():
+        return "private"
+ 
+    # 4. Exact TLD match.
     if ca_url:
-        ca_soa = dig_soa(ca_url)
-        w_soa = dig_soa(website)
+        ca_tld = get_tld(ca_url)
+        if ca_tld and ca_tld == w_tld:
+            return "private"
+ 
+        # 5. CA TLD found in the website's SAN list.
+        if ca_tld in san_tlds:
+            return "private"
+ 
+        # 6. SOA mismatch → different DNS authority → third-party.
+        ca_soa = _dig_soa(ca_url)
+        w_soa = _dig_soa(website)
         if ca_soa and w_soa and ca_soa != w_soa:
             return "third"
-
-        ca_url_lower = ca_url.lower()
-        if ca_url_lower and w_tld and w_tld not in ca_url_lower:
+ 
+        # 7. ca_url doesn't mention the website's registered domain at all.
+        if w_tld and w_tld not in ca_url.lower():
             return "third"
-
+ 
     return "unknown"
 
 def measure_ca(website: str) -> CAResult:
