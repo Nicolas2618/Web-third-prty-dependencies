@@ -142,23 +142,18 @@ def get_san_tlds(domain: str, retries: int = 2, timeout: int = 10) -> set[str]:
 # ---------------------------------------------------------------------------
 
 def extract_provider(nameserver: str) -> str:
-    """Extract provider name from a nameserver string. e.g google.com would return google as their nameserver. """
-    # Remove trailing dot
-    ns = nameserver.rstrip('.')
-    # Splits the nameserver by parts, most of the time the nameserver is located in the second part of the dns. 
-    nameserver_parts = ns.split('.')
-
-    # Examples: 'awsdns-43' -> 'awsdns', 'apple' -> 'apple', 'google' -> 'google'
-    for part in nameserver_parts:
-        match = re.search(r'([a-z]+)', part)
-        # if else statements to get the appropriate nameserver, in some scenarios it is not at the second position, so it 
-        # accounts for that. 
-        if match:
-            token = match.group(1)
-            if token == "ns" or len(token) <= 2 or token == "dns":
-                continue
-            return token
-    # Returns nothing in case there is no nameserver. 
+    ns = nameserver.rstrip('.').lower()
+    parts = ns.split('.')
+    
+    # If it ends in a standard TLD like .com, .net, .org (e.g., cloudflare.com)
+    # parts[-1] = 'com', parts[-2] = 'cloudflare'
+    if len(parts) >= 2:
+        # Handle common double TLDs if necessary (e.g., co.uk)
+        if parts[-1] == 'uk' and parts[-2] == 'co':
+            return parts[-3] if len(parts) >= 3 else None
+            
+        return parts[-2]
+        
     return None
 
 # ---------------------------------------------------------------------------
@@ -178,6 +173,11 @@ CORPORATE_NS_OWNERS: dict[str, set[str]] = {
     "awsdns-01.co.uk":  {"amazon.com", "amazonaws.com"},
     "awsdns-56.net":    {"amazon.com", "amazonaws.com"},
     "awsdns-37.org":    {"amazon.com", "amazonaws.com"},
+    "awsdns-16.co.uk":    {"amazon.com", "amazonaws.com"},
+    "awsdns-03.com":    {"amazon.com", "amazonaws.com"},
+    "awsdns-33.com":    {"amazon.com", "amazonaws.com"},
+    "awsdns-52.org":    {"amazon.com", "amazonaws.com"},
+    "awsdns-21.co.uk":    {"amazon.com", "amazonaws.com"},
     "googledomains.com":{"google.com", "alphabet.com"},
     "p-ns.facebook.com":{"facebook.com", "meta.com"},
     "cloudflare.com":   set(),  # pure third-party CDN, never private
@@ -303,6 +303,26 @@ def classify_by_soa(domain: str, soa: dict) -> tuple[str, str]:
     
     return "no rule matched"
 
+def extract_provider_from_reason(reason: str, nameserver: str = "", domain: str = "") -> Optional[str]:
+    # "SOA Mnama/rname points to third party: google"
+    if "points to third party:" in reason:
+        match = re.search(r':\s*(\S+)$', reason)
+        return match.group(1) if match else None
+    
+    # Checker for subsidiary (From the dictionary).
+    if "known subsidiary of" in reason:
+        match = re.search(r'known subsidiary of\s+(\S+)$', reason)
+        return match.group(1) if match else None
+    
+    # "NS TLD matches domain TLD"
+    if "NS TLD matches domain TLD" in reason:
+        return get_tld(domain)
+    
+    # If Domain name is contained in the nameserver.
+    if "contained in the nameserver" in reason:
+        return get_tld(nameserver)
+    
+    return None
 # ---------------------------------------------------------------------------
 # Per-nameserver classification  (the 5-step algorithm)
 # ---------------------------------------------------------------------------
@@ -402,7 +422,7 @@ def classify_domain(domain: str, description: str = "") -> DomainResult:
 # ---------------------------------------------------------------------------
 
 def main():
-    input_path  = "src/Source_Data/Cloudflare_Top100_Domains.csv"
+    input_path  = "src/Source_Data/Cloudflare_top_500websites.csv"
     output_path = "src/Source_Data/DNS_Identifier_Results.csv"
  
     rows = []
@@ -433,10 +453,11 @@ def main():
                     "nameserver":  ns_result.ns,
                     "type":        ns_result.ns_type,
                     "reason":      ns_result.reason,
+                    "provider":    extract_provider_from_reason(ns_result.reason, ns_result.ns, domain_name),
                 })
  
     with open(output_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["domain", "nameserver", "type", "reason"])
+        writer = csv.DictWriter(f, fieldnames=["domain", "nameserver", "type", "reason", "provider"])
         writer.writeheader()
         writer.writerows(rows)
  
