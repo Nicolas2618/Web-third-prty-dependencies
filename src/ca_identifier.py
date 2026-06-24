@@ -13,7 +13,13 @@ from cryptography import x509
 from cryptography.x509.oid import ExtensionOID, AuthorityInformationAccessOID, NameOID
 import dns.resolver
 from urllib.parse import urlparse
+import numpy as np
 import tldextract
+from domains import CORPORATE_FAMILY
+import matplotlib.pyplot as plt
+import pandas as pa
+import circlify
+import matplotlib.patches as mpatches
 #endregion
 
 #region Data classes
@@ -25,151 +31,9 @@ class CAResult:
     ca_type: str = "unknown"           # "private" / "third" / "unknown"
     ocsp_stapling: bool = False
     critical_dependency: bool = False  # True if third-party CA AND no OCSP stapling
+    ssl_error: Optional[str] = None
+    ssl_or_tls: str = "unknown"
 #endregion
-
-# ---------------------------------------------------------------------------
-# Corporate family table
-# ---------------------------------------------------------------------------
-# Maps every known subsidiary / product domain to a canonical owner token.
-# Add rows freely — the token strings just need to match within a family.
-# Keys are registered domains (eTLD+1); values are arbitrary owner labels.
- 
-CORPORATE_FAMILY: dict[str, str] = {
-    # Google / Alphabet
-    "google.com":       "google",
-    "googleapis.com":   "google",
-    "gstatic.com":      "google",
-    "googleusercontent.com": "google",
-    "googlevideo.com":  "google",
-    "goog":             "google",
-    "pki.goog":         "google",
-    "youtube.com":      "google",
-    "youtu.be":         "google",
-    "gmail.com":        "google",
-    "googlemail.com":   "google",
-    "googlesyndication.com": "google",
-    "googletagmanager.com":  "google",
-    "doubleclick.net":  "google",
-    "ggpht.com":        "google",
-    "chromium.org":     "google",
- 
-    # Meta / Facebook
-    "facebook.com":     "meta",
-    "fb.com":           "meta",
-    "fbcdn.net":        "meta",
-    "instagram.com":    "meta",
-    "whatsapp.com":     "meta",
-    "whatsapp.net":     "meta",
-    "messenger.com":    "meta",
-    "oculus.com":       "meta",
- 
-    # Microsoft
-    "microsoft.com":    "microsoft",
-    "microsoftonline.com": "microsoft",
-    "azure.com":        "microsoft",
-    "azureedge.net":    "microsoft",
-    "msecnd.net":       "microsoft",
-    "windows.net":      "microsoft",
-    "msftconnecttest.com": "microsoft",
-    "office.com":       "microsoft",
-    "office365.com":    "microsoft",
-    "live.com":         "microsoft",
-    "hotmail.com":      "microsoft",
-    "outlook.com":      "microsoft",
-    "sharepoint.com":   "microsoft",
-    "skype.com":        "microsoft",
-    "xbox.com":         "microsoft",
-    "linkedin.com":     "microsoft",  # acquired 2016
- 
-    # Amazon / AWS
-    "amazon.com":       "amazon",
-    "amazonaws.com":    "amazon",
-    "aws.amazon.com":   "amazon",
-    "cloudfront.net":   "amazon",
-    "awsstatic.com":    "amazon",
-    "amazonvideo.com":  "amazon",
-    "primevideo.com":   "amazon",
-    "audible.com":      "amazon",
-    "imdb.com":         "amazon",
-    "twitch.tv":        "amazon",   # acquired 2014
-    "goodreads.com":    "amazon",
- 
-    # Apple
-    "apple.com":        "apple",
-    "icloud.com":       "apple",
-    "me.com":           "apple",
-    "mac.com":          "apple",
-    "mzstatic.com":     "apple",
-    "apple-dns.net":    "apple",
-    "aaplimg.com":      "apple",
- 
-    # Cloudflare
-    "cloudflare.com":   "cloudflare",
-    "cloudflare.net":   "cloudflare",
-    "cloudflarestorage.com": "cloudflare",
-    "1dot1dot1dot1.cloudflare-dns.com": "cloudflare",
- 
-    # Yahoo / Oath / Verizon Media
-    "yahoo.com":        "yahoo",
-    "yimg.com":         "yahoo",
-    "yahooapis.com":    "yahoo",
-    "oath.com":         "yahoo",
-    "aol.com":          "yahoo",
-    "tumblr.com":       "yahoo",
- 
-    # Alibaba
-    "alibaba.com":      "alibaba",
-    "alicdn.com":       "alibaba",
-    "alibabadns.com":   "alibaba",
-    "aliyun.com":       "alibaba",
-    "alikunlun.com":    "alibaba",
-    "taobao.com":       "alibaba",
-    "tmall.com":        "alibaba",
- 
-    # Tencent
-    "tencent.com":      "tencent",
-    "qq.com":           "tencent",
-    "wechat.com":       "tencent",
-    "weixin.qq.com":    "tencent",
-    "qcloud.com":       "tencent",
- 
-    # Twitter / X
-    "twitter.com":      "twitter",
-    "x.com":            "twitter",
-    "twimg.com":        "twitter",
-    "t.co":             "twitter",
- 
-    # Spotify
-    "spotify.com":      "spotify",
-    "scdn.co":          "spotify",
-    "spotifycdn.com":   "spotify",
- 
-    # Netflix
-    "netflix.com":      "netflix",
-    "nflximg.com":      "netflix",
-    "nflxvideo.net":    "netflix",
-    "nflxext.com":      "netflix",
-    "fast.com":         "netflix",
- 
-    # Adobe
-    "adobe.com":        "adobe",
-    "adobedtm.com":     "adobe",
-    "2o7.net":          "adobe",
-    "omtrdc.net":       "adobe",
-    "scene7.com":       "adobe",
- 
-    # Salesforce
-    "salesforce.com":   "salesforce",
-    "force.com":        "salesforce",
-    "exacttarget.com":  "salesforce",
-    "pardot.com":       "salesforce",
- 
-    # WordPress / Automattic
-    "wordpress.com":    "automattic",
-    "wordpress.org":    "automattic",
-    "wp.com":           "automattic",
-    "gravatar.com":     "automattic",
-}
 
 def get_tld(hostname: str) -> str:
     """Return the registered domain (eTLD+1) for a hostname."""
@@ -246,6 +110,19 @@ def is_https(domain: str, retries: int = 2, timeout: int = 10) -> bool:
         except Exception:
             return False  # non-transient error, don't retry
     return False
+
+INFRASTRUCTURE_KEYWORDS = [
+    "cloudfront",
+    "akadns",
+    "akamai",
+    "apple-dns",
+    "cdn",
+]
+
+def is_infrastructure_domain(domain: str) -> bool:
+    d = domain.lower()
+
+    return any(k in d for k in INFRASTRUCTURE_KEYWORDS)
 
 def get_san_tlds(domain: str, retries: int = 2, timeout: int = 10) -> set[str]:
     """Return registered domains from TLS SAN for `domain`."""
@@ -364,6 +241,7 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
         "san_tlds": [],
         "ca_name": None,
         "ca_url": None,
+        "tls_or_ssl": None,
         "ocsp_urls": [],
         "crl_urls": [],
         "ocsp_stapled": False,
@@ -374,6 +252,8 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
         ctx.verify_mode = ssl.CERT_NONE
         with socket.create_connection((domain, 443), timeout=timeout) as sock:
             with ctx.wrap_socket(sock, server_hostname=domain) as ssock:
+                #print(f"Negotiated Protocol Version: {ssock.version()}")
+                result["tls_or_ssl"] = f"{ssock.version()}"
                 cert_der = ssock.getpeercert(binary_form=True)
                 if cert_der is None:
                     return result
@@ -394,18 +274,30 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
 
                 # Issuer / CA name
                 issuer = x509_cert.issuer
-                org_name = None
-                common_name = None
-                org_unit = None
-                for attribute in issuer:
-                    if attribute.oid == NameOID.ORGANIZATION_NAME and not org_name:
-                        org_name = attribute.value
-                    elif attribute.oid == NameOID.COMMON_NAME and not common_name:
-                        common_name = attribute.value
-                    elif attribute.oid == NameOID.ORGANIZATIONAL_UNIT_NAME and not org_unit:
-                        org_unit = attribute.value
 
-                result["ca_name"] = org_name or common_name or org_unit or ""
+                # Prefer Organization Name (O), then Common Name (CN), then Organizational Unit (OU).
+                ca_name = None
+                for attribute in issuer:
+                    if attribute.oid == NameOID.ORGANIZATION_NAME and attribute.value:
+                        ca_name = attribute.value
+                        break
+                if not ca_name:
+                    for attribute in issuer:
+                        if attribute.oid == NameOID.COMMON_NAME and attribute.value:
+                            ca_name = attribute.value
+                            break
+                if not ca_name:
+                    for attribute in issuer:
+                        if attribute.oid == NameOID.ORGANIZATIONAL_UNIT_NAME and attribute.value:
+                            ca_name = attribute.value
+                            break
+
+                # Fallback: join any available issuer attribute values (previous behaviour).
+                if not ca_name:
+                    parts = [attr.value for attr in issuer if getattr(attr, "value", None)]
+                    ca_name = " | ".join(parts)
+
+                result["ca_name"] = ca_name
 
                 # Try to resolve the CA issuer location from the certificate's AIA extension.
                 if not result["ca_url"]:
@@ -413,8 +305,8 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
 
                 # OCSP / CRL from caIssuers / OCSP extension (not always in stdlib cert dict)
                 # Use openssl CLI for richer extension data
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"[SSL ERROR] {domain}: {type(e).__name__}: {e}. Except 1")
 
     # Supplement with openssl for OCSP stapling check
     try:
@@ -441,10 +333,49 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
             if "CRL - URI:" in line or ("URI:" in line and ".crl" in line.lower()):
                 url = line.split("URI:")[-1].strip()
                 result["crl_urls"].append(url)
-    except Exception:
+    except Exception as e:
         pass
 
     return result
+
+def check_ocsp_stapling(hostname, port=443):
+    """
+    Checks if a website supports OCSP Stapling using OpenSSL.
+    """
+    command = f"echo | openssl s_client -connect {hostname}:{port} -status"
+    
+    try:
+        # Run the command and capture the output
+        result = subprocess.run(
+            command, 
+            shell=True, 
+            capture_output=True, 
+            text=True, 
+            timeout=10
+        )
+        
+        output = result.stdout + result.stderr
+        
+        # Look for the OCSP response block
+        if "OCSP response: no response sent" in output:
+            print(f"[{hostname}] OCSP Stapling is NOT enabled.")
+            return False
+        elif "OCSP Response Data:" in output:
+            print(f"[{hostname}] OCSP Stapling IS enabled!")
+            
+            # (Optional) Extract the validation status
+            match = re.search(r"Cert Status: (.+)", output)
+            if match:
+                print(f"Certificate Status: {match.group(1)}")
+            return True
+        else:
+            #print(f"[{hostname}] Could not determine OCSP status (Handshake may have failed).")
+            return None
+            
+    except subprocess.TimeoutExpired:
+        print("Command timed out.")
+        return None
+
 #endregion
 
 #region Put it all together
@@ -469,6 +400,14 @@ PUBLIC_CA_KEYWORDS = [
     "google trust services",
     "certum",
     "buypass",
+    "gts",
+    "amazon rsa",
+    "amazon ecc",
+    "amazon trust services",
+    "we1",
+    "we2",
+    "wr1",
+    "wr2",
 ]
 
 def is_public_ca_name(ca_name: str) -> bool:
@@ -553,12 +492,18 @@ def classify_ca(
 def measure_ca(website: str) -> CAResult:
     result = CAResult(website=website)
     ssl_info = get_ssl_info(website)
-    if not ssl_info:
-        return result
+
+    if not ssl_info.get("ca_name"):
+        ssl_info = get_ssl_info(f"www.{website}")
 
     result.ca_name = ssl_info.get("ca_name", "")
+    if result.ca_name == None:
+        result.ca_name = "unknown"
     result.ca_url = ssl_info.get("ca_url", "")
-    result.ocsp_stapling = ssl_info.get("ocsp_stapled", False)
+    result.ssl_or_tls = ssl_info.get("tls_or_ssl", "")
+    if result.ssl_or_tls == None:
+        result.ssl_or_tls = "unknown"
+    result.ocsp_stapling = check_ocsp_stapling(website)
 
     san_tlds = ssl_info.get("san_tlds", [])
     result.ca_type = classify_ca(result.ca_url or "", website, san_tlds, result.ca_name)
@@ -566,11 +511,24 @@ def measure_ca(website: str) -> CAResult:
     # Critical dependency: third-party CA AND no OCSP stapling
     result.critical_dependency = (result.ca_type == "third") and not result.ocsp_stapling
 
+    if result.ca_type == "unknown":
+        print(
+            f"""
+    UNKNOWN DOMAIN
+    --------------
+    Website: {website}
+    CA Name: {result.ca_name}
+    CA URL: {result.ca_url}
+    SANs: {san_tlds}
+    OCSP Stapled: {result.ocsp_stapling}
+    """
+    )
+
     return result
 
 def main():
-    input_path  = "src/Source_Data/Cloudflare_Top100_Domains.csv"
-    output_path = "src/Source_Data/ca_results.csv"
+    input_path  = "src/Source_Data/top-1000-domains.csv"
+    output_path = "src/Source_Data/ca_results_1000.csv"
  
     rows = []
  
@@ -587,18 +545,185 @@ def main():
                 f"Domain:  {domain_name}\n"
                 f"CA Name: {ca_result.ca_name}\n"
                 f"Type:    {ca_result.ca_type}\n"
+                f"Stapled: {ca_result.ocsp_stapling}"
             )
             rows.append({
                 "domain":      domain_name,
                 "CA Name":     ca_result.ca_name,
                 "type":        ca_result.ca_type,
+                "Stapled": ca_result.ocsp_stapling,
+                "SSL or TLS": ca_result.ssl_or_tls
             })
             
     with open(output_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["domain", "CA Name", "type"])
+        writer = csv.DictWriter(f, fieldnames=["domain", "CA Name", "type", "Stapled", "SSL or TLS"])
         writer.writeheader()
         writer.writerows(rows)
 
+    return output_path
+
+def data_vis(input_file):
+    df = pa.read_csv(input_file)
+
+    # ----- Type pie -----
+    plt.figure(figsize=(8, 8))
+
+    df["type"].value_counts().plot.pie(
+        autopct="%1.1f%%",
+        ylabel=""
+    )
+
+    plt.title("CA Type Distribution")
+    #plt.show()
+
+    # ----- CA Name pie -----
+    ca_counts = (
+    df["CA Name"]
+    .fillna("Unknown")
+    .replace("", "Unknown")
+    .value_counts())
+
+    top_n = 100
+
+    if len(ca_counts) > top_n:
+        other = ca_counts.iloc[top_n:].sum()
+        ca_counts = pa.concat([
+            ca_counts.iloc[:top_n],
+            pa.Series({"Other": other})
+        ])
+
+    plt.figure(figsize=(10, 10))
+
+    ca_counts.plot.pie(
+        autopct="%1.1f%%",
+        ylabel=""
+    )
+
+    plt.title("Certificate Authority Distribution")
+    
+    #Making a bar chart showing the exact counts of types
+    plt.figure(figsize=(10, 6))
+    df["type"].value_counts().plot(kind="bar")
+    plt.title("CA Type Distribution")
+    plt.xlabel("Type")
+    plt.ylabel("Count")
+
+    #Pie chart for TLS/SSL
+    plt.figure(figsize=(8, 8))
+    df["SSL or TLS"].value_counts().plot.pie(
+        autopct="%1.1f%%",
+        ylabel=""
+    )
+    plt.title("TLS/SSL Distribution")
+
+    # --- Proportional Area / Bubble Chart for CA Name ---
+    ca_counts = (
+        df["CA Name"]
+        .fillna("Unknown")
+        .replace("", "Unknown")
+        .value_counts()
+        .head(100)  # Top 20 for readability
+    )
+
+    labels = ca_counts.index.tolist()
+    values = ca_counts.values.tolist()
+
+    # circlify expects values sorted descending
+    sorted_pairs = sorted(zip(values, labels), reverse=True)
+    sorted_values, sorted_labels = zip(*sorted_pairs)
+
+    # Compute packed circle layout
+    circles = circlify.circlify(
+        list(sorted_values),
+        show_enclosure=False,
+        target_enclosure=circlify.Circle(x=0, y=0, r=1)
+    )
+
+    # Reverse so largest circle matches first label
+    circles = circles[::-1]
+
+    fig, ax = plt.subplots(figsize=(12, 12))
+    ax.set_aspect("equal")
+    ax.axis("off")
+    fig.patch.set_facecolor("#F5F6FA")
+    ax.set_facecolor("#F5F6FA")
+
+    DARK_BLUE = "#070BE7"
+    TEAL      = "#5FB6E9"
+    WHITE     = "#FFFFFF"
+
+    max_val = sorted_values[0]
+
+    for circle, label, value in zip(circles, sorted_labels, sorted_values):
+        x, y, r = circle.x, circle.y, circle.r
+        color = DARK_BLUE if value == max_val else TEAL
+
+        patch = plt.Circle((x, y), r, color=color, alpha=0.92, zorder=2)
+        ax.add_patch(patch)
+
+        # Label sizing based on circle radius
+        fontsize = max(6, min(11, r * 28))
+
+        # Only label if circle is large enough
+        if r > 0.04:
+            # Truncate long names
+            short_label = label if len(label) <= 18 else label[:16] + "…"
+            ax.text(
+                x, y + r * 0.12,
+                short_label,
+                ha="center", va="center",
+                fontsize=fontsize,
+                color=WHITE,
+                fontweight="bold",
+                zorder=3,
+                wrap=False
+            )
+            ax.text(
+                x, y - r * 0.28,
+                f"{value:,}",
+                ha="center", va="center",
+                fontsize=fontsize * 0.85,
+                color=WHITE,
+                alpha=0.85,
+                zorder=3
+            )
+
+    # Fit axes tightly around packed circles
+    lim = max(abs(c.x) + c.r for c in circles) * 1.05
+    ax.set_xlim(-lim, lim)
+    ax.set_ylim(-lim, lim)
+
+    # Legend
+    legend_handles = [
+        mpatches.Patch(color=DARK_BLUE, label=f"Largest CA ({sorted_labels[0]})"),
+        mpatches.Patch(color=TEAL,      label="Other CAs"),
+    ]
+    ax.legend(
+        handles=legend_handles,
+        loc="lower center",
+        bbox_to_anchor=(0.5, -0.03),
+        ncol=2,
+        frameon=False,
+        fontsize=11
+    )
+
+    plt.title(
+        "Certificate Authority Distribution",
+        fontsize=16,
+        fontweight="bold",
+        pad=16,
+        color="#060E77"
+    )
+    plt.tight_layout()
+
+    plt.show()
+
 if __name__ == "__main__":
-    main()
+    #full thing
+    # output = main()
+    # data_vis(output)
+    
+    # quick vis
+    data_vis("src/Source_Data/ca_results_1000.csv")
+
 #endregion
