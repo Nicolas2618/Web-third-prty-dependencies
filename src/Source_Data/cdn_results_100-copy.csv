@@ -1,0 +1,3 @@
+domain,cdns,cdn type,third party,crit dependency,redundancy
+live.com,[],{},False,False,False
+netflix.com,[],{},False,False,False

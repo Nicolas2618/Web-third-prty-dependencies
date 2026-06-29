@@ -11,9 +11,9 @@ def get_cname(domain):
             return str(rdata.target)
         
     except dns.resolver.NoAnswer:
-        print(f"No CNAME record for {domain}.")
+        print(f"No CNAME record for {domain}")
     except dns.resolver.NXDOMAIN:
-        print(f'The domain {domain} does not exist.')
+        print(f'The domain {domain} does not exist')
     except Exception as e:
         print(f"an error ocurred: {e}")
 

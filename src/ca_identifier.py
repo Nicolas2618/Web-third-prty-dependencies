@@ -25,6 +25,10 @@ import circlify
 import matplotlib.patches as mpatches
 #endregion
 
+
+
+
+
 #region Data classes
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #Data Classes
@@ -41,6 +45,10 @@ class CAResult:
     ssl_or_tls: str = "unknown"
 #endregion
 
+
+
+
+
 #region Basic helpers
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #Basic Helpers
@@ -56,7 +64,6 @@ def get_tld(hostname: str) -> str:
         parts = hostname.rstrip(".").split(".")
         return ".".join(parts[-2:]) if len(parts) >= 2 else hostname
  
-
 def owner_of(domain: str) -> Optional[str]:
     """
     Return the corporate owner token for *domain*, or None if unknown.
@@ -76,9 +83,6 @@ def same_corporate_family(domain_a: str, domain_b: str) -> bool:
     # Both must be known and identical
     return bool(owner_a and owner_b and owner_a == owner_b)
     
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
-#Public CA keyword list (unchanged from your original)
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 PUBLIC_CA_KEYWORDS = [
     "digicert",
     "let's encrypt",
@@ -99,8 +103,14 @@ PUBLIC_CA_KEYWORDS = [
     "google trust services",
     "certum",
     "buypass",
-    "zerossl",
-    "entrust",
+    "gts",
+    "amazon rsa",
+    "amazon ecc",
+    "amazon trust services",
+    "we1",
+    "we2",
+    "wr1",
+    "wr2",
 ]
 
 def is_https(domain: str, retries: int = 2, timeout: int = 10) -> bool:
@@ -162,9 +172,6 @@ def dig_ns(domain: str, timeout: int = 5) -> list[str]:
     except Exception:
         return []
 
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
-#SOA helper (kept local so this module is self-contained)
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 def _dig_soa(domain: str, timeout: int = 5) -> Optional[str]:
     try:
         answers = dns.resolver.resolve(domain, "SOA", lifetime=timeout)
@@ -192,6 +199,10 @@ def dig_cname(domain: str, timeout: int = 5) -> Optional[str]:
     except Exception:
         return None
 #endregion
+
+
+
+
 
 #region CA Helpers
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
@@ -237,10 +248,6 @@ def getCA_URL(domain: str):
 
     return None
 
-#region Get SSL Info
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
-#Get SSL Info
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 def get_ssl_info(domain: str, timeout: int = 10) -> dict:
     """
     Fetch the SSL certificate for *domain* and extract:
@@ -351,12 +358,7 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
         pass
 
     return result
-#endregion
 
-#region OCSP Sapling
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
-#OCSP Stapling
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 def check_ocsp_stapling(hostname, port=443):
     """
     Checks if a website supports OCSP Stapling using OpenSSL.
@@ -394,42 +396,15 @@ def check_ocsp_stapling(hostname, port=443):
     except subprocess.TimeoutExpired:
         print("Command timed out.")
         return None
-#endregion
-
-PUBLIC_CA_KEYWORDS = [
-    "digicert",
-    "let's encrypt",
-    "letsencrypt",
-    "sectigo",
-    "globalsign",
-    "global sign",
-    "geotrust",
-    "rapidssl",
-    "comodo",
-    "thawte",
-    "symantec",
-    "ssl corp",
-    "starfield",
-    "quovadis",
-    "trustwave",
-    "amazon trust",
-    "google trust services",
-    "certum",
-    "buypass",
-    "gts",
-    "amazon rsa",
-    "amazon ecc",
-    "amazon trust services",
-    "we1",
-    "we2",
-    "wr1",
-    "wr2",
-]
 
 def is_public_ca_name(ca_name: str) -> bool:
     name = (ca_name or "").lower()
     return any(keyword in name for keyword in PUBLIC_CA_KEYWORDS)
 #endregion
+
+
+
+
 
 #region Classify CA
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
@@ -496,7 +471,7 @@ def classify_ca(
         # 6. SOA mismatch → different DNS authority → third-party.
         ca_soa = _dig_soa(ca_url)
         w_soa = _dig_soa(website)
-        if ca_soa and w_soa and ca_soa != w_soa:
+        if ca_soa and w_soa and ca_soa == w_soa:
             return "third"
  
         # 7. ca_url doesn't mention the website's registered domain at all.
@@ -505,6 +480,10 @@ def classify_ca(
  
     return "unknown"
 #endregion
+
+
+
+
 
 #region Measure CA
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
@@ -548,13 +527,17 @@ def measure_ca(website: str) -> CAResult:
     return result
 #endregion
 
+
+
+
+
 #region Main
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #Main
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 def main():
-    input_path  = "src/Source_Data/top-1000-domains.csv"
-    output_path = "src/Source_Data/ca_results_1000.csv"
+    input_path  = "src/Source_Data/top-100000-domains.csv"
+    output_path = "src/Source_Data/ca_results_100000.csv"
  
     rows = []
  
@@ -563,7 +546,6 @@ def main():
  
         for row in reader:
             domain_name = row["domain"].strip()
-            description = row.get("description", "").strip()
  
             ca_result = measure_ca(domain_name)
  
@@ -588,6 +570,10 @@ def main():
 
     return output_path
 #endregion
+
+
+
+
 
 #region Data Visualization
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
@@ -750,16 +736,20 @@ def data_vis(input_file):
     plt.show()
 #endregion
 
+
+
+
+
 #region Starter
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #Starter
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 if __name__ == "__main__":
     #full thing
-    # output = main()
-    # data_vis(output)
+    output = main()
+    data_vis(output)
     
     # quick vis
-    data_vis("src/Source_Data/ca_results_1000.csv")
+    #data_vis("src/Source_Data/ca_results_1000.csv")
 
 #endregion
