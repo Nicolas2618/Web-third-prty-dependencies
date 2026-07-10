@@ -6,10 +6,10 @@ gstatic.com,['google'],{'google': 'private'},False,False,False
 apple.com,['akamai'],{'akamai': 'unknown'},False,False,False
 google.com,['google'],{'google': 'private'},False,False,False
 facebook.com,['meta'],{'meta': 'third'},True,True,False
-amazonaws.com,['cloudfront'],{'cloudfront': 'third'},True,True,False
+amazonaws.com,['cloudfront'],{'cloudfront': 'private'},False,False,False
 googlevideo.com,['google'],{'google': 'private'},False,False,False
 fbcdn.net,['meta'],{'meta': 'private'},False,False,False
-amazon.com,['cloudfront'],{'cloudfront': 'third'},True,True,False
+amazon.com,['cloudfront'],{'cloudfront': 'private'},False,False,False
 youtube.com,['google'],{'google': 'private'},False,False,False
 instagram.com,['meta'],{'meta': 'private'},False,False,False
 whatsapp.net,['meta'],{'meta': 'third'},True,True,False
@@ -31,15 +31,15 @@ aaplimg.com,[],{},False,False,False
 tiktokcdn.com,[],{},False,False,False
 tiktokv.com,['akamai'],{'akamai': 'third'},True,True,False
 cloudfront.net,[],{},False,False,False
-ui.com,['cloudfront'],{'cloudfront': 'third'},True,True,False
+ui.com,['cloudfront'],{'cloudfront': 'private'},False,False,False
 ytimg.com,[],{},False,False,False
 akamaiedge.net,[],{},False,False,False
 edgcdn.net,[],{},False,False,False
 yahoo.com,['yahoo'],{'yahoo': 'third'},True,True,False
 gvt2.com,[],{},False,False,False
-spotify.com,"['fastly', 'google']","{'fastly': 'third', 'google': 'third'}",True,True,True
+spotify.com,"['google', 'fastly']","{'google': 'third', 'fastly': 'third'}",True,True,True
 fastly.net,['fastly'],{'fastly': 'third'},True,True,False
-roblox.com,['cloudflare'],{'cloudflare': 'third'},True,True,False
+roblox.com,['roblox'],{'roblox': 'private'},False,False,False
 baidu.com,[],{},False,False,False
 office.com,['akamai'],{'akamai': 'private'},False,False,False
 sentry.io,['google'],{'google': 'third'},True,True,False
@@ -67,9 +67,9 @@ amazon-adsystem.com,[],{},False,False,False
 msn.com,['akamai'],{'akamai': 'unknown'},False,False,False
 googleadservices.com,['google'],{'google': 'private'},False,False,False
 ggpht.com,[],{},False,False,False
-oxylabs.io,"['cloudflare', 'google']","{'cloudflare': 'third', 'google': 'third'}",True,True,True
+oxylabs.io,['cloudflare'],{'cloudflare': 'third'},True,True,False
 amazon.dev,[],{},False,False,False
-linkedin.com,"['cloudflare', 'google']","{'cloudflare': 'third', 'google': 'third'}",True,True,True
+linkedin.com,['cloudflare'],{'cloudflare': 'third'},True,True,False
 windows.net,['microsoft'],{'microsoft': 'private'},False,False,False
 unity3d.com,['akamai'],{'akamai': 'third'},True,True,False
 microsoftonline.com,[],{},False,False,False
@@ -92,10 +92,6 @@ tiktok.com,['akamai'],{'akamai': 'third'},True,True,False
 aws.dev,[],{},False,False,False
 miui.com,['akamai'],{'akamai': 'unknown'},False,False,False
 cdn-apple.com,[],{},False,False,False
-pubmatic.com,['cloudfront'],{'cloudfront': 'third'},True,True,False
+pubmatic.com,['cloudfront'],{'cloudfront': 'private'},False,False,False
 adsrvr.org,['cloudfront'],{'cloudfront': 'third'},True,True,False
-avast.com,['akamai'],{'akamai': 'third'},True,True,False
-avsxappcaptiveportal.com,[],{},False,False,False
-android.com,['google'],{'google': 'private'},False,False,False
-reddit.com,['fastly'],{'fastly': 'third'},True,True,False
-chirpbooks.com,['cloudflare'],{'cloudflare': 'third'},True,True,False
+avast.com,"['akamai', 'google']","{'akamai': 'third', 'google': 'third'}",True,True,True

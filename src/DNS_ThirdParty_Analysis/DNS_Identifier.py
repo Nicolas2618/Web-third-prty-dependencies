@@ -2,15 +2,12 @@ import re
 import csv
 import ssl
 import time
-import json
 import socket
-import urllib.request
 import tldextract
-import urllib.parse
-import numpy as np
+#import numpy as np
 import dns.resolver
 import pandas as pa
-from typing import Optional, Any
+from typing import Optional
 from dataclasses import dataclass, field
 
 """
@@ -44,6 +41,7 @@ class DomainResult:
     description: str
     nameservers: list[NameserverResult] = field(default_factory=list)
     error: Optional[str] = None
+    dependency: str = "" 
 
 # --------------------------------------------------------------------------------------------
 # Helper Functions that would help us develop the overall part of the algorithm (DNS Helpers).
@@ -57,10 +55,37 @@ def get_ns(domain: str) -> list[str]:
     try:
         answers = dns.resolver.resolve(domain, 'NS')
         return [str(rdata).rstrip('.').lower() for rdata in answers]
-    except dns.resolver.NoAnswer:
+    except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN):
         return []
-    except dns.resolver.NXDOMAIN:
+    except (dns.resolver.LifetimeTimeout, dns.exception.Timeout):
         return []
+    except dns.resolver.NoNameservers:  
+        return []
+
+def clean_provider(value: str) -> str:
+    '''
+    This is a method with the objective of cleaning the provider name: For example, if the provider result is 
+    awsdns-32, it would use the regular expressions library to strip and only get the aws, which is the provider 
+    name we need of the dns.
+    '''
+
+    # Checks for possible empty values in domains/nameserver data. 
+    if pa.isna(value):
+        return value
+    
+    value = str(value).strip().lower()
+    value = value.rstrip('.')
+    
+    # Remove TLD suffixes (.com, .net, .org, etc.)
+    value = re.sub(r'\.(com|net|org|info|co\.uk)$', '', value)
+    
+    # Remove trailing hyphens and numbers (e.g. 'awsdns-05' → 'awsdns')
+    value = re.sub(r'[-_]\d+$', '', value)
+
+    # Remove common DNS noise words
+    value = re.sub(r'[-_]?(dns|ns)$', '', value)
+    
+    return value
     
 def get_soa(domain: str) -> dict:
     """
@@ -76,6 +101,10 @@ def get_soa(domain: str) -> dict:
                 "rname": str(rdata.rname).rstrip('.').lower(),
             }
     except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN):
+        return None
+    except (dns.resolver.LifetimeTimeout, dns.exception.Timeout):
+        return None
+    except dns.resolver.NoNameservers: 
         return None
     
 def get_tld(hostname: str) -> str:
@@ -151,8 +180,10 @@ def extract_provider(nameserver: str) -> str:
         # Handle common double TLDs if necessary (e.g., co.uk)
         if parts[-1] == 'uk' and parts[-2] == 'co':
             return parts[-3] if len(parts) >= 3 else None
-            
-        return parts[-2]
+        else:
+            raw = parts[-2]
+
+        return clean_provider(raw) if raw else None
         
     return None
 
@@ -163,23 +194,27 @@ def extract_provider(nameserver: str) -> str:
 # Maps a nameserver's registered domain → the parent company's registered domains.
 # If a website's domain TLD resolves to the same parent, it's private.
 CORPORATE_NS_OWNERS: dict[str, set[str]] = {
-    "azure-dns.com":    {"microsoft.com"},
-    "azure-dns.net":    {"microsoft.com"},
-    "azure-dns.org":    {"microsoft.com"},
-    "azure-dns.info":   {"microsoft.com"},
-    "awsdns-01.com":    {"amazon.com", "amazonaws.com"},
-    "awsdns-01.net":    {"amazon.com", "amazonaws.com"},
-    "awsdns-01.org":    {"amazon.com", "amazonaws.com"},
-    "awsdns-01.co.uk":  {"amazon.com", "amazonaws.com"},
-    "awsdns-56.net":    {"amazon.com", "amazonaws.com"},
-    "awsdns-37.org":    {"amazon.com", "amazonaws.com"},
-    "awsdns-16.co.uk":    {"amazon.com", "amazonaws.com"},
-    "awsdns-03.com":    {"amazon.com", "amazonaws.com"},
-    "awsdns-33.com":    {"amazon.com", "amazonaws.com"},
-    "awsdns-52.org":    {"amazon.com", "amazonaws.com"},
-    "awsdns-21.co.uk":    {"amazon.com", "amazonaws.com"},
-    "googledomains.com":{"google.com", "alphabet.com"},
-    "p-ns.facebook.com":{"facebook.com", "meta.com"},
+    "azure-dns.com":        {"microsoft.com", "outlook.com", "gamepass.com", "microsoftonline.com", "cloud.microsoft"},
+    "azure-dns.net":        {"microsoft.com", "outlook.com", "gamepass.com", "microsoftonline.com", "cloud.microsoft"},
+    "azure-dns.org":        {"microsoft.com", "outlook.com", "gamepass.com", "microsoftonline.com", "cloud.microsoft"},
+    "azure-dns.info":       {"microsoft.com", "outlook.com", "gamepass.com", "microsoftonline.com", "cloud.microsoft"},
+    "awsdns-01.com":        {"amazon.com", "amazonaws.com"},
+    "awsdns-01.net":        {"amazon.com", "amazonaws.com"},
+    "awsdns-01.org":        {"amazon.com", "amazonaws.com"},
+    "awsdns-01.co.uk":      {"amazon.com", "amazonaws.com"},
+    "awsdns-56.net":        {"amazon.com", "amazonaws.com"},
+    "awsdns-37.org":        {"amazon.com", "amazonaws.com"},
+    "awsdns-16.co.uk":      {"amazon.com", "amazonaws.com"},
+    "awsdns-03.com":        {"amazon.com", "amazonaws.com"},
+    "awsdns-33.com":        {"amazon.com", "amazonaws.com"},
+    "awsdns-52.org":        {"amazon.com", "amazonaws.com"},
+    "awsdns-21.co.uk":      {"amazon.com", "amazonaws.com"},
+    "googledomains.com":    {"google.com", "alphabet.com"},
+    "google.com":           {"gmail.com", "youtube.com"},
+    "p-ns.facebook.com":    {"facebook.com", "meta.com", "fb.com", "fbcdn.com", "fbsbx.com", },
+    "apple.com":            {"aaplimg.com", "apple.com", "icloud.com"},
+    "cloudns.net":          {"3gppnetwork.org"},
+    "cloudns.uk":           {"3gppnetwork.org"},
     "cloudflare.com":   set(),  # pure third-party CDN, never private
 }
 
@@ -277,7 +312,7 @@ def concentration(ns: str) -> float:
 # SOA-based classification
 # ---------------------------------------------------------------------------
 
-def classify_by_soa(domain: str, soa: dict) -> tuple[str, str]:
+def classify_by_soa(domain: str, soa: Optional[dict], ns: str = "") -> tuple[str, str]:
     """
     Classify a domain as private or third-party using SOA mname and rname.
     """
@@ -287,10 +322,15 @@ def classify_by_soa(domain: str, soa: dict) -> tuple[str, str]:
     domain_tld = get_tld(domain)
     mname_tld  = get_tld(soa["mname"])
     rname_tld  = get_tld(soa["rname"])
+    ns_tld     = get_tld(ns) if ns else None
     
     # Both point to the same owner — definitely private
     if mname_tld == domain_tld and rname_tld == domain_tld:
         return "private", f"SOA mname and rname both match domain"
+    
+    
+    if ns_tld and mname_tld == ns_tld:
+        return "unknown", f"SOA mname matches NS provider ({mname_tld}); no independent ownership signal"
 
     # mname is third party — strongest signal
     if mname_tld != domain_tld:
@@ -301,7 +341,8 @@ def classify_by_soa(domain: str, soa: dict) -> tuple[str, str]:
         provider = extract_provider(soa["rname"])
         return "third", f"SOA rname points to: {provider}"
     
-    return "no rule matched"
+    # was: return "no rule matched"  ← only one value, crashes on unpack
+    return "unknown", "SOA present but no rule matched"
 
 def extract_provider_from_reason(reason: str, nameserver: str = "", domain: str = "") -> Optional[str]:
     # "SOA Mnama/rname points to third party: google"
@@ -323,6 +364,24 @@ def extract_provider_from_reason(reason: str, nameserver: str = "", domain: str 
         return get_tld(nameserver)
     
     return None
+
+def dependency_classification(nameservers: list[NameserverResult]) -> str:
+    """
+    Determines whether a domain has a critical single-provider DNS dependency.
+    Checks unique providers across already-classified nameservers rather than
+    re-querying DNS.
+    """
+    # Extract the provider from each NS result's reason
+    providers = set()
+    for ns_result in nameservers:
+        raw_provider = extract_provider(ns_result.ns)
+        if raw_provider:
+            providers.add(raw_provider)
+
+    if len(providers) > 1:
+        return "No critical dependency — multiple DNS providers, more resilient to failures."
+    else:
+        return "Critical dependency — single DNS provider, less resilient to failures."
 # ---------------------------------------------------------------------------
 # Per-nameserver classification  (the 5-step algorithm)
 # ---------------------------------------------------------------------------
@@ -356,7 +415,7 @@ def classify_name_server(ns: str, domain: str, domain_tld: str, soa: Optional[di
         return result
     
     # Step 2 — Domain uses HTTPS and NS TLD appears in its SAN
-    if https_enabled and domain_tld in san_tlds:
+    if https_enabled and ns_tld in san_tlds: 
         result.ns_type = "private"
         result.reason = "Domain has HTTPS and NS TLD is contained in SAN"
         return result
@@ -415,54 +474,91 @@ def classify_domain(domain: str, description: str = "") -> DomainResult:
                                          san_tlds=san_tlds,)
         result.nameservers.append(ns_result)
  
+    # Checks for dependency classification.
+    result.dependency = dependency_classification(result.nameservers)
+
     return result
 
 # ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
 
+ 
 def main():
-    input_path  = "src/Source_Data/Cloudflare_top_500websites.csv"
+    input_path  = "src/Source_Data/Domain_Robustness_Results.csv"
     output_path = "src/Source_Data/DNS_Identifier_Results.csv"
- 
+
     rows = []
- 
-    with open(input_path, "r", newline="") as csvfile:
-        reader = csv.DictReader(csvfile)
- 
-        for row in reader:
-            domain_name = row["domain"].strip()
-            description = row.get("description", "").strip()
- 
-            domain_result = classify_domain(domain_name, description)
- 
-            if domain_result.error:
-                print(f"[{domain_name}] ERROR: {domain_result.error}")
-                continue
- 
-            for ns_result in domain_result.nameservers:
-                print(
-                    f"Domain:  {domain_name}\n"
-                    f"  NS:    {ns_result.ns}\n"
-                    f"  Type:  {ns_result.ns_type}\n"
-                    f"  Why:   {ns_result.reason}\n"
-                    f"{'-' * 40}"
-                )
-                rows.append({
-                    "domain":      domain_name,
-                    "nameserver":  ns_result.ns,
-                    "type":        ns_result.ns_type,
-                    "reason":      ns_result.reason,
-                    "provider":    extract_provider_from_reason(ns_result.reason, ns_result.ns, domain_name),
-                })
- 
-    with open(output_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["domain", "nameserver", "type", "reason", "provider"])
-        writer.writeheader()
-        writer.writerows(rows)
- 
-    print(f"\nDone. Results written to {output_path}")
- 
+
+    input_df = pa.read_csv(input_path)
+
+    for _, row in input_df.iterrows():
+        domain_name = str(row["domain"]).strip()
+        description = str(row.get("description", "")).strip()
+
+        domain_result = classify_domain(domain_name, description)
+
+        if domain_result.error:
+            print(f"[{domain_name}] ERROR: {domain_result.error}")
+            continue
+
+        for ns_result in domain_result.nameservers:
+            print(
+                f"Domain:  {domain_name}\n"
+                f"  NS:    {ns_result.ns}\n"
+                f"  Type:  {ns_result.ns_type}\n"
+                f"  Why:   {ns_result.reason}\n"
+                f"{'-' * 40}"
+            )
+            rows.append({
+                "domain":      domain_name,
+                "nameserver":  ns_result.ns,
+                "type":        ns_result.ns_type,
+                "reason":      ns_result.reason,
+                "provider":    extract_provider_from_reason(ns_result.reason, ns_result.ns, domain_name),
+                "dependency":  domain_result.dependency,
+            })
+
+    output_df = pa.DataFrame(rows, columns=["domain", "nameserver", "type", "reason", "provider", "dependency"])
+
+    # Readability formatting
+    output_df = output_df.sort_values(by=["domain", "type"])
+    output_df = output_df.fillna("N/A")
+    output_df.columns = [col.upper() for col in output_df.columns]
+
+    output_df.to_csv(output_path, index=False)
+
+    # Console summary
+    type_col = "TYPE"
+    print(f"\n{'='*40}")
+    print(f"Results written to {output_path}")
+    print(f"Total nameservers classified: {len(output_df)}")
+    print(f"Unique domains processed:     {output_df['DOMAIN'].nunique()}")
+    print(f"\nClassification breakdown:")
+    print(output_df[type_col].value_counts().to_string())
+    print(f"\nDependency breakdown:")
+    print(output_df.drop_duplicates(subset="DOMAIN")["DEPENDENCY"].value_counts().to_string())
+
+#############################################################################################################################
+# This is to create a graph for our analysis, with the list of domains that have a third party dependency and a private dependency. 
+# I did it here considering that the information is obtained when we append it to the csv of the results, therefore 
+
+    import matplotlib.pyplot as plt
+
+    dependency_counts = output_df.drop_duplicates(subset="DOMAIN")["DEPENDENCY"].value_counts()
+
+    plt.figure(figsize=(8, 6))
+    plt.bar(dependency_counts.index, dependency_counts.values, color="skyblue", edgecolor="black")
+    plt.title("Domain Dependency Breakdown", fontsize=16)
+    plt.xlabel("Dependency", fontsize=14)
+    plt.ylabel("Number of Domains", fontsize=14)
+    plt.xticks(rotation=30, ha='right')
+
+    for i, v in enumerate(dependency_counts.values):
+        plt.text(i, v + 0.5, str(v), ha='center', fontsize=11)
+
+    plt.tight_layout()
+    plt.show()
  
 if __name__ == "__main__":
     main()

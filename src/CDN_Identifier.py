@@ -38,10 +38,6 @@ import ipaddress
 import urllib.request
 #endregion
 
-
-
-
-
 #region Dataclass
 @dataclass
 class CDNResult:
@@ -52,9 +48,6 @@ class CDNResult:
     critical_dependency: bool = False
     redundant: bool = False
 #endregion
-
-
-
 
 
 #region Basic Helpers
@@ -109,10 +102,6 @@ def get_cname(domain):
     except Exception as e:
         print(f"an error ocurred: {e}")
 #endregion
-
-
-
-
 
 #region Get SSL Info
 #----------------------------------------------------------------------------------
@@ -595,9 +584,6 @@ def classify_cdn(cnames: list[str], website: str, san_tlds: list[str], supports_
 
     return "unknown"
 #endregion
-
-
-
 
 
 #region Measure CDN
