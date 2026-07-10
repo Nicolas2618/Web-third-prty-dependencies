@@ -2,45 +2,40 @@
 #----------------------------------------------------------------------------------
 #Imports
 #----------------------------------------------------------------------------------
-import dns.resolver
-import dns.query
-import dns.zone
+import sys
+
+import aiodns
+import asyncio
 import subprocess
+import aiohttp
+import aiodns
 import ssl
 import socket
+import dns.resolver
 import json
 import csv
 import re
-import time
 import logging
-from collections import defaultdict
+import ipaddress
+from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from typing import Optional
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import Optional
-import certifi
-from OpenSSL import crypto
-from cryptography import x509
-from cryptography.x509.oid import ExtensionOID, AuthorityInformationAccessOID, NameOID
-from urllib.parse import urlparse
-import numpy as np
 import requests
 import tldextract
-import matplotlib.pyplot as plt
-import pandas as pa
-import circlify
-from urllib.parse import urlparse
-from playwright.sync_api import sync_playwright #
-import matplotlib.patches as mpatches
 import findcdn
-import json
-import ipaddress
-import urllib.request
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import circlify
+import numpy as np
+import pandas as pd
+from urllib.parse import urlparse
+from playwright.sync_api import sync_playwright
+import urllib
 #endregion
 
-
-
-
+# Fix for Windows ProactorEventLoop "ConnectionResetError"
+if sys.platform == 'win32':
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 #region Dataclass
 @dataclass
@@ -51,16 +46,120 @@ class CDNResult:
     uses_third_party: bool = False
     critical_dependency: bool = False
     redundant: bool = False
+    step_ids: str = ""
 #endregion
-
-
-
-
 
 #region Basic Helpers
 #----------------------------------------------------------------------------------
 #Basic Helpers
 #----------------------------------------------------------------------------------
+
+async def get_soa_async(resolver: aiodns.DNSResolver, domain: str) -> dict:
+    try:
+        # Modern method as requested
+        result = await resolver.query_dns(domain, 'SOA')
+        return {
+            "mname": (result.mname or "").rstrip('.').lower(),
+            "rname": (result.rname or "").rstrip('.').lower(),
+        }
+    except Exception as e:
+        logging.debug(f"SOA lookup failed for {domain}: {e}")
+        return None
+
+async def get_cnames_async(resolver: aiodns.DNSResolver, domain: str) -> list[str]:
+    cnames = []
+    current = domain
+    try:
+        for _ in range(10):
+            result = await resolver.query_dns(current, 'CNAME')
+            cname = result.cname.rstrip('.')
+            cnames.append(cname)
+            current = cname
+    except Exception:
+        pass
+    return cnames
+
+async def resolve_a_async(resolver: aiodns.DNSResolver, domain: str) -> list[str]:
+    try:
+        result = await resolver.query_dns(domain, 'A')
+        return [r.host for r in result]
+    except Exception as e:
+        logging.debug(f"A lookup failed for {domain}: {e}")
+        return []
+
+async def get_ptr_async(resolver, ip):
+    try:
+        reversal = ".".join(reversed(ip.split("."))) + ".in-addr.arpa"
+        # Updated to query_dns
+        result = await resolver.query_dns(reversal, 'PTR')
+        if result and result[0].name:
+            return result[0].name.lower()
+        return None
+    except Exception:
+        return None
+    
+async def get_asn_info_async(session: aiohttp.ClientSession, ip: str, retries: int = 2) -> Optional[str]:
+    # Use rdap.org for global coverage (catches US-based Microsoft/Apple IPs)
+    url = f"https://rdap.org/ip/{ip}"
+    for attempt in range(retries + 1):
+        try:
+            async with session.get(url, timeout=5, allow_redirects=True) as resp:
+                if resp.status == 200:
+                    data = await resp.json()
+                    owner_str = json.dumps(data).lower()
+                    
+                    # Map infrastructure keywords to CDN identities
+                    identity = identity_from_text(owner_str)
+                    if identity:
+                        return identity
+
+                    return None
+        except:
+            if attempt < retries: await asyncio.sleep(0.5)
+    return None
+
+async def get_domain_org_async(session: aiohttp.ClientSession, domain: str) -> Optional[str]:
+    """
+    Safer RDAP lookup with better error handling and vcard parsing.
+    """
+    try:
+        tld = get_tld(domain)
+        url = f"https://rdap.org/domain/{tld}"
+        async with session.get(url, timeout=5) as resp:
+            if resp.status == 200:
+                data = await resp.json(content_type=None)
+                for entity in data.get("entities", []):
+                    vcard = entity.get("vcardArray")
+                    # Ensure vcard exists and has the expected structure
+                    if vcard and isinstance(vcard, list) and len(vcard) > 1:
+                        for entry in vcard[1]:
+                            if isinstance(entry, list) and entry[0] == "fn":
+                                # Ensure the value exists before calling .lower()
+                                val = entry[3]
+                                return val.lower() if val else None
+    except Exception:
+        pass
+    return None
+    
+async def resolve_aaaa_async(resolver: aiodns.DNSResolver, domain: str) -> list[str]:
+    """Async AAAA (IPv6) record resolution."""
+    try:
+        result = await resolver.query_dns(domain, 'AAAA')
+        return [r.host for r in result]
+    except aiodns.error.DNSError:
+        return []
+    
+async def get_ns_async(resolver: aiodns.DNSResolver, domain: str) -> list[str]:
+    try:
+        result = await resolver.query_dns(domain, "NS")
+        return [
+            r.host.rstrip(".").lower()
+            for r in result
+            if getattr(r, "host", None)
+        ]
+    except Exception:
+        return []
+
 def get_soa(domain: str) -> dict:
     """
     Gets the SOA record for a specific domain.
@@ -109,10 +208,6 @@ def get_cname(domain):
     except Exception as e:
         print(f"an error ocurred: {e}")
 #endregion
-
-
-
-
 
 #region Get SSL Info
 #----------------------------------------------------------------------------------
@@ -196,10 +291,6 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
     return result
 #endregion
 
-
-
-
-
 #region Headless Browsing
 #----------------------------------------------------------------------------------
 #Headless Browsing
@@ -256,64 +347,157 @@ def get_internal_hostnames(website: str, san_tlds: list[str]) -> set[str]:
     return internal
 #endregion
 
-
-
-
-
 #region CDN Helpers
 #----------------------------------------------------------------------------------
 # CDN Helpers
 #----------------------------------------------------------------------------------
+
 CDN_CNAME_PATTERNS = {
     # ---------------------------------------------------------------------------
     # CNAME-to-CDN map (self-populated subset from paper; extend as needed)
     # ---------------------------------------------------------------------------
-    "akamai":       ["akadns.net", "akamai.net", "akamaized.net", "akamaiedge.net",
-                     "akamaihd.net", "edgesuite.net", "edgekey.net", "srip.net",
-                     "akamaitechnologies.com", "akamaitechnologies.fr", "tl88.net"],
-    "cloudfront":   ["cloudfront.net"],
-    "cloudflare":   ["cloudflare.net", "cloudflare.com"],
-    "fastly":       ["fastly.net", "fastlylb.net", "nocookie.net"],
-    "incapsula":    ["incapdns.net", "impervadns.net"],
-    "stackpath":    ["netdna-cdn.com", "netdna-ssl.com", "netdna.com", "stackpathdns.com"],
-    "limelight":    ["llnwd.net", "lldns.net", "gfx.ms"],
-    "netflix":      ["nflxvideo.net", "nflximg.net", "nflxext.com", "nflxso.net"],
-    "edgecast":     ["edgecastcdn.net", "systemcdn.net", "transactcdn.net",
-                     "v1cdn.net", "v2cdn.net", "v3cdn.net", "v4cdn.net", "v5cdn.net",
-                     ".adn.", ".wac.", ".wpc."],
-    "level3":       ["footprint.net", "fpbns.net"],
-    "alibaba":      ["alikunlun.com", "alicdn.com"],
-    "azure":        ["azureedge.net", "msecnd.net", "vo.msecnd.net", "trafficmanager.net"],
-    "google":       ["googlevideo.com", "googleusercontent.com", "gvt1.com", "gvt2.com",
-                     "googlehosted.com", "googlesyndication.com", "googleadservices.com",
-                     "ggpht.com"],
-    "microsoft":    ["msocdn.com", "msecnd.net", "auth.gfx.ms", "gfx.ms", "ajax.aspnetcdn.com"],
-    "meta":         ["cdninstagram.com", "fbcdn.net", "facebook.net"],
-    "yahoo":        ["yahooapis.com", "yimg.", "ay1.b.yahoo.com"],
-    "wordpress":    ["wordpress.com", "wp.com"],
-    "sucuri":       ["sucuri.net"],
-    "cachefly":     ["cachefly.net"],
-    "highwinds":    ["hwcdn.net"],
-    "keycdn":       ["kxcdn.com"],
-    "cdn77":        ["cdn77.net", "cdn77.org"],
-    "jsdelivr":     ["cdn.jsdelivr.net"],
-    "netlify":      ["netlify.com"],
-    "bunnycdn":     ["b-cdn.net"],
-    "cdnetworks":   ["cdngc.net", "gccdn.net", "gccdn.cn", "panthercdn.com"],
-    "chinacache":   ["ccgslb.com", "ccgslb.net", "c3cache.net", "chinacache.net", "c3cdn.net"],
-    "chinanetcenter": ["wscdns.com", "wscloudcdn.com", "lxdns.com",
-                       "speedcdns.com", "mwcloudcdn.com"],
-    "myracloud":    ["myracloud.com"],
-    "azion":        ["azioncdn.net", "azioncdn.com", "azion.net"],
-    "medianova":    ["mncdn.com", "mncdn.net", "mncdn.org"],
-    "aryaka":       ["aads1.net", "aads-cn.net", "aads-cng.net"],
+    "15cdn":        ["15cdn.com", "tzcdn.cn"],
+    "360":          ["360anyu.com", "360cdn.com", "360cloudwaf.com", "360safedns.com", "360wzws.com", "qh-cdn.com", "qhcdn.com", "qihucdn.com"],
+    "adobe":        ["2o7.net", "adobedtm.com", "demdex.net", "omtrdc.net", "scene7.com"],
+    "akamai":       ["akadns.net", "akamai.com", "akamai.net", "akamaiedge-staging.net", "akamaiedge.net", "akamaihd.net", "akamaiorigin.net", "akamaistream.net", "akamaitech.net", "akamaitechnologies.com", "akamaized.net", "edgekey.net", "edgesuite.net", "srip.net", "tl88.net", "ytcdn.net"],
+    "alibaba":      ["alicdn.com", "aligaofang.com", "alikunlun.com", "alikunlun.net", "aliyun-inc.com", "aliyun.com", "aliyuncs.com", "cdngslb.com", "kunlun*.com", "taobaocdn.com", "tbcache.com", "tbcdn.cn", "yundunddos.com"],
+    "amazon":       ["amazonaws.com", "awsglobalaccelerator.com", "cloudfront.net", "images-amazon.com", "media-amazon.com", "ssl-images-amazon.com"],
+    "apple":        ["aaplimg.com", "apple-dns.net", "cdn-apple.com", "icloud-content.com", "mzstatic.com"],
+    "aryaka":       ["aads1.net", "aryaka.com"],
+    "azion":        ["azion.com", "azion.net", "azioncdn.net"],
+    "baidu":        ["baidubce.com", "bcebos.com", "bdstatic.com", "bdydns.com", "shifen.com", "yunjiasu-cdn.net"],
+    "baishan":      ["bsclink.cn", "bsgslb.cn", "qingcdn.com", "trpcdn.net"],
     "belugacdn":    ["belugacdn.com"],
-    "rackspace":    ["raxcdn.com"],
-    "taobao":       ["tbcdn.cn", "taobaocdn.com"],
-    "turbobytes":   ["turbobytes-cdn.com", "clients.turbobytes.net"],
-    "mirrorimage":  ["instacontent.net", "cap-mii.net", "mirror-image.net"],
-    "onapp":        ["r.worldcdn.net", "r.worldssl.net"],
-    "instart":      ["insnw.net", "inscname.net"]
+    "bilibili":     ["biliapi.com", "hdslb.com", "hdslb.net"],
+    "bunnycdn":     ["b-cdn.net", "bunny.net", "bunnycdn.com"],
+    "bytedance":    ["byteacctimg.com", "bytecdn.cn", "bytedance.com", "byteimg.com", "ibyteimg.com", "muscdn.com", "sgsnssdk.com", "tiktokcdn.com", "tiktokv.com", "ttwstatic.com"],
+    "cachefly":     ["cachefly.com", "cachefly.net"],
+    "cdn77":        ["cdn77.com", "cdn77.net", "cdn77.org"],
+    "cdnetworks":   ["cdnetworks.com", "cdnetworks.net", "cdnga.net", "cdngc.net", "cdnnetworks.com", "gccdn.cn", "gccdn.net", "panthercdn.com", "txcdn.cn", "txnetworks.cn"],
+    "cdnify":       ["cdnify.io"],
+    "cdnsun":       ["cdnsun.net"],
+    "cdnunion":     ["cdnunion.com", "cdnunion.net"],
+    "cdnvideo":     ["cdnvideo.net", "cdnvideo.ru"],
+    "chinacache":   ["c3cache.net", "c3dns.net", "ccgslb.com", "ccgslb.com.cn", "ccgslb.net", "chinacache.net", "xgslb.net"],
+    "cedexis":      ["cedexis.net", "cdxcn.cn"],
+    "chuangcache":  ["aocde.com", "chuangcdn.com"],
+    "cloudflare":   ["cloudflare-dns.com", "cloudflare.com", "cloudflare.net", "pages.dev", "r2.dev", "trycloudflare.com", "workers.dev"],
+    "cloudinary":   ["cloudinary.com", "cloudinary.net"],
+    "conversant":   ["swiftserve.com"],
+    "criteo":       ["criteo.com", "criteo.net"],
+    "ctyun":        ["ctxcdn.cn"],
+    "dailymotion":  ["dmcdn.net"],
+    "digitalocean": ["digitalocean.com", "digitaloceanspaces.com"],
+    "discord":      ["discordapp.com", "discordapp.net"],
+    "dnion":        ["dlgslb.cn", "dnion.com", "ewcache.com", "fastcdn.com", "flxdns.com", "globalcdn.cn", "tlgslb.com"],
+    "eleme":        ["elemecdn.com"],
+    "fastly":       ["fastly-edge.com", "fastly.com", "fastly.net", "fastlylb.net", "nocookie.net"],
+    "fastweb":      ["cachecn.com", "cloudcdn.net", "cloudglb.com", "fastweb.com", "fastwebcdn.com", "fwcdn.com", "fwdns.net", "hacdn.net", "hadns.net"],
+    "firebase":     ["firebaseapp.com", "web.app"],
+    "fly":          ["fly.dev", "fly.io"],
+    "gcore":        ["gc.onl", "gcdn.co", "gcore.com", "gcorelabs.com"],
+    "github":       ["github.io", "githubassets.com", "githubusercontent.com"],
+    "gitlab":       ["gitlab.io"],
+    "google":       ["1e100.net", "ampproject.org", "appspot.com", "ggpht.com", "google-analytics.com", "google.com", "googleadservices.com", "googleapis.com",
+                      "googlehosted.com", "googlesyndication.com", "googletagmanager.com", "googletagservices.com", "googleusercontent.com", "googlevideo.com",
+                      "gstatic.com", "gvt1.com", "gvt2.com", "gvt3.com", "youtube-nocookie.com", "ytimg.com"],
+    "gosun":        ["gosuncdn.com", "mmtrixopt.com"],
+    "gravatar":     ["gravatar.com"],
+    "heroku":       ["heroku.com", "herokuapp.com", "herokussl.com"],
+    "huawei":       ["cdnhwc1.com", "cdnhwc2.com", "cdnhwc3.com", "hicloud.com", "huaweicloud.com"],
+    "hubspot":      ["hs-banner.com", "hs-sites.com", "hsappstatic.net", "hubspot.com", "hubspotemail.net"],
+    "imageengine":  ["imgeng.in"],
+    "imagekit":     ["imagekit.io"],
+    "imgix":        ["imgix.com", "imgix.net"],
+    "imperva":      ["imperva.com", "impervadns.net", "incapdns.net", "incapsula.com"],
+    "jd":           ["jcloud-cdn.com", "jcloudcs.com", "jcloudlb.com", "jdcdn.com", "qianxun.com"],
+    "jsdelivr":     ["jsdelivr.com", "jsdelivr.net"],
+    "jwplayer":     ["jwpcdn.com"],
+    "kakao":        ["kakaocdn.net"],
+    "keycdn":       ["keycdn.com", "kxcdn.com"],
+    "kingsoft":     ["ks-cdn.com", "ksyuncdn-k1.com", "ksyuncdn.com"],
+    "leaseweb":     ["lswcdn.net"],
+    "lecloud":      ["cdnle.com"],
+    "limelight":    ["lldns.net", "llnwd.net", "llnwi.net", "unud.net"],
+    "line":         ["line-scdn.net"],
+    "linkedin":     ["licdn.com"],
+    "maoyun":       ["maoyun.tv", "maoyundns.com"],
+    "medianova":    ["medianova.com", "mncdn.com", "mncdn.net", "mncdn.org"],
+    "mediavine":    ["mediavine.com"],
+    "meituan":      ["mtyun.com", "sankuai.com"],
+    "meta":         ["cdninstagram.com", "facebook.net", "fb.com", "fb.me", "fbcdn.net", "fbsbx.com"],
+    "microsoft":    ["ax-msedge.net", "azure.com", "azureedge.net", "azurefd.net", "azurewebsites.net", "azurewebsites.windows.net", "chinacloudsites.cn", 
+                     "cloudapp.net", "gfx.ms", "mschcdn.com", "msecnd.net", "msftconnecttest.com", "msftncsi.com", "msocdn.com", "trafficmanager.net", "v0cdn.net"],
+    "myracloud":    ["myracloud.com"],
+    "naver":        ["pstatic.net"],
+    "netease":      ["126.net", "163jiasu.com"],
+    "netflix":      ["nflxext.com", "nflximg.com", "nflximg.net", "nflxso.net", "nflxvideo.net"],
+    "netlify":      ["netlify.app", "netlify.com"],
+    "newdefend":    ["anquan.io", "newdefend.cn"],
+    "ngenix":       ["ngenix.net"],
+    "nsfocus":      ["nscloudwaf.com"],
+    "onapp":        ["worldcdn.net", "worldssl.net"],
+    "opera":        ["opera.com", "operacdn.com"],
+    "oracle":       ["oraclecloud.com"],
+    "ovh":          ["ovh.com", "ovh.net", "ovhcloud.com"],
+    "perfops":      ["flexbalancer.net"],
+    "pinterest":    ["pinimg.com"],
+    "powercdn":     ["powercdn.cn"],
+    "qingcloud":    ["frontwize.com", "qingcache.com", "qingcloud.com"],
+    "quantserve":   ["quantcount.com", "quantserve.com"],
+    "quic":         ["quic.cloud"],
+    "qiniu":        ["qbox.me", "qiniu.com", "qiniudns.com"],
+    "rackspace":    ["rackcdn.com", "raxcdn.com"],
+    "render":       ["onrender.com", "render.com"],
+    "salesforce":   ["exacttarget.com", "salesforceliveagent.com", "sfdcstatic.com"],
+    "sangfor":      ["sangfordns.com"],
+    "section":      ["section.io"],
+    "sendgrid":     ["sendgrid.net"],
+    "shopify":      ["myshopify.com", "shopify.com", "shopifycdn.com"],
+    "sina":         ["sina.com.cn", "sinacdn.com", "sinaedge.com", "sinajs.cn", "sinasws.com"],
+    "snapchat":     ["sc-cdn.net"],
+    "speedycloud":  ["speedycloud.cc", "xundayun.cn", "xundayun.com"],
+    "spotify":      ["sndcdn.com", "spotifycdn.com"],
+    "sqspcdn":      ["sqspcdn.com"],
+    "stackpath":    ["bootstrapcdn.com", "hwcdn.net", "maxcdn.com", "netdna-cdn.com", "netdna-ssl.com", "netdna.com", "stackpathcdn.com", "stackpathdns.com"],
+    "statically":   ["statically.io"],
+    "sucuri":       ["sucuri.net"],
+    "tata":         ["bitgravity.com", "zenedge.net"],
+    "telegram":     ["t.me", "telegra.ph"],
+    "tencent":      ["cdntip.com", "dayugslb.com", "dnsv1.com", "gtimg.cn", "gtimg.com", "myqcloud.com", "qcloudcdn.com", "qlogo.cn", "qpic.cn", "qq.com", 
+                     "tcdnvod.com", "tdnsv5.com", "tencdns.net", "tencent-cloud.net", "tencentcos.cn"],
+    "twitch":       ["jtvnw.net"],
+    "twitter":      ["t.co", "twimg.com"],
+    "ucloud":       ["cdndo.com", "ucloud.cn", "ucloud.com.cn", "ucloudgda.com"],
+    "unpkg":        ["unpkg.com"],
+    "upyun":        ["aicdn.com"],
+    "vangen":       ["cdnudns.com", "mygslb.com", "sprycdn.com"],
+    "vercel":       ["now.sh", "vercel-dns.com", "vercel.app", "vercel.com"],
+    "verizon":      ["alphacdn.net", "edgecastcdn.net", "mucdn.net", "nucdn.net", "systemcdn.net", "zetacdn.net"],
+    "verycloud":    ["verycdn.net", "verycloud.cn", "verygslb.com"],
+    "vimeo":        ["vimeocdn.com"],
+    "wangsu":       ["51cdn.com", "chinanetcenter.com", "customcdn.cn", "customcdn.com.cn", "lxdns.com", "mwcloudcdn.com", "mwcname.com", "speedcdns.com", 
+                     "wscdns.com", "wscloudcdn.com", "wsdvs.com", "wsglb0.com", "wsssec.com", "wswebcdn.com", "wswebpic.com", "wtxcdn.com"],
+    "weibo":        ["sinaimg.cn", "weibocdn.com"],
+    "west":         ["800cdn.com", "vhostgo.com"],
+    "wikimedia":    ["wmfusercontent.org"],
+    "wix":          ["parastorage.com", "wix.com", "wixsite.com", "wixstatic.com"],
+    "wordpress":    ["wordpress.com", "wp.com", "wpengine.com", "wpenginepowered.com"],
+    "xycloud":      ["00cdn.com", "p2cdn.com"],
+    "yahoo":        ["yahooapis.com", "yimg.com", "yimg.jp"],
+    "yandex":       ["yandex.net", "yandex.ru", "yandexcloud.net", "yastatic.net"],
+    "yundun":       ["jsd.cc"],
+    "yandex":       ["yandex.net", "yandex.ru", "yandexcloud.net", "yastatic.net"],
+    "yunaq":        ["jiashule.com", "jiasule.org", "365cyd.cn"],
+    "zendesk":      ["zdassets.com", "zendesk.com"],
+    "zenlayer":     ["ogslb.com", "uxengine.net", "zenlogic.net"],
+    "zscaler":      ["zscaler.com", "zscaler.net", "zscalerone.net", "zscalerthree.net", "zscalertwo.net", "zscloud.net"],
+}
+
+
+CDN_ALIASES = {
+    "azure": "microsoft",
+    "cloudfront": "amazon",
 }
 
 def parse_cdn_string(raw) -> list[str]:
@@ -340,53 +524,46 @@ def detect_cdn_from_cname(cname: str) -> Optional[str]:
 
 HEADER_CDN_PATTERNS = {
     # --- Major third-party CDNs ---
-    "cloudflare"    : ["server: cloudflare", "cf-ray", "cf-cache-status", "cf-request-id", "cf-connecting-ip"],
-    "cloudfront"    : ["x-amz-cf-id", "x-amz-cf-pop"],
-    "fastly"        : ["x-served-by: cache-", "via: 1.1 varnish", "fastly-io-info", "x-fastly-request-id", "surrogate-key", "fastly-debug-path"],
-    "akamai"        : [ "x-check-cacheable", "x-akamai-session-info", "x-akamai-staging", "x-cache-remote", "akamai-cache-status", "akamai-grn", 
-               "x-true-cache-key", "x-cache: tcp_", "akamaitechnologies", "akamaighost", "server: akamainetstorage"],
-    "azure"         : ["x-azure-ref", "x-msedge-ref", "x-ec-custom-error", "x-azure-requestid"],
-    "microsoft"     : ["server: microsoft-httpapi", "x-feserver", "x-calculatedfetarget", "x-besku", "x-bepartition", "x-calculatedbetarget", "x-nanoProxy"],
-    "incapsula"     : ["x-iinfo", "x-cdn: imperva", "x-cdn: incapsula", "visid_incap", "incap_ses"],
-    "sucuri"        : ["x-sucuri-id", "x-sucuri-cache", "server: sucuri/cloudproxy"],
-    "bunnycdn"      : ["server: bunnycdn-", "cdn-pullzone",  "cdn-uid", "cdn-requestid", "cdn-cache", "cdn-cachedat"],
-    "keycdn"        : ["x-cache: hit keycdn", "x-cache: miss keycdn", "server: keycdn-engine", "x-edge-location: keycdn"],
-    "gcore"         : ["x-id: ", "server: gcore"],
-    "cdn77"         : ["x-cdn77-hit", "x-cdn77-cache", "server: cdn77-"],
-    "stackpath"     : ["x-sp-url", "x-sp-edge", "server: stackpath"],
-    "limelight"     : ["x-llnw-cache", "x-llnw-request-id"],
-    "edgecast"      : ["server: ecs ", "x-ec-custom-error", "x-cache: tcp_hit"],
-    "google"        : ["x-goog-", "via: 1.1 google", "server: gws", "server: gsfe", "server: sffe", "x-google-backends", "x-googlas-appengine"],
-    "netflix"       : ["x-netflix-", "nflx-", "server: nflx"],
-    "wikimedia"     : [ "x-cache: cp", "server: ats", "x-cache-status: hit-front", "server-timing: cache"],
-    "roblox"        : ["x-roblox-region", "x-roblox-edge", "server: public-gateway"],
-    "nextjs"        : ["x-nextjs", "x-hex-backend "],
+    "cloudflare":   ["server: cloudflare", "cf-ray", "cf-cache-status", "cf-request-id", "cf-connecting-ip"],
+    "amazon":       ["x-amz-cf-id", "x-amz-cf-pop"],
+    "fastly":       ["x-served-by: cache-", "via: 1.1 varnish", "fastly-io-info", "x-fastly-request-id", "surrogate-key", "fastly-debug-path"],
+    "microsoft":    ["server: fbs", "x-msedge-ref", "x-azure-ref", "x-ms-ref", "x-calculatedfetarget", "x-feserver", "server: microsoft-httpapi", 
+                        "x-nanoproxy", "x-azure-ref", "x-azure-requestid", "x-msedge-ref", "x-ms-request-id", "x-ms-session-id", "x-ms-routing-name"],
+    "akamai":       ["x-check-cacheable", "x-akamai-session-info", "x-akamai-staging", "x-cache-remote", "akamai-cache-status", "akamai-grn", 
+                        "x-true-cache-key", "x-cache: tcp_", "akamaitechnologies", "akamaighost", "server: akamainetstorage", "x-akamai-transformed"],
+    "sucuri":       ["x-sucuri-id", "x-sucuri-cache", "server: sucuri/cloudproxy"],
+    "bunnycdn":     ["server: bunnycdn-", "cdn-pullzone",  "cdn-uid", "cdn-requestid", "cdn-cache", "cdn-cachedat"],
+    "keycdn":       ["x-cache: hit keycdn", "x-cache: miss keycdn", "server: keycdn-engine", "x-edge-location: keycdn"],
+    "gcore":        ["x-id: ", "server: gcore"],
+    "cdn77":        ["x-cdn77-hit", "x-cdn77-cache", "server: cdn77-"],
+    "stackpath":    ["x-sp-url", "x-sp-edge", "server: stackpath"],
+    "limelight":    ["x-llnw-cache", "x-llnw-request-id"],
+    "edgecast":     ["server: ecs ", "x-ec-custom-error", "x-cache: tcp_hit"],
+    "google":       ["x-goog-", "via: 1.1 google", "server: gws", "server: gsfe", "server: sffe", "x-google-backends", "x-googlas-appengine"],
+    "netflix":      ["x-netflix-", "nflx-", "server: nflx", "x-originating-url"],
+    "wikimedia":    ["x-cache: cp", "server: ats", "x-cache-status: hit-front"],
+    "roblox":       ["x-roblox-region", "x-roblox-edge", "server: public-gateway"],
+    "nextjs":       ["x-nextjs", "x-hex-backend "],
+    "google":       ["x-goog-", "via: 1.1 google", "server: gws", "server: gsfe", "server: sffe"],
+    "meta":         ["x-fb-debug", "x-fb-trip-id", "server: fbs"],
+    "apple":        ["server: applehttp", "x-apple-jingle-", "x-apple-application-site-association", "x-apple-request-uuid"],
+    "opera":        ["server: opera"],
+    "telegram":     ["server: telegram"],
 }
 
-def detect_cdn_from_headers(domain: str, timeout: int = 8) -> Optional[str]:
+def detect_cdn_from_headers(headers: dict) -> Optional[str]:
     """
-    Make an HTTP request and fingerprint the CDN from response headers.
+    Pure function — takes already-fetched headers dict, no network calls.
     """
-    for scheme in ("https://", "http://"):
-        try:
-            resp = requests.get(
-                scheme + domain,
-                timeout=timeout,
-                headers={"User-Agent": "Mozilla/5.0"},
-                allow_redirects=True,
-                verify=False,
-            )
-            # Flatten headers to a single lowercase string for pattern matching
-            header_str = " ".join(
-                f"{k.lower()}: {v.lower()}" for k, v in resp.headers.items()
-            )
-            for cdn_name, patterns in HEADER_CDN_PATTERNS.items():
-                for pat in patterns:
-                    if pat in header_str:
-                        return cdn_name
-            return None
-        except Exception:
-            continue
+    if not headers:
+        return None
+    header_str = " ".join(
+        f"{str(k).lower()}: {str(v).lower()}" for k, v in headers.items()
+    )
+    for cdn_name, patterns in HEADER_CDN_PATTERNS.items():
+        for pat in patterns:
+            if pat in header_str:
+                return cdn_name
     return None
 
 CDN_IP_SOURCES = {
@@ -491,6 +668,80 @@ def fetch_cdn_ip_ranges() -> dict[str, list[ipaddress.IPv4Network | ipaddress.IP
 
     return ranges
 
+def identity_from_text(text: str) -> Optional[str]:
+    if not text:
+        return None
+
+    text = text.lower()
+
+    identity_keywords = {
+        "microsoft": "microsoft", "azure": "microsoft", "msft": "microsoft", "msedge": "microsoft", "msn": "microsoft", "bing": "microsoft", 
+            "office365": "microsoft", "skype" : "microsoft", "live" : "microsoft", "google": "google", "googledomains": "google", 
+            "googlehosted": "google", "googleusercontent": "google", "gstatic": "google", "1e100": "google", "youtube": "google", 
+            "gmail": "google", "doubleclick": "google", "ggpht": "google", "android": "google", "facebook": "meta", "meta platforms": "meta", 
+            "fbcdn": "meta", "tfbnw": "meta", "instagram": "meta", "whatsapp": "meta", "fb.me": "meta", "amazon": "amazon", "aws": "amazon", 
+            "amzn": "amazon", "cloudfront": "amazon", "apple": "apple", "icloud": "apple", "aaplimg": "apple", "itunes": "apple", 
+            "netflix": "netflix", "nflx": "netflix", "wikimedia": "wikimedia", "wikipedia": "wikimedia", "yahoo": "yahoo", "yimg": "yahoo", 
+            "tiktok": "tiktok", "bytedance": "tiktok", "roblox": "roblox", "digicert": "digicert", "avast": "avast", "sucuri": "sucuri", 
+            "incapsula": "incapsula", "imperva": "incapsula", "cloudflare": "cloudflare", "akamai": "akamai", "edgesuite": "akamai", 
+            "edgekey": "akamai", "fastly": "fastly"
+    }
+
+    for keyword, identity in identity_keywords.items():
+        if keyword in text:
+            return identity
+
+    return None
+
+async def fetch_cdn_ip_ranges_async(session: aiohttp.ClientSession) -> dict:
+    """Async replacement for fetch_cdn_ip_ranges() — call ONCE at startup"""
+    ranges = defaultdict(list)
+
+    def add(cdn, cidr):
+        try:
+            ranges[cdn].append(ipaddress.ip_network(cidr, strict=False))
+        except ValueError:
+            pass
+
+    # Cloudflare
+    try:
+        text = await fetch_url_async(session, "https://www.cloudflare.com/ips-v4")
+        for line in text.strip().splitlines():
+            add("cloudflare", line.strip())
+        text = await fetch_url_async(session, "https://www.cloudflare.com/ips-v6")
+        for line in text.strip().splitlines():
+            add("cloudflare", line.strip())
+    except Exception:
+        pass
+
+    # CloudFront
+    try:
+        text = await fetch_url_async(session, "https://ip-ranges.amazonaws.com/ip-ranges.json")
+        data = json.loads(text)
+        for p in data.get("prefixes", []):
+            if p.get("service") == "CLOUDFRONT":
+                add("cloudfront", p["ip_prefix"])
+        for p in data.get("ipv6_prefixes", []):
+            if p.get("service") == "CLOUDFRONT":
+                add("cloudfront", p["ipv6_prefix"])
+    except Exception:
+        pass
+
+    # Google
+    for url in ["https://www.gstatic.com/ipranges/goog.json",
+                "https://www.gstatic.com/ipranges/cloud.json"]:
+        try:
+            text = await fetch_url_async(session, url)
+            data = json.loads(text)
+            for p in data.get("prefixes", []):
+                cidr = p.get("ipv4Prefix") or p.get("ipv6Prefix")
+                if cidr:
+                    add("google", cidr)
+        except Exception:
+            pass
+
+    return dict(ranges)
+
 def get_ip(domain: str) -> Optional[str]:
     """Resolve domain to its first A record IP."""
     try:
@@ -500,50 +751,21 @@ def get_ip(domain: str) -> Optional[str]:
         return None
 
 def detect_cdn_from_ip(
-    domain: str,
-    cdn_ip_ranges: dict[str, list]
+    ips: list[str],
+    cdn_ip_ranges: dict
 ) -> Optional[str]:
     """
-    Resolve domain to IP and check against known CDN IP ranges.
-    Returns CDN name or None.
+    Pure function — takes already-resolved list of IPs, no DNS calls.
     """
-    ip_str = get_ip(domain)
-    if not ip_str:
-        return None
-    try:
-        ip = ipaddress.ip_address(ip_str)
-        for cdn_name, networks in cdn_ip_ranges.items():
-            for network in networks:
-                if ip in network:
-                    return cdn_name
-    except ValueError:
-        pass
-
-    # ASN fallback: query public ASN-to-IP service to infer ownership
-    # Local prefix fallback (handles common Microsoft-owned ranges without external lookups)
-    try:
-        if ip_str.startswith('20.'):
-            return 'microsoft'
-    except Exception:
-        pass
-
-    # ASN-based fallback (best-effort; may be blocked in restricted environments)
-    try:
-        import urllib.request
-        req = urllib.request.Request(f"https://api.iptoasn.com/v1/as/ip/{ip_str}", headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=5) as r:
-            data = json.loads(r.read().decode())
-            desc = (data.get("as_description") or "").lower()
-            asname = (data.get("as_name") or "").lower()
-            if "microsoft" in desc or "microsoft" in asname or "azure" in desc or "azure" in asname:
-                return "microsoft"
-            if "google" in desc or "google" in asname:
-                return "google"
-            if "akamai" in desc or "akamai" in asname:
-                return "akamai"
-    except Exception:
-        pass
-
+    for ip_str in ips:
+        try:
+            ip = ipaddress.ip_address(ip_str)
+            for cdn_name, networks in cdn_ip_ranges.items():
+                for network in networks:
+                    if ip in network:
+                        return cdn_name
+        except ValueError:
+            continue
     return None
 
 def get_cdn_cnames(domain: str, depth: int = 5) -> list[tuple[str, str]]:
@@ -568,97 +790,444 @@ def get_cdn_cnames(domain: str, depth: int = 5) -> list[tuple[str, str]]:
     return results
 #endregion
 
-
-
-
-
 #region CDN Identifier
 #----------------------------------------------------------------------------------
 # CDN Identifier
 #----------------------------------------------------------------------------------
-def classify_cdn(cnames: list[str], website: str, san_tlds: list[str], supports_https: bool) -> str:
-    w_tld = get_tld(website)
-    w_soa = get_soa(website)
+# CDN owner names as they appear in RDAP records
+CDN_ORG_NAMES = {
+    "google":     ["google llc", "google inc", "alphabet"],
+    "meta":       ["meta platforms", "facebook inc"],
+    "microsoft":  ["microsoft corporation"],
+    "amazon":     ["amazon technologies", "amazon.com inc"],
+    "apple":      ["apple inc"],
+    "cloudflare": ["cloudflare inc"],
+    "fastly":     ["fastly inc"],
+    "akamai":     ["akamai technologies"],
+    "netflix":    ["netflix streaming", "netflix inc"],
+    "wikimedia":  ["wikimedia foundation"],
+}
 
+async def classify_cdn_dynamic(
+    cdn_name: str,
+    website: str,
+    cnames: list[str],
+    san_tlds: list[str],
+    resolver: aiodns.DNSResolver,
+    session: aiohttp.ClientSession,
+    website_soa: dict = None,
+    website_org: str = None,
+    website_ns: list[str] = None
+) -> str:
+    w_tld = get_tld(website).lower()
+    cdn_name_lower = cdn_name.lower()
+    
+    # Resolve the "Parent Identity" (e.g., 'azure' -> 'microsoft')
+    parent_identity = CDN_ALIASES.get(cdn_name_lower, cdn_name_lower)
+    
+    # 1. Domain/TLD Match (e.g., 'google.com' or 'dns.google')
+    if parent_identity in w_tld:
+        return "private"
+
+    # 2. Administrative Consensus (The "Android/Gmail" Fix)
+    # Check if the detected CDN identity appears in the Website's NS, SOA, or Org record
+    ns_text = " ".join(website_ns or []).lower()
+    soa_text = json.dumps(website_soa or {}).lower()
+    org_text = (website_org or "").lower()
+    
+    # Combine all ownership signals
+    ownership_signals = f"{ns_text} {soa_text} {org_text}"
+    
+    # If the parent identity (e.g., 'google') is found in the ownership signals, it's private
+    if parent_identity in ownership_signals:
+        return "private"
+    
+    # 3. CNAME Suffix Match (Self-hosting check)
     for cname in cnames:
-        cname_tld = get_tld(cname)
-        if cname_tld == w_tld:
+        if get_tld(cname).lower() == w_tld:
             return "private"
-        if supports_https and cname_tld in san_tlds:
-            return "private"
-        cname_soa = get_soa(cname)
-        if cname_soa and w_soa:
-            if cname_soa == w_soa:
-                return "private"   # same admin owner → private
-            else:
-                return "third"     # different admin owner → third-party
 
-    return "unknown"
+    # 4. SAN Match
+    if w_tld in san_tlds:
+        return "private"
+
+    return "third"
 #endregion
-
-
-
-
 
 #region Measure CDN
 #----------------------------------------------------------------------------------
 # Measure CDN
 #----------------------------------------------------------------------------------
-def measure_cdn_findcdn(website: str, internal_hostnames: set[str], cdn_ip_ranges: dict) -> CDNResult:
+def measure_cdn_findcdn(
+    website: str,
+    internal_hostnames: set[str],
+    cdn_ip_ranges: dict
+) -> CDNResult:
+    """
+    Pure version — only processes findcdn JSON output.
+    Classification is handled upstream by process_domain_async.
+    Returns CDNResult with cdn_types values set to "findcdn" 
+    so the caller knows to reclassify them.
+    """
     result = CDNResult(website=website)
-    
-    ssl_info = get_ssl_info(website)
-    san_tlds = ssl_info.get("san_tlds", [])
-    supports_https = ssl_info.get("supports_https", False)
 
-    # Run findcdn across apex + all internal hostnames
+    ssl_info     = get_ssl_info(website)
+    supports_https = ssl_info.get("supports_https", False) if ssl_info else False
+
     probes = list({website, f"www.{website}"} | internal_hostnames)
-    resp_json = json.loads(findcdn.main(probes, double_in=True, threads=10))
 
-    # Accumulate detected CDN fingerprints per CDN name
+    try:
+        resp_json = json.loads(findcdn.main(probes, double_in=True, threads=10))
+    except Exception as e:
+        logging.warning(f"{website}: findcdn failed — {e}")
+        return result
+
     cdn_cnames: dict[str, list[str]] = defaultdict(list)
 
-    for probe, data in resp_json["domains"].items():
+    for probe, data in resp_json.get("domains", {}).items():
         for fingerprint in parse_cdn_string(data.get("cdns", "")):
             cdn_name = detect_cdn_from_cname(fingerprint)
             if cdn_name:
                 cdn_cnames[cdn_name].append(fingerprint)
             else:
-                logging.warning(f"Unknown CDN fingerprint: {fingerprint} (from {probe})")
+                logging.warning(
+                    f"Unknown CDN fingerprint: {fingerprint} (from {probe})"
+                )
 
-    # IP range fallback — only runs if findcdn found nothing
-    if not cdn_cnames:
-        for probe in probes:
-            cdn_name = detect_cdn_from_ip(probe, cdn_ip_ranges)
-            if cdn_name:
-                cdn_cnames[cdn_name].append(probe)
-                logging.info(f"{website}: IP fallback detected {cdn_name} via {probe}")
-                break
-
-    # Header fingerprinting fallback — only runs if IP ranges also found nothing
-    if not cdn_cnames:
-        cdn_name = detect_cdn_from_headers(website)
-        if cdn_name:
-            cdn_cnames[cdn_name].append(website)
-            logging.info(f"{website}: header fallback detected {cdn_name}")
-
-    # Classify each CDN
-    for cdn_name, cnames in cdn_cnames.items():
-        result.cdn_types[cdn_name] = classify_cdn(cnames, website, san_tlds, supports_https)
+    # Tag as "findcdn" — process_domain_async will reclassify
+    for cdn_name in cdn_cnames:
+        result.cdn_types[cdn_name] = "findcdn"
 
     result.cdns = list(result.cdn_types.keys())
-    types = list(result.cdn_types.values())
-    has_third = "third" in types
-    result.uses_third_party = has_third
-    result.critical_dependency = has_third and "private" not in types
-    result.redundant = len({c for c, t in result.cdn_types.items() if t == "third"}) > 1
-
     return result
+
+async def measure_cdn_findcdn_async(domain, internal, cdn_ip_ranges):
+    return await asyncio.to_thread(
+        measure_cdn_findcdn, domain, internal, cdn_ip_ranges
+    )
 #endregion
 
+#region async
+async def fetch_headers_async(
+    session: aiohttp.ClientSession, 
+    domain: str, 
+    timeout: int = 10
+) -> dict:
+    """Async replacement for your requests-based header fetch"""
+    for scheme in ["https", "http"]:
+        url = f"{scheme}://{domain}"
+        try:
+            async with session.head(
+                url,
+                timeout=aiohttp.ClientTimeout(total=timeout),
+                allow_redirects=True,
+                ssl=False  # Skip SSL verification for speed at scale
+            ) as response:
+                return dict(response.headers)
+        except Exception:
+            continue
+    return {}
 
+async def fetch_url_async(
+    session: aiohttp.ClientSession, 
+    url: str
+) -> str:
+    """Async replacement for urllib.request.urlopen() — used in fetch_cdn_ip_ranges()"""
+    async with session.get(url, timeout=aiohttp.ClientTimeout(total=15)) as response:
+        return await response.text()
+    
+async def process_domain_async(session, resolver, domain, cdn_ip_ranges):
+    try:
+        # --- TIER 1: FAST ASYNC CHECK ---
+        cnames_apex, cnames_www, ips_v4, ips_v6, soa, ns_records = await asyncio.gather(
+            get_cnames_async(resolver, domain),
+            get_cnames_async(resolver, f"www.{domain}"),
+            resolve_a_async(resolver, domain),
+            resolve_aaaa_async(resolver, domain),
+            get_soa_async(resolver, domain),
+            get_ns_async(resolver, domain),
+            return_exceptions=True
+        )
 
+        ips = (ips_v4 if isinstance(ips_v4, list) else []) + (ips_v6 if isinstance(ips_v6, list) else [])
+        cnames = list(set((cnames_apex if isinstance(cnames_apex, list) else []) + (cnames_www if isinstance(cnames_www, list) else [])))
+        soa = soa if isinstance(soa, dict) else None
+        ns_records = ns_records if isinstance(ns_records, list) else []
 
+        headers  = await fetch_headers_async(session, domain)
+        ssl_info = await asyncio.to_thread(get_ssl_info, domain)
+        san_tlds = ssl_info.get("san_tlds", []) if ssl_info else []
+        website_org = await get_domain_org_async(session, domain)
+
+        detected_cdns = {}
+        step_id = ""
+
+        # --- STEP 0: INFRASTRUCTURE TLD & KEYWORD CHECK (The "dns.google" Fix) ---
+        # If the domain ends in .google, .apple, etc., it is private infra.
+        infra_tlds = {".google": "google", ".apple": "apple", ".microsoft": "microsoft", ".netflix": "netflix"}
+        for tld, identity in infra_tlds.items():
+            if domain.lower().endswith(tld):
+                detected_cdns[identity] = "private"
+                step_id += "step 0, "
+
+        # If not caught by TLD, check if the domain name itself contains the identity
+        if not detected_cdns:
+            domain_identity = identity_from_text(domain)
+            if domain_identity:
+                detected_cdns[domain_identity] = "private"
+                step_id += "step 0, "
+
+        # --- STEP 0.25: DOMAIN KEYWORD CHECK ---
+        # If the domain name itself contains a known identity, mark it private.
+        domain_id = identity_from_text(domain)
+        if domain_id:
+            detected_cdns[domain_id] = "private"
+            step_id += "step .25, "
+
+        # --- STEP 0.5: RDAP ORG CHECK ---
+        if website_org:
+            org_id = identity_from_text(website_org)
+            if org_id and org_id not in detected_cdns:
+                detected_cdns[org_id] = await classify_cdn_dynamic(
+                    org_id, domain, cnames, san_tlds, resolver, session, 
+                    website_soa=soa, website_org=website_org, website_ns=ns_records
+                )
+                step_id += "step .5, "
+
+        # --- STEP 0.75: NAMESERVER IDENTITY CHECK ---
+        ns_id = identity_from_text(" ".join(ns_records))
+        if ns_id and ns_id not in detected_cdns:
+            detected_cdns[ns_id] = await classify_cdn_dynamic(
+                ns_id, domain, cnames, san_tlds, resolver, session, 
+                website_soa=soa, website_org=website_org, website_ns=ns_records
+            )
+            step_id += "step .75, "
+
+        # --- RULES 1-3: CNAME, HEADERS, IP RANGES ---
+        for cname in cnames:
+            cdn = detect_cdn_from_cname(cname)
+            if cdn and cdn not in detected_cdns:
+                detected_cdns[cdn] = await classify_cdn_dynamic(
+                    cdn, domain, cnames, san_tlds, resolver, session, 
+                    website_soa=soa, website_org=website_org, website_ns=ns_records
+                )
+                step_id += "step 1, "
+
+        cdn = detect_cdn_from_headers(headers)
+        if cdn and cdn not in detected_cdns:
+            detected_cdns[cdn] = await classify_cdn_dynamic(
+                cdn, domain, cnames, san_tlds, resolver, session, 
+                website_soa=soa, website_org=website_org, website_ns=ns_records
+            )
+            step_id += "step 2, "
+
+        cdn = detect_cdn_from_ip(ips, cdn_ip_ranges)
+        if cdn and cdn not in detected_cdns:
+            detected_cdns[cdn] = await classify_cdn_dynamic(
+                cdn, domain, cnames, san_tlds, resolver, session, 
+                website_soa=soa, website_org=website_org, website_ns=ns_records
+            )
+            step_id += "step 3, "
+
+        # --- STEP 4: ASN & PTR ---
+        if ips:
+            ips_to_check = ips if not detected_cdns else ips[:3]
+            for ip in ips_to_check:
+                infra_identity = await get_asn_info_async(session, ip)
+                if not infra_identity:
+                    ptr_name = await get_ptr_async(resolver, ip)
+                    infra_identity = identity_from_text(ptr_name) if ptr_name else None
+
+                if infra_identity and infra_identity not in detected_cdns:
+                    detected_cdns[infra_identity] = await classify_cdn_dynamic(
+                        infra_identity, domain, cnames, san_tlds, resolver, session, 
+                        website_soa=soa, website_org=website_org, website_ns=ns_records
+                    )
+                    step_id += "step 4, "
+                    break 
+
+        # --- FINAL RESULT CALCULATION ---
+        third_party_cdns = [name for name, c_type in detected_cdns.items() if c_type == "third"]
+        private_cdns     = [name for name, c_type in detected_cdns.items() if c_type == "private"]
+        
+        return CDNResult(
+            website=domain,
+            cdns=list(detected_cdns.keys()),
+            cdn_types=detected_cdns,
+            uses_third_party=len(third_party_cdns) > 0,
+            critical_dependency=len(third_party_cdns) > 0 and len(private_cdns) == 0,
+            redundant=len(detected_cdns) > 1,
+            step_ids=step_id
+        )
+
+    except Exception as e:
+        logging.warning(f"{domain}: failed — {e}")
+        return None
+#endregion
+
+#region async main
+async def main_async():
+    input_path  = "src/Source_Data/top-100000-domains.csv"
+    output_path = "src/Source_Data/cdn_results_100000.csv"
+
+    with open(input_path, "r", newline="") as f:
+        domains = [row["domain"].strip() for row in csv.DictReader(f)]
+
+    connector = aiohttp.TCPConnector(limit=100, ssl=False)
+    async with aiohttp.ClientSession(connector=connector) as session:
+        
+        # Fetch IP ranges once at startup
+        print("Fetching CDN IP ranges...")
+        cdn_ip_ranges = await fetch_cdn_ip_ranges_async(session)
+        
+        resolver = aiodns.DNSResolver(nameservers=['8.8.8.8', '1.1.1.1'])
+        results  = []
+        failed   = []
+
+        # Process in batches of 100
+        batch_size = 100
+        for i in range(0, len(domains), batch_size):
+            batch = domains[i:i + batch_size]
+            tasks = [
+                process_domain_async(session, resolver, d, cdn_ip_ranges)
+                for d in batch
+            ]
+            batch_results = await asyncio.gather(*tasks, return_exceptions=True)
+
+            for domain, result in zip(batch, batch_results):
+                if isinstance(result, Exception) or result is None:
+                    failed.append(domain)
+                else:
+                    results.append(result)
+
+            print(f"✅ Batch {i // batch_size + 1} done — "
+                  f"{len(results)} succeeded, {len(failed)} failed")
+            
+            await asyncio.sleep(0.2)  # Brief pause between batches
+
+    # Write results
+    with open(output_path, "w", newline="") as out:
+        writer = csv.writer(out)
+        writer.writerow(["website", "cdns", "cdn_types",
+                         "uses_third_party", "critical_dependency", "redundant", "step_id"])
+        for r in results:
+            writer.writerow([
+                r.website,
+                "|".join(r.cdns),
+                json.dumps(r.cdn_types),
+                r.uses_third_party,
+                r.critical_dependency,
+                r.redundant,
+                r.step_ids
+            ])
+
+    if failed:
+        with open("src/Source_Data/failed_domains.txt", "w") as f:
+            f.write("\n".join(failed))
+
+    print(f"\n✅ Complete — {len(results)} processed, {len(failed)} failed")
+#endregion
+
+def datavis():
+    df = pd.read_csv('src/Source_Data/cdn_results_10000.csv')
+
+    cdns_detected = df[df['cdns'].notna()]['cdns'].str.split(',').explode().str.strip().value_counts()
+    print("CDN Detection Summary:")
+    print(f"Total Domains: {len(df)}")
+    print(f"Domains with CDN Detected: {df['cdns'].notna().sum()}")
+    print(f"Domains with NO CDN Detected: {df['cdns'].isna().sum()}")
+    print(f"\nTop 15 CDNs by Frequency:")
+    print(cdns_detected.head(15))
+
+    # Boolean flags
+    print(f"\n--- Boolean Flags ---")
+    print(f"Uses Third-Party CDN: {df['uses_third_party'].sum()} ({df['uses_third_party'].sum()/len(df)*100:.1f}%)")
+    print(f"Critical Dependency: {df['critical_dependency'].sum()} ({df['critical_dependency'].sum()/len(df)*100:.1f}%)")
+    print(f"Redundant CDN: {df['redundant'].sum()} ({df['redundant'].sum()/len(df)*100:.1f}%)")
+
+    # Parse cdn_types (appears to be JSON)
+    cdn_type_counts = Counter()
+    for val in df['cdn_types']:
+        if pd.notna(val) and val != 'null':
+            try:
+                parsed = json.loads(val.replace("'", '"'))
+                for key in parsed.keys():
+                    cdn_type_counts[key] += 1
+            except:
+                pass
+
+    print(f"\n--- CDN Types Distribution ---")
+    print(dict(cdn_type_counts.most_common(10)))
+
+    # Create comprehensive visualizations
+    fig, axes = plt.subplots(2, 2, figsize=(16, 12))
+    fig.suptitle('CDN Analysis: 10,000 Domains', fontsize=16, fontweight='bold', y=0.995)
+
+    # --- 1. CDN Detection Rate (Pie Chart) ---
+    ax1 = axes[0, 0]
+    detected_counts = [df['cdns'].notna().sum(), df['cdns'].isna().sum()]
+    colors = ['#2ecc71', '#e74c3c']
+    wedges, texts, autotexts = ax1.pie(detected_counts, labels=['CDN Detected', 'No CDN'], 
+                                        autopct='%1.1f%%', colors=colors, startangle=90, textprops={'fontsize': 11})
+    for autotext in autotexts:
+        autotext.set_color('white')
+        autotext.set_fontweight('bold')
+    ax1.set_title('CDN Detection Rate', fontsize=12, fontweight='bold', pad=10)
+
+    # --- 2. Top 12 CDNs (Bar Chart) ---
+    ax2 = axes[0, 1]
+    top_cdns = cdns_detected.head(12)
+    bars = ax2.barh(range(len(top_cdns)), top_cdns.values, color='#3498db')
+    ax2.set_yticks(range(len(top_cdns)))
+    ax2.set_yticklabels(top_cdns.index)
+    ax2.set_xlabel('Number of Domains', fontsize=10, fontweight='bold')
+    ax2.set_title('Top 12 CDNs by Frequency', fontsize=12, fontweight='bold', pad=10)
+    ax2.invert_yaxis()
+    for i, (bar, val) in enumerate(zip(bars, top_cdns.values)):
+        ax2.text(val + 20, i, str(val), va='center', fontweight='bold', fontsize=9)
+    ax2.grid(axis='x', alpha=0.3)
+
+    # --- 3. Critical Infrastructure Dependencies ---
+    ax3 = axes[1, 0]
+    dep_labels = ['Critical\nDependency', 'No Critical\nDependency']
+    dep_counts = [df['critical_dependency'].sum(), (~df['critical_dependency']).sum()]
+    colors_dep = ['#e67e22', '#95a5a6']
+    bars3 = ax3.bar(dep_labels, dep_counts, color=colors_dep, width=0.6)
+    ax3.set_ylabel('Number of Domains', fontsize=10, fontweight='bold')
+    ax3.set_title('Critical Dependency Analysis', fontsize=12, fontweight='bold', pad=10)
+    ax3.set_ylim(0, max(dep_counts) * 1.15)
+    for bar, val in zip(bars3, dep_counts):
+        height = bar.get_height()
+        ax3.text(bar.get_x() + bar.get_width()/2., height + 100,
+                f'{val}\n({val/len(df)*100:.1f}%)', ha='center', va='bottom', fontweight='bold', fontsize=10)
+    ax3.grid(axis='y', alpha=0.3)
+
+    # --- 4. Third-Party vs Redundancy ---
+    ax4 = axes[1, 1]
+    categories = ['Uses Third-Party', 'Has Redundancy', 'Both']
+    third_party = df['uses_third_party'].sum()
+    redundant = df['redundant'].sum()
+    both = ((df['uses_third_party']) & (df['redundant'])).sum()
+    counts_comp = [third_party, redundant, both]
+    colors_comp = ['#9b59b6', '#1abc9c', '#f39c12']
+    bars4 = ax4.bar(categories, counts_comp, color=colors_comp, width=0.6)
+    ax4.set_ylabel('Number of Domains', fontsize=10, fontweight='bold')
+    ax4.set_title('Third-Party CDN & Redundancy Metrics', fontsize=12, fontweight='bold', pad=10)
+    ax4.set_ylim(0, max(counts_comp) * 1.15)
+    for bar, val in zip(bars4, counts_comp):
+        height = bar.get_height()
+        ax4.text(bar.get_x() + bar.get_width()/2., height + 100,
+                f'{val}\n({val/len(df)*100:.1f}%)', ha='center', va='bottom', fontweight='bold', fontsize=10)
+    ax4.grid(axis='y', alpha=0.3)
+
+    plt.tight_layout()
+    plt.savefig('src/Source_Data/cdn_analysis_overview.png', dpi=300, bbox_inches='tight')
+    print("✓ Chart 1 saved: cdn_analysis_overview.png")
+    plt.close()
+
+if __name__ == "__main__":
+    asyncio.run(main_async())
+    #datavis("src/Source_Data/cdn_results_10000.csv")
 
 #region Main
 #----------------------------------------------------------------------------------
@@ -709,15 +1278,12 @@ def main():
     return output_path
 #endregion
 
-
-
-
-
 #region Starter
 #----------------------------------------------------------------------------------
 # Starter
 #----------------------------------------------------------------------------------
-if __name__ == "__main__":
+#if __name__ == "__main__":
     #full thing
-    output = main()
+    #output = main()
+
 #endregion
