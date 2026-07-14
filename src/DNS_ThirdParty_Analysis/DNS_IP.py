@@ -5,7 +5,7 @@ import dns.resolver
 
 
 # Path to your CSV file
-CSV_FILE_PATH = "src/Source_Data/top_10000_domains.csv"
+CSV_FILE_PATH = "src/Source_Data/top_1000_domains.csv"
 OUTPUT_FILE_PATH = "src/Source_Data/Domain_Robustness_Results.csv"
 
 ######################################################################################################################
@@ -94,9 +94,9 @@ def check_domain_robustness(domain) -> bool:
     if has_ipv4 and has_ipv6:
         classification = "High Robustness"
     elif has_ipv4:
-        classification = "Old robustness - low"
+        classification = "Low Robustness"
     elif has_ipv6:
-        classification = "New robustness - low"
+        classification = "Low Robustness"
     else:
         classification = "CNAME Enabled"
 

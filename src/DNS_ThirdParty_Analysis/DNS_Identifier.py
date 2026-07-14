@@ -4,7 +4,6 @@ import ssl
 import time
 import socket
 import tldextract
-#import numpy as np
 import dns.resolver
 import pandas as pa
 from typing import Optional
@@ -194,10 +193,9 @@ def extract_provider(nameserver: str) -> str:
 # Maps a nameserver's registered domain → the parent company's registered domains.
 # If a website's domain TLD resolves to the same parent, it's private.
 CORPORATE_NS_OWNERS: dict[str, set[str]] = {
-    "azure-dns.com":        {"microsoft.com", "outlook.com", "gamepass.com", "microsoftonline.com", "cloud.microsoft"},
-    "azure-dns.net":        {"microsoft.com", "outlook.com", "gamepass.com", "microsoftonline.com", "cloud.microsoft"},
-    "azure-dns.org":        {"microsoft.com", "outlook.com", "gamepass.com", "microsoftonline.com", "cloud.microsoft"},
-    "azure-dns.info":       {"microsoft.com", "outlook.com", "gamepass.com", "microsoftonline.com", "cloud.microsoft"},
+    "cloudns.net":          {"3gppnetwork.org"},
+    "cloudns.uk":           {"3gppnetwork.org"},
+    "google.com":           {"gmail.com", "youtube.com"},
     "awsdns-01.com":        {"amazon.com", "amazonaws.com"},
     "awsdns-01.net":        {"amazon.com", "amazonaws.com"},
     "awsdns-01.org":        {"amazon.com", "amazonaws.com"},
@@ -210,12 +208,12 @@ CORPORATE_NS_OWNERS: dict[str, set[str]] = {
     "awsdns-52.org":        {"amazon.com", "amazonaws.com"},
     "awsdns-21.co.uk":      {"amazon.com", "amazonaws.com"},
     "googledomains.com":    {"google.com", "alphabet.com"},
-    "google.com":           {"gmail.com", "youtube.com"},
-    "p-ns.facebook.com":    {"facebook.com", "meta.com", "fb.com", "fbcdn.com", "fbsbx.com", },
     "apple.com":            {"aaplimg.com", "apple.com", "icloud.com"},
-    "cloudns.net":          {"3gppnetwork.org"},
-    "cloudns.uk":           {"3gppnetwork.org"},
-    "cloudflare.com":   set(),  # pure third-party CDN, never private
+    "p-ns.facebook.com":    {"facebook.com", "meta.com", "fb.com", "fbcdn.com", "fbsbx.com", },
+    "azure-dns.com":        {"microsoft.com", "outlook.com", "gamepass.com", "microsoftonline.com", "cloud.microsoft"},
+    "azure-dns.net":        {"microsoft.com", "outlook.com", "gamepass.com", "microsoftonline.com", "cloud.microsoft"},
+    "azure-dns.org":        {"microsoft.com", "outlook.com", "gamepass.com", "microsoftonline.com", "cloud.microsoft"},
+    "azure-dns.info":       {"microsoft.com", "outlook.com", "gamepass.com", "microsoftonline.com", "cloud.microsoft"},
 }
 
 def get_ns_parent(ns_tld: str) -> set[str]:
@@ -379,9 +377,9 @@ def dependency_classification(nameservers: list[NameserverResult]) -> str:
             providers.add(raw_provider)
 
     if len(providers) > 1:
-        return "No critical dependency — multiple DNS providers, more resilient to failures."
+        return "No critical dependency"
     else:
-        return "Critical dependency — single DNS provider, less resilient to failures."
+        return "Critical dependency"
 # ---------------------------------------------------------------------------
 # Per-nameserver classification  (the 5-step algorithm)
 # ---------------------------------------------------------------------------
@@ -538,27 +536,6 @@ def main():
     print(output_df[type_col].value_counts().to_string())
     print(f"\nDependency breakdown:")
     print(output_df.drop_duplicates(subset="DOMAIN")["DEPENDENCY"].value_counts().to_string())
-
-#############################################################################################################################
-# This is to create a graph for our analysis, with the list of domains that have a third party dependency and a private dependency. 
-# I did it here considering that the information is obtained when we append it to the csv of the results, therefore 
-
-    import matplotlib.pyplot as plt
-
-    dependency_counts = output_df.drop_duplicates(subset="DOMAIN")["DEPENDENCY"].value_counts()
-
-    plt.figure(figsize=(8, 6))
-    plt.bar(dependency_counts.index, dependency_counts.values, color="skyblue", edgecolor="black")
-    plt.title("Domain Dependency Breakdown", fontsize=16)
-    plt.xlabel("Dependency", fontsize=14)
-    plt.ylabel("Number of Domains", fontsize=14)
-    plt.xticks(rotation=30, ha='right')
-
-    for i, v in enumerate(dependency_counts.values):
-        plt.text(i, v + 0.5, str(v), ha='center', fontsize=11)
-
-    plt.tight_layout()
-    plt.show()
  
 if __name__ == "__main__":
     main()
