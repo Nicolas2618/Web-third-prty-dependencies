@@ -1,295 +1,224 @@
 domain,ipv4,ipv6,classification,org,region,network,ASN,CNAME
-0xrpc.io,146.19.24.104,,Low Robustness,MEVSPACE sp. z o.o.,Europe/Middle East,146.19.24.0/24,AS201814,
-163.com,59.111.160.244,,Low Robustness,,Asia Pacific,59.111.128.0/17,AS45062,www.163.com.163jiasu.com
-33across.com,151.101.194.159,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,www.33across.com.cdn.cloudflare.net
-360.cn,106.63.103.5,,Low Robustness,,Asia Pacific,106.63.0.0/17,AS141679,
-360safe.com,101.226.4.13,,Low Robustness,,Asia Pacific,101.224.0.0/13,AS4811,
-360yield.com,34.251.72.19,,Low Robustness,Amazon Data Services Ireland Limited,US/Canada/Caribbean,34.248.0.0/13,AS16509,
-3lift.com,3.163.83.70,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,
-a-mo.net,18.64.155.45,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.64.0.0/14,AS16509,
-accuweather.com,23.206.222.107,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.192.0.0/11,AS16625,www.accuweather.com.edgekey.net
-acrobat.com,23.0.162.38,2600:1402:8000:7::1700:a265,High Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.0.0.0/12,AS20940,acrobat.com
-acronis.com,34.120.97.237,,Low Robustness,Google LLC,US/Canada/Caribbean,34.64.0.0/10,AS396982,www.acronis.com.cdn.cloudflare.net
-ad-delivery.net,172.66.148.140,2606:4700:10::ac42:948c,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
-ad.gt,35.163.109.19,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,35.160.0.0/13,AS16509,www.audigent.com
-adblockplus.org,199.36.158.100,,Low Robustness,Google LLC,US/Canada/Caribbean,199.36.152.0/21,AS54113,adblockplus-org.web.app
-adform.net,37.157.2.14,,Low Robustness,adform,Europe/Middle East,37.157.2.0/23,AS198622,
-adfuse-ssp.com,162.247.154.250,,Low Robustness,Twinservers Hosting Solutions Inc.,US/Canada/Caribbean,162.247.152.0/22,AS8849,adfuse-ssp.com
-adgrx.com,,,CNAME Enabled,,,,,www.adgear.com
-adguard.com,104.18.189.9,2606:4700::6812:bd09,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-aditude.io,76.76.21.21,,Low Robustness,"Vercel, Inc",US/Canada/Caribbean,76.76.21.0/24,AS16509,cname.vercel-dns.com
-adjust.com,76.76.21.21,,Low Robustness,"Vercel, Inc",US/Canada/Caribbean,76.76.21.0/24,AS16509,cname.vercel-dns.com
-adkernel.com,173.239.53.87,2604:9e00:1:129::94,High Robustness,Webair Internet Development Company Inc.,US/Canada/Caribbean,173.239.48.0/21,AS27257,
-admanmedia.com,104.102.45.188,2a02:26f0:2780:787::2bfd,High Robustness,"Akamai International, BV",US/Canada/Caribbean,104.102.32.0/19,AS16625,www.admanmedia.com.edgekey.net
-adnxs.com,68.67.160.184,,Low Robustness,Xandr Inc.,US/Canada/Caribbean,68.67.128.0/18,AS29990,
-adobe.com,23.53.11.104,2600:1402:8000:106::17da:9164,High Robustness,"Akamai International, BV",US/Canada/Caribbean,23.53.11.0/24,AS20940,www.adobe.com.edgesuite.net
-adobe.io,50.16.47.176,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,50.16.0.0/15,AS14618,adobeio.map.fastly.net
-adobelogin.com,192.147.130.204,,Low Robustness,Adobe Systems Incorporated,US/Canada/Caribbean,192.147.128.0/21,AS15224,redirect.wip4.adobe.com
-adriver.ru,195.209.109.60,,Low Robustness,LLC AdRiver,Europe/Middle East,195.209.108.0/22,AS52007,
-adroll.com,151.101.66.133,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,adroll.map.fastly.net
-adrta.com,100.56.66.38,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,100.48.0.0/12,AS14618,adrta.com
-adsafeprotected.com,99.84.237.114,2600:9000:2061:9200:8:48e:53c0:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,99.84.0.0/16,AS16509,
-adsco.re,162.252.214.5,,Low Robustness,"Total Uptime Technologies, LLC",US/Canada/Caribbean,162.252.212.0/22,AS53334,
-adsmoloco.com,198.185.159.144,,Low Robustness,"Squarespace, Inc.",US/Canada/Caribbean,198.185.159.0/24,AS53831,ext-sq.squarespace.com
-adsrvr.org,3.170.42.56,2600:9000:205d:e000:12:e08a:be80:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.168.0.0/14,AS16509,d2bd48osy0szju.cloudfront.net
-adtelligent.com,5.161.229.22,,Low Robustness,HOS-GUN,Europe/Middle East,5.161.229.0/24,AS213230,adtelligent.com
-adthrive.com,141.193.213.11,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,wp.wpenginepowered.com
-adtrafficquality.google,142.251.15.103,2607:f8b0:4002:c2c::68,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
-agkn.com,,,CNAME Enabled,,,,,d20qwf0wrdtevy.cloudfront.net
-agora.io,52.8.151.151,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.0.0.0/10,AS16509,d1qagv3a1w84jp.cloudfront.net
-aka.ms,23.222.198.10,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.192.0.0/11,AS16625,www.aka.ms.edgekey.net
-akamai.com,23.53.13.169,2600:1402:d800::6007:daf3,High Robustness,"Akamai International, BV",US/Canada/Caribbean,23.53.13.0/24,AS20940,www.akamai.com.edgekey.net
-akstat.io,,,CNAME Enabled,,,,,wildcard46.akstat.io.edgekey.net
-alibaba.com,47.246.131.198,,Low Robustness,Alibaba Cloud LLC,US/Canada/Caribbean,47.246.0.0/16,AS45102,www.alibaba.com.gds.alibabadns.com
-alicdn.com,140.205.77.240,,Low Robustness,,Asia Pacific,140.205.0.0/16,AS37963,
-aliexpress.com,47.246.173.30,,Low Robustness,Alibaba Cloud LLC,US/Canada/Caribbean,47.246.0.0/16,AS45102,www.aliexpress.com.gds.alibabadns.com
-alipay.com,110.76.8.255,2400:b200:1005:3030::247,High Robustness,,Asia Pacific,110.76.0.0/19,AS37963,homepage.alipaydns.com
-aliyun.com,140.205.60.46,2401:b180:1:60::6,High Robustness,,Asia Pacific,140.205.0.0/16,AS37963,www-jp-de-intl-adns.aliyun.com
-aliyuncs.com,106.15.148.44,2408:4002:1f10::45,High Robustness,,Asia Pacific,106.14.0.0/15,AS37963,
-allawntech.com,106.3.18.4,,Low Robustness,,Asia Pacific,106.3.16.0/20,AS23724,
-alphonso.tv,141.193.213.10,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,wp.wpenginepowered.com
-amap.com,182.92.205.225,,Low Robustness,,Asia Pacific,182.92.0.0/16,AS37963,www.amap.com.gds.alibabadns.com
-amazon-adsystem.com,52.200.46.40,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.192.0.0/12,AS14618,
-amazon.co.uk,3.253.181.192,,Low Robustness,Amazon Data Services Ireland Limited,US/Canada/Caribbean,3.248.0.0/13,AS16509,tp.bfbdc3ca1-frontier.amazon.co.uk
-amazon.com,98.82.161.185,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,98.80.0.0/13,AS14618,tp.47cf2c8c9-frontier.amazon.com
-amazon.de,3.253.177.16,,Low Robustness,Amazon Data Services Ireland Limited,US/Canada/Caribbean,3.248.0.0/13,AS16509,tp.abe2c2f23-frontier.amazon.de
-amazonalexa.com,3.33.131.74,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,3.0.0.0/9,AS16509,
-amazonaws.com,15.197.250.250,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,15.196.0.0/14,AS16509,amazonaws.com
-amazontrust.com,108.156.152.114,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,108.156.0.0/14,AS16509,
-amazonvideo.com,54.230.253.46,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.230.0.0/15,AS16509,
-amd.com,23.222.196.125,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.192.0.0/11,AS16625,tccdn.amd.akadns.net
-amemv.com,122.14.229.128,,Low Robustness,,Asia Pacific,122.14.224.0/19,AS9808,www.amemv.com.bytedns1.com
-amplitude.com,13.248.219.127,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,13.248.0.0/14,AS16509,amplitude.com
-ampproject.org,172.253.124.139,2607:f8b0:4002:c10::64,High Robustness,Google LLC,US/Canada/Caribbean,172.253.0.0/16,AS15169,
-android.com,74.125.21.103,2607:f8b0:4002:c06::68,High Robustness,Google LLC,US/Canada/Caribbean,74.125.0.0/16,AS15169,www3.l.google.com
-aniview.com,108.138.128.19,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,108.138.0.0/15,AS16509,d2np405ugf5ssd.cloudfront.net
-anthropic.com,160.79.104.10,2607:6bc0::10,High Robustness,"Anthropic, PBC",US/Canada/Caribbean,160.79.104.0/21,AS399358,
-anydesk.com,104.18.31.170,2606:4700::6812:1faa,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-ap4r.com,,,CNAME Enabled,,,,,cafe262c.ap4r.com.cdn.dnsv1.com
-app-ads-services.com,216.239.32.29,2001:4860:4802:32::1d,High Robustness,Google LLC,US/Canada/Caribbean,216.239.32.0/19,AS15169,www3.l.google.com
-app-analytics-services-att.com,142.250.9.139,2607:f8b0:4002:c11::71,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
-app-analytics-services.com,173.194.219.102,2607:f8b0:4002:c03::66,High Robustness,Google LLC,US/Canada/Caribbean,173.194.0.0/16,AS15169,
-app-measurement.com,74.125.136.138,2607:f8b0:4002:c00::8a,High Robustness,Google LLC,US/Canada/Caribbean,74.125.0.0/16,AS15169,
-appcenter.ms,150.171.109.118,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,150.171.0.0/16,AS8075,front-door-cscmh8grcmgbhhcu.b01.azurefd.net
-appier.net,35.241.60.58,2600:1901:0:f379::,High Robustness,Google LLC,US/Canada/Caribbean,35.240.0.0/13,AS396982,www.appier.net.s3-website-us-east-1.amazonaws.com
-apple-cloudkit.com,17.254.0.91,,Low Robustness,Apple Inc.,US/Canada/Caribbean,17.0.0.0/8,AS714,apple-cloudkit.com
+googleapis.com,64.233.177.105,2607:f8b0:4002:c02::67,High Robustness,Google LLC,US/Canada/Caribbean,64.233.160.0/19,AS15169,
+microsoft.com,13.107.253.41,2603:1061:14:75::1,High Robustness,Microsoft Corporation,US/Canada/Caribbean,13.104.0.0/14,AS8075,www.microsoft.com-c-3.edgekey.net
+cloudflare.com,104.16.132.229,2606:4700::6810:84e5,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+gstatic.com,108.177.122.94,2607:f8b0:4002:c05::78,High Robustness,Google LLC,US/Canada/Caribbean,108.177.0.0/17,AS15169,
 apple.com,17.253.144.10,2620:149:af0::10,High Robustness,Apple Inc.,US/Canada/Caribbean,17.0.0.0/8,AS714,www-apple-com.v.aaplimg.com
-apple.news,23.32.118.69,2600:1402:8000:286::3277,High Robustness,"Akamai International, BV",US/Canada/Caribbean,23.32.112.0/20,AS16625,apple.news
+apple.news,23.32.118.69,2600:1402:8000:291::3277,High Robustness,"Akamai International, BV",US/Canada/Caribbean,23.32.112.0/20,AS16625,apple.news
 applovin.com,34.54.99.24,2600:1901:0:c0c6::,High Robustness,Google LLC,US/Canada/Caribbean,34.32.0.0/11,AS396982,applovin.com
 appsflyer.com,44.219.100.0,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,44.192.0.0/11,AS14618,www.appsflyer.com.cdn.cloudflare.net
-appsflyersdk.com,18.244.202.34,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.244.0.0/15,AS16509,
-appspot.com,142.250.105.113,2607:f8b0:4002:c1b::8b,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
-apptracer.ru,217.20.156.72,,Low Robustness,VKCOMPANY-MNT,Europe/Middle East,217.20.156.0/23,AS47764,
+appsflyersdk.com,13.226.238.20,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.224.0.0/14,AS16509,
+appspot.com,172.253.124.102,2607:f8b0:4002:c00::8b,High Robustness,Google LLC,US/Canada/Caribbean,172.253.0.0/16,AS15169,
+apptracer.ru,217.20.147.7,,Low Robustness,VKCOMPANY-MNT,Europe/Middle East,217.20.144.0/22,AS47764,
 archive.org,207.241.224.2,,Low Robustness,Internet Archive,US/Canada/Caribbean,207.241.224.0/20,AS7941,
 arubanetworks.com,18.208.237.48,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,18.128.0.0/9,AS14618,www.arubanetworks-v8.com.edgekey.net
 assetsconfigcdn.org,34.128.128.0,,Low Robustness,Google LLC,US/Canada/Caribbean,34.128.0.0/10,AS396982,
 asus.com,103.10.4.227,,Low Robustness,,Asia Pacific,103.10.4.0/22,AS131144,
-atlassian.com,13.225.143.69,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.224.0.0/14,AS16509,
+atlassian.com,13.225.143.128,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.224.0.0/14,AS16509,
 atlassian.net,13.227.180.4,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.224.0.0/14,AS16509,
 autodesk.com,23.21.189.113,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,23.20.0.0/14,AS14618,web-autodesk.edgekey.net
-av380.net,8.134.132.195,,Low Robustness,,Asia Pacific,8.128.0.0/11,AS37963,
-avast.com,23.221.241.128,2600:1402:8000:a81::21c7,High Robustness,"Akamai International, BV",US/Canada/Caribbean,23.221.240.0/20,AS16625,www.avast.com-2.edgekey.net
+av380.net,47.115.74.251,,Low Robustness,,Asia Pacific,47.114.0.0/15,AS37963,
+avast.com,104.123.201.174,2600:1402:8000:b93::21c7,High Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,104.64.0.0/10,AS16625,www.avast.com-2.edgekey.net
 avcdn.net,,,CNAME Enabled,,,,,redman.avast.com.edgesuite.net
 avira.com,52.58.28.12,,Low Robustness,A100 ROW GmbH,US/Canada/Caribbean,52.58.0.0/15,AS16509,www.avira.com-v1.edgesuite.net
-avito.ru,176.114.120.24,,Low Robustness,MNT-AVITO,Europe/Middle East,176.114.112.0/20,AS201012,
-avito.st,176.114.124.6,,Low Robustness,MNT-AVITO,Europe/Middle East,176.114.112.0/20,AS201012,cl-dabdb3fc.edgecdn.ru
-avsxappcaptiveportal.com,54.84.7.134,2600:1f18:5cc9:9902:2484:5c4b:c62b:13,High Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,54.64.0.0/11,AS14618,
+avito.ru,176.114.122.24,,Low Robustness,MNT-AVITO,Europe/Middle East,176.114.112.0/20,AS201012,
+avito.st,176.114.122.6,,Low Robustness,MNT-AVITO,Europe/Middle East,176.114.112.0/20,AS201012,avito.cdnvideo.ru
+avsxappcaptiveportal.com,32.196.195.125,2600:1f18:5cc9:9901:5eef:ab5c:6e97:9ad8,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,32.192.0.0/12,AS14618,
 axon.ai,34.160.89.235,2600:1901:0:c257::,High Robustness,Google LLC,US/Canada/Caribbean,34.128.0.0/10,AS396982,axon.ai
-ay.delivery,172.67.149.20,2606:4700:3032::ac43:9514,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
-azure.com,20.236.44.162,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,20.192.0.0/10,AS8075,reroute.microsoft.com
-azure.net,20.231.239.246,2603:1030:b:3::152,High Robustness,Microsoft Corporation,US/Canada/Caribbean,20.192.0.0/10,AS8075,azure.net
+ay.delivery,104.21.41.177,2606:4700:3032::ac43:9514,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+azure.com,20.112.250.133,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,20.64.0.0/10,AS8075,reroute.microsoft.com
+azure.net,20.76.201.171,2603:1030:20e:3::23c,High Robustness,Microsoft Corporation,US/Canada/Caribbean,20.64.0.0/10,AS8075,azure.net
 azureedge.net,,,CNAME Enabled,,,,,www.afd.azureedge.net
 azurefd.net,,,CNAME Enabled,,,,,mr-azurefd.tm-azurefd.net
 azurewebsites.net,,,CNAME Enabled,,,,,waws-prod-blu-001.cloudapp.net
-b-cdn.net,195.181.163.195,,Low Robustness,DATACAMP-MNT,Europe/Middle East,195.181.163.192/28,AS60068,
-baidu.com,111.63.65.103,,Low Robustness,China Mobile,Asia Pacific,111.0.0.0/10,AS24547,www.a.shifen.com
+b-cdn.net,156.146.43.70,,Low Robustness,DATACAMP-MNT,Europe/Middle East,156.146.42.0/23,AS60068,
+baidu.com,111.63.65.247,,Low Robustness,China Mobile,Asia Pacific,111.0.0.0/10,AS24547,www.a.shifen.com
 battle.net,166.117.214.166,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,166.117.0.0/16,AS16509,
-bazaarvoice.com,23.185.0.4,2620:12a:8000::4,High Robustness,Pantheon,US/Canada/Caribbean,23.185.0.0/24,AS54113,live-bv-web-network.pantheonsite.io
+bazaarvoice.com,23.185.0.4,2620:12a:8001::4,High Robustness,Pantheon,US/Canada/Caribbean,23.185.0.0/24,AS54113,live-bv-web-network.pantheonsite.io
 betweendigital.com,88.212.241.122,,Low Robustness,EXEPTO-MNT,Europe/Middle East,88.212.240.0/21,AS39134,betweendigital.com
 beyondwickedmapping.org,34.128.128.0,,Low Robustness,Google LLC,US/Canada/Caribbean,34.128.0.0/10,AS396982,
 bidease.com,104.18.24.103,2606:4700::6812:1967,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-bidmachine.io,104.18.3.182,2606:4700::6812:3b6,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-bilibili.com,119.3.70.188,,Low Robustness,,Asia Pacific,119.3.0.0/16,AS55990,a.w.bilicdn1.com
-binance.com,52.195.95.228,,Low Robustness,Amazon Data Services Japan,US/Canada/Caribbean,52.194.0.0/15,AS16509,dobbmei4jnjlh.cloudfront.net
+bidmachine.io,104.18.3.182,2606:4700::6812:2b6,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+bilibili.com,8.134.50.24,,Low Robustness,,Asia Pacific,8.128.0.0/11,AS37963,a.w.bilicdn1.com
+binance.com,35.72.170.200,,Low Robustness,Amazon Data Services Japan,US/Canada/Caribbean,35.72.0.0/13,AS16509,dobbmei4jnjlh.cloudfront.net
 bing.com,150.171.28.10,2620:1ec:33:1::10,High Robustness,Microsoft Corporation,US/Canada/Caribbean,150.171.0.0/16,AS8075,www-www.bing.com.trafficmanager.net
 bing.net,204.79.197.200,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,204.79.196.0/23,AS8068,
-bitdefender.com,104.18.96.219,2606:4700::6812:5fdb,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-bitdefender.net,104.17.108.108,2606:4700::6811:6b6c,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,www.bitdefender.net.cdn.cloudflare.net
-blackberry.com,74.82.72.235,,Low Robustness,BlackBerry Limited,US/Canada/Caribbean,74.82.64.0/19,AS18705,d1hi0663sk09qf.cloudfront.net
-blogspot.com,74.125.138.191,2607:f8b0:4002:c0c::bf,High Robustness,Google LLC,US/Canada/Caribbean,74.125.0.0/16,AS15169,blogger.l.google.com
-booking.com,3.161.150.124,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,d1of1hbywxxm65.cloudfront.net
-bootstrapcdn.com,104.18.11.207,2606:4700::6812:acf,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+bitdefender.com,104.18.96.219,2606:4700::6812:60db,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+bitdefender.net,104.17.107.108,2606:4700::6811:6c6c,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,www.bitdefender.net.cdn.cloudflare.net
+blackberry.com,74.82.70.235,,Low Robustness,BlackBerry Limited,US/Canada/Caribbean,74.82.64.0/19,AS18705,d1hi0663sk09qf.cloudfront.net
+blogspot.com,74.125.138.191,2607:f8b0:4002:c00::bf,High Robustness,Google LLC,US/Canada/Caribbean,74.125.0.0/16,AS15169,blogger.l.google.com
+booking.com,3.161.150.39,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,d1of1hbywxxm65.cloudfront.net
+bootstrapcdn.com,104.18.10.207,2606:4700::6812:acf,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 box.com,74.112.186.157,2620:117:bff0:12d::,High Robustness,Box.com,US/Canada/Caribbean,74.112.184.0/22,AS396982,www.box.com.cdn.cloudflare.net
 boyuanhulian.com,8.219.80.216,,Low Robustness,Alibaba Cloud (Singapore) Private Limited,Asia Pacific,8.208.0.0/12,AS45102,boyuanhulian.com.akamaized.net
-branch.io,3.170.73.16,2600:9000:2876:7a00:e:6c93:2e80:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.168.0.0/14,AS16509,aeqnlksja9ay.wpeproxy.com
-brave.com,108.156.152.13,2600:9000:24d7:7400:6:d0d2:780:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,108.156.0.0/14,AS16509,d16w0ph6f167fi.cloudfront.net
-braze.com,104.17.228.60,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-browser-intake-datadoghq.com,3.233.158.112,2600:1f18:24e6:b901:fbdc:7182:a89c:6101,High Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,3.224.0.0/12,AS14618,
+branch.io,3.170.73.16,2600:9000:2876:6000:e:6c93:2e80:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.168.0.0/14,AS16509,aeqnlksja9ay.wpeproxy.com
+brave.com,108.156.152.3,2600:9000:24d7:2000:6:d0d2:780:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,108.156.0.0/14,AS16509,d16w0ph6f167fi.cloudfront.net
+braze.com,104.17.227.60,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+browser-intake-datadoghq.com,3.233.158.114,2600:1f18:24e6:b901:72e3:1bfe:b271:96b2,High Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,3.224.0.0/12,AS14618,
 browser-intake-us5-datadoghq.com,34.149.66.154,2600:1901:0:179c::,High Robustness,Google LLC,US/Canada/Caribbean,34.128.0.0/10,AS396982,
-btloader.com,104.20.20.189,2606:4700:10::6814:14bd,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+btloader.com,172.66.171.133,2606:4700:10::6814:14bd,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
 bugsnag.com,3.161.136.95,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,www.bugsnag.com.cdn.cloudflare.net
 bunny.net,185.152.66.247,2a02:6ea0:c113:2::1364:1,High Robustness,DATACAMP-MNT,Europe/Middle East,185.152.66.240/28,AS60068,
 buzzoola.com,82.148.20.137,,Low Robustness,MNT-SELECTEL,Europe/Middle East,82.148.20.0/24,AS50340,buzzoola.com
-bytedance.com,122.14.229.102,,Low Robustness,,Asia Pacific,122.14.224.0/19,AS9808,www.bytedance.com.edgesuite.net
-canva.com,13.249.180.73,2600:9000:205d:4000:b:add6:7500:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.249.0.0/16,AS16509,www.canva.com.cdn.cloudflare.net
-capcut.com,23.0.162.37,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.0.0.0/12,AS20940,www.capcut.com.edgekey.net
-casalemedia.com,104.18.27.193,2606:4700::6812:1ac1,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+bytedance.com,122.14.229.7,,Low Robustness,,Asia Pacific,122.14.224.0/19,AS9808,www.bytedance.com.edgesuite.net
+canva.com,13.249.180.42,2600:9000:205d:5e00:b:add6:7500:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.249.0.0/16,AS16509,www.canva.com.cdn.cloudflare.net
+capcut.com,104.71.143.6,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,104.64.0.0/10,AS20940,www.capcut.com.edgekey.net
+casalemedia.com,104.18.27.193,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 cdngslb.com,115.238.23.241,,Low Robustness,,Asia Pacific,115.238.23.0/24,AS58461,
-chartbeat.net,16.15.223.94,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,16.15.0.0/16,AS14618,
-chartboost.com,54.230.253.116,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.230.0.0/15,AS16509,
+chartbeat.net,16.15.253.192,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,16.15.0.0/16,AS14618,
+chartboost.com,54.230.253.70,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.230.0.0/15,AS16509,
 charter.net,75.2.77.94,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,75.2.0.0/17,AS16509,spectrum-zuul-redirect-343007235.us-east-1.elb.amazonaws.com
-chatgpt.com,104.18.32.47,2a06:98c1:3101::6812:202f,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-checkpoint.com,3.163.83.119,2600:9000:269e:5a00:13:1d23:bc80:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,d4epvaz4tpdrm.cloudfront.net
+chatgpt.com,172.64.155.209,2606:4700:4408::ac40:9bd1,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
+checkpoint.com,3.163.83.63,2600:9000:269e:2000:13:1d23:bc80:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,d4epvaz4tpdrm.cloudfront.net
 cisco.com,72.163.4.185,2001:420:1101:1::185,High Robustness,"CISCO SYSTEMS, INC.",US/Canada/Caribbean,72.163.0.0/16,AS109,www.cisco.com.akadns.net
-clarity.ms,13.89.188.82,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,13.64.0.0/11,AS8075,tm-clarity-tag.trafficmanager.net
+clarity.ms,52.173.199.90,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,52.160.0.0/11,AS8075,tm-clarity-tag.trafficmanager.net
 claude.ai,160.79.104.10,2607:6bc0::10,High Robustness,"Anthropic, PBC",US/Canada/Caribbean,160.79.104.0/21,AS399358,
-clevertap-prod.com,99.84.237.56,2600:9000:2061:3600:16:7f0c:fc80:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,99.84.0.0/16,AS16509,
-cloud.microsoft,20.231.239.246,2603:1010:3:3::5b,High Robustness,Microsoft Corporation,US/Canada/Caribbean,20.192.0.0/10,AS8075,cloud.microsoft
-cloudflare-dns.com,104.16.249.249,2606:4700::6810:f8f9,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-cloudflare.com,104.16.133.229,2606:4700::6810:85e5,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-cloudflare.net,104.17.156.85,2606:4700::6810:d05a,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-cloudflareclient.com,104.16.24.84,2606:4700::6810:c052,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-cloudflareinsights.com,104.16.79.73,2606:4700::6810:5049,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-cloudflarestorage.com,104.16.95.115,2606:4700::6810:5e73,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-cloudinary.com,162.159.133.82,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,cloudflare.cloudinary.net
-cnn.com,151.101.195.5,2a04:4e42:400::773,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,cnn-tls.map.fastly.net
+clevertap-prod.com,99.84.237.56,2600:9000:2061:2200:16:7f0c:fc80:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,99.84.0.0/16,AS16509,
+cloud.microsoft,20.112.250.133,2603:1010:3:3::5b,High Robustness,Microsoft Corporation,US/Canada/Caribbean,20.64.0.0/10,AS8075,cloud.microsoft
+cloudflare-dns.com,104.16.248.249,2606:4700::6810:f8f9,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+cloudflare.com,104.16.133.229,2606:4700::6810:84e5,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+cloudflare.net,104.16.208.90,2606:4700::6810:d05a,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+cloudflareclient.com,104.16.24.84,2606:4700::6810:1854,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+cloudflareinsights.com,104.16.79.73,2606:4700::6810:4f49,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+cloudflarestorage.com,104.16.94.115,2606:4700::6810:5e73,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+cloudinary.com,162.159.130.82,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,cloudflare.cloudinary.net
+cnn.com,151.101.3.5,2a04:4e42:400::773,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,cnn-tls.map.fastly.net
 coloros.com,120.53.71.88,,Low Robustness,,Asia Pacific,120.53.0.0/17,AS45090,
 comcast.net,96.99.227.0,,Low Robustness,"Comcast Cable Communications, LLC",US/Canada/Caribbean,96.96.0.0/14,AS7922,www.comcast.net.edgekey.net
 comodoca.com,91.199.212.90,2a0e:ac00:c7:d45a::5bc7:d45a,High Robustness,Sectigo Limited,Europe/Middle East,91.199.212.0/24,AS48447,www.comodoca.com.cdn.cloudflare.net
-company-target.com,108.156.152.17,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,108.156.0.0/14,AS16509,
-connatix.com,54.230.79.102,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.230.0.0/15,AS16509,
+company-target.com,18.155.1.95,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.154.0.0/15,AS16509,
+connatix.com,54.230.79.38,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.230.0.0/15,AS16509,
 contextweb.com,74.214.194.128,,Low Robustness,Pulsepoint Inc,US/Canada/Caribbean,74.214.192.0/21,AS19189,www.pulsepoint.com
-conviva.com,141.193.213.20,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,conviva2017.wpengine.com
+conviva.com,141.193.213.21,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,conviva2017.wpengine.com
 cookiebot.com,141.193.213.20,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,
-cookielaw.org,104.18.86.42,2606:4700::6812:572a,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+cookielaw.org,104.18.87.42,2606:4700::6812:572a,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 cootlogix.com,34.149.87.45,,Low Robustness,Google LLC,US/Canada/Caribbean,34.128.0.0/10,AS396982,www138.wixdns.net
 crashlytics.com,216.239.32.29,,Low Robustness,Google LLC,US/Canada/Caribbean,216.239.32.0/19,AS15169,
 crealitycloud.com,47.253.35.178,,Low Robustness,Alibaba Cloud - US,US/Canada/Caribbean,47.253.0.0/16,AS45102,www.crealitycloud.com.cdn.cloudflare.net
 creativecdn.com,185.184.8.90,,Low Robustness,mnt-cy-rtbmarketing-1,Europe/Middle East,185.184.8.0/24,AS204995,
 criteo.com,23.185.0.4,2620:12a:8000::4,High Robustness,Pantheon,US/Canada/Caribbean,23.185.0.0/24,AS54113,criteo.com
-crwdcntrl.net,199.233.57.20,,Low Robustness,Epsilon Data Management LLC,US/Canada/Caribbean,199.233.57.0/24,ASN Not Found,edge-bcp-lb-stack-bcp-lb-1951528953.us-east-1.elb.amazonaws.com
-cspserver.net,108.132.115.60,,Low Robustness,Amazon Data Services Ireland Limited,US/Canada/Caribbean,108.128.0.0/13,AS16509,shss-prd-eelb-web-01-euw-1-434168398.eu-west-1.elb.amazonaws.com
+crwdcntrl.net,199.233.57.19,,Low Robustness,Epsilon Data Management LLC,US/Canada/Caribbean,199.233.57.0/24,ASN Not Found,edge-bcp-lb-stack-bcp-lb-1951528953.us-east-1.elb.amazonaws.com
+cspserver.net,52.208.23.247,,Low Robustness,Amazon Data Services Ireland Limited,US/Canada/Caribbean,52.208.0.0/13,AS16509,shss-prd-eelb-web-01-euw-1-434168398.eu-west-1.elb.amazonaws.com
 curseforge.com,104.17.30.3,2606:4700::6811:1e03,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 cursor.sh,76.76.21.21,,Low Robustness,"Vercel, Inc",US/Canada/Caribbean,76.76.21.0/24,AS16509,cname.vercel-dns.com
-dalyfeds.com,104.120.129.21,2600:1402:9800:36::17d5:1a58,High Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,104.64.0.0/10,AS20940,www.dalyfeds.com.edgesuite.net
-datadoghq.com,18.64.155.108,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.64.0.0/14,AS16509,
-datadome.co,3.161.174.15,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,
-datto.com,184.87.36.189,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,184.84.0.0/14,AS16625,qel7tvahlnkj.wpeproxy.com
+dalyfeds.com,104.120.129.21,2600:1402:1400:19::173b:ebc5,High Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,104.64.0.0/10,AS20940,www.dalyfeds.com.edgesuite.net
+datadoghq.com,18.64.155.105,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.64.0.0/14,AS16509,
+datadome.co,3.161.174.64,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,
+datto.com,96.17.87.139,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,96.16.0.0/15,AS16625,qel7tvahlnkj.wpeproxy.com
 ddns.net,158.247.7.206,,Low Robustness,"Vitalwerks Internet Solutions, LLC",US/Canada/Caribbean,158.247.0.0/21,AS14627,
-debian.org,151.101.130.132,2a04:4e42:200::644,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,
+debian.org,151.101.2.132,2a04:4e42::644,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,
 deepintent.com,198.202.211.1,,Low Robustness,"Webflow, Inc",US/Canada/Caribbean,198.202.211.0/24,AS209242,cdn.webflow.com
-deepl.com,172.64.151.134,2a06:98c1:3105::6812:247a,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
+deepl.com,104.18.36.122,2a06:98c1:3108::ac40:9786,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 deepseek.com,3.173.21.63,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.173.0.0/17,AS16509,d1pnh11d06bqcs.cloudfront.net
 dell.com,143.166.136.12,,Low Robustness,"Dell, Inc.",US/Canada/Caribbean,143.166.0.0/16,AS3614,www1.dell-cidr.akadns.net
 demdex.net,,,CNAME Enabled,,,,,gslb-2.demdex.net
-didiglobal.com,117.51.1.5,,Low Robustness,,Asia Pacific,117.51.0.0/17,AS63648,us01.router.didiglobal.com
+didiglobal.com,117.51.1.4,,Low Robustness,,Asia Pacific,117.51.0.0/17,AS63648,us01.router.didiglobal.com
 digicert.com,45.60.121.229,,Low Robustness,Incapsula Inc,US/Canada/Caribbean,45.60.0.0/16,AS19551,3ivgup7.x.incapdns.net
-digitaloceanspaces.com,104.18.42.227,2606:4700:4400::ac40:911d,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-discord.com,162.159.136.232,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,
+digitaloceanspaces.com,104.18.42.227,2606:4700:4405::6812:2ae3,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+discord.com,162.159.128.233,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,
 discord.gg,162.159.136.234,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,
-discord.media,162.159.137.234,2606:4700:7::a29f:81eb,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,
-discordapp.com,162.159.129.233,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,
-disqus.com,151.101.192.134,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,prod.disqus.map.fastlylb.net
-dns.google,8.8.8.8,2001:4860:4860::8844,High Robustness,Google LLC,US/Canada/Caribbean,8.8.8.0/24,AS15169,
+discord.media,162.159.137.234,2606:4700:7::a29f:80eb,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,
+discordapp.com,162.159.130.233,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,
+disqus.com,151.101.128.134,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,prod.disqus.map.fastlylb.net
+dns.google,8.8.4.4,2001:4860:4860::8844,High Robustness,Google LLC,US/Canada/Caribbean,8.8.4.0/24,AS15169,
 docker.com,23.185.0.4,2620:12a:8000::4,High Robustness,Pantheon,US/Canada/Caribbean,23.185.0.0/24,AS54113,live-docker.pantheonsite.io
-docker.io,54.198.199.164,2600:1f18:2148:bc00:38f:a958:ed3:9e78,High Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,54.198.0.0/16,AS14618,elb-io.us-east-1.aws.dckr.io
+docker.io,3.230.20.180,2600:1f18:2148:bc01:cf97:2027:27cc:aa3b,High Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,3.224.0.0/12,AS14618,elb-io.us-east-1.aws.dckr.io
 dotomi.com,159.127.43.8,,Low Robustness,"Conversant, LLC",US/Canada/Caribbean,159.127.40.0/22,AS25751,conversantmedia.com.edgesuite.net
-doubleclick.net,74.125.136.101,2607:f8b0:4002:c00::8b,High Robustness,Google LLC,US/Canada/Caribbean,74.125.0.0/16,AS15169,
+doubleclick.net,74.125.138.139,2607:f8b0:4002:c08::8a,High Robustness,Google LLC,US/Canada/Caribbean,74.125.0.0/16,AS15169,
 doubleverify.com,199.60.103.165,,Low Robustness,"HubSpot, Inc.",US/Canada/Caribbean,199.60.103.0/24,AS209242,46126064.group14.sites.hubspot.net
 douyincdn.com,,,CNAME Enabled,,,,,all.douyincdn.com.w.kunluncan.com
 dropbox.com,162.125.248.18,2620:100:6040:18::a27d:f812,High Robustness,"Dropbox, Inc.",US/Canada/Caribbean,162.125.0.0/16,AS19679,www-env.dropbox-dns.com
-drpc.org,104.18.11.59,2606:4700::6812:b3b,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-dssott.com,139.104.206.43,2620:138:302f:4:8000::18,High Robustness,Disney Streaming Services,US/Canada/Caribbean,139.104.192.0/19,AS23344,
+drpc.org,104.18.10.59,2606:4700::6812:b3b,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 dtscout.com,159.203.89.129,,Low Robustness,"DigitalOcean, LLC",US/Canada/Caribbean,159.203.0.0/16,AS14061,
-duckdns.org,15.157.148.19,,Low Robustness,Amazon Data Services Canada,US/Canada/Caribbean,15.156.0.0/15,AS16509,appservers-duckdns-prod-1630339571.ca-central-1.elb.amazonaws.com
+duckdns.org,,,CNAME Enabled,,,,,appservers-duckdns-prod-1630339571.ca-central-1.elb.amazonaws.com
 duckduckgo.com,52.149.246.39,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,52.148.0.0/14,AS8075,duckduckgo.com
-duolingo.com,3.92.118.97,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,3.80.0.0/12,AS14618,
+duolingo.com,54.204.181.214,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.204.0.0/15,AS14618,
 dv.tech,34.160.228.132,,Low Robustness,Google LLC,US/Canada/Caribbean,34.128.0.0/10,AS396982,
-dynatrace.com,13.32.179.21,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.32.0.0/15,AS16509,d1kv3v7jah1phh.cloudfront.net
+dynatrace.com,13.32.179.103,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.32.0.0/15,AS16509,d1kv3v7jah1phh.cloudfront.net
 dyndns.org,138.1.125.45,,Low Robustness,Oracle Corporation,US/Canada/Caribbean,138.1.0.0/16,AS31898,dyndns.org
 dzen.ru,185.180.200.2,,Low Robustness,LLC VK,Europe/Middle East,185.180.200.0/22,AS47764,
-ea.com,23.221.240.193,2600:1402:8000:a83::1127,High Robustness,"Akamai International, BV",US/Canada/Caribbean,23.221.240.0/20,AS16625,ea10.com.edgekey.net
-ebay.com,23.0.162.49,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.0.0.0/12,AS20940,www.ebay.com.ebaycdn.net
+ea.com,23.63.157.88,2600:1402:9800:983::1127,High Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.32.0.0/11,AS16625,ea10.com.edgekey.net
+ebay.com,23.212.185.151,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.192.0.0/11,AS20940,www.ebay.com.ebaycdn.net
 edgekey.net,,,CNAME Enabled,,,,,e19.dscg.akamaiedge.net
-elasticbeanstalk.com,52.217.135.77,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.216.0.0/14,AS16509,
+elasticbeanstalk.com,52.217.160.69,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.216.0.0/14,AS16509,
 entrust.net,216.117.57.240,,Low Robustness,Entrust Inc.,US/Canada/Caribbean,216.117.57.0/24,AS62,
 epicgames.com,52.87.71.148,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.84.0.0/14,AS14618,weighted-row-www.epicgames.com
 epicgames.dev,3.220.249.8,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,3.208.0.0/12,AS14618,epicgames.dev
-erome.com,192.99.110.194,,Low Robustness,"OVH Hosting, Inc.",US/Canada/Caribbean,192.99.0.0/16,AS16276,eroweb.b-cdn.net
+erome.com,192.99.110.197,,Low Robustness,"OVH Hosting, Inc.",US/Canada/Caribbean,192.99.0.0/16,AS16276,eroweb.b-cdn.net
 eset.com,91.228.166.47,,Low Robustness,ESETSK-MNT,Europe/Middle East,91.228.164.0/22,AS50881,www-eset-com.trafficmanager.net
 eskimi.com,198.202.211.1,2620:cb:2000::1,High Robustness,"Webflow, Inc",US/Canada/Caribbean,198.202.211.0/24,AS209242,cdn.webflow.com
-espn.com,3.163.115.89,2600:9000:2688:be00:d:ac18:e2c0:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,
-eu-1-id5-sync.com,104.26.9.8,2606:4700:20::681a:908,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+espn.com,3.163.115.72,2600:9000:2688:4800:d:ac18:e2c0:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,
+eu-1-id5-sync.com,104.26.8.8,2606:4700:20::681a:808,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 europa.eu,147.67.34.45,2a01:7080:14:100::666:45,High Robustness,EC-mntner,Europe/Middle East,147.67.0.0/16,AS42848,ip-europa.ec.europa.eu
 everesttech.net,208.91.169.4,,Low Robustness,Adobe Inc.,US/Canada/Caribbean,208.91.168.0/21,ASN Not Found,www.efrontier.com
-example.com,172.66.147.243,2606:4700:10::6814:179a,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
-example.org,172.66.157.237,2606:4700:10::6814:1a88,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
+example.com,172.66.147.243,2606:4700:10::ac42:93f3,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
+example.org,104.20.26.136,2606:4700:10::6814:1a88,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 eye4.cn,47.52.228.126,,Low Robustness,Alibaba Cloud - HK,US/Canada/Caribbean,47.52.0.0/16,AS45102,
-eyeota.net,18.136.117.44,,Low Robustness,Amazon Data Services Singapore,US/Canada/Caribbean,18.136.0.0/16,AS16509,
-ezvizlife.com,34.236.45.116,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,34.192.0.0/10,AS14618,ec2-ext-alb-ovs-mall-807673617.us-east-1.elb.amazonaws.com
-facebook.com,57.144.78.1,2a03:2880:f31e:1:face:b00c:0:25de,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,star-mini.c10r.facebook.com
-fandom.com,172.66.2.166,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,www.fandom.com.cdn.cloudflare.net
-fast.com,23.79.54.47,2600:1402:8000:481::24fe,High Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.72.0.0/13,AS16625,
-fastly.net,151.101.193.6,2a04:4e42:600::262,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,fastly.net
-fb.com,57.144.78.1,2a03:2880:f31e:1:face:b00c:0:25de,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,www.facebook.com
-fbcdn.net,57.144.78.1,2a03:2880:f31e:1:face:b00c:0:25de,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,www.facebook.com
-fbsbx.com,57.144.78.1,2a03:2880:f31e:1:face:b00c:0:25de,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,star.c10r.facebook.com
+eyeota.net,18.143.36.177,,Low Robustness,Amazon Data Services Singapore,US/Canada/Caribbean,18.142.0.0/15,AS16509,
+ezvizlife.com,100.58.54.135,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,100.48.0.0/12,AS14618,ec2-ext-alb-ovs-mall-807673617.us-east-1.elb.amazonaws.com
+facebook.com,57.144.252.1,2a03:2880:f37e:1:face:b00c:0:25de,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,star-mini.c10r.facebook.com
+fandom.com,162.159.142.170,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,www.fandom.com.cdn.cloudflare.net
+fast.com,23.76.42.43,2600:1402:b800:e84::24fe,High Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.72.0.0/13,AS16625,
+fastly.net,151.101.1.6,2a04:4e42::262,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,fastly.net
+fb.com,57.144.252.1,2a03:2880:f37e:1:face:b00c:0:25de,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,www.facebook.com
+fbcdn.net,57.144.78.1,2a03:2880:f342:1:face:b00c:0:25de,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,www.facebook.com
+fbsbx.com,57.144.252.1,2a03:2880:f37e:1:face:b00c:0:25de,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,star.c10r.facebook.com
 featureassets.org,34.128.128.0,,Low Robustness,Google LLC,US/Canada/Caribbean,34.128.0.0/10,AS396982,
-fifa.com,23.66.101.71,2600:1402:1400:34::17df:1f92,High Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.64.0.0/14,AS20940,www.fifa.com.edgekey.net
-figma.com,99.84.132.39,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,99.84.0.0/16,AS16509,
+fifa.com,23.66.101.71,2600:1402:8000:d::170f:2a5,High Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.64.0.0/14,AS20940,www.fifa.com.edgekey.net
+figma.com,99.84.132.69,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,99.84.0.0/16,AS16509,
 firefox.com,35.190.14.201,2600:1901:0:c197::,High Robustness,Google LLC,US/Canada/Caribbean,35.184.0.0/13,AS396982,
-firetvcaptiveportal.com,100.51.252.94,2600:1f18:1a46:b101:d6bc:1c43:6e72:d929,High Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,100.48.0.0/12,AS14618,firetvcaptiveportal.com
+firetvcaptiveportal.com,98.86.26.96,2600:1f18:1a46:b101:3db1:52f4:d2ab:2365,High Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,98.80.0.0/13,AS14618,firetvcaptiveportal.com
 flashbots.net,104.20.21.179,2606:4700:10::6814:15b3,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,cname.vercel-dns.com
 flashtalking.com,104.248.231.123,,Low Robustness,"DigitalOcean, LLC",US/Canada/Caribbean,104.248.0.0/16,AS14061,
-fontawesome.com,104.18.23.52,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-force.com,184.31.10.133,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,184.24.0.0/13,AS33905,san-mna.salesforce.com.edgekey.net
+fontawesome.com,104.18.22.52,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+force.com,23.1.35.132,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.0.0.0/12,AS33905,san-mna.salesforce.com.edgekey.net
 forter.com,141.193.213.21,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,
-fotmob.com,54.230.79.14,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.230.0.0/15,AS16509,
+fotmob.com,54.230.79.59,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.230.0.0/15,AS16509,
 freefiremobile.com,,,CNAME Enabled,,,,,sea.k8s.garenanow.com
 freenet.de,194.97.208.10,,Low Robustness,FN-DLS-MNT,Europe/Middle East,194.97.208.0/20,AS8648,
-fullstory.com,3.33.186.135,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,3.0.0.0/9,AS16509,apex-loadbalancer.netlifyglobalcdn.com
+fullstory.com,15.197.167.90,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,15.196.0.0/14,AS16509,apex-loadbalancer.netlifyglobalcdn.com
 fwmrm.net,13.248.238.180,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,13.248.0.0/14,AS16509,wp.wpenginepowered.com
 fyber.com,146.75.31.52,,Low Robustness,ORG-FI26-RIPE,Europe/Middle East,146.75.0.0/16,AS54113,t.sni.global.fastly.net
 gameanalytics.com,198.202.211.1,,Low Robustness,"Webflow, Inc",US/Canada/Caribbean,198.202.211.0/24,AS209242,cdn.webflow.com
 gamepass.com,20.76.201.171,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,20.64.0.0/10,AS8075,gamepass.com
 garena.com,148.222.71.12,,Low Robustness,Garena Online Pte Ltd,Asia Pacific,148.222.64.0/20,AS58521,
 garmin.com,162.159.138.86,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,www.garmin.com.cdn.cloudflare.net
-gboxlab.com,104.26.3.233,2606:4700:20::681a:2e9,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+gboxlab.com,172.67.73.200,2606:4700:20::ac43:49c8,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
 gcdn.co,92.223.97.97,2a03:90c0:9997::9997,High Robustness,GCL1-MNT,Europe/Middle East,92.223.96.0/22,AS199524,d.gcdn.co
-geotrust.com,45.60.196.209,,Low Robustness,Incapsula Inc,US/Canada/Caribbean,45.60.0.0/16,AS19551,ux6pume.x.incapdns.net
-github.com,140.82.113.3,,Low Robustness,"GitHub, Inc.",US/Canada/Caribbean,140.82.112.0/20,AS36459,github.com
+geotrust.com,45.60.206.209,,Low Robustness,Incapsula Inc,US/Canada/Caribbean,45.60.0.0/16,AS19551,ux6pume.x.incapdns.net
+github.com,140.82.112.4,,Low Robustness,"GitHub, Inc.",US/Canada/Caribbean,140.82.112.0/20,AS36459,github.com
 github.io,185.199.108.153,,Low Robustness,"GitHub, Inc.",Europe/Middle East,185.199.108.0/22,AS54113,
 githubcopilot.com,140.82.114.17,,Low Robustness,"GitHub, Inc.",US/Canada/Caribbean,140.82.112.0/20,AS36459,redirect.github.com
 gitlab.com,172.65.251.78,2606:4700:90:0:f22e:fbec:5bed:a9b9,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,gitlab.com
 glance-cdn.com,34.124.176.195,,Low Robustness,Google LLC,US/Canada/Caribbean,34.64.0.0/10,AS396982,
-globalsign.com,104.18.20.226,2606:4700::6812:14e2,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,cdn-default.globalsigncdn.com
+globalsign.com,104.18.21.226,2606:4700::6812:14e2,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,cdn-default.globalsigncdn.com
 globo.com,186.192.83.12,,Low Robustness,Globo Comunicação e Participaçoes SA,BR,186.192.80.0/20,AS28604,home-globo.cache.gcp.cloud.globo
-gmail.com,108.177.122.83,2607:f8b0:4002:c02::11,High Robustness,Google LLC,US/Canada/Caribbean,108.177.0.0/17,AS15169,
+gmail.com,142.251.15.83,2607:f8b0:4002:c00::12,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
 godaddy.com,160.153.0.1,,Low Robustness,"GoDaddy.com, LLC",US/Canada/Caribbean,160.153.0.0/16,AS209242,wildcard-ipv6.godaddy.com.edgekey.net
-google-analytics.com,173.194.219.99,2607:f8b0:4002:c03::67,High Robustness,Google LLC,US/Canada/Caribbean,173.194.0.0/16,AS15169,
-google.ca,142.250.9.94,2607:f8b0:4002:c11::5e,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
-google.cn,173.194.219.94,2607:f8b0:4002:c03::5e,High Robustness,Google LLC,US/Canada/Caribbean,173.194.0.0/16,AS15169,
-google.co.uk,74.125.136.94,2607:f8b0:4002:c00::5e,High Robustness,Google LLC,US/Canada/Caribbean,74.125.0.0/16,AS15169,
-google.com,172.217.215.138,2607:f8b0:4002:c0f::64,High Robustness,Google LLC,US/Canada/Caribbean,172.217.0.0/16,AS15169,
-google.com.br,108.177.122.94,2607:f8b0:4002:c02::5e,High Robustness,Google LLC,US/Canada/Caribbean,108.177.0.0/17,AS15169,
-google.com.hk,108.177.122.94,2607:f8b0:4002:c02::5e,High Robustness,Google LLC,US/Canada/Caribbean,108.177.0.0/17,AS15169,
-google.de,172.253.124.94,2607:f8b0:4002:c10::5e,High Robustness,Google LLC,US/Canada/Caribbean,172.253.0.0/16,AS15169,
-google.ru,172.253.124.94,2607:f8b0:4002:c10::5e,High Robustness,Google LLC,US/Canada/Caribbean,172.253.0.0/16,AS15169,
-google.us,74.125.138.104,2607:f8b0:4002:c0c::6a,High Robustness,Google LLC,US/Canada/Caribbean,74.125.0.0/16,AS15169,
-googleadservices.com,74.125.136.157,,Low Robustness,Google LLC,US/Canada/Caribbean,74.125.0.0/16,AS15169,
-googleapis.com,142.250.105.106,2607:f8b0:4002:c1b::68,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
-googlesyndication.com,142.251.15.104,2607:f8b0:4002:c2c::68,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
-googletagmanager.com,74.125.136.97,2607:f8b0:4002:c00::61,High Robustness,Google LLC,US/Canada/Caribbean,74.125.0.0/16,AS15169,
-googleusercontent.com,172.253.124.132,2607:f8b0:4002:c10::84,High Robustness,Google LLC,US/Canada/Caribbean,172.253.0.0/16,AS15169,googlehosted.l.googleusercontent.com
-googlevideo.com,142.250.105.99,2607:f8b0:4002:c1b::68,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
+google-analytics.com,173.194.219.147,2607:f8b0:4002:c08::67,High Robustness,Google LLC,US/Canada/Caribbean,173.194.0.0/16,AS15169,www-alv.google-analytics.com
+google.ca,172.253.124.94,2607:f8b0:4002:c11::5e,High Robustness,Google LLC,US/Canada/Caribbean,172.253.0.0/16,AS15169,
+google.cn,142.250.9.94,2607:f8b0:4002:c2c::5e,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
+google.co.uk,64.233.177.94,2607:f8b0:4002:c0f::5e,High Robustness,Google LLC,US/Canada/Caribbean,64.233.160.0/19,AS15169,
+google.com,172.217.215.102,2607:f8b0:4002:c10::65,High Robustness,Google LLC,US/Canada/Caribbean,172.217.0.0/16,AS15169,
+google.com.br,64.233.176.94,2607:f8b0:4002:c11::5e,High Robustness,Google LLC,US/Canada/Caribbean,64.233.160.0/19,AS15169,
+google.com.hk,142.250.9.94,2607:f8b0:4002:c0f::5e,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
+google.de,172.253.124.94,2607:f8b0:4002:c2c::5e,High Robustness,Google LLC,US/Canada/Caribbean,172.253.0.0/16,AS15169,
+google.ru,108.177.122.94,2607:f8b0:4002:c05::5e,High Robustness,Google LLC,US/Canada/Caribbean,108.177.0.0/17,AS15169,
+google.us,64.233.177.99,2607:f8b0:4002:c10::67,High Robustness,Google LLC,US/Canada/Caribbean,64.233.160.0/19,AS15169,
+googleadservices.com,172.217.215.154,,Low Robustness,Google LLC,US/Canada/Caribbean,172.217.0.0/16,AS15169,
+googleapis.com,142.250.9.99,2607:f8b0:4002:c02::67,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
+googlesyndication.com,74.125.136.103,2607:f8b0:4002:c0c::69,High Robustness,Google LLC,US/Canada/Caribbean,74.125.0.0/16,AS15169,
+googletagmanager.com,74.125.21.97,2607:f8b0:4002:c11::61,High Robustness,Google LLC,US/Canada/Caribbean,74.125.0.0/16,AS15169,
+googleusercontent.com,74.125.21.132,2607:f8b0:4002:c2c::84,High Robustness,Google LLC,US/Canada/Caribbean,74.125.0.0/16,AS15169,googlehosted.l.googleusercontent.com
+googlevideo.com,74.125.136.106,2607:f8b0:4002:c10::69,High Robustness,Google LLC,US/Canada/Caribbean,74.125.0.0/16,AS15169,
 grafana.com,34.120.177.193,2600:1901:0:b3ea::,High Robustness,Google LLC,US/Canada/Caribbean,34.64.0.0/10,AS396982,grafana.com
 grammarly.com,3.161.193.113,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,
 grass.io,104.18.13.205,2606:4700::6812:ccd,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,d2wv3pb80076st.cloudfront.net
-gravatar.com,192.0.80.239,,Low Robustness,"Automattic, Inc",US/Canada/Caribbean,192.0.64.0/18,AS2635,
-gstatic.com,142.251.15.120,2607:f8b0:4002:c2c::78,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
-gumgum.com,3.171.171.80,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.168.0.0/14,AS16509,
+gravatar.com,192.0.80.240,,Low Robustness,"Automattic, Inc",US/Canada/Caribbean,192.0.64.0/18,AS2635,
+gstatic.com,64.233.177.120,2607:f8b0:4002:c0f::5e,High Robustness,Google LLC,US/Canada/Caribbean,64.233.160.0/19,AS15169,
+gumgum.com,3.171.171.27,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.168.0.0/14,AS16509,
 harman.com,199.27.116.69,,Low Robustness,Harman International Industries Inc.,US/Canada/Caribbean,199.27.112.0/21,AS15113,
-hcaptcha.com,104.19.230.21,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+hcaptcha.com,104.19.229.21,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 he.net,216.218.236.2,2001:470:0:503::2,High Robustness,Hurricane Electric LLC,US/Canada/Caribbean,216.218.128.0/17,AS6939,he.net
 hellotalk8.com,120.25.239.138,,Low Robustness,,Asia Pacific,120.24.0.0/14,AS37963,
 heytapmobi.com,49.7.118.241,,Low Robustness,,Asia Pacific,49.7.0.0/16,AS23724,
@@ -299,53 +228,53 @@ hik-connect.com,,,CNAME Enabled,,,,,ius.hik-connect.com
 hisavana.com,,,CNAME Enabled,,,,,www.hisavana.com.w.kunlunsl.com
 histats.com,57.131.24.113,,Low Robustness,OVH Srl,Europe/Middle East,57.131.24.0/23,AS16276,www.histats.com.cdn.cloudflare.net
 home-assistant.io,104.26.4.238,2606:4700:20::681a:4ee,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-hotjar.com,3.170.91.31,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.168.0.0/14,AS16509,
+hotjar.com,18.160.71.93,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.160.0.0/15,AS16509,
 hotmail.com,204.79.197.212,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,204.79.196.0/23,AS8068,outlook-fd-0010.live.com
 hoyoverse.com,47.236.4.247,,Low Robustness,Alibaba Cloud LLC,US/Canada/Caribbean,47.236.0.0/14,AS45102,d2v4u1t3wtyjtg.cloudfront.net
 hp.com,54.192.100.55,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.192.0.0/16,AS16509,www.hp.com.edgekey.net
-html-load.com,104.18.21.31,2606:4700::6812:151f,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+html-load.com,104.18.20.31,2606:4700::6812:151f,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 huawei.com,121.37.49.12,2407:c080:17ef:ffff::7274:d206,High Robustness,,Asia Pacific,121.37.0.0/16,AS55990,www.huawei.com.akadns.net
-hubspot.com,104.17.91.187,2606:4700::6811:5cbb,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-hulu.com,96.16.60.210,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,96.16.0.0/15,AS20940,wildcard.hulu.com.edgekey.net
-huntress.io,3.216.81.62,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,3.208.0.0/12,AS14618,
-icanhazip.com,104.16.184.241,2606:4700::6810:b9f1,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+hubspot.com,104.17.91.187,2606:4700::6811:5bbb,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+hulu.com,96.16.60.206,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,96.16.0.0/15,AS20940,wildcard.hulu.com.edgekey.net
+huntress.io,98.84.86.230,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,98.80.0.0/13,AS14618,
+icanhazip.com,104.16.184.241,2606:4700::6810:b8f1,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 icloud-content.com,17.253.142.4,,Low Robustness,Apple Inc.,US/Canada/Caribbean,17.0.0.0/8,AS714,icloud-content.com
 icloud.com,17.253.144.10,2620:149:af0::10,High Robustness,Apple Inc.,US/Canada/Caribbean,17.0.0.0/8,AS714,www-cdn.icloud.com.akadns.net
 icloud.com.cn,103.115.248.1,,Low Robustness,,Asia Pacific,103.115.248.0/22,AS137801,icloud-cn.icloud.com.akadns.net
-id5-sync.com,135.125.170.101,,Low Robustness,OVH GmbH,Europe/Middle East,135.125.170.0/24,AS16276,id5-sync.com
+id5-sync.com,135.125.170.98,,Low Robustness,OVH GmbH,Europe/Middle East,135.125.170.0/24,AS16276,id5-sync.com
 ieee.org,140.98.193.152,,Low Robustness,"Institute of Electrical and Electronics Engineers, Inc",US/Canada/Caribbean,140.98.0.0/16,AS13462,d1t45owanqx700.cloudfront.net
 ifconfig.me,34.160.111.145,2600:1901:0:b2bd::,High Robustness,Google LLC,US/Canada/Caribbean,34.128.0.0/10,AS396982,
 im-apps.net,34.49.221.153,,Low Robustness,Google LLC,US/Canada/Caribbean,34.32.0.0/11,AS396982,
 inaccuracy.net,178.105.240.134,,Low Robustness,HOS-GUN,Europe/Middle East,178.105.240.0/20,AS24940,
-incognia.com,104.26.8.200,2606:4700:20::ac43:47a7,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,5242234.group34.sites.hubspot.net
-indeed.com,162.159.130.67,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,
-indexww.com,104.18.25.18,2606:4700::6812:1912,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-ingage.tech,104.18.27.216,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+incognia.com,172.67.71.167,2606:4700:20::ac43:47a7,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,5242234.group34.sites.hubspot.net
+indeed.com,162.159.129.67,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,
+indexww.com,104.18.24.18,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+ingage.tech,104.18.26.216,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 inkuai.com,,,CNAME Enabled,,,,,multi-az-www-api.kuaishou.com
 inmobi.com,35.212.28.75,,Low Robustness,Google LLC,US/Canada/Caribbean,35.208.0.0/12,AS43515,www.eastus.appgw.inmobi.com
 inmobicdn.net,221.122.73.62,,Low Robustness,,Asia Pacific,221.122.0.0/16,AS4808,
-inner-active.mobi,62.219.50.32,,Low Robustness,AS8551-MNT,Europe/Middle East,62.219.50.0/24,AS8551,inner-active.mobi
+inner-active.mobi,54.225.119.21,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,54.224.0.0/11,AS14618,inner-active.mobi
 innovid.com,198.202.211.1,,Low Robustness,"Webflow, Inc",US/Canada/Caribbean,198.202.211.0/24,AS209242,cdn.webflow.com
-instagram.com,57.144.78.34,2a03:2880:f31e:22:face:b00c:0:4420,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,z-p42-instagram.c10r.instagram.com
-int08h.com,151.101.1.195,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,
+instagram.com,57.144.78.34,2a03:2880:f342:22:face:b00c:0:4420,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,z-p42-instagram.c10r.instagram.com
+int08h.com,151.101.65.195,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,
 intel.com,13.91.95.74,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,13.64.0.0/11,AS8075,intel11.cn.edgekey.net
 intelbras.com.br,192.100.206.72,,Low Robustness,INTELBRAS S.A. INDUSTRIA DE TELECOMUNICACAO ELETRO,BR,192.100.206.0/24,AS61866,
 intentiq.com,5.154.240.65,,Low Robustness,mnt-us-upressinc-1,Europe/Middle East,5.154.240.0/24,AS209622,
-intercom.io,99.84.237.59,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,99.84.0.0/16,AS16509,
+intercom.io,99.84.237.13,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,99.84.0.0/16,AS16509,
 intuit.com,184.29.90.207,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,184.24.0.0/13,AS16625,mktg.intuit.com.edgekey.net
 ip-api.com,208.95.112.1,,Low Robustness,"Total Uptime Technologies, LLC",US/Canada/Caribbean,208.95.112.0/22,AS53334,
-ipapi.co,104.26.9.44,2606:4700:20::681a:82c,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-ipify.org,104.26.12.205,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,di6j9pxox6iuj.cloudfront.net
+ipapi.co,104.26.9.44,2606:4700:20::ac43:45e2,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+ipify.org,172.67.74.152,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,di6j9pxox6iuj.cloudfront.net
 ipinfo.io,34.117.59.81,,Low Robustness,Google LLC,US/Canada/Caribbean,34.64.0.0/10,AS396982,
 isnssdk.com,,,CNAME Enabled,,,,,elb-for-front-1752188976.us-east-1.elb.amazonaws.com
 ixigua.com,122.14.229.121,,Low Robustness,,Asia Pacific,122.14.224.0/19,AS9808,www.ixigua.com.bytedns1.com
-jd.com,111.13.149.108,,Low Robustness,China Mobile,Asia Pacific,111.0.0.0/10,AS9808,www.jd.com.gslb.qianxun.com
-jetbrains.com,13.32.179.32,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.32.0.0/15,AS16509,
-jquery.com,104.18.156.119,2606:4700::6812:9b77,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+jd.com,211.144.27.126,,Low Robustness,,Asia Pacific,211.144.16.0/20,AS4808,www.jd.com.gslb.qianxun.com
+jetbrains.com,13.32.179.20,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.32.0.0/15,AS16509,
+jquery.com,104.18.155.119,2606:4700::6812:9c77,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 jsdelivr.net,1.2.3.4,,Low Robustness,Resource Quality Assurance,Asia Pacific,1.2.3.0/24,ASN Not Found,
 kakao.com,211.242.11.41,,Low Robustness,,,211.242.0.0/18,AS152199,terms-public-s8rf160i.kgns3.com
 kakaocdn.net,,,CNAME Enabled,,,,,terms-public-s8rf160i.kgns3.com
-kargo.com,198.185.159.144,,Low Robustness,"Squarespace, Inc.",US/Canada/Caribbean,198.185.159.0/24,AS53831,d2c6tcjudovo50.cloudfront.net
+kargo.com,198.49.23.145,,Low Robustness,"Squarespace, Inc.",US/Canada/Caribbean,198.49.23.0/24,AS53831,d2c6tcjudovo50.cloudfront.net
 kaspersky-labs.com,127.0.0.1,,Low Robustness,,,,,dnl-geo.kaspersky-labs.com
 kaspersky.com,185.54.220.248,,Low Robustness,KDP-MNT,Europe/Middle East,185.54.220.0/24,AS200107,corpsites-kdp.geo.kaspersky.com
 kick.com,162.159.235.122,2606:4700:4b::a29f:eb7a,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,
@@ -355,65 +284,65 @@ ksapisrv.com,103.107.217.28,,Low Robustness,,Asia Pacific,103.107.216.0/22,AS480
 kslawin.com,,,CNAME Enabled,,,,,k-web.region.kslawin.com
 kueezrtb.com,104.20.32.201,2606:4700:10::ac42:a251,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 kwai-pro.com,,,CNAME Enabled,,,,,k-api.region.kwai-pro.com
-kwai.com,103.167.26.134,,Low Robustness,JOYO TECHNOLOGY PTE. LTD.,Asia Pacific,103.167.26.0/23,AS142160,k-web.region.kwai.com
+kwai.com,103.167.26.197,,Low Robustness,JOYO TECHNOLOGY PTE. LTD.,Asia Pacific,103.167.26.0/23,AS142160,k-web.region.kwai.com
 kwai.net,180.186.38.200,,Low Robustness,,Asia Pacific,180.186.0.0/16,AS23724,multi-az-www-api.kuaishou.com
 kwaipros.com,,,CNAME Enabled,,,,,kix-api.sg.kwai-pro.com
 launchdarkly.com,3.33.186.135,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,3.0.0.0/9,AS16509,webops-u-kgl98.netlifyglobalcdn.com
 leiniao.com,203.107.60.192,,Low Robustness,,Asia Pacific,203.107.0.0/17,AS37963,www.leiniao.com.akamaized.net
-lencr.org,18.208.88.157,2600:1f18:16e:df01::258,High Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,18.128.0.0/9,AS14618,letsencrypt.netlify.com
+lencr.org,18.208.88.157,2600:1f18:16e:df01::259,High Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,18.128.0.0/9,AS14618,letsencrypt.netlify.com
 lenovo.com,23.79.184.53,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.72.0.0/13,AS16625,www.lenovo.com.edgekey.net
 letsencrypt.org,98.84.224.111,2600:1f18:16e:df01::258,High Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,98.80.0.0/13,AS14618,letsencrypt.netlify.com
-lge.com,13.248.146.151,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,13.248.0.0/14,AS16509,extwaflb.lgcom.lge.com
+lge.com,76.223.18.25,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,76.223.0.0/17,AS16509,extwaflb.lgcom.lge.com
 lgsmartad.com,165.244.150.53,,Low Robustness,,,165.244.0.0/16,AS4668,
 lgthinq.com,165.244.152.57,,Low Robustness,,,165.244.0.0/16,AS4668,
 licdn.com,,,CNAME Enabled,,,,,redirect-http.linkedin.com
 life360.com,34.203.127.130,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,34.192.0.0/10,AS14618,www-routing-geo.life360.com
-liftoff.io,141.193.213.21,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,liftoff.io
-lijit.com,108.156.152.54,2600:9000:24d7:5800:10:c513:800:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,108.156.0.0/14,AS16509,lijit.com
+liftoff.io,141.193.213.20,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,liftoff.io
+lijit.com,108.156.152.54,2600:9000:24d7:6200:10:c513:800:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,108.156.0.0/14,AS16509,lijit.com
 linkedin.com,150.171.22.12,2620:1ec:50::12,High Robustness,Microsoft Corporation,US/Canada/Caribbean,150.171.0.0/16,AS8075,cf-gcp.www.linkedin.com
 litix.io,,,CNAME Enabled,,,,,dsolp.litix.io
 live.com,204.79.197.212,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,204.79.196.0/23,AS8068,outlook-fd-0010.live.com
 live.net,,,CNAME Enabled,,,,,live.net
-livechatinc.com,104.18.25.244,2606:4700::6812:18f4,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,livechatinc.com-v1.edgekey.net
-llamarpc.com,172.67.167.200,2606:4700:3033::ac43:a7c8,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
+livechatinc.com,104.18.24.244,2606:4700::6812:18f4,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,livechatinc.com-v1.edgekey.net
+llamarpc.com,172.67.167.200,2606:4700:3035::6815:4316,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
 loopme.me,35.206.149.249,,Low Robustness,Google LLC,US/Canada/Caribbean,35.192.0.0/12,AS43515,
-ltwebstatic.com,52.42.176.241,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.0.0.0/10,AS16509,
-magazineluiza.com.br,108.156.152.37,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,108.156.0.0/14,AS16509,magazineluiza.com.br.edgekey.net
-magnific.com,23.62.61.136,,Low Robustness,"Akamai International, BV",US/Canada/Caribbean,23.62.61.0/24,AS20940,
-mail.ru,89.221.239.1,,Low Robustness,LLC VK,Europe/Middle East,89.221.232.0/21,AS47764,
-mapbox.com,151.101.128.143,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,mapbox.b.ssl.fastly.net
+ltwebstatic.com,119.45.249.249,,Low Robustness,,Asia Pacific,119.45.0.0/16,AS45090,
+magazineluiza.com.br,108.156.152.70,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,108.156.0.0/14,AS16509,magazineluiza.com.br.edgekey.net
+magnific.com,23.48.162.12,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.32.0.0/11,AS20940,
+mail.ru,90.156.232.4,,Low Robustness,LLC VK,Europe/Middle East,90.156.232.0/21,AS47764,
+mapbox.com,151.101.64.143,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,mapbox.b.ssl.fastly.net
 marzaent.com,162.159.142.241,2606:4700:7::2e4,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,
-match.com,104.18.8.116,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+match.com,104.18.9.116,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 mcafee.com,100.20.214.93,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,100.20.0.0/14,AS16509,www-mcafeee-r53.awsconsumer.mcafee.com
 me.com,17.253.142.4,,Low Robustness,Apple Inc.,US/Canada/Caribbean,17.0.0.0/8,AS714,
-medallia.com,99.84.132.29,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,99.84.0.0/16,AS16509,qdk52qyv7yzc.wpeproxy.com
-media.net,23.222.196.30,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.192.0.0/11,AS16625,media.net.dsa.edgekey.net
-mediago.io,100.21.6.136,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,100.20.0.0/14,AS16509,
-mediatek.com,210.61.82.38,,Low Robustness,,,210.61.82.0/24,AS3462,728015.group15.sites.hubspot.net
+medallia.com,99.84.132.6,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,99.84.0.0/16,AS16509,qdk52qyv7yzc.wpeproxy.com
+media.net,23.48.8.28,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.32.0.0/11,AS16625,media.net.dsa.edgekey.net
+mediago.io,54.68.100.125,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,54.64.0.0/11,AS16509,
+mediatek.com,175.98.146.37,,Low Robustness,,,175.98.128.0/18,AS9924,728015.group15.sites.hubspot.net
 meethue.com,34.120.225.113,,Low Robustness,Google LLC,US/Canada/Caribbean,34.64.0.0/10,AS396982,
-meraki.com,13.32.179.109,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.32.0.0/15,AS16509,
+meraki.com,13.32.179.88,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.32.0.0/15,AS16509,
 mercadolibre.com,15.197.170.90,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,15.196.0.0/14,AS16509,a35f64fceb718ad27.awsglobalaccelerator.com
-mercadolivre.com.br,15.197.170.90,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,15.196.0.0/14,AS16509,a35f64fceb718ad27.awsglobalaccelerator.com
-merkle.io,104.20.32.209,2606:4700:10::ac42:9c5c,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-meta.com,57.144.78.141,2a03:2880:f31e:8d:face:b00c:0:2,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,star.c10r.facebook.com
+mercadolivre.com.br,3.33.182.45,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,3.0.0.0/9,AS16509,a35f64fceb718ad27.awsglobalaccelerator.com
+merkle.io,104.20.32.209,2606:4700:10::6814:20d1,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+meta.com,57.144.78.141,2a03:2880:f342:8d:face:b00c:0:2,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,star.c10r.facebook.com
 metamask.io,104.18.40.75,2606:4700:4405::ac40:93b5,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 mgid.com,64.58.116.142,,Low Robustness,"Servers.com, Inc.",US/Canada/Caribbean,64.58.112.0/20,AS7979,
 mi.com,161.117.97.92,,Low Robustness,,Asia Pacific,161.117.0.0/17,AS45102,www.mi.com.mgslb.com
-microsoft.com,150.171.109.115,2603:1061:14:71::1,High Robustness,Microsoft Corporation,US/Canada/Caribbean,150.171.0.0/16,AS8075,www.microsoft.com-c-3.edgekey.net
+microsoft.com,150.171.109.115,2603:1061:14:75::1,High Robustness,Microsoft Corporation,US/Canada/Caribbean,150.171.0.0/16,AS8075,www.microsoft.com-c-3.edgekey.net
 microsoftonline.com,,,CNAME Enabled,,,,,microsoftonline.com
 mikrotik.com,159.148.172.205,2a02:610:7501:2000::205,High Robustness,ORG-LA12-RIPE,Europe/Middle East,159.148.172.128/25,AS51894,mikrotik.com
-mintegral.net,52.45.188.176,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.0.0.0/10,AS14618,
+mintegral.net,44.209.203.228,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,44.192.0.0/11,AS14618,
 mioffice.cn,,,CNAME Enabled,,,,,www.mioffice.cn.v.mi-dun.com
 miui.com,124.251.100.193,,Low Robustness,,Asia Pacific,124.251.0.0/16,AS9308,matrix-pri-alisgp.alb.xiaomi.com
 miwifi.com,47.245.120.226,,Low Robustness,Alibaba Cloud LLC,US/Canada/Caribbean,47.244.0.0/15,AS45102,www.miwifi.com.mgslb.com
 mixpanel.com,34.117.152.135,,Low Robustness,Google LLC,US/Canada/Caribbean,34.64.0.0/10,AS396982,mixpanel.com
 mlstatic.com,,,CNAME Enabled,,,,,img.mercadolibre.com
-mmcdn.com,104.18.202.4,2606:4700::6812:ca04,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-mmechocaptiveportal.com,34.233.240.63,2600:1f18:6553:5100:12fc:5d61:cb57:5efd,High Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,34.192.0.0/10,AS14618,
+mmcdn.com,104.18.202.4,2606:4700::6810:5c12,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+mmechocaptiveportal.com,3.231.119.173,2600:1f18:6553:5102:ccf:7aa8:d838:dac6,High Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,3.224.0.0/12,AS14618,
 moengage.com,141.193.213.20,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,krdzecbbata6.wpeproxy.com
-mojang.com,150.171.109.114,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,150.171.0.0/16,AS8075,www.mojang.com.edgesuite.net
+mojang.com,150.171.109.118,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,150.171.0.0/16,AS8075,www.mojang.com.edgesuite.net
 moloco.com,75.2.70.75,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,75.2.0.0/17,AS16509,
-mona.co,104.16.250.71,2606:4700::6812:9060,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+mona.co,104.16.250.71,2606:4700::6810:fa47,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 mozilla.com,35.190.14.201,2600:1901:0:c197::,High Robustness,Google LLC,US/Canada/Caribbean,35.184.0.0/13,AS396982,prod.refractr.prod.webservices.mozgcp.net
 mozilla.net,,,CNAME Enabled,,,,,prod.refractr.prod.webservices.mozgcp.net
 mozilla.org,35.190.14.201,2600:1901:0:c197::,High Robustness,Google LLC,US/Canada/Caribbean,35.184.0.0/13,AS396982,www-mozilla.fastly-edge.com
@@ -421,6 +350,14 @@ mparticle.com,76.76.21.21,,Low Robustness,"Vercel, Inc",US/Canada/Caribbean,76.7
 msedge.net,204.79.197.197,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,204.79.196.0/23,AS8068,
 msftconnecttest.com,,,CNAME Enabled,,,,,www.msftconnecttest.com.edgesuite.net
 msftncsi.com,,,CNAME Enabled,,,,,www.msftncsi.com.edgesuite.net
+snapchat.com,34.149.46.130,,Low Robustness,Google LLC,US/Canada/Caribbean,34.128.0.0/10,AS396982,web-gcp.api.snapchat.com
+applovin.com,34.54.99.24,2600:1901:0:c0c6::,High Robustness,Google LLC,US/Canada/Caribbean,34.32.0.0/11,AS396982,applovin.com
+appsflyersdk.com,18.244.202.6,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.244.0.0/15,AS16509,
+azure.com,20.112.250.133,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,20.64.0.0/10,AS8075,reroute.microsoft.com
+whatsapp.com,57.144.133.32,2a03:2880:f37e:120:face:b00c:0:167,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,mmx-ds.cdn.whatsapp.net
+googletagmanager.com,142.250.105.97,2607:f8b0:4002:c10::61,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
+windows.com,20.76.201.171,2603:1010:3:3::5b,High Robustness,Microsoft Corporation,US/Canada/Caribbean,20.64.0.0/10,AS8075,windows.com
+amazon-adsystem.com,52.205.243.115,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.192.0.0/12,AS14618,
 msn.com,204.79.197.219,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,204.79.196.0/23,AS8068,www-msn-com-world-atm-default.trafficmanager.net
 mtgglobals.com,,,CNAME Enabled,,,,,djbd8eagajw79.cloudfront.net
 mts.ru,178.248.238.27,,Low Robustness,HLL2-MNT,Europe/Middle East,178.248.238.27/32,AS51115,
@@ -428,328 +365,328 @@ mydramawave.com,47.253.172.102,,Low Robustness,Alibaba Cloud - US,US/Canada/Cari
 myqcloud.com,0.0.0.1,,Low Robustness,,,,,
 myshopify.com,23.227.38.32,,Low Robustness,"Shopify, Inc.",US/Canada/Caribbean,23.227.32.0/19,AS13335,shops.myshopify.com
 mzstatic.com,17.253.142.4,,Low Robustness,Apple Inc.,US/Canada/Caribbean,17.0.0.0/8,AS714,mzstatic.com
-naver.com,223.130.192.248,,Low Robustness,,,223.130.192.0/20,AS23576,www.naver.com.nheos.com
+naver.com,223.130.200.219,,Low Robustness,,,223.130.192.0/20,AS23576,www.naver.com.nheos.com
 nelreports.net,,,CNAME Enabled,,,,,star.nelreports.net.trafficmanager.net
-netflix.com,54.160.93.182,2600:1f18:631e:2f84:ceae:e049:1e:6a96,High Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,54.160.0.0/11,AS14618,www.prod.ftl.netflix.com
-netflix.net,204.236.236.127,2600:1f18:631e:2f80::de70,High Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,204.236.192.0/18,AS14618,detour.netflix.net
+netflix.com,54.160.93.182,2600:1f18:631e:2f84:4f7a:4092:e2e9:c617,High Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,54.160.0.0/11,AS14618,www.prod.ftl.netflix.com
+netflix.net,204.236.236.127,2600:1f14:62a:de82::de70,High Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,204.236.192.0/18,AS14618,detour.netflix.net
 netgear.com,76.223.14.31,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,76.223.0.0/17,AS16509,d3jdtixm7cvu7y.cloudfront.net
-networklinks.space,139.84.174.98,,Low Robustness,"The Constant Company, LLC",US/Canada/Caribbean,139.84.128.0/17,AS20473,
-newrelic.com,151.101.66.217,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,b2.shared.global.fastly.net
-newsroom.bi,151.101.130.207,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,marfeel.map.fastly.net
+networklinks.space,95.179.166.88,,Low Robustness,MAINT-AS20473,Europe/Middle East,95.179.166.0/23,AS20473,
+newrelic.com,151.101.2.217,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,b2.shared.global.fastly.net
+newsroom.bi,151.101.66.207,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,marfeel.map.fastly.net
 nextcloud.com,85.10.195.17,2a01:4f8:a0:3068::2,High Robustness,HOS-GUN,Europe/Middle East,85.10.192.0/20,AS24940,
 nflxext.com,207.45.72.215,,Low Robustness,Netflix,US/Canada/Caribbean,207.45.72.0/23,AS40027,
 nflximg.com,207.45.72.215,,Low Robustness,Netflix,US/Canada/Caribbean,207.45.72.0/23,AS40027,www.netflix.com
-nflxvideo.net,107.20.175.192,2a05:d018:76c:b680::de70,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,107.20.0.0/14,AS14618,detour.netflix.net
+nflxvideo.net,18.236.7.30,2600:1f14:62a:de80::de70,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.236.0.0/15,AS16509,detour.netflix.net
 ninjarmm.com,141.193.213.20,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,ninjarmm.com
-nist.gov,172.65.90.25,2606:4700:78::90:0:183,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
+nist.gov,172.65.90.24,2606:4700:78::90:0:180,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
 no-ip.com,158.247.7.199,,Low Robustness,"Vitalwerks Internet Solutions, LLC",US/Canada/Caribbean,158.247.0.0/21,AS14627,
-norton.com,172.184.172.140,,Low Robustness,MICROSOFT-MAINT,Europe/Middle East,172.184.0.0/16,AS8075,www.norton.com.edgekey.net
-notion.com,208.103.161.2,2602:f79a::2,High Robustness,"Notion Labs, Inc.",US/Canada/Caribbean,208.103.161.0/24,AS33191,
-ns1p.net,23.23.160.82,2600:1f18:4d9:8d11:a33f:1987:e26b:1209,High Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,23.20.0.0/14,AS14618,
-ntp.br,200.160.6.133,2001:12ff:0:b112::120,High Robustness,Núcleo de Inf. e Coord. do Ponto BR - NIC.BR,BR,200.160.0.0/20,AS22548,ntp.br
-ntp.org,204.93.207.22,2001:1838:2000:41b::80:0,High Robustness,DEFT.COM,US/Canada/Caribbean,204.93.128.0/17,AS23352,
-ntppool.org,151.101.1.55,2a04:4e42::311,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,www-lb.ntppool.org
-nubank.com.br,13.225.143.102,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.224.0.0/14,AS16509,
+norton.com,20.223.132.252,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,20.192.0.0/10,AS8075,www.norton.com.edgekey.net
+notion.com,208.103.161.1,2602:f79a::1,High Robustness,"Notion Labs, Inc.",US/Canada/Caribbean,208.103.161.0/24,AS33191,
+ns1p.net,34.233.12.18,2600:1f18:4d9:8d11:a33f:1987:e26b:1209,High Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,34.192.0.0/10,AS14618,
+ntp.br,200.160.11.120,2001:12ff:0:b112::120,High Robustness,Núcleo de Inf. e Coord. do Ponto BR - NIC.BR,BR,200.160.0.0/20,AS22548,ntp.br
+ntp.org,209.148.110.246,2001:1838:2000:41b::80:0,High Robustness,"Sonic.net, LLC",US/Canada/Caribbean,209.148.96.0/19,AS46375,
+ntppool.org,151.101.1.55,2a04:4e42:200::311,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,www-lb.ntppool.org
+nubank.com.br,13.225.143.82,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.224.0.0/14,AS16509,
 nvidia.com,34.194.97.138,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,34.192.0.0/10,AS14618,www.nvidia.com.edgekey.net
-nytimes.com,151.101.129.164,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,www.prd.map.nytimes.com
-oaistatic.com,172.64.146.98,2a06:98c1:3108::6812:299e,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
+nytimes.com,151.101.1.164,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,www.prd.map.nytimes.com
+oaistatic.com,104.18.41.158,2a06:98c1:3108::6812:299e,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 oculus.com,57.144.79.141,2a03:2880:f31e:18d:face:b00c:0:32c2,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,oculus.c10r.facebook.com
 office.com,13.107.6.156,2620:1ec:a92::156,High Robustness,Microsoft Corporation,US/Canada/Caribbean,13.104.0.0/14,AS8068,officehomemcm.anc.tm.svc.cloud.microsoft
 office.net,,,CNAME Enabled,,,,,microsoftoffice.com
-office365.com,20.119.0.28,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,20.64.0.0/10,AS8075,office365.com
+office365.com,40.112.243.53,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,40.112.0.0/13,AS8075,office365.com
 ok.ru,95.163.61.74,,Low Robustness,VKCOMPANY-MNT,Europe/Middle East,95.163.48.0/20,AS47764,
 okcdn.ru,217.20.155.82,,Low Robustness,VKCOMPANY-MNT,Europe/Middle East,217.20.152.0/22,AS47764,
-okta.com,18.244.202.96,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.244.0.0/15,AS16509,www.okta.com.cdn.cloudflare.net
+okta.com,18.244.202.79,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.244.0.0/15,AS16509,www.okta.com.cdn.cloudflare.net
 okx.com,18.166.141.94,,Low Robustness,Amazon Data Services Hong Kong,US/Canada/Caribbean,18.166.0.0/15,AS16509,www.okx.com.cdn.cloudflare.net
 omtrdc.net,,,CNAME Enabled,,,,,redirect.wip4.adobe.com
-one.one,195.47.247.9,2a02:2350:6::fb15:59af,High Robustness,ONECOM-MNT,Europe/Middle East,195.47.247.0/24,AS51468,
+one.one,195.47.247.8,2a02:2350:6::fb15:59af,High Robustness,ONECOM-MNT,Europe/Middle East,195.47.247.0/24,AS51468,
 onedrive.com,20.72.98.42,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,20.64.0.0/10,AS8075,odwebp.trafficmanager.net
-onelink.me,13.249.180.98,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.249.0.0/16,AS16509,
-onesignal.com,104.16.160.145,2606:4700::6810:a091,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-onetag-sys.com,51.222.39.185,,Low Robustness,"OVH Hosting, Inc.",US/Canada/Caribbean,51.222.39.0/24,AS16276,
+onelink.me,13.249.180.31,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.249.0.0/16,AS16509,
+onesignal.com,104.17.111.223,2606:4700::6810:a091,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+onetag-sys.com,51.222.39.187,,Low Robustness,"OVH Hosting, Inc.",US/Canada/Caribbean,51.222.39.0/24,AS16276,
 onetrust.com,104.18.32.137,2606:4700:4403::6812:2089,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-openai.com,104.18.33.45,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,www.openai.com.cdn.cloudflare.net
+openai.com,172.64.154.211,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,www.openai.com.cdn.cloudflare.net
 opendns.com,146.112.62.105,,Low Robustness,OPENDNS-MNT,Europe/Middle East,146.112.0.0/16,AS36692,
-openstreetmap.org,151.101.193.55,2a04:4e42:400::311,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,dualstack.m.sni.global.fastly.net
-openx.net,34.98.64.218,,Low Robustness,Google LLC,US/Canada/Caribbean,34.64.0.0/10,AS396982,
+openstreetmap.org,151.101.1.55,2a04:4e42::311,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,dualstack.m.sni.global.fastly.net
+openx.net,35.244.159.8,,Low Robustness,Google LLC,US/Canada/Caribbean,35.240.0.0/13,AS396982,
 opera-api.com,82.145.215.16,,Low Robustness,OPERA-MNT,Europe/Middle East,82.145.208.0/21,AS39832,
 opera-api2.com,82.145.215.16,,Low Robustness,OPERA-MNT,Europe/Middle East,82.145.208.0/21,AS39832,
-opera.com,185.26.182.103,,Low Robustness,OPERA-MNT,Europe/Middle East,185.26.182.64/26,AS39832,front-geo.production.opera-website.route53.opera.com
-optimizely.com,216.150.16.1,,Low Robustness,"Vercel, Inc",US/Canada/Caribbean,216.150.16.0/24,AS16509,699d99404477832c.vercel-dns-016.com
+opera.com,185.26.182.104,,Low Robustness,OPERA-MNT,Europe/Middle East,185.26.182.64/26,AS39832,front-geo.production.opera-website.route53.opera.com
+optimizely.com,216.150.1.193,,Low Robustness,"Vercel, Inc",US/Canada/Caribbean,216.150.1.0/24,AS16509,699d99404477832c.vercel-dns-016.com
 oracle.com,138.1.33.162,,Low Robustness,Oracle Corporation,US/Canada/Caribbean,138.1.0.0/16,AS31898,ds-www.oracle.com.edgekey.net
 oraclecloud.com,138.1.33.162,,Low Robustness,Oracle Corporation,US/Canada/Caribbean,138.1.0.0/16,AS31898,ds-www.oraclecloud.com.edgekey.net
-orange.fr,193.252.148.46,,Low Robustness,FT-BRX,Europe/Middle East,193.252.148.0/24,AS8891,www.orange.fr.multis.x-echo.com
-outbrain.com,151.101.66.132,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,wildcard.outbrain.com.edgekey.net
-outlook.com,52.96.214.50,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,52.96.0.0/12,AS8075,outlook.office365.com
-overwolf.com,3.161.188.69,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,d9izjqopfltbj.cloudfront.net
+orange.fr,81.52.142.219,,Low Robustness,FT-BRX,Europe/Middle East,81.52.142.0/23,AS8891,www.orange.fr.multis.x-echo.com
+outbrain.com,151.101.2.132,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,wildcard.outbrain.com.edgekey.net
+outlook.com,52.96.222.226,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,52.96.0.0/12,AS8075,outlook.office365.com
+overwolf.com,3.161.188.84,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,d9izjqopfltbj.cloudfront.net
 oxylabs.io,104.20.16.140,2606:4700:10::ac42:9056,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-ozon.ru,185.73.194.82,,Low Robustness,OZONRU-MNT,Europe/Middle East,185.73.194.0/24,AS44386,
+ozon.ru,185.73.193.68,,Low Robustness,OZONRU-MNT,Europe/Middle East,185.73.193.0/24,AS44386,
 ozone.ru,185.73.195.116,,Low Robustness,OZONRU-MNT,Europe/Middle East,185.73.195.0/24,AS44386,
-pages.dev,104.18.20.135,2606:4700::6812:1487,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-palmplaystore.com,8.211.21.55,,Low Robustness,Alibaba Cloud (Singapore) Private Limited,Asia Pacific,8.208.0.0/12,AS45102,www.palmplaystore.com.enacdn.net
+pages.dev,104.18.21.135,2606:4700::6812:1587,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+palmplaystore.com,47.87.135.115,,Low Robustness,Alibaba Cloud LLC,US/Canada/Caribbean,47.80.0.0/13,AS45102,www.palmplaystore.com.enacdn.net
 paloaltonetworks.com,34.107.151.202,,Low Robustness,Google LLC,US/Canada/Caribbean,34.64.0.0/10,AS396982,paloaltonetworks.com.edgekey.net
 pandora.com,199.116.164.229,2620:106:e001:f00d::e7,High Robustness,"Pandora Media, LLC",US/Canada/Caribbean,199.116.160.0/21,AS40428,www.gslb.pandora.com
-paypal.com,162.159.141.96,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,www.glb.paypal.com
-peacocktv.com,23.59.235.42,2600:1402:1400:26::1742:65e6,High Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.32.0.0/11,AS20940,www.api.prod.nbcuott.com
+paypal.com,151.101.3.1,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,www.glb.paypal.com
+peacocktv.com,23.59.235.42,2600:1402:b800:3::172f:cc0b,High Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.32.0.0/11,AS20940,www.api.prod.nbcuott.com
 pendo.io,34.54.74.243,,Low Robustness,Google LLC,US/Canada/Caribbean,34.32.0.0/11,AS396982,73296397b515c9ea.vercel-dns-013.com
 perplexity.ai,104.18.26.48,2606:4700::6812:1b30,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 phantom.app,104.18.35.227,2606:4700:4407::6812:23e3,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 phncdn.com,,,CNAME Enabled,,,,,phncdn.com
-pinimg.com,151.101.192.84,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,
-pinterest.com,151.101.128.84,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,www-pinterest-com.gslb.pinterest.com
+pinimg.com,151.101.0.84,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,
+pinterest.com,151.101.0.84,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,www-pinterest-com.gslb.pinterest.com
 pki.goog,216.239.32.29,2001:4860:4802:32::1d,High Robustness,Google LLC,US/Canada/Caribbean,216.239.32.0/19,AS15169,www3.l.google.com
 playfabapi.com,,,CNAME Enabled,,,,,mainp-alpha-byagfybsgkckb8aj.b01.azurefd.net
-playrix.com,3.161.188.108,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,www.playrix.com.cdn.cloudflare.net
-playstation.com,13.52.155.65,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.52.0.0/16,AS16509,www.playstation.com-v2.edgekey.net
-plex.tv,35.172.142.61,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,35.160.0.0/12,AS14618,
-pluto.tv,151.101.193.91,2a04:4e42:200::347,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,kxa6l3d9.edge.easyredir.net
-polymarket.com,172.64.153.51,2606:4700:440d::6812:22cd,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
+playrix.com,3.161.188.48,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,www.playrix.com.cdn.cloudflare.net
+playstation.com,54.219.81.216,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.219.0.0/16,AS16509,www.playstation.com-v2.edgekey.net
+plex.tv,34.238.225.186,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,34.192.0.0/10,AS14618,
+pluto.tv,151.101.193.91,2a04:4e42:600::347,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,kxa6l3d9.edge.easyredir.net
+polymarket.com,104.18.34.205,2606:4700:4408::ac40:9933,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 posthog.com,216.150.1.1,,Low Robustness,"Vercel, Inc",US/Canada/Caribbean,216.150.1.0/24,AS16509,8eb78e9daddac53f.vercel-dns-016.com
 postrelease.com,52.36.224.135,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.0.0.0/10,AS16509,
 presage.io,217.70.184.55,,Low Robustness,GANDI-NOC,Europe/Middle East,217.70.184.0/24,AS29169,privacy-sandbox-autorisation.prod.cloud.ogury.io
 primis.tech,54.167.109.44,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,54.160.0.0/11,AS14618,
 privacy-center.org,,,CNAME Enabled,,,,,privacy-center-proxy-production.eu-central-1.elasticbeanstalk.com
-privacymanager.io,54.230.79.66,2600:9000:2012:4e00:11:698c:efc0:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.230.0.0/15,AS16509,
+privacymanager.io,54.230.79.117,2600:9000:2012:9800:11:698c:efc0:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.230.0.0/15,AS16509,
 prodregistryv2.org,34.128.128.0,,Low Robustness,Google LLC,US/Canada/Caribbean,34.128.0.0/10,AS396982,
 protechts.net,34.120.250.63,,Low Robustness,Google LLC,US/Canada/Caribbean,34.64.0.0/10,AS396982,
 pstatic.net,223.130.200.107,,Low Robustness,,,223.130.192.0/20,AS23576,
-publicnode.com,104.20.24.117,2606:4700:10::ac42:96a2,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-pubmatic.com,18.64.155.48,2600:9000:2343:9e00:1a:89bc:d200:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.64.0.0/14,AS16509,pubmatic.com
-pubnative.net,141.193.213.21,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,
-pusher.com,3.161.174.28,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,pusher.com
+publicnode.com,104.20.24.117,2606:4700:10::6814:1875,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+pubmatic.com,18.64.155.55,2600:9000:2343:d800:1a:89bc:d200:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.64.0.0/14,AS16509,pubmatic.com
+pubnative.net,141.193.213.20,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,
+pusher.com,3.161.174.86,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,pusher.com
 px-cloud.net,34.120.250.63,,Low Robustness,Google LLC,US/Canada/Caribbean,34.64.0.0/10,AS396982,
-qq.com,123.150.76.218,,Low Robustness,,Asia Pacific,123.150.0.0/15,AS58542,www.qq.com.eo.dnse2.com
-qualtrics.com,50.17.152.14,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,50.16.0.0/15,AS14618,cloudenhanced.qualtrics.com.edgekey.net
-quantcount.com,64.94.107.53,,Low Robustness,Unitas Global,US/Canada/Caribbean,64.94.96.0/19,AS10912,global.px.quantserve.com
+qq.com,203.205.254.157,,Low Robustness,,Asia Pacific,203.205.192.0/18,AS132203,www.qq.com.eo.dnse2.com
+qualtrics.com,23.21.43.10,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,23.20.0.0/14,AS14618,cloudenhanced.qualtrics.com.edgekey.net
+quantcount.com,64.94.107.15,,Low Robustness,Unitas Global,US/Canada/Caribbean,64.94.96.0/19,AS10912,global.px.quantserve.com
 quantserve.com,54.214.172.129,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.214.0.0/16,AS16509,2kpixel.quantserve.com
 quantummetric.com,76.76.21.21,,Low Robustness,"Vercel, Inc",US/Canada/Caribbean,76.76.21.0/24,AS16509,cname.vercel-dns.com
-rainberrytv.com,13.249.180.70,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.249.0.0/16,AS16509,www.rainberrytv.com.eo.dnse3.com
-rapid7.com,3.163.115.117,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,
+rainberrytv.com,13.249.180.78,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.249.0.0/16,AS16509,www.rainberrytv.com.eo.dnse3.com
+rapid7.com,3.163.115.36,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,
 ravm.tv,35.212.56.18,,Low Robustness,Google LLC,US/Canada/Caribbean,35.208.0.0/12,AS43515,
 recaptcha.net,64.233.177.94,2607:f8b0:4002:c08::5e,High Robustness,Google LLC,US/Canada/Caribbean,64.233.160.0/19,AS15169,
 redd.it,151.101.193.140,2a04:4e42::396,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,
-reddit.com,151.101.65.140,2a04:4e42:400::396,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,reddit.map.fastly.net
-redditmedia.com,151.101.129.140,2a04:4e42:400::396,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,dualstack.reddit.map.fastly.net
+reddit.com,151.101.65.140,2a04:4e42:600::396,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,reddit.map.fastly.net
+redditmedia.com,151.101.193.140,2a04:4e42:400::396,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,dualstack.reddit.map.fastly.net
 redditstatic.com,,,CNAME Enabled,,,,,dualstack.reddit.map.fastly.net
 revenuecat.com,216.150.1.1,,Low Robustness,"Vercel, Inc",US/Canada/Caribbean,216.150.1.0/24,AS16509,a741e01d63fbaa6e.vercel-dns-016.com
 rfihub.com,,,CNAME Enabled,,,,,rfihub.com
 richaudience.com,62.36.229.31,,Low Robustness,FTE-GGRR-MNT,Europe/Middle East,62.36.229.0/24,AS12479,richaudience.com
-ring.com,44.215.131.131,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,44.192.0.0/11,AS14618,
+ring.com,44.215.133.67,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,44.192.0.0/11,AS14618,
 riotgames.com,23.0.162.50,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.0.0.0/12,AS20940,www.riotgames.com.edgekey.net
 roblox.com,128.116.2.3,,Low Robustness,Roblox,US/Canada/Caribbean,128.116.0.0/17,AS22697,titanium.roblox.com
-roku.com,162.159.135.11,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,www.roku.com.cdn.cloudflare.net
-rubiconproject.com,13.225.143.116,2600:9000:21eb:7e00:19:133b:2800:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.224.0.0/14,AS16509,1y0y7y9io391.wpeproxy.com
-run.app,216.239.38.53,2001:4860:4802:36::35,High Robustness,Google LLC,US/Canada/Caribbean,216.239.32.0/19,AS15169,
+roku.com,162.159.136.11,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,www.roku.com.cdn.cloudflare.net
+rubiconproject.com,13.225.143.91,2600:9000:21eb:1600:19:133b:2800:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.224.0.0/14,AS16509,1y0y7y9io391.wpeproxy.com
+run.app,216.239.36.53,2001:4860:4802:34::35,High Robustness,Google LLC,US/Canada/Caribbean,216.239.32.0/19,AS15169,
 rustore.ru,95.163.61.31,,Low Robustness,VKCOMPANY-MNT,Europe/Middle East,95.163.48.0/20,AS47764,
-salesforce.com,184.31.10.133,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,184.24.0.0/13,AS33905,www.salesforce.com.edgekey.net
-samba.tv,31.43.160.6,,Low Robustness,FRAMER-MNT,Europe/Middle East,31.43.160.0/23,AS16509,sites.framer.app
+salesforce.com,23.1.35.132,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.0.0.0/12,AS33905,www.salesforce.com.edgekey.net
+samba.tv,31.43.161.6,,Low Robustness,FRAMER-MNT,Europe/Middle East,31.43.160.0/23,AS16509,sites.framer.app
 samsung.com,211.45.27.231,,Low Robustness,,,211.45.0.0/19,AS6619,www.samsung.com.akadns.net
-samsungads.com,44.216.101.107,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,44.192.0.0/11,AS14618,
+samsungads.com,34.192.68.37,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,34.192.0.0/10,AS14618,
 samsungapps.com,213.71.30.154,,Low Robustness,UUNETDE-I,Europe/Middle East,213.71.30.128/26,AS702,www.gw.samsungapps.com
-samsungcloud.com,3.171.171.121,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.168.0.0/14,AS16509,
+samsungcloud.com,3.171.171.119,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.168.0.0/14,AS16509,
 samsungelectronics.com,211.45.27.231,,Low Robustness,,,211.45.0.0/19,AS6619,
 sascdn.com,34.102.173.240,,Low Robustness,Google LLC,US/Canada/Caribbean,34.64.0.0/10,AS396982,
 sc-static.net,3.163.245.4,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,
 scdn.co,,,CNAME Enabled,,,,,scdnco.spotify.map.fastly.net
 scorecardresearch.com,77.72.114.225,,Low Robustness,MNT-NEDSTAT,Europe/Middle East,77.72.114.0/23,AS42320,scorecardresearch.com
 sectigo.com,91.199.212.90,2a0e:ac00:c7:d45a::5bc7:d45a,High Robustness,Sectigo Limited,Europe/Middle East,91.199.212.0/24,AS48447,www.sectigo.com.cdn.cloudflare.net
-secu100.net,54.176.110.240,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.176.0.0/15,AS16509,
-seedtag.com,104.16.55.62,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-segment.com,54.214.75.37,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.214.0.0/16,AS16509,segment.com
+secu100.net,54.177.43.158,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.176.0.0/15,AS16509,
+seedtag.com,104.16.56.62,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+segment.com,32.185.77.73,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,32.184.0.0/13,AS16509,segment.com
 segment.io,44.229.163.16,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,44.224.0.0/11,AS16509,segment.io
 sentinelone.net,52.207.50.69,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.192.0.0/12,AS14618,login.sentinelone.net
 sentry.io,35.186.247.156,,Low Robustness,Google LLC,US/Canada/Caribbean,35.184.0.0/13,AS396982,
-seznam.cz,77.75.77.222,2a02:598:a::79:222,High Robustness,SEZNAM-MNT,Europe/Middle East,77.75.77.0/24,AS43037,
-shalltry.com,3.163.83.36,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,
+seznam.cz,77.75.77.222,2a02:598:2::1222,High Robustness,SEZNAM-MNT,Europe/Middle East,77.75.77.0/24,AS43037,
+shalltry.com,3.163.83.18,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,
 sharepoint.com,13.107.136.10,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,13.104.0.0/14,AS8075,sharepoint.microsoft.com
-sharethis.com,18.244.202.115,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.244.0.0/15,AS16509,
+sharethis.com,18.244.202.36,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.244.0.0/15,AS16509,
 sharethrough.com,198.202.211.1,,Low Robustness,"Webflow, Inc",US/Canada/Caribbean,198.202.211.0/24,AS209242,cdn.webflow.com
 shein.com,52.39.90.56,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.0.0.0/10,AS16509,www.shein.com.cdn.cloudflare.net
 shifen.com,202.108.250.218,,Low Robustness,,Asia Pacific,202.108.0.0/16,AS4808,bar.n.shifen.com
-shodan.io,104.18.12.238,2606:4700::6812:dee,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+shodan.io,104.18.12.238,2606:4700::6812:cee,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 shop.app,23.227.39.20,2620:127:f00e:ff00::,High Robustness,"Shopify, Inc.",US/Canada/Caribbean,23.227.32.0/19,AS13335,apps-ds.shopifynetwork.com
-shopee.co.id,147.136.172.128,,Low Robustness,SHOPEE SINGAPORE PRIVATE LIMITED,Asia Pacific,147.136.160.0/20,AS138341,mall.shopee.co.id
-shopee.com.br,147.136.133.190,,Low Robustness,SHOPEE SINGAPORE PRIVATE LIMITED,Asia Pacific,147.136.128.0/19,AS138341,shopee.com.br
+shopee.co.id,147.136.168.96,,Low Robustness,SHOPEE SINGAPORE PRIVATE LIMITED,Asia Pacific,147.136.160.0/20,AS138341,mall.shopee.co.id
+shopee.com.br,202.181.93.18,,Low Robustness,SHOPEE SINGAPORE PRIVATE LIMITED,Asia Pacific,202.181.88.0/21,AS138341,shopee.com.br
 shopeemobile.com,147.136.141.130,,Low Robustness,SHOPEE SINGAPORE PRIVATE LIMITED,Asia Pacific,147.136.128.0/19,AS138341,shopeemobile.com
 shopify.com,23.227.38.33,,Low Robustness,"Shopify, Inc.",US/Canada/Caribbean,23.227.32.0/19,AS13335,
-signal.org,104.18.10.47,2606:4700::6812:b2f,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+signal.org,104.18.10.47,2606:4700::6812:a2f,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 sina.com.cn,36.51.254.91,,Low Robustness,,Asia Pacific,36.51.0.0/16,AS37936,spool.grid.sinaedge.com
-singular.net,141.193.213.11,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,wp.wpenginepowered.com
+singular.net,141.193.213.10,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,wp.wpenginepowered.com
 sitescout.com,208.113.159.153,,Low Robustness,DreamHost,US/Canada/Caribbean,208.113.128.0/18,AS26347,
-skype.com,20.112.250.133,2603:1010:3:3::5b,High Robustness,Microsoft Corporation,US/Canada/Caribbean,20.64.0.0/10,AS8075,livecms-trafficmanager-net.s-0005.dual-s-msedge.net
-slack.com,3.22.139.176,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,3.0.0.0/9,AS16509,
-slackb.com,34.195.221.192,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,34.192.0.0/10,AS14618,
-smadex.com,13.225.143.103,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.224.0.0/14,AS16509,smadex.com
+skype.com,20.112.250.133,2603:1020:201:10::10f,High Robustness,Microsoft Corporation,US/Canada/Caribbean,20.64.0.0/10,AS8075,livecms-trafficmanager-net.s-0005.dual-s-msedge.net
+slack.com,3.210.88.6,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,3.208.0.0/12,AS14618,
+slackb.com,3.90.158.208,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,3.80.0.0/12,AS14618,
+smadex.com,13.225.143.108,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.224.0.0/14,AS16509,smadex.com
 smartadserver.com,34.160.41.36,,Low Robustness,Google LLC,US/Canada/Caribbean,34.128.0.0/10,AS396982,geo-eu-us.delivery-prod-sas.akadns.net
-smartthings.com,3.171.171.40,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.168.0.0/14,AS16509,
-smilewanted.com,104.20.40.222,2606:4700:10::ac42:9a58,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+smartthings.com,3.171.171.34,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.168.0.0/14,AS16509,
+smilewanted.com,104.20.40.222,2606:4700:10::6814:28de,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 snapchat.com,34.149.46.130,,Low Robustness,Google LLC,US/Canada/Caribbean,34.128.0.0/10,AS396982,web-gcp.api.snapchat.com
-snapcraft.io,185.125.190.29,2620:2d:4000:1::28,High Robustness,Canonical Group Limited,Europe/Middle East,185.125.188.0/22,AS41231,
-snapkit.com,216.239.38.21,2001:4860:4802:38::15,High Robustness,Google LLC,US/Canada/Caribbean,216.239.32.0/19,AS15169,us-central1-gcp.api.snapchat.com
+snapcraft.io,185.125.190.21,2620:2d:4000:1::26,High Robustness,Canonical Group Limited,Europe/Middle East,185.125.188.0/22,AS41231,
+snapkit.com,216.239.38.21,2001:4860:4802:32::15,High Robustness,Google LLC,US/Canada/Caribbean,216.239.32.0/19,AS15169,us-central1-gcp.api.snapchat.com
 snssdk.com,122.14.229.128,,Low Robustness,,Asia Pacific,122.14.224.0/19,AS9808,www.snssdk.com.bytedns1.com
-sogou.com,43.153.249.87,,Low Robustness,,Asia Pacific,43.153.192.0/18,AS132203,ins-you7s0em.ias.tencent-cloud.net
+sogou.com,43.153.236.147,,Low Robustness,,Asia Pacific,43.153.192.0/18,AS132203,ins-you7s0em.ias.tencent-cloud.net
 sonobi.com,192.124.249.80,,Low Robustness,Sucuri,US/Canada/Caribbean,192.124.249.0/24,AS30148,
-sophos.com,23.0.162.46,2600:1402:8000:7::1700:a266,High Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.0.0.0/12,AS20940,
-soundcloud.com,52.84.150.52,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,52.84.0.0/15,AS16509,dbt43jimgm1f3.cloudfront.net
+sophos.com,23.0.162.46,2600:1402:8000:7::1700:a265,High Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.0.0.0/12,AS20940,
+soundcloud.com,52.84.150.39,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,52.84.0.0/15,AS16509,dbt43jimgm1f3.cloudfront.net
 spamhaus.org,3.126.246.180,2a05:d014:1bf:db01:bbc8:62e2:948e:6bf4,High Robustness,A100 ROW GmbH,US/Canada/Caribbean,3.124.0.0/14,AS16509,www.spamhaus.org.cdn.cloudflare.net
 sparteo.com,31.216.61.144,,Low Robustness,lir-fr-bricks-1-MNT,Europe/Middle East,31.216.61.128/25,AS210879,
-speedtest.net,151.101.130.219,2a04:4e42::731,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,www.speedtest.net.cdn.cloudflare.net
+speedtest.net,151.101.66.219,2a04:4e42:400::731,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,www.speedtest.net.cdn.cloudflare.net
 split.io,198.202.211.1,,Low Robustness,"Webflow, Inc",US/Canada/Caribbean,198.202.211.0/24,AS209242,cdn.webflow.com
 splunkcloud.com,204.107.141.148,,Low Robustness,"Splunk, Inc.",US/Canada/Caribbean,204.107.141.0/24,AS22024,splunk.com
-spot.im,18.160.71.92,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.160.0.0/15,AS16509,k8s-kongow-generalp-f832200e79-1219784492.us-east-1.elb.amazonaws.com
+spot.im,18.160.71.129,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.160.0.0/15,AS16509,k8s-kongow-generalp-f832200e79-1219784492.us-east-1.elb.amazonaws.com
 spotify.com,35.186.224.24,2600:1901:1:7c5::,High Robustness,Google LLC,US/Canada/Caribbean,35.184.0.0/13,AS396982,atc.spotify.map.fastly.net
 spotifycdn.com,,,CNAME Enabled,,,,,tls13.spotifycdn.map.fastly.net
-springserve.com,54.230.79.35,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.230.0.0/15,AS16509,68jt34trastz.wpeproxy.com
+springserve.com,54.230.79.87,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.230.0.0/15,AS16509,68jt34trastz.wpeproxy.com
 stackadapt.com,34.204.55.14,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,34.192.0.0/10,AS14618,
 starlink.com,151.101.193.143,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,
-startappservice.com,151.101.19.52,2a04:4e42:d::820,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,
+startappservice.com,151.101.55.52,2a04:4e42:4::820,High Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,
 statuspage.io,104.192.142.22,,Low Robustness,"Atlassian Network Services, Inc.",US/Canada/Caribbean,104.192.136.0/21,AS14618,
-steamcommunity.com,184.30.113.213,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,184.24.0.0/13,AS16625,
-steampowered.com,23.79.39.68,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.72.0.0/13,AS16625,
-stripchat.com,104.17.118.12,2606:4700::6811:750c,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-stripe.com,198.202.176.161,,Low Robustness,"Stripe, Inc.",US/Canada/Caribbean,198.202.176.0/24,AS16509,stripe.com
-stripe.network,54.187.119.242,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.184.0.0/14,AS16509,
+steamcommunity.com,23.76.43.59,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.72.0.0/13,AS16625,
+steampowered.com,23.76.38.100,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.72.0.0/13,AS16625,
+stripchat.com,104.17.117.12,2606:4700::6811:750c,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+stripe.com,198.202.176.111,,Low Robustness,"Stripe, Inc.",US/Canada/Caribbean,198.202.176.0/24,AS16509,stripe.com
+stripe.network,54.186.23.98,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.184.0.0/14,AS16509,
 supabase.co,76.76.21.21,,Low Robustness,"Vercel, Inc",US/Canada/Caribbean,76.76.21.0/24,AS16509,
-supercell.com,3.161.174.42,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,
+supercell.com,3.161.174.64,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,
 svc.ms,,,CNAME Enabled,,,,,dual-spo-0005.spo-msedge.net
-swishapps.ai,150.171.109.117,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,150.171.0.0/16,AS8075,
-synology.com,35.182.167.21,,Low Robustness,Amazon Data Services Canada,US/Canada/Caribbean,35.182.0.0/15,AS16509,
-t-online.de,54.217.253.146,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.216.0.0/15,AS16509,
-t.co,172.66.0.227,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,t.co
+swishapps.ai,150.171.109.118,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,150.171.0.0/16,AS8075,
+synology.com,15.157.156.19,,Low Robustness,Amazon Data Services Canada,US/Canada/Caribbean,15.156.0.0/15,AS16509,
+t-online.de,34.246.241.220,,Low Robustness,Amazon Data Services Ireland Limited,US/Canada/Caribbean,34.240.0.0/13,AS16509,
+t.co,162.159.140.229,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,t.co
 t.me,149.154.167.99,2001:67c:4e8:f004::9,High Robustness,MNT-TELEGRAM,Europe/Middle East,149.154.164.0/22,AS62041,
-taboola.com,151.101.130.132,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,tls13.taboola.map.fastly.net
-tailscale.com,76.76.21.21,2600:9000:a602:b1e6:5b89:50a1:7cf7:67b8,High Robustness,"Vercel, Inc",US/Canada/Caribbean,76.76.21.0/24,AS16509,
-taobao.com,59.82.121.163,2408:4001:f10::5e,High Robustness,,Asia Pacific,59.82.0.0/16,AS37963,www.taobao.com.danuoyi.tbcache.com
+taboola.com,151.101.2.132,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,tls13.taboola.map.fastly.net
+tailscale.com,76.76.21.21,2600:9000:a51d:27c1:6748:d035:a989:fb3c,High Robustness,"Vercel, Inc",US/Canada/Caribbean,76.76.21.0/24,AS16509,
+taobao.com,59.82.122.130,2401:b180:7003::6b,High Robustness,,Asia Pacific,59.82.0.0/16,AS37963,www.taobao.com.danuoyi.tbcache.com
 tapad.com,34.96.66.233,,Low Robustness,Google LLC,US/Canada/Caribbean,34.64.0.0/10,AS396982,tapad.com
-target.com,151.101.66.187,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,sites.target.map.fastly.net
-tawk.to,172.66.161.212,2606:4700:10::6814:2aa9,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,
+target.com,151.101.194.187,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,sites.target.map.fastly.net
+tawk.to,104.20.42.169,2606:4700:10::6814:2aa9,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 tbcache.com,140.205.77.240,,Low Robustness,,Asia Pacific,140.205.0.0/16,AS37963,
-teads.tv,54.77.10.140,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,54.64.0.0/11,AS16509,www.teads.tv.edgekey.net
+teads.tv,46.137.153.4,,Low Robustness,MNT-ADSI,Europe/Middle East,46.137.128.0/18,AS16509,www.teads.tv.edgekey.net
 teamviewer.com,52.223.21.92,2600:9000:a61f:6da7:367b:7826:b8c1:d0a8,High Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.223.0.0/17,AS16509,www.teamviewer.com.cdn.cloudflare.net
 telegram.org,149.154.167.99,2001:67c:4e8:f004::9,High Robustness,MNT-TELEGRAM,Europe/Middle East,149.154.164.0/22,AS62041,
 telephony.goog,216.239.36.145,,Low Robustness,Google LLC,US/Canada/Caribbean,216.239.32.0/19,AS15169,
-temu.com,151.101.66.58,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,www-temu-com.trafficmanager.net
+temu.com,151.101.2.58,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,www-temu-com.trafficmanager.net
 tencent-cloud.net,0.0.0.1,,Low Robustness,,,,,
 tencent.com,43.137.211.13,,Low Robustness,"Tencent Cloud Computing (Beijing) Co., Ltd",Asia Pacific,43.137.0.0/16,AS45090,www.tencent.com.eo.dnse5.com
 tenda.com.cn,120.26.46.230,,Low Robustness,,Asia Pacific,120.24.0.0/14,AS37963,
-tesla.com,2.18.53.207,,Low Robustness,AKAM1-RIPE-MNT,Europe/Middle East,2.18.48.0/20,AS33905,www.tesla.com.edgekey.net
-themoviedb.org,99.84.132.3,2600:9000:205f:c200:e:5373:440:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,99.84.0.0/16,AS16509,
-tiktok.com,23.0.162.51,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.0.0.0/12,AS20940,www.tiktok.com.edgesuite.net
+tesla.com,2.18.50.207,,Low Robustness,AKAM1-RIPE-MNT,Europe/Middle East,2.18.48.0/20,AS33905,www.tesla.com.edgekey.net
+themoviedb.org,99.84.132.3,2600:9000:205f:1800:e:5373:440:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,99.84.0.0/16,AS16509,
+tiktok.com,23.11.229.195,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.0.0.0/12,AS20940,www.tiktok.com.edgesuite.net
 tiktokglobalshopv.com,23.53.13.101,,Low Robustness,"Akamai International, BV",US/Canada/Caribbean,23.53.13.0/24,AS20940,
-tiktokv.com,96.16.60.209,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,96.16.0.0/15,AS20940,www.tiktokv.com.edgesuite.net
+tiktokv.com,23.193.119.198,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.192.0.0/11,AS20940,www.tiktokv.com.edgesuite.net
 tiktokw.us,,,CNAME Enabled,,,,,www.tiktokw.us.edgesuite.net
-tizen.org,13.33.4.110,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.32.0.0/15,AS16509,
-tmdb.org,13.33.4.47,2600:9000:24d5:f200:10:db24:6940:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.32.0.0/15,AS16509,
-tp-link.com,99.84.132.85,2600:9000:205f:800:0:275e:4840:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,99.84.0.0/16,AS16509,
-tplinkcloud.com,52.73.172.239,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.64.0.0/12,AS14618,
-tradingview.com,13.32.179.52,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.32.0.0/15,AS16509,
+tizen.org,13.33.4.128,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.32.0.0/15,AS16509,
+tmdb.org,13.33.4.47,2600:9000:24d5:2000:10:db24:6940:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.32.0.0/15,AS16509,
+tp-link.com,99.84.132.43,2600:9000:205f:e600:0:275e:4840:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,99.84.0.0/16,AS16509,
+tplinkcloud.com,54.89.48.158,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,54.64.0.0/11,AS14618,
+tradingview.com,13.32.179.26,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.32.0.0/15,AS16509,
 tradplusad.com,8.210.20.17,,Low Robustness,,Asia Pacific,8.210.0.0/16,AS45102,
 trafficjunky.net,66.254.114.181,,Low Robustness,"Reflected Networks, Inc.",US/Canada/Caribbean,66.254.96.0/19,AS29789,trafficjunky.net
 traffmonetizer.com,157.254.190.190,,Low Robustness,Private Customer,US/Canada/Caribbean,157.254.190.0/24,AS401645,
-tremorhub.com,54.230.79.32,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.230.0.0/15,AS16509,
+tremorhub.com,54.230.79.79,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,54.230.0.0/15,AS16509,
 trendmicro.com,150.70.232.194,,Low Robustness,,Asia Pacific,150.64.0.0/12,AS16880,ion.trendmicro.com.edgekey.net
 tribalfusion.com,169.150.221.116,,Low Robustness,DATACAMP-MNT,Europe/Middle East,169.150.221.0/24,AS60068,
-trip.com,47.236.227.188,,Low Robustness,Alibaba Cloud LLC,US/Canada/Caribbean,47.236.0.0/14,AS45102,trip-ak.t1.geo.ctripgslb.net
+trip.com,8.222.216.245,,Low Robustness,Alibaba Cloud (Singapore) Private Limited,Asia Pacific,8.208.0.0/12,AS45102,trip-ak.t1.geo.ctripgslb.net
 truecaller.com,65.2.215.200,2406:da00:a000::36d:6580,High Robustness,Amazon Data Services India,US/Canada/Caribbean,65.0.0.0/14,AS16509,www.truecaller.com.cdn.cloudflare.net
-trustarc.com,141.193.213.20,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,ytpoyvu56f05.wpeproxy.com
-truste.com,52.206.222.77,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.192.0.0/12,AS14618,truste-com-450741831.us-east-1.elb.amazonaws.com
+trustarc.com,141.193.213.21,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,ytpoyvu56f05.wpeproxy.com
+truste.com,3.211.163.213,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,3.208.0.0/12,AS14618,truste-com-450741831.us-east-1.elb.amazonaws.com
 trustedstack.com,104.21.7.164,2606:4700:3035::6815:7a4,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-trustpilot.com,34.240.100.85,,Low Robustness,Amazon Data Services Ireland Limited,US/Canada/Caribbean,34.240.0.0/13,AS16509,
-tsyndicate.com,15.235.65.221,2607:5300:203:b2a1::2,High Robustness,"OVH Hosting, Inc.",US/Canada/Caribbean,15.235.65.0/24,AS16276,
+trustpilot.com,108.133.78.32,,Low Robustness,Amazon Data Services Ireland Limited,US/Canada/Caribbean,108.128.0.0/13,AS16509,
+tsyndicate.com,15.235.10.57,2607:5300:203:a4dd::2,High Robustness,"OVH Hosting, Inc.",US/Canada/Caribbean,15.235.10.0/24,AS16276,
 tumblr.com,192.0.77.40,,Low Robustness,"Automattic, Inc",US/Canada/Caribbean,192.0.64.0/18,AS2635,
-twc.com,142.136.168.58,,Low Robustness,Charter Communications Inc,US/Canada/Caribbean,142.136.0.0/16,AS3456,timewarnercable.com.edgekey.net
+twc.com,23.0.162.36,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.0.0.0/12,AS20940,timewarnercable.com.edgekey.net
 twilio.com,44.199.52.48,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,44.192.0.0/11,AS14618,d2p9kan0nxscnn.cloudfront.net
-twitch.tv,151.101.194.167,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,h2.twitch.map.fastly.net
+twitch.tv,151.101.130.167,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,h2.twitch.map.fastly.net
 twitter.com,172.66.0.227,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,172.64.0.0/13,AS13335,twitter.com
-typekit.com,100.49.68.254,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,100.48.0.0/12,AS14618,typekit.com
+typekit.com,44.219.219.148,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,44.192.0.0/11,AS14618,typekit.com
 typekit.net,216.146.46.10,,Low Robustness,"Dynamic Network Services, Inc.",US/Canada/Caribbean,216.146.32.0/20,ASN Not Found,
-uber.com,104.36.194.8,,Low Robustness,"Uber Technologies, Inc",US/Canada/Caribbean,104.36.192.0/21,AS396982,frontends-cloudflare.uber.com
-ubi.com,100.49.7.190,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,100.48.0.0/12,AS14618,prod-rev-1443500066.us-east-1.elb.amazonaws.com
-ubnt.com,32.186.48.13,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,32.184.0.0/13,AS16509,
-ubuntu.com,185.125.190.29,2620:2d:4000:1::27,High Robustness,Canonical Group Limited,Europe/Middle East,185.125.188.0/22,AS41231,
+uber.com,69.48.216.80,,Low Robustness,"Uber Technologies, Inc",US/Canada/Caribbean,69.48.216.0/21,AS396982,frontends-cloudflare.uber.com
+ubi.com,13.222.79.25,,Low Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,13.216.0.0/13,AS14618,prod-rev-1443500066.us-east-1.elb.amazonaws.com
+ubnt.com,50.112.128.117,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,50.112.0.0/16,AS16509,
+ubuntu.com,185.125.190.20,2620:2d:4000:1::27,High Robustness,Canonical Group Limited,Europe/Middle East,185.125.188.0/22,AS41231,
 ueiwsp.com,1.1.1.1,,Low Robustness,APNIC Research and Development,Asia Pacific,1.1.1.0/24,AS13335,
-ui.com,13.249.180.100,2600:9000:205d:e00:1c:894d:51c0:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.249.0.0/16,AS16509,
-uisp.com,108.139.15.13,2600:9000:24d6:1800:1c:b914:cf80:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,108.138.0.0/15,AS16509,
+ui.com,13.249.180.44,2600:9000:205d:7400:1c:894d:51c0:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.249.0.0/16,AS16509,
+uisp.com,108.139.15.22,2600:9000:24d6:5c00:1c:b914:cf80:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,108.138.0.0/15,AS16509,
 umeng.com,123.57.253.206,,Low Robustness,,Asia Pacific,123.56.0.0/15,AS37963,default.wagbridge.umeng.alibabacorp.com
 unifi-ai.com,35.244.131.207,,Low Robustness,Google LLC,US/Canada/Caribbean,35.240.0.0/13,AS396982,
 unisoc.com,106.14.247.211,,Low Robustness,,Asia Pacific,106.14.0.0/15,AS37963,www.unisoc.com.c.yundunwaf4.com
-unity3d.com,23.206.222.76,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.192.0.0/11,AS16625,www.unity3d.com.akadns.net
-unpkg.com,104.18.0.22,2606:4700::6812:16,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-unrulymedia.com,108.156.152.32,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,108.156.0.0/14,AS16509,unrulymedia.com
+unity3d.com,23.48.88.241,,Low Robustness,"Akamai International, BV",US/Canada/Caribbean,23.48.88.0/22,AS16625,www.unity3d.com.akadns.net
+unpkg.com,104.18.0.22,2606:4700::6812:116,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+unrulymedia.com,108.156.152.12,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,108.156.0.0/14,AS16509,unrulymedia.com
 uol.com.br,200.147.35.149,2804:49c:3102:401:ffff:ffff:ffff:36,High Robustness,Universo Online S.A.,BR,200.147.0.0/17,AS7162,dftex7xfha8fh.cloudfront.net
 urbanairship.com,35.190.28.113,,Low Robustness,Google LLC,US/Canada/Caribbean,35.184.0.0/13,AS396982,
 useinsider.com,162.159.134.61,2606:4700:7::a29f:853d,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,
-userapi.com,87.240.190.64,,Low Robustness,VKCOMPANY-MNT,Europe/Middle East,87.240.160.0/19,AS47541,
+userapi.com,87.240.129.187,,Low Robustness,VKCOMPANY-MNT,Europe/Middle East,87.240.128.0/19,AS47541,
 usercentrics.eu,34.160.77.130,2600:1901:0:e846::,High Robustness,Google LLC,US/Canada/Caribbean,34.128.0.0/10,AS396982,
-usercontent.goog,142.250.9.132,2607:f8b0:4002:c11::84,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
+usercontent.goog,172.253.124.132,2607:f8b0:4002:c03::84,High Robustness,Google LLC,US/Canada/Caribbean,172.253.0.0/16,AS15169,
 v-videoapp.com,47.74.181.128,,Low Robustness,Alibaba Cloud - SG,US/Canada/Caribbean,47.74.128.0/17,AS45102,
-verisign.com,69.58.187.40,2620:74:14:3000::40,High Robustness,"Verisign, Inc.",US/Canada/Caribbean,69.58.176.0/20,AS30060,
-verkada.com,18.160.71.29,2600:9000:24a9:6c00:f:a2c0:9c00:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.160.0.0/15,AS16509,www.verkada.com.cdn.cloudflare.net
+verisign.com,69.58.187.40,2620:74:10:2900::45,High Robustness,"Verisign, Inc.",US/Canada/Caribbean,69.58.176.0/20,AS30060,
+verkada.com,18.160.71.29,2600:9000:24a9:1600:f:a2c0:9c00:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,18.160.0.0/15,AS16509,www.verkada.com.cdn.cloudflare.net
 via.google,216.239.32.27,2001:4860:4802:32::1b,High Robustness,Google LLC,US/Canada/Caribbean,216.239.32.0/19,AS15169,via.google
-viber.com,3.225.124.14,2600:1f18:2092:1a05:e0ad:882f:e931:279d,High Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,3.224.0.0/12,AS14618,viber.production.dualstack.edgekey.net
-vimeo.com,162.159.138.60,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,vimeo.com
+viber.com,98.89.51.209,2600:1f18:2092:1a05:e0ad:882f:e931:279d,High Robustness,Amazon Data Services Northern Virginia,US/Canada/Caribbean,98.88.0.0/13,AS14618,viber.production.dualstack.edgekey.net
+vimeo.com,162.159.128.61,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,vimeo.com
 virtualearth.net,204.79.197.219,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,204.79.196.0/23,AS8068,www-virtualearth-net.a-0016.a-msedge.net
-visualstudio.com,150.171.73.16,2603:1061:10::16,High Robustness,Microsoft Corporation,US/Canada/Caribbean,150.171.0.0/16,AS8075,wildcard.visualstudio.com.edgekey.net
+visualstudio.com,150.171.73.16,2603:1061:10:1::16,High Robustness,Microsoft Corporation,US/Canada/Caribbean,150.171.0.0/16,AS8075,wildcard.visualstudio.com.edgekey.net
 visualwebsiteoptimizer.com,34.149.221.142,,Low Robustness,Google LLC,US/Canada/Caribbean,34.128.0.0/10,AS396982,
 vivo.com.cn,220.181.158.191,,Low Robustness,,Asia Pacific,220.181.0.0/16,AS23724,www.vivo.com.cn.0ae7fecc.cncdn.com
 vivoglobal.com,156.59.238.20,,Low Robustness,,Asia Pacific,156.59.238.0/23,AS21859,
-vk.com,87.240.132.78,,Low Robustness,VKCOMPANY-MNT,Europe/Middle East,87.240.128.0/19,AS47541,
-vk.ru,87.240.132.78,,Low Robustness,VKCOMPANY-MNT,Europe/Middle East,87.240.128.0/19,AS47541,
-vkuserphoto.ru,87.240.190.64,,Low Robustness,VKCOMPANY-MNT,Europe/Middle East,87.240.160.0/19,AS47541,
+vk.com,93.186.225.194,,Low Robustness,VKCOMPANY-MNT,Europe/Middle East,93.186.224.0/21,AS47541,
+vk.ru,87.240.137.164,,Low Robustness,VKCOMPANY-MNT,Europe/Middle East,87.240.128.0/19,AS47541,
+vkuserphoto.ru,87.240.129.187,,Low Robustness,VKCOMPANY-MNT,Europe/Middle East,87.240.128.0/19,AS47541,
 vscode-cdn.net,,,CNAME Enabled,,,,,vscode-cdn.z01.azurefd.net
 vungle.com,141.193.213.11,,Low Robustness,"WPEngine, Inc.",US/Canada/Caribbean,141.193.213.0/24,AS209242,wp.wpenginepowered.com
-w3.org,104.18.23.19,2606:4700::6812:1613,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-walmart.com,23.214.110.29,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,23.192.0.0/11,AS20940,www.walmart.com.cdn-wal.net
-wattpad.com,13.249.180.107,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.249.0.0/16,AS16509,
+w3.org,104.18.23.19,2606:4700::6812:1713,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+walmart.com,104.123.201.56,,Low Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,104.64.0.0/10,AS16625,www.walmart.com.cdn-wal.net
+wattpad.com,13.249.180.12,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,13.249.0.0/16,AS16509,
 wb.ru,213.184.155.142,,Low Robustness,MNT-WILDBERRIES,Europe/Middle East,213.184.154.0/23,AS57073,
 wbx2.com,13.59.223.205,,Low Robustness,Cisco Spark,US/Canada/Caribbean,13.59.223.0/24,AS16509,squared-static.wbx2.com
-weather.com,184.30.114.41,2600:1402:8000:48f::2e03,High Robustness,"Akamai Technologies, Inc.",US/Canada/Caribbean,184.24.0.0/13,AS16625,pmd-www.weather.com.edgekey.net
+weather.com,23.223.133.47,2600:1402:b800:e81::2e03,High Robustness,"Akamai International, BV",US/Canada/Caribbean,23.223.128.0/20,AS16625,pmd-www.weather.com.edgekey.net
 webex.com,144.196.130.69,2607:fcf0:2100:0:144:196:130:69,High Robustness,Cisco Webex LLC,US/Canada/Caribbean,144.196.0.0/16,AS13445,all-www.webex.com.edgekey.net
 wechat.com,43.163.181.74,,Low Robustness,,Asia Pacific,43.163.128.0/18,AS132203,www.wechat.com.eo.dnse1.com
-weplayapp.com,3.163.83.61,2600:9000:269e:c00:5:7773:ff00:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,d1jxhdvt3twflo.cloudfront.net
-whatsapp.com,57.144.79.32,2a03:2880:f31e:120:face:b00c:0:167,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,mmx-ds.cdn.whatsapp.net
-whatsapp.net,57.144.79.32,2a03:2880:f31e:120:face:b00c:0:167,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,
+weplayapp.com,3.163.83.26,2600:9000:269e:b000:5:7773:ff00:93a1,High Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,3.160.0.0/14,AS16509,d1jxhdvt3twflo.cloudfront.net
+whatsapp.com,57.144.79.32,2a03:2880:f351:120:face:b00c:0:167,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,mmx-ds.cdn.whatsapp.net
+whatsapp.net,57.144.79.32,2a03:2880:f351:120:face:b00c:0:167,High Robustness,meta-mnt,Europe/Middle East,57.144.0.0/14,AS32934,
 wikimedia.org,208.80.154.224,2620:0:861:ed1a::1,High Robustness,Wikimedia Foundation Inc.,US/Canada/Caribbean,208.80.152.0/22,AS14907,dyna.wikimedia.org
 wikipedia.org,208.80.154.224,2620:0:861:ed1a::1,High Robustness,Wikimedia Foundation Inc.,US/Canada/Caribbean,208.80.152.0/22,AS14907,dyna.wikimedia.org
 wildberries.ru,185.62.202.2,2a03:720::173:2,High Robustness,MNT-WILDBERRIES,Europe/Middle East,185.62.202.0/24,AS57073,
-windows.com,20.231.239.246,2603:1010:3:3::5b,High Robustness,Microsoft Corporation,US/Canada/Caribbean,20.192.0.0/10,AS8075,windows.com
-windows.net,20.236.44.162,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,20.192.0.0/10,AS8075,windows.net
+windows.com,20.76.201.171,2603:1010:3:3::5b,High Robustness,Microsoft Corporation,US/Canada/Caribbean,20.64.0.0/10,AS8075,windows.com
+windows.net,20.76.201.171,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,20.64.0.0/10,AS8075,windows.net
 windowsupdate.com,,,CNAME Enabled,,,,,windowsupdate.microsoft.nsatc.net
-withgoogle.com,142.250.9.138,2607:f8b0:4002:c11::64,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
-wordpress.com,192.0.78.9,,Low Robustness,"Automattic, Inc",US/Canada/Caribbean,192.0.64.0/18,AS2635,lb.wordpress.com
-workers.dev,104.18.13.15,2606:4700::6812:d0f,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+withgoogle.com,173.194.219.100,2607:f8b0:4002:c05::64,High Robustness,Google LLC,US/Canada/Caribbean,173.194.0.0/16,AS15169,
+wordpress.com,192.0.78.17,,Low Robustness,"Automattic, Inc",US/Canada/Caribbean,192.0.64.0/18,AS2635,lb.wordpress.com
+workers.dev,104.18.12.15,2606:4700::6812:c0f,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 wp.com,192.0.78.24,,Low Robustness,"Automattic, Inc",US/Canada/Caribbean,192.0.64.0/18,AS2635,wp.com
 wps.cn,121.36.32.232,,Low Robustness,,Asia Pacific,121.36.0.0/16,AS55990,
 wps.com,190.92.221.14,,Low Robustness,,Asia Pacific,190.92.192.0/19,AS136907,website-cdn.4wps.net
 wshareit.com,159.138.103.42,,Low Robustness,,Asia Pacific,159.138.96.0/20,AS136907,
 wyzecam.com,104.18.17.228,2606:4700::6812:10e4,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
-x.com,151.101.2.146,,Low Robustness,"Fastly, Inc.",US/Canada/Caribbean,151.101.0.0/16,AS54113,x.com
-xboxlive.com,20.236.44.162,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,20.192.0.0/10,AS8075,xboxlive.com
-xhamster.com,104.16.4.81,2606:4700::6810:451,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
+x.com,162.159.140.229,,Low Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,162.158.0.0/15,AS13335,x.com
+xboxlive.com,20.76.201.171,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,20.64.0.0/10,AS8075,xboxlive.com
+xhamster.com,104.16.4.81,2606:4700::6810:351,High Robustness,"Cloudflare, Inc.",US/Canada/Caribbean,104.16.0.0/12,AS13335,
 xhcdn.com,88.208.31.1,,Low Robustness,MNT-DGGB,Europe/Middle East,88.208.0.0/18,AS39572,
 xhscdn.com,118.25.163.88,,Low Robustness,"Tencent Cloud Computing (Beijing) Co., Ltd",Asia Pacific,118.24.0.0/15,AS45090,
 xiaohongshu.com,43.159.24.58,,Low Robustness,ACEVILLE PTE.LTD.,Asia Pacific,43.152.0.0/13,AS132203,www.xiaohongshu.com.eo.dnse0.com
 xiaomi.com,124.251.34.141,,Low Robustness,,Asia Pacific,124.251.0.0/16,AS23724,matrix-pub-c3-c4.alb.xiaomi.com
-xiaomi.net,124.251.34.141,,Low Robustness,,Asia Pacific,124.251.0.0/16,AS23724,orig.cdn.xiaomi.com
+xiaomi.net,183.84.7.241,,Low Robustness,,Asia Pacific,183.84.0.0/15,AS56048,orig.cdn.xiaomi.com
 xnxx-cdn.com,127.0.0.1,,Low Robustness,,,,,xnxx-cdn.com
 xvideos-cdn.com,127.0.0.1,,Low Robustness,,,,,xvideos-cdn.com
 xxpkg.com,152.136.238.15,,Low Robustness,"Tencent Cloud Computing (Beijing) Co., Ltd",Asia Pacific,152.136.0.0/16,AS45090,
-ya.ru,5.255.255.242,2a02:6b8::2:242,High Robustness,YANDEX LLC,Europe/Middle East,5.255.255.0/24,AS208398,ya.ru
-yahoo.co.jp,183.79.219.252,,Low Robustness,Yahoo Japan,Asia Pacific,183.79.0.0/16,AS24572,edge12.g.yimg.jp
-yahoo.com,98.137.11.163,2001:4998:44:3507::8000,High Robustness,Yahoo Holdings Inc.,US/Canada/Caribbean,98.136.0.0/14,AS36647,me-ycpi-cf-www.g06.yahoodns.net
+ya.ru,77.88.44.242,2a02:6b8::2:242,High Robustness,YANDEX LLC,Europe/Middle East,77.88.44.0/24,AS208398,ya.ru
+yahoo.co.jp,182.22.31.124,,Low Robustness,,,182.22.0.0/17,AS23816,edge12.g.yimg.jp
+yahoo.com,74.6.143.26,2001:4998:24:120d::1:1,High Robustness,Yahoo Holdings Inc.,US/Canada/Caribbean,74.6.0.0/16,AS26101,me-ycpi-cf-www.g06.yahoodns.net
 yammer.com,150.171.74.13,,Low Robustness,Microsoft Corporation,US/Canada/Caribbean,150.171.0.0/16,AS8075,bx-0004.bx-msedge.net
 yandex.com,5.255.255.77,2a02:6b8:a::a,High Robustness,YANDEX LLC,Europe/Middle East,5.255.255.0/24,AS208398,yandex.com
 yandex.net,213.180.204.242,2a02:6b8::242,High Robustness,YANDEX LLC,Europe/Middle East,213.180.204.0/24,AS13238,any.yandex.ru
 yandex.ru,77.88.44.55,2a02:6b8:a::a,High Robustness,YANDEX LLC,Europe/Middle East,77.88.44.0/24,AS208398,
 yastatic.net,37.9.64.225,2a02:6b8:23::225,High Robustness,YANDEX LLC,Europe/Middle East,37.9.64.0/24,AS208398,yastatic.net
 yieldmo.com,35.212.43.67,,Low Robustness,Google LLC,US/Canada/Caribbean,35.208.0.0/12,AS43515,
-yimg.com,76.223.84.192,,Low Robustness,"Amazon.com, Inc.",US/Canada/Caribbean,76.223.0.0/17,AS16509,
+yimg.com,13.248.158.7,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,13.248.0.0/14,AS16509,
 yotpo.com,52.21.26.183,,Low Robustness,Amazon Technologies Inc.,US/Canada/Caribbean,52.0.0.0/10,AS14618,dmbzspifybqig.cloudfront.net
-youtube-nocookie.com,173.194.219.93,2607:f8b0:4002:c03::5b,High Robustness,Google LLC,US/Canada/Caribbean,173.194.0.0/16,AS15169,youtube-ui.l.google.com
-youtube.com,142.251.15.91,2607:f8b0:4002:c2c::5d,High Robustness,Google LLC,US/Canada/Caribbean,142.250.0.0/15,AS15169,
+youtube-nocookie.com,172.217.215.190,2607:f8b0:4002:c00::88,High Robustness,Google LLC,US/Canada/Caribbean,172.217.0.0/16,AS15169,youtube-ui.l.google.com
+youtube.com,64.233.177.91,2607:f8b0:4002:c02::88,High Robustness,Google LLC,US/Canada/Caribbean,64.233.160.0/19,AS15169,
 ys7.com,115.238.23.33,,Low Robustness,,Asia Pacific,115.238.23.0/24,AS58461,waf.ys7.com
 yximgs.com,,,CNAME Enabled,,,,,af-cdn.dpvs.yximgs.com
-zendesk.com,216.198.54.2,,Low Robustness,"Zendesk, Inc.",US/Canada/Caribbean,216.198.0.0/18,AS209242,www.zendesk.com.cdn.cloudflare.net
+zendesk.com,216.198.53.2,,Low Robustness,"Zendesk, Inc.",US/Canada/Caribbean,216.198.0.0/18,AS209242,www.zendesk.com.cdn.cloudflare.net
 zoho.com,204.141.42.155,,Low Robustness,"NTT America, Inc.",US/Canada/Caribbean,204.141.0.0/16,AS2639,gsite.zohocdn.com
-zoom.com,170.114.0.11,,Low Robustness,"Zoom Video Communications, Inc",US/Canada/Caribbean,170.114.0.0/16,AS14618,
+zoom.com,170.114.0.12,,Low Robustness,"Zoom Video Communications, Inc",US/Canada/Caribbean,170.114.0.0/16,AS14618,
 zoom.us,170.114.52.2,2407:30c0:182::aa72:3402,High Robustness,"Zoom Video Communications, Inc",US/Canada/Caribbean,170.114.0.0/16,AS209242,

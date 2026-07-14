@@ -1,345 +1,345 @@
-DOMAIN,NAMESERVER,TYPE,REASON,PROVIDER,DEPENDENCY
-adsrvr.org,dns1.p08.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-adsrvr.org,dns2.p08.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-adsrvr.org,dns3.p08.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-adsrvr.org,dns4.p08.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-adsrvr.org,ns01.ttddnnss.com,third,SOA mname points to third party: nsone,nsone,No critical dependency
-adsrvr.org,ns02.ttddnnss.com,third,SOA mname points to third party: nsone,nsone,No critical dependency
-adsrvr.org,ns03.ttddnnss.com,third,SOA mname points to third party: nsone,nsone,No critical dependency
-adsrvr.org,ns04.ttddnnss.com,third,SOA mname points to third party: nsone,nsone,No critical dependency
-adtrafficquality.google,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-adtrafficquality.google,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-adtrafficquality.google,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-adtrafficquality.google,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-amazon-adsystem.com,ns-2034.awsdns-62.co.uk,third,SOA mname points to third party: amazonaws,amazonaws,No critical dependency
-amazon-adsystem.com,ns-249.awsdns-31.com,third,SOA mname points to third party: amazonaws,amazonaws,No critical dependency
-amazon-adsystem.com,ns-806.awsdns-36.net,third,SOA mname points to third party: amazonaws,amazonaws,No critical dependency
-amazon-adsystem.com,ns-1532.awsdns-63.org,third,SOA mname points to third party: amazonaws,amazonaws,No critical dependency
-amazon.com,ns-1707.awsdns-21.co.uk,private,NS TLD awsdns-21.co.uk is a known subsidiary of amazon.com,amazon.com,No critical dependency
-amazon.com,ns-264.awsdns-33.com,private,NS TLD awsdns-33.com is a known subsidiary of amazon.com,amazon.com,No critical dependency
-amazon.com,ns-521.awsdns-01.net,private,NS TLD awsdns-01.net is a known subsidiary of amazon.com,amazon.com,No critical dependency
-amazon.com,ns-1447.awsdns-52.org,private,NS TLD awsdns-52.org is a known subsidiary of amazon.com,amazon.com,No critical dependency
-amazonaws.com,ns-1670.awsdns-16.co.uk,private,NS TLD awsdns-16.co.uk is a known subsidiary of amazonaws.com,amazonaws.com,No critical dependency
-amazonaws.com,ns-27.awsdns-03.com,private,NS TLD awsdns-03.com is a known subsidiary of amazonaws.com,amazonaws.com,No critical dependency
-amazonaws.com,ns-967.awsdns-56.net,private,NS TLD awsdns-56.net is a known subsidiary of amazonaws.com,amazonaws.com,No critical dependency
-amazonaws.com,ns-1321.awsdns-37.org,private,NS TLD awsdns-37.org is a known subsidiary of amazonaws.com,amazonaws.com,No critical dependency
-android.com,ns3.google.com,third,SOA mname points to third party: google,google,Critical dependency
-android.com,ns4.google.com,third,SOA mname points to third party: google,google,Critical dependency
-android.com,ns1.google.com,third,SOA mname points to third party: google,google,Critical dependency
-android.com,ns2.google.com,third,SOA mname points to third party: google,google,Critical dependency
-app-analytics-services.com,ns2.google.com,third,SOA mname points to third party: google,google,Critical dependency
-app-analytics-services.com,ns1.google.com,third,SOA mname points to third party: google,google,Critical dependency
-app-analytics-services.com,ns4.google.com,third,SOA mname points to third party: google,google,Critical dependency
-app-analytics-services.com,ns3.google.com,third,SOA mname points to third party: google,google,Critical dependency
-app-measurement.com,ns4.google.com,third,SOA mname points to third party: google,google,Critical dependency
-app-measurement.com,ns3.google.com,third,SOA mname points to third party: google,google,Critical dependency
-app-measurement.com,ns2.google.com,third,SOA mname points to third party: google,google,Critical dependency
-app-measurement.com,ns1.google.com,third,SOA mname points to third party: google,google,Critical dependency
-apple.com,b.ns.apple.com,private,NS TLD matches domain TLD,apple.com,Critical dependency
-apple.com,c.ns.apple.com,private,NS TLD matches domain TLD,apple.com,Critical dependency
-apple.com,d.ns.apple.com,private,NS TLD matches domain TLD,apple.com,Critical dependency
-apple.com,a.ns.apple.com,private,NS TLD matches domain TLD,apple.com,Critical dependency
-applovin.com,ns-cloud-c2.googledomains.com,third,SOA mname points to third party: googledomai,googledomai,Critical dependency
-applovin.com,ns-cloud-c1.googledomains.com,third,SOA mname points to third party: googledomai,googledomai,Critical dependency
-applovin.com,ns-cloud-c3.googledomains.com,third,SOA mname points to third party: googledomai,googledomai,Critical dependency
-applovin.com,ns-cloud-c4.googledomains.com,third,SOA mname points to third party: googledomai,googledomai,Critical dependency
-appsflyersdk.com,ns-1786.awsdns-31.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency
-appsflyersdk.com,ns-314.awsdns-39.com,third,SOA mname points to third party: aws,aws,No critical dependency
-appsflyersdk.com,ns-597.awsdns-10.net,third,SOA mname points to third party: aws,aws,No critical dependency
-appsflyersdk.com,ns-1430.awsdns-50.org,third,SOA mname points to third party: aws,aws,No critical dependency
-avast.com,a26-67.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-avast.com,a6-67.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-avast.com,a13-65.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-avast.com,a1-182.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-avast.com,a20-66.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-avast.com,a11-66.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-avsxappcaptiveportal.com,ns-1205.awsdns-22.org,third,SOA mname points to third party: aws,aws,No critical dependency
-avsxappcaptiveportal.com,ns-1811.awsdns-34.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency
-avsxappcaptiveportal.com,ns-483.awsdns-60.com,third,SOA mname points to third party: aws,aws,No critical dependency
-avsxappcaptiveportal.com,ns-676.awsdns-20.net,third,SOA mname points to third party: aws,aws,No critical dependency
-azure.com,ns2-39.azure-dns.net,private,"Domanin name is contained in the nameserver, signaling ownership",azure-dns.net,Critical dependency
-azure.com,ns3-39.azure-dns.org,private,"Domanin name is contained in the nameserver, signaling ownership",azure-dns.org,Critical dependency
-azure.com,ns4-39.azure-dns.info,private,"Domanin name is contained in the nameserver, signaling ownership",azure-dns.info,Critical dependency
-azure.com,ns1-39.azure-dns.com,private,"Domanin name is contained in the nameserver, signaling ownership",azure-dns.com,Critical dependency
-baidu.com,dns.baidu.com,private,NS TLD matches domain TLD,baidu.com,Critical dependency
-baidu.com,ns7.baidu.com,private,NS TLD matches domain TLD,baidu.com,Critical dependency
-baidu.com,ns4.baidu.com,private,NS TLD matches domain TLD,baidu.com,Critical dependency
-baidu.com,ns3.baidu.com,private,NS TLD matches domain TLD,baidu.com,Critical dependency
-baidu.com,ns2.baidu.com,private,NS TLD matches domain TLD,baidu.com,Critical dependency
-bing.com,ns2-204.azure-dns.net,third,SOA mname points to third party: azure,azure,No critical dependency
-bing.com,ns3-204.azure-dns.org,third,SOA mname points to third party: azure,azure,No critical dependency
-bing.com,ns4-204.azure-dns.info,third,SOA mname points to third party: azure,azure,No critical dependency
-bing.com,dns1.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency
-bing.com,dns2.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency
-bing.com,dns3.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency
-bing.com,dns4.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency
-bing.com,ns1-204.azure-dns.com,third,SOA mname points to third party: azure,azure,No critical dependency
-chatgpt.com,savanna.ns.cloudflare.com,third,SOA mname points to third party: cloudflare,cloudflare,Critical dependency
-chatgpt.com,hassan.ns.cloudflare.com,third,SOA mname points to third party: cloudflare,cloudflare,Critical dependency
-chirpbooks.com,ns-1378.awsdns-44.org,third,SOA mname points to third party: aws,aws,No critical dependency
-chirpbooks.com,ns-1578.awsdns-05.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency
-chirpbooks.com,ns-400.awsdns-50.com,third,SOA mname points to third party: aws,aws,No critical dependency
-chirpbooks.com,ns-863.awsdns-43.net,third,SOA mname points to third party: aws,aws,No critical dependency
-cloud.microsoft,ns1-33.azure-dns.com,private,NS TLD azure-dns.com is a known subsidiary of cloud.microsoft,cloud.microsoft,Critical dependency
-cloud.microsoft,ns2-33.azure-dns.net,private,NS TLD azure-dns.net is a known subsidiary of cloud.microsoft,cloud.microsoft,Critical dependency
-cloud.microsoft,ns3-33.azure-dns.org,private,NS TLD azure-dns.org is a known subsidiary of cloud.microsoft,cloud.microsoft,Critical dependency
-cloud.microsoft,ns4-33.azure-dns.info,private,NS TLD azure-dns.info is a known subsidiary of cloud.microsoft,cloud.microsoft,Critical dependency
-cloudflare-dns.com,ns2.cloudflare-dns.com,private,NS TLD matches domain TLD,cloudflare-dns.com,Critical dependency
-cloudflare-dns.com,ns3.cloudflare-dns.com,private,NS TLD matches domain TLD,cloudflare-dns.com,Critical dependency
-cloudflare-dns.com,ns1.cloudflare-dns.com,private,NS TLD matches domain TLD,cloudflare-dns.com,Critical dependency
-cloudflare.com,ns4.cloudflare.com,private,NS TLD matches domain TLD,cloudflare.com,Critical dependency
-cloudflare.com,ns5.cloudflare.com,private,NS TLD matches domain TLD,cloudflare.com,Critical dependency
-cloudflare.com,ns6.cloudflare.com,private,NS TLD matches domain TLD,cloudflare.com,Critical dependency
-cloudflare.com,ns7.cloudflare.com,private,NS TLD matches domain TLD,cloudflare.com,Critical dependency
-cloudflare.com,ns3.cloudflare.com,private,NS TLD matches domain TLD,cloudflare.com,Critical dependency
-criteo.com,ns1.criteo.com,private,NS TLD matches domain TLD,criteo.com,Critical dependency
-criteo.com,ns2.criteo.com,private,NS TLD matches domain TLD,criteo.com,Critical dependency
-digicert.com,ns25.digicertdns.net,private,"Domanin name is contained in the nameserver, signaling ownership",digicertdns.net,No critical dependency
-digicert.com,ns21.digicertdns.com,private,"Domanin name is contained in the nameserver, signaling ownership",digicertdns.com,No critical dependency
-digicert.com,ns23.digicertdns.net,private,"Domanin name is contained in the nameserver, signaling ownership",digicertdns.net,No critical dependency
-digicert.com,ns20.digicertdns.com,private,"Domanin name is contained in the nameserver, signaling ownership",digicertdns.com,No critical dependency
-digicert.com,ns22.digicertdns.com,private,"Domanin name is contained in the nameserver, signaling ownership",digicertdns.com,No critical dependency
-digicert.com,ns24.digicertdns.net,private,"Domanin name is contained in the nameserver, signaling ownership",digicertdns.net,No critical dependency
-digicert.com,pdns196.ultradns.org,third,SOA mname points to third party: digicert,digicert,No critical dependency
-digicert.com,pdns196.ultradns.com,third,SOA mname points to third party: digicert,digicert,No critical dependency
-digicert.com,pdns196.ultradns.biz,third,SOA mname points to third party: digicert,digicert,No critical dependency
-digicert.com,pdns196.ultradns.net,third,SOA mname points to third party: digicert,digicert,No critical dependency
-dns.google,ns2.zdns.google,private,"Domanin name is contained in the nameserver, signaling ownership",zdns.google,Critical dependency
-dns.google,ns3.zdns.google,private,"Domanin name is contained in the nameserver, signaling ownership",zdns.google,Critical dependency
-dns.google,ns4.zdns.google,private,"Domanin name is contained in the nameserver, signaling ownership",zdns.google,Critical dependency
-dns.google,ns1.zdns.google,private,"Domanin name is contained in the nameserver, signaling ownership",zdns.google,Critical dependency
-doubleclick.net,ns2.google.com,third,SOA mname points to third party: google,google,Critical dependency
-doubleclick.net,ns3.google.com,third,SOA mname points to third party: google,google,Critical dependency
-doubleclick.net,ns4.google.com,third,SOA mname points to third party: google,google,Critical dependency
-doubleclick.net,ns1.google.com,third,SOA mname points to third party: google,google,Critical dependency
-facebook.com,c.ns.facebook.com,private,NS TLD matches domain TLD,facebook.com,Critical dependency
-facebook.com,b.ns.facebook.com,private,NS TLD matches domain TLD,facebook.com,Critical dependency
-facebook.com,a.ns.facebook.com,private,NS TLD matches domain TLD,facebook.com,Critical dependency
-facebook.com,d.ns.facebook.com,private,NS TLD matches domain TLD,facebook.com,Critical dependency
-fastly.net,ns2.fastly.net,private,NS TLD matches domain TLD,fastly.net,Critical dependency
-fastly.net,ns3.fastly.net,private,NS TLD matches domain TLD,fastly.net,Critical dependency
-fastly.net,ns4.fastly.net,private,NS TLD matches domain TLD,fastly.net,Critical dependency
-fastly.net,ns1.fastly.net,private,NS TLD matches domain TLD,fastly.net,Critical dependency
-fbcdn.net,d.ns.facebook.com,third,SOA mname points to third party: facebook,facebook,Critical dependency
-fbcdn.net,b.ns.facebook.com,third,SOA mname points to third party: facebook,facebook,Critical dependency
-fbcdn.net,c.ns.facebook.com,third,SOA mname points to third party: facebook,facebook,Critical dependency
-fbcdn.net,a.ns.facebook.com,third,SOA mname points to third party: facebook,facebook,Critical dependency
-gmail.com,ns4.google.com,private,NS TLD google.com is a known subsidiary of gmail.com,gmail.com,Critical dependency
-gmail.com,ns1.google.com,private,NS TLD google.com is a known subsidiary of gmail.com,gmail.com,Critical dependency
-gmail.com,ns3.google.com,private,NS TLD google.com is a known subsidiary of gmail.com,gmail.com,Critical dependency
-gmail.com,ns2.google.com,private,NS TLD google.com is a known subsidiary of gmail.com,gmail.com,Critical dependency
-google-analytics.com,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-google-analytics.com,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-google-analytics.com,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-google-analytics.com,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-google.com,ns2.google.com,private,NS TLD matches domain TLD,google.com,Critical dependency
-google.com,ns1.google.com,private,NS TLD matches domain TLD,google.com,Critical dependency
-google.com,ns4.google.com,private,NS TLD matches domain TLD,google.com,Critical dependency
-google.com,ns3.google.com,private,NS TLD matches domain TLD,google.com,Critical dependency
-googleadservices.com,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googleadservices.com,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googleadservices.com,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googleadservices.com,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googleapis.com,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googleapis.com,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googleapis.com,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googleapis.com,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googlesyndication.com,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googlesyndication.com,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googlesyndication.com,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googlesyndication.com,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googletagmanager.com,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googletagmanager.com,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googletagmanager.com,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googletagmanager.com,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googleusercontent.com,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googleusercontent.com,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googleusercontent.com,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googleusercontent.com,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googlevideo.com,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googlevideo.com,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googlevideo.com,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-googlevideo.com,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency
-gstatic.com,ns4.google.com,third,SOA mname points to third party: google,google,Critical dependency
-gstatic.com,ns1.google.com,third,SOA mname points to third party: google,google,Critical dependency
-gstatic.com,ns3.google.com,third,SOA mname points to third party: google,google,Critical dependency
-gstatic.com,ns2.google.com,third,SOA mname points to third party: google,google,Critical dependency
-icloud.com,b.ns.apple.com,private,NS TLD apple.com is a known subsidiary of icloud.com,icloud.com,Critical dependency
-icloud.com,c.ns.apple.com,private,NS TLD apple.com is a known subsidiary of icloud.com,icloud.com,Critical dependency
-icloud.com,d.ns.apple.com,private,NS TLD apple.com is a known subsidiary of icloud.com,icloud.com,Critical dependency
-icloud.com,a.ns.apple.com,private,NS TLD apple.com is a known subsidiary of icloud.com,icloud.com,Critical dependency
-instagram.com,a.ns.instagram.com,private,NS TLD matches domain TLD,instagram.com,Critical dependency
-instagram.com,c.ns.instagram.com,private,NS TLD matches domain TLD,instagram.com,Critical dependency
-instagram.com,b.ns.instagram.com,private,NS TLD matches domain TLD,instagram.com,Critical dependency
-instagram.com,d.ns.instagram.com,private,NS TLD matches domain TLD,instagram.com,Critical dependency
-linkedin.com,dns2.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency
-linkedin.com,dns3.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency
-linkedin.com,dns4.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency
-linkedin.com,ns1-42.azure-dns.com,third,SOA mname points to third party: azure,azure,No critical dependency
-linkedin.com,ns2-42.azure-dns.net,third,SOA mname points to third party: azure,azure,No critical dependency
-linkedin.com,ns3-42.azure-dns.org,third,SOA mname points to third party: azure,azure,No critical dependency
-linkedin.com,ns4-42.azure-dns.info,third,SOA mname points to third party: azure,azure,No critical dependency
-linkedin.com,dns1.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency
-live.com,ns1-37.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency
-live.com,ns2-37.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency
-live.com,ns3-37.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency
-live.com,ns4-37.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency
-microsoft.com,ns2-39.azure-dns.net,private,NS TLD azure-dns.net is a known subsidiary of microsoft.com,microsoft.com,Critical dependency
-microsoft.com,ns3-39.azure-dns.org,private,NS TLD azure-dns.org is a known subsidiary of microsoft.com,microsoft.com,Critical dependency
-microsoft.com,ns4-39.azure-dns.info,private,NS TLD azure-dns.info is a known subsidiary of microsoft.com,microsoft.com,Critical dependency
-microsoft.com,ns1-39.azure-dns.com,private,NS TLD azure-dns.com is a known subsidiary of microsoft.com,microsoft.com,Critical dependency
-microsoftonline.com,ns1-38.azure-dns.com,private,NS TLD azure-dns.com is a known subsidiary of microsoftonline.com,microsoftonline.com,Critical dependency
-microsoftonline.com,ns2-38.azure-dns.net,private,NS TLD azure-dns.net is a known subsidiary of microsoftonline.com,microsoftonline.com,Critical dependency
-microsoftonline.com,ns3-38.azure-dns.org,private,NS TLD azure-dns.org is a known subsidiary of microsoftonline.com,microsoftonline.com,Critical dependency
-microsoftonline.com,ns4-38.azure-dns.info,private,NS TLD azure-dns.info is a known subsidiary of microsoftonline.com,microsoftonline.com,Critical dependency
-miui.com,ns3.dnsv5.com,third,SOA mname points to third party: dnsv5,dnsv5,Critical dependency
-miui.com,ns4.dnsv5.com,third,SOA mname points to third party: dnsv5,dnsv5,Critical dependency
-msftconnecttest.com,ns2-32.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency
-msftconnecttest.com,ns3-32.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency
-msftconnecttest.com,ns4-32.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency
-msftconnecttest.com,ns1-32.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency
-msftncsi.com,ns2-34.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency
-msftncsi.com,ns3-34.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency
-msftncsi.com,ns4-34.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency
-msftncsi.com,ns1-34.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency
-msn.com,ns2-204.azure-dns.net,third,SOA mname points to third party: azure,azure,No critical dependency
-msn.com,ns3-204.azure-dns.org,third,SOA mname points to third party: azure,azure,No critical dependency
-msn.com,ns4-204.azure-dns.info,third,SOA mname points to third party: azure,azure,No critical dependency
-msn.com,dns1.p08.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency
-msn.com,dns2.p08.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency
-msn.com,dns3.p08.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency
-msn.com,dns4.p08.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency
-msn.com,ns1-204.azure-dns.com,third,SOA mname points to third party: azure,azure,No critical dependency
-netflix.com,ns-1984.awsdns-56.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency
-netflix.com,ns-659.awsdns-18.net,third,SOA mname points to third party: aws,aws,No critical dependency
-netflix.com,ns-81.awsdns-10.com,third,SOA mname points to third party: aws,aws,No critical dependency
-netflix.com,ns-1372.awsdns-43.org,third,SOA mname points to third party: aws,aws,No critical dependency
-ntp.org,ns1.everett.org,third,SOA mname points to third party: everett,everett,No critical dependency
-ntp.org,dns1.udel.edu,third,SOA mname points to third party: everett,everett,No critical dependency
-ntp.org,anyns.pch.net,third,SOA mname points to third party: everett,everett,No critical dependency
-ntp.org,dns2.udel.edu,third,SOA mname points to third party: everett,everett,No critical dependency
-office.com,ns1-05.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency
-office.com,ns2-05.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency
-office.com,ns3-05.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency
-office.com,ns4-05.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency
-one.one,auth.g1-dns.one,private,"Domanin name is contained in the nameserver, signaling ownership",g1-dns.one,Critical dependency
-one.one,auth.g1-dns.com,third,SOA mname points to third party: b-one,b-one,Critical dependency
-oxylabs.io,hank.ns.cloudflare.com,third,SOA mname points to third party: cloudflare,cloudflare,Critical dependency
-oxylabs.io,brit.ns.cloudflare.com,third,SOA mname points to third party: cloudflare,cloudflare,Critical dependency
-prodregistryv2.org,ns-1800.awsdns-33.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency
-prodregistryv2.org,ns-479.awsdns-59.com,third,SOA mname points to third party: aws,aws,No critical dependency
-prodregistryv2.org,ns-854.awsdns-42.net,third,SOA mname points to third party: aws,aws,No critical dependency
-prodregistryv2.org,ns-1528.awsdns-63.org,third,SOA mname points to third party: aws,aws,No critical dependency
-pubmatic.com,dns1.p01.nsone.net,third,SOA mname points to third party: nsone,nsone,Critical dependency
-pubmatic.com,dns2.p01.nsone.net,third,SOA mname points to third party: nsone,nsone,Critical dependency
-pubmatic.com,dns3.p01.nsone.net,third,SOA mname points to third party: nsone,nsone,Critical dependency
-pubmatic.com,dns4.p01.nsone.net,third,SOA mname points to third party: nsone,nsone,Critical dependency
-qq.com,ns3.qq.com,private,NS TLD matches domain TLD,qq.com,Critical dependency
-qq.com,ns4.qq.com,private,NS TLD matches domain TLD,qq.com,Critical dependency
-qq.com,ns1.qq.com,private,NS TLD matches domain TLD,qq.com,Critical dependency
-qq.com,ns2.qq.com,private,NS TLD matches domain TLD,qq.com,Critical dependency
-reddit.com,ns-1029.awsdns-00.org,third,SOA mname points to third party: aws,aws,No critical dependency
-reddit.com,ns-1887.awsdns-43.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency
-reddit.com,ns-378.awsdns-47.com,third,SOA mname points to third party: aws,aws,No critical dependency
-reddit.com,ns-557.awsdns-05.net,third,SOA mname points to third party: aws,aws,No critical dependency
-roblox.com,dns2.p06.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-roblox.com,dns3.p06.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-roblox.com,dns4.p06.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-roblox.com,ns01.rbxinfra.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-roblox.com,ns02.rbxinfra.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-roblox.com,ns03.rbxinfra.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-roblox.com,ns04.rbxinfra.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-roblox.com,dns1.p06.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-rubiconproject.com,ns-1150.awsdns-15.org,third,SOA mname points to third party: aws,aws,No critical dependency
-rubiconproject.com,ns-1722.awsdns-23.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency
-rubiconproject.com,ns-483.awsdns-60.com,third,SOA mname points to third party: aws,aws,No critical dependency
-rubiconproject.com,ns-644.awsdns-16.net,third,SOA mname points to third party: aws,aws,No critical dependency
-sentry.io,ns-cloud-d3.googledomains.com,third,SOA mname points to third party: googledomai,googledomai,Critical dependency
-sentry.io,ns-cloud-d4.googledomains.com,third,SOA mname points to third party: googledomai,googledomai,Critical dependency
-sentry.io,ns-cloud-d2.googledomains.com,third,SOA mname points to third party: googledomai,googledomai,Critical dependency
-sentry.io,ns-cloud-d1.googledomains.com,third,SOA mname points to third party: googledomai,googledomai,Critical dependency
-skype.com,ns2-205.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency
-skype.com,ns3-205.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency
-skype.com,ns4-205.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency
-skype.com,ns1-205.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency
-snapchat.com,ns-1892.awsdns-44.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency
-snapchat.com,ns-220.awsdns-27.com,third,SOA mname points to third party: aws,aws,No critical dependency
-snapchat.com,ns-530.awsdns-02.net,third,SOA mname points to third party: aws,aws,No critical dependency
-snapchat.com,ns-1468.awsdns-55.org,third,SOA mname points to third party: aws,aws,No critical dependency
-spotify.com,ns-cloud-a2.googledomains.com,third,SOA mname points to third party: nsone,nsone,No critical dependency
-spotify.com,ns-cloud-a1.googledomains.com,third,SOA mname points to third party: nsone,nsone,No critical dependency
-spotify.com,ns-cloud-a3.googledomains.com,third,SOA mname points to third party: nsone,nsone,No critical dependency
-spotify.com,ns-cloud-a4.googledomains.com,third,SOA mname points to third party: nsone,nsone,No critical dependency
-spotify.com,dns1.p07.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-taboola.com,dns2.p05.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-taboola.com,dns3.p05.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-taboola.com,dns4.p05.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-taboola.com,ns01.dnsfaster.com,third,SOA mname points to third party: nsone,nsone,No critical dependency
-taboola.com,ns02.dnsfaster.com,third,SOA mname points to third party: nsone,nsone,No critical dependency
-taboola.com,ns03.dnsfaster.com,third,SOA mname points to third party: nsone,nsone,No critical dependency
-taboola.com,ns04.dnsfaster.com,third,SOA mname points to third party: nsone,nsone,No critical dependency
-taboola.com,dns1.p05.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency
-tiktok.com,a12-66.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-tiktok.com,a6-65.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-tiktok.com,a1-97.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-tiktok.com,a18-64.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-tiktok.com,a9-66.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-tiktok.com,a13-67.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-tiktokv.com,a6-65.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-tiktokv.com,a12-66.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-tiktokv.com,a18-64.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-tiktokv.com,a1-97.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-tiktokv.com,a9-66.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-tiktokv.com,a13-67.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-ui.com,ns-1849.awsdns-39.co.uk,third,SOA mname points to third party: awsdns-39,awsdns-39,No critical dependency
-ui.com,ns-277.awsdns-34.com,third,SOA mname points to third party: awsdns-39,awsdns-39,No critical dependency
-ui.com,ns-656.awsdns-18.net,third,SOA mname points to third party: awsdns-39,awsdns-39,No critical dependency
-ui.com,ns-1469.awsdns-55.org,third,SOA mname points to third party: awsdns-39,awsdns-39,No critical dependency
-unity3d.com,usc4.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-unity3d.com,ns1-8.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-unity3d.com,use4.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-unity3d.com,ns1-105.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-unity3d.com,eur5.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-unity3d.com,usw4.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-unity3d.com,asia3.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-unity3d.com,eur2.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency
-vungle.com,a9-66.akam.net,private,SOA mname and rname both match domain,N/A,Critical dependency
-vungle.com,a4-64.akam.net,private,SOA mname and rname both match domain,N/A,Critical dependency
-vungle.com,a28-67.akam.net,private,SOA mname and rname both match domain,N/A,Critical dependency
-vungle.com,a1-5.akam.net,private,SOA mname and rname both match domain,N/A,Critical dependency
-vungle.com,a2-66.akam.net,private,SOA mname and rname both match domain,N/A,Critical dependency
-vungle.com,a7-65.akam.net,private,SOA mname and rname both match domain,N/A,Critical dependency
-whatsapp.com,b.ns.whatsapp.net,private,"Domanin name is contained in the nameserver, signaling ownership",whatsapp.net,Critical dependency
-whatsapp.com,a.ns.whatsapp.net,private,"Domanin name is contained in the nameserver, signaling ownership",whatsapp.net,Critical dependency
-whatsapp.com,c.ns.whatsapp.net,private,"Domanin name is contained in the nameserver, signaling ownership",whatsapp.net,Critical dependency
-whatsapp.com,d.ns.whatsapp.net,private,"Domanin name is contained in the nameserver, signaling ownership",whatsapp.net,Critical dependency
-whatsapp.net,b.ns.whatsapp.net,private,NS TLD matches domain TLD,whatsapp.net,Critical dependency
-whatsapp.net,d.ns.whatsapp.net,private,NS TLD matches domain TLD,whatsapp.net,Critical dependency
-whatsapp.net,c.ns.whatsapp.net,private,NS TLD matches domain TLD,whatsapp.net,Critical dependency
-whatsapp.net,a.ns.whatsapp.net,private,NS TLD matches domain TLD,whatsapp.net,Critical dependency
-wikipedia.org,ns1.wikimedia.org,third,SOA mname points to third party: wikimedia,wikimedia,Critical dependency
-wikipedia.org,ns2.wikimedia.org,third,SOA mname points to third party: wikimedia,wikimedia,Critical dependency
-wikipedia.org,ns0.wikimedia.org,third,SOA mname points to third party: wikimedia,wikimedia,Critical dependency
-windows.com,ns2-205.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency
-windows.com,ns3-205.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency
-windows.com,ns4-205.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency
-windows.com,ns1-205.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency
-windows.net,ns2-39.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency
-windows.net,ns3-39.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency
-windows.net,ns4-39.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency
-windows.net,ns1-39.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency
-windowsupdate.com,ns2-205.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency
-windowsupdate.com,ns3-205.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency
-windowsupdate.com,ns4-205.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency
-windowsupdate.com,ns1-205.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency
-xiaomi.com,ns4.dnsv5.com,third,SOA mname points to third party: dnsv5,dnsv5,Critical dependency
-xiaomi.com,ns3.dnsv5.com,third,SOA mname points to third party: dnsv5,dnsv5,Critical dependency
-yahoo.com,ns1.yahoo.com,private,NS TLD matches domain TLD,yahoo.com,Critical dependency
-yahoo.com,ns4.yahoo.com,private,NS TLD matches domain TLD,yahoo.com,Critical dependency
-yahoo.com,ns3.yahoo.com,private,NS TLD matches domain TLD,yahoo.com,Critical dependency
-yahoo.com,ns5.yahoo.com,private,NS TLD matches domain TLD,yahoo.com,Critical dependency
-yahoo.com,ns2.yahoo.com,private,NS TLD matches domain TLD,yahoo.com,Critical dependency
-youtube.com,ns4.google.com,private,NS TLD google.com is a known subsidiary of youtube.com,youtube.com,Critical dependency
-youtube.com,ns3.google.com,private,NS TLD google.com is a known subsidiary of youtube.com,youtube.com,Critical dependency
-youtube.com,ns2.google.com,private,NS TLD google.com is a known subsidiary of youtube.com,youtube.com,Critical dependency
-youtube.com,ns1.google.com,private,NS TLD google.com is a known subsidiary of youtube.com,youtube.com,Critical dependency
+DOMAIN,NAMESERVER,TYPE,REASON,PROVIDER,DEPENDENCY,REDUNDANT,ENTITY_COUNT
+adsrvr.org,dns2.p08.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+adsrvr.org,dns3.p08.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+adsrvr.org,dns4.p08.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+adsrvr.org,ns01.ttddnnss.com,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+adsrvr.org,ns02.ttddnnss.com,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+adsrvr.org,ns03.ttddnnss.com,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+adsrvr.org,ns04.ttddnnss.com,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+adsrvr.org,dns1.p08.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+adtrafficquality.google,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+adtrafficquality.google,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+adtrafficquality.google,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+adtrafficquality.google,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+amazon-adsystem.com,ns-1532.awsdns-63.org,third,SOA mname points to third party: amazonaws,amazonaws,No critical dependency,False,1
+amazon-adsystem.com,ns-2034.awsdns-62.co.uk,third,SOA mname points to third party: amazonaws,amazonaws,No critical dependency,False,1
+amazon-adsystem.com,ns-249.awsdns-31.com,third,SOA mname points to third party: amazonaws,amazonaws,No critical dependency,False,1
+amazon-adsystem.com,ns-806.awsdns-36.net,third,SOA mname points to third party: amazonaws,amazonaws,No critical dependency,False,1
+amazon.com,ns-1707.awsdns-21.co.uk,private,NS TLD awsdns-21.co.uk is a known subsidiary of amazon.com,amazon.com,No critical dependency,False,1
+amazon.com,ns-264.awsdns-33.com,private,NS TLD awsdns-33.com is a known subsidiary of amazon.com,amazon.com,No critical dependency,False,1
+amazon.com,ns-521.awsdns-01.net,private,NS TLD awsdns-01.net is a known subsidiary of amazon.com,amazon.com,No critical dependency,False,1
+amazon.com,ns-1447.awsdns-52.org,private,NS TLD awsdns-52.org is a known subsidiary of amazon.com,amazon.com,No critical dependency,False,1
+amazonaws.com,ns-1321.awsdns-37.org,private,NS TLD awsdns-37.org is a known subsidiary of amazonaws.com,amazonaws.com,No critical dependency,False,1
+amazonaws.com,ns-1670.awsdns-16.co.uk,private,NS TLD awsdns-16.co.uk is a known subsidiary of amazonaws.com,amazonaws.com,No critical dependency,False,1
+amazonaws.com,ns-27.awsdns-03.com,private,NS TLD awsdns-03.com is a known subsidiary of amazonaws.com,amazonaws.com,No critical dependency,False,1
+amazonaws.com,ns-967.awsdns-56.net,private,NS TLD awsdns-56.net is a known subsidiary of amazonaws.com,amazonaws.com,No critical dependency,False,1
+android.com,ns4.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+android.com,ns1.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+android.com,ns2.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+android.com,ns3.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+app-analytics-services.com,ns4.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+app-analytics-services.com,ns3.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+app-analytics-services.com,ns2.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+app-analytics-services.com,ns1.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+app-measurement.com,ns2.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+app-measurement.com,ns1.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+app-measurement.com,ns4.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+app-measurement.com,ns3.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+apple.com,b.ns.apple.com,private,NS TLD matches domain TLD,apple.com,Critical dependency,False,1
+apple.com,c.ns.apple.com,private,NS TLD matches domain TLD,apple.com,Critical dependency,False,1
+apple.com,d.ns.apple.com,private,NS TLD matches domain TLD,apple.com,Critical dependency,False,1
+apple.com,a.ns.apple.com,private,NS TLD matches domain TLD,apple.com,Critical dependency,False,1
+applovin.com,ns-cloud-c4.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,Critical dependency,False,1
+applovin.com,ns-cloud-c2.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,Critical dependency,False,1
+applovin.com,ns-cloud-c3.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,Critical dependency,False,1
+applovin.com,ns-cloud-c1.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,Critical dependency,False,1
+appsflyersdk.com,ns-597.awsdns-10.net,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+appsflyersdk.com,ns-1430.awsdns-50.org,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+appsflyersdk.com,ns-1786.awsdns-31.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+appsflyersdk.com,ns-314.awsdns-39.com,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+avast.com,a6-67.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+avast.com,a13-65.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+avast.com,a1-182.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+avast.com,a20-66.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+avast.com,a11-66.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+avast.com,a26-67.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+avsxappcaptiveportal.com,ns-1811.awsdns-34.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+avsxappcaptiveportal.com,ns-483.awsdns-60.com,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+avsxappcaptiveportal.com,ns-676.awsdns-20.net,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+avsxappcaptiveportal.com,ns-1205.awsdns-22.org,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+azure.com,ns4-39.azure-dns.info,private,"Domanin name is contained in the nameserver, signaling ownership",azure-dns.info,Critical dependency,False,1
+azure.com,ns1-39.azure-dns.com,private,"Domanin name is contained in the nameserver, signaling ownership",azure-dns.com,Critical dependency,False,1
+azure.com,ns2-39.azure-dns.net,private,"Domanin name is contained in the nameserver, signaling ownership",azure-dns.net,Critical dependency,False,1
+azure.com,ns3-39.azure-dns.org,private,"Domanin name is contained in the nameserver, signaling ownership",azure-dns.org,Critical dependency,False,1
+baidu.com,ns4.baidu.com,private,NS TLD matches domain TLD,baidu.com,Critical dependency,False,1
+baidu.com,ns3.baidu.com,private,NS TLD matches domain TLD,baidu.com,Critical dependency,False,1
+baidu.com,ns2.baidu.com,private,NS TLD matches domain TLD,baidu.com,Critical dependency,False,1
+baidu.com,dns.baidu.com,private,NS TLD matches domain TLD,baidu.com,Critical dependency,False,1
+baidu.com,ns7.baidu.com,private,NS TLD matches domain TLD,baidu.com,Critical dependency,False,1
+bing.com,ns4-204.azure-dns.info,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+bing.com,dns1.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+bing.com,dns2.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+bing.com,dns3.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+bing.com,dns4.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+bing.com,ns1-204.azure-dns.com,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+bing.com,ns2-204.azure-dns.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+bing.com,ns3-204.azure-dns.org,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+chatgpt.com,savanna.ns.cloudflare.com,third,SOA mname points to third party: cloudflare,cloudflare,Critical dependency,False,1
+chatgpt.com,hassan.ns.cloudflare.com,third,SOA mname points to third party: cloudflare,cloudflare,Critical dependency,False,1
+chirpbooks.com,ns-1578.awsdns-05.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+chirpbooks.com,ns-400.awsdns-50.com,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+chirpbooks.com,ns-863.awsdns-43.net,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+chirpbooks.com,ns-1378.awsdns-44.org,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+cloud.microsoft,ns2-33.azure-dns.net,private,NS TLD azure-dns.net is a known subsidiary of cloud.microsoft,cloud.microsoft,Critical dependency,False,1
+cloud.microsoft,ns3-33.azure-dns.org,private,NS TLD azure-dns.org is a known subsidiary of cloud.microsoft,cloud.microsoft,Critical dependency,False,1
+cloud.microsoft,ns4-33.azure-dns.info,private,NS TLD azure-dns.info is a known subsidiary of cloud.microsoft,cloud.microsoft,Critical dependency,False,1
+cloud.microsoft,ns1-33.azure-dns.com,private,NS TLD azure-dns.com is a known subsidiary of cloud.microsoft,cloud.microsoft,Critical dependency,False,1
+cloudflare-dns.com,ns1.cloudflare-dns.com,private,NS TLD matches domain TLD,cloudflare-dns.com,Critical dependency,False,1
+cloudflare-dns.com,ns2.cloudflare-dns.com,private,NS TLD matches domain TLD,cloudflare-dns.com,Critical dependency,False,1
+cloudflare-dns.com,ns3.cloudflare-dns.com,private,NS TLD matches domain TLD,cloudflare-dns.com,Critical dependency,False,1
+cloudflare.com,ns6.cloudflare.com,private,NS TLD matches domain TLD,cloudflare.com,Critical dependency,False,1
+cloudflare.com,ns7.cloudflare.com,private,NS TLD matches domain TLD,cloudflare.com,Critical dependency,False,1
+cloudflare.com,ns3.cloudflare.com,private,NS TLD matches domain TLD,cloudflare.com,Critical dependency,False,1
+cloudflare.com,ns4.cloudflare.com,private,NS TLD matches domain TLD,cloudflare.com,Critical dependency,False,1
+cloudflare.com,ns5.cloudflare.com,private,NS TLD matches domain TLD,cloudflare.com,Critical dependency,False,1
+criteo.com,ns2.criteo.com,private,NS TLD matches domain TLD,criteo.com,Critical dependency,False,1
+criteo.com,ns1.criteo.com,private,NS TLD matches domain TLD,criteo.com,Critical dependency,False,1
+digicert.com,ns21.digicertdns.com,private,"Domanin name is contained in the nameserver, signaling ownership",digicertdns.com,No critical dependency,True,2
+digicert.com,ns23.digicertdns.net,private,"Domanin name is contained in the nameserver, signaling ownership",digicertdns.net,No critical dependency,True,2
+digicert.com,ns20.digicertdns.com,private,"Domanin name is contained in the nameserver, signaling ownership",digicertdns.com,No critical dependency,True,2
+digicert.com,ns22.digicertdns.com,private,"Domanin name is contained in the nameserver, signaling ownership",digicertdns.com,No critical dependency,True,2
+digicert.com,ns24.digicertdns.net,private,"Domanin name is contained in the nameserver, signaling ownership",digicertdns.net,No critical dependency,True,2
+digicert.com,ns25.digicertdns.net,private,"Domanin name is contained in the nameserver, signaling ownership",digicertdns.net,No critical dependency,True,2
+digicert.com,pdns196.ultradns.org,third,SOA mname points to third party: digicert,digicert,No critical dependency,True,2
+digicert.com,pdns196.ultradns.com,third,SOA mname points to third party: digicert,digicert,No critical dependency,True,2
+digicert.com,pdns196.ultradns.biz,third,SOA mname points to third party: digicert,digicert,No critical dependency,True,2
+digicert.com,pdns196.ultradns.net,third,SOA mname points to third party: digicert,digicert,No critical dependency,True,2
+dns.google,ns2.zdns.google,private,"Domanin name is contained in the nameserver, signaling ownership",zdns.google,Critical dependency,False,1
+dns.google,ns3.zdns.google,private,"Domanin name is contained in the nameserver, signaling ownership",zdns.google,Critical dependency,False,1
+dns.google,ns4.zdns.google,private,"Domanin name is contained in the nameserver, signaling ownership",zdns.google,Critical dependency,False,1
+dns.google,ns1.zdns.google,private,"Domanin name is contained in the nameserver, signaling ownership",zdns.google,Critical dependency,False,1
+doubleclick.net,ns4.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+doubleclick.net,ns1.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+doubleclick.net,ns2.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+doubleclick.net,ns3.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+facebook.com,a.ns.facebook.com,private,NS TLD matches domain TLD,facebook.com,Critical dependency,False,1
+facebook.com,d.ns.facebook.com,private,NS TLD matches domain TLD,facebook.com,Critical dependency,False,1
+facebook.com,c.ns.facebook.com,private,NS TLD matches domain TLD,facebook.com,Critical dependency,False,1
+facebook.com,b.ns.facebook.com,private,NS TLD matches domain TLD,facebook.com,Critical dependency,False,1
+fastly.net,ns2.fastly.net,private,NS TLD matches domain TLD,fastly.net,Critical dependency,False,1
+fastly.net,ns3.fastly.net,private,NS TLD matches domain TLD,fastly.net,Critical dependency,False,1
+fastly.net,ns4.fastly.net,private,NS TLD matches domain TLD,fastly.net,Critical dependency,False,1
+fastly.net,ns1.fastly.net,private,NS TLD matches domain TLD,fastly.net,Critical dependency,False,1
+fbcdn.net,c.ns.facebook.com,third,SOA mname points to third party: facebook,facebook,Critical dependency,False,1
+fbcdn.net,a.ns.facebook.com,third,SOA mname points to third party: facebook,facebook,Critical dependency,False,1
+fbcdn.net,d.ns.facebook.com,third,SOA mname points to third party: facebook,facebook,Critical dependency,False,1
+fbcdn.net,b.ns.facebook.com,third,SOA mname points to third party: facebook,facebook,Critical dependency,False,1
+gmail.com,ns1.google.com,private,NS TLD google.com is a known subsidiary of gmail.com,gmail.com,Critical dependency,False,1
+gmail.com,ns3.google.com,private,NS TLD google.com is a known subsidiary of gmail.com,gmail.com,Critical dependency,False,1
+gmail.com,ns2.google.com,private,NS TLD google.com is a known subsidiary of gmail.com,gmail.com,Critical dependency,False,1
+gmail.com,ns4.google.com,private,NS TLD google.com is a known subsidiary of gmail.com,gmail.com,Critical dependency,False,1
+google-analytics.com,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+google-analytics.com,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+google-analytics.com,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+google-analytics.com,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+google.com,ns4.google.com,private,NS TLD matches domain TLD,google.com,Critical dependency,False,1
+google.com,ns3.google.com,private,NS TLD matches domain TLD,google.com,Critical dependency,False,1
+google.com,ns2.google.com,private,NS TLD matches domain TLD,google.com,Critical dependency,False,1
+google.com,ns1.google.com,private,NS TLD matches domain TLD,google.com,Critical dependency,False,1
+googleadservices.com,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googleadservices.com,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googleadservices.com,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googleadservices.com,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googleapis.com,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googleapis.com,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googleapis.com,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googleapis.com,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googlesyndication.com,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googlesyndication.com,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googlesyndication.com,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googlesyndication.com,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googletagmanager.com,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googletagmanager.com,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googletagmanager.com,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googletagmanager.com,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googleusercontent.com,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googleusercontent.com,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googleusercontent.com,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googleusercontent.com,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googlevideo.com,ns1.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googlevideo.com,ns4.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googlevideo.com,ns3.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+googlevideo.com,ns2.google.com,private,"Domanin name is contained in the nameserver, signaling ownership",google.com,Critical dependency,False,1
+gstatic.com,ns3.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+gstatic.com,ns2.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+gstatic.com,ns4.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+gstatic.com,ns1.google.com,third,SOA mname points to third party: google,google,Critical dependency,False,1
+icloud.com,b.ns.apple.com,private,NS TLD apple.com is a known subsidiary of icloud.com,icloud.com,Critical dependency,False,1
+icloud.com,c.ns.apple.com,private,NS TLD apple.com is a known subsidiary of icloud.com,icloud.com,Critical dependency,False,1
+icloud.com,d.ns.apple.com,private,NS TLD apple.com is a known subsidiary of icloud.com,icloud.com,Critical dependency,False,1
+icloud.com,a.ns.apple.com,private,NS TLD apple.com is a known subsidiary of icloud.com,icloud.com,Critical dependency,False,1
+instagram.com,a.ns.instagram.com,private,NS TLD matches domain TLD,instagram.com,Critical dependency,False,1
+instagram.com,c.ns.instagram.com,private,NS TLD matches domain TLD,instagram.com,Critical dependency,False,1
+instagram.com,b.ns.instagram.com,private,NS TLD matches domain TLD,instagram.com,Critical dependency,False,1
+instagram.com,d.ns.instagram.com,private,NS TLD matches domain TLD,instagram.com,Critical dependency,False,1
+linkedin.com,dns3.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+linkedin.com,dns4.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+linkedin.com,ns1-42.azure-dns.com,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+linkedin.com,ns2-42.azure-dns.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+linkedin.com,ns3-42.azure-dns.org,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+linkedin.com,ns4-42.azure-dns.info,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+linkedin.com,dns1.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+linkedin.com,dns2.p09.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+live.com,ns1-37.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+live.com,ns2-37.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+live.com,ns3-37.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+live.com,ns4-37.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+microsoft.com,ns4-39.azure-dns.info,private,NS TLD azure-dns.info is a known subsidiary of microsoft.com,microsoft.com,Critical dependency,False,1
+microsoft.com,ns1-39.azure-dns.com,private,NS TLD azure-dns.com is a known subsidiary of microsoft.com,microsoft.com,Critical dependency,False,1
+microsoft.com,ns2-39.azure-dns.net,private,NS TLD azure-dns.net is a known subsidiary of microsoft.com,microsoft.com,Critical dependency,False,1
+microsoft.com,ns3-39.azure-dns.org,private,NS TLD azure-dns.org is a known subsidiary of microsoft.com,microsoft.com,Critical dependency,False,1
+microsoftonline.com,ns1-38.azure-dns.com,private,NS TLD azure-dns.com is a known subsidiary of microsoftonline.com,microsoftonline.com,Critical dependency,False,1
+microsoftonline.com,ns2-38.azure-dns.net,private,NS TLD azure-dns.net is a known subsidiary of microsoftonline.com,microsoftonline.com,Critical dependency,False,1
+microsoftonline.com,ns3-38.azure-dns.org,private,NS TLD azure-dns.org is a known subsidiary of microsoftonline.com,microsoftonline.com,Critical dependency,False,1
+microsoftonline.com,ns4-38.azure-dns.info,private,NS TLD azure-dns.info is a known subsidiary of microsoftonline.com,microsoftonline.com,Critical dependency,False,1
+miui.com,ns4.dnsv5.com,third,SOA mname points to third party: dnsv5,dnsv5,Critical dependency,False,1
+miui.com,ns3.dnsv5.com,third,SOA mname points to third party: dnsv5,dnsv5,Critical dependency,False,1
+msftconnecttest.com,ns3-32.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+msftconnecttest.com,ns4-32.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+msftconnecttest.com,ns1-32.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+msftconnecttest.com,ns2-32.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+msftncsi.com,ns4-34.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+msftncsi.com,ns1-34.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+msftncsi.com,ns2-34.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+msftncsi.com,ns3-34.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+msn.com,ns3-204.azure-dns.org,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+msn.com,ns4-204.azure-dns.info,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+msn.com,dns1.p08.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+msn.com,dns2.p08.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+msn.com,dns3.p08.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+msn.com,dns4.p08.nsone.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+msn.com,ns1-204.azure-dns.com,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+msn.com,ns2-204.azure-dns.net,third,SOA mname points to third party: azure,azure,No critical dependency,True,2
+netflix.com,ns-1984.awsdns-56.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+netflix.com,ns-659.awsdns-18.net,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+netflix.com,ns-81.awsdns-10.com,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+netflix.com,ns-1372.awsdns-43.org,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+ntp.org,dns1.udel.edu,third,SOA mname points to third party: everett,everett,No critical dependency,True,3
+ntp.org,anyns.pch.net,third,SOA mname points to third party: everett,everett,No critical dependency,True,3
+ntp.org,ns1.everett.org,third,SOA mname points to third party: everett,everett,No critical dependency,True,3
+ntp.org,dns2.udel.edu,third,SOA mname points to third party: everett,everett,No critical dependency,True,3
+office.com,ns2-05.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+office.com,ns3-05.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+office.com,ns4-05.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+office.com,ns1-05.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+one.one,auth.g1-dns.one,private,"Domanin name is contained in the nameserver, signaling ownership",g1-dns.one,Critical dependency,False,1
+one.one,auth.g1-dns.com,third,SOA mname points to third party: b-one,b-one,Critical dependency,False,1
+oxylabs.io,brit.ns.cloudflare.com,third,SOA mname points to third party: cloudflare,cloudflare,Critical dependency,False,1
+oxylabs.io,hank.ns.cloudflare.com,third,SOA mname points to third party: cloudflare,cloudflare,Critical dependency,False,1
+prodregistryv2.org,ns-854.awsdns-42.net,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+prodregistryv2.org,ns-1528.awsdns-63.org,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+prodregistryv2.org,ns-1800.awsdns-33.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+prodregistryv2.org,ns-479.awsdns-59.com,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+pubmatic.com,dns1.p01.nsone.net,third,SOA mname points to third party: nsone,nsone,Critical dependency,False,1
+pubmatic.com,dns2.p01.nsone.net,third,SOA mname points to third party: nsone,nsone,Critical dependency,False,1
+pubmatic.com,dns3.p01.nsone.net,third,SOA mname points to third party: nsone,nsone,Critical dependency,False,1
+pubmatic.com,dns4.p01.nsone.net,third,SOA mname points to third party: nsone,nsone,Critical dependency,False,1
+qq.com,ns4.qq.com,private,NS TLD matches domain TLD,qq.com,Critical dependency,False,1
+qq.com,ns1.qq.com,private,NS TLD matches domain TLD,qq.com,Critical dependency,False,1
+qq.com,ns2.qq.com,private,NS TLD matches domain TLD,qq.com,Critical dependency,False,1
+qq.com,ns3.qq.com,private,NS TLD matches domain TLD,qq.com,Critical dependency,False,1
+reddit.com,ns-1887.awsdns-43.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+reddit.com,ns-378.awsdns-47.com,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+reddit.com,ns-557.awsdns-05.net,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+reddit.com,ns-1029.awsdns-00.org,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+roblox.com,dns4.p06.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+roblox.com,ns01.rbxinfra.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+roblox.com,ns02.rbxinfra.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+roblox.com,ns03.rbxinfra.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+roblox.com,ns04.rbxinfra.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+roblox.com,dns1.p06.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+roblox.com,dns2.p06.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+roblox.com,dns3.p06.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+rubiconproject.com,ns-1150.awsdns-15.org,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+rubiconproject.com,ns-1722.awsdns-23.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+rubiconproject.com,ns-483.awsdns-60.com,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+rubiconproject.com,ns-644.awsdns-16.net,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+sentry.io,ns-cloud-d1.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,Critical dependency,False,1
+sentry.io,ns-cloud-d2.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,Critical dependency,False,1
+sentry.io,ns-cloud-d3.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,Critical dependency,False,1
+sentry.io,ns-cloud-d4.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,Critical dependency,False,1
+skype.com,ns3-205.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+skype.com,ns4-205.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+skype.com,ns1-205.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+skype.com,ns2-205.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+snapchat.com,ns-530.awsdns-02.net,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+snapchat.com,ns-1468.awsdns-55.org,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+snapchat.com,ns-1892.awsdns-44.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+snapchat.com,ns-220.awsdns-27.com,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
+spotify.com,ns-cloud-a2.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,No critical dependency,True,2
+spotify.com,ns-cloud-a4.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,No critical dependency,True,2
+spotify.com,ns-cloud-a3.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,No critical dependency,True,2
+spotify.com,dns1.p07.nsone.net,third,SOA mname points to third party: googledomains,googledomains,No critical dependency,True,2
+spotify.com,ns-cloud-a1.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,No critical dependency,True,2
+taboola.com,dns1.p05.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+taboola.com,dns2.p05.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+taboola.com,dns3.p05.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+taboola.com,dns4.p05.nsone.net,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+taboola.com,ns01.dnsfaster.com,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+taboola.com,ns02.dnsfaster.com,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+taboola.com,ns03.dnsfaster.com,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+taboola.com,ns04.dnsfaster.com,third,SOA mname points to third party: nsone,nsone,No critical dependency,False,1
+tiktok.com,a6-65.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+tiktok.com,a1-97.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+tiktok.com,a18-64.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+tiktok.com,a9-66.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+tiktok.com,a13-67.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+tiktok.com,a12-66.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+tiktokv.com,a18-64.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+tiktokv.com,a1-97.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+tiktokv.com,a9-66.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+tiktokv.com,a13-67.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+tiktokv.com,a6-65.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+tiktokv.com,a12-66.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+ui.com,ns-656.awsdns-18.net,third,SOA mname points to third party: awsdns-39,awsdns-39,No critical dependency,False,1
+ui.com,ns-1469.awsdns-55.org,third,SOA mname points to third party: awsdns-39,awsdns-39,No critical dependency,False,1
+ui.com,ns-1849.awsdns-39.co.uk,third,SOA mname points to third party: awsdns-39,awsdns-39,No critical dependency,False,1
+ui.com,ns-277.awsdns-34.com,third,SOA mname points to third party: awsdns-39,awsdns-39,No critical dependency,False,1
+unity3d.com,eur5.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+unity3d.com,use4.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+unity3d.com,usw4.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+unity3d.com,usc4.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+unity3d.com,eur2.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+unity3d.com,ns1-105.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+unity3d.com,asia3.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+unity3d.com,ns1-8.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
+vungle.com,a4-64.akam.net,private,SOA mname and rname both match domain,N/A,Critical dependency,False,1
+vungle.com,a7-65.akam.net,private,SOA mname and rname both match domain,N/A,Critical dependency,False,1
+vungle.com,a1-5.akam.net,private,SOA mname and rname both match domain,N/A,Critical dependency,False,1
+vungle.com,a2-66.akam.net,private,SOA mname and rname both match domain,N/A,Critical dependency,False,1
+vungle.com,a28-67.akam.net,private,SOA mname and rname both match domain,N/A,Critical dependency,False,1
+vungle.com,a9-66.akam.net,private,SOA mname and rname both match domain,N/A,Critical dependency,False,1
+whatsapp.com,c.ns.whatsapp.net,private,"Domanin name is contained in the nameserver, signaling ownership",whatsapp.net,Critical dependency,False,1
+whatsapp.com,d.ns.whatsapp.net,private,"Domanin name is contained in the nameserver, signaling ownership",whatsapp.net,Critical dependency,False,1
+whatsapp.com,b.ns.whatsapp.net,private,"Domanin name is contained in the nameserver, signaling ownership",whatsapp.net,Critical dependency,False,1
+whatsapp.com,a.ns.whatsapp.net,private,"Domanin name is contained in the nameserver, signaling ownership",whatsapp.net,Critical dependency,False,1
+whatsapp.net,c.ns.whatsapp.net,private,NS TLD matches domain TLD,whatsapp.net,Critical dependency,False,1
+whatsapp.net,a.ns.whatsapp.net,private,NS TLD matches domain TLD,whatsapp.net,Critical dependency,False,1
+whatsapp.net,b.ns.whatsapp.net,private,NS TLD matches domain TLD,whatsapp.net,Critical dependency,False,1
+whatsapp.net,d.ns.whatsapp.net,private,NS TLD matches domain TLD,whatsapp.net,Critical dependency,False,1
+wikipedia.org,ns0.wikimedia.org,third,SOA mname points to third party: wikimedia,wikimedia,Critical dependency,False,1
+wikipedia.org,ns1.wikimedia.org,third,SOA mname points to third party: wikimedia,wikimedia,Critical dependency,False,1
+wikipedia.org,ns2.wikimedia.org,third,SOA mname points to third party: wikimedia,wikimedia,Critical dependency,False,1
+windows.com,ns3-205.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+windows.com,ns4-205.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+windows.com,ns1-205.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+windows.com,ns2-205.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+windows.net,ns3-39.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+windows.net,ns4-39.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+windows.net,ns1-39.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+windows.net,ns2-39.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+windowsupdate.com,ns3-205.azure-dns.org,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+windowsupdate.com,ns4-205.azure-dns.info,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+windowsupdate.com,ns1-205.azure-dns.com,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+windowsupdate.com,ns2-205.azure-dns.net,third,SOA mname points to third party: azure,azure,Critical dependency,False,1
+xiaomi.com,ns3.dnsv5.com,third,SOA mname points to third party: dnsv5,dnsv5,Critical dependency,False,1
+xiaomi.com,ns4.dnsv5.com,third,SOA mname points to third party: dnsv5,dnsv5,Critical dependency,False,1
+yahoo.com,ns3.yahoo.com,private,NS TLD matches domain TLD,yahoo.com,Critical dependency,False,1
+yahoo.com,ns5.yahoo.com,private,NS TLD matches domain TLD,yahoo.com,Critical dependency,False,1
+yahoo.com,ns2.yahoo.com,private,NS TLD matches domain TLD,yahoo.com,Critical dependency,False,1
+yahoo.com,ns1.yahoo.com,private,NS TLD matches domain TLD,yahoo.com,Critical dependency,False,1
+yahoo.com,ns4.yahoo.com,private,NS TLD matches domain TLD,yahoo.com,Critical dependency,False,1
+youtube.com,ns2.google.com,private,NS TLD google.com is a known subsidiary of youtube.com,youtube.com,Critical dependency,False,1
+youtube.com,ns1.google.com,private,NS TLD google.com is a known subsidiary of youtube.com,youtube.com,Critical dependency,False,1
+youtube.com,ns4.google.com,private,NS TLD google.com is a known subsidiary of youtube.com,youtube.com,Critical dependency,False,1
+youtube.com,ns3.google.com,private,NS TLD google.com is a known subsidiary of youtube.com,youtube.com,Critical dependency,False,1

@@ -251,7 +251,7 @@ if __name__ == "__main__":
 # I did it here considering that the information is obtained when we append it to the csv of the results, therefore 
 #####################################################################################################################################
  
-def plot_dependency_breakdown(csv_path="src/Source_Data/DNS_Identifier_Results_10k_domains.csv", save_path=None):
+def plot_dependency_breakdown(csv_path="src/Source_Data/DNS_Identifier_Results_100_domains.csv", save_path=None):
     """
     Reads the DNS identifier results and plots a bar chart of
     unique domains by dependency type (e.g. third-party vs private).
@@ -260,9 +260,11 @@ def plot_dependency_breakdown(csv_path="src/Source_Data/DNS_Identifier_Results_1
     
     unique_domains = df.drop_duplicates(subset="DOMAIN")
 
+
     filtered_domains = unique_domains[unique_domains["TYPE"].str.lower() != "private"]
 
     dependency_counts = filtered_domains["DEPENDENCY"].value_counts()
+
 
     plt.figure(figsize=(8, 6))
     plt.bar(dependency_counts.index, dependency_counts.values, color="skyblue", edgecolor="black")
@@ -277,6 +279,24 @@ def plot_dependency_breakdown(csv_path="src/Source_Data/DNS_Identifier_Results_1
     plt.tight_layout()
 
     plt.show()
+
+    redundant_counts = unique_domains["REDUNDANT"].value_counts()
+
+    plt.figure(figsize=(8, 6))
+    plt.bar(redundant_counts.index.astype(str), redundant_counts.values, color="green", edgecolor="black")
+    plt.title("Domain Redundancy Breakdown", fontsize=16)
+    plt.xlabel("Redundancy", fontsize=14)
+    plt.ylabel("Number of Domains", fontsize=14)
+    plt.xticks(rotation=30, ha='right')
+
+    for i, v in enumerate(redundant_counts.values):
+        plt.text(i, v + 0.5, str(v), ha='center', fontsize=11)
+
+    plt.tight_layout()
+    plt.show()
+
+
+
 
 if __name__ == "__main__":
     plot_dependency_breakdown()
