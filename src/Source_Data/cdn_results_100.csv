@@ -1,97 +1,101 @@
-domain,cdns,cdn type,third party,crit dependency,redundancy
-googleapis.com,['google'],{'google': 'private'},False,False,False
-microsoft.com,['akamai'],{'akamai': 'third'},True,True,False
-cloudflare.com,['cloudflare'],{'cloudflare': 'private'},False,False,False
-gstatic.com,['google'],{'google': 'private'},False,False,False
-apple.com,['akamai'],{'akamai': 'unknown'},False,False,False
-google.com,['google'],{'google': 'private'},False,False,False
-facebook.com,['meta'],{'meta': 'third'},True,True,False
-amazonaws.com,['cloudfront'],{'cloudfront': 'private'},False,False,False
-googlevideo.com,['google'],{'google': 'private'},False,False,False
-fbcdn.net,['meta'],{'meta': 'private'},False,False,False
-amazon.com,['cloudfront'],{'cloudfront': 'private'},False,False,False
-youtube.com,['google'],{'google': 'private'},False,False,False
-instagram.com,['meta'],{'meta': 'private'},False,False,False
-whatsapp.net,['meta'],{'meta': 'third'},True,True,False
-live.com,['microsoft'],{'microsoft': 'private'},False,False,False
-doubleclick.net,['google'],{'google': 'private'},False,False,False
-bing.com,['akamai'],{'akamai': 'unknown'},False,False,False
-apple-dns.net,[],{},False,False,False
-netflix.com,['netflix'],{'netflix': 'private'},False,False,False
-akadns.net,[],{},False,False,False
-ntp.org,[],{},False,False,False
-googleusercontent.com,['google'],{'google': 'private'},False,False,False
-icloud.com,['akamai'],{'akamai': 'third'},True,True,False
-googlesyndication.com,['google'],{'google': 'private'},False,False,False
-cdninstagram.com,[],{},False,False,False
-chatgpt.com,['cloudflare'],{'cloudflare': 'third'},True,True,False
-cloudflare-dns.com,['cloudflare'],{'cloudflare': 'third'},True,True,False
-akamai.net,[],{},False,False,False
-aaplimg.com,[],{},False,False,False
-tiktokcdn.com,[],{},False,False,False
-tiktokv.com,['akamai'],{'akamai': 'third'},True,True,False
-cloudfront.net,[],{},False,False,False
-ui.com,['cloudfront'],{'cloudfront': 'private'},False,False,False
-ytimg.com,[],{},False,False,False
-akamaiedge.net,[],{},False,False,False
-edgcdn.net,[],{},False,False,False
-yahoo.com,['yahoo'],{'yahoo': 'third'},True,True,False
-gvt2.com,[],{},False,False,False
-spotify.com,"['google', 'fastly']","{'google': 'third', 'fastly': 'third'}",True,True,True
-fastly.net,['fastly'],{'fastly': 'third'},True,True,False
-roblox.com,['roblox'],{'roblox': 'private'},False,False,False
-baidu.com,[],{},False,False,False
-office.com,['akamai'],{'akamai': 'private'},False,False,False
-sentry.io,['google'],{'google': 'third'},True,True,False
-wikipedia.org,['wikimedia'],{'wikimedia': 'private'},False,False,False
-criteo.com,['fastly'],{'fastly': 'third'},True,True,False
-app-analytics-services.com,['google'],{'google': 'private'},False,False,False
-app-measurement.com,['google'],{'google': 'private'},False,False,False
-gvt1.com,[],{},False,False,False
-prodregistryv2.org,['google'],{'google': 'third'},True,True,False
-steamserver.net,[],{},False,False,False
-dns.google,['google'],{'google': 'third'},True,True,False
-one.one,[],{},False,False,False
-google-analytics.com,['google'],{'google': 'private'},False,False,False
-msftncsi.com,['akamai'],{'akamai': 'third'},True,True,False
-snapchat.com,"['google', 'cloudfront']","{'google': 'third', 'cloudfront': 'third'}",True,True,True
-applovin.com,['google'],{'google': 'third'},True,True,False
-3gppnetwork.org,[],{},False,False,False
-appsflyersdk.com,['cloudfront'],{'cloudfront': 'private'},False,False,False
-trafficmanager.net,[],{},False,False,False
-azure.com,['microsoft'],{'microsoft': 'private'},False,False,False
-whatsapp.com,['meta'],{'meta': 'third'},True,True,False
-googletagmanager.com,['google'],{'google': 'private'},False,False,False
-windows.com,['microsoft'],{'microsoft': 'private'},False,False,False
-amazon-adsystem.com,[],{},False,False,False
-msn.com,['akamai'],{'akamai': 'unknown'},False,False,False
-googleadservices.com,['google'],{'google': 'private'},False,False,False
-ggpht.com,[],{},False,False,False
-oxylabs.io,['cloudflare'],{'cloudflare': 'third'},True,True,False
-amazon.dev,[],{},False,False,False
-linkedin.com,['cloudflare'],{'cloudflare': 'third'},True,True,False
-windows.net,['microsoft'],{'microsoft': 'private'},False,False,False
-unity3d.com,['akamai'],{'akamai': 'third'},True,True,False
-microsoftonline.com,[],{},False,False,False
-a2z.com,[],{},False,False,False
-adtrafficquality.google,['google'],{'google': 'private'},False,False,False
-xiaomi.com,['bunnycdn'],{'bunnycdn': 'private'},False,False,False
-playstation.net,[],{},False,False,False
-skype.com,['microsoft'],{'microsoft': 'private'},False,False,False
-rubiconproject.com,['cloudflare'],{'cloudflare': 'third'},True,True,False
-capcutapi.com,[],{},False,False,False
-vungle.com,['cloudflare'],{'cloudflare': 'third'},True,True,False
-msftconnecttest.com,['akamai'],{'akamai': 'third'},True,True,False
-taboola.com,['fastly'],{'fastly': 'third'},True,True,False
-windowsupdate.com,[],{},False,False,False
-digicert.com,['incapsula'],{'incapsula': 'third'},True,True,False
-gmail.com,['google'],{'google': 'private'},False,False,False
-cloud.microsoft,['microsoft'],{'microsoft': 'private'},False,False,False
-qq.com,[],{},False,False,False
-tiktok.com,['akamai'],{'akamai': 'third'},True,True,False
-aws.dev,[],{},False,False,False
-miui.com,['akamai'],{'akamai': 'unknown'},False,False,False
-cdn-apple.com,[],{},False,False,False
-pubmatic.com,['cloudfront'],{'cloudfront': 'private'},False,False,False
-adsrvr.org,['cloudfront'],{'cloudfront': 'third'},True,True,False
-avast.com,"['akamai', 'google']","{'akamai': 'third', 'google': 'third'}",True,True,True
+website,cdns,cdn_types,uses_third_party,critical_dependency,redundant,step_id
+googleapis.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+microsoft.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
+cloudflare.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 0, step .25, "
+gstatic.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+apple.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
+google.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+facebook.com,meta,"{""meta"": ""private""}",False,False,False,"step 0, step .25, "
+amazonaws.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
+googlevideo.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+fbcdn.net,meta,"{""meta"": ""private""}",False,False,False,"step 0, step .25, "
+amazon.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
+youtube.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+instagram.com,meta,"{""meta"": ""private""}",False,False,False,"step 0, step .25, "
+whatsapp.net,meta,"{""meta"": ""private""}",False,False,False,"step 0, step .25, "
+live.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
+doubleclick.net,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+bing.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
+apple-dns.net,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
+netflix.com,netflix,"{""netflix"": ""private""}",False,False,False,"step 0, step .25, "
+akadns.net,,{},False,False,False,
+ntp.org,,{},False,False,False,
+googleusercontent.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+icloud.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
+googlesyndication.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+cdninstagram.com,meta,"{""meta"": ""private""}",False,False,False,"step 0, step .25, "
+chatgpt.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+cloudflare-dns.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 0, step .25, "
+akamai.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, step .25, "
+aaplimg.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
+tiktokcdn.com,tiktok,"{""tiktok"": ""private""}",False,False,False,"step 0, step .25, "
+tiktokv.com,tiktok|akamai,"{""tiktok"": ""private"", ""akamai"": ""third""}",True,False,False,"step 0, step .25, step 2, "
+cloudfront.net,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
+ui.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+ytimg.com,,{},False,False,False,
+akamaiedge.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, step .25, "
+edgcdn.net,,{},False,False,False,
+yahoo.com,yahoo|wikimedia,"{""yahoo"": ""private"", ""wikimedia"": ""third""}",True,False,False,"step 0, step .25, step 2, "
+gvt2.com,,{},False,False,False,
+spotify.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
+fastly.net,fastly,"{""fastly"": ""private""}",False,False,False,"step 0, step .25, "
+roblox.com,roblox,"{""roblox"": ""private""}",False,False,False,"step 0, step .25, "
+baidu.com,,{},False,False,False,
+office.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step 2, "
+sentry.io,google,"{""google"": ""third""}",True,True,False,"step 2, "
+wikipedia.org,wikimedia,"{""wikimedia"": ""private""}",False,False,False,"step 0, step .25, "
+criteo.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
+app-analytics-services.com,,{},False,False,False,
+app-measurement.com,google,"{""google"": ""third""}",True,True,False,"step 2, "
+gvt1.com,,{},False,False,False,
+prodregistryv2.org,google,"{""google"": ""third""}",True,True,False,"step 2, "
+steamserver.net,,{},False,False,False,
+dns.google,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+one.one,,{},False,False,False,
+google-analytics.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+msftncsi.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
+snapchat.com,google,"{""google"": ""third""}",True,True,False,"step 2, "
+applovin.com,google,"{""google"": ""third""}",True,True,False,"step 2, "
+3gppnetwork.org,,{},False,False,False,
+appsflyersdk.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+trafficmanager.net,,{},False,False,False,
+azure.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
+whatsapp.com,meta,"{""meta"": ""private""}",False,False,False,"step 0, step .25, "
+googletagmanager.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+windows.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step 2, "
+amazon-adsystem.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
+msn.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
+googleadservices.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+ggpht.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+oxylabs.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+amazon.dev,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
+linkedin.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+windows.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step 2, "
+unity3d.com,,{},False,False,False,
+microsoftonline.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
+a2z.com,,{},False,False,False,
+adtrafficquality.google,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+xiaomi.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
+playstation.net,,{},False,False,False,
+skype.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
+rubiconproject.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+capcutapi.com,,{},False,False,False,
+vungle.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+msftconnecttest.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
+taboola.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
+windowsupdate.com,,{},False,False,False,
+digicert.com,digicert,"{""digicert"": ""private""}",False,False,False,"step 0, step .25, "
+gmail.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+cloud.microsoft,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
+qq.com,,{},False,False,False,
+tiktok.com,tiktok|akamai,"{""tiktok"": ""private"", ""akamai"": ""third""}",True,False,False,"step 0, step .25, step 2, "
+aws.dev,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
+miui.com,,{},False,False,False,
+cdn-apple.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
+pubmatic.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+adsrvr.org,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+avast.com,avast,"{""avast"": ""private""}",False,False,False,"step 0, step .25, "
+avsxappcaptiveportal.com,,{},False,False,False,
+android.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+reddit.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
+chirpbooks.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "

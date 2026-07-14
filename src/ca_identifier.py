@@ -582,56 +582,57 @@ def main():
 def data_vis(input_file):
     df = pa.read_csv(input_file)
 
-    # ----- Type pie -----
-    plt.figure(figsize=(8, 8))
+    # # ----- Type pie -----
+    # plt.figure(figsize=(8, 8))
 
-    df["type"].value_counts().plot.pie(
-        autopct="%1.1f%%",
-        ylabel=""
-    )
+    # df["type"].value_counts().plot.pie(
+    #     autopct="%1.1f%%",
+    #     ylabel="",
+    #     fontsize = 22
+    # )
 
-    plt.title("CA Type Distribution")
-    #plt.show()
+    # plt.title("CA Type Distribution", fontsize=26)
+    # plt.show()
 
-    # ----- CA Name pie -----
-    ca_counts = (
-    df["CA Name"]
-    .fillna("Unknown")
-    .replace("", "Unknown")
-    .value_counts())
+    # # ----- CA Name pie -----
+    # ca_counts = (
+    # df["CA Name"]
+    # .fillna("Unknown")
+    # .replace("", "Unknown")
+    # .value_counts())
 
-    top_n = 100
+    # top_n = 100
 
-    if len(ca_counts) > top_n:
-        other = ca_counts.iloc[top_n:].sum()
-        ca_counts = pa.concat([
-            ca_counts.iloc[:top_n],
-            pa.Series({"Other": other})
-        ])
+    # if len(ca_counts) > top_n:
+    #     other = ca_counts.iloc[top_n:].sum()
+    #     ca_counts = pa.concat([
+    #         ca_counts.iloc[:top_n],
+    #         pa.Series({"Other": other})
+    #     ])
 
-    plt.figure(figsize=(10, 10))
+    # plt.figure(figsize=(10, 10))
 
-    ca_counts.plot.pie(
-        autopct="%1.1f%%",
-        ylabel=""
-    )
+    # ca_counts.plot.pie(
+    #     autopct="%1.1f%%",
+    #     ylabel=""
+    # )
 
-    plt.title("Certificate Authority Distribution")
+    # plt.title("Certificate Authority Distribution")
     
-    #Making a bar chart showing the exact counts of types
-    plt.figure(figsize=(10, 6))
-    df["type"].value_counts().plot(kind="bar")
-    plt.title("CA Type Distribution")
-    plt.xlabel("Type")
-    plt.ylabel("Count")
+    # #Making a bar chart showing the exact counts of types
+    # plt.figure(figsize=(10, 6))
+    # df["type"].value_counts().plot(kind="bar")
+    # plt.title("CA Type Distribution")
+    # plt.xlabel("Type")
+    # plt.ylabel("Count")
 
-    #Pie chart for TLS/SSL
-    plt.figure(figsize=(8, 8))
-    df["SSL or TLS"].value_counts().plot.pie(
-        autopct="%1.1f%%",
-        ylabel=""
-    )
-    plt.title("TLS/SSL Distribution")
+    # #Pie chart for TLS/SSL
+    # plt.figure(figsize=(8, 8))
+    # df["SSL or TLS"].value_counts().plot.pie(
+    #     autopct="%1.1f%%",
+    #     ylabel=""
+    # )
+    # plt.title("TLS/SSL Distribution")
 
     # --- Proportional Area / Bubble Chart for CA Name ---
     ca_counts = (
@@ -639,8 +640,18 @@ def data_vis(input_file):
         .fillna("Unknown")
         .replace("", "Unknown")
         .value_counts()
-        .head(100)  # Top 20 for readability
     )
+
+    # Split into top 5 and "Other"
+    top5 = ca_counts.head(5)
+    other_count = ca_counts.iloc[5:].sum()
+
+    # Combine into final series
+    if other_count > 0:
+        import pandas as pd
+        ca_counts = pd.concat([top5, pd.Series({"Other": other_count})])
+    else:
+        ca_counts = top5
 
     labels = ca_counts.index.tolist()
     values = ca_counts.values.tolist()
@@ -653,7 +664,7 @@ def data_vis(input_file):
     circles = circlify.circlify(
         list(sorted_values),
         show_enclosure=False,
-        target_enclosure=circlify.Circle(x=0, y=0, r=1)
+        target_enclosure=circlify.Circle(x=0, y=0, r=1)  # adjust as needed
     )
 
     # Reverse so largest circle matches first label
@@ -679,7 +690,7 @@ def data_vis(input_file):
         ax.add_patch(patch)
 
         # Label sizing based on circle radius
-        fontsize = max(6, min(11, r * 28))
+        fontsize = 24
 
         # Only label if circle is large enough
         if r > 0.04:
@@ -710,23 +721,9 @@ def data_vis(input_file):
     ax.set_xlim(-lim, lim)
     ax.set_ylim(-lim, lim)
 
-    # Legend
-    legend_handles = [
-        mpatches.Patch(color=DARK_BLUE, label=f"Largest CA ({sorted_labels[0]})"),
-        mpatches.Patch(color=TEAL,      label="Other CAs"),
-    ]
-    ax.legend(
-        handles=legend_handles,
-        loc="lower center",
-        bbox_to_anchor=(0.5, -0.03),
-        ncol=2,
-        frameon=False,
-        fontsize=11
-    )
-
     plt.title(
         "Certificate Authority Distribution",
-        fontsize=16,
+        fontsize=26,
         fontweight="bold",
         pad=16,
         color="#060E77"
@@ -746,10 +743,11 @@ def data_vis(input_file):
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 if __name__ == "__main__":
     #full thing
-    output = main()
-    data_vis(output)
+    # output = main()
+    # data_vis(output)
     
     # quick vis
-    #data_vis("src/Source_Data/ca_results_1000.csv")
+    data_vis("src/Source_Data/ca_results_100000.csv")
 
 #endregion
+
