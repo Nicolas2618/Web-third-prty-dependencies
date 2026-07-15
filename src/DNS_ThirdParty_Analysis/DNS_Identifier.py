@@ -4,7 +4,6 @@ import ssl
 import time
 import socket
 import tldextract
-#import numpy as np
 import dns.resolver
 import pandas as pa
 from typing import Optional

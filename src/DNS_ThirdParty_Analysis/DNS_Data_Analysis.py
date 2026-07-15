@@ -1,9 +1,10 @@
 import re
 import circlify
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt  
 import matplotlib.patches as mpatches
-import DNS_Identifier as DNS_Identifier
+from DNS_Identifier import main
 
 #################################################################################################################
 # Runs the analysis and writes the CSV file from the original file.
@@ -33,18 +34,18 @@ def normalize_provider(name):
     return PROVIDER_ALIASES.get(key, name)
 #DNS_Identifier.main() 
 
-df = pd.read_csv("src/Source_Data/DNS_Identifier_Results.csv")
+df = pd.read_csv("src/Source_Data/DNS_Identifier_Results_10k_domains.csv")
 
 #################################################################################################################
 # This would run the analysis only comparing between Third-party and Provate dependencies. 
 #################################################################################################################
 # Get the value counts for the 'type' column
-data_subset = df['TYPE'].value_counts()
+data_subset_piechart = df['TYPE'].value_counts().head(2)
 
 # Fixed: Added a clean layout, shadow, and adjusted colors if desired
 plt.pie(
-    data_subset, 
-    labels=data_subset.index, 
+    data_subset_piechart, 
+    labels=data_subset_piechart.index, 
     startangle=90, 
     autopct='%.1f%%',
     wedgeprops={'edgecolor': 'white', 'linewidth': 1.5} # Cleaner look
@@ -102,7 +103,7 @@ total_domains = df_known[domain_col].nunique()
 domain_provider_pairs = df_known.drop_duplicates(subset=[domain_col, "provider_clean"])
 
 # Count ALL rows, then take the top N most common
-top_n = 10  # adjust as needed
+top_n = 5  # adjust as needed
 counts = domain_provider_pairs['provider_clean'].value_counts().head(top_n)
 print(counts.to_string())
 
@@ -242,6 +243,60 @@ def bubble_data_vis(input_file, domain_col="DOMAIN"):
 
 
 if __name__ == "__main__":
-    bubble_data_vis("src/Source_Data/DNS_Identifier_Results.csv", domain_col="DOMAIN")
+    bubble_data_vis("src/Source_Data/DNS_Identifier_Results_10k_domains.csv", domain_col="DOMAIN")
 
 
+#####################################################################################################################################
+# This is to create a graph for our analysis, with the list of domains that have a third party dependency and a private dependency. 
+# I did it here considering that the information is obtained when we append it to the csv of the results, therefore 
+#####################################################################################################################################
+ 
+def plot_dependency_breakdown(csv_path="src/Source_Data/DNS_Identifier_Results_100_domains.csv", save_path=None):
+    """
+    Reads the DNS identifier results and plots a bar chart of
+    unique domains by dependency type (e.g. third-party vs private).
+    """
+    df = pd.read_csv(csv_path)
+    
+    unique_domains = df.drop_duplicates(subset="DOMAIN")
+
+
+    filtered_domains = unique_domains[unique_domains["TYPE"].str.lower() != "private"]
+
+    dependency_counts = filtered_domains["DEPENDENCY"].value_counts()
+
+
+    plt.figure(figsize=(8, 6))
+    plt.bar(dependency_counts.index, dependency_counts.values, color="skyblue", edgecolor="black")
+    plt.title("Domain Dependency Breakdown", fontsize=16)
+    plt.xlabel("Dependency", fontsize=14)
+    plt.ylabel("Number of Domains", fontsize=14)
+    plt.xticks(rotation=30, ha='right')
+
+    for i, v in enumerate(dependency_counts.values):
+        plt.text(i, v + 0.5, str(v), ha='center', fontsize=11)
+
+    plt.tight_layout()
+
+    plt.show()
+
+    redundant_counts = unique_domains["REDUNDANT"].value_counts()
+
+    plt.figure(figsize=(8, 6))
+    plt.bar(redundant_counts.index.astype(str), redundant_counts.values, color="green", edgecolor="black")
+    plt.title("Domain Redundancy Breakdown", fontsize=16)
+    plt.xlabel("Redundancy", fontsize=14)
+    plt.ylabel("Number of Domains", fontsize=14)
+    plt.xticks(rotation=30, ha='right')
+
+    for i, v in enumerate(redundant_counts.values):
+        plt.text(i, v + 0.5, str(v), ha='center', fontsize=11)
+
+    plt.tight_layout()
+    plt.show()
+
+
+
+
+if __name__ == "__main__":
+    plot_dependency_breakdown()

@@ -94,9 +94,9 @@ def check_domain_robustness(domain) -> bool:
     if has_ipv4 and has_ipv6:
         classification = "High Robustness"
     elif has_ipv4:
-        classification = "Old robustness - low"
+        classification = "Low Robustness"
     elif has_ipv6:
-        classification = "New robustness - low"
+        classification = "Low Robustness"
     else:
         classification = "CNAME Enabled"
 
