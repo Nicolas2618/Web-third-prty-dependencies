@@ -5,7 +5,7 @@ import dns.resolver
 
 
 # Path to your CSV file
-CSV_FILE_PATH = "src/Source_Data/top-100-domains.csv"
+CSV_FILE_PATH = "src/Source_Data/top_10000_domains.csv"
 OUTPUT_FILE_PATH = "src/Source_Data/Domain_Robustness_Results.csv"
 
 ######################################################################################################################
@@ -130,10 +130,10 @@ def obtain_domain_IP():
                 print("Error: The source CSV file is empty.")
                 return
             for row in csv_reader:
-                if not row or not row[1].strip():
+                if not row or not row[0].strip():
                     continue
             
-                domain = row[1].strip()
+                domain = row[0].strip()
 
                 dns_result = check_domain_robustness(domain)
                 cname = get_cname(f'www.{domain}')
