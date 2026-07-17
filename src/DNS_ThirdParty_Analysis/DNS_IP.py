@@ -5,8 +5,8 @@ import dns.resolver
 
 
 # Path to your CSV file
-CSV_FILE_PATH = "src/Source_Data/top_10000_domains.csv"
-OUTPUT_FILE_PATH = "src/Source_Data/Domain_Robustness_Results.csv"
+CSV_FILE_PATH = "src/Source_Data/top-100000-domains.csv"
+OUTPUT_FILE_PATH = "src/Source_Data/Domain_Robustness_Results_100K.csv"
 
 ######################################################################################################################
 # Checks for the AS and data processing.
