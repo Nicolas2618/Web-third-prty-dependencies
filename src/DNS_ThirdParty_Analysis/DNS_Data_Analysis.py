@@ -34,7 +34,7 @@ def normalize_provider(name):
     return PROVIDER_ALIASES.get(key, name)
 #DNS_Identifier.main() 
 
-df = pd.read_csv("src/Source_Data/DNS_Identifier_Results_10k_domains.csv")
+df = pd.read_csv("src/Source_Data/DNS_Identifier_Results_1k_domains.csv")
 
 #################################################################################################################
 # This would run the analysis only comparing between Third-party and Provate dependencies. 
@@ -43,18 +43,25 @@ df = pd.read_csv("src/Source_Data/DNS_Identifier_Results_10k_domains.csv")
 data_subset_piechart = df['TYPE'].value_counts().head(2)
 
 # Fixed: Added a clean layout, shadow, and adjusted colors if desired
-plt.pie(
+wedges, texts, autotexts = plt.pie(
     data_subset_piechart, 
     labels=data_subset_piechart.index, 
     startangle=90, 
     autopct='%.1f%%',
+    textprops={'fontsize': 16},
     wedgeprops={'edgecolor': 'white', 'linewidth': 1.5} # Cleaner look
 )
 
-plt.title('Third party vs Private Infrastructure', fontsize=16)
+# Bump the percentage numbers separately — they're often smaller/bolder than labels
+for autotext in autotexts:
+    autotext.set_fontsize(18)
+    autotext.set_fontweight('bold')
+    autotext.set_color('white')
+
+plt.title('Third party vs Private Infrastructure', fontsize=20)
 
 # Optional: Adjust legend position so it doesn't overlap the pie chart
-plt.legend(loc="upper right", bbox_to_anchor=(1.2, 1))
+plt.legend(loc="upper right", bbox_to_anchor=(1.2, 1), fontsize=12)
 
 plt.tight_layout()
 plt.show()
@@ -107,11 +114,11 @@ top_n = 5  # adjust as needed
 counts = domain_provider_pairs['provider_clean'].value_counts().head(top_n)
 print(counts.to_string())
 
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(12, 10))
 plt.bar(counts.index, counts.values, color="darkgreen", edgecolor="black")
-plt.title(f"Top {top_n} DNS Providers by Domain Count", fontsize=16)
-plt.xlabel("Providers", fontsize=14)
-plt.ylabel("Domains", fontsize=14)
+plt.title(f"Top {top_n} DNS Providers by Domain Count", fontsize=18)
+plt.xlabel("Providers", fontsize=16)
+plt.ylabel("Domains", fontsize=16)
 plt.xticks(rotation=30, ha='right')
 plt.tight_layout()
 plt.show()
@@ -243,7 +250,7 @@ def bubble_data_vis(input_file, domain_col="DOMAIN"):
 
 
 if __name__ == "__main__":
-    bubble_data_vis("src/Source_Data/DNS_Identifier_Results_10k_domains.csv", domain_col="DOMAIN")
+    bubble_data_vis("src/Source_Data/DNS_Identifier_Results_1k_domains.csv", domain_col="DOMAIN")
 
 
 #####################################################################################################################################
