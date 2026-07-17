@@ -1,926 +1,925 @@
 website,cdns,cdn_types,uses_third_party,critical_dependency,redundant,step_id
-0xrpc.io,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-163.com,,{},False,False,False,
+0xrpc.io,,{},False,False,False,
+163.com,netease,"{""netease"": ""third""}",True,True,False,"step 1, "
 1rx.io,,{},False,False,False,
-2mdn.net,,{},False,False,False,
-33across.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+2mdn.net,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+33across.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 1, "
 360.cn,,{},False,False,False,
 360safe.com,,{},False,False,False,
-360yield.com,,{},False,False,False,
+360yield.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 3gppnetwork.org,,{},False,False,False,
-3lift.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-4dex.io,,{},False,False,False,
-58.com,,{},False,False,False,
-a-mo.net,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-a-msedge.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-a-mx.com,,{},False,False,False,
-a2z.com,,{},False,False,False,
-aaplimg.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
-accuweather.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
-acrobat.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-acronis.com,,{},False,False,False,
-ad-delivery.net,microsoft|cloudflare,"{""microsoft"": ""private"", ""cloudflare"": ""third""}",True,False,True,"step 0, step .25, step 2, "
-ad.gt,,{},False,False,False,
+3lift.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+4dex.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+a-mo.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+a-msedge.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .25, "
+a-mx.com,bunnycdn,"{""bunnycdn"": ""third""}",True,True,False,"step .8 (SOA), "
+a2z.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+aaplimg.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, "
+ac.uk,,{},False,False,False,
+accuweather.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+acrobat.com,twitter,"{""twitter"": ""private""}",False,False,False,"step 1, "
+acronis.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+ad-delivery.net,microsoft|cloudflare,"{""microsoft"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .25, step .8 (SOA), "
+ad.gt,amazon|twitter,"{""amazon"": ""third"", ""twitter"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
 adaether.com,,{},False,False,False,
-adblockplus.org,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
+adblockplus.org,firebase|fastly,"{""firebase"": ""third"", ""fastly"": ""third""}",True,True,True,"step 1, step 2, "
 adform.net,,{},False,False,False,
 adfuse-ssp.com,,{},False,False,False,
 adgrx.com,,{},False,False,False,
-adguard.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-aditude.io,,{},False,False,False,
-adjust.com,,{},False,False,False,
+adguard.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+aditude.io,cloudflare|vercel,"{""cloudflare"": ""third"", ""vercel"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+adjust.com,vercel,"{""vercel"": ""third""}",True,True,False,"step 1, "
 adkernel.com,,{},False,False,False,
-admanmedia.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
+admanmedia.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
 adnxs.com,,{},False,False,False,
-adobe.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-adobe.io,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
+adobe.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+adobe.io,amazon|fastly,"{""amazon"": ""third"", ""fastly"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
 adobedc.net,,{},False,False,False,
-adobedtm.com,,{},False,False,False,
-adobelogin.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-adobess.com,,{},False,False,False,
-adobestats.io,,{},False,False,False,
+adobedtm.com,adobe,"{""adobe"": ""private""}",False,False,False,"step 0, "
+adobelogin.com,,{},False,False,False,
+adobess.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+adobestats.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 adriver.ru,,{},False,False,False,
-adroll.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-adrta.com,,{},False,False,False,
+adroll.com,cloudflare|fastly,"{""cloudflare"": ""third"", ""fastly"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+adrta.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
 ads-twitter.com,,{},False,False,False,
-adsafeprotected.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+adsafeprotected.com,,{},False,False,False,
 adsco.re,,{},False,False,False,
-adsmoloco.com,,{},False,False,False,
-adsrvr.org,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-adtelligent.com,,{},False,False,False,
-adtrafficquality.google,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-afafb.com,,{},False,False,False,
-agkn.com,,{},False,False,False,
-agora.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-aibixby.com,,{},False,False,False,
-aibotplatform.com,,{},False,False,False,
-aiv-delivery.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-aka.ms,,{},False,False,False,
-akadns.net,,{},False,False,False,
+adsmoloco.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+adsrvr.org,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
+adtelligent.com,twitter,"{""twitter"": ""private""}",False,False,False,"step 1, "
+adthrive.com,amazon|wordpress,"{""amazon"": ""third"", ""wordpress"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+adtrafficquality.google,google,"{""google"": ""private""}",False,False,False,"step 0, "
+agkn.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
+agora.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+aibixby.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+aibotplatform.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+aiv-delivery.net,microsoft|amazon,"{""microsoft"": ""third"", ""amazon"": ""third""}",True,True,True,"step .25, step .8 (SOA), "
+aka.ms,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+akadns.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, "
 akahost.net,,{},False,False,False,
 akam.net,,{},False,False,False,
-akamai.com,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, step .25, "
-akamai.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, step .25, "
-akamaiedge.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, step .25, "
-akamaihd.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, step .25, "
-akamaized.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, step .25, "
-akstat.io,,{},False,False,False,
-alibaba.com,,{},False,False,False,
+akamai.com,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, "
+akamai.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, "
+akamaiedge.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, "
+akamaihd.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, "
+akamaized.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, "
+akstat.io,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+alibaba.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
 alibabadns.com,,{},False,False,False,
-alicdn.com,,{},False,False,False,
+alicdn.com,alibaba,"{""alibaba"": ""private""}",False,False,False,"step 0, "
 aliexpress-media.com,,{},False,False,False,
-aliexpress.com,,{},False,False,False,
+aliexpress.com,akamai,"{""akamai"": ""private""}",False,False,False,"step 1, "
 alipay.com,,{},False,False,False,
-aliyun.com,,{},False,False,False,
-aliyuncs.com,,{},False,False,False,
+aliyun.com,alibaba,"{""alibaba"": ""private""}",False,False,False,"step 0, "
+aliyuncs.com,alibaba,"{""alibaba"": ""private""}",False,False,False,"step 0, "
 aliyuncsslbintl.com,,{},False,False,False,
-allawnos.com,,{},False,False,False,
+allawnos.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 allawntech.com,,{},False,False,False,
-alphonso.tv,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+alphonso.tv,google|wordpress|cloudflare,"{""google"": ""third"", ""wordpress"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, step 2, "
 amap.com,,{},False,False,False,
-amazon-adsystem.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-amazon.co.jp,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-amazon.co.uk,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-amazon.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-amazon.de,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-amazon.dev,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-amazonalexa.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-amazonaws.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-amazontrust.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-amazonvideo.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-amd.com,,{},False,False,False,
-amemv.com,bunnycdn,"{""bunnycdn"": ""third""}",True,True,False,"step 2, "
-amp-endpoint2.com,,{},False,False,False,
-amp-endpoint3.com,,{},False,False,False,
-amplitude.com,,{},False,False,False,
-ampproject.org,,{},False,False,False,
-android.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-aniview.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-anthropic.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-anydesk.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+amazon-adsystem.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .25, "
+amazon.co.uk,amazon|akamai,"{""amazon"": ""private"", ""akamai"": ""private""}",False,False,True,"step .25, step 1, "
+amazon.com,amazon|akamai,"{""amazon"": ""private"", ""akamai"": ""private""}",False,False,True,"step .25, step 1, "
+amazon.de,amazon,"{""amazon"": ""private""}",False,False,False,"step .25, "
+amazon.dev,amazon,"{""amazon"": ""private""}",False,False,False,"step .25, "
+amazonalexa.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .25, "
+amazonaws.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, "
+amazontrust.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .25, "
+amazonvideo.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .25, "
+amd.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+amemv.com,,{},False,False,False,
+amp-endpoint2.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+amp-endpoint3.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+amplitude.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+ampproject.org,google,"{""google"": ""private""}",False,False,False,"step 0, "
+android.com,google,"{""google"": ""third""}",True,True,False,"step .25, "
+aniview.com,digicert|amazon,"{""digicert"": ""third"", ""amazon"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+anthropic.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+anydesk.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
 aoneroom.com,,{},False,False,False,
-ap4r.com,,{},False,False,False,
-api.aws,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-app-ads-services.com,google,"{""google"": ""third""}",True,True,False,"step 2, "
-app-analytics-services-att.com,,{},False,False,False,
-app-analytics-services.com,,{},False,False,False,
-app-measurement.com,google,"{""google"": ""third""}",True,True,False,"step 2, "
-appcenter.ms,microsoft,"{""microsoft"": ""third""}",True,True,False,"step 2, "
-appier.net,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-apple-cloudkit.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
-apple-dns.net,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
-apple.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
-apple.news,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
-applovin.com,google,"{""google"": ""third""}",True,True,False,"step 2, "
-applvn.com,,{},False,False,False,
-appsflyer.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-appsflyersdk.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-appspot.com,,{},False,False,False,
+ap4r.com,tencent,"{""tencent"": ""third""}",True,True,False,"step 1, "
+api.aws,amazon,"{""amazon"": ""third""}",True,True,False,"step .25, "
+app-ads-services.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+app-analytics-services-att.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+app-analytics-services.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+app-measurement.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+appcenter.ms,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+appier.net,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
+apple-cloudkit.com,apple|twitter,"{""apple"": ""private"", ""twitter"": ""private""}",False,False,True,"step .25, step 1, "
+apple-dns.net,apple,"{""apple"": ""private""}",False,False,False,"step 0, "
+apple.com,apple|akamai,"{""apple"": ""private"", ""akamai"": ""third""}",True,False,True,"step .25, step 1, "
+apple.news,apple,"{""apple"": ""private""}",False,False,False,"step .25, "
+applovin.com,google,"{""google"": ""private""}",False,False,False,"step .8 (SOA), "
+applvn.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+appsflyer.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+appsflyersdk.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+appspot.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
 apptracer.ru,,{},False,False,False,
 archive.org,,{},False,False,False,
-argotunnel.com,,{},False,False,False,
-arubanetworks.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
-assetsconfigcdn.org,google,"{""google"": ""third""}",True,True,False,"step 2, "
-asus.com,,{},False,False,False,
-atlassian.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-atlassian.net,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-autodesk.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
+argotunnel.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+arubanetworks.com,amazon|akamai,"{""amazon"": ""third"", ""akamai"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+assetsconfigcdn.org,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+asus.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+atlassian.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+atlassian.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+autodesk.com,amazon|akamai,"{""amazon"": ""third"", ""akamai"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
 av380.net,,{},False,False,False,
-avast.com,avast,"{""avast"": ""private""}",False,False,False,"step 0, step .25, "
-avcdn.net,,{},False,False,False,
-avira.com,,{},False,False,False,
+avast.com,avast|akamai,"{""avast"": ""private"", ""akamai"": ""third""}",True,False,True,"step .25, step 1, "
+avcdn.net,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+avira.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
 avito.ru,,{},False,False,False,
 avito.st,,{},False,False,False,
-avsxappcaptiveportal.com,,{},False,False,False,
-aws.dev,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-awsglobalaccelerator.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-awswaf.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-ax-msedge.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-axon.ai,google,"{""google"": ""third""}",True,True,False,"step 2, "
-ay.delivery,microsoft|cloudflare,"{""microsoft"": ""private"", ""cloudflare"": ""third""}",True,False,True,"step 0, step .25, step 2, "
-azure-devices.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-azure.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-azure.net,microsoft|fastly,"{""microsoft"": ""private"", ""fastly"": ""third""}",True,False,True,"step 0, step .25, step 2, "
-azureedge.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-azurefd.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-azurewebsites.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-b-cdn.net,bunnycdn,"{""bunnycdn"": ""third""}",True,True,False,"step 2, "
-b-msedge.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-baidu.com,,{},False,False,False,
-bamgrid.com,,{},False,False,False,
-battle.net,,{},False,False,False,
-bazaarvoice.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-bdydns.com,,{},False,False,False,
+avsxappcaptiveportal.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+aws.dev,amazon,"{""amazon"": ""third""}",True,True,False,"step .25, "
+awsglobalaccelerator.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, "
+awswaf.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .25, "
+ax-msedge.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, "
+axon.ai,google,"{""google"": ""private""}",False,False,False,"step .8 (SOA), "
+ay.delivery,microsoft|cloudflare,"{""microsoft"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .25, step .8 (SOA), "
+azure-devices.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .25, "
+azure.com,microsoft|twitter,"{""microsoft"": ""private"", ""twitter"": ""third""}",True,False,True,"step 0, step 1, "
+azure.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step .25, "
+azureedge.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, "
+azurefd.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, "
+azurewebsites.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, "
+b-cdn.net,bunnycdn,"{""bunnycdn"": ""private""}",False,False,False,"step 0, "
+b-msedge.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .25, "
+baidu.com,baidu,"{""baidu"": ""private""}",False,False,False,"step 1, "
+bamgrid.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+battle.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+bazaarvoice.com,,{},False,False,False,
+bdydns.com,baidu,"{""baidu"": ""private""}",False,False,False,"step 0, "
 betweendigital.com,,{},False,False,False,
-beyla.site,,{},False,False,False,
-beyondwickedmapping.org,google,"{""google"": ""third""}",True,True,False,"step 2, "
-bidease.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-bidmachine.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-bidr.io,,{},False,False,False,
+beyla.site,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+beyondwickedmapping.org,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+bidease.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+bidmachine.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+bidr.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 bidswitch.net,,{},False,False,False,
 bilibili.com,,{},False,False,False,
-binance.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-bing.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-bing.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-bitdefender.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-bitdefender.net,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-bixbyllm.com,,{},False,False,False,
+binance.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+bing.com,microsoft|akamai,"{""microsoft"": ""third"", ""akamai"": ""third""}",True,True,True,"step .25, step 1, "
+bing.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .25, "
+bitdefender.com,,{},False,False,False,
+bitdefender.net,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 1, "
+bixbyllm.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 bkcdn.net,,{},False,False,False,
-blackberry.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-blizzard.com,,{},False,False,False,
-blogger.com,google,"{""google"": ""third""}",True,True,False,"step 2, "
-blogspot.com,google,"{""google"": ""third""}",True,True,False,"step 2, "
-blxrbdn.com,,{},False,False,False,
-booking.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-bootstrapcdn.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-box.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-boyuanhulian.com,,{},False,False,False,
-branch.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-brave.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-braze.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-browser-intake-datadoghq.com,,{},False,False,False,
-browser-intake-us5-datadoghq.com,,{},False,False,False,
-bt.co,,{},False,False,False,
-btloader.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-bugsnag.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-bunny.net,bunnycdn,"{""bunnycdn"": ""third""}",True,True,False,"step 2, "
+blackberry.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+blogspot.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+blxrbdn.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+booking.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+bootstrapcdn.com,stackpath|cloudflare,"{""stackpath"": ""private"", ""cloudflare"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+box.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 1, "
+boyuanhulian.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+branch.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+brave.com,cloudflare|amazon,"{""cloudflare"": ""third"", ""amazon"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+braze.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+browser-intake-datadoghq.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+browser-intake-us5-datadoghq.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+bt.co,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+btloader.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+bugsnag.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+bunny.net,bunnycdn,"{""bunnycdn"": ""private""}",False,False,False,"step 0, "
 buzzoola.com,,{},False,False,False,
-bytedance.com,tiktok|bunnycdn,"{""tiktok"": ""private"", ""bunnycdn"": ""third""}",True,False,True,"step 0, step .25, step 2, "
+bytedance.com,bytedance|tiktok|akamai,"{""bytedance"": ""private"", ""tiktok"": ""third"", ""akamai"": ""third""}",True,False,True,"step 0, step .25, step 1, "
 bytedns1.com,,{},False,False,False,
 bytefcdn-oversea.com,,{},False,False,False,
 byteglb.com,,{},False,False,False,
-byteimg.com,,{},False,False,False,
 byteoversea.com,,{},False,False,False,
 byteoversea.net,,{},False,False,False,
-canva.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-capcut.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
+canva.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+capcut.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
 capcutapi.com,,{},False,False,False,
-captcha-delivery.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-casalemedia.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-ccgateway.net,,{},False,False,False,
-cdn-apple.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
+captcha-delivery.com,microsoft|amazon,"{""microsoft"": ""third"", ""amazon"": ""third""}",True,True,True,"step .25, step .8 (SOA), "
+casalemedia.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+ccgateway.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+cdn-apple.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, "
 cdn20.com,,{},False,False,False,
-cdn77.org,,{},False,False,False,
-cdninstagram.com,meta,"{""meta"": ""private""}",False,False,False,"step 0, step .25, "
-centrastage.net,,{},False,False,False,
-chartbeat.net,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-chartboost.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-chatgpt.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-checkpoint.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-cisco.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-clarity.ms,,{},False,False,False,
-claude.ai,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-clevertap-prod.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-cloud.microsoft,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-cloudflare-dns.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 0, step .25, "
-cloudflare.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 0, step .25, "
-cloudflare.net,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 0, step .25, "
-cloudflareclient.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 0, step .25, "
-cloudflareinsights.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 0, step .25, "
-cloudflarestorage.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 0, step .25, "
-cloudfront.net,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-cloudfunctions.net,,{},False,False,False,
-cloudsink.net,,{},False,False,False,
-cnn.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
+cdn77.org,cdn77,"{""cdn77"": ""private""}",False,False,False,"step 0, "
+cdnbuild.net,,{},False,False,False,
+cdngslb.com,alibaba,"{""alibaba"": ""private""}",False,False,False,"step 0, "
+cdninstagram.com,meta,"{""meta"": ""private""}",False,False,False,"step 0, "
+centrastage.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+chartbeat.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+chartboost.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+charter.net,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
+chatgpt.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+checkpoint.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
+cisco.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+clarity.ms,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+claude.ai,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+clevertap-prod.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+cloud.microsoft,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, "
+cloudflare-dns.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 0, "
+cloudflare.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 0, "
+cloudflare.net,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 0, "
+cloudflareclient.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step .25, "
+cloudflareinsights.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step .25, "
+cloudflarestorage.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step .25, "
+cloudfront.net,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, "
+cloudfunctions.net,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+cloudinary.com,cloudinary|amazon,"{""cloudinary"": ""private"", ""amazon"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+cloudsink.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+cnn.com,amazon|fastly,"{""amazon"": ""third"", ""fastly"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
 coloros.com,,{},False,False,False,
-comcast.net,,{},False,False,False,
-comodoca.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-company-target.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-connatix.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-contentsquare.net,,{},False,False,False,
-contextweb.com,,{},False,False,False,
-conviva.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-cookiebot.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-cookielaw.org,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-cootlogix.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-crashlytics.com,,{},False,False,False,
-crealitycloud.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+comcast.net,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+comodoca.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 1, "
+company-target.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+connatix.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+contentsquare.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+contextweb.com,twitter,"{""twitter"": ""third""}",True,True,False,"step 1, "
+conviva.com,amazon|wordpress,"{""amazon"": ""third"", ""wordpress"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+cookiebot.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+cookielaw.org,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+cootlogix.com,,{},False,False,False,
+crashlytics.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+crealitycloud.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 1, "
 creativecdn.com,,{},False,False,False,
-criteo.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-criteo.net,,{},False,False,False,
-crwdcntrl.net,,{},False,False,False,
-cspserver.net,,{},False,False,False,
-curseforge.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-cursor.sh,,{},False,False,False,
-dalyfeds.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-datadoghq.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-datadome.co,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-datto.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+criteo.com,criteo,"{""criteo"": ""private""}",False,False,False,"step 0, "
+criteo.net,criteo,"{""criteo"": ""private""}",False,False,False,"step 0, "
+crwdcntrl.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+cspserver.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+curseforge.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+cursor.sh,amazon|vercel,"{""amazon"": ""third"", ""vercel"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+dalyfeds.com,akamai|amazon,"{""akamai"": ""third"", ""amazon"": ""third""}",True,True,True,"step 1, step 2, "
+datadoghq.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+datadome.co,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+datto.com,,{},False,False,False,
 dbankcdn.com,,{},False,False,False,
 dbankcloud.cn,,{},False,False,False,
 dbankcloud.com,,{},False,False,False,
 dbankcloud.ru,,{},False,False,False,
 ddns.net,,{},False,False,False,
 debian.org,,{},False,False,False,
-deepintent.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-deepl.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-deepseek.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-dell.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
-demdex.net,,{},False,False,False,
+deepintent.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+deepl.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+deepseek.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
+dell.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+demdex.net,adobe|amazon,"{""adobe"": ""private"", ""amazon"": ""private""}",False,False,True,"step 0, step 1, "
 didiglobal.com,,{},False,False,False,
-digicert.com,digicert,"{""digicert"": ""private""}",False,False,False,"step 0, step .25, "
-digitaloceanspaces.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-discomax.com,,{},False,False,False,
-discord.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-discord.gg,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-discord.media,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-discordapp.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-discordapp.net,,{},False,False,False,
-disqus.com,,{},False,False,False,
-dns.google,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-docker.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-docker.io,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-doppiocdn.com,,{},False,False,False,
-dotomi.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-doubleclick.net,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-doubleverify.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+digicert.com,digicert|imperva,"{""digicert"": ""private"", ""imperva"": ""third""}",True,False,True,"step .25, step 1, "
+digitaloceanspaces.com,digitalocean|cloudflare,"{""digitalocean"": ""private"", ""cloudflare"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+discomax.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+discord.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+discord.gg,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+discord.media,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+discordapp.com,discord|cloudflare,"{""discord"": ""private"", ""cloudflare"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+discordapp.net,discord|cloudflare,"{""discord"": ""private"", ""cloudflare"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+disqus.com,amazon|fastly,"{""amazon"": ""third"", ""fastly"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+dns.google,google,"{""google"": ""private""}",False,False,False,"step 0, "
+docker.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+docker.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+doppiocdn.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+dotomi.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+doubleclick.net,google,"{""google"": ""third""}",True,True,False,"step .25, "
+doubleverify.com,,{},False,False,False,
 douyincdn.com,,{},False,False,False,
 douyinpic.com,,{},False,False,False,
 douyinvod.com,,{},False,False,False,
-dropbox.com,,{},False,False,False,
-dropboxapi.com,,{},False,False,False,
-dssott.com,,{},False,False,False,
-dtscout.com,,{},False,False,False,
-dual-s-msedge.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-duckdns.org,,{},False,False,False,
+dropbox.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+dropboxapi.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+drpc.org,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+dssott.com,telegram,"{""telegram"": ""private""}",False,False,False,"step 1, "
+dtscout.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+dual-s-msedge.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .25, "
+duckdns.org,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
 duckduckgo.com,,{},False,False,False,
-duolingo.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-dv.tech,google,"{""google"": ""third""}",True,True,False,"step 2, "
-dynatrace.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+duolingo.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+dv.tech,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+dynatrace.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
 dyndns.org,,{},False,False,False,
 dzen.ru,,{},False,False,False,
-ea.com,,{},False,False,False,
+ea.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
 easebar.com,,{},False,False,False,
-easy4ipcloud.com,,{},False,False,False,
-ebay.com,,{},False,False,False,
-edgcdn.net,,{},False,False,False,
-edge.apple,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
-edgekey.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, step .25, "
-edgesuite.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, step .25, "
-elasticbeanstalk.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+easy4ipcloud.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+ebay.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+edgcdn.net,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+edge.apple,apple,"{""apple"": ""private""}",False,False,False,"step 0, "
+edgekey.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, "
+edgesuite.net,akamai,"{""akamai"": ""private""}",False,False,False,"step 0, "
+elasticbeanstalk.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 entrust.net,,{},False,False,False,
-epicgames.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-epicgames.dev,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-erome.com,bunnycdn,"{""bunnycdn"": ""third""}",True,True,False,"step 2, "
-eset.com,,{},False,False,False,
-eskimi.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-espn.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-eu-1-id5-sync.com,,{},False,False,False,
-europa.eu,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+epicgames.com,amazon|cloudflare,"{""amazon"": ""private"", ""cloudflare"": ""private""}",False,False,True,"step .8 (SOA), step 1, "
+epicgames.dev,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+erome.com,cloudflare|bunnycdn,"{""cloudflare"": ""third"", ""bunnycdn"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+eset.com,akamai|microsoft,"{""akamai"": ""third"", ""microsoft"": ""third""}",True,True,True,"step 1, step 1, "
+eskimi.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+espn.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+eu-1-id5-sync.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+europa.eu,,{},False,False,False,
 everesttech.net,,{},False,False,False,
-example.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-example.org,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-exp-tas.com,,{},False,False,False,
+example.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+example.org,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+exp-tas.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
 eye4.cn,,{},False,False,False,
-eyeota.net,,{},False,False,False,
-ezvizlife.com,,{},False,False,False,
-facebook.com,meta,"{""meta"": ""private""}",False,False,False,"step 0, step .25, "
-facebook.net,meta,"{""meta"": ""private""}",False,False,False,"step 0, step .25, "
-fandom.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+eyeota.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+ezvizlife.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+facebook.com,meta,"{""meta"": ""private""}",False,False,False,"step .25, "
+facebook.net,meta,"{""meta"": ""private""}",False,False,False,"step 0, "
+fandom.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
 fast.com,,{},False,False,False,
-fastly-edge.com,fastly,"{""fastly"": ""private""}",False,False,False,"step 0, step .25, "
-fastly.net,fastly,"{""fastly"": ""private""}",False,False,False,"step 0, step .25, "
-fb-t-msedge.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-fb.com,meta,"{""meta"": ""third""}",True,True,False,"step 2, "
-fbcdn.net,meta,"{""meta"": ""private""}",False,False,False,"step 0, step .25, "
-fbpigeon.com,,{},False,False,False,
-fbsbx.com,meta,"{""meta"": ""third""}",True,True,False,"step 2, "
-featureassets.org,google,"{""google"": ""third""}",True,True,False,"step 2, "
-fifa.com,,{},False,False,False,
-figma.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-firebaseio.com,,{},False,False,False,
-firefox.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-firetvcaptiveportal.com,,{},False,False,False,
-flashbots.net,,{},False,False,False,
-flashtalking.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+fastly-edge.com,fastly,"{""fastly"": ""private""}",False,False,False,"step 0, "
+fastly.net,fastly,"{""fastly"": ""private""}",False,False,False,"step 0, "
+fb-t-msedge.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .25, "
+fb.com,meta,"{""meta"": ""private""}",False,False,False,"step 0, "
+fbcdn.net,meta,"{""meta"": ""private""}",False,False,False,"step 0, "
+fbpigeon.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+fbsbx.com,meta,"{""meta"": ""private""}",False,False,False,"step 0, "
+featureassets.org,amazon|google,"{""amazon"": ""third"", ""google"": ""third""}",True,True,True,"step .8 (SOA), step 2, "
+fifa.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+figma.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+firebaseio.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+firefox.com,,{},False,False,False,
+firetvcaptiveportal.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+flashbots.net,cloudflare|vercel,"{""cloudflare"": ""third"", ""vercel"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+flashtalking.com,,{},False,False,False,
 foggymorningmist.com,,{},False,False,False,
-fontawesome.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-force.com,,{},False,False,False,
-forter.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-fotmob.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-freefiremobile.com,,{},False,False,False,
-fullstory.com,,{},False,False,False,
-fwmrm.net,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-fyber.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-gameanalytics.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-gamepass.com,,{},False,False,False,
-garena.com,,{},False,False,False,
-garmin.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-gboxlab.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-gcdn.co,,{},False,False,False,
-geoedge.be,,{},False,False,False,
-geotrust.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-ggpht.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-github.com,,{},False,False,False,
-github.io,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
+fontawesome.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 2, "
+force.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+forter.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 2, "
+fotmob.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+freefiremobile.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+freenet.de,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+fullstory.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+fwmrm.net,wordpress,"{""wordpress"": ""third""}",True,True,False,"step 1, "
+fyber.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 1, "
+gameanalytics.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+gamepass.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step .8 (SOA), "
+garena.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+garmin.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 1, "
+gboxlab.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+gcdn.co,gcore,"{""gcore"": ""private""}",False,False,False,"step 0, "
+geoedge.be,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+geotrust.com,digicert|imperva,"{""digicert"": ""third"", ""imperva"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+ggpht.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
+github.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+github.io,github,"{""github"": ""private""}",False,False,False,"step 0, "
 githubcopilot.com,,{},False,False,False,
-githubusercontent.com,,{},False,False,False,
-gitlab.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-glance-cdn.com,,{},False,False,False,
-glanceapis.com,,{},False,False,False,
-globalsign.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
+githubusercontent.com,github,"{""github"": ""private""}",False,False,False,"step 0, "
+gitlab.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step .8 (SOA), "
+glance-cdn.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+glanceapis.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+globalsign.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 1, "
 globo.com,,{},False,False,False,
-gmail.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+gmail.com,google,"{""google"": ""third""}",True,True,False,"step .25, "
 go-mpulse.net,,{},False,False,False,
-godaddy.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
-google-analytics.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-google.ca,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-google.cn,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-google.co.id,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-google.co.uk,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-google.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-google.com.br,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-google.com.hk,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-google.de,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-google.fr,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-google.ru,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-google.us,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-googleadservices.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-googleapis.cn,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-googleapis.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-googlesyndication.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-googletagmanager.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-googletagservices.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-googleusercontent.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-googlevideo.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-googlezip.net,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-gos-gsp.io,,{},False,False,False,
+godaddy.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+google-analytics.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
+google.ca,google,"{""google"": ""private""}",False,False,False,"step .25, "
+google.cn,google,"{""google"": ""private""}",False,False,False,"step .25, "
+google.co.uk,google,"{""google"": ""private""}",False,False,False,"step .25, "
+google.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
+google.com.br,google,"{""google"": ""private""}",False,False,False,"step .25, "
+google.com.hk,google,"{""google"": ""private""}",False,False,False,"step .25, "
+google.de,google,"{""google"": ""private""}",False,False,False,"step .25, "
+google.ru,google,"{""google"": ""private""}",False,False,False,"step .25, "
+google.us,google,"{""google"": ""private""}",False,False,False,"step .25, "
+googleadservices.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
+googleapis.cn,google,"{""google"": ""private""}",False,False,False,"step .25, "
+googleapis.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
+googlesyndication.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
+googletagmanager.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
+googletagservices.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
+googleusercontent.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
+googlevideo.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
+googlezip.net,google,"{""google"": ""private""}",False,False,False,"step .25, "
+gos-gsp.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 goskope.com,,{},False,False,False,
-grafana.com,google,"{""google"": ""third""}",True,True,False,"step 2, "
-grammarly.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-grammarly.io,,{},False,False,False,
-grass.io,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-gravatar.com,,{},False,False,False,
-gstatic.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-gumgum.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-gvt1.com,,{},False,False,False,
-gvt2.com,,{},False,False,False,
-gvt3.com,,{},False,False,False,
+grafana.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+grammarly.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+grammarly.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+grass.io,cloudflare|amazon,"{""cloudflare"": ""third"", ""amazon"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+gravatar.com,gravatar,"{""gravatar"": ""private""}",False,False,False,"step 0, "
+gstatic.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
+gumgum.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 2, "
+gvt1.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
+gvt2.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
+gvt3.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
 hakunaymatata.com,,{},False,False,False,
-harman.com,,{},False,False,False,
-hcaptcha.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-hdslb.com,,{},False,False,False,
+harman.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+hcaptcha.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+hdslb.com,bilibili,"{""bilibili"": ""private""}",False,False,False,"step 0, "
 he.net,,{},False,False,False,
 hellotalk8.com,,{},False,False,False,
-heytapdl.com,,{},False,False,False,
+heytapdl.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 heytapmobi.com,,{},False,False,False,
-heytapmobile.com,,{},False,False,False,
-hicloud.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
-hihonor.com,,{},False,False,False,
+heytapmobile.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+hicloud.com,huawei|apple,"{""huawei"": ""private"", ""apple"": ""third""}",True,False,True,"step 0, step .25, "
+hihonor.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
 hihonorcloud.com,,{},False,False,False,
-hik-connect.com,,{},False,False,False,
+hik-connect.com,amazon|twitter,"{""amazon"": ""private"", ""twitter"": ""private""}",False,False,True,"step .8 (SOA), step 1, "
 hisavana.com,,{},False,False,False,
-histats.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-home-assistant.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-honeygain.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-hotjar.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-hotmail.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step 2, "
-hoyoverse.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-hp.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
-hs-banner.com,,{},False,False,False,
-huawei.com,,{},False,False,False,
-hubapi.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-hubspot.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-hulu.com,,{},False,False,False,
-huntress.io,,{},False,False,False,
+histats.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 1, "
+home-assistant.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+hotjar.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+hotmail.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+hoyoverse.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
+hp.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+html-load.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+huawei.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+hubspot.com,hubspot|cloudflare,"{""hubspot"": ""private"", ""cloudflare"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+hulu.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+huntress.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 i18n-pglstatp.com,,{},False,False,False,
 ibytedtos.com,,{},False,False,False,
-ibyteimg.com,,{},False,False,False,
-icanhazip.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-icloud-content.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
-icloud.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
-icloud.com.cn,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
-id5-sync.com,,{},False,False,False,
-ieee.org,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-ifconfig.me,google,"{""google"": ""third""}",True,True,False,"step 2, "
+ibyteimg.com,bytedance,"{""bytedance"": ""private""}",False,False,False,"step 0, "
+icanhazip.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+icloud-content.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, "
+icloud.com,apple|akamai,"{""apple"": ""third"", ""akamai"": ""third""}",True,True,True,"step .25, step 1, "
+icloud.com.cn,apple|akamai,"{""apple"": ""third"", ""akamai"": ""third""}",True,True,True,"step .25, step 1, "
+id5-sync.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step .8 (SOA), "
+ieee.org,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
+ifconfig.me,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
 igamecj.com,,{},False,False,False,
 im-apps.net,google,"{""google"": ""third""}",True,True,False,"step 2, "
-imgsmail.ru,,{},False,False,False,
-imoim.net,,{},False,False,False,
-impervadns.net,incapsula,"{""incapsula"": ""private""}",False,False,False,"step 0, step .25, "
+imoim.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+impervadns.net,imperva|incapsula,"{""imperva"": ""private"", ""incapsula"": ""third""}",True,False,True,"step 0, step .25, "
 imrworldwide.com,,{},False,False,False,
-inaccuracy.net,,{},False,False,False,
-incognia.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-indeed.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-indexww.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-ingage.tech,,{},False,False,False,
+inaccuracy.net,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+incognia.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+indeed.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+indexww.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+ingage.tech,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
 inkuai.com,,{},False,False,False,
-inmobi.com,google,"{""google"": ""third""}",True,True,False,"step 2, "
-inmobicdn.net,,{},False,False,False,
-inner-active.mobi,microsoft,"{""microsoft"": ""third""}",True,True,False,"step 2, "
-innovid.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-instagram.com,meta,"{""meta"": ""private""}",False,False,False,"step 0, step .25, "
+inmobi.com,google,"{""google"": ""private""}",False,False,False,"step .8 (SOA), "
+inmobicdn.net,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+inner-active.mobi,,{},False,False,False,
+innovid.com,,{},False,False,False,
+instagram.com,meta,"{""meta"": ""private""}",False,False,False,"step .25, "
 int08h.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-intel.com,,{},False,False,False,
-intelbras.com.br,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-intentiq.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-intercom.io,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-intuit.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
+intel.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+intelbras.com.br,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+intentiq.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+intercom.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+intuit.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
 ip-api.com,,{},False,False,False,
-ipapi.co,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-ipify.org,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-ipinfo.io,google,"{""google"": ""third""}",True,True,False,"step 2, "
-ipredictive.com,,{},False,False,False,
-isappcloud.com,,{},False,False,False,
-isnssdk.com,,{},False,False,False,
-ixigua.com,bunnycdn,"{""bunnycdn"": ""third""}",True,True,False,"step 2, "
-jd.com,,{},False,False,False,
-jetbrains.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-jquery.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-jsdelivr.net,,{},False,False,False,
-jtvnw.net,,{},False,False,False,
+ipapi.co,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+ipify.org,cloudflare|amazon,"{""cloudflare"": ""third"", ""amazon"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+ipinfo.io,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+ipredictive.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+isappcloud.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+isnssdk.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+ixigua.com,,{},False,False,False,
+jd.com,jd,"{""jd"": ""private""}",False,False,False,"step 1, "
+jetbrains.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+jquery.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+jsdelivr.net,jsdelivr|gcore,"{""jsdelivr"": ""private"", ""gcore"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+jtvnw.net,twitch|amazon,"{""twitch"": ""private"", ""amazon"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
 kakao.com,,{},False,False,False,
-kakaocdn.net,,{},False,False,False,
-kargo.com,,{},False,False,False,
+kakaocdn.net,kakao,"{""kakao"": ""private""}",False,False,False,"step 0, "
+kargo.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 kaspersky-labs.com,,{},False,False,False,
 kaspersky.com,,{},False,False,False,
-kick.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-klaviyo.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-ks-cdn.com,,{},False,False,False,
+kick.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+klaviyo.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+ks-cdn.com,kingsoft,"{""kingsoft"": ""private""}",False,False,False,"step 0, "
 ksapisrv.com,,{},False,False,False,
-kslawin.com,,{},False,False,False,
+kslawin.com,amazon|akamai,"{""amazon"": ""private"", ""akamai"": ""private""}",False,False,True,"step .8 (SOA), step 1, "
 ksord.com,,{},False,False,False,
-kueezrtb.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-kwai-pro.com,,{},False,False,False,
-kwai.com,,{},False,False,False,
+kueezrtb.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+kwai-pro.com,akamai,"{""akamai"": ""private""}",False,False,False,"step 1, "
+kwai.com,akamai,"{""akamai"": ""private""}",False,False,False,"step 1, "
 kwai.net,,{},False,False,False,
 kwaipros.com,,{},False,False,False,
-kwcdn.com,,{},False,False,False,
-launchdarkly.com,nextjs,"{""nextjs"": ""third""}",True,True,False,"step 2, "
-leiniao.com,,{},False,False,False,
-lencr.org,,{},False,False,False,
-lenovo.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-letsencrypt.org,,{},False,False,False,
+kwcdn.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+launchdarkly.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+leiniao.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+lencr.org,cloudflare|netlify,"{""cloudflare"": ""third"", ""netlify"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+lenovo.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+letsencrypt.org,cloudflare|netlify,"{""cloudflare"": ""third"", ""netlify"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
 lge.com,,{},False,False,False,
 lgsmartad.com,,{},False,False,False,
 lgthinq.com,,{},False,False,False,
-lgtvcommon.com,,{},False,False,False,
+lgtvcommon.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 lgtvsdp.com,,{},False,False,False,
 liadm.com,,{},False,False,False,
-licdn.com,,{},False,False,False,
-life360.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-liftoff-creatives.io,,{},False,False,False,
-liftoff.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-lijit.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-linkedin.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-listdl.com,,{},False,False,False,
-litix.io,,{},False,False,False,
-live-video.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-live.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-live.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-livechatinc.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-llamarpc.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-ln-msedge.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-loopme.me,,{},False,False,False,
-ltwebstatic.com,,{},False,False,False,
-magazineluiza.com.br,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
-magnific.com,nextjs,"{""nextjs"": ""third""}",True,True,False,"step 2, "
+licdn.com,linkedin,"{""linkedin"": ""private""}",False,False,False,"step 0, "
+life360.com,amazon|cloudflare,"{""amazon"": ""private"", ""cloudflare"": ""private""}",False,False,True,"step .8 (SOA), step 1, "
+liftoff-creatives.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+liftoff.io,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+lijit.com,twitter,"{""twitter"": ""private""}",False,False,False,"step 1, "
+linkedin.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 1, "
+listdl.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+litix.io,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+live-video.net,microsoft|amazon,"{""microsoft"": ""third"", ""amazon"": ""third""}",True,True,True,"step .25, step .8 (SOA), "
+live.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step .25, "
+live.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step .25, "
+livechatinc.com,microsoft|cloudflare|akamai,"{""microsoft"": ""third"", ""cloudflare"": ""third"", ""akamai"": ""third""}",True,True,True,"step .25, step .8 (SOA), step 1, "
+llamarpc.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+ln-msedge.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .25, "
+loopme.me,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+ltwebstatic.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+magazineluiza.com.br,amazon|akamai,"{""amazon"": ""third"", ""akamai"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+magnific.com,,{},False,False,False,
 mail.ru,,{},False,False,False,
-mapbox.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-marzaent.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-match.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-mathtag.com,,{},False,False,False,
-mcafee.com,,{},False,False,False,
-me.com,,{},False,False,False,
-medallia.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-media-amazon.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-media.net,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-mediago.io,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-mediatek.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+mapbox.com,amazon|fastly,"{""amazon"": ""third"", ""fastly"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+marzaent.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+match.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+mathtag.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+mcafee.com,akamai,"{""akamai"": ""private""}",False,False,False,"step 1, "
+me.com,apple,"{""apple"": ""third""}",True,True,False,"step .8 (SOA), "
+medallia.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+media-amazon.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, "
+media.net,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+mediago.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+mediatek.com,,{},False,False,False,
 meethue.com,,{},False,False,False,
-meraki.com,,{},False,False,False,
-mercadolibre.com,,{},False,False,False,
-mercadolivre.com.br,,{},False,False,False,
-merkle.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-meta.com,meta,"{""meta"": ""private""}",False,False,False,"step 2, "
-metamask.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-mgid.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+meraki.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+mercadolibre.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+mercadolivre.com.br,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+merkle.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+meta.com,meta,"{""meta"": ""private""}",False,False,False,"step .8 (SOA), "
+metamask.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+mgid.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
 mi-img.com,,{},False,False,False,
-mi.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
-microsoft.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-microsoftonline.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-microsoftpersonalcontent.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
+mi.com,akamai,"{""akamai"": ""private""}",False,False,False,"step 1, "
+microsoft.com,microsoft|akamai,"{""microsoft"": ""private"", ""akamai"": ""third""}",True,False,True,"step .25, step 1, "
+microsoftonline.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step .25, "
+microsoftpersonalcontent.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step .25, "
 mikrotik.com,,{},False,False,False,
-mintegral.net,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+mintegral.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 mioffice.cn,,{},False,False,False,
 miui.com,,{},False,False,False,
-miwifi.com,,{},False,False,False,
-mixpanel.com,,{},False,False,False,
-mlstatic.com,,{},False,False,False,
-mmcdn.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-mmechocaptiveportal.com,,{},False,False,False,
+miwifi.com,wangsu,"{""wangsu"": ""third""}",True,True,False,"step 1, "
+mixpanel.com,google,"{""google"": ""private""}",False,False,False,"step .8 (SOA), "
+mlstatic.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+mmcdn.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+mmechocaptiveportal.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 mmstat.com,,{},False,False,False,
-moengage.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-mojang.com,,{},False,False,False,
-moloco.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-mona.co,,{},False,False,False,
-mosspf.net,,{},False,False,False,
-mossru.com,,{},False,False,False,
-mozgcp.net,,{},False,False,False,
-mozilla.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
+moengage.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+mojang.com,microsoft|akamai,"{""microsoft"": ""third"", ""akamai"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+moloco.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+mona.co,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+mosspf.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+mozgcp.net,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+mozilla.com,,{},False,False,False,
 mozilla.net,,{},False,False,False,
-mozilla.org,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-mparticle.com,,{},False,False,False,
+mozilla.org,fastly,"{""fastly"": ""third""}",True,True,False,"step 1, "
+mparticle.com,amazon|vercel,"{""amazon"": ""third"", ""vercel"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
 mradx.net,,{},False,False,False,
 msauth.net,,{},False,False,False,
-msedge.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-msftauth.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-msftconnecttest.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-msftncsi.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
+msedge.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step .25, "
+msftauth.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .25, "
+msftconnecttest.com,microsoft|akamai,"{""microsoft"": ""private"", ""akamai"": ""third""}",True,False,True,"step 0, step 1, "
+msftncsi.com,microsoft|akamai,"{""microsoft"": ""private"", ""akamai"": ""third""}",True,False,True,"step 0, step 1, "
 msidentity.com,,{},False,False,False,
-msn.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-mtgglobals.com,,{},False,False,False,
+msn.com,microsoft|akamai,"{""microsoft"": ""third"", ""akamai"": ""third""}",True,True,True,"step .25, step 1, "
+mtgglobals.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 mts.ru,,{},False,False,False,
-mydramawave.com,,{},False,False,False,
-myhuaweicloud.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
+mydramawave.com,alibaba,"{""alibaba"": ""third""}",True,True,False,"step 1, "
+myhuaweicloud.com,apple,"{""apple"": ""third""}",True,True,False,"step .25, "
 mynetname.net,,{},False,False,False,
-myqcloud.com,,{},False,False,False,
-myshopify.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+myqcloud.com,tencent,"{""tencent"": ""private""}",False,False,False,"step 0, "
+myshopify.com,shopify|cloudflare,"{""shopify"": ""private"", ""cloudflare"": ""private""}",False,False,True,"step 0, step 2, "
 mythad.com,,{},False,False,False,
-mzstatic.com,,{},False,False,False,
+mzstatic.com,apple,"{""apple"": ""private""}",False,False,False,"step 0, "
 naver.com,,{},False,False,False,
 ndcpp-os.com,,{},False,False,False,
 ne.jp,,{},False,False,False,
-nel.goog,,{},False,False,False,
-nelreports.net,,{},False,False,False,
-netflix.com,netflix,"{""netflix"": ""private""}",False,False,False,"step 0, step .25, "
-netflix.net,netflix,"{""netflix"": ""private""}",False,False,False,"step 0, step .25, "
-netgear.com,,{},False,False,False,
-networklinks.space,,{},False,False,False,
-newrelic.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-newsroom.bi,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+nel.goog,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+nelreports.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+netflix.com,netflix|amazon,"{""netflix"": ""private"", ""amazon"": ""private""}",False,False,True,"step .25, step .8 (SOA), "
+netflix.net,netflix|amazon,"{""netflix"": ""private"", ""amazon"": ""private""}",False,False,True,"step .25, step .8 (SOA), "
+netgear.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
+networklinks.space,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+newrelic.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 1, "
+newsroom.bi,cloudflare|fastly,"{""cloudflare"": ""third"", ""fastly"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
 nextcloud.com,,{},False,False,False,
-nextlgsdp.com,,{},False,False,False,
-nflxext.com,netflix,"{""netflix"": ""private""}",False,False,False,"step 0, step .25, "
-nflximg.com,netflix,"{""netflix"": ""private""}",False,False,False,"step 0, step .25, "
-nflxso.net,netflix,"{""netflix"": ""private""}",False,False,False,"step 0, step .25, "
-nflxvideo.net,netflix,"{""netflix"": ""private""}",False,False,False,"step 0, step .25, "
-ninjarmm.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-nintendo.net,,{},False,False,False,
-nist.gov,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+nextlgsdp.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+nflxext.com,netflix|amazon,"{""netflix"": ""private"", ""amazon"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+nflximg.com,netflix|amazon,"{""netflix"": ""private"", ""amazon"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+nflxso.net,netflix,"{""netflix"": ""private""}",False,False,False,"step 0, "
+nflxvideo.net,netflix|amazon,"{""netflix"": ""private"", ""amazon"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+ninjarmm.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+nintendo.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+nist.gov,,{},False,False,False,
 no-ip.com,,{},False,False,False,
-norton.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-notion.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+norton.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+notion.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
 nr-data.net,,{},False,False,False,
 ns1p.net,,{},False,False,False,
 ntp.br,,{},False,False,False,
 ntp.org,,{},False,False,False,
-ntppool.org,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-nubank.com.br,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-nvidia.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
-nytimes.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-oaistatic.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-oculus.com,meta,"{""meta"": ""third""}",True,True,False,"step 2, "
-office.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step 2, "
-office.net,,{},False,False,False,
-office365.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
+ntppool.org,fastly,"{""fastly"": ""private""}",False,False,False,"step 1, "
+nubank.com.br,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+nvidia.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+nytimes.com,amazon|fastly,"{""amazon"": ""private"", ""fastly"": ""private""}",False,False,True,"step .8 (SOA), step 1, "
+oaistatic.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+oculus.com,meta,"{""meta"": ""third""}",True,True,False,"step .8 (SOA), "
+office.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+office.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+office365.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step .25, "
 ok.ru,,{},False,False,False,
 okcdn.ru,,{},False,False,False,
-okta.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-okx.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-omnitagjs.com,,{},False,False,False,
-omtrdc.net,,{},False,False,False,
-on.aws,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
+okta.com,google|cloudflare,"{""google"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+okx.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+omnitagjs.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+omtrdc.net,adobe,"{""adobe"": ""private""}",False,False,False,"step 0, "
+on.aws,amazon,"{""amazon"": ""third""}",True,True,False,"step .25, "
 one.one,,{},False,False,False,
-onedrive.com,,{},False,False,False,
-onegg.site,,{},False,False,False,
-onelink.me,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+onedrive.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+onelink.me,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 oneme.ru,,{},False,False,False,
-onesignal.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+onesignal.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
 onetag-sys.com,,{},False,False,False,
-onetrust.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-onetrust.io,,{},False,False,False,
-online-metrix.net,,{},False,False,False,
-openai.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+onetrust.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+onetrust.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+online-metrix.net,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+openai.com,microsoft|cloudflare,"{""microsoft"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
 opendns.com,,{},False,False,False,
-openx.net,google,"{""google"": ""third""}",True,True,False,"step 2, "
+openstreetmap.org,cloudflare|fastly,"{""cloudflare"": ""third"", ""fastly"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+openwebmp.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+openx.net,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
 opera-api.com,,{},False,False,False,
 opera-api2.com,,{},False,False,False,
-opera.com,,{},False,False,False,
-optimizely.com,nextjs,"{""nextjs"": ""third""}",True,True,False,"step 2, "
-oracle.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
-oraclecloud.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
+opera.com,opera,"{""opera"": ""private""}",False,False,False,"step 0, "
+optimizely.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+oracle.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+oraclecloud.com,oracle|akamai,"{""oracle"": ""private"", ""akamai"": ""third""}",True,False,True,"step 0, step 1, "
 orange.fr,,{},False,False,False,
-outbrain.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-outlook.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step 2, "
-overwolf.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+outbrain.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+outlook.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+overwolf.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 ovscdns.net,,{},False,False,False,
+oxylabs.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
 ozon.ru,,{},False,False,False,
 ozone.ru,,{},False,False,False,
-pages.dev,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-palmplaystore.com,,{},False,False,False,
-paloaltonetworks.com,,{},False,False,False,
+pages.dev,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 0, "
+palmplaystore.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+paloaltonetworks.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
 pandora.com,,{},False,False,False,
 pangle.io,,{},False,False,False,
-paypal.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-pbstck.com,,{},False,False,False,
-peacocktv.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
+paypal.com,fastly,"{""fastly"": ""private""}",False,False,False,"step 1, "
+pbstck.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+peacocktv.com,fastly|twitter,"{""fastly"": ""third"", ""twitter"": ""third""}",True,True,True,"step 1, step 1, "
 pemsrv.com,,{},False,False,False,
-pendo.io,nextjs,"{""nextjs"": ""third""}",True,True,False,"step 2, "
-perplexity.ai,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-phantom.app,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-phncdn.com,,{},False,False,False,
-pinimg.com,,{},False,False,False,
-pinterest.com,,{},False,False,False,
-pki.goog,google,"{""google"": ""third""}",True,True,False,"step 2, "
-playfabapi.com,,{},False,False,False,
-playrix.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-playstation.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
+pendo.io,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+perplexity.ai,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+phantom.app,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+phncdn.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+pinimg.com,pinterest,"{""pinterest"": ""private""}",False,False,False,"step 0, "
+pinterest.com,akamai|twitter,"{""akamai"": ""private"", ""twitter"": ""private""}",False,False,True,"step 1, step 1, "
+pki.goog,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+playfabapi.com,amazon|microsoft,"{""amazon"": ""third"", ""microsoft"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+playrix.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+playstation.com,amazon|akamai,"{""amazon"": ""third"", ""akamai"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
 playstation.net,,{},False,False,False,
-plex.tv,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-pluto.tv,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-polymarket.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-posthog.com,,{},False,False,False,
+plex.tv,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+pluto.tv,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+polymarket.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+posthog.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
 postrelease.com,,{},False,False,False,
 presage.io,,{},False,False,False,
-primis.tech,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-privacy-center.org,,{},False,False,False,
-privacy-mgmt.com,,{},False,False,False,
-privacymanager.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-prodregistryv2.org,google,"{""google"": ""third""}",True,True,False,"step 2, "
-protechts.net,google,"{""google"": ""third""}",True,True,False,"step 2, "
-pstatic.net,,{},False,False,False,
-publicnode.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+primis.tech,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+privacy-center.org,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+privacy-mgmt.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+privacymanager.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+prodregistryv2.org,amazon|google,"{""amazon"": ""third"", ""google"": ""third""}",True,True,True,"step .8 (SOA), step 2, "
+protechts.net,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+pstatic.net,naver,"{""naver"": ""private""}",False,False,False,"step 0, "
+publicnode.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
 pubmatic.com,,{},False,False,False,
 pubmnet.com,,{},False,False,False,
-pubnative.net,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-pullcf.com,,{},False,False,False,
-pullcm.com,,{},False,False,False,
-pusher.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-pv-cdn.net,,{},False,False,False,
-pvp.net,,{},False,False,False,
-px-cloud.net,google,"{""google"": ""third""}",True,True,False,"step 2, "
-qlivecdn.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-qq.com,,{},False,False,False,
-qualtrics.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
-quantcount.com,,{},False,False,False,
-quantserve.com,,{},False,False,False,
-quantummetric.com,,{},False,False,False,
-quickconnect.to,,{},False,False,False,
-rainberrytv.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-rapid7.com,,{},False,False,False,
-ravm.tv,google,"{""google"": ""third""}",True,True,False,"step 2, "
+pubnative.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+pullcf.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+pullcm.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+pusher.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+pv-cdn.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+pvp.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+px-cloud.net,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+qlivecdn.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .25, "
+qq.com,tencent,"{""tencent"": ""private""}",False,False,False,"step 0, "
+qualtrics.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+quantcount.com,quantserve|amazon,"{""quantserve"": ""private"", ""amazon"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+quantserve.com,quantserve|amazon,"{""quantserve"": ""private"", ""amazon"": ""private""}",False,False,True,"step 0, step .8 (SOA), "
+quantummetric.com,cloudflare|vercel,"{""cloudflare"": ""third"", ""vercel"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+rainberrytv.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+rapid7.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+ravm.tv,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
 rbxcdn.com,,{},False,False,False,
-readthedocs.org,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-recaptcha.net,,{},False,False,False,
-redd.it,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-reddit.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-redditmedia.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-redditstatic.com,,{},False,False,False,
-revenuecat.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+recaptcha.net,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+redd.it,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+reddit.com,amazon|fastly,"{""amazon"": ""third"", ""fastly"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+redditmedia.com,amazon|fastly,"{""amazon"": ""third"", ""fastly"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+redditstatic.com,amazon|fastly,"{""amazon"": ""third"", ""fastly"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+revenuecat.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 rfihub.com,,{},False,False,False,
-richaudience.com,,{},False,False,False,
-ring.com,,{},False,False,False,
-riotcdn.net,,{},False,False,False,
-riotgames.com,,{},False,False,False,
-rlcdn.com,,{},False,False,False,
-roblox.com,roblox,"{""roblox"": ""private""}",False,False,False,"step 0, step .25, "
-rocket-cdn.com,,{},False,False,False,
-roku.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-rubiconproject.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-run.app,,{},False,False,False,
+richaudience.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+ring.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+riotcdn.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+riotgames.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+rlcdn.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+roblox.com,roblox,"{""roblox"": ""private""}",False,False,False,"step .25, "
+rocket-cdn.com,apple,"{""apple"": ""third""}",True,True,False,"step .8 (SOA), "
+roku.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+rubiconproject.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+run.app,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
 rustore.ru,,{},False,False,False,
-safebrowsing.apple,apple,"{""apple"": ""private""}",False,False,False,"step 0, step .25, "
-safedk.com,,{},False,False,False,
-salesforce.com,,{},False,False,False,
-samba.tv,,{},False,False,False,
-samsung.com,,{},False,False,False,
-samsungacr.com,,{},False,False,False,
-samsungads.com,,{},False,False,False,
-samsungapps.com,,{},False,False,False,
-samsungcloud.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-samsungcloud.tv,,{},False,False,False,
-samsungcloudsolution.com,,{},False,False,False,
-samsungcloudsolution.net,,{},False,False,False,
-samsungdm.com,,{},False,False,False,
+safebrowsing.apple,apple,"{""apple"": ""private""}",False,False,False,"step 0, "
+safedk.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+salesforce.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+samba.tv,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+samsung.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+samsungacr.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+samsungads.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+samsungapis.com,,{},False,False,False,
+samsungapps.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 1, "
+samsungcloud.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+samsungcloud.tv,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+samsungcloudsolution.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+samsungcloudsolution.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+samsungconsent.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+samsungdm.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 samsungelectronics.com,,{},False,False,False,
-samsungiotcloud.com,,{},False,False,False,
-samsungnyc.com,,{},False,False,False,
+samsungiotcloud.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+samsungnyc.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 samsungosp.com,,{},False,False,False,
-samsungqbe.com,,{},False,False,False,
+samsungqbe.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 sascdn.com,,{},False,False,False,
-sc-cdn.net,,{},False,False,False,
-sc-gw.com,,{},False,False,False,
-sc-static.net,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-scdn.co,,{},False,False,False,
-scorecardresearch.com,,{},False,False,False,
-script.ac,,{},False,False,False,
-sectigo.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+sc-cdn.net,snapchat|amazon,"{""snapchat"": ""private"", ""amazon"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+sc-gw.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+sc-static.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+scdn.co,fastly,"{""fastly"": ""third""}",True,True,False,"step 1, "
+scorecardresearch.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+script.ac,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+sectigo.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 1, "
 secu100.net,,{},False,False,False,
-seedtag.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-segment.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-segment.io,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-sentinelone.net,,{},False,False,False,
-sentry.io,google,"{""google"": ""third""}",True,True,False,"step 2, "
+seedtag.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+segment.com,amazon|twitter,"{""amazon"": ""private"", ""twitter"": ""private""}",False,False,True,"step .8 (SOA), step 1, "
+segment.io,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+semasio.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+sentinelone.net,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+sentry.io,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
 seznam.cz,,{},False,False,False,
-sfx.ms,,{},False,False,False,
-shalltry.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-sharepoint.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step 2, "
-sharethis.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-sharethrough.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-shein.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-shifen.com,,{},False,False,False,
-shodan.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-shop.app,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-shopee.co.id,,{},False,False,False,
-shopee.com.br,,{},False,False,False,
-shopee.sg,,{},False,False,False,
-shopeemobile.com,,{},False,False,False,
-shopify.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+sfx.ms,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+shalltry.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+sharepoint.com,microsoft|twitter,"{""microsoft"": ""third"", ""twitter"": ""private""}",True,False,True,"step .8 (SOA), step 1, "
+sharethis.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+sharethrough.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+shein.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+shifen.com,baidu,"{""baidu"": ""private""}",False,False,False,"step 0, "
+shodan.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+shop.app,,{},False,False,False,
+shopee.co.id,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+shopee.com.br,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+shopee.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+shopeemobile.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+shopify.com,shopify,"{""shopify"": ""private""}",False,False,False,"step 0, "
 shopifysvc.com,,{},False,False,False,
-shuashuati.com,,{},False,False,False,
-signal.org,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-sina.com.cn,,{},False,False,False,
-sinaimg.cn,,{},False,False,False,
-singular.net,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-sitescout.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-skype.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-slack.com,,{},False,False,False,
-slackb.com,,{},False,False,False,
-smaato.net,,{},False,False,False,
-smadex.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-smartadserver.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-smartthings.com,,{},False,False,False,
-smilewanted.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-snapchat.com,google,"{""google"": ""third""}",True,True,False,"step 2, "
-snapkit.com,google,"{""google"": ""third""}",True,True,False,"step 2, "
-snssdk.com,bunnycdn,"{""bunnycdn"": ""third""}",True,True,False,"step 2, "
-sonobi.com,sucuri,"{""sucuri"": ""third""}",True,True,False,"step 2, "
-sophos.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-soundcloud.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-spamhaus.org,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-sparteo.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-speedtest.net,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-split.io,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-splunkcloud.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-spo-msedge.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-spot.im,,{},False,False,False,
-spotify.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-spotifycdn.com,,{},False,False,False,
-springserve.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-ssl-images-amazon.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, step .25, "
-stackadapt.com,,{},False,False,False,
-standardnotes.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-starlink.com,,{},False,False,False,
-startappservice.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-static.microsoft,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-statuspage.io,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+signal.org,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+sina.com.cn,sina|alibaba,"{""sina"": ""private"", ""alibaba"": ""third""}",True,False,True,"step 0, step 1, "
+singular.net,amazon|wordpress,"{""amazon"": ""third"", ""wordpress"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+sitescout.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+skype.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .25, "
+slack.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+slackb.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+smaato.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+smadex.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+smartadserver.com,akamai,"{""akamai"": ""private""}",False,False,False,"step 1, "
+smartthings.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+smilewanted.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+snapchat.com,amazon|twitter,"{""amazon"": ""private"", ""twitter"": ""private""}",False,False,True,"step .8 (SOA), step 1, "
+snapcraft.io,,{},False,False,False,
+snapkit.com,amazon|twitter,"{""amazon"": ""third"", ""twitter"": ""private""}",True,False,True,"step .8 (SOA), step 1, "
+snssdk.com,,{},False,False,False,
+sogou.com,tencent,"{""tencent"": ""private""}",False,False,False,"step 1, "
+sonobi.com,,{},False,False,False,
+sophos.com,,{},False,False,False,
+soundcloud.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+spamhaus.org,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 1, "
+sparteo.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+speedtest.net,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+split.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+splunkcloud.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+spo-msedge.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .25, "
+spot.im,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
+spotify.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 1, "
+spotifycdn.com,spotify|fastly,"{""spotify"": ""private"", ""fastly"": ""third""}",True,False,True,"step 0, step 1, "
+springserve.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+ssl-images-amazon.com,amazon,"{""amazon"": ""private""}",False,False,False,"step 0, "
+stackadapt.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+starlink.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+startappservice.com,,{},False,False,False,
+static.microsoft,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, "
+statuspage.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 steamcommunity.com,,{},False,False,False,
 steamcontent.com,,{},False,False,False,
 steampowered.com,,{},False,False,False,
 steamserver.net,,{},False,False,False,
 steamstatic.com,,{},False,False,False,
-stripchat.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-stripe.com,,{},False,False,False,
-stripe.network,,{},False,False,False,
-strpst.com,,{},False,False,False,
-supabase.co,nextjs,"{""nextjs"": ""third""}",True,True,False,"step 2, "
-supercell.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-supersonicads.com,,{},False,False,False,
-susercontent.com,,{},False,False,False,
-svc.ms,,{},False,False,False,
-swishapps.ai,microsoft,"{""microsoft"": ""third""}",True,True,False,"step 2, "
-synology.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-t.co,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-t.me,,{},False,False,False,
-taboola.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-tailscale.com,nextjs,"{""nextjs"": ""third""}",True,True,False,"step 2, "
-taobao.com,,{},False,False,False,
-tapad.com,google,"{""google"": ""third""}",True,True,False,"step 2, "
-target.com,,{},False,False,False,
-tawk.to,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-tbcache.com,,{},False,False,False,
-teads.tv,,{},False,False,False,
-teamviewer.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-telegram.org,,{},False,False,False,
-telephony.goog,,{},False,False,False,
-temu.com,,{},False,False,False,
-tencent-cloud.net,,{},False,False,False,
-tencent.com,,{},False,False,False,
+stripchat.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+stripe.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+stripe.network,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+strpst.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+supabase.co,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+supercell.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+supersonicads.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+susercontent.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+svc.ms,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+swishapps.ai,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+synology.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+t-online.de,,{},False,False,False,
+t.co,twitter|cloudflare,"{""twitter"": ""private"", ""cloudflare"": ""private""}",False,False,True,"step 0, step 2, "
+t.me,telegram|google,"{""telegram"": ""private"", ""google"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+taboola.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 1, "
+tailscale.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+taobao.com,alibaba,"{""alibaba"": ""third""}",True,True,False,"step 1, "
+tapad.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+target.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 1, "
+tawk.to,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+tbcache.com,alibaba,"{""alibaba"": ""private""}",False,False,False,"step 0, "
+teads.tv,amazon|akamai,"{""amazon"": ""third"", ""akamai"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+teamviewer.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 1, "
+telegram.org,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+telephony.goog,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+temu.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step .8 (SOA), "
+tencent-cloud.net,tencent,"{""tencent"": ""private""}",False,False,False,"step 0, "
+tencent.com,twitter,"{""twitter"": ""private""}",False,False,False,"step 1, "
 tenda.com.cn,,{},False,False,False,
-themoviedb.org,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-tiktok.com,tiktok|akamai,"{""tiktok"": ""private"", ""akamai"": ""third""}",True,False,True,"step 0, step .25, step 2, "
-tiktokcdn-eu.com,tiktok,"{""tiktok"": ""private""}",False,False,False,"step 0, step .25, "
-tiktokcdn-us.com,tiktok,"{""tiktok"": ""private""}",False,False,False,"step 0, step .25, "
-tiktokcdn.com,tiktok,"{""tiktok"": ""private""}",False,False,False,"step 0, step .25, "
-tiktokglobalshopv.com,tiktok|akamai,"{""tiktok"": ""private"", ""akamai"": ""third""}",True,False,True,"step 0, step .25, step 2, "
-tiktokpangle-cdn-us.com,tiktok,"{""tiktok"": ""private""}",False,False,False,"step 0, step .25, "
-tiktokpangle.us,tiktok,"{""tiktok"": ""private""}",False,False,False,"step 0, step .25, "
-tiktokrow-cdn.com,tiktok,"{""tiktok"": ""private""}",False,False,False,"step 0, step .25, "
-tiktokv.com,tiktok|akamai,"{""tiktok"": ""private"", ""akamai"": ""third""}",True,False,True,"step 0, step .25, step 2, "
-tiktokv.eu,tiktok,"{""tiktok"": ""private""}",False,False,False,"step 0, step .25, "
-tiktokv.us,tiktok,"{""tiktok"": ""private""}",False,False,False,"step 0, step .25, "
-tiktokw.us,tiktok,"{""tiktok"": ""private""}",False,False,False,"step 0, step .25, "
+tesla.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+themoviedb.org,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+tiktok.com,tiktok|akamai,"{""tiktok"": ""private"", ""akamai"": ""third""}",True,False,True,"step .25, step 1, "
+tiktokcdn-eu.com,tiktok,"{""tiktok"": ""private""}",False,False,False,"step .25, "
+tiktokcdn-us.com,tiktok,"{""tiktok"": ""private""}",False,False,False,"step .25, "
+tiktokcdn.com,bytedance|tiktok,"{""bytedance"": ""private"", ""tiktok"": ""private""}",False,False,True,"step 0, step .25, "
+tiktokglobalshopv.com,tiktok|akamai,"{""tiktok"": ""private"", ""akamai"": ""third""}",True,False,True,"step .25, step 2, "
+tiktokpangle-cdn-us.com,tiktok,"{""tiktok"": ""private""}",False,False,False,"step .25, "
+tiktokpangle.us,tiktok,"{""tiktok"": ""private""}",False,False,False,"step .25, "
+tiktokrow-cdn.com,tiktok,"{""tiktok"": ""private""}",False,False,False,"step .25, "
+tiktokv.com,bytedance|tiktok|akamai,"{""bytedance"": ""private"", ""tiktok"": ""private"", ""akamai"": ""third""}",True,False,True,"step 0, step .25, step 1, "
+tiktokv.eu,tiktok,"{""tiktok"": ""private""}",False,False,False,"step .25, "
+tiktokv.us,tiktok,"{""tiktok"": ""private""}",False,False,False,"step .25, "
+tiktokw.us,tiktok|akamai,"{""tiktok"": ""private"", ""akamai"": ""third""}",True,False,True,"step .25, step 1, "
 tiqcdn.com,,{},False,False,False,
-tizen.org,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-tm-azurefd.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-tmdb.org,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-tospotify.com,,{},False,False,False,
-tp-link.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-tplinkcloud.com,,{},False,False,False,
-tplinknbu.com,,{},False,False,False,
-tq-tungsten.com,,{},False,False,False,
-tradingview.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+tizen.org,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+tm-azurefd.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step .25, "
+tmdb.org,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+tospotify.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+tp-link.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+tplinkcloud.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+tplinknbu.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+tq-tungsten.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+tradingview.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 tradplusad.com,,{},False,False,False,
-trafficjunky.net,,{},False,False,False,
-trafficmanager.net,,{},False,False,False,
-traffmonetizer.com,,{},False,False,False,
-translate.goog,,{},False,False,False,
-tremorhub.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-trendmicro.com,,{},False,False,False,
-tribalfusion.com,,{},False,False,False,
-trip.com,bunnycdn,"{""bunnycdn"": ""third""}",True,True,False,"step 2, "
-truecaller.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-trustarc.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-truste.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-trustedstack.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-trustpilot.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-tsyndicate.com,,{},False,False,False,
+trafficjunky.net,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+trafficmanager.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, "
+traffmonetizer.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+tremorhub.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+trendmicro.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+tribalfusion.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+trip.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+truecaller.com,google|cloudflare,"{""google"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+trustarc.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+truste.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+trustedstack.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+trustpilot.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+tsyndicate.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 ttdns2.com,,{},False,False,False,
-ttlivecdn.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-ttvnw.net,,{},False,False,False,
-ttwstatic.com,,{},False,False,False,
-tubi.io,,{},False,False,False,
+ttlivecdn.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .25, "
+ttvnw.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+ttwstatic.com,bytedance,"{""bytedance"": ""private""}",False,False,False,"step 0, "
+tubi.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 tumblr.com,,{},False,False,False,
 turn.com,,{},False,False,False,
-twc.com,,{},False,False,False,
-twilio.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-twimg.com,,{},False,False,False,
-twitch.tv,,{},False,False,False,
-twitter.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-typekit.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-typekit.net,,{},False,False,False,
-uber.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-ubi.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-ubnt.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+twc.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+twilio.com,digicert|amazon,"{""digicert"": ""third"", ""amazon"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+twimg.com,twitter,"{""twitter"": ""private""}",False,False,False,"step 0, "
+twitch.tv,amazon|fastly,"{""amazon"": ""third"", ""fastly"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+twitter.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 2, "
+typekit.com,amazon|twitter,"{""amazon"": ""private"", ""twitter"": ""private""}",False,False,True,"step .8 (SOA), step 1, "
+typekit.net,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+uber.com,,{},False,False,False,
+ubi.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
+ubnt.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 ubuntu.com,,{},False,False,False,
-ueiwsp.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-ui.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-uisp.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+ueiwsp.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+ui.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+uisp.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 umeng.com,,{},False,False,False,
-unifi-ai.com,,{},False,False,False,
+unifi-ai.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
 unisoc.com,,{},False,False,False,
-unity3d.com,,{},False,False,False,
-unpkg.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-unrulymedia.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-uol.com.br,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
-urbanairship.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-ureca-lab.com,,{},False,False,False,
-useinsider.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+unity3d.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+unpkg.com,unpkg|cloudflare,"{""unpkg"": ""private"", ""cloudflare"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+unrulymedia.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+uol.com.br,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
+urbanairship.com,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
+ureca-lab.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+useinsider.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
 userapi.com,,{},False,False,False,
-usercentrics.eu,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-usercontent.goog,,{},False,False,False,
+usercentrics.eu,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+usercontent.goog,google,"{""google"": ""third""}",True,True,False,"step .8 (SOA), "
 v-videoapp.com,,{},False,False,False,
-verisign.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-verkada.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-via.google,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-viber.com,,{},False,False,False,
-vidaahub.com,,{},False,False,False,
-vimeo.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-virtualearth.net,,{},False,False,False,
-visualstudio.com,,{},False,False,False,
-visualwebsiteoptimizer.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-vivo.com.cn,bunnycdn,"{""bunnycdn"": ""third""}",True,True,False,"step 2, "
+verisign.com,,{},False,False,False,
+verkada.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+via.google,google,"{""google"": ""private""}",False,False,False,"step 0, "
+viber.com,amazon|akamai,"{""amazon"": ""third"", ""akamai"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+vidaahub.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+vimeo.com,amazon|cloudflare,"{""amazon"": ""private"", ""cloudflare"": ""private""}",False,False,True,"step .8 (SOA), step 2, "
+virtualearth.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+visualstudio.com,microsoft|akamai,"{""microsoft"": ""third"", ""akamai"": ""third""}",True,True,True,"step .8 (SOA), step 1, "
+visualwebsiteoptimizer.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+vivo.com.cn,twitter,"{""twitter"": ""third""}",True,True,False,"step 1, "
 vivoglobal.com,,{},False,False,False,
 vk-analytics.ru,,{},False,False,False,
 vk.com,,{},False,False,False,
@@ -928,74 +927,75 @@ vk.ru,,{},False,False,False,
 vkuserphoto.ru,,{},False,False,False,
 volces.com,,{},False,False,False,
 volcfcdndvs.com,,{},False,False,False,
-vscode-cdn.net,,{},False,False,False,
-vungle.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-w3.org,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-wac-msedge.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-walmart.com,,{},False,False,False,
+vscode-cdn.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+vungle.com,wordpress|cloudflare,"{""wordpress"": ""third"", ""cloudflare"": ""third""}",True,True,True,"step 1, step 2, "
+w3.org,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+wac-msedge.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .25, "
+walmart.com,akamai|twitter,"{""akamai"": ""third"", ""twitter"": ""private""}",True,False,True,"step 1, step 1, "
 walmartimages.com,,{},False,False,False,
-wattpad.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
+wattpad.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 wb.ru,,{},False,False,False,
 wbbasket.ru,,{},False,False,False,
-wbx2.com,,{},False,False,False,
-weather.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
-webex.com,fastly,"{""fastly"": ""third""}",True,True,False,"step 2, "
-wechat.com,,{},False,False,False,
-weplayapp.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-whatsapp.com,meta,"{""meta"": ""private""}",False,False,False,"step 0, step .25, "
-whatsapp.net,meta,"{""meta"": ""private""}",False,False,False,"step 0, step .25, "
-wikimedia.org,wikimedia,"{""wikimedia"": ""private""}",False,False,False,"step 0, step .25, "
-wikipedia.org,wikimedia,"{""wikimedia"": ""private""}",False,False,False,"step 0, step .25, "
+wbx2.com,amazon,"{""amazon"": ""private""}",False,False,False,"step .8 (SOA), "
+weather.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+webex.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 1, "
+wechat.com,twitter,"{""twitter"": ""private""}",False,False,False,"step 1, "
+weplayapp.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 1, "
+whatsapp.com,meta,"{""meta"": ""third""}",True,True,False,"step .25, "
+whatsapp.net,meta,"{""meta"": ""third""}",True,True,False,"step .25, "
+wikimedia.org,wikimedia,"{""wikimedia"": ""private""}",False,False,False,"step .25, "
+wikipedia.org,wikimedia,"{""wikimedia"": ""third""}",True,True,False,"step .25, "
 wildberries.ru,,{},False,False,False,
-windows.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step 2, "
-windows.net,microsoft,"{""microsoft"": ""third""}",True,True,False,"step 2, "
-windowsupdate.com,,{},False,False,False,
-withgoogle.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-wordpress.com,,{},False,False,False,
-workers.dev,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-wp.com,,{},False,False,False,
-wps.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-wsdvs.com,,{},False,False,False,
-wshareit.com,,{},False,False,False,
-wyzecam.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-x.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-xboxlive.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step 0, step .25, "
-xboxservices.com,,{},False,False,False,
-xhamster.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-xhcdn.com,,{},False,False,False,
+windows.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step .8 (SOA), "
+windows.net,microsoft,"{""microsoft"": ""private""}",False,False,False,"step .8 (SOA), "
+windowsupdate.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+withgoogle.com,google,"{""google"": ""private""}",False,False,False,"step .25, "
+wordpress.com,wordpress,"{""wordpress"": ""private""}",False,False,False,"step 0, "
+workers.dev,cloudflare,"{""cloudflare"": ""private""}",False,False,False,"step 0, "
+wp.com,wordpress,"{""wordpress"": ""private""}",False,False,False,"step 0, "
+wps.cn,,{},False,False,False,
+wps.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+wsdvs.com,wangsu,"{""wangsu"": ""private""}",False,False,False,"step 0, "
+wshareit.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+wyzecam.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+x.com,,{},False,False,False,
+xboxlive.com,microsoft,"{""microsoft"": ""private""}",False,False,False,"step .25, "
+xboxservices.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
+xhamster.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+xhcdn.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
 xhscdn.com,,{},False,False,False,
 xiaohongshu.com,,{},False,False,False,
-xiaomi.com,akamai,"{""akamai"": ""third""}",True,True,False,"step 2, "
+xiaomi.com,,{},False,False,False,
 xiaomi.net,,{},False,False,False,
 xnxx-cdn.com,,{},False,False,False,
 xvideos-cdn.com,,{},False,False,False,
 xxpkg.com,,{},False,False,False,
 ya.ru,,{},False,False,False,
-yahoo.co.jp,yahoo,"{""yahoo"": ""private""}",False,False,False,"step 0, step .25, "
-yahoo.com,yahoo|wikimedia,"{""yahoo"": ""private"", ""wikimedia"": ""third""}",True,False,True,"step 0, step .25, step 2, "
-yahoodns.net,yahoo,"{""yahoo"": ""private""}",False,False,False,"step 0, step .25, "
-yammer.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step 2, "
+yahoo.co.jp,yahoo,"{""yahoo"": ""private""}",False,False,False,"step .25, "
+yahoo.com,yahoo|wikimedia,"{""yahoo"": ""private"", ""wikimedia"": ""third""}",True,False,True,"step .25, step 2, "
+yahoodns.net,yahoo,"{""yahoo"": ""private""}",False,False,False,"step .25, "
+yammer.com,microsoft,"{""microsoft"": ""third""}",True,True,False,"step .8 (SOA), "
 yandex.com,,{},False,False,False,
-yandex.net,,{},False,False,False,
-yandex.ru,,{},False,False,False,
-yandexcloud.net,,{},False,False,False,
-yastatic.net,,{},False,False,False,
-yellowblue.io,,{},False,False,False,
-yieldmo.com,,{},False,False,False,
-yimg.com,yahoo|wikimedia,"{""yahoo"": ""private"", ""wikimedia"": ""third""}",True,False,True,"step 0, step .25, step 2, "
-yimg.jp,yahoo,"{""yahoo"": ""private""}",False,False,False,"step 0, step .25, "
-yotpo.com,amazon,"{""amazon"": ""third""}",True,True,False,"step 2, "
-youtube-nocookie.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
-youtube.com,google,"{""google"": ""private""}",False,False,False,"step 0, step .25, "
+yandex.net,yandex,"{""yandex"": ""private""}",False,False,False,"step 0, "
+yandex.ru,yandex,"{""yandex"": ""private""}",False,False,False,"step 0, "
+yandexcloud.net,yandex,"{""yandex"": ""private""}",False,False,False,"step 0, "
+yastatic.net,yandex,"{""yandex"": ""private""}",False,False,False,"step 0, "
+yellowblue.io,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+yieldmo.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+yimg.com,yahoo|wikimedia,"{""yahoo"": ""private"", ""wikimedia"": ""third""}",True,False,True,"step 0, step 2, "
+yimg.jp,yahoo,"{""yahoo"": ""private""}",False,False,False,"step 0, "
+yotpo.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+youtube-nocookie.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
+youtube.com,google,"{""google"": ""third""}",True,True,False,"step .25, "
 ys7.com,,{},False,False,False,
-ytimg.com,,{},False,False,False,
+ytimg.com,google,"{""google"": ""private""}",False,False,False,"step 0, "
 yximgs.com,,{},False,False,False,
-zdassets.com,,{},False,False,False,
-zefrdata.com,,{},False,False,False,
-zendesk.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+zdassets.com,zendesk|amazon,"{""zendesk"": ""private"", ""amazon"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
+zefrdata.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step .8 (SOA), "
+zendesk.com,zendesk|amazon|cloudflare,"{""zendesk"": ""private"", ""amazon"": ""third"", ""cloudflare"": ""third""}",True,False,True,"step 0, step .8 (SOA), step 1, "
 zijieapi.com,,{},False,False,False,
 zoho.com,,{},False,False,False,
-zoom.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
-zoom.us,cloudflare,"{""cloudflare"": ""third""}",True,True,False,"step 2, "
+zoom.com,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
+zoom.us,amazon,"{""amazon"": ""third""}",True,True,False,"step .8 (SOA), "
 zpath.net,,{},False,False,False,
-zscaler.net,,{},False,False,False,
+zscaler.net,zscaler|digicert,"{""zscaler"": ""private"", ""digicert"": ""third""}",True,False,True,"step 0, step .8 (SOA), "
