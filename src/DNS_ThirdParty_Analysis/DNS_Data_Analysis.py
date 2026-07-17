@@ -251,7 +251,7 @@ if __name__ == "__main__":
 # I did it here considering that the information is obtained when we append it to the csv of the results, therefore 
 #####################################################################################################################################
  
-def plot_dependency_breakdown(csv_path="src/Source_Data/DNS_Identifier_Results_100_domains.csv", save_path=None):
+def plot_dependency_breakdown(csv_path="src/Source_Data/DNS_Identifier_Results_10k_domains.csv", save_path=None):
     """
     Reads the DNS identifier results and plots a bar chart of
     unique domains by dependency type (e.g. third-party vs private).
@@ -259,7 +259,6 @@ def plot_dependency_breakdown(csv_path="src/Source_Data/DNS_Identifier_Results_1
     df = pd.read_csv(csv_path)
     
     unique_domains = df.drop_duplicates(subset="DOMAIN")
-
 
     filtered_domains = unique_domains[unique_domains["TYPE"].str.lower() != "private"]
 
@@ -294,9 +293,6 @@ def plot_dependency_breakdown(csv_path="src/Source_Data/DNS_Identifier_Results_1
 
     plt.tight_layout()
     plt.show()
-
-
-
 
 if __name__ == "__main__":
     plot_dependency_breakdown()
