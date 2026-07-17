@@ -1,38 +1,33 @@
 #region Imports
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
+#########################################################################################################################################
 #Imports
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
-import csv
-from dataclasses import dataclass
+########################################################################################################################################
 import re
-import subprocess
-import time
-from typing import Optional
-import certifi
-from OpenSSL import crypto
 import ssl
+import csv
+import time
 import socket
-from cryptography import x509
-from cryptography.x509.oid import ExtensionOID, AuthorityInformationAccessOID, NameOID
-import dns.resolver
-from urllib.parse import urlparse
-import numpy as np
-import tldextract
-from domains import CORPORATE_FAMILY
-import matplotlib.pyplot as plt
-import pandas as pa
 import circlify
+import subprocess
+import tldextract
+import numpy as np
+import dns.resolver
+import pandas as pa
+from OpenSSL import crypto
+from typing import Optional
+from cryptography import x509
+import matplotlib.pyplot as plt
+from dataclasses import dataclass
+from urllib.parse import urlparse
+from domains import CORPORATE_FAMILY
 import matplotlib.patches as mpatches
+from cryptography.x509.oid import ExtensionOID, AuthorityInformationAccessOID, NameOID
 #endregion
 
-
-
-
-
 #region Data classes
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
+########################################################################################################################################
 #Data Classes
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
+########################################################################################################################################
 @dataclass
 class CAResult:
     website: str
@@ -43,16 +38,13 @@ class CAResult:
     critical_dependency: bool = False  # True if third-party CA AND no OCSP stapling
     ssl_error: Optional[str] = None
     ssl_or_tls: str = "unknown"
+    https_enabled: bool = False
 #endregion
 
-
-
-
-
 #region Basic helpers
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
+########################################################################################################################################
 #Basic Helpers
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
+########################################################################################################################################
 def get_tld(hostname: str) -> str:
     """Return the registered domain (eTLD+1) for a hostname."""
     try:
@@ -114,20 +106,35 @@ PUBLIC_CA_KEYWORDS = [
 ]
 
 def is_https(domain: str, retries: int = 2, timeout: int = 10) -> bool:
-    """Return True if the domain responds on HTTPS (port 443)."""
-    for attempt in range(retries + 1):  # +1 so retries=2 means 3 total attempts
-        try:
-            ctx = ssl.create_default_context()
-            conn = socket.create_connection((domain, 443), timeout=timeout)
-            with ctx.wrap_socket(conn, server_hostname=domain):
-                return True
-        except (ConnectionResetError, BrokenPipeError):
-            if attempt < retries:
-                time.sleep(1)
-            continue
-        except Exception:
-            return False  # non-transient error, don't retry
-    return False
+    """Return True if the domain completes a TLS handshake on port 443.
+    Tries the bare domain first, then falls back to www.<domain>,
+    matching the fallback behavior used in measure_ca()/get_ssl_info().
+    """
+    def _attempt(host: str) -> bool:
+        for attempt in range(retries + 1):
+            conn = None
+            try:
+                ctx = ssl.create_default_context()
+                ctx.check_hostname = False
+                ctx.verify_mode = ssl.CERT_NONE
+                conn = socket.create_connection((host, 443), timeout=timeout)
+                with ctx.wrap_socket(conn, server_hostname=host):
+                    return True
+            except (ConnectionResetError, BrokenPipeError, socket.timeout):
+                if conn:
+                    conn.close()
+                if attempt < retries:
+                    time.sleep(1)
+                continue
+            except Exception:
+                if conn:
+                    conn.close()
+                return False
+        return False
+
+    if _attempt(domain):
+        return True
+    return _attempt(f"www.{domain}")
 
 INFRASTRUCTURE_KEYWORDS = [
     "cloudfront",
@@ -138,6 +145,10 @@ INFRASTRUCTURE_KEYWORDS = [
 ]
 
 def is_infrastructure_domain(domain: str) -> bool:
+    """
+    Returns true if and only if the domain in lowercase contains any of the keywords in the infrastructure keywords
+    list, just to revise if it is in the correct infrastructre.
+    """
     d = domain.lower()
 
     return any(k in d for k in INFRASTRUCTURE_KEYWORDS)
@@ -188,6 +199,9 @@ def _dig_soa(domain: str, timeout: int = 5) -> Optional[str]:
         return None
     
 def is_public_ca_name(ca_name: str) -> bool:
+    """
+    After obtaining the Certificate Authority name, it checks for containment in the public CA keywords shown above.
+    """
     name = (ca_name or "").lower()
     return any(kw in name for kw in PUBLIC_CA_KEYWORDS)
 
@@ -201,14 +215,11 @@ def dig_cname(domain: str, timeout: int = 5) -> Optional[str]:
 #endregion
 
 
-
-
-
 #region CA Helpers
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
+#########################################################################################################################################
 #CA Helpers
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
-def getCA(domain):
+#########################################################################################################################################
+def getCA(domain) -> str:
     context = ssl.create_default_context()
 
     with socket.create_connection((domain, 443), timeout=10) as sock:
@@ -504,6 +515,7 @@ def measure_ca(website: str) -> CAResult:
     if result.ssl_or_tls == None:
         result.ssl_or_tls = "unknown"
     result.ocsp_stapling = check_ocsp_stapling(website)
+    result.https_enabled = bool(ssl_info.get("tls_or_ssl"))
 
     san_tlds = ssl_info.get("san_tlds", [])
     result.ca_type = classify_ca(result.ca_url or "", website, san_tlds, result.ca_name)
@@ -536,8 +548,8 @@ def measure_ca(website: str) -> CAResult:
 #Main
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 def main():
-    input_path  = "src/Source_Data/top-100000-domains.csv"
-    output_path = "src/Source_Data/ca_results_100000.csv"
+    input_path  = "src/Source_Data/top_1000_domains.csv"
+    output_path = "src/Source_Data/ca_results_1000.csv"
  
     rows = []
  
@@ -560,11 +572,12 @@ def main():
                 "CA Name":     ca_result.ca_name,
                 "type":        ca_result.ca_type,
                 "Stapled": ca_result.ocsp_stapling,
-                "SSL or TLS": ca_result.ssl_or_tls
+                "SSL or TLS": ca_result.ssl_or_tls,
+                "HTTPS Enabled": ca_result.https_enabled,
             })
             
     with open(output_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["domain", "CA Name", "type", "Stapled", "SSL or TLS"])
+        writer = csv.DictWriter(f, fieldnames=["domain", "CA Name", "type", "Stapled", "SSL or TLS", "HTTPS Enabled"])
         writer.writeheader()
         writer.writerows(rows)
 
@@ -743,11 +756,11 @@ def data_vis(input_file):
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 if __name__ == "__main__":
     #full thing
-    # output = main()
-    # data_vis(output)
+    output = main()
+    data_vis(output)
     
     # quick vis
-    data_vis("src/Source_Data/ca_results_100000.csv")
+    #data_vis("src/Source_Data/ca_results_100.csv")
 
 #endregion
 
