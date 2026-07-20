@@ -1,1001 +1,1001 @@
-domain,CA Name,type,Stapled,SSL or TLS
-0xrpc.io,Let's Encrypt,third,,TLSv1.3
-163.com,"DigiCert, Inc.",third,,TLSv1.2
-1rx.io,unknown,unknown,,unknown
-2mdn.net,unknown,unknown,,unknown
-33across.com,Let's Encrypt,third,,TLSv1.3
-360.cn,WoTrus CA Limited,third,,TLSv1.2
-360safe.com,unknown,unknown,,unknown
-360yield.com,Amazon,third,,TLSv1.3
-3gppnetwork.org,unknown,unknown,,unknown
-3lift.com,Amazon,third,,TLSv1.3
-4dex.io,unknown,unknown,,unknown
-58.com,GlobalSign nv-sa,third,,TLSv1.3
-a-mo.net,Amazon,third,,TLSv1.3
-a-msedge.net,unknown,unknown,,unknown
-a-mx.com,unknown,unknown,,unknown
-a2z.com,unknown,unknown,,unknown
-aaplimg.com,unknown,unknown,,unknown
-accuweather.com,DigiCert Inc,third,,TLSv1.3
-acrobat.com,DigiCert Inc,third,,TLSv1.3
-acronis.com,DigiCert Inc,third,,TLSv1.3
-ad-delivery.net,Google Trust Services,third,,TLSv1.3
-ad.gt,Amazon,third,,TLSv1.3
-adaether.com,unknown,unknown,,unknown
-adblockplus.org,Google Trust Services,third,,TLSv1.3
-adform.net,DigiCert Inc,third,,TLSv1.3
-adfuse-ssp.com,Let's Encrypt,third,,TLSv1.3
-adgrx.com,Let's Encrypt,third,,TLSv1.3
-adguard.com,ZeroSSL GmbH,third,,TLSv1.3
-aditude.io,Let's Encrypt,third,,TLSv1.3
-adjust.com,DigiCert Inc,third,,TLSv1.3
-adkernel.com,GlobalSign nv-sa,third,,TLSv1.3
-admanmedia.com,DigiCert Inc,third,,TLSv1.3
-adnxs.com,DigiCert Inc,third,,TLSv1.2
-adobe.com,DigiCert Inc,third,,TLSv1.3
-adobe.io,DigiCert Inc,third,,TLSv1.3
-adobedc.net,unknown,unknown,,unknown
-adobedtm.com,unknown,unknown,,unknown
-adobelogin.com,DigiCert Inc,third,,TLSv1.2
-adobess.com,unknown,unknown,,unknown
-adobestats.io,unknown,unknown,,unknown
-adriver.ru,GlobalSign nv-sa,third,,TLSv1.3
-adroll.com,GlobalSign nv-sa,third,,TLSv1.2
-adrta.com,DigiCert Inc,third,,TLSv1.2
-ads-twitter.com,unknown,unknown,,unknown
-adsafeprotected.com,Amazon,third,,TLSv1.3
-adsco.re,Sectigo Limited,third,,TLSv1.2
-adsmoloco.com,Let's Encrypt,third,,TLSv1.3
-adsrvr.org,GlobalSign nv-sa,third,,TLSv1.3
-adtelligent.com,Sectigo Limited,third,,TLSv1.3
-adtrafficquality.google,Google Trust Services,third,,TLSv1.3
-afafb.com,unknown,unknown,,unknown
-agkn.com,DigiCert Inc,third,,TLSv1.3
-agora.io,GoDaddy.com,third,,TLSv1.2
-aibixby.com,unknown,unknown,,unknown
-aibotplatform.com,unknown,unknown,,unknown
-aiv-delivery.net,unknown,unknown,,unknown
-aka.ms,Microsoft Corporation,private,,TLSv1.3
-akadns.net,unknown,unknown,,unknown
-akahost.net,unknown,unknown,,unknown
-akam.net,unknown,unknown,,unknown
-akamai.com,DigiCert Inc,third,,TLSv1.3
-akamai.net,unknown,unknown,,unknown
-akamaiedge.net,unknown,unknown,,unknown
-akamaihd.net,unknown,unknown,,unknown
-akamaized.net,unknown,unknown,,unknown
-akstat.io,DigiCert Inc,third,,TLSv1.3
-alibaba.com,GlobalSign nv-sa,third,,TLSv1.3
-alibabadns.com,unknown,unknown,,unknown
-alicdn.com,unknown,unknown,,unknown
-aliexpress-media.com,unknown,unknown,,unknown
-aliexpress.com,GlobalSign nv-sa,third,,TLSv1.2
-alipay.com,"DigiCert, Inc.",third,,TLSv1.2
-aliyun.com,GlobalSign nv-sa,third,,TLSv1.2
-aliyuncs.com,GlobalSign nv-sa,third,,TLSv1.3
-aliyuncsslbintl.com,unknown,unknown,,unknown
-allawnos.com,unknown,unknown,,unknown
-allawntech.com,"DigiCert, Inc.",third,,TLSv1.3
-alphonso.tv,Let's Encrypt,third,,TLSv1.3
-amap.com,GlobalSign nv-sa,third,,TLSv1.2
-amazon-adsystem.com,Amazon,third,,TLSv1.3
-amazon.co.jp,DigiCert Inc,third,,TLSv1.3
-amazon.co.uk,DigiCert Inc,third,,TLSv1.3
-amazon.com,DigiCert Inc,third,,TLSv1.3
-amazon.de,DigiCert Inc,third,,TLSv1.3
-amazon.dev,unknown,unknown,,unknown
-amazonalexa.com,Amazon,third,,TLSv1.2
-amazonaws.com,Amazon,third,,TLSv1.3
-amazontrust.com,Amazon,private,,TLSv1.3
-amazonvideo.com,Amazon,third,,TLSv1.3
-amd.com,DigiCert Inc,third,,TLSv1.3
-amemv.com,DigiCert Inc,third,,TLSv1.3
-amp-endpoint2.com,unknown,unknown,,unknown
-amp-endpoint3.com,unknown,unknown,,unknown
-amplitude.com,Amazon,third,,TLSv1.2
-ampproject.org,Google Trust Services,private,,TLSv1.3
-android.com,Google Trust Services,private,,TLSv1.3
-aniview.com,Amazon,third,,TLSv1.3
-anthropic.com,Let's Encrypt,third,,TLSv1.3
-anydesk.com,Google Trust Services,third,,TLSv1.3
-aoneroom.com,unknown,unknown,,unknown
-ap4r.com,GlobalSign nv-sa,third,,TLSv1.2
-api.aws,unknown,unknown,,unknown
-app-ads-services.com,Google Trust Services,third,,TLSv1.3
-app-analytics-services-att.com,Google Trust Services,third,,TLSv1.3
-app-analytics-services.com,Google Trust Services,third,,TLSv1.3
-app-measurement.com,Google Trust Services,private,,TLSv1.3
-appcenter.ms,Microsoft Corporation,third,,TLSv1.3
-appier.net,Google Trust Services,third,,TLSv1.3
-apple-cloudkit.com,unknown,unknown,,unknown
-apple-dns.net,unknown,unknown,,unknown
-apple.com,Apple Inc.,private,,TLSv1.3
-apple.news,Apple Inc.,private,,TLSv1.2
-applovin.com,Google Trust Services,third,,TLSv1.3
-applvn.com,unknown,unknown,,unknown
-appsflyer.com,Amazon,third,,TLSv1.2
-appsflyersdk.com,Amazon,third,,TLSv1.3
-appspot.com,Google Trust Services,private,,TLSv1.3
-apptracer.ru,Hellenic Academic and Research Institutions CA,third,,TLSv1.3
-archive.org,"GoDaddy.com, Inc.",third,,TLSv1.3
-argotunnel.com,unknown,unknown,,unknown
-arubanetworks.com,DigiCert Inc,third,,TLSv1.3
-assetsconfigcdn.org,Let's Encrypt,third,,TLSv1.3
-asus.com,Sectigo Limited,third,,TLSv1.3
-atlassian.com,Amazon,third,,TLSv1.3
-atlassian.net,Amazon,third,,TLSv1.3
-autodesk.com,Amazon,third,,TLSv1.3
-av380.net,WoTrus CA Limited,third,,TLSv1.2
-avast.com,Sectigo Limited,third,,TLSv1.3
-avcdn.net,DigiCert Inc,third,,TLSv1.3
-avira.com,Let's Encrypt,third,,TLSv1.3
-avito.ru,GlobalSign nv-sa,third,,TLSv1.3
-avito.st,GlobalSign nv-sa,third,,TLSv1.3
-avsxappcaptiveportal.com,unknown,unknown,,unknown
-aws.dev,unknown,unknown,,unknown
-awsglobalaccelerator.com,unknown,unknown,,unknown
-awswaf.com,unknown,unknown,,unknown
-ax-msedge.net,unknown,unknown,,unknown
-axon.ai,Google Trust Services,third,,TLSv1.3
-ay.delivery,Google Trust Services,third,,TLSv1.3
-azure-devices.net,unknown,unknown,,unknown
-azure.com,Microsoft Corporation,private,,TLSv1.3
-azure.net,Microsoft Corporation,third,,TLSv1.3
-azureedge.net,Microsoft Corporation,private,,TLSv1.3
-azurefd.net,Microsoft Corporation,third,,TLSv1.3
-azurewebsites.net,unknown,unknown,,unknown
-b-cdn.net,Sectigo Limited,third,,TLSv1.3
-b-msedge.net,unknown,unknown,,unknown
-baidu.com,GlobalSign nv-sa,third,,TLSv1.2
-bamgrid.com,unknown,unknown,,unknown
-battle.net,Amazon,third,,TLSv1.2
-bazaarvoice.com,Let's Encrypt,third,,TLSv1.3
-bdydns.com,unknown,unknown,,unknown
-betweendigital.com,Sectigo Limited,third,,TLSv1.2
-beyla.site,unknown,unknown,,unknown
-beyondwickedmapping.org,Let's Encrypt,third,,TLSv1.3
-bidease.com,Google Trust Services,third,,TLSv1.3
-bidmachine.io,Google Trust Services,third,,TLSv1.3
-bidr.io,unknown,unknown,,unknown
-bidswitch.net,unknown,unknown,,unknown
-bilibili.com,GlobalSign nv-sa,third,,TLSv1.3
-binance.com,DigiCert Inc,third,,TLSv1.3
-bing.com,Microsoft Corporation,private,,TLSv1.3
-bing.net,Microsoft Corporation,unknown,,TLSv1.3
-bitdefender.com,DigiCert Inc,third,,TLSv1.3
-bitdefender.net,DigiCert Inc,third,,TLSv1.3
-bixbyllm.com,unknown,unknown,,unknown
-bkcdn.net,unknown,unknown,,unknown
-blackberry.com,DigiCert Inc,third,,TLSv1.2
-blizzard.com,Amazon,third,,TLSv1.2
-blogger.com,Google Trust Services,private,,TLSv1.3
-blogspot.com,Google Trust Services,private,,TLSv1.3
-blxrbdn.com,unknown,unknown,,unknown
-booking.com,DigiCert Inc,third,,TLSv1.3
-bootstrapcdn.com,Google Trust Services,third,,TLSv1.3
-box.com,DigiCert Inc,third,,TLSv1.3
-boyuanhulian.com,DigiCert Inc,third,,TLSv1.3
-branch.io,Amazon,third,,TLSv1.3
-brave.com,Amazon,third,,TLSv1.3
-braze.com,Let's Encrypt,third,,TLSv1.3
-browser-intake-datadoghq.com,DigiCert Inc,third,,TLSv1.3
-browser-intake-us5-datadoghq.com,DigiCert Inc,third,,TLSv1.3
-bt.co,unknown,unknown,,unknown
-btloader.com,Google Trust Services,third,,TLSv1.3
-bugsnag.com,DigiCert Inc,third,,TLSv1.3
-bunny.net,Let's Encrypt,third,,TLSv1.3
-buzzoola.com,Sectigo Limited,third,,TLSv1.2
-bytedance.com,DigiCert Inc,third,,TLSv1.3
-bytedns1.com,unknown,unknown,,unknown
-bytefcdn-oversea.com,unknown,unknown,,unknown
-byteglb.com,unknown,unknown,,unknown
-byteimg.com,unknown,unknown,,unknown
-byteoversea.com,unknown,unknown,,unknown
-byteoversea.net,unknown,unknown,,unknown
-canva.com,Amazon,third,,TLSv1.3
-capcut.com,DigiCert Inc,third,,TLSv1.3
-capcutapi.com,unknown,unknown,,unknown
-captcha-delivery.com,unknown,unknown,,unknown
-casalemedia.com,Let's Encrypt,third,,TLSv1.3
-ccgateway.net,unknown,unknown,,unknown
-cdn-apple.com,unknown,unknown,,unknown
-cdn20.com,unknown,unknown,,unknown
-cdn77.org,unknown,unknown,,unknown
-cdninstagram.com,unknown,unknown,,unknown
-centrastage.net,unknown,unknown,,unknown
-chartbeat.net,unknown,unknown,,unknown
-chartboost.com,Amazon,third,,TLSv1.3
-chatgpt.com,Google Trust Services,third,,TLSv1.3
-checkpoint.com,GlobalSign nv-sa,third,,TLSv1.3
-cisco.com,IdenTrust,third,,TLSv1.2
-clarity.ms,Microsoft Corporation,unknown,,TLSv1.3
-claude.ai,Let's Encrypt,third,,TLSv1.3
-clevertap-prod.com,Amazon,third,,TLSv1.3
-cloud.microsoft,Microsoft Corporation,private,,TLSv1.3
-cloudflare-dns.com,SSL Corp,third,,TLSv1.3
-cloudflare.com,Google Trust Services,third,,TLSv1.3
-cloudflare.net,Let's Encrypt,third,,TLSv1.3
-cloudflareclient.com,Let's Encrypt,third,,TLSv1.3
-cloudflareinsights.com,Google Trust Services,third,,TLSv1.3
-cloudflarestorage.com,Google Trust Services,third,,TLSv1.3
-cloudfront.net,unknown,unknown,,unknown
-cloudfunctions.net,Google Trust Services,third,,TLSv1.3
-cloudsink.net,unknown,unknown,,unknown
-cnn.com,GlobalSign nv-sa,third,,TLSv1.3
-coloros.com,"DigiCert, Inc.",third,,TLSv1.3
-comcast.net,Sectigo Limited,third,,TLSv1.3
-comodoca.com,Sectigo Limited,third,,TLSv1.2
-company-target.com,unknown,unknown,,unknown
-connatix.com,Amazon,third,,TLSv1.3
-contentsquare.net,unknown,unknown,,unknown
-contextweb.com,Sectigo Limited,third,,TLSv1.3
-conviva.com,Google Trust Services,third,,TLSv1.3
-cookiebot.com,Google Trust Services,third,,TLSv1.3
-cookielaw.org,Google Trust Services,third,,TLSv1.3
-cootlogix.com,Google Trust Services,third,,TLSv1.3
-crashlytics.com,Google Trust Services,private,,TLSv1.3
-crealitycloud.com,WoTrus CA Limited,third,,TLSv1.3
-creativecdn.com,DigiCert Inc,third,,TLSv1.3
-criteo.com,Let's Encrypt,third,,TLSv1.3
-criteo.net,unknown,unknown,,unknown
-crwdcntrl.net,Amazon,third,,TLSv1.2
-cspserver.net,DigiCert Inc,third,,TLSv1.3
-curseforge.com,Google Trust Services,third,,TLSv1.3
-cursor.sh,Let's Encrypt,third,,TLSv1.3
-dalyfeds.com,Let's Encrypt,third,,TLSv1.3
-datadoghq.com,DigiCert Inc,third,,TLSv1.3
-datadome.co,Amazon,third,,TLSv1.3
-datto.com,DigiCert Inc,third,,TLSv1.3
-dbankcdn.com,GlobalSign nv-sa,third,,TLSv1.3
-dbankcloud.cn,GlobalSign nv-sa,third,,TLSv1.3
-dbankcloud.com,GlobalSign nv-sa,third,,TLSv1.3
-dbankcloud.ru,unknown,unknown,,unknown
-ddns.net,unknown,unknown,,unknown
-debian.org,Let's Encrypt,third,,TLSv1.3
-deepintent.com,Google Trust Services,third,,TLSv1.3
-deepl.com,Google Trust Services,third,,TLSv1.3
-deepseek.com,Amazon,third,,TLSv1.3
-dell.com,DigiCert Inc,third,,TLSv1.2
-demdex.net,DigiCert Inc,third,,TLSv1.3
-didiglobal.com,"DigiCert, Inc.",third,,TLSv1.2
-digicert.com,DigiCert Inc,third,,TLSv1.3
-digitaloceanspaces.com,Google Trust Services,third,,TLSv1.3
-discomax.com,unknown,unknown,,unknown
-discord.com,Google Trust Services,third,,TLSv1.3
-discord.gg,Google Trust Services,third,,TLSv1.3
-discord.media,Google Trust Services,third,,TLSv1.3
-discordapp.com,Google Trust Services,third,,TLSv1.3
-discordapp.net,unknown,unknown,,unknown
-disqus.com,Sectigo Limited,third,,TLSv1.3
-dns.google,Google Trust Services,private,,TLSv1.3
-docker.com,Let's Encrypt,third,,TLSv1.3
-docker.io,Amazon,third,,TLSv1.3
-doppiocdn.com,unknown,unknown,,unknown
-dotomi.com,GlobalSign nv-sa,third,,TLSv1.2
-doubleclick.net,Google Trust Services,private,,TLSv1.3
-doubleverify.com,Let's Encrypt,third,,TLSv1.3
-douyincdn.com,unknown,unknown,,unknown
-douyinpic.com,unknown,unknown,,unknown
-douyinvod.com,unknown,unknown,,unknown
-dropbox.com,DigiCert Inc,third,,TLSv1.3
-dropboxapi.com,unknown,unknown,,unknown
-dssott.com,unknown,unknown,,unknown
-dtscout.com,Let's Encrypt,third,,TLSv1.2
-dual-s-msedge.net,unknown,unknown,,unknown
-duckdns.org,Amazon,third,,TLSv1.2
-duckduckgo.com,DigiCert Inc,third,,TLSv1.3
-duolingo.com,Amazon,third,,TLSv1.2
-dv.tech,unknown,unknown,,unknown
-dynatrace.com,Amazon,third,,TLSv1.3
-dyndns.org,DigiCert Inc,third,,TLSv1.3
-dzen.ru,Hellenic Academic and Research Institutions CA,third,,TLSv1.3
-ea.com,DigiCert Inc,third,,TLSv1.3
-easebar.com,unknown,unknown,,unknown
-easy4ipcloud.com,unknown,unknown,,unknown
-ebay.com,Sectigo Limited,third,,TLSv1.3
-edgcdn.net,unknown,unknown,,unknown
-edge.apple,unknown,unknown,,unknown
-edgekey.net,DigiCert Inc,third,,TLSv1.3
-edgesuite.net,unknown,unknown,,unknown
-elasticbeanstalk.com,unknown,unknown,,unknown
-entrust.net,Entrust Limited,private,,TLSv1.3
-epicgames.com,Amazon,third,,TLSv1.3
-epicgames.dev,Amazon,third,,TLSv1.3
-erome.com,ZeroSSL GmbH,third,,TLSv1.3
-eset.com,Let's Encrypt,third,,TLSv1.3
-eskimi.com,Google Trust Services,third,,TLSv1.3
-espn.com,Sectigo Limited,third,,TLSv1.3
-eu-1-id5-sync.com,Google Trust Services,third,,TLSv1.3
-europa.eu,GlobalSign nv-sa,third,,TLSv1.3
-everesttech.net,DigiCert Inc,third,,TLSv1.2
-example.com,SSL Corporation,third,,TLSv1.3
-example.org,SSL Corporation,third,,TLSv1.3
-exp-tas.com,unknown,unknown,,unknown
-eye4.cn,DigiCert Inc,third,,TLSv1.3
-eyeota.net,GoGetSSL,unknown,,TLSv1.2
-ezvizlife.com,GlobalSign nv-sa,third,,TLSv1.2
-facebook.com,DigiCert Inc,third,,TLSv1.3
-facebook.net,unknown,unknown,,unknown
-fandom.com,Google Trust Services,third,,TLSv1.3
-fast.com,DigiCert Inc,third,,TLSv1.2
-fastly-edge.com,unknown,unknown,,unknown
-fastly.net,Certainly,third,,TLSv1.2
-fb-t-msedge.net,unknown,unknown,,unknown
-fb.com,DigiCert Inc,third,,TLSv1.3
-fbcdn.net,DigiCert Inc,third,,TLSv1.3
-fbpigeon.com,unknown,unknown,,unknown
-fbsbx.com,DigiCert Inc,third,,TLSv1.3
-featureassets.org,Let's Encrypt,third,,TLSv1.3
-fifa.com,Let's Encrypt,third,,TLSv1.3
-figma.com,Amazon,third,,TLSv1.3
-firebaseio.com,Google Trust Services,private,,TLSv1.3
-firefox.com,Let's Encrypt,third,,TLSv1.3
-firetvcaptiveportal.com,unknown,unknown,,unknown
-flashbots.net,Google Trust Services,third,,TLSv1.3
-flashtalking.com,DigiCert Inc,third,,TLSv1.3
-foggymorningmist.com,unknown,unknown,,unknown
-fontawesome.com,Google Trust Services,third,,TLSv1.3
-force.com,DigiCert Inc,third,,TLSv1.3
-forter.com,Google Trust Services,third,,TLSv1.3
-fotmob.com,Amazon,third,,TLSv1.3
-freefiremobile.com,Let's Encrypt,third,,TLSv1.3
-fullstory.com,Let's Encrypt,third,,TLSv1.3
-fwmrm.net,DigiCert Inc,third,,TLSv1.3
-fyber.com,DigiCert Inc,third,,TLSv1.3
-gameanalytics.com,Google Trust Services,third,,TLSv1.3
-gamepass.com,Microsoft Corporation,unknown,,TLSv1.3
-garena.com,DigiCert Inc,third,,TLSv1.2
-garmin.com,"GoDaddy.com, Inc.",third,,TLSv1.3
-gboxlab.com,Google Trust Services,third,,TLSv1.3
-gcdn.co,unknown,unknown,,unknown
-geoedge.be,unknown,unknown,,unknown
-geotrust.com,"DigiCert, Inc.",third,,TLSv1.3
-ggpht.com,unknown,unknown,,unknown
-github.com,Sectigo Limited,third,,TLSv1.3
-github.io,Let's Encrypt,third,,TLSv1.3
-githubcopilot.com,Sectigo Limited,third,,TLSv1.3
-githubusercontent.com,Let's Encrypt,third,,TLSv1.3
-gitlab.com,Sectigo Limited,third,,TLSv1.3
-glance-cdn.com,Sectigo Limited,third,,TLSv1.3
-glanceapis.com,unknown,unknown,,unknown
-globalsign.com,GlobalSign nv-sa,third,,TLSv1.3
-globo.com,Let's Encrypt,third,,TLSv1.3
-gmail.com,Google Trust Services,private,,TLSv1.3
-go-mpulse.net,unknown,unknown,,unknown
-godaddy.com,Google Trust Services,third,,TLSv1.3
-google-analytics.com,Google Trust Services,private,,TLSv1.3
-google.ca,Google Trust Services,private,,TLSv1.3
-google.cn,Google Trust Services,private,,TLSv1.3
-google.co.id,Google Trust Services,private,,TLSv1.3
-google.co.uk,Google Trust Services,private,,TLSv1.3
-google.com,Google Trust Services,private,,TLSv1.3
-google.com.br,Google Trust Services,private,,TLSv1.3
-google.com.hk,Google Trust Services,private,,TLSv1.3
-google.de,Google Trust Services,private,,TLSv1.3
-google.fr,Google Trust Services,private,,TLSv1.3
-google.ru,Google Trust Services,private,,TLSv1.3
-google.us,Google Trust Services,private,,TLSv1.3
-googleadservices.com,Google Trust Services,private,,TLSv1.3
-googleapis.cn,Google Trust Services,third,,TLSv1.3
-googleapis.com,Google Trust Services,private,,TLSv1.3
-googlesyndication.com,Google Trust Services,private,,TLSv1.3
-googletagmanager.com,Google Trust Services,private,,TLSv1.3
-googletagservices.com,Google Trust Services,private,,TLSv1.3
-googleusercontent.com,Google Trust Services,private,,TLSv1.3
-googlevideo.com,Google Trust Services,third,,TLSv1.3
-googlezip.net,unknown,unknown,,unknown
-gos-gsp.io,unknown,unknown,,unknown
-goskope.com,unknown,unknown,,unknown
-grafana.com,DigiCert Inc,third,,TLSv1.3
-grammarly.com,Amazon,third,,TLSv1.3
-grammarly.io,unknown,unknown,,unknown
-grass.io,Google Trust Services,third,,TLSv1.3
-gravatar.com,Let's Encrypt,third,,TLSv1.3
-gstatic.com,Google Trust Services,private,,TLSv1.3
-gumgum.com,Amazon,third,,TLSv1.3
-gvt1.com,unknown,unknown,,unknown
-gvt2.com,unknown,unknown,,unknown
-gvt3.com,unknown,unknown,,unknown
-hakunaymatata.com,unknown,unknown,,unknown
-harman.com,Sectigo Limited,third,,TLSv1.2
-hcaptcha.com,Google Trust Services,third,,TLSv1.3
-hdslb.com,unknown,unknown,,unknown
-he.net,"GoDaddy.com, Inc.",third,,TLSv1.3
-hellotalk8.com,"TrustAsia Technologies, Inc.",third,,TLSv1.2
-heytapdl.com,unknown,unknown,,unknown
-heytapmobi.com,"DigiCert, Inc.",third,,TLSv1.3
-heytapmobile.com,unknown,unknown,,unknown
-hicloud.com,GlobalSign nv-sa,third,,TLSv1.2
-hihonor.com,Actalis S.p.A.,third,,TLSv1.2
-hihonorcloud.com,GlobalSign nv-sa,third,,TLSv1.2
-hik-connect.com,GlobalSign nv-sa,third,,TLSv1.3
-hisavana.com,DigiCert Inc,third,,TLSv1.3
-histats.com,Let's Encrypt,third,,TLSv1.3
-home-assistant.io,Google Trust Services,third,,TLSv1.3
-honeygain.com,Google Trust Services,third,,TLSv1.3
-hotjar.com,Amazon,third,,TLSv1.3
-hotmail.com,Microsoft Corporation,private,,TLSv1.3
-hoyoverse.com,DigiCert Inc,third,,TLSv1.2
-hp.com,DigiCert Inc,third,,TLSv1.3
-hs-banner.com,unknown,unknown,,unknown
-huawei.com,Actalis S.p.A.,third,,TLSv1.2
-hubapi.com,Google Trust Services,third,,TLSv1.3
-hubspot.com,Google Trust Services,third,,TLSv1.3
-hulu.com,COMODO CA Limited,third,,TLSv1.3
-huntress.io,DigiCert Inc,third,,TLSv1.2
-i18n-pglstatp.com,unknown,unknown,,unknown
-ibytedtos.com,unknown,unknown,,unknown
-ibyteimg.com,unknown,unknown,,unknown
-icanhazip.com,Google Trust Services,third,,TLSv1.3
-icloud-content.com,Apple Inc.,third,,TLSv1.3
-icloud.com,Apple Inc.,private,,TLSv1.3
-icloud.com.cn,Apple Inc.,third,,TLSv1.3
-id5-sync.com,Let's Encrypt,third,,TLSv1.3
-ieee.org,GlobalSign nv-sa,third,,TLSv1.3
-ifconfig.me,Let's Encrypt,third,,TLSv1.3
-igamecj.com,unknown,unknown,,unknown
-im-apps.net,Google Trust Services,third,,TLSv1.3
-imgsmail.ru,Hellenic Academic and Research Institutions CA,third,,TLSv1.2
-imoim.net,unknown,unknown,,unknown
-impervadns.net,unknown,unknown,,unknown
-imrworldwide.com,unknown,unknown,,unknown
-inaccuracy.net,unknown,unknown,,unknown
-incognia.com,Google Trust Services,third,,TLSv1.3
-indeed.com,Google Trust Services,third,,TLSv1.3
-indexww.com,Google Trust Services,third,,TLSv1.3
-ingage.tech,Sectigo Limited,third,,TLSv1.3
-inkuai.com,GlobalSign nv-sa,third,,TLSv1.2
-inmobi.com,Sectigo Limited,third,,TLSv1.3
-inmobicdn.net,unknown,unknown,,unknown
-inner-active.mobi,unknown,unknown,,unknown
-innovid.com,Google Trust Services,third,,TLSv1.3
-instagram.com,DigiCert Inc,third,,TLSv1.3
-int08h.com,Google Trust Services,third,,TLSv1.3
-intel.com,Sectigo Limited,third,,TLSv1.3
-intelbras.com.br,"GoDaddy.com, Inc.",third,,TLSv1.3
-intentiq.com,Let's Encrypt,third,,TLSv1.3
-intercom.io,Amazon,third,,TLSv1.3
-intuit.com,DigiCert Inc,third,,TLSv1.3
-ip-api.com,Sectigo Limited,third,,TLSv1.2
-ipapi.co,Google Trust Services,third,,TLSv1.2
-ipify.org,Google Trust Services,third,,TLSv1.3
-ipinfo.io,Let's Encrypt,third,,TLSv1.3
-ipredictive.com,unknown,unknown,,unknown
-isappcloud.com,unknown,unknown,,unknown
-isnssdk.com,Amazon,third,,TLSv1.2
-ixigua.com,DigiCert Inc,third,,TLSv1.3
-jd.com,GlobalSign nv-sa,third,,TLSv1.3
-jetbrains.com,Amazon,third,,TLSv1.3
-jquery.com,Google Trust Services,third,,TLSv1.3
-jsdelivr.net,unknown,unknown,,unknown
-jtvnw.net,unknown,unknown,,unknown
-kakao.com,DigiCert Inc,third,,TLSv1.3
-kakaocdn.net,DigiCert Inc,third,,TLSv1.3
-kargo.com,Let's Encrypt,third,,TLSv1.3
-kaspersky-labs.com,Kaspersky Lab,unknown,,TLSv1.3
-kaspersky.com,DigiCert Inc,third,,TLSv1.3
-kick.com,Google Trust Services,third,,TLSv1.3
-klaviyo.com,Amazon,third,,TLSv1.3
-ks-cdn.com,unknown,unknown,,unknown
-ksapisrv.com,unknown,unknown,,unknown
-kslawin.com,GlobalSign nv-sa,third,,TLSv1.3
-ksord.com,DigiCert Inc,third,,TLSv1.2
-kueezrtb.com,Let's Encrypt,third,,TLSv1.3
-kwai-pro.com,GlobalSign nv-sa,third,,TLSv1.3
-kwai.com,GlobalSign nv-sa,third,,TLSv1.2
-kwai.net,GlobalSign nv-sa,third,,TLSv1.2
-kwaipros.com,GlobalSign nv-sa,third,,TLSv1.2
-kwcdn.com,unknown,unknown,,unknown
-launchdarkly.com,Let's Encrypt,third,,TLSv1.3
-leiniao.com,Let's Encrypt,third,,TLSv1.3
-lencr.org,Let's Encrypt,third,,TLSv1.3
-lenovo.com,DigiCert Inc,third,,TLSv1.3
-letsencrypt.org,Let's Encrypt,third,,TLSv1.3
-lge.com,Amazon,third,,TLSv1.2
-lgsmartad.com,unknown,unknown,,unknown
-lgthinq.com,Amazon,unknown,,TLSv1.2
-lgtvcommon.com,unknown,unknown,,unknown
-lgtvsdp.com,unknown,unknown,,unknown
-liadm.com,unknown,unknown,,unknown
-licdn.com,DigiCert Inc,third,,TLSv1.3
-life360.com,Amazon,third,,TLSv1.2
-liftoff-creatives.io,unknown,unknown,,unknown
-liftoff.io,Google Trust Services,third,,TLSv1.3
-lijit.com,Amazon,third,,TLSv1.3
-linkedin.com,DigiCert Inc,third,,TLSv1.3
-listdl.com,unknown,unknown,,unknown
-litix.io,ZeroSSL GmbH,third,,TLSv1.3
-live-video.net,unknown,unknown,,unknown
-live.com,Microsoft Corporation,private,,TLSv1.3
-live.net,unknown,unknown,,unknown
-livechatinc.com,Google Trust Services,third,,TLSv1.3
-llamarpc.com,Let's Encrypt,third,,TLSv1.3
-ln-msedge.net,unknown,unknown,,unknown
-loopme.me,Let's Encrypt,third,,TLSv1.3
-ltwebstatic.com,"DigiCert, Inc.",third,,TLSv1.2
-magazineluiza.com.br,GlobalSign nv-sa,third,,TLSv1.3
-magnific.com,Let's Encrypt,third,,TLSv1.3
-mail.ru,Hellenic Academic and Research Institutions CA,third,,TLSv1.2
-mapbox.com,GlobalSign nv-sa,third,,TLSv1.2
-marzaent.com,Google Trust Services,third,,TLSv1.3
-match.com,Google Trust Services,third,,TLSv1.3
-mathtag.com,DigiCert Inc,third,,TLSv1.2
-mcafee.com,"McAfee, Inc.",private,,TLSv1.2
-me.com,Apple Inc.,private,,TLSv1.3
-medallia.com,Amazon,third,,TLSv1.3
-media-amazon.com,unknown,unknown,,unknown
-media.net,DigiCert Inc,third,,TLSv1.3
-mediago.io,Amazon,third,,TLSv1.2
-mediatek.com,GlobalSign nv-sa,third,,TLSv1.2
-meethue.com,Google Trust Services,third,,TLSv1.3
-meraki.com,Amazon,third,,TLSv1.3
-mercadolibre.com,Amazon,third,,TLSv1.3
-mercadolivre.com.br,Amazon,third,,TLSv1.3
-merkle.io,Google Trust Services,third,,TLSv1.3
-meta.com,DigiCert Inc,third,,TLSv1.3
-metamask.io,Google Trust Services,third,,TLSv1.3
-mgid.com,"GoDaddy.com, Inc.",third,,TLSv1.3
-mi-img.com,unknown,unknown,,unknown
-mi.com,DigiCert Inc,third,,TLSv1.2
-microsoft.com,Microsoft Corporation,private,,TLSv1.3
-microsoftonline.com,unknown,unknown,,unknown
-microsoftpersonalcontent.com,unknown,unknown,,unknown
-mikrotik.com,DigiCert Inc,third,,TLSv1.3
-mintegral.net,Amazon,third,,TLSv1.2
-mioffice.cn,DigiCert Inc,third,,TLSv1.2
-miui.com,DigiCert Inc,third,,TLSv1.2
-miwifi.com,DigiCert Inc,third,,TLSv1.2
-mixpanel.com,DigiCert Inc,third,,TLSv1.3
-mlstatic.com,unknown,unknown,,unknown
-mmcdn.com,DigiCert Inc,third,,TLSv1.3
-mmechocaptiveportal.com,unknown,unknown,,unknown
-mmstat.com,unknown,unknown,,unknown
-moengage.com,Google Trust Services,third,,TLSv1.3
-mojang.com,Microsoft Corporation,third,,TLSv1.3
-moloco.com,Let's Encrypt,third,,TLSv1.3
-mona.co,Google Trust Services,third,,TLSv1.3
-mosspf.net,unknown,unknown,,unknown
-mossru.com,unknown,unknown,,unknown
-mozgcp.net,unknown,unknown,,unknown
-mozilla.com,Google Trust Services,third,,TLSv1.3
-mozilla.net,Google Trust Services,third,,TLSv1.3
-mozilla.org,Google Trust Services,third,,TLSv1.3
-mparticle.com,Let's Encrypt,third,,TLSv1.3
-mradx.net,unknown,unknown,,unknown
-msauth.net,unknown,unknown,,unknown
-msedge.net,unknown,unknown,,unknown
-msftauth.net,unknown,unknown,,unknown
-msftconnecttest.com,DigiCert Inc,third,,TLSv1.3
-msftncsi.com,DigiCert Inc,third,,TLSv1.3
-msidentity.com,unknown,unknown,,unknown
-msn.com,Microsoft Corporation,private,,TLSv1.3
-mtgglobals.com,Amazon,third,,TLSv1.3
-mts.ru,GlobalSign nv-sa,third,,TLSv1.3
-mydramawave.com,DigiCert Inc,third,,TLSv1.2
-myhuaweicloud.com,DigiCert Inc,third,,TLSv1.2
-mynetname.net,unknown,unknown,,unknown
-myqcloud.com,unknown,unknown,,unknown
-myshopify.com,Let's Encrypt,third,,TLSv1.3
-mythad.com,unknown,unknown,,unknown
-mzstatic.com,Apple Inc.,private,,TLSv1.3
-naver.com,Let's Encrypt,third,,TLSv1.3
-ndcpp-os.com,unknown,unknown,,unknown
-ne.jp,Let's Encrypt,third,,TLSv1.3
-nel.goog,unknown,unknown,,unknown
-nelreports.net,unknown,unknown,,unknown
-netflix.com,DigiCert Inc,third,,TLSv1.3
-netflix.net,Google Trust Services,third,,TLSv1.3
-netgear.com,Amazon,third,,TLSv1.2
-networklinks.space,unknown,unknown,,unknown
-newrelic.com,DigiCert Inc,third,,TLSv1.2
-newsroom.bi,GlobalSign nv-sa,third,,TLSv1.3
-nextcloud.com,Let's Encrypt,third,,TLSv1.3
-nextlgsdp.com,unknown,unknown,,unknown
-nflxext.com,unknown,unknown,,unknown
-nflximg.com,Netflix Inc,unknown,,TLSv1.3
-nflxso.net,unknown,unknown,,unknown
-nflxvideo.net,unknown,unknown,,unknown
-ninjarmm.com,Let's Encrypt,third,,TLSv1.3
-nintendo.net,unknown,unknown,,unknown
-nist.gov,Let's Encrypt,third,,TLSv1.3
-no-ip.com,DigiCert Inc,third,,TLSv1.2
-norton.com,Sectigo Limited,third,,TLSv1.3
-notion.com,Google Trust Services,third,,TLSv1.3
-nr-data.net,unknown,unknown,,unknown
-ns1p.net,DigiCert Inc,third,,TLSv1.3
-ntp.br,Let's Encrypt,third,,TLSv1.3
-ntp.org,Let's Encrypt,third,,TLSv1.2
-ntppool.org,Certainly,third,,TLSv1.3
-nubank.com.br,Amazon,third,,TLSv1.3
-nvidia.com,Amazon,third,,TLSv1.2
-nytimes.com,DigiCert Inc,third,,TLSv1.3
-oaistatic.com,Let's Encrypt,third,,TLSv1.3
-oculus.com,DigiCert Inc,third,,TLSv1.3
-office.com,Microsoft Corporation,private,,TLSv1.3
-office.net,unknown,unknown,,unknown
-office365.com,Microsoft Corporation,private,,TLSv1.3
-ok.ru,Hellenic Academic and Research Institutions CA,third,,TLSv1.3
-okcdn.ru,Hellenic Academic and Research Institutions CA,third,,TLSv1.3
-okta.com,Amazon,third,,TLSv1.3
-okx.com,DigiCert Inc,third,,TLSv1.3
-omnitagjs.com,unknown,unknown,,unknown
-omtrdc.net,DigiCert Inc,third,,TLSv1.2
-on.aws,unknown,unknown,,unknown
-one.one,Let's Encrypt,third,,TLSv1.3
-onedrive.com,Microsoft Corporation,third,,TLSv1.3
-onegg.site,unknown,unknown,,unknown
-onelink.me,Amazon,third,,TLSv1.3
-oneme.ru,unknown,unknown,,unknown
-onesignal.com,Google Trust Services,third,,TLSv1.3
-onetag-sys.com,DigiCert Inc,third,,TLSv1.3
-onetrust.com,Let's Encrypt,third,,TLSv1.3
-onetrust.io,unknown,unknown,,unknown
-online-metrix.net,unknown,unknown,,unknown
-openai.com,Google Trust Services,third,,TLSv1.3
-opendns.com,Let's Encrypt,third,,TLSv1.2
-openx.net,DigiCert Inc,third,,TLSv1.3
-opera-api.com,unknown,unknown,,unknown
-opera-api2.com,unknown,unknown,,unknown
-opera.com,Trust Provider B.V.,third,,TLSv1.3
-optimizely.com,Let's Encrypt,third,,TLSv1.3
-oracle.com,DigiCert Inc,third,,TLSv1.2
-oraclecloud.com,DigiCert Inc,third,,TLSv1.2
-orange.fr,DigiCert Inc,third,,TLSv1.3
-outbrain.com,Let's Encrypt,third,,TLSv1.3
-outlook.com,DigiCert Inc,third,,TLSv1.3
-overwolf.com,Amazon,third,,TLSv1.3
-ovscdns.net,unknown,unknown,,unknown
-ozon.ru,GlobalSign nv-sa,third,,TLSv1.3
-ozone.ru,GlobalSign nv-sa,third,,TLSv1.3
-pages.dev,Google Trust Services,third,,TLSv1.3
-palmplaystore.com,"DigiCert, Inc.",third,,TLSv1.2
-paloaltonetworks.com,DigiCert Inc,third,,TLSv1.3
-pandora.com,DigiCert Inc,third,,TLSv1.2
-pangle.io,unknown,unknown,,unknown
-paypal.com,DigiCert Inc,third,,TLSv1.3
-pbstck.com,unknown,unknown,,unknown
-peacocktv.com,DigiCert Inc,third,,TLSv1.3
-pemsrv.com,unknown,unknown,,unknown
-pendo.io,Google Trust Services,third,,TLSv1.3
-perplexity.ai,Let's Encrypt,third,,TLSv1.3
-phantom.app,Google Trust Services,third,,TLSv1.3
-phncdn.com,unknown,unknown,,unknown
-pinimg.com,DigiCert Inc,third,,TLSv1.3
-pinterest.com,DigiCert Inc,third,,TLSv1.3
-pki.goog,Google Trust Services,private,,TLSv1.3
-playfabapi.com,Microsoft Corporation,third,,TLSv1.3
-playrix.com,Amazon,third,,TLSv1.3
-playstation.com,DigiCert Inc,third,,TLSv1.2
-playstation.net,unknown,unknown,,unknown
-plex.tv,DigiCert Inc,third,,TLSv1.3
-pluto.tv,Amazon,third,,TLSv1.2
-polymarket.com,Google Trust Services,third,,TLSv1.3
-posthog.com,Let's Encrypt,third,,TLSv1.3
-postrelease.com,Amazon,third,,TLSv1.3
-presage.io,Gandi,unknown,,TLSv1.3
-primis.tech,"GoDaddy.com, Inc.",third,,TLSv1.2
-privacy-center.org,Amazon,third,,TLSv1.2
-privacy-mgmt.com,unknown,unknown,,unknown
-privacymanager.io,Amazon,third,,TLSv1.3
-prodregistryv2.org,Let's Encrypt,third,,TLSv1.3
-protechts.net,Google Trust Services,third,,TLSv1.3
-pstatic.net,unknown,unknown,,unknown
-publicnode.com,Let's Encrypt,third,,TLSv1.3
-pubmatic.com,Amazon,third,,TLSv1.3
-pubmnet.com,unknown,unknown,,unknown
-pubnative.net,Google Trust Services,third,,TLSv1.3
-pullcf.com,DigiCert Inc,third,,TLSv1.2
-pullcm.com,DigiCert Inc,third,,TLSv1.2
-pusher.com,Amazon,third,,TLSv1.3
-pv-cdn.net,unknown,unknown,,unknown
-pvp.net,unknown,unknown,,unknown
-px-cloud.net,Google Trust Services,third,,TLSv1.3
-qlivecdn.com,unknown,unknown,,unknown
-qq.com,"DigiCert, Inc.",third,,TLSv1.2
-qualtrics.com,DigiCert Inc,third,,TLSv1.3
-quantcount.com,Let's Encrypt,third,,TLSv1.2
-quantserve.com,Let's Encrypt,third,,TLSv1.3
-quantummetric.com,Let's Encrypt,third,,TLSv1.3
-quickconnect.to,Sectigo Limited,third,,TLSv1.2
-rainberrytv.com,Amazon,third,,TLSv1.3
-rapid7.com,Amazon,third,,TLSv1.3
-ravm.tv,Amazon,third,,TLSv1.3
-rbxcdn.com,unknown,unknown,,unknown
-readthedocs.org,Google Trust Services,third,,TLSv1.3
-recaptcha.net,Google Trust Services,third,,TLSv1.3
-redd.it,DigiCert Inc,third,,TLSv1.3
-reddit.com,DigiCert Inc,third,,TLSv1.3
-redditmedia.com,DigiCert Inc,third,,TLSv1.3
-redditstatic.com,DigiCert Inc,third,,TLSv1.3
-revenuecat.com,Amazon,third,,TLSv1.3
-rfihub.com,unknown,unknown,,unknown
-richaudience.com,Amazon,third,,TLSv1.3
-ring.com,Amazon,third,,TLSv1.3
-riotcdn.net,unknown,unknown,,unknown
-riotgames.com,DigiCert Inc,third,,TLSv1.3
-rlcdn.com,Sectigo Limited,third,,TLSv1.3
-roblox.com,Sectigo Limited,third,,TLSv1.3
-rocket-cdn.com,unknown,unknown,,unknown
-roku.com,Google Trust Services,third,,TLSv1.3
-rubiconproject.com,Amazon,third,,TLSv1.3
-run.app,Google Trust Services,third,,TLSv1.3
-rustore.ru,Hellenic Academic and Research Institutions CA,third,,TLSv1.2
-safebrowsing.apple,unknown,unknown,,unknown
-safedk.com,unknown,unknown,,unknown
-salesforce.com,DigiCert Inc,third,,TLSv1.3
-samba.tv,Let's Encrypt,third,,TLSv1.3
-samsung.com,Sectigo Limited,third,,TLSv1.2
-samsungacr.com,unknown,unknown,,unknown
-samsungads.com,Sectigo Limited,third,,TLSv1.2
-samsungapps.com,Sectigo Limited,third,,TLSv1.2
-samsungcloud.com,Sectigo Limited,third,,TLSv1.3
-samsungcloud.tv,unknown,unknown,,unknown
-samsungcloudsolution.com,unknown,unknown,,unknown
-samsungcloudsolution.net,unknown,unknown,,unknown
-samsungdm.com,unknown,unknown,,unknown
-samsungelectronics.com,Sectigo Limited,third,,TLSv1.2
-samsungiotcloud.com,unknown,unknown,,unknown
-samsungnyc.com,unknown,unknown,,unknown
-samsungosp.com,DigiCert Inc,third,,TLSv1.2
-samsungqbe.com,unknown,unknown,,unknown
-sascdn.com,Google Trust Services,third,,TLSv1.3
-sc-cdn.net,unknown,unknown,,unknown
-sc-gw.com,unknown,unknown,,unknown
-sc-static.net,Amazon,third,,TLSv1.3
-scdn.co,GlobalSign nv-sa,third,,TLSv1.3
-scorecardresearch.com,Sectigo Limited,third,,TLSv1.3
-script.ac,unknown,unknown,,unknown
-sectigo.com,Sectigo Limited,third,,TLSv1.2
-secu100.net,DigiCert Inc,third,,TLSv1.2
-seedtag.com,Google Trust Services,third,,TLSv1.3
-segment.com,Amazon,third,,TLSv1.3
-segment.io,Amazon,third,,TLSv1.3
-sentinelone.net,Sectigo Limited,third,,TLSv1.3
-sentry.io,DigiCert Inc,third,,TLSv1.3
-seznam.cz,Let's Encrypt,third,,TLSv1.3
-sfx.ms,unknown,unknown,,unknown
-shalltry.com,Amazon,third,,TLSv1.3
-sharepoint.com,Microsoft Corporation,private,,TLSv1.3
-sharethis.com,Amazon,third,,TLSv1.3
-sharethrough.com,Google Trust Services,third,,TLSv1.3
-shein.com,"DigiCert, Inc.",third,,TLSv1.3
-shifen.com,GlobalSign nv-sa,third,,TLSv1.2
-shodan.io,Google Trust Services,third,,TLSv1.3
-shop.app,Google Trust Services,third,,TLSv1.3
-shopee.co.id,GlobalSign nv-sa,third,,TLSv1.3
-shopee.com.br,GlobalSign nv-sa,third,,TLSv1.3
-shopee.sg,GlobalSign nv-sa,third,,TLSv1.3
-shopeemobile.com,Let's Encrypt,third,,TLSv1.2
-shopify.com,Google Trust Services,third,,TLSv1.3
-shopifysvc.com,unknown,unknown,,unknown
-shuashuati.com,"Beijing Xinchacha Credit Management Co., Ltd.",third,,TLSv1.2
-signal.org,Google Trust Services,third,,TLSv1.3
-sina.com.cn,"DigiCert, Inc.",third,,TLSv1.3
-sinaimg.cn,"DigiCert, Inc.",third,,TLSv1.3
-singular.net,Let's Encrypt,third,,TLSv1.3
-sitescout.com,Let's Encrypt,third,,TLSv1.3
-skype.com,Microsoft Corporation,private,,TLSv1.3
-slack.com,Let's Encrypt,third,,TLSv1.3
-slackb.com,Let's Encrypt,third,,TLSv1.3
-smaato.net,unknown,unknown,,unknown
-smadex.com,Amazon,third,,TLSv1.3
-smartadserver.com,Google Trust Services,third,,TLSv1.3
-smartthings.com,Amazon,third,,TLSv1.3
-smilewanted.com,Google Trust Services,third,,TLSv1.3
-snapchat.com,DigiCert Inc,third,,TLSv1.3
-snapkit.com,Google Trust Services,third,,TLSv1.3
-snssdk.com,DigiCert Inc,third,,TLSv1.3
-sonobi.com,"Starfield Technologies, Inc.",third,,TLSv1.3
-sophos.com,Let's Encrypt,third,,TLSv1.3
-soundcloud.com,Amazon,third,,TLSv1.3
-spamhaus.org,Let's Encrypt,third,,TLSv1.3
-sparteo.com,Let's Encrypt,third,,TLSv1.3
-speedtest.net,GlobalSign nv-sa,third,,TLSv1.3
-split.io,Let's Encrypt,third,,TLSv1.3
-splunkcloud.com,DigiCert Inc,third,,TLSv1.2
-spo-msedge.net,unknown,unknown,,unknown
-spot.im,Amazon,third,,TLSv1.3
-spotify.com,DigiCert Inc,third,,TLSv1.3
-spotifycdn.com,GlobalSign nv-sa,third,,TLSv1.3
-springserve.com,Amazon,third,,TLSv1.3
-ssl-images-amazon.com,unknown,unknown,,unknown
-stackadapt.com,Let's Encrypt,third,,TLSv1.3
-standardnotes.com,Google Trust Services,third,,TLSv1.3
-starlink.com,Let's Encrypt,third,,TLSv1.3
-startappservice.com,Let's Encrypt,third,,TLSv1.3
-static.microsoft,unknown,unknown,,unknown
-statuspage.io,Amazon,third,,TLSv1.3
-steamcommunity.com,DigiCert Inc,third,,TLSv1.3
-steamcontent.com,unknown,unknown,,unknown
-steampowered.com,Let's Encrypt,third,,TLSv1.3
-steamserver.net,unknown,unknown,,unknown
-steamstatic.com,unknown,unknown,,unknown
-stripchat.com,Google Trust Services,third,,TLSv1.3
-stripe.com,DigiCert Inc,third,,TLSv1.3
-stripe.network,DigiCert Inc,third,,TLSv1.3
-strpst.com,unknown,unknown,,unknown
-supabase.co,Let's Encrypt,third,,TLSv1.3
-supercell.com,Amazon,third,,TLSv1.3
-supersonicads.com,unknown,unknown,,unknown
-susercontent.com,unknown,unknown,,unknown
-svc.ms,Microsoft Corporation,third,,TLSv1.3
-swishapps.ai,Sectigo Limited,third,,TLSv1.3
-synology.com,Amazon,third,,TLSv1.2
-t.co,Let's Encrypt,third,,TLSv1.3
-t.me,"GoDaddy.com, Inc.",third,,TLSv1.3
-taboola.com,DigiCert Inc,third,,TLSv1.3
-tailscale.com,Let's Encrypt,third,,TLSv1.3
-taobao.com,GlobalSign nv-sa,third,,TLSv1.3
-tapad.com,Google Trust Services,third,,TLSv1.3
-target.com,GlobalSign nv-sa,third,,TLSv1.3
-tawk.to,Google Trust Services,third,,TLSv1.3
-tbcache.com,unknown,unknown,,unknown
-teads.tv,Amazon,third,,TLSv1.2
-teamviewer.com,Sectigo Limited,third,,TLSv1.3
-telegram.org,"GoDaddy.com, Inc.",third,,TLSv1.3
-telephony.goog,Google Trust Services,third,,TLSv1.2
-temu.com,"GoDaddy.com, Inc.",third,,TLSv1.3
-tencent-cloud.net,unknown,unknown,,unknown
-tencent.com,GlobalSign nv-sa,third,,TLSv1.3
-tenda.com.cn,DigiCert Inc,third,,TLSv1.3
-themoviedb.org,Amazon,third,,TLSv1.3
-tiktok.com,DigiCert Inc,third,,TLSv1.3
-tiktokcdn-eu.com,unknown,unknown,,unknown
-tiktokcdn-us.com,unknown,unknown,,unknown
-tiktokcdn.com,unknown,unknown,,unknown
-tiktokglobalshopv.com,DigiCert Inc,third,,TLSv1.3
-tiktokpangle-cdn-us.com,unknown,unknown,,unknown
-tiktokpangle.us,unknown,unknown,,unknown
-tiktokrow-cdn.com,unknown,unknown,,unknown
-tiktokv.com,DigiCert Inc,third,,TLSv1.3
-tiktokv.eu,unknown,unknown,,unknown
-tiktokv.us,unknown,unknown,,unknown
-tiktokw.us,DigiCert Inc,third,,TLSv1.3
-tiqcdn.com,unknown,unknown,,unknown
-tizen.org,Amazon,third,,TLSv1.3
-tm-azurefd.net,unknown,unknown,,unknown
-tmdb.org,Amazon,third,,TLSv1.3
-tospotify.com,unknown,unknown,,unknown
-tp-link.com,Amazon,third,,TLSv1.3
-tplinkcloud.com,DigiCert Inc,third,,TLSv1.2
-tplinknbu.com,unknown,unknown,,unknown
-tq-tungsten.com,unknown,unknown,,unknown
-tradingview.com,Amazon,third,,TLSv1.3
-tradplusad.com,DigiCert Inc,third,,TLSv1.2
-trafficjunky.net,DigiCert Inc,third,,TLSv1.3
-trafficmanager.net,unknown,unknown,,unknown
-traffmonetizer.com,GoGetSSL,third,,TLSv1.3
-translate.goog,Google Trust Services,private,,TLSv1.3
-tremorhub.com,Amazon,third,,TLSv1.3
-trendmicro.com,Sectigo Limited,third,,TLSv1.3
-tribalfusion.com,"GoDaddy.com, Inc.",third,,TLSv1.3
-trip.com,GlobalSign nv-sa,third,,TLSv1.2
-truecaller.com,Amazon,third,,TLSv1.2
-trustarc.com,Google Trust Services,third,,TLSv1.3
-truste.com,Amazon,third,,TLSv1.3
-trustedstack.com,Google Trust Services,third,,TLSv1.3
-trustpilot.com,Amazon,third,,TLSv1.2
-tsyndicate.com,Let's Encrypt,third,,TLSv1.3
-ttdns2.com,unknown,unknown,,unknown
-ttlivecdn.com,unknown,unknown,,unknown
-ttvnw.net,unknown,unknown,,unknown
-ttwstatic.com,unknown,unknown,,unknown
-tubi.io,unknown,unknown,,unknown
-tumblr.com,Let's Encrypt,third,,TLSv1.3
-turn.com,unknown,unknown,,unknown
-twc.com,GlobalSign nv-sa,third,,TLSv1.3
-twilio.com,Amazon,third,,TLSv1.2
-twimg.com,unknown,unknown,,unknown
-twitch.tv,GlobalSign nv-sa,third,,TLSv1.3
-twitter.com,Let's Encrypt,third,,TLSv1.3
-typekit.com,DigiCert Inc,third,,TLSv1.3
-typekit.net,unknown,unknown,,unknown
-uber.com,DigiCert Inc,third,,TLSv1.3
-ubi.com,Amazon,third,,TLSv1.3
-ubnt.com,Amazon,third,,TLSv1.3
-ubuntu.com,Let's Encrypt,third,,TLSv1.3
-ueiwsp.com,"GoDaddy.com, Inc.",third,,TLSv1.3
-ui.com,Amazon,third,,TLSv1.3
-uisp.com,Amazon,third,,TLSv1.3
-umeng.com,GlobalSign nv-sa,third,,TLSv1.2
-unifi-ai.com,Let's Encrypt,third,,TLSv1.3
-unisoc.com,GlobalSign nv-sa,third,,TLSv1.2
-unity3d.com,DigiCert Inc,third,,TLSv1.2
-unpkg.com,Google Trust Services,third,,TLSv1.3
-unrulymedia.com,Amazon,third,,TLSv1.3
-uol.com.br,DigiCert Inc,third,,TLSv1.2
-urbanairship.com,Google Trust Services,third,,TLSv1.3
-ureca-lab.com,unknown,unknown,,unknown
-useinsider.com,Google Trust Services,third,,TLSv1.3
-userapi.com,Let's Encrypt,third,,TLSv1.3
-usercentrics.eu,Google Trust Services,third,,TLSv1.3
-usercontent.goog,Google Trust Services,third,,TLSv1.3
-v-videoapp.com,Google Trust Services,third,,TLSv1.2
-verisign.com,DigiCert Inc,third,,TLSv1.3
-verkada.com,Amazon,third,,TLSv1.3
-via.google,Google Trust Services,third,,TLSv1.3
-viber.com,Amazon,third,,TLSv1.3
-vidaahub.com,unknown,unknown,,unknown
-vimeo.com,Google Trust Services,third,,TLSv1.3
-virtualearth.net,Microsoft Corporation,third,,TLSv1.3
-visualstudio.com,Microsoft Corporation,third,,TLSv1.3
-visualwebsiteoptimizer.com,"Starfield Technologies, Inc.",third,,TLSv1.3
-vivo.com.cn,"DigiCert, Inc.",third,,TLSv1.2
-vivoglobal.com,"DigiCert, Inc.",third,,TLSv1.2
-vk-analytics.ru,unknown,unknown,,unknown
-vk.com,Hellenic Academic and Research Institutions CA,third,,TLSv1.3
-vk.ru,Let's Encrypt,third,,TLSv1.3
-vkuserphoto.ru,Let's Encrypt,third,,TLSv1.3
-volces.com,unknown,unknown,,unknown
-volcfcdndvs.com,unknown,unknown,,unknown
-vscode-cdn.net,Microsoft Corporation,third,,TLSv1.3
-vungle.com,Let's Encrypt,third,,TLSv1.3
-w3.org,Google Trust Services,third,,TLSv1.3
-wac-msedge.net,unknown,unknown,,unknown
-walmart.com,GlobalSign nv-sa,third,,TLSv1.3
-walmartimages.com,unknown,unknown,,unknown
-wattpad.com,Amazon,third,,TLSv1.3
-wb.ru,GlobalSign nv-sa,third,,TLSv1.3
-wbbasket.ru,unknown,unknown,,unknown
-wbx2.com,unknown,unknown,,unknown
-weather.com,DigiCert Inc,third,,TLSv1.3
-webex.com,IdenTrust,third,,TLSv1.2
-wechat.com,"DigiCert, Inc.",third,,TLSv1.3
-weplayapp.com,GlobalSign nv-sa,third,,TLSv1.3
-whatsapp.com,DigiCert Inc,third,,TLSv1.3
-whatsapp.net,DigiCert Inc,third,,TLSv1.3
-wikimedia.org,Let's Encrypt,third,,TLSv1.3
-wikipedia.org,Let's Encrypt,third,,TLSv1.3
-wildberries.ru,Let's Encrypt,third,,TLSv1.3
-windows.com,Microsoft Corporation,private,,TLSv1.3
-windows.net,Microsoft Corporation,unknown,,TLSv1.3
-windowsupdate.com,unknown,unknown,,unknown
-withgoogle.com,Google Trust Services,private,,TLSv1.3
-wordpress.com,Let's Encrypt,third,,TLSv1.3
-workers.dev,Google Trust Services,third,,TLSv1.3
-wp.com,Let's Encrypt,third,,TLSv1.3
-wps.com,"DigiCert, Inc.",third,,TLSv1.2
-wsdvs.com,unknown,unknown,,unknown
-wshareit.com,DigiCert Inc,third,,TLSv1.3
-wyzecam.com,DigiCert Inc,third,,TLSv1.3
-x.com,Let's Encrypt,third,,TLSv1.3
-xboxlive.com,Microsoft Corporation,unknown,,TLSv1.3
-xboxservices.com,unknown,unknown,,unknown
-xhamster.com,Let's Encrypt,third,,TLSv1.3
-xhcdn.com,Let's Encrypt,third,,TLSv1.3
-xhscdn.com,unknown,unknown,,unknown
-xiaohongshu.com,"DNSPod, Inc.",third,,TLSv1.3
-xiaomi.com,DigiCert Inc,third,,TLSv1.2
-xiaomi.net,DigiCert Inc,third,,TLSv1.2
-xnxx-cdn.com,unknown,unknown,,unknown
-xvideos-cdn.com,unknown,unknown,,unknown
-xxpkg.com,Kuaishou,unknown,,TLSv1.2
-ya.ru,GlobalSign nv-sa,third,,TLSv1.3
-yahoo.co.jp,"Cybertrust Japan Co., Ltd.",third,,TLSv1.3
-yahoo.com,DigiCert Inc,third,,TLSv1.3
-yahoodns.net,unknown,unknown,,unknown
-yammer.com,Microsoft Corporation,third,,TLSv1.3
-yandex.com,GlobalSign nv-sa,third,,TLSv1.3
-yandex.net,GlobalSign nv-sa,third,,TLSv1.3
-yandex.ru,GlobalSign nv-sa,third,,TLSv1.3
-yandexcloud.net,unknown,unknown,,unknown
-yastatic.net,GlobalSign nv-sa,third,,TLSv1.3
-yellowblue.io,unknown,unknown,,unknown
-yieldmo.com,Let's Encrypt,third,,TLSv1.3
-yimg.com,DigiCert Inc,third,,TLSv1.3
-yimg.jp,unknown,unknown,,unknown
-yotpo.com,Amazon,third,,TLSv1.2
-youtube-nocookie.com,Google Trust Services,third,,TLSv1.3
-youtube.com,Google Trust Services,private,,TLSv1.3
-ys7.com,GlobalSign nv-sa,third,,TLSv1.3
-ytimg.com,unknown,unknown,,unknown
-yximgs.com,GlobalSign nv-sa,third,,TLSv1.2
-zdassets.com,unknown,unknown,,unknown
-zefrdata.com,Google Trust Services,third,,TLSv1.3
-zendesk.com,Let's Encrypt,third,,TLSv1.3
-zijieapi.com,unknown,unknown,,unknown
-zoho.com,Sectigo Limited,third,,TLSv1.3
-zoom.com,DigiCert Inc,third,,TLSv1.2
-zoom.us,DigiCert Inc,third,,TLSv1.3
-zpath.net,unknown,unknown,,unknown
-zscaler.net,unknown,unknown,,unknown
+domain,CA Name,type,Stapled,SSL or TLS,HTTPS Enabled
+0xrpc.io,Let's Encrypt,third,,TLSv1.3,True
+163.com,"DigiCert, Inc.",third,False,TLSv1.2,True
+1rx.io,unknown,unknown,,unknown,False
+2mdn.net,unknown,unknown,,unknown,False
+33across.com,Let's Encrypt,third,True,TLSv1.3,True
+360.cn,WoTrus CA Limited,unknown,False,TLSv1.2,True
+360safe.com,unknown,unknown,,unknown,False
+360yield.com,Amazon,unknown,,TLSv1.3,True
+3gppnetwork.org,unknown,unknown,,unknown,False
+3lift.com,Amazon,unknown,,TLSv1.3,True
+4dex.io,unknown,unknown,,unknown,False
+a-mo.net,Amazon,unknown,,TLSv1.3,True
+a-msedge.net,unknown,unknown,,unknown,False
+a-mx.com,unknown,unknown,,unknown,False
+a2z.com,unknown,unknown,,unknown,False
+aaplimg.com,unknown,unknown,,unknown,False
+ac.uk,unknown,unknown,,unknown,False
+accuweather.com,DigiCert Inc,third,True,TLSv1.3,True
+acrobat.com,DigiCert Inc,third,,TLSv1.3,True
+acronis.com,DigiCert Inc,third,,TLSv1.3,True
+ad-delivery.net,Google Trust Services,third,,TLSv1.3,True
+ad.gt,Amazon,unknown,,TLSv1.3,True
+adaether.com,unknown,unknown,,unknown,False
+adblockplus.org,Google Trust Services,third,True,TLSv1.3,True
+adform.net,DigiCert Inc,third,,TLSv1.3,True
+adfuse-ssp.com,Let's Encrypt,third,,TLSv1.3,True
+adgrx.com,Let's Encrypt,third,,TLSv1.3,True
+adguard.com,ZeroSSL GmbH,unknown,True,TLSv1.3,True
+aditude.io,Let's Encrypt,third,,TLSv1.3,True
+adjust.com,DigiCert Inc,third,,TLSv1.3,True
+adkernel.com,GlobalSign nv-sa,third,,TLSv1.3,True
+admanmedia.com,DigiCert Inc,third,True,TLSv1.3,True
+adnxs.com,DigiCert Inc,third,True,TLSv1.2,True
+adobe.com,DigiCert Inc,third,True,TLSv1.3,True
+adobe.io,DigiCert Inc,third,,TLSv1.3,True
+adobedc.net,unknown,unknown,,unknown,False
+adobedtm.com,unknown,unknown,,unknown,False
+adobelogin.com,DigiCert Inc,third,False,TLSv1.2,True
+adobess.com,unknown,unknown,,unknown,False
+adobestats.io,unknown,unknown,,unknown,False
+adriver.ru,GlobalSign nv-sa,third,,TLSv1.3,True
+adroll.com,GlobalSign nv-sa,third,True,TLSv1.2,True
+adrta.com,DigiCert Inc,third,False,TLSv1.2,True
+ads-twitter.com,unknown,unknown,,unknown,False
+adsafeprotected.com,Amazon,unknown,,TLSv1.3,True
+adsco.re,Sectigo Limited,third,False,TLSv1.2,True
+adsmoloco.com,Let's Encrypt,third,,TLSv1.3,True
+adsrvr.org,GlobalSign nv-sa,third,,TLSv1.3,True
+adtelligent.com,Sectigo Limited,third,,TLSv1.3,True
+adthrive.com,Let's Encrypt,third,,TLSv1.3,True
+adtrafficquality.google,Google Trust Services,third,,TLSv1.3,True
+agkn.com,DigiCert Inc,third,,TLSv1.3,True
+agora.io,GoDaddy.com,unknown,False,TLSv1.2,True
+aibixby.com,unknown,unknown,,unknown,False
+aibotplatform.com,unknown,unknown,,unknown,False
+aiv-delivery.net,unknown,unknown,,unknown,False
+aka.ms,Microsoft Corporation,unknown,True,TLSv1.3,True
+akadns.net,unknown,unknown,,unknown,False
+akahost.net,unknown,unknown,,unknown,False
+akam.net,unknown,unknown,,unknown,False
+akamai.com,DigiCert Inc,third,,TLSv1.3,True
+akamai.net,unknown,unknown,,unknown,False
+akamaiedge.net,unknown,unknown,,unknown,False
+akamaihd.net,unknown,unknown,,unknown,False
+akamaized.net,unknown,unknown,,unknown,False
+akstat.io,DigiCert Inc,third,,TLSv1.3,True
+alibaba.com,GlobalSign nv-sa,third,,TLSv1.3,True
+alibabadns.com,unknown,unknown,,unknown,False
+alicdn.com,unknown,unknown,,unknown,False
+aliexpress-media.com,unknown,unknown,,unknown,False
+aliexpress.com,GlobalSign nv-sa,third,False,TLSv1.2,True
+alipay.com,"DigiCert, Inc.",third,False,TLSv1.2,True
+aliyun.com,GlobalSign nv-sa,third,False,TLSv1.2,True
+aliyuncs.com,GlobalSign nv-sa,third,,TLSv1.3,True
+aliyuncsslbintl.com,unknown,unknown,,unknown,False
+allawnos.com,unknown,unknown,,unknown,False
+allawntech.com,"DigiCert, Inc.",third,,TLSv1.3,True
+alphonso.tv,Let's Encrypt,third,,TLSv1.3,True
+amap.com,GlobalSign nv-sa,third,False,TLSv1.2,True
+amazon-adsystem.com,Amazon,unknown,,TLSv1.3,True
+amazon.co.uk,DigiCert Inc,third,True,TLSv1.3,True
+amazon.com,DigiCert Inc,third,True,TLSv1.3,True
+amazon.de,DigiCert Inc,third,True,TLSv1.3,True
+amazon.dev,unknown,unknown,,unknown,False
+amazonalexa.com,Amazon,unknown,False,TLSv1.2,True
+amazonaws.com,Amazon,unknown,,TLSv1.3,True
+amazontrust.com,Amazon,unknown,,TLSv1.3,True
+amazonvideo.com,Amazon,unknown,,TLSv1.3,True
+amd.com,DigiCert Inc,third,True,TLSv1.3,True
+amemv.com,DigiCert Inc,third,,TLSv1.3,True
+amp-endpoint2.com,unknown,unknown,,unknown,False
+amp-endpoint3.com,unknown,unknown,,unknown,False
+amplitude.com,Amazon,unknown,False,TLSv1.2,True
+ampproject.org,Google Trust Services,third,,TLSv1.3,True
+android.com,Google Trust Services,third,,TLSv1.3,True
+aniview.com,Amazon,unknown,,TLSv1.3,True
+anthropic.com,Let's Encrypt,third,,TLSv1.3,True
+anydesk.com,Google Trust Services,third,,TLSv1.3,True
+aoneroom.com,unknown,unknown,,unknown,False
+ap4r.com,GlobalSign nv-sa,third,,TLSv1.2,True
+api.aws,unknown,unknown,,unknown,False
+app-ads-services.com,Google Trust Services,third,,TLSv1.3,True
+app-analytics-services-att.com,Google Trust Services,third,,TLSv1.3,True
+app-analytics-services.com,Google Trust Services,third,,TLSv1.3,True
+app-measurement.com,Google Trust Services,third,,TLSv1.3,True
+appcenter.ms,Microsoft Corporation,unknown,True,TLSv1.3,True
+appier.net,Google Trust Services,third,,TLSv1.3,True
+apple-cloudkit.com,unknown,unknown,,unknown,False
+apple-dns.net,unknown,unknown,,unknown,False
+apple.com,Apple Inc.,private,True,TLSv1.3,True
+apple.news,Apple Inc.,private,True,TLSv1.2,True
+applovin.com,Google Trust Services,third,,TLSv1.3,True
+applvn.com,unknown,unknown,,unknown,False
+appsflyer.com,Amazon,unknown,False,TLSv1.2,True
+appsflyersdk.com,Amazon,unknown,,TLSv1.3,True
+appspot.com,Google Trust Services,third,,TLSv1.3,True
+apptracer.ru,Hellenic Academic and Research Institutions CA,unknown,,TLSv1.3,True
+archive.org,"GoDaddy.com, Inc.",unknown,True,TLSv1.3,True
+argotunnel.com,unknown,unknown,,unknown,False
+arubanetworks.com,DigiCert Inc,third,,TLSv1.3,True
+assetsconfigcdn.org,Let's Encrypt,third,,TLSv1.3,True
+asus.com,Sectigo Limited,third,,TLSv1.3,True
+atlassian.com,Amazon,unknown,,TLSv1.3,True
+atlassian.net,Amazon,unknown,,TLSv1.3,True
+autodesk.com,Amazon,unknown,,TLSv1.3,True
+av380.net,ZeroSSL GmbH,unknown,,TLSv1.3,True
+avast.com,Sectigo Limited,third,True,TLSv1.3,True
+avcdn.net,DigiCert Inc,third,,TLSv1.3,True
+avira.com,Let's Encrypt,third,,TLSv1.3,True
+avito.ru,Hellenic Academic and Research Institutions CA,unknown,,TLSv1.3,True
+avito.st,GlobalSign nv-sa,third,,TLSv1.3,True
+avsxappcaptiveportal.com,unknown,unknown,,unknown,False
+aws.dev,unknown,unknown,,unknown,False
+awsglobalaccelerator.com,unknown,unknown,,unknown,False
+awswaf.com,unknown,unknown,,unknown,False
+ax-msedge.net,unknown,unknown,,unknown,False
+axon.ai,Google Trust Services,third,,TLSv1.3,True
+ay.delivery,Google Trust Services,third,,TLSv1.3,True
+azure-devices.net,unknown,unknown,,unknown,False
+azure.com,Microsoft Corporation,unknown,,TLSv1.3,True
+azure.net,Microsoft Corporation,unknown,,TLSv1.3,True
+azureedge.net,Microsoft Corporation,unknown,,TLSv1.3,True
+azurefd.net,Microsoft Corporation,unknown,,TLSv1.3,True
+azurewebsites.net,unknown,unknown,,unknown,False
+b-cdn.net,Sectigo Limited,third,,TLSv1.3,True
+b-msedge.net,unknown,unknown,,unknown,False
+baidu.com,GlobalSign nv-sa,third,False,TLSv1.2,True
+bamgrid.com,unknown,unknown,,unknown,False
+battle.net,Amazon,unknown,False,TLSv1.2,True
+bazaarvoice.com,Let's Encrypt,third,,TLSv1.3,True
+bdydns.com,unknown,unknown,,unknown,False
+betweendigital.com,Sectigo Limited,third,False,TLSv1.2,True
+beyla.site,unknown,unknown,,unknown,False
+beyondwickedmapping.org,Let's Encrypt,third,,TLSv1.3,True
+bidease.com,Google Trust Services,third,,TLSv1.3,True
+bidmachine.io,Google Trust Services,third,,TLSv1.3,True
+bidr.io,unknown,unknown,,unknown,False
+bidswitch.net,unknown,unknown,,unknown,False
+bilibili.com,GlobalSign nv-sa,third,,TLSv1.3,True
+binance.com,DigiCert Inc,third,,TLSv1.3,True
+bing.com,Microsoft Corporation,unknown,True,TLSv1.3,True
+bing.net,Microsoft Corporation,unknown,True,TLSv1.3,True
+bitdefender.com,DigiCert Inc,third,True,TLSv1.3,True
+bitdefender.net,DigiCert Inc,third,True,TLSv1.3,True
+bixbyllm.com,unknown,unknown,,unknown,False
+bkcdn.net,unknown,unknown,,unknown,False
+blackberry.com,DigiCert Inc,third,False,TLSv1.2,True
+blogspot.com,Google Trust Services,third,,TLSv1.3,True
+blxrbdn.com,unknown,unknown,,unknown,False
+booking.com,DigiCert Inc,third,,TLSv1.3,True
+bootstrapcdn.com,Google Trust Services,third,,TLSv1.3,True
+box.com,DigiCert Inc,third,,TLSv1.3,True
+boyuanhulian.com,DigiCert Inc,third,,TLSv1.3,True
+branch.io,Amazon,unknown,,TLSv1.3,True
+brave.com,Amazon,unknown,,TLSv1.3,True
+braze.com,Let's Encrypt,third,,TLSv1.3,True
+browser-intake-datadoghq.com,DigiCert Inc,third,,TLSv1.3,True
+browser-intake-us5-datadoghq.com,DigiCert Inc,third,,TLSv1.3,True
+bt.co,unknown,unknown,,unknown,False
+btloader.com,Google Trust Services,third,,TLSv1.3,True
+bugsnag.com,DigiCert Inc,third,,TLSv1.3,True
+bunny.net,Let's Encrypt,third,,TLSv1.3,True
+buzzoola.com,Sectigo Limited,third,False,TLSv1.2,True
+bytedance.com,DigiCert Inc,third,,TLSv1.3,True
+bytedns1.com,unknown,unknown,,unknown,False
+bytefcdn-oversea.com,unknown,unknown,,unknown,False
+byteglb.com,unknown,unknown,,unknown,False
+byteoversea.com,unknown,unknown,,unknown,False
+byteoversea.net,unknown,unknown,,unknown,False
+canva.com,Amazon,unknown,,TLSv1.3,True
+capcut.com,DigiCert Inc,third,,TLSv1.3,True
+capcutapi.com,unknown,unknown,,unknown,False
+captcha-delivery.com,unknown,unknown,,unknown,False
+casalemedia.com,Let's Encrypt,third,,TLSv1.3,True
+ccgateway.net,unknown,unknown,,unknown,False
+cdn-apple.com,unknown,unknown,,unknown,False
+cdn20.com,unknown,unknown,,unknown,False
+cdn77.org,unknown,unknown,,unknown,False
+cdnbuild.net,unknown,unknown,,unknown,False
+cdngslb.com,unknown,unknown,,unknown,False
+cdninstagram.com,unknown,unknown,,unknown,False
+centrastage.net,unknown,unknown,,unknown,False
+chartbeat.net,unknown,unknown,,unknown,False
+chartboost.com,Amazon,unknown,,TLSv1.3,True
+charter.net,Amazon,unknown,False,TLSv1.2,True
+chatgpt.com,Google Trust Services,third,,TLSv1.3,True
+checkpoint.com,GlobalSign nv-sa,third,,TLSv1.3,True
+cisco.com,IdenTrust,unknown,False,TLSv1.2,True
+clarity.ms,Microsoft Corporation,unknown,,TLSv1.3,True
+claude.ai,Let's Encrypt,third,,TLSv1.3,True
+clevertap-prod.com,Amazon,unknown,,TLSv1.3,True
+cloud.microsoft,Microsoft Corporation,unknown,,TLSv1.3,True
+cloudflare-dns.com,SSL Corp,third,True,TLSv1.3,True
+cloudflare.com,Google Trust Services,third,,TLSv1.3,True
+cloudflare.net,Let's Encrypt,third,,TLSv1.3,True
+cloudflareclient.com,Let's Encrypt,third,,TLSv1.3,True
+cloudflareinsights.com,Google Trust Services,third,True,TLSv1.3,True
+cloudflarestorage.com,Google Trust Services,third,True,TLSv1.3,True
+cloudfront.net,unknown,unknown,,unknown,False
+cloudfunctions.net,Google Trust Services,third,,TLSv1.3,True
+cloudinary.com,"GoDaddy.com, Inc.",unknown,,TLSv1.3,True
+cloudsink.net,unknown,unknown,,unknown,False
+cnn.com,GlobalSign nv-sa,third,True,TLSv1.3,True
+coloros.com,"DigiCert, Inc.",third,,TLSv1.3,True
+comcast.net,Sectigo Limited,third,,TLSv1.3,True
+comodoca.com,Sectigo Limited,third,True,TLSv1.2,True
+company-target.com,unknown,unknown,,unknown,False
+connatix.com,Amazon,unknown,,TLSv1.3,True
+contentsquare.net,unknown,unknown,,unknown,False
+contextweb.com,Sectigo Limited,third,,TLSv1.3,True
+conviva.com,Google Trust Services,third,True,TLSv1.3,True
+cookiebot.com,Google Trust Services,third,True,TLSv1.3,True
+cookielaw.org,Google Trust Services,third,True,TLSv1.3,True
+cootlogix.com,Google Trust Services,third,,TLSv1.3,True
+crashlytics.com,Google Trust Services,third,,TLSv1.3,True
+crealitycloud.com,WoTrus CA Limited,unknown,,TLSv1.3,True
+creativecdn.com,DigiCert Inc,third,,TLSv1.3,True
+criteo.com,Let's Encrypt,third,,TLSv1.3,True
+criteo.net,unknown,unknown,,unknown,False
+crwdcntrl.net,Amazon,unknown,,TLSv1.2,True
+cspserver.net,DigiCert Inc,third,,TLSv1.3,True
+curseforge.com,Google Trust Services,third,,TLSv1.3,True
+cursor.sh,Let's Encrypt,third,,TLSv1.3,True
+dalyfeds.com,Let's Encrypt,third,True,TLSv1.3,True
+datadoghq.com,DigiCert Inc,third,,TLSv1.3,True
+datadome.co,Amazon,unknown,,TLSv1.3,True
+datto.com,DigiCert Inc,third,True,TLSv1.3,True
+dbankcdn.com,GlobalSign nv-sa,third,,TLSv1.3,True
+dbankcloud.cn,GlobalSign nv-sa,third,,TLSv1.3,True
+dbankcloud.com,GlobalSign nv-sa,third,,TLSv1.3,True
+dbankcloud.ru,unknown,unknown,,unknown,False
+ddns.net,unknown,unknown,,unknown,False
+debian.org,Let's Encrypt,third,True,TLSv1.3,True
+deepintent.com,Google Trust Services,third,,TLSv1.3,True
+deepl.com,Google Trust Services,third,,TLSv1.3,True
+deepseek.com,Amazon,unknown,,TLSv1.3,True
+dell.com,DigiCert Inc,third,False,TLSv1.2,True
+demdex.net,DigiCert Inc,third,,TLSv1.3,True
+didiglobal.com,"DigiCert, Inc.",third,,TLSv1.2,True
+digicert.com,DigiCert Inc,third,,TLSv1.3,True
+digitaloceanspaces.com,Google Trust Services,third,,TLSv1.3,True
+discomax.com,unknown,unknown,,unknown,False
+discord.com,Google Trust Services,third,,TLSv1.3,True
+discord.gg,Google Trust Services,third,,TLSv1.3,True
+discord.media,Google Trust Services,third,True,TLSv1.3,True
+discordapp.com,Google Trust Services,third,,TLSv1.3,True
+discordapp.net,unknown,unknown,,unknown,False
+disqus.com,Sectigo Limited,third,True,TLSv1.3,True
+dns.google,Google Trust Services,third,,TLSv1.3,True
+docker.com,Let's Encrypt,third,,TLSv1.3,True
+docker.io,Amazon,unknown,,TLSv1.3,True
+doppiocdn.com,unknown,unknown,,unknown,False
+dotomi.com,GlobalSign nv-sa,third,False,TLSv1.2,True
+doubleclick.net,Google Trust Services,third,,TLSv1.3,True
+doubleverify.com,Let's Encrypt,third,,TLSv1.3,True
+douyincdn.com,unknown,unknown,,unknown,False
+douyinpic.com,unknown,unknown,,unknown,False
+douyinvod.com,unknown,unknown,,unknown,False
+dropbox.com,DigiCert Inc,third,,TLSv1.3,True
+dropboxapi.com,unknown,unknown,,unknown,False
+drpc.org,Google Trust Services,third,,TLSv1.3,True
+dssott.com,unknown,unknown,,unknown,False
+dtscout.com,Let's Encrypt,third,False,TLSv1.2,True
+dual-s-msedge.net,unknown,unknown,,unknown,False
+duckdns.org,Amazon,unknown,False,TLSv1.2,True
+duckduckgo.com,DigiCert Inc,third,True,TLSv1.3,True
+duolingo.com,Amazon,unknown,False,TLSv1.2,True
+dv.tech,unknown,unknown,,unknown,False
+dynatrace.com,Amazon,unknown,,TLSv1.3,True
+dyndns.org,DigiCert Inc,third,,TLSv1.3,True
+dzen.ru,Hellenic Academic and Research Institutions CA,unknown,,TLSv1.3,True
+ea.com,DigiCert Inc,third,True,TLSv1.3,True
+easebar.com,unknown,unknown,,unknown,False
+easy4ipcloud.com,unknown,unknown,,unknown,False
+ebay.com,Sectigo Limited,third,,TLSv1.3,True
+edgcdn.net,unknown,unknown,,unknown,False
+edge.apple,unknown,unknown,,unknown,False
+edgekey.net,DigiCert Inc,third,,TLSv1.3,True
+edgesuite.net,unknown,unknown,,unknown,False
+elasticbeanstalk.com,unknown,unknown,,unknown,False
+entrust.net,Entrust Limited,private,,TLSv1.3,True
+epicgames.com,Amazon,unknown,,TLSv1.3,True
+epicgames.dev,Amazon,unknown,,TLSv1.3,True
+erome.com,ZeroSSL GmbH,unknown,,TLSv1.3,True
+eset.com,Let's Encrypt,third,,TLSv1.3,True
+eskimi.com,Google Trust Services,third,,TLSv1.3,True
+espn.com,Sectigo Limited,third,,TLSv1.3,True
+eu-1-id5-sync.com,Google Trust Services,third,,TLSv1.3,True
+europa.eu,GlobalSign nv-sa,third,,TLSv1.3,True
+everesttech.net,DigiCert Inc,third,,TLSv1.2,True
+example.com,SSL Corporation,third,,TLSv1.3,True
+example.org,SSL Corporation,third,,TLSv1.3,True
+exp-tas.com,unknown,unknown,,unknown,False
+eye4.cn,DigiCert Inc,third,,TLSv1.3,True
+eyeota.net,GoGetSSL,unknown,False,TLSv1.2,True
+ezvizlife.com,GlobalSign nv-sa,third,False,TLSv1.2,True
+facebook.com,DigiCert Inc,third,,TLSv1.3,True
+facebook.net,unknown,unknown,,unknown,False
+fandom.com,Google Trust Services,third,,TLSv1.3,True
+fast.com,DigiCert Inc,third,True,TLSv1.2,True
+fastly-edge.com,unknown,unknown,,unknown,False
+fastly.net,Certainly,unknown,True,TLSv1.2,True
+fb-t-msedge.net,unknown,unknown,,unknown,False
+fb.com,DigiCert Inc,third,,TLSv1.3,True
+fbcdn.net,DigiCert Inc,third,,TLSv1.3,True
+fbpigeon.com,unknown,unknown,,unknown,False
+fbsbx.com,DigiCert Inc,third,,TLSv1.3,True
+featureassets.org,Let's Encrypt,third,,TLSv1.3,True
+fifa.com,Let's Encrypt,third,,TLSv1.3,True
+figma.com,Amazon,unknown,,TLSv1.3,True
+firebaseio.com,Google Trust Services,third,,TLSv1.3,True
+firefox.com,Let's Encrypt,third,,TLSv1.3,True
+firetvcaptiveportal.com,unknown,unknown,,unknown,False
+flashbots.net,Google Trust Services,third,,TLSv1.3,True
+flashtalking.com,DigiCert Inc,third,,TLSv1.3,True
+foggymorningmist.com,unknown,unknown,,unknown,False
+fontawesome.com,Google Trust Services,third,,TLSv1.3,True
+force.com,DigiCert Inc,third,True,TLSv1.3,True
+forter.com,Google Trust Services,third,True,TLSv1.3,True
+fotmob.com,Amazon,unknown,,TLSv1.3,True
+freefiremobile.com,Let's Encrypt,third,,TLSv1.3,True
+freenet.de,Let's Encrypt,third,,TLSv1.3,True
+fullstory.com,Let's Encrypt,third,,TLSv1.3,True
+fwmrm.net,DigiCert Inc,third,,TLSv1.3,True
+fyber.com,DigiCert Inc,third,,TLSv1.3,True
+gameanalytics.com,Google Trust Services,third,,TLSv1.3,True
+gamepass.com,Microsoft Corporation,unknown,,TLSv1.3,True
+garena.com,DigiCert Inc,third,False,TLSv1.2,True
+garmin.com,"GoDaddy.com, Inc.",unknown,,TLSv1.3,True
+gboxlab.com,Google Trust Services,third,,TLSv1.3,True
+gcdn.co,unknown,unknown,True,unknown,False
+geoedge.be,unknown,unknown,,unknown,False
+geotrust.com,"DigiCert, Inc.",third,,TLSv1.3,True
+ggpht.com,unknown,unknown,,unknown,False
+github.com,Sectigo Limited,third,,TLSv1.3,True
+github.io,Let's Encrypt,third,,TLSv1.3,True
+githubcopilot.com,Sectigo Limited,third,,TLSv1.3,True
+githubusercontent.com,Let's Encrypt,third,,TLSv1.3,True
+gitlab.com,Sectigo Limited,third,,TLSv1.3,True
+glance-cdn.com,Sectigo Limited,third,,TLSv1.3,True
+glanceapis.com,unknown,unknown,,unknown,False
+globalsign.com,GlobalSign nv-sa,third,True,TLSv1.2,True
+globo.com,Let's Encrypt,third,,TLSv1.3,True
+gmail.com,Google Trust Services,third,,TLSv1.3,True
+go-mpulse.net,unknown,unknown,,unknown,False
+godaddy.com,Google Trust Services,third,,TLSv1.3,True
+google-analytics.com,Google Trust Services,third,,TLSv1.3,True
+google.ca,Google Trust Services,third,,TLSv1.3,True
+google.cn,Google Trust Services,third,,TLSv1.3,True
+google.co.uk,Google Trust Services,third,,TLSv1.3,True
+google.com,Google Trust Services,third,,TLSv1.3,True
+google.com.br,Google Trust Services,third,,TLSv1.3,True
+google.com.hk,Google Trust Services,third,,TLSv1.3,True
+google.de,Google Trust Services,third,,TLSv1.3,True
+google.ru,Google Trust Services,third,,TLSv1.3,True
+google.us,Google Trust Services,third,,TLSv1.3,True
+googleadservices.com,Google Trust Services,third,,TLSv1.3,True
+googleapis.cn,Google Trust Services,third,,TLSv1.3,True
+googleapis.com,Google Trust Services,third,,TLSv1.3,True
+googlesyndication.com,Google Trust Services,third,,TLSv1.3,True
+googletagmanager.com,Google Trust Services,third,,TLSv1.3,True
+googletagservices.com,Google Trust Services,third,,TLSv1.3,True
+googleusercontent.com,Google Trust Services,third,,TLSv1.3,True
+googlevideo.com,Google Trust Services,third,,TLSv1.3,True
+googlezip.net,unknown,unknown,,unknown,False
+gos-gsp.io,unknown,unknown,,unknown,False
+goskope.com,unknown,unknown,,unknown,False
+grafana.com,DigiCert Inc,third,,TLSv1.3,True
+grammarly.com,Amazon,unknown,,TLSv1.3,True
+grammarly.io,unknown,unknown,,unknown,False
+grass.io,Google Trust Services,third,,TLSv1.3,True
+gravatar.com,Let's Encrypt,third,,TLSv1.3,True
+gstatic.com,Google Trust Services,third,,TLSv1.3,True
+gumgum.com,Amazon,unknown,,TLSv1.3,True
+gvt1.com,unknown,unknown,,unknown,False
+gvt2.com,unknown,unknown,,unknown,False
+gvt3.com,unknown,unknown,,unknown,False
+hakunaymatata.com,unknown,unknown,,unknown,False
+harman.com,Sectigo Limited,third,False,TLSv1.2,True
+hcaptcha.com,Google Trust Services,third,,TLSv1.3,True
+hdslb.com,unknown,unknown,,unknown,False
+he.net,"GoDaddy.com, Inc.",unknown,,TLSv1.3,True
+hellotalk8.com,"TrustAsia Technologies, Inc.",unknown,False,TLSv1.2,True
+heytapdl.com,unknown,unknown,,unknown,False
+heytapmobi.com,"DigiCert, Inc.",third,,TLSv1.3,True
+heytapmobile.com,unknown,unknown,,unknown,False
+hicloud.com,GlobalSign nv-sa,third,,TLSv1.2,True
+hihonor.com,Actalis S.p.A.,unknown,False,TLSv1.2,True
+hihonorcloud.com,GlobalSign nv-sa,third,False,TLSv1.2,True
+hik-connect.com,GlobalSign nv-sa,third,,TLSv1.3,True
+hisavana.com,DigiCert Inc,third,,TLSv1.3,True
+histats.com,Let's Encrypt,third,,TLSv1.3,True
+home-assistant.io,Google Trust Services,third,,TLSv1.3,True
+hotjar.com,Amazon,unknown,,TLSv1.3,True
+hotmail.com,Microsoft Corporation,unknown,True,TLSv1.3,True
+hoyoverse.com,DigiCert Inc,third,False,TLSv1.2,True
+hp.com,DigiCert Inc,third,,TLSv1.3,True
+html-load.com,Google Trust Services,third,,TLSv1.3,True
+huawei.com,Actalis S.p.A.,unknown,False,TLSv1.2,True
+hubspot.com,Google Trust Services,third,,TLSv1.3,True
+hulu.com,COMODO CA Limited,third,,TLSv1.3,True
+huntress.io,DigiCert Inc,third,False,TLSv1.2,True
+i18n-pglstatp.com,unknown,unknown,,unknown,False
+ibytedtos.com,unknown,unknown,,unknown,False
+ibyteimg.com,unknown,unknown,,unknown,False
+icanhazip.com,Google Trust Services,third,True,TLSv1.3,True
+icloud-content.com,Apple Inc.,unknown,,TLSv1.3,True
+icloud.com,Apple Inc.,unknown,True,TLSv1.3,True
+icloud.com.cn,Apple Inc.,unknown,,TLSv1.3,True
+id5-sync.com,Let's Encrypt,third,,TLSv1.3,True
+ieee.org,GlobalSign nv-sa,third,,TLSv1.3,True
+ifconfig.me,Let's Encrypt,third,,TLSv1.3,True
+igamecj.com,unknown,unknown,,unknown,False
+im-apps.net,Google Trust Services,third,,TLSv1.3,True
+imoim.net,unknown,unknown,,unknown,False
+impervadns.net,unknown,unknown,,unknown,False
+imrworldwide.com,unknown,unknown,,unknown,False
+inaccuracy.net,unknown,unknown,,unknown,False
+incognia.com,Google Trust Services,third,,TLSv1.3,True
+indeed.com,Google Trust Services,third,,TLSv1.3,True
+indexww.com,Google Trust Services,third,,TLSv1.3,True
+ingage.tech,Sectigo Limited,third,,TLSv1.3,True
+inkuai.com,GlobalSign nv-sa,third,,TLSv1.2,True
+inmobi.com,Sectigo Limited,third,,TLSv1.3,True
+inmobicdn.net,unknown,unknown,,unknown,False
+inner-active.mobi,unknown,unknown,,unknown,False
+innovid.com,Google Trust Services,third,,TLSv1.3,True
+instagram.com,DigiCert Inc,third,,TLSv1.3,True
+int08h.com,Google Trust Services,third,True,TLSv1.3,True
+intel.com,Sectigo Limited,third,,TLSv1.3,True
+intelbras.com.br,"GoDaddy.com, Inc.",unknown,,TLSv1.3,True
+intentiq.com,Let's Encrypt,third,,TLSv1.3,True
+intercom.io,Amazon,unknown,,TLSv1.3,True
+intuit.com,DigiCert Inc,third,True,TLSv1.3,True
+ip-api.com,Sectigo Limited,third,False,TLSv1.2,True
+ipapi.co,Google Trust Services,third,,TLSv1.2,True
+ipify.org,Google Trust Services,third,,TLSv1.3,True
+ipinfo.io,Let's Encrypt,third,,TLSv1.3,True
+ipredictive.com,unknown,unknown,,unknown,False
+isappcloud.com,unknown,unknown,,unknown,False
+isnssdk.com,Amazon,unknown,,TLSv1.2,True
+ixigua.com,DigiCert Inc,third,,TLSv1.3,True
+jd.com,GlobalSign nv-sa,third,,TLSv1.3,True
+jetbrains.com,Amazon,unknown,,TLSv1.3,True
+jquery.com,Google Trust Services,third,,TLSv1.3,True
+jsdelivr.net,unknown,unknown,,unknown,False
+jtvnw.net,unknown,unknown,,unknown,False
+kakao.com,DigiCert Inc,third,,TLSv1.3,True
+kakaocdn.net,DigiCert Inc,third,,TLSv1.3,True
+kargo.com,Let's Encrypt,third,,TLSv1.3,True
+kaspersky-labs.com,Kaspersky Lab,unknown,,TLSv1.3,True
+kaspersky.com,DigiCert Inc,third,,TLSv1.3,True
+kick.com,Google Trust Services,third,,TLSv1.3,True
+klaviyo.com,Amazon,unknown,,TLSv1.3,True
+ks-cdn.com,unknown,unknown,,unknown,False
+ksapisrv.com,GlobalSign nv-sa,third,,TLSv1.2,True
+kslawin.com,GlobalSign nv-sa,third,,TLSv1.3,True
+ksord.com,DigiCert Inc,third,,TLSv1.2,True
+kueezrtb.com,Let's Encrypt,third,,TLSv1.3,True
+kwai-pro.com,GlobalSign nv-sa,third,,TLSv1.3,True
+kwai.com,GlobalSign nv-sa,third,False,TLSv1.2,True
+kwai.net,GlobalSign nv-sa,third,,TLSv1.2,True
+kwaipros.com,GlobalSign nv-sa,third,,TLSv1.2,True
+kwcdn.com,unknown,unknown,,unknown,False
+launchdarkly.com,Let's Encrypt,third,,TLSv1.3,True
+leiniao.com,Let's Encrypt,third,,TLSv1.3,True
+lencr.org,Let's Encrypt,third,,TLSv1.3,True
+lenovo.com,DigiCert Inc,third,True,TLSv1.3,True
+letsencrypt.org,Let's Encrypt,third,,TLSv1.3,True
+lge.com,Amazon,unknown,False,TLSv1.2,True
+lgsmartad.com,unknown,unknown,,unknown,False
+lgthinq.com,Amazon,unknown,,TLSv1.2,True
+lgtvcommon.com,unknown,unknown,,unknown,False
+lgtvsdp.com,unknown,unknown,,unknown,False
+liadm.com,unknown,unknown,,unknown,False
+licdn.com,DigiCert Inc,third,,TLSv1.3,True
+life360.com,Amazon,unknown,False,TLSv1.2,True
+liftoff-creatives.io,unknown,unknown,,unknown,False
+liftoff.io,Google Trust Services,third,True,TLSv1.3,True
+lijit.com,Amazon,unknown,,TLSv1.3,True
+linkedin.com,DigiCert Inc,third,True,TLSv1.3,True
+listdl.com,unknown,unknown,,unknown,False
+litix.io,ZeroSSL GmbH,unknown,,TLSv1.3,True
+live-video.net,unknown,unknown,,unknown,False
+live.com,Microsoft Corporation,unknown,True,TLSv1.3,True
+live.net,unknown,unknown,,unknown,False
+livechatinc.com,Google Trust Services,third,,TLSv1.3,True
+llamarpc.com,Let's Encrypt,third,,TLSv1.3,True
+ln-msedge.net,unknown,unknown,,unknown,False
+loopme.me,Let's Encrypt,third,,TLSv1.3,True
+ltwebstatic.com,"DigiCert, Inc.",third,,TLSv1.2,True
+magazineluiza.com.br,GlobalSign nv-sa,third,,TLSv1.3,True
+magnific.com,Let's Encrypt,third,True,TLSv1.3,True
+mail.ru,Let's Encrypt,third,False,TLSv1.2,True
+mapbox.com,GlobalSign nv-sa,third,True,TLSv1.2,True
+marzaent.com,Google Trust Services,third,,TLSv1.3,True
+match.com,Google Trust Services,third,,TLSv1.3,True
+mathtag.com,DigiCert Inc,third,,TLSv1.2,True
+mcafee.com,"McAfee, Inc.",private,False,TLSv1.2,True
+me.com,Apple Inc.,unknown,,TLSv1.3,True
+medallia.com,Amazon,unknown,,TLSv1.3,True
+media-amazon.com,unknown,unknown,,unknown,False
+media.net,DigiCert Inc,third,True,TLSv1.3,True
+mediago.io,Amazon,unknown,False,TLSv1.2,True
+mediatek.com,GlobalSign nv-sa,third,False,TLSv1.2,True
+meethue.com,Google Trust Services,third,,TLSv1.3,True
+meraki.com,Amazon,unknown,,TLSv1.3,True
+mercadolibre.com,Amazon,unknown,,TLSv1.3,True
+mercadolivre.com.br,Amazon,unknown,,TLSv1.3,True
+merkle.io,Google Trust Services,third,,TLSv1.3,True
+meta.com,DigiCert Inc,third,,TLSv1.3,True
+metamask.io,Google Trust Services,third,,TLSv1.3,True
+mgid.com,"GoDaddy.com, Inc.",unknown,,TLSv1.3,True
+mi-img.com,unknown,unknown,,unknown,False
+mi.com,DigiCert Inc,third,False,TLSv1.2,True
+microsoft.com,Microsoft Corporation,private,True,TLSv1.3,True
+microsoftonline.com,unknown,unknown,,unknown,False
+microsoftpersonalcontent.com,unknown,unknown,,unknown,False
+mikrotik.com,DigiCert Inc,third,,TLSv1.3,True
+mintegral.net,Amazon,unknown,False,TLSv1.2,True
+mioffice.cn,DigiCert Inc,third,,TLSv1.2,True
+miui.com,DigiCert Inc,third,False,TLSv1.2,True
+miwifi.com,DigiCert Inc,third,False,TLSv1.2,True
+mixpanel.com,DigiCert Inc,third,,TLSv1.3,True
+mlstatic.com,unknown,unknown,,unknown,False
+mmcdn.com,DigiCert Inc,third,True,TLSv1.3,True
+mmechocaptiveportal.com,unknown,unknown,,unknown,False
+mmstat.com,unknown,unknown,,unknown,False
+moengage.com,Google Trust Services,third,True,TLSv1.3,True
+mojang.com,Microsoft Corporation,unknown,True,TLSv1.3,True
+moloco.com,Let's Encrypt,third,,TLSv1.3,True
+mona.co,Google Trust Services,third,,TLSv1.3,True
+mosspf.net,unknown,unknown,,unknown,False
+mozgcp.net,unknown,unknown,,unknown,False
+mozilla.com,Google Trust Services,third,,TLSv1.3,True
+mozilla.net,Google Trust Services,third,,TLSv1.3,True
+mozilla.org,Google Trust Services,third,,TLSv1.3,True
+mparticle.com,Let's Encrypt,third,,TLSv1.3,True
+mradx.net,unknown,unknown,,unknown,False
+msauth.net,unknown,unknown,,unknown,False
+msedge.net,unknown,unknown,,unknown,False
+msftauth.net,unknown,unknown,,unknown,False
+msftconnecttest.com,DigiCert Inc,third,,TLSv1.3,True
+msftncsi.com,DigiCert Inc,third,,TLSv1.3,True
+msidentity.com,unknown,unknown,,unknown,False
+msn.com,Microsoft Corporation,unknown,True,TLSv1.3,True
+mtgglobals.com,Amazon,unknown,,TLSv1.3,True
+mts.ru,GlobalSign nv-sa,third,,TLSv1.3,True
+mydramawave.com,DigiCert Inc,third,False,TLSv1.2,True
+myhuaweicloud.com,DigiCert Inc,third,,TLSv1.2,True
+mynetname.net,unknown,unknown,,unknown,False
+myqcloud.com,unknown,unknown,,unknown,False
+myshopify.com,Let's Encrypt,third,,TLSv1.3,True
+mythad.com,unknown,unknown,,unknown,False
+mzstatic.com,Apple Inc.,unknown,,TLSv1.3,True
+naver.com,Let's Encrypt,third,,TLSv1.3,True
+ndcpp-os.com,unknown,unknown,,unknown,False
+ne.jp,Let's Encrypt,third,,TLSv1.3,True
+nel.goog,unknown,unknown,,unknown,False
+nelreports.net,unknown,unknown,,unknown,False
+netflix.com,DigiCert Inc,third,,TLSv1.3,True
+netflix.net,Google Trust Services,third,,TLSv1.3,True
+netgear.com,Amazon,unknown,False,TLSv1.2,True
+networklinks.space,45.32.232.134,unknown,,TLSv1.3,True
+newrelic.com,DigiCert Inc,third,True,TLSv1.2,True
+newsroom.bi,GlobalSign nv-sa,third,True,TLSv1.3,True
+nextcloud.com,Let's Encrypt,third,,TLSv1.3,True
+nextlgsdp.com,unknown,unknown,,unknown,False
+nflxext.com,unknown,unknown,,unknown,False
+nflximg.com,Netflix Inc,unknown,,TLSv1.3,True
+nflxso.net,unknown,unknown,,unknown,False
+nflxvideo.net,unknown,unknown,,unknown,False
+ninjarmm.com,Let's Encrypt,third,True,TLSv1.3,True
+nintendo.net,unknown,unknown,,unknown,False
+nist.gov,Let's Encrypt,third,,TLSv1.3,True
+no-ip.com,DigiCert Inc,third,False,TLSv1.2,True
+norton.com,Sectigo Limited,third,True,TLSv1.3,True
+notion.com,Google Trust Services,third,,TLSv1.3,True
+nr-data.net,unknown,unknown,,unknown,False
+ns1p.net,DigiCert Inc,third,,TLSv1.3,True
+ntp.br,Let's Encrypt,third,,TLSv1.3,True
+ntp.org,Let's Encrypt,third,False,TLSv1.2,True
+ntppool.org,Certainly,unknown,,TLSv1.3,True
+nubank.com.br,Amazon,unknown,,TLSv1.3,True
+nvidia.com,Amazon,unknown,False,TLSv1.2,True
+nytimes.com,DigiCert Inc,third,True,TLSv1.3,True
+oaistatic.com,Let's Encrypt,third,,TLSv1.3,True
+oculus.com,DigiCert Inc,third,,TLSv1.3,True
+office.com,Microsoft Corporation,unknown,True,TLSv1.3,True
+office.net,unknown,unknown,,unknown,False
+office365.com,Microsoft Corporation,unknown,True,TLSv1.3,True
+ok.ru,Hellenic Academic and Research Institutions CA,unknown,,TLSv1.3,True
+okcdn.ru,Hellenic Academic and Research Institutions CA,unknown,,TLSv1.3,True
+okta.com,Amazon,unknown,,TLSv1.3,True
+okx.com,DigiCert Inc,third,,TLSv1.3,True
+omnitagjs.com,unknown,unknown,,unknown,False
+omtrdc.net,DigiCert Inc,third,,TLSv1.2,True
+on.aws,unknown,unknown,,unknown,False
+one.one,Let's Encrypt,third,,TLSv1.3,True
+onedrive.com,Microsoft Corporation,unknown,True,TLSv1.3,True
+onelink.me,Amazon,unknown,,TLSv1.3,True
+oneme.ru,unknown,unknown,,unknown,False
+onesignal.com,Google Trust Services,third,True,TLSv1.3,True
+onetag-sys.com,DigiCert Inc,third,,TLSv1.3,True
+onetrust.com,Google Trust Services,third,,TLSv1.3,True
+onetrust.io,unknown,unknown,,unknown,False
+online-metrix.net,unknown,unknown,,unknown,False
+openai.com,Let's Encrypt,third,,TLSv1.3,True
+opendns.com,Let's Encrypt,third,False,TLSv1.2,True
+openstreetmap.org,Let's Encrypt,third,,TLSv1.3,True
+openwebmp.com,unknown,unknown,,unknown,False
+openx.net,DigiCert Inc,third,,TLSv1.3,True
+opera-api.com,unknown,unknown,,unknown,False
+opera-api2.com,unknown,unknown,,unknown,False
+opera.com,Trust Provider B.V.,unknown,True,TLSv1.3,True
+optimizely.com,Let's Encrypt,third,,TLSv1.3,True
+oracle.com,DigiCert Inc,third,False,TLSv1.2,True
+oraclecloud.com,DigiCert Inc,third,False,TLSv1.2,True
+orange.fr,DigiCert Inc,third,,TLSv1.3,True
+outbrain.com,Let's Encrypt,third,True,TLSv1.3,True
+outlook.com,DigiCert Inc,third,True,TLSv1.3,True
+overwolf.com,Amazon,unknown,,TLSv1.3,True
+ovscdns.net,unknown,unknown,,unknown,False
+oxylabs.io,Google Trust Services,third,,TLSv1.3,True
+ozon.ru,GlobalSign nv-sa,third,,TLSv1.3,True
+ozone.ru,GlobalSign nv-sa,third,,TLSv1.3,True
+pages.dev,Google Trust Services,third,,TLSv1.3,True
+palmplaystore.com,"DigiCert, Inc.",third,False,TLSv1.2,True
+paloaltonetworks.com,DigiCert Inc,third,,TLSv1.3,True
+pandora.com,DigiCert Inc,third,False,TLSv1.2,True
+pangle.io,unknown,unknown,,unknown,False
+paypal.com,DigiCert Inc,third,True,TLSv1.3,True
+pbstck.com,unknown,unknown,,unknown,False
+peacocktv.com,DigiCert Inc,third,True,TLSv1.3,True
+pemsrv.com,unknown,unknown,,unknown,False
+pendo.io,Google Trust Services,third,,TLSv1.3,True
+perplexity.ai,Google Trust Services,third,,TLSv1.3,True
+phantom.app,Google Trust Services,third,,TLSv1.3,True
+phncdn.com,unknown,unknown,,unknown,False
+pinimg.com,DigiCert Inc,third,True,TLSv1.3,True
+pinterest.com,DigiCert Inc,third,True,TLSv1.3,True
+pki.goog,Google Trust Services,third,,TLSv1.3,True
+playfabapi.com,Microsoft Corporation,unknown,,TLSv1.3,True
+playrix.com,Amazon,unknown,,TLSv1.3,True
+playstation.com,DigiCert Inc,third,False,TLSv1.2,True
+playstation.net,unknown,unknown,,unknown,False
+plex.tv,DigiCert Inc,third,,TLSv1.3,True
+pluto.tv,Sectigo Limited,third,True,TLSv1.3,True
+polymarket.com,Let's Encrypt,third,,TLSv1.3,True
+posthog.com,Let's Encrypt,third,,TLSv1.3,True
+postrelease.com,Amazon,unknown,,TLSv1.3,True
+presage.io,Gandi,unknown,,TLSv1.3,True
+primis.tech,"GoDaddy.com, Inc.",unknown,False,TLSv1.2,True
+privacy-center.org,Amazon,unknown,,TLSv1.2,True
+privacy-mgmt.com,unknown,unknown,,unknown,False
+privacymanager.io,Amazon,unknown,,TLSv1.3,True
+prodregistryv2.org,Let's Encrypt,third,,TLSv1.3,True
+protechts.net,Google Trust Services,third,,TLSv1.3,True
+pstatic.net,unknown,unknown,,unknown,False
+publicnode.com,Let's Encrypt,third,,TLSv1.3,True
+pubmatic.com,Amazon,unknown,,TLSv1.3,True
+pubmnet.com,unknown,unknown,,unknown,False
+pubnative.net,Google Trust Services,third,True,TLSv1.3,True
+pullcf.com,DigiCert Inc,third,,TLSv1.2,True
+pullcm.com,DigiCert Inc,third,,TLSv1.2,True
+pusher.com,Amazon,unknown,,TLSv1.3,True
+pv-cdn.net,unknown,unknown,,unknown,False
+pvp.net,unknown,unknown,,unknown,False
+px-cloud.net,Google Trust Services,third,,TLSv1.3,True
+qlivecdn.com,unknown,unknown,,unknown,False
+qq.com,"DigiCert, Inc.",third,False,TLSv1.2,True
+qualtrics.com,DigiCert Inc,third,,TLSv1.3,True
+quantcount.com,Let's Encrypt,third,,TLSv1.2,True
+quantserve.com,Let's Encrypt,third,,TLSv1.3,True
+quantummetric.com,Let's Encrypt,third,,TLSv1.3,True
+rainberrytv.com,Amazon,unknown,,TLSv1.3,True
+rapid7.com,Amazon,unknown,,TLSv1.3,True
+ravm.tv,Amazon,unknown,,TLSv1.3,True
+rbxcdn.com,unknown,unknown,,unknown,False
+recaptcha.net,Google Trust Services,third,,TLSv1.3,True
+redd.it,DigiCert Inc,third,True,TLSv1.3,True
+reddit.com,DigiCert Inc,third,True,TLSv1.3,True
+redditmedia.com,DigiCert Inc,third,True,TLSv1.3,True
+redditstatic.com,DigiCert Inc,third,,TLSv1.3,True
+revenuecat.com,Let's Encrypt,third,,TLSv1.3,True
+rfihub.com,unknown,unknown,,unknown,False
+richaudience.com,Amazon,unknown,,TLSv1.3,True
+ring.com,Amazon,unknown,True,TLSv1.3,True
+riotcdn.net,unknown,unknown,,unknown,False
+riotgames.com,DigiCert Inc,third,,TLSv1.3,True
+rlcdn.com,Sectigo Limited,third,,TLSv1.3,True
+roblox.com,Sectigo Limited,third,True,TLSv1.3,True
+rocket-cdn.com,unknown,unknown,,unknown,False
+roku.com,Google Trust Services,third,,TLSv1.3,True
+rubiconproject.com,Amazon,unknown,,TLSv1.3,True
+run.app,Google Trust Services,third,,TLSv1.3,True
+rustore.ru,Hellenic Academic and Research Institutions CA,unknown,False,TLSv1.2,True
+safebrowsing.apple,unknown,unknown,,unknown,False
+safedk.com,unknown,unknown,,unknown,False
+salesforce.com,DigiCert Inc,third,True,TLSv1.3,True
+samba.tv,Let's Encrypt,third,,TLSv1.3,True
+samsung.com,Sectigo Limited,third,False,TLSv1.2,True
+samsungacr.com,unknown,unknown,,unknown,False
+samsungads.com,Sectigo Limited,third,False,TLSv1.2,True
+samsungapis.com,unknown,unknown,,unknown,False
+samsungapps.com,unknown,unknown,,unknown,False
+samsungcloud.com,Sectigo Limited,third,,TLSv1.3,True
+samsungcloud.tv,unknown,unknown,,unknown,False
+samsungcloudsolution.com,unknown,unknown,,unknown,False
+samsungcloudsolution.net,unknown,unknown,,unknown,False
+samsungconsent.com,unknown,unknown,,unknown,False
+samsungdm.com,unknown,unknown,,unknown,False
+samsungelectronics.com,Sectigo Limited,third,False,TLSv1.2,True
+samsungiotcloud.com,unknown,unknown,,unknown,False
+samsungnyc.com,unknown,unknown,,unknown,False
+samsungosp.com,DigiCert Inc,third,,TLSv1.2,True
+samsungqbe.com,unknown,unknown,,unknown,False
+sascdn.com,Google Trust Services,third,,TLSv1.3,True
+sc-cdn.net,unknown,unknown,,unknown,False
+sc-gw.com,unknown,unknown,,unknown,False
+sc-static.net,Amazon,unknown,,TLSv1.3,True
+scdn.co,GlobalSign nv-sa,third,,TLSv1.3,True
+scorecardresearch.com,Sectigo Limited,third,True,TLSv1.3,True
+script.ac,unknown,unknown,,unknown,False
+sectigo.com,Sectigo Limited,third,True,TLSv1.2,True
+secu100.net,DigiCert Inc,third,,TLSv1.2,True
+seedtag.com,Google Trust Services,third,,TLSv1.3,True
+segment.com,Amazon,unknown,,TLSv1.3,True
+segment.io,Amazon,unknown,,TLSv1.3,True
+semasio.net,unknown,unknown,,unknown,False
+sentinelone.net,Sectigo Limited,third,,TLSv1.3,True
+sentry.io,DigiCert Inc,third,,TLSv1.3,True
+seznam.cz,Let's Encrypt,third,,TLSv1.3,True
+sfx.ms,unknown,unknown,,unknown,False
+shalltry.com,Amazon,unknown,,TLSv1.3,True
+sharepoint.com,Microsoft Corporation,unknown,True,TLSv1.3,True
+sharethis.com,Amazon,unknown,,TLSv1.3,True
+sharethrough.com,Google Trust Services,third,,TLSv1.3,True
+shein.com,"DigiCert, Inc.",third,,TLSv1.3,True
+shifen.com,GlobalSign nv-sa,third,,TLSv1.2,True
+shodan.io,Google Trust Services,third,,TLSv1.3,True
+shop.app,Google Trust Services,third,,TLSv1.3,True
+shopee.co.id,GlobalSign nv-sa,third,,TLSv1.3,True
+shopee.com.br,GlobalSign nv-sa,third,,TLSv1.3,True
+shopee.io,unknown,unknown,,unknown,False
+shopeemobile.com,Let's Encrypt,third,,TLSv1.3,True
+shopify.com,Google Trust Services,third,,TLSv1.3,True
+shopifysvc.com,unknown,unknown,,unknown,False
+signal.org,Google Trust Services,third,,TLSv1.3,True
+sina.com.cn,"DigiCert, Inc.",third,,TLSv1.3,True
+singular.net,Let's Encrypt,third,,TLSv1.3,True
+sitescout.com,Let's Encrypt,third,,TLSv1.3,True
+skype.com,Microsoft Corporation,unknown,,TLSv1.3,True
+slack.com,Let's Encrypt,third,,TLSv1.3,True
+slackb.com,Let's Encrypt,third,,TLSv1.3,True
+smaato.net,unknown,unknown,,unknown,False
+smadex.com,Amazon,unknown,,TLSv1.3,True
+smartadserver.com,Google Trust Services,third,,TLSv1.3,True
+smartthings.com,Amazon,unknown,,TLSv1.3,True
+smilewanted.com,Google Trust Services,third,,TLSv1.3,True
+snapchat.com,DigiCert Inc,third,,TLSv1.3,True
+snapcraft.io,Let's Encrypt,third,,TLSv1.3,True
+snapkit.com,Google Trust Services,third,,TLSv1.3,True
+snssdk.com,DigiCert Inc,third,,TLSv1.3,True
+sogou.com,"DigiCert, Inc.",third,False,TLSv1.2,True
+sonobi.com,Starfield Technologies,third,,TLSv1.3,True
+sophos.com,Let's Encrypt,third,,TLSv1.3,True
+soundcloud.com,Amazon,unknown,,TLSv1.3,True
+spamhaus.org,Let's Encrypt,third,,TLSv1.3,True
+sparteo.com,Let's Encrypt,third,,TLSv1.3,True
+speedtest.net,GlobalSign nv-sa,third,True,TLSv1.3,True
+split.io,Let's Encrypt,third,,TLSv1.3,True
+splunkcloud.com,DigiCert Inc,third,,TLSv1.2,True
+spo-msedge.net,unknown,unknown,,unknown,False
+spot.im,Amazon,unknown,,TLSv1.3,True
+spotify.com,DigiCert Inc,third,,TLSv1.3,True
+spotifycdn.com,GlobalSign nv-sa,third,,TLSv1.3,True
+springserve.com,Amazon,unknown,,TLSv1.3,True
+ssl-images-amazon.com,unknown,unknown,,unknown,False
+stackadapt.com,Let's Encrypt,third,,TLSv1.3,True
+starlink.com,Let's Encrypt,third,,TLSv1.3,True
+startappservice.com,Let's Encrypt,third,,TLSv1.3,True
+static.microsoft,unknown,unknown,,unknown,False
+statuspage.io,Amazon,unknown,,TLSv1.3,True
+steamcommunity.com,DigiCert Inc,third,True,TLSv1.3,True
+steamcontent.com,unknown,unknown,,unknown,False
+steampowered.com,Let's Encrypt,third,,TLSv1.3,True
+steamserver.net,unknown,unknown,,unknown,False
+steamstatic.com,unknown,unknown,,unknown,False
+stripchat.com,Google Trust Services,third,,TLSv1.3,True
+stripe.com,DigiCert Inc,third,,TLSv1.3,True
+stripe.network,DigiCert Inc,third,,TLSv1.3,True
+strpst.com,unknown,unknown,,unknown,False
+supabase.co,Let's Encrypt,third,,TLSv1.3,True
+supercell.com,Amazon,unknown,,TLSv1.3,True
+supersonicads.com,unknown,unknown,,unknown,False
+susercontent.com,unknown,unknown,,unknown,False
+svc.ms,Microsoft Corporation,unknown,,TLSv1.3,True
+swishapps.ai,Sectigo Limited,third,True,TLSv1.3,True
+synology.com,Amazon,unknown,False,TLSv1.2,True
+t-online.de,Let's Encrypt,third,,TLSv1.3,True
+t.co,Let's Encrypt,third,,TLSv1.3,True
+t.me,"GoDaddy.com, Inc.",unknown,,TLSv1.3,True
+taboola.com,DigiCert Inc,third,True,TLSv1.3,True
+tailscale.com,Let's Encrypt,third,,TLSv1.3,True
+taobao.com,GlobalSign nv-sa,third,,TLSv1.3,True
+tapad.com,Google Trust Services,third,,TLSv1.3,True
+target.com,GlobalSign nv-sa,third,True,TLSv1.3,True
+tawk.to,Google Trust Services,third,,TLSv1.3,True
+tbcache.com,unknown,unknown,,unknown,False
+teads.tv,Amazon,unknown,False,TLSv1.2,True
+teamviewer.com,Sectigo Limited,third,,TLSv1.3,True
+telegram.org,"GoDaddy.com, Inc.",unknown,,TLSv1.3,True
+telephony.goog,Google Trust Services,third,False,TLSv1.2,True
+temu.com,GoDaddy.com,unknown,True,TLSv1.3,True
+tencent-cloud.net,unknown,unknown,,unknown,False
+tencent.com,GlobalSign nv-sa,third,,TLSv1.3,True
+tenda.com.cn,DigiCert Inc,third,,TLSv1.3,True
+tesla.com,Let's Encrypt,third,,TLSv1.3,True
+themoviedb.org,Amazon,unknown,,TLSv1.3,True
+tiktok.com,DigiCert Inc,third,,TLSv1.3,True
+tiktokcdn-eu.com,unknown,unknown,,unknown,False
+tiktokcdn-us.com,unknown,unknown,,unknown,False
+tiktokcdn.com,unknown,unknown,,unknown,False
+tiktokglobalshopv.com,DigiCert Inc,third,True,TLSv1.3,True
+tiktokpangle-cdn-us.com,unknown,unknown,,unknown,False
+tiktokpangle.us,unknown,unknown,,unknown,False
+tiktokrow-cdn.com,unknown,unknown,,unknown,False
+tiktokv.com,DigiCert Inc,third,,TLSv1.3,True
+tiktokv.eu,unknown,unknown,,unknown,False
+tiktokv.us,unknown,unknown,,unknown,False
+tiktokw.us,DigiCert Inc,third,,TLSv1.3,True
+tiqcdn.com,unknown,unknown,,unknown,False
+tizen.org,Amazon,unknown,,TLSv1.3,True
+tm-azurefd.net,unknown,unknown,,unknown,False
+tmdb.org,Amazon,unknown,,TLSv1.3,True
+tospotify.com,unknown,unknown,,unknown,False
+tp-link.com,Amazon,unknown,,TLSv1.3,True
+tplinkcloud.com,DigiCert Inc,third,False,TLSv1.2,True
+tplinknbu.com,unknown,unknown,,unknown,False
+tq-tungsten.com,unknown,unknown,,unknown,False
+tradingview.com,Amazon,unknown,,TLSv1.3,True
+tradplusad.com,DigiCert Inc,third,False,TLSv1.2,True
+trafficjunky.net,DigiCert Inc,third,,TLSv1.3,True
+trafficmanager.net,unknown,unknown,,unknown,False
+traffmonetizer.com,GoGetSSL,unknown,,TLSv1.3,True
+tremorhub.com,Amazon,unknown,,TLSv1.3,True
+trendmicro.com,Sectigo Limited,third,,TLSv1.3,True
+tribalfusion.com,"GoDaddy.com, Inc.",unknown,,TLSv1.3,True
+trip.com,GlobalSign nv-sa,third,False,TLSv1.2,True
+truecaller.com,Amazon,unknown,False,TLSv1.2,True
+trustarc.com,Google Trust Services,third,True,TLSv1.3,True
+truste.com,Amazon,unknown,,TLSv1.3,True
+trustedstack.com,Google Trust Services,third,,TLSv1.3,True
+trustpilot.com,Amazon,unknown,False,TLSv1.2,True
+tsyndicate.com,Let's Encrypt,third,,TLSv1.3,True
+ttdns2.com,unknown,unknown,,unknown,False
+ttlivecdn.com,unknown,unknown,,unknown,False
+ttvnw.net,unknown,unknown,,unknown,False
+ttwstatic.com,unknown,unknown,,unknown,False
+tubi.io,unknown,unknown,,unknown,False
+tumblr.com,Let's Encrypt,third,,TLSv1.3,True
+turn.com,unknown,unknown,,unknown,False
+twc.com,GlobalSign nv-sa,third,,TLSv1.3,True
+twilio.com,Amazon,unknown,False,TLSv1.2,True
+twimg.com,unknown,unknown,,unknown,False
+twitch.tv,GlobalSign nv-sa,third,True,TLSv1.3,True
+twitter.com,Let's Encrypt,third,,TLSv1.3,True
+typekit.com,DigiCert Inc,third,,TLSv1.3,True
+typekit.net,unknown,unknown,,unknown,False
+uber.com,DigiCert Inc,third,,TLSv1.3,True
+ubi.com,Amazon,unknown,,TLSv1.3,True
+ubnt.com,Amazon,unknown,,TLSv1.3,True
+ubuntu.com,Let's Encrypt,third,,TLSv1.3,True
+ueiwsp.com,"GoDaddy.com, Inc.",unknown,True,TLSv1.3,True
+ui.com,Amazon,unknown,,TLSv1.3,True
+uisp.com,Amazon,unknown,,TLSv1.3,True
+umeng.com,GlobalSign nv-sa,third,,TLSv1.2,True
+unifi-ai.com,Let's Encrypt,third,,TLSv1.3,True
+unisoc.com,GlobalSign nv-sa,third,,TLSv1.2,True
+unity3d.com,DigiCert Inc,third,True,TLSv1.2,True
+unpkg.com,Google Trust Services,third,,TLSv1.3,True
+unrulymedia.com,Amazon,unknown,,TLSv1.3,True
+uol.com.br,DigiCert Inc,third,False,TLSv1.2,True
+urbanairship.com,Google Trust Services,third,,TLSv1.3,True
+ureca-lab.com,unknown,unknown,,unknown,False
+useinsider.com,Google Trust Services,third,True,TLSv1.3,True
+userapi.com,Hellenic Academic and Research Institutions CA,unknown,,TLSv1.3,True
+usercentrics.eu,Google Trust Services,third,,TLSv1.3,True
+usercontent.goog,Google Trust Services,third,,TLSv1.3,True
+v-videoapp.com,Google Trust Services,third,False,TLSv1.2,True
+verisign.com,DigiCert Inc,third,,TLSv1.3,True
+verkada.com,Amazon,unknown,,TLSv1.3,True
+via.google,Google Trust Services,third,,TLSv1.3,True
+viber.com,Amazon,unknown,,TLSv1.3,True
+vidaahub.com,unknown,unknown,,unknown,False
+vimeo.com,Google Trust Services,third,,TLSv1.3,True
+virtualearth.net,Microsoft Corporation,unknown,True,TLSv1.3,True
+visualstudio.com,Microsoft Corporation,unknown,True,TLSv1.3,True
+visualwebsiteoptimizer.com,Let's Encrypt,third,,TLSv1.3,True
+vivo.com.cn,"DigiCert, Inc.",third,False,TLSv1.2,True
+vivoglobal.com,"DigiCert, Inc.",third,False,TLSv1.2,True
+vk-analytics.ru,unknown,unknown,,unknown,False
+vk.com,Google Trust Services,third,,TLSv1.3,True
+vk.ru,Let's Encrypt,third,,TLSv1.3,True
+vkuserphoto.ru,Hellenic Academic and Research Institutions CA,unknown,,TLSv1.3,True
+volces.com,unknown,unknown,,unknown,False
+volcfcdndvs.com,unknown,unknown,,unknown,False
+vscode-cdn.net,Microsoft Corporation,unknown,,TLSv1.3,True
+vungle.com,Let's Encrypt,third,,TLSv1.3,True
+w3.org,Google Trust Services,third,,TLSv1.3,True
+wac-msedge.net,unknown,unknown,,unknown,False
+walmart.com,GlobalSign nv-sa,third,True,TLSv1.3,True
+walmartimages.com,unknown,unknown,,unknown,False
+wattpad.com,Amazon,unknown,,TLSv1.3,True
+wb.ru,GlobalSign nv-sa,third,,TLSv1.3,True
+wbbasket.ru,unknown,unknown,,unknown,False
+wbx2.com,unknown,unknown,,unknown,False
+weather.com,DigiCert Inc,third,True,TLSv1.3,True
+webex.com,IdenTrust,unknown,True,TLSv1.2,True
+wechat.com,"DigiCert, Inc.",third,,TLSv1.3,True
+weplayapp.com,GlobalSign nv-sa,third,,TLSv1.3,True
+whatsapp.com,DigiCert Inc,third,,TLSv1.3,True
+whatsapp.net,DigiCert Inc,third,,TLSv1.3,True
+wikimedia.org,Let's Encrypt,third,,TLSv1.3,True
+wikipedia.org,Let's Encrypt,third,,TLSv1.3,True
+wildberries.ru,Let's Encrypt,third,,TLSv1.3,True
+windows.com,Microsoft Corporation,unknown,,TLSv1.3,True
+windows.net,Microsoft Corporation,unknown,,TLSv1.3,True
+windowsupdate.com,unknown,unknown,,unknown,False
+withgoogle.com,Google Trust Services,third,,TLSv1.3,True
+wordpress.com,Let's Encrypt,third,,TLSv1.3,True
+workers.dev,Google Trust Services,third,,TLSv1.3,True
+wp.com,Let's Encrypt,third,,TLSv1.3,True
+wps.cn,"DigiCert, Inc.",third,,TLSv1.3,True
+wps.com,"DigiCert, Inc.",third,False,TLSv1.2,True
+wsdvs.com,unknown,unknown,,unknown,False
+wshareit.com,DigiCert Inc,third,,TLSv1.3,True
+wyzecam.com,DigiCert Inc,third,,TLSv1.3,True
+x.com,Let's Encrypt,third,,TLSv1.3,True
+xboxlive.com,Microsoft Corporation,unknown,,TLSv1.3,True
+xboxservices.com,unknown,unknown,,unknown,False
+xhamster.com,Let's Encrypt,third,,TLSv1.3,True
+xhcdn.com,Let's Encrypt,third,True,TLSv1.3,True
+xhscdn.com,unknown,unknown,,unknown,False
+xiaohongshu.com,"DNSPod, Inc.",unknown,,TLSv1.3,True
+xiaomi.com,DigiCert Inc,third,True,TLSv1.2,True
+xiaomi.net,DigiCert Inc,third,True,TLSv1.2,True
+xnxx-cdn.com,unknown,unknown,,unknown,False
+xvideos-cdn.com,unknown,unknown,,unknown,False
+xxpkg.com,Kuaishou,unknown,False,TLSv1.2,True
+ya.ru,GlobalSign nv-sa,third,,TLSv1.3,True
+yahoo.co.jp,"Cybertrust Japan Co., Ltd.",unknown,True,TLSv1.3,True
+yahoo.com,DigiCert Inc,third,True,TLSv1.3,True
+yahoodns.net,unknown,unknown,,unknown,False
+yammer.com,Microsoft Corporation,unknown,True,TLSv1.3,True
+yandex.com,GlobalSign nv-sa,third,,TLSv1.3,True
+yandex.net,GlobalSign nv-sa,third,,TLSv1.3,True
+yandex.ru,GlobalSign nv-sa,third,,TLSv1.3,True
+yandexcloud.net,unknown,unknown,,unknown,False
+yastatic.net,GlobalSign nv-sa,third,,TLSv1.3,True
+yellowblue.io,unknown,unknown,,unknown,False
+yieldmo.com,Let's Encrypt,third,,TLSv1.3,True
+yimg.com,DigiCert Inc,third,,TLSv1.3,True
+yimg.jp,unknown,unknown,,unknown,False
+yotpo.com,Amazon,unknown,False,TLSv1.2,True
+youtube-nocookie.com,Google Trust Services,third,,TLSv1.3,True
+youtube.com,Google Trust Services,third,,TLSv1.3,True
+ys7.com,GlobalSign nv-sa,third,,TLSv1.3,True
+ytimg.com,unknown,unknown,,unknown,False
+yximgs.com,GlobalSign nv-sa,third,,TLSv1.2,True
+zdassets.com,unknown,unknown,,unknown,False
+zefrdata.com,Google Trust Services,third,,TLSv1.3,True
+zendesk.com,Let's Encrypt,third,,TLSv1.3,True
+zijieapi.com,unknown,unknown,,unknown,False
+zoho.com,Sectigo Limited,third,,TLSv1.3,True
+zoom.com,DigiCert Inc,third,True,TLSv1.2,True
+zoom.us,DigiCert Inc,third,True,TLSv1.3,True
+zpath.net,unknown,unknown,,unknown,False
+zscaler.net,unknown,unknown,,unknown,False
