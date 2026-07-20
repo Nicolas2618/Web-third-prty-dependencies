@@ -1,19 +1,33 @@
+import dns.resolver 
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("src/Source_Data/Domain_Robustness_Results.csv")
+df = pd.read_csv("src/Source_Data/Domain_Robustness_Results_100k.csv")
+
+
+
+
+
+
+
+
+
+
+
+
 
 ##################################################################################################################
-# We get a data frame with the ASN value counts, so that we can make a pie chart comparing the most used autonomous
-# number system, with the idea of understanding which ASNs are the most used around the world. 
+# We get a data frame with the DNS classification value counts, so that we can make a pie chart comparing the most used
+# classifications, with the idea of understanding which categories are the most used around the world. 
 ##################################################################################################################
 
-asn_counts = df['classification'].value_counts()
+dns_classification_counts = df['classification'].value_counts()
+print(dns_classification_counts)
 
 # Group smaller slices into "Other" to keep the chart readable
 top_n = 6
-top = asn_counts.head(top_n)
-other_count = asn_counts.iloc[top_n:].sum()
+top = dns_classification_counts.head(top_n)
+other_count = dns_classification_counts.iloc[top_n:].sum()
 
 if other_count > 0:
     top['Other'] = other_count
@@ -39,7 +53,7 @@ for autotext in autotexts:
     autotext.set_color('white')
     #autotext.set_fontweight('bold')
 
-ax.set_title('IP robustness from 1000 domains', fontsize=30, pad=40)
+ax.set_title('IP robustness from 100k domains', fontsize=30, pad=40)
 
 plt.tight_layout()
 #plt.savefig("src/Source_Data/asn_pie_chart.png", dpi=150, bbox_inches='tight')
@@ -76,7 +90,7 @@ for autotext in autotexts:
     autotext.set_fontsize(30)
     autotext.set_color('white')
 
-ax.set_title('IP location concentration from 1000 domains', fontsize=30, pad=20)
+ax.set_title('IP location concentration from 100k domains', fontsize=30, pad=20)
 
 plt.tight_layout()
 plt.show()
