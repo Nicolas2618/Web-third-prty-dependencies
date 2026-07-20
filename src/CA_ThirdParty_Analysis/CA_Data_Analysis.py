@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('src/Source_Data/ca_results_100.csv')
+df = pd.read_csv('src/Source_Data/ca_results_1000.csv')
 
 df_type = df[df['type'] != 'unknown']
 
@@ -10,7 +10,7 @@ counts = df_type['type'].value_counts()
 print(counts)
 
 plt.figure(figsize=(10, 8))
-plt.pie(counts, labels=counts.index, autopct='%1.1f%%', startangle=90)
+plt.pie(counts, labels=counts.index, autopct='%1.1f%%', startangle=180)
 plt.title('Distribution of Certificate Authority Type')
 plt.axis('equal') 
 plt.tight_layout()

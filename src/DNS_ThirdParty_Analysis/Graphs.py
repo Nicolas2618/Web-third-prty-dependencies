@@ -6,19 +6,48 @@ import matplotlib.pyplot as plt
 # This is one of the graphs that would help us with our analysis and comparison. 
 #################################################################################################################################
 
-# Here it reads the three files of interest. 
-df_100 = pd.read_csv('src/Source_Data/DNS_Identifier_Results_100_domains.csv')
-df_1000 = pd.read_csv('src/Source_Data/DNS_Identifier_Results_1k_domains.csv')
-df_10000 = pd.read_csv('src/Source_Data/DNS_Identifier_Results_10k_domains.csv')
+
+def compute_metrics(csv_path):
+    df = pd.read_csv(csv_path)
+
+    total_domains = df['DOMAIN'].nunique()
+
+    # Third-Party Dependency: A domain counts as 'third-party dependent' if any of its nameservers is third party.
+
+    third_party_domains = df.groupby("DOMAIN")["TYPE"].apply(lambda types: (types == 'third').any())
+    third_party_pct = third_party_domains.mean() * 100
+
+    # Critical dependency and redundancy; they are already constant per domain, so just grab one row per domain. 
+
+    domain_level = df.drop_duplicates(subset = 'DOMAIN')
+
+    critical_pct = (domain_level['DEPENDENCY'] == 'Critical dependency').mean() * 100
+    redundant_pct = (domain_level['REDUNDANT'] == True).mean() * 100
+
+    return third_party_pct, critical_pct, redundant_pct, total_domains
+
+# Here it reads the three files of interest.
+files = {
+            '100 Domains': 'src/Source_Data/DNS_Identifier_Results_100_domains.csv',
+            '1,000 Domains': 'src/Source_Data/DNS_Identifier_Results_1k_domains.csv',
+            '10,000 Domains': 'src/Source_Data/DNS_Identifier_Results_10k_domains.csv',
+        }
 
 
+library = []
+Third_Party_Dependency = []
+Critical_Dependency = []
+Redundancy = []
 
+for label, path in files.items():
+    third_party, critical, redundancy, n = compute_metrics(path)
 
-library = ['100 Domains', '1,000 Domains', '10,000 Domains']
+    library.append(label)
+    Third_Party_Dependency.append(round(third_party, 2))
+    Critical_Dependency.append(round(critical,2))
+    Redundancy.append(round(redundancy, 2))
 
-Third_Party_Dependency = [60.2, 80.5, 84.3]
-Critical_Dependency = [33, 46, 56]
-Redundancy = [7.6,6.2,5.3]
+    print(f"{label}: n = {n}, third_party = {third_party:.1f}%, critical = {critical:.1f}%, redundancy = {redundancy:.1f}%,")
 
 
 bar_width = 0.2
