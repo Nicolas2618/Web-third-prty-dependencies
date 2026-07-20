@@ -3,7 +3,7 @@ import dns.resolver
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("src/Source_Data/Domain_Robustness_Results_10k.csv")
+df = pd.read_csv("src/Source_Data/Domain_Robustness_Results_100k.csv")
 
 ######################################################################################################################
 # For rows where classification == "CNAME Enabled", the domain itself had no A/AAAA record, but a CNAME target
@@ -72,7 +72,7 @@ still_unresolved = (df['classification'] == 'Unresolved').sum()
 print(f"{still_unresolved} CNAME-enabled domain(s) still didn't resolve after following the CNAME.")
 
 # Optional: save the corrected dataframe so you don't have to re-resolve every time you replot
-df.to_csv("src/Source_Data/Domain_Robustness_Results_resolved.csv", index=False)
+df.to_csv("src/Source_Data/Domain_Robustness_Results_resolved_100K.csv", index=False)
 
 ######################################################################################################################
 # From here on, df['classification'] now reflects High/Low Robustness for the previously CNAME-enabled rows too,
@@ -96,7 +96,7 @@ top = asn_counts.head(top_n)
 # Map the raw classification values to whatever display names you want
 LABEL_MAP = {
     'High Robustness': 'Hosts IPv4 & IPv6',   # <- change these values to whatever you want shown
-    'Low Robustness': 'Only Hosts IPv4',
+    'Low Robustness': 'Only Hosts IPv4 Exclusively',
 }
 display_labels = [LABEL_MAP.get(label, label) for label in top.index]
 
@@ -120,8 +120,8 @@ for autotext in autotexts:
     autotext.set_fontsize(30)
     autotext.set_color('white')
 
-fig.suptitle('IP Robustness from 10K Domains', fontsize=30, y=0.98)
-ax.set_title(f'{total_domains} classified domains', fontsize=20, pad=20)
+fig.suptitle('IP Robustness from 100K Domains', fontsize=30, y=0.98)
+ax.set_title(f'{total_domains} classified domains', fontsize=20, pad=20, y=0.95)
 
 plt.tight_layout()
 plt.show()
