@@ -1,0 +1,101 @@
+domain,CA Name,type,Stapled,SSL or TLS
+googleapis.com,Google Trust Services,private,,TLSv1.3
+microsoft.com,Microsoft Corporation,private,,TLSv1.3
+cloudflare.com,Google Trust Services,third,,TLSv1.3
+gstatic.com,Google Trust Services,private,,TLSv1.3
+apple.com,Apple Inc.,private,,TLSv1.3
+google.com,Google Trust Services,private,,TLSv1.3
+facebook.com,DigiCert Inc,third,,TLSv1.3
+amazonaws.com,Amazon,third,,TLSv1.3
+googlevideo.com,Google Trust Services,third,,TLSv1.3
+fbcdn.net,DigiCert Inc,third,,TLSv1.3
+amazon.com,DigiCert Inc,third,,TLSv1.3
+youtube.com,Google Trust Services,private,,TLSv1.3
+instagram.com,DigiCert Inc,third,,TLSv1.3
+whatsapp.net,DigiCert Inc,third,,TLSv1.3
+live.com,Microsoft Corporation,private,,TLSv1.3
+doubleclick.net,Google Trust Services,private,,TLSv1.3
+bing.com,Microsoft Corporation,private,,TLSv1.3
+apple-dns.net,unknown,unknown,,unknown
+netflix.com,DigiCert Inc,third,,TLSv1.3
+akadns.net,unknown,unknown,,unknown
+ntp.org,Let's Encrypt,third,,TLSv1.2
+googleusercontent.com,Google Trust Services,private,,TLSv1.3
+icloud.com,Apple Inc.,private,,TLSv1.3
+googlesyndication.com,Google Trust Services,private,,TLSv1.3
+cdninstagram.com,unknown,unknown,,unknown
+chatgpt.com,Google Trust Services,third,,TLSv1.3
+cloudflare-dns.com,SSL Corp,third,,TLSv1.3
+akamai.net,unknown,unknown,,unknown
+aaplimg.com,unknown,unknown,,unknown
+tiktokcdn.com,unknown,unknown,,unknown
+tiktokv.com,DigiCert Inc,third,,TLSv1.3
+cloudfront.net,unknown,unknown,,unknown
+ui.com,Amazon,third,,TLSv1.3
+ytimg.com,unknown,unknown,,unknown
+akamaiedge.net,unknown,unknown,,unknown
+edgcdn.net,unknown,unknown,,unknown
+yahoo.com,DigiCert Inc,third,,TLSv1.3
+gvt2.com,unknown,unknown,,unknown
+spotify.com,DigiCert Inc,third,,TLSv1.3
+fastly.net,Certainly,third,,TLSv1.2
+roblox.com,Sectigo Limited,third,,TLSv1.3
+baidu.com,GlobalSign nv-sa,third,,TLSv1.2
+office.com,Microsoft Corporation,private,,TLSv1.3
+sentry.io,DigiCert Inc,third,,TLSv1.3
+wikipedia.org,Let's Encrypt,third,,TLSv1.3
+criteo.com,Let's Encrypt,third,,TLSv1.3
+app-analytics-services.com,Google Trust Services,third,,TLSv1.3
+app-measurement.com,Google Trust Services,private,,TLSv1.3
+gvt1.com,unknown,unknown,,unknown
+prodregistryv2.org,Let's Encrypt,third,,TLSv1.3
+steamserver.net,unknown,unknown,,unknown
+dns.google,Google Trust Services,private,,TLSv1.3
+one.one,Let's Encrypt,third,,TLSv1.3
+google-analytics.com,Google Trust Services,private,,TLSv1.3
+msftncsi.com,DigiCert Inc,third,,TLSv1.3
+snapchat.com,DigiCert Inc,third,,TLSv1.3
+applovin.com,Google Trust Services,third,,TLSv1.3
+3gppnetwork.org,unknown,unknown,,unknown
+appsflyersdk.com,Amazon,third,,TLSv1.3
+trafficmanager.net,unknown,unknown,,unknown
+azure.com,Microsoft Corporation,private,,TLSv1.3
+whatsapp.com,DigiCert Inc,third,,TLSv1.3
+googletagmanager.com,Google Trust Services,private,,TLSv1.3
+windows.com,Microsoft Corporation,private,,TLSv1.3
+amazon-adsystem.com,Amazon,third,,TLSv1.3
+msn.com,Microsoft Corporation,private,,TLSv1.3
+googleadservices.com,Google Trust Services,private,,TLSv1.3
+ggpht.com,unknown,unknown,,unknown
+oxylabs.io,Google Trust Services,third,,TLSv1.3
+amazon.dev,unknown,unknown,,unknown
+linkedin.com,DigiCert Inc,third,,TLSv1.3
+windows.net,Microsoft Corporation,unknown,,TLSv1.3
+unity3d.com,DigiCert Inc,third,,TLSv1.2
+microsoftonline.com,unknown,unknown,,unknown
+a2z.com,unknown,unknown,,unknown
+adtrafficquality.google,Google Trust Services,third,,TLSv1.3
+xiaomi.com,DigiCert Inc,third,,TLSv1.2
+playstation.net,unknown,unknown,,unknown
+skype.com,Microsoft Corporation,private,,TLSv1.3
+rubiconproject.com,Amazon,third,,TLSv1.3
+capcutapi.com,unknown,unknown,,unknown
+vungle.com,Let's Encrypt,third,,TLSv1.3
+msftconnecttest.com,DigiCert Inc,third,,TLSv1.3
+taboola.com,DigiCert Inc,third,,TLSv1.3
+windowsupdate.com,unknown,unknown,,unknown
+digicert.com,DigiCert Inc,third,,TLSv1.3
+gmail.com,Google Trust Services,private,,TLSv1.3
+cloud.microsoft,Microsoft Corporation,private,,TLSv1.3
+qq.com,"DigiCert, Inc.",third,,TLSv1.2
+tiktok.com,DigiCert Inc,third,,TLSv1.3
+aws.dev,unknown,unknown,,unknown
+miui.com,DigiCert Inc,third,,TLSv1.2
+cdn-apple.com,unknown,unknown,,unknown
+pubmatic.com,Amazon,third,,TLSv1.3
+adsrvr.org,GlobalSign nv-sa,third,,TLSv1.3
+avast.com,Sectigo Limited,third,,TLSv1.3
+avsxappcaptiveportal.com,unknown,unknown,,unknown
+android.com,Google Trust Services,private,,TLSv1.3
+reddit.com,DigiCert Inc,third,,TLSv1.3
+chirpbooks.com,Amazon,third,,TLSv1.3
