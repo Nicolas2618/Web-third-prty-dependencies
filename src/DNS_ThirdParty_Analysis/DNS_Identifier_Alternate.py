@@ -594,8 +594,8 @@ def classify_domain(domain: str, description: str = "") -> DomainResult:
 
  
 def main():
-    input_path  = "src/Source_Data/Domain_Robustness_Results.csv"
-    output_path = "src/Source_Data/DNS_Identifier_Results_10k_domains.csv"
+    input_path  = "src/Source_Data/Domain_Robustness_Results_100K.csv"
+    output_path = "src/Source_Data/DNS_Identifier_Results_resolved_100K.csv"
 
     rows = []
 
