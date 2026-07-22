@@ -6974,4 +6974,26 @@ CORPORATE_FAMILY: dict[str, str] = {
 "wordpress.org":    "automattic",
 "wp.com":           "automattic",
 "gravatar.com":     "automattic",
+
+    "microsoft.com": "microsoft",
+    "bing.com": "microsoft",
+    "office.com": "microsoft",
+    "azure.com": "microsoft",
+    "windows.com": "microsoft",
+    "windows.net": "microsoft",
+    "msn.com": "microsoft",
+    "skype.com": "microsoft",
+    "live.com": "microsoft",
+    "cloud.microsoft": "microsoft",
+    "apple.com": "apple",
+    "icloud.com": "apple",
+    "doubleclick.net": "google",
+    "adtrafficquality.google": "google",
+    "amazonaws.com": "amazon",
+    "amazon-adsystem.com": "amazon",
+    "chirpbooks.com": "amazon",
+    "aka.ms": "microsoft",   # MS URL shortener
+    "msft.net": "microsoft",
+    "msftauth.net": "microsoft",
+    "trafficmanager.net": "microsoft",  # Azure Traffic Manager — MS-owned infra
 }

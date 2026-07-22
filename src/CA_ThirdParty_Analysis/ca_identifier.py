@@ -28,19 +28,18 @@ from cryptography.x509.oid import ExtensionOID, AuthorityInformationAccessOID, N
 ########################################################################################################################################
 #Data Classes
 ########################################################################################################################################
+
 @dataclass
 class CAResult:
     website: str
     ca_name: Optional[str] = None
     ca_url: Optional[str] = None
-    ca_type: str = "unknown"           # "private" / "third" / "unknown"
-    ocsp_stapling: bool = False
-    critical_dependency: bool = False  # True if third-party CA AND no OCSP stapling
+    ca_type: str = "unknown"                 # "private" / "third" / "unknown" / "infrastructure"
+    ocsp_stapling: Optional[bool] = None      # True / False / None = undetermined
+    critical_dependency: bool = False         # True only if ca_type == "third" AND ocsp_stapling is False
     ssl_error: Optional[str] = None
     ssl_or_tls: str = "unknown"
     https_enabled: bool = False
-#endregion
-
 #region Basic helpers
 ########################################################################################################################################
 #Basic Helpers
@@ -308,7 +307,7 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
                 issuer = x509_cert.issuer
 
                 # Prefer Organization Name (O), then Common Name (CN), then Organizational Unit (OU).
-                ca_name = None
+                '''ca_name = None
                 for attribute in issuer:
                     if attribute.oid == NameOID.ORGANIZATION_NAME and attribute.value:
                         ca_name = attribute.value
@@ -319,6 +318,24 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
                             ca_name = attribute.value
                             break
                 if not ca_name:
+                    for attribute in issuer:
+                        if attribute.oid == NameOID.ORGANIZATIONAL_UNIT_NAME and attribute.value:
+                            ca_name = attribute.value
+                            break'''
+
+                org_name = None
+                common_name = None
+                for attribute in issuer:
+                    if attribute.oid == NameOID.ORGANIZATION_NAME and attribute.value:
+                        org_name = attribute.value
+                    if attribute.oid == NameOID.COMMON_NAME and attribute.value:
+                        common_name = attribute.value
+
+                if org_name and common_name:
+                    ca_name = f"{org_name} {common_name}"
+                elif org_name or common_name:
+                    ca_name = org_name or common_name
+                else:
                     for attribute in issuer:
                         if attribute.oid == NameOID.ORGANIZATIONAL_UNIT_NAME and attribute.value:
                             ca_name = attribute.value
@@ -447,12 +464,13 @@ def classify_ca(
     # 1. Definitively public CA by name — check first so well-known CAs are
     #    never accidentally classified as private (e.g. "Google Trust Services"
     #    for a non-Google site).
+    
     if is_public_ca_name(ca_name_lower):
         # Exception: if the public CA is actually owned by the same company
         # (e.g. Google Trust Services for google.com) treat as private.
         if ca_url and same_corporate_family(ca_url, website):
             return "private"
-        if ca_url and owner_of(website) and owner_of(website) in ca_name_lower:
+        if owner_of(website) and owner_of(website) in ca_name_lower:
             return "private"
         return "third"
  
@@ -488,8 +506,16 @@ def classify_ca(
         # 7. ca_url doesn't mention the website's registered domain at all.
         if w_tld and w_tld not in ca_url.lower():
             return "third"
- 
+        
+    # NEW — catches cases where ca_url extraction failed but the CA name
+    # still identifies the domain's own parent company (e.g. bing.com issued
+    # by "Microsoft Corporation", icloud.com issued by "Apple Inc.").
+    owner = owner_of(website)
+    if owner and owner in ca_name_lower:
+        return "private"
+
     return "unknown"
+ 
 #endregion
 
 
@@ -500,29 +526,42 @@ def classify_ca(
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #Measure CA
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
 def measure_ca(website: str) -> CAResult:
     result = CAResult(website=website)
+ 
+    # Short-circuit for CDN/DNS infrastructure domains that don't serve
+    # a real HTTPS endpoint of their own (e.g. akadns.net, cloudfront.net).
+    if is_infrastructure_domain(website):
+        result.ca_name = "infrastructure"
+        result.ca_type = "infrastructure"
+        result.https_enabled = False
+        return result
+ 
     ssl_info = get_ssl_info(website)
-
+ 
     if not ssl_info.get("ca_name"):
         ssl_info = get_ssl_info(f"www.{website}")
-
-    result.ca_name = ssl_info.get("ca_name", "")
-    if result.ca_name == None:
-        result.ca_name = "unknown"
-    result.ca_url = ssl_info.get("ca_url", "")
-    result.ssl_or_tls = ssl_info.get("tls_or_ssl", "")
-    if result.ssl_or_tls == None:
-        result.ssl_or_tls = "unknown"
+ 
+    result.ca_name = ssl_info.get("ca_name") or "unknown"
+    result.ca_url = ssl_info.get("ca_url") or ""
+    result.ssl_or_tls = ssl_info.get("tls_or_ssl") or "unknown"
+ 
+    # Keep the real tri-state result (True / False / None) instead of
+    # coercing None into a falsy bool.
     result.ocsp_stapling = check_ocsp_stapling(website)
+ 
     result.https_enabled = bool(ssl_info.get("tls_or_ssl"))
-
+ 
     san_tlds = ssl_info.get("san_tlds", [])
     result.ca_type = classify_ca(result.ca_url or "", website, san_tlds, result.ca_name)
-
-    # Critical dependency: third-party CA AND no OCSP stapling
-    result.critical_dependency = (result.ca_type == "third") and not result.ocsp_stapling
-
+ 
+    # Critical dependency: third-party CA AND stapling CONFIRMED absent.
+    # (ocsp_stapling is None -> undetermined -> not a confirmed critical dependency)
+    result.critical_dependency = (
+        result.ca_type == "third" and result.ocsp_stapling is False
+    )
+ 
     if result.ca_type == "unknown":
         print(
             f"""
@@ -534,14 +573,10 @@ def measure_ca(website: str) -> CAResult:
     SANs: {san_tlds}
     OCSP Stapled: {result.ocsp_stapling}
     """
-    )
-
+        )
+ 
     return result
 #endregion
-
-
-
-
 
 #region Main
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#

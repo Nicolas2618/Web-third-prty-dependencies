@@ -123,15 +123,24 @@ def domain_level_summary(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def compute_metrics(csv_path: str) -> dict:
-    """Return the three headline percentages for one CSV, at domain granularity."""
+    """Return headline percentages for one CSV.
+    - third_party_pct : % of ALL domains
+    - critical_pct    : % of THIRD-PARTY domains only
+    - redundant_pct   : % of ALL domains
+    """
     df = load_data(csv_path)
     summary = domain_level_summary(df)
+
     n = len(summary)
+    third_party_domains = summary[summary["has_third_party"]]
+    n_third_party = len(third_party_domains)
+
     return {
         "n_domains": n,
+        "n_third_party": n_third_party,
         "third_party_pct": summary["has_third_party"].mean() * 100,
-        "critical_pct": (summary["dependency"] == "Critical dependency").mean() * 100,
-        "redundant_pct": (summary["redundant"] == True).mean() * 100,  # noqa: E712
+        "critical_pct": (third_party_domains["dependency"] == "Critical dependency").mean() * 100 if n_third_party else 0,
+        "redundant_pct": (summary["redundant"] == True).mean() * 100,
     }
 
 
@@ -149,8 +158,10 @@ def plot_summary_comparison(files: dict = FILES):
         third_party.append(round(m["third_party_pct"], 1))
         critical.append(round(m["critical_pct"], 1))
         redundant.append(round(m["redundant_pct"], 1))
-        print(f"{label}: n={m['n_domains']}, third_party={m['third_party_pct']:.1f}%, "
-              f"critical={m['critical_pct']:.1f}%, redundant={m['redundant_pct']:.1f}%")
+        print(f"{label}: n={m['n_domains']} (third-party n={m['n_third_party']}), "
+              f"third_party={m['third_party_pct']:.1f}%, "
+              f"critical={m['critical_pct']:.1f}% of third-party, "
+              f"redundant={m['redundant_pct']:.1f}%")
 
     bar_width = 0.2
     x = np.arange(len(labels))
@@ -159,7 +170,6 @@ def plot_summary_comparison(files: dict = FILES):
     b1 = plt.bar(x - 1.5 * bar_width, third_party, bar_width, label='3rd Party Dependency', color='forestgreen')
     b2 = plt.bar(x - 0.5 * bar_width, critical, bar_width, label='Critical Dependency', color='teal')
     b3 = plt.bar(x + 0.5 * bar_width, redundant, bar_width, label='Redundancy', color='purple')
-
     plt.bar_label(b1, padding=3, fontsize=12)
     plt.bar_label(b2, padding=3, fontsize=12)
     plt.bar_label(b3, padding=3, fontsize=12)
@@ -329,7 +339,7 @@ def main():
     plot_summary_comparison(FILES)
 
     # Detailed charts on a single sample (change the key below to switch files)
-    df = load_data(FILES["100 Domains"])
+    df = load_data(FILES["10,000 Domains"])
     plot_type_pie(df)
     plot_top_providers(df, top_n=5)
     plot_provider_bubble(df)
