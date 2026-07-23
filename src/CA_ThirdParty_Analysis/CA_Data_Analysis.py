@@ -93,7 +93,6 @@ plt.show()
 #######################################################################################################################
 # This graph wouyld help us for comparison across all of the samples. 
 
-
 total = len(df)
 
 # HTTPS Support: % of domains where HTTPS Enabled == True
@@ -102,12 +101,15 @@ https_pct = (df['HTTPS Enabled'] == True).mean() * 100
 # Third-Party CA Dependency: % of domains where 'type' == 'third'
 third_party_pct = (df['type'] == 'third').mean() * 100
 
+# OCSP Stapling use: % of domains where 'stapling' == True
+OCSP_stapling = (df['Stapled'] == True).mean() * 100
+
 # TLS Usage: % of domains with a known TLS version (i.e. not 'unknown')
 tls_pct = (df['SSL or TLS'] != 'unknown').mean() * 100
 
-categories = ['HTTPS Support', 'Third-Party CA', 'TLS Usage']
-percentages = [https_pct, third_party_pct, tls_pct]
-colors = ["#056686", "#07A69E", "#4056B9"]
+categories = ['HTTPS Support', 'Third-Party CA', 'TLS Usage', 'OCSP Use']
+percentages = [https_pct, third_party_pct, tls_pct, OCSP_stapling]
+colors = ["#056686", "#07A69E", "#4056B9", "#3CCAA1"]
 
 fig, ax = plt.subplots(figsize=(10, 8))
 bars = ax.bar(categories, percentages, color=colors, edgecolor='black', width=0.5)

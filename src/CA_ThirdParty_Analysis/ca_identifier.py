@@ -583,8 +583,8 @@ def measure_ca(website: str) -> CAResult:
 #Main
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 def main():
-    input_path  = "src/Source_Data/top_1000_domains.csv"
-    output_path = "src/Source_Data/ca_results_1000.csv"
+    input_path  = "src/Source_Data/top_10000_domains.csv"
+    output_path = "src/Source_Data/ca_results_10000.csv"
  
     rows = []
  
