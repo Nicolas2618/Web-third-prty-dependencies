@@ -1,0 +1,1001 @@
+domain,CA Name,type,Stapled,SSL or TLS,HTTPS Enabled
+0xrpc.io,Let's Encrypt YE2,third,,TLSv1.3,True
+163.com,"DigiCert, Inc. GeoTrust G2 TLS CN RSA4096 SHA256 2022 CA1",third,False,TLSv1.2,True
+1rx.io,unknown,unknown,,unknown,False
+2mdn.net,unknown,unknown,,unknown,False
+33across.com,Let's Encrypt YR1,third,True,TLSv1.3,True
+360.cn,WoTrus CA Limited WoTrus OV Server CA  [Run by the Issuer],unknown,False,TLSv1.2,True
+360safe.com,unknown,unknown,,unknown,False
+360yield.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+3gppnetwork.org,unknown,unknown,,unknown,False
+3lift.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+4dex.io,unknown,unknown,,unknown,False
+a-mo.net,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+a-msedge.net,unknown,unknown,,unknown,False
+a-mx.com,unknown,unknown,,unknown,False
+a2z.com,unknown,unknown,,unknown,False
+aaplimg.com,unknown,unknown,,unknown,False
+ac.uk,unknown,unknown,,unknown,False
+accuweather.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+acrobat.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+acronis.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+ad-delivery.net,Google Trust Services WE1,third,,TLSv1.3,True
+ad.gt,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+adaether.com,unknown,unknown,,unknown,False
+adblockplus.org,Google Trust Services WR3,third,,TLSv1.3,True
+adform.net,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+adfuse-ssp.com,Let's Encrypt YR2,third,,TLSv1.3,True
+adgrx.com,Let's Encrypt YR2,third,,TLSv1.3,True
+adguard.com,ZeroSSL GmbH ZeroSSL RSA DV SSL CA 2,unknown,True,TLSv1.3,True
+aditude.io,Let's Encrypt YR2,third,,TLSv1.3,True
+adjust.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+adkernel.com,GlobalSign nv-sa GlobalSign GCC R6 AlphaSSL CA 2025,third,,TLSv1.3,True
+admanmedia.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,True,TLSv1.3,True
+adnxs.com,DigiCert Inc GeoTrust TLS ECC CA G1,third,True,TLSv1.2,True
+adobe.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,True,TLSv1.3,True
+adobe.io,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+adobedc.net,unknown,unknown,,unknown,False
+adobedtm.com,unknown,unknown,,unknown,False
+adobelogin.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,False,TLSv1.2,True
+adobess.com,unknown,unknown,,unknown,False
+adobestats.io,unknown,unknown,,unknown,False
+adriver.ru,GlobalSign nv-sa GlobalSign GCC R3 DV TLS CA 2020,third,,TLSv1.3,True
+adroll.com,GlobalSign nv-sa GlobalSign Atlas R3 DV TLS CA 2026 Q2,third,True,TLSv1.2,True
+adrta.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,False,TLSv1.2,True
+ads-twitter.com,unknown,unknown,,unknown,False
+adsafeprotected.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+adsco.re,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,False,TLSv1.2,True
+adsmoloco.com,Let's Encrypt YR2,third,,TLSv1.3,True
+adsrvr.org,GlobalSign nv-sa GlobalSign GCC R3 DV TLS CA 2020,third,,TLSv1.3,True
+adtelligent.com,Sectigo Limited Sectigo Public Server Authentication CA DV R36,third,,TLSv1.3,True
+adthrive.com,Let's Encrypt YE2,third,,TLSv1.3,True
+adtrafficquality.google,Google Trust Services WE2,private,,TLSv1.3,True
+agkn.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.3,True
+agora.io,GoDaddy.com GoDaddy TLS Intermediate CA DV - R1v1,unknown,False,TLSv1.2,True
+aibixby.com,unknown,unknown,,unknown,False
+aibotplatform.com,unknown,unknown,,unknown,False
+aiv-delivery.net,unknown,unknown,,unknown,False
+aka.ms,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 16,unknown,True,TLSv1.3,True
+akadns.net,infrastructure,infrastructure,,unknown,False
+akahost.net,unknown,unknown,,unknown,False
+akam.net,unknown,unknown,,unknown,False
+akamai.com,infrastructure,infrastructure,,unknown,False
+akamai.net,infrastructure,infrastructure,,unknown,False
+akamaiedge.net,infrastructure,infrastructure,,unknown,False
+akamaihd.net,infrastructure,infrastructure,,unknown,False
+akamaized.net,infrastructure,infrastructure,,unknown,False
+akstat.io,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,,TLSv1.3,True
+alibaba.com,GlobalSign nv-sa GlobalSign GCC R3 OV TLS CA 2024,third,,TLSv1.3,True
+alibabadns.com,unknown,unknown,,unknown,False
+alicdn.com,infrastructure,infrastructure,,unknown,False
+aliexpress-media.com,unknown,unknown,,unknown,False
+aliexpress.com,GlobalSign nv-sa GlobalSign GCC R3 OV TLS CA 2024,third,False,TLSv1.2,True
+alipay.com,"DigiCert, Inc. DigiCert Secure Site OV G2 TLS CN RSA4096 SHA256 2022 CA1",third,False,TLSv1.2,True
+aliyun.com,GlobalSign nv-sa GlobalSign GCC R3 OV TLS CA 2024,third,False,TLSv1.2,True
+aliyuncs.com,GlobalSign nv-sa GlobalSign GCC R3 OV TLS CA 2024,third,,TLSv1.3,True
+aliyuncsslbintl.com,unknown,unknown,,unknown,False
+allawnos.com,unknown,unknown,,unknown,False
+allawntech.com,"DigiCert, Inc. GeoTrust G2 TLS CN RSA4096 SHA256 2022 CA1",third,,TLSv1.3,True
+alphonso.tv,Let's Encrypt YE2,third,,TLSv1.3,True
+amap.com,GlobalSign nv-sa GlobalSign GCC R3 OV TLS CA 2024,third,False,TLSv1.2,True
+amazon-adsystem.com,Amazon Amazon RSA 2048 M01,private,,TLSv1.3,True
+amazon.co.uk,DigiCert Inc GeoTrust TLS RSA CA G1,third,True,TLSv1.3,True
+amazon.com,DigiCert Inc GeoTrust TLS RSA CA G1,third,True,TLSv1.3,True
+amazon.de,DigiCert Inc GeoTrust TLS RSA CA G1,third,True,TLSv1.3,True
+amazon.dev,unknown,unknown,,unknown,False
+amazonalexa.com,Amazon Amazon RSA 2048 M04,third,False,TLSv1.2,True
+amazonaws.com,Amazon Amazon RSA 2048 M04,private,,TLSv1.3,True
+amazontrust.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+amazonvideo.com,Amazon Amazon RSA 2048 M01,private,,TLSv1.3,True
+amd.com,DigiCert Inc GeoTrust TLS RSA CA G1,third,True,TLSv1.3,True
+amemv.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.3,True
+amp-endpoint2.com,unknown,unknown,,unknown,False
+amp-endpoint3.com,unknown,unknown,,unknown,False
+amplitude.com,Amazon Amazon RSA 2048 M04,third,False,TLSv1.2,True
+ampproject.org,Google Trust Services WE2,private,,TLSv1.3,True
+android.com,Google Trust Services WE2,private,,TLSv1.3,True
+aniview.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+anthropic.com,Let's Encrypt YE2,third,,TLSv1.3,True
+anydesk.com,Google Trust Services WE1,third,,TLSv1.3,True
+aoneroom.com,unknown,unknown,,unknown,False
+ap4r.com,GlobalSign nv-sa GlobalSign GCC R3 DV TLS CA 2020,third,,TLSv1.2,True
+api.aws,unknown,unknown,,unknown,False
+app-ads-services.com,Google Trust Services WE2,third,,TLSv1.3,True
+app-analytics-services-att.com,Google Trust Services WE2,third,,TLSv1.3,True
+app-analytics-services.com,Google Trust Services WE2,third,,TLSv1.3,True
+app-measurement.com,Google Trust Services WE2,private,,TLSv1.3,True
+appcenter.ms,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 02,unknown,True,TLSv1.3,True
+appier.net,Google Trust Services WR3,third,,TLSv1.3,True
+apple-cloudkit.com,unknown,unknown,,unknown,False
+apple-dns.net,infrastructure,infrastructure,,unknown,False
+apple.com,Apple Inc. Apple Public EV Server ECC CA 1 - G1,private,True,TLSv1.3,True
+apple.news,Apple Inc. Apple Public Server RSA CA 11 - G1,private,True,TLSv1.2,True
+applovin.com,Google Trust Services WR3,third,,TLSv1.3,True
+applvn.com,unknown,unknown,,unknown,False
+appsflyer.com,Amazon Amazon RSA 2048 M04,third,False,TLSv1.2,True
+appsflyersdk.com,Amazon Amazon RSA 2048 M02,third,,TLSv1.3,True
+appspot.com,Google Trust Services WE2,private,,TLSv1.3,True
+apptracer.ru,Hellenic Academic and Research Institutions CA HARICA DV TLS RSA,unknown,,TLSv1.3,True
+archive.org,"GoDaddy.com, Inc. Go Daddy Secure Certificate Authority - G2",unknown,True,TLSv1.3,True
+argotunnel.com,unknown,unknown,,unknown,False
+arubanetworks.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+assetsconfigcdn.org,infrastructure,infrastructure,,unknown,False
+asus.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,,TLSv1.3,True
+atlassian.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+atlassian.net,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+autodesk.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+av380.net,ZeroSSL GmbH ZeroSSL RSA DV SSL CA 2,unknown,,TLSv1.3,True
+avast.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,True,TLSv1.3,True
+avcdn.net,infrastructure,infrastructure,,unknown,False
+avira.com,Let's Encrypt YR1,third,,TLSv1.3,True
+avito.ru,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.3,True
+avito.st,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.3,True
+avsxappcaptiveportal.com,unknown,unknown,,unknown,False
+aws.dev,unknown,unknown,,unknown,False
+awsglobalaccelerator.com,unknown,unknown,,unknown,False
+awswaf.com,unknown,unknown,,unknown,False
+ax-msedge.net,unknown,unknown,,unknown,False
+axon.ai,Google Trust Services WR3,third,,TLSv1.3,True
+ay.delivery,Google Trust Services WE1,third,,TLSv1.3,True
+azure-devices.net,unknown,unknown,,unknown,False
+azure.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 04,private,,TLSv1.3,True
+azure.net,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 04,unknown,,TLSv1.3,True
+azureedge.net,Microsoft Corporation Microsoft TLS G2 ECC CA OCSP 02,private,,TLSv1.3,True
+azurefd.net,Microsoft Corporation Microsoft TLS G2 ECC CA OCSP 02,unknown,,TLSv1.3,True
+azurewebsites.net,unknown,unknown,,unknown,False
+b-cdn.net,infrastructure,infrastructure,,unknown,False
+b-msedge.net,unknown,unknown,,unknown,False
+baidu.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,False,TLSv1.2,True
+bamgrid.com,unknown,unknown,,unknown,False
+battle.net,Amazon Amazon RSA 2048 M01,third,False,TLSv1.2,True
+bazaarvoice.com,Let's Encrypt YR2,third,,TLSv1.3,True
+bdydns.com,unknown,unknown,,unknown,False
+betweendigital.com,Sectigo Limited Sectigo Public Server Authentication CA DV R36,third,False,TLSv1.2,True
+beyla.site,unknown,unknown,,unknown,False
+beyondwickedmapping.org,Let's Encrypt YR2,third,,TLSv1.3,True
+bidease.com,Google Trust Services WE1,third,,TLSv1.3,True
+bidmachine.io,Google Trust Services WE1,third,,TLSv1.3,True
+bidr.io,unknown,unknown,,unknown,False
+bidswitch.net,unknown,unknown,,unknown,False
+bilibili.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.3,True
+binance.com,DigiCert Inc GeoTrust TLS RSA CA G1,third,,TLSv1.3,True
+bing.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 02,private,True,TLSv1.3,True
+bing.net,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 02,unknown,True,TLSv1.3,True
+bitdefender.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+bitdefender.net,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+bixbyllm.com,unknown,unknown,,unknown,False
+bkcdn.net,infrastructure,infrastructure,,unknown,False
+blackberry.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,False,TLSv1.2,True
+blogspot.com,Google Trust Services WE2,private,,TLSv1.3,True
+blxrbdn.com,unknown,unknown,,unknown,False
+booking.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+bootstrapcdn.com,infrastructure,infrastructure,,unknown,False
+box.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+boyuanhulian.com,DigiCert Inc Encryption Everywhere DV TLS CA - G2,third,,TLSv1.3,True
+branch.io,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+brave.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+braze.com,Let's Encrypt YE2,third,,TLSv1.3,True
+browser-intake-datadoghq.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+browser-intake-us5-datadoghq.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+bt.co,unknown,unknown,,unknown,False
+btloader.com,Google Trust Services WE1,third,,TLSv1.3,True
+bugsnag.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+bunny.net,Let's Encrypt YR1,third,,TLSv1.3,True
+buzzoola.com,Sectigo Limited Sectigo Public Server Authentication CA DV R36,third,False,TLSv1.2,True
+bytedance.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.3,True
+bytedns1.com,unknown,unknown,,unknown,False
+bytefcdn-oversea.com,infrastructure,infrastructure,,unknown,False
+byteglb.com,unknown,unknown,,unknown,False
+byteoversea.com,unknown,unknown,,unknown,False
+byteoversea.net,unknown,unknown,,unknown,False
+canva.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+capcut.com,DigiCert Inc RapidSSL TLS ECC CA G1,third,,TLSv1.3,True
+capcutapi.com,unknown,unknown,,unknown,False
+captcha-delivery.com,unknown,unknown,,unknown,False
+casalemedia.com,Let's Encrypt E8,third,,TLSv1.3,True
+ccgateway.net,unknown,unknown,,unknown,False
+cdn-apple.com,infrastructure,infrastructure,,unknown,False
+cdn20.com,infrastructure,infrastructure,,unknown,False
+cdn77.org,infrastructure,infrastructure,,unknown,False
+cdnbuild.net,infrastructure,infrastructure,,unknown,False
+cdngslb.com,infrastructure,infrastructure,,unknown,False
+cdninstagram.com,infrastructure,infrastructure,,unknown,False
+centrastage.net,unknown,unknown,,unknown,False
+chartbeat.net,unknown,unknown,,unknown,False
+chartboost.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+charter.net,Amazon Amazon RSA 2048 M04,third,False,TLSv1.2,True
+chatgpt.com,Google Trust Services WE1,third,,TLSv1.3,True
+checkpoint.com,GlobalSign nv-sa GlobalSign GCC R3 DV TLS CA 2020,third,,TLSv1.3,True
+cisco.com,IdenTrust HydrantID Server CA O1,unknown,False,TLSv1.2,True
+clarity.ms,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 16,unknown,,TLSv1.2,True
+claude.ai,Let's Encrypt YE1,third,,TLSv1.3,True
+clevertap-prod.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+cloud.microsoft,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 10,private,,TLSv1.3,True
+cloudflare-dns.com,SSL Corp SSL.com SSL Intermediate CA ECC R2,third,True,TLSv1.3,True
+cloudflare.com,Google Trust Services WE1,third,,TLSv1.3,True
+cloudflare.net,Let's Encrypt YE2,third,,TLSv1.3,True
+cloudflareclient.com,Let's Encrypt YE2,third,,TLSv1.3,True
+cloudflareinsights.com,Google Trust Services WE1,third,True,TLSv1.3,True
+cloudflarestorage.com,Google Trust Services WE1,third,,TLSv1.3,True
+cloudfront.net,infrastructure,infrastructure,,unknown,False
+cloudfunctions.net,Google Trust Services WE2,third,,TLSv1.3,True
+cloudinary.com,"GoDaddy.com, Inc. Go Daddy Secure Certificate Authority - G2",unknown,,TLSv1.3,True
+cloudsink.net,unknown,unknown,,unknown,False
+cnn.com,GlobalSign nv-sa GlobalSign Atlas ECCR5 OV TLS CA 2025 Q2,third,True,TLSv1.3,True
+coloros.com,"DigiCert, Inc. GeoTrust G2 TLS CN RSA4096 SHA256 2022 CA1",third,,TLSv1.3,True
+comcast.net,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,False,TLSv1.2,True
+comodoca.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,True,TLSv1.2,True
+company-target.com,unknown,unknown,,unknown,False
+connatix.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+contentsquare.net,unknown,unknown,,unknown,False
+contextweb.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,,TLSv1.3,True
+conviva.com,Google Trust Services WE1,third,True,TLSv1.3,True
+cookiebot.com,Google Trust Services WE1,third,True,TLSv1.3,True
+cookielaw.org,Google Trust Services WE1,third,True,TLSv1.3,True
+cootlogix.com,Google Trust Services WR1,third,,TLSv1.3,True
+crashlytics.com,Google Trust Services WE2,private,,TLSv1.3,True
+crealitycloud.com,WoTrus CA Limited WoTrus DV Server CA  [Run by the Issuer],unknown,,TLSv1.3,True
+creativecdn.com,infrastructure,infrastructure,,unknown,False
+criteo.com,Let's Encrypt YR2,third,,TLSv1.3,True
+criteo.net,unknown,unknown,,unknown,False
+crwdcntrl.net,Amazon Amazon RSA 2048 M04,third,,TLSv1.2,True
+cspserver.net,DigiCert Inc Thawte TLS RSA CA G1,third,,TLSv1.3,True
+curseforge.com,Google Trust Services WE1,third,,TLSv1.3,True
+cursor.sh,Let's Encrypt YR1,third,,TLSv1.3,True
+dalyfeds.com,Let's Encrypt YE1,third,True,TLSv1.3,True
+datadoghq.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+datadome.co,Amazon Amazon ECDSA 256 M01,unknown,,TLSv1.3,True
+datto.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+dbankcdn.com,infrastructure,infrastructure,,unknown,False
+dbankcloud.cn,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.3,True
+dbankcloud.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.3,True
+dbankcloud.ru,unknown,unknown,,unknown,False
+ddns.net,unknown,unknown,,unknown,False
+debian.org,Let's Encrypt YR2,third,True,TLSv1.3,True
+deepintent.com,Google Trust Services WE1,third,,TLSv1.3,True
+deepl.com,Google Trust Services WE1,third,,TLSv1.3,True
+deepseek.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+dell.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,False,TLSv1.2,True
+demdex.net,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+didiglobal.com,"DigiCert, Inc. GeoTrust G2 TLS CN RSA4096 SHA256 2022 CA1",third,,TLSv1.2,True
+digicert.com,DigiCert Inc DigiCert EV RSA CA G2,third,,TLSv1.3,True
+digitaloceanspaces.com,Google Trust Services WE1,third,,TLSv1.3,True
+discomax.com,unknown,unknown,,unknown,False
+discord.com,Google Trust Services WE1,third,,TLSv1.3,True
+discord.gg,Google Trust Services WE1,third,,TLSv1.3,True
+discord.media,Google Trust Services WE1,third,True,TLSv1.3,True
+discordapp.com,Google Trust Services WE1,third,,TLSv1.3,True
+discordapp.net,unknown,unknown,,unknown,False
+disqus.com,Sectigo Limited Sectigo Public Server Authentication CA DV R36,third,True,TLSv1.3,True
+dns.google,Google Trust Services WE2,private,,TLSv1.3,True
+docker.com,Let's Encrypt YR2,third,,TLSv1.3,True
+docker.io,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+doppiocdn.com,infrastructure,infrastructure,,unknown,False
+dotomi.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,False,TLSv1.2,True
+doubleclick.net,Google Trust Services WE2,private,,TLSv1.3,True
+doubleverify.com,Let's Encrypt YE1,third,,TLSv1.3,True
+douyincdn.com,infrastructure,infrastructure,,unknown,False
+douyinpic.com,unknown,unknown,,unknown,False
+douyinvod.com,unknown,unknown,,unknown,False
+dropbox.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,,TLSv1.3,True
+dropboxapi.com,unknown,unknown,,unknown,False
+drpc.org,Google Trust Services WE1,third,,TLSv1.3,True
+dssott.com,unknown,unknown,,unknown,False
+dtscout.com,Let's Encrypt YR2,third,False,TLSv1.2,True
+dual-s-msedge.net,unknown,unknown,,unknown,False
+duckdns.org,Amazon Amazon RSA 2048 M04,third,False,TLSv1.2,True
+duckduckgo.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+duolingo.com,Amazon Amazon RSA 2048 M01,third,False,TLSv1.2,True
+dv.tech,unknown,unknown,,unknown,False
+dynatrace.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+dyndns.org,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+dzen.ru,Hellenic Academic and Research Institutions CA HARICA DV TLS RSA,unknown,,TLSv1.3,True
+ea.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+easebar.com,unknown,unknown,,unknown,False
+easy4ipcloud.com,unknown,unknown,,unknown,False
+ebay.com,Sectigo Limited Sectigo Public Server Authentication CA OV R40,third,,TLSv1.3,True
+edgcdn.net,infrastructure,infrastructure,,unknown,False
+edge.apple,unknown,unknown,,unknown,False
+edgekey.net,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+edgesuite.net,unknown,unknown,,unknown,False
+elasticbeanstalk.com,unknown,unknown,,unknown,False
+entrust.net,Entrust Limited Entrust EV TLS Issuing RSA CA 2,private,,TLSv1.3,True
+epicgames.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+epicgames.dev,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+erome.com,ZeroSSL GmbH ZeroSSL ECC DV SSL CA 2,unknown,,TLSv1.3,True
+eset.com,Let's Encrypt YR1,third,,TLSv1.3,True
+eskimi.com,Google Trust Services WE1,third,,TLSv1.3,True
+espn.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,,TLSv1.3,True
+eu-1-id5-sync.com,Google Trust Services WE1,third,,TLSv1.3,True
+europa.eu,GlobalSign nv-sa GlobalSign Atlas R3 OV TLS CA 2025 Q3,third,,TLSv1.3,True
+everesttech.net,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.2,True
+example.com,SSL Corporation Cloudflare TLS Issuing ECC CA 3,third,,TLSv1.3,True
+example.org,SSL Corporation Cloudflare TLS Issuing ECC CA 3,third,,TLSv1.3,True
+exp-tas.com,unknown,unknown,,unknown,False
+eye4.cn,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.3,True
+eyeota.net,GoGetSSL GoGetSSL RSA DV CA,unknown,False,TLSv1.2,True
+ezvizlife.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,False,TLSv1.2,True
+facebook.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+facebook.net,unknown,unknown,,unknown,False
+fandom.com,Google Trust Services WE1,third,,TLSv1.3,True
+fast.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.2,True
+fastly-edge.com,unknown,unknown,,unknown,False
+fastly.net,Certainly Certainly Intermediate R1,unknown,True,TLSv1.2,True
+fb-t-msedge.net,unknown,unknown,,unknown,False
+fb.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+fbcdn.net,infrastructure,infrastructure,,unknown,False
+fbpigeon.com,unknown,unknown,,unknown,False
+fbsbx.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+featureassets.org,Let's Encrypt YR1,third,,TLSv1.3,True
+fifa.com,Let's Encrypt YE2,third,,TLSv1.3,True
+figma.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+firebaseio.com,Google Trust Services WR1,private,,TLSv1.3,True
+firefox.com,Let's Encrypt YR2,third,,TLSv1.3,True
+firetvcaptiveportal.com,unknown,unknown,,unknown,False
+flashbots.net,Google Trust Services WE1,third,,TLSv1.3,True
+flashtalking.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+foggymorningmist.com,unknown,unknown,,unknown,False
+fontawesome.com,Google Trust Services WE1,third,,TLSv1.3,True
+force.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,True,TLSv1.3,True
+forter.com,Google Trust Services WE1,third,True,TLSv1.3,True
+fotmob.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+freefiremobile.com,Let's Encrypt YR1,third,,TLSv1.3,True
+freenet.de,Let's Encrypt YR1,third,,TLSv1.3,True
+fullstory.com,Let's Encrypt YE1,third,,TLSv1.3,True
+fwmrm.net,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+fyber.com,DigiCert Inc Thawte TLS RSA CA G1,third,,TLSv1.3,True
+gameanalytics.com,Google Trust Services WE1,third,,TLSv1.3,True
+gamepass.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 02,unknown,,TLSv1.3,True
+garena.com,DigiCert Inc GeoTrust TLS RSA CA G1,third,False,TLSv1.2,True
+garmin.com,"GoDaddy.com, Inc. Go Daddy Secure Certificate Authority - G2",unknown,,TLSv1.3,True
+gboxlab.com,Google Trust Services WE1,third,,TLSv1.3,True
+gcdn.co,infrastructure,infrastructure,,unknown,False
+geoedge.be,unknown,unknown,,unknown,False
+geotrust.com,"DigiCert, Inc. DigiCert G5 TLS RSA4096 SHA384 2021 CA1",third,,TLSv1.3,True
+ggpht.com,unknown,unknown,,unknown,False
+github.com,Sectigo Limited Sectigo Public Server Authentication CA DV E36,third,,TLSv1.3,True
+github.io,Let's Encrypt YR2,third,,TLSv1.3,True
+githubcopilot.com,Sectigo Limited Sectigo Public Server Authentication CA DV R36,third,,TLSv1.3,True
+githubusercontent.com,Let's Encrypt YR2,third,,TLSv1.3,True
+gitlab.com,Sectigo Limited Sectigo Public Server Authentication CA DV R36,third,,TLSv1.3,True
+glance-cdn.com,infrastructure,infrastructure,,unknown,False
+glanceapis.com,unknown,unknown,,unknown,False
+globalsign.com,GlobalSign nv-sa GlobalSign GCC R3 EV TLS CA 2025,third,True,TLSv1.2,True
+globo.com,Let's Encrypt YR2,third,,TLSv1.3,True
+gmail.com,Google Trust Services WE2,private,,TLSv1.3,True
+go-mpulse.net,unknown,unknown,,unknown,False
+godaddy.com,Google Trust Services WE1,third,,TLSv1.3,True
+google-analytics.com,Google Trust Services WE2,private,,TLSv1.3,True
+google.ca,Google Trust Services WE2,private,,TLSv1.3,True
+google.cn,Google Trust Services WE2,private,,TLSv1.3,True
+google.co.uk,Google Trust Services WE2,private,,TLSv1.3,True
+google.com,Google Trust Services WE2,private,,TLSv1.3,True
+google.com.br,Google Trust Services WE2,private,,TLSv1.3,True
+google.com.hk,Google Trust Services WE2,private,,TLSv1.3,True
+google.de,Google Trust Services WE2,private,,TLSv1.3,True
+google.ru,Google Trust Services WE2,private,,TLSv1.3,True
+google.us,Google Trust Services WE2,private,,TLSv1.3,True
+googleadservices.com,Google Trust Services WE2,private,,TLSv1.3,True
+googleapis.cn,Google Trust Services WE2,third,,TLSv1.3,True
+googleapis.com,Google Trust Services WE2,private,,TLSv1.3,True
+googlesyndication.com,Google Trust Services WE2,private,,TLSv1.3,True
+googletagmanager.com,Google Trust Services WE2,private,,TLSv1.3,True
+googletagservices.com,Google Trust Services WE2,private,,TLSv1.3,True
+googleusercontent.com,Google Trust Services WE2,private,,TLSv1.3,True
+googlevideo.com,Google Trust Services WR2,private,,TLSv1.3,True
+googlezip.net,unknown,unknown,,unknown,False
+gos-gsp.io,unknown,unknown,,unknown,False
+goskope.com,unknown,unknown,,unknown,False
+grafana.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+grammarly.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+grammarly.io,unknown,unknown,,unknown,False
+grass.io,Google Trust Services WE1,third,,TLSv1.3,True
+gravatar.com,Let's Encrypt YE1,third,,TLSv1.3,True
+gstatic.com,Google Trust Services WE2,private,,TLSv1.3,True
+gumgum.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+gvt1.com,unknown,unknown,,unknown,False
+gvt2.com,unknown,unknown,,unknown,False
+gvt3.com,unknown,unknown,,unknown,False
+hakunaymatata.com,unknown,unknown,,unknown,False
+harman.com,Sectigo Limited Sectigo RSA Organization Validation Secure Server CA,third,False,TLSv1.2,True
+hcaptcha.com,Google Trust Services WE1,third,,TLSv1.3,True
+hdslb.com,unknown,unknown,,unknown,False
+he.net,"GoDaddy.com, Inc. Go Daddy Secure Certificate Authority - G2",unknown,,TLSv1.3,True
+hellotalk8.com,"TrustAsia Technologies, Inc. TrustAsia DV TLS RSA CA 2024",unknown,False,TLSv1.2,True
+heytapdl.com,unknown,unknown,,unknown,False
+heytapmobi.com,"DigiCert, Inc. GeoTrust G2 TLS CN RSA4096 SHA256 2022 CA1",third,,TLSv1.3,True
+heytapmobile.com,unknown,unknown,,unknown,False
+hicloud.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.2,True
+hihonor.com,Actalis S.p.A. Actalis Organization Validated Server CA G3,unknown,False,TLSv1.2,True
+hihonorcloud.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,False,TLSv1.2,True
+hik-connect.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.3,True
+hisavana.com,DigiCert Inc Encryption Everywhere DV TLS CA - G2,third,,TLSv1.3,True
+histats.com,Let's Encrypt YR1,third,,TLSv1.3,True
+home-assistant.io,Google Trust Services WE1,third,,TLSv1.3,True
+hotjar.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+hotmail.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 16,private,True,TLSv1.3,True
+hoyoverse.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,False,TLSv1.2,True
+hp.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+html-load.com,Google Trust Services WE1,third,,TLSv1.3,True
+huawei.com,Actalis S.p.A. Actalis Organization Validated Server CA G3,unknown,False,TLSv1.2,True
+hubspot.com,Google Trust Services WE1,third,,TLSv1.3,True
+hulu.com,COMODO CA Limited COMODO RSA Organization Validation Secure Server CA,third,,TLSv1.3,True
+huntress.io,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,False,TLSv1.2,True
+i18n-pglstatp.com,unknown,unknown,,unknown,False
+ibytedtos.com,unknown,unknown,,unknown,False
+ibyteimg.com,unknown,unknown,,unknown,False
+icanhazip.com,Google Trust Services WE1,third,True,TLSv1.3,True
+icloud-content.com,Apple Inc. Apple Public Server RSA CA 1 - G1,unknown,,TLSv1.3,True
+icloud.com,Apple Inc. Apple Public Server ECC CA 1 - G1,private,True,TLSv1.3,True
+icloud.com.cn,Apple Inc. Apple Public EV Server RSA CA 1 - G1,unknown,,TLSv1.3,True
+id5-sync.com,Let's Encrypt YE1,third,,TLSv1.3,True
+ieee.org,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.3,True
+ifconfig.me,Let's Encrypt YR1,third,,TLSv1.3,True
+igamecj.com,unknown,unknown,,unknown,False
+im-apps.net,Google Trust Services WR3,third,,TLSv1.3,True
+imoim.net,unknown,unknown,,unknown,False
+impervadns.net,unknown,unknown,,unknown,False
+imrworldwide.com,unknown,unknown,,unknown,False
+inaccuracy.net,unknown,unknown,,unknown,False
+incognia.com,Google Trust Services WE1,third,,TLSv1.3,True
+indeed.com,Google Trust Services WE1,third,,TLSv1.3,True
+indexww.com,Google Trust Services WE1,third,,TLSv1.3,True
+ingage.tech,Sectigo Limited Sectigo Public Server Authentication CA OV E36,third,,TLSv1.3,True
+inkuai.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.2,True
+inmobi.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,,TLSv1.3,True
+inmobicdn.net,infrastructure,infrastructure,,unknown,False
+inner-active.mobi,unknown,unknown,,unknown,False
+innovid.com,Google Trust Services WE1,third,,TLSv1.3,True
+instagram.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+int08h.com,Google Trust Services WR3,third,,TLSv1.3,True
+intel.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,,TLSv1.3,True
+intelbras.com.br,"GoDaddy.com, Inc. Go Daddy Secure Certificate Authority - G2",unknown,,TLSv1.3,True
+intentiq.com,Let's Encrypt YR1,third,,TLSv1.3,True
+intercom.io,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+intuit.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+ip-api.com,Sectigo Limited Sectigo Public Server Authentication CA DV R36,third,False,TLSv1.2,True
+ipapi.co,Google Trust Services WE1,third,,TLSv1.2,True
+ipify.org,Google Trust Services WE1,third,,TLSv1.3,True
+ipinfo.io,Let's Encrypt YR1,third,,TLSv1.3,True
+ipredictive.com,unknown,unknown,,unknown,False
+isappcloud.com,unknown,unknown,,unknown,False
+isnssdk.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.2,True
+ixigua.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.3,True
+jd.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.3,True
+jetbrains.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+jquery.com,Google Trust Services WE1,third,,TLSv1.3,True
+jsdelivr.net,unknown,unknown,,unknown,False
+jtvnw.net,unknown,unknown,,unknown,False
+kakao.com,DigiCert Inc Thawte TLS RSA CA G1,third,,TLSv1.3,True
+kakaocdn.net,infrastructure,infrastructure,,unknown,False
+kargo.com,Let's Encrypt YR2,third,,TLSv1.3,True
+kaspersky-labs.com,Kaspersky Lab Kaspersky Lab Public Services TLS CA G4,unknown,,TLSv1.3,True
+kaspersky.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+kick.com,Google Trust Services WE1,third,,TLSv1.3,True
+klaviyo.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+ks-cdn.com,infrastructure,infrastructure,,unknown,False
+ksapisrv.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,False,TLSv1.2,True
+kslawin.com,GlobalSign nv-sa GlobalSign GCC R3 DV TLS CA 2020,third,,TLSv1.3,True
+ksord.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.2,True
+kueezrtb.com,Let's Encrypt E7,third,,TLSv1.3,True
+kwai-pro.com,GlobalSign nv-sa GlobalSign GCC R3 DV TLS CA 2020,third,,TLSv1.3,True
+kwai.com,GlobalSign nv-sa GlobalSign GCC R3 DV TLS CA 2020,third,False,TLSv1.2,True
+kwai.net,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.2,True
+kwaipros.com,GlobalSign nv-sa GlobalSign GCC R3 DV TLS CA 2020,third,,TLSv1.2,True
+kwcdn.com,infrastructure,infrastructure,,unknown,False
+launchdarkly.com,Let's Encrypt YE2,third,,TLSv1.3,True
+leiniao.com,Let's Encrypt YR1,third,,TLSv1.3,True
+lencr.org,Let's Encrypt YE2,third,,TLSv1.3,True
+lenovo.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+letsencrypt.org,Let's Encrypt YE2,third,,TLSv1.3,True
+lge.com,Amazon Amazon RSA 2048 M04,third,False,TLSv1.2,True
+lgsmartad.com,unknown,unknown,,unknown,False
+lgthinq.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.2,True
+lgtvcommon.com,unknown,unknown,,unknown,False
+lgtvsdp.com,unknown,unknown,,unknown,False
+liadm.com,unknown,unknown,,unknown,False
+licdn.com,infrastructure,infrastructure,,unknown,False
+life360.com,Amazon Amazon RSA 2048 M01,third,False,TLSv1.2,True
+liftoff-creatives.io,unknown,unknown,,unknown,False
+liftoff.io,Google Trust Services WE1,third,True,TLSv1.3,True
+lijit.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+linkedin.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+listdl.com,unknown,unknown,,unknown,False
+litix.io,ZeroSSL GmbH ZeroSSL RSA DV SSL CA 2,unknown,,TLSv1.3,True
+live-video.net,unknown,unknown,,unknown,False
+live.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 16,private,True,TLSv1.3,True
+live.net,unknown,unknown,,unknown,False
+livechatinc.com,Google Trust Services WE1,third,,TLSv1.3,True
+llamarpc.com,Let's Encrypt YE1,third,,TLSv1.3,True
+ln-msedge.net,unknown,unknown,,unknown,False
+loopme.me,Let's Encrypt YR1,third,,TLSv1.3,True
+ltwebstatic.com,"DigiCert, Inc. DigiCert Secure Site OV G2 TLS CN RSA4096 SHA256 2022 CA1",third,,TLSv1.2,True
+magazineluiza.com.br,GlobalSign nv-sa GlobalSign Atlas R3 OV TLS CA 2026 Q1,third,,TLSv1.3,True
+magnific.com,Let's Encrypt YR2,third,True,TLSv1.3,True
+mail.ru,Let's Encrypt YR1,third,False,TLSv1.2,True
+mapbox.com,GlobalSign nv-sa GlobalSign Atlas R3 DV TLS CA 2025 Q4,third,True,TLSv1.2,True
+marzaent.com,Google Trust Services WE1,third,,TLSv1.3,True
+match.com,Google Trust Services WE1,third,,TLSv1.3,True
+mathtag.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.2,True
+mcafee.com,"McAfee, Inc. McAfee RSA Organization Validation Secure Server CA 3",private,False,TLSv1.2,True
+me.com,Apple Inc. Apple Public Server RSA CA 1 - G1,private,,TLSv1.3,True
+medallia.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+media-amazon.com,unknown,unknown,,unknown,False
+media.net,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+mediago.io,Amazon Amazon RSA 2048 M01,third,False,TLSv1.2,True
+mediatek.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,False,TLSv1.2,True
+meethue.com,Google Trust Services WR3,third,,TLSv1.3,True
+meraki.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+mercadolibre.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+mercadolivre.com.br,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+merkle.io,Google Trust Services WE1,third,,TLSv1.3,True
+meta.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+metamask.io,Google Trust Services WE1,third,,TLSv1.3,True
+mgid.com,"GoDaddy.com, Inc. Go Daddy Secure Certificate Authority - G2",unknown,,TLSv1.3,True
+mi-img.com,unknown,unknown,,unknown,False
+mi.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.3,True
+microsoft.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 04,private,True,TLSv1.3,True
+microsoftonline.com,unknown,unknown,,unknown,False
+microsoftpersonalcontent.com,unknown,unknown,,unknown,False
+mikrotik.com,DigiCert Inc DigiCert EV RSA CA G2,third,,TLSv1.3,True
+mintegral.net,Amazon Amazon RSA 2048 M01,third,False,TLSv1.2,True
+mioffice.cn,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.2,True
+miui.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,False,TLSv1.2,True
+miwifi.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,False,TLSv1.2,True
+mixpanel.com,DigiCert Inc GeoTrust TLS RSA CA G1,third,,TLSv1.3,True
+mlstatic.com,unknown,unknown,,unknown,False
+mmcdn.com,infrastructure,infrastructure,,unknown,False
+mmechocaptiveportal.com,unknown,unknown,,unknown,False
+mmstat.com,unknown,unknown,,unknown,False
+moengage.com,Google Trust Services WE1,third,True,TLSv1.3,True
+mojang.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 02,unknown,True,TLSv1.3,True
+moloco.com,Let's Encrypt YR1,third,,TLSv1.3,True
+mona.co,Google Trust Services WE1,third,,TLSv1.3,True
+mosspf.net,unknown,unknown,,unknown,False
+mozgcp.net,unknown,unknown,,unknown,False
+mozilla.com,Google Trust Services WR3,third,,TLSv1.3,True
+mozilla.net,Google Trust Services WR3,third,,TLSv1.3,True
+mozilla.org,Google Trust Services WR3,third,,TLSv1.3,True
+mparticle.com,Let's Encrypt R12,third,,TLSv1.3,True
+mradx.net,unknown,unknown,,unknown,False
+msauth.net,unknown,unknown,,unknown,False
+msedge.net,unknown,unknown,,unknown,False
+msftauth.net,unknown,unknown,,unknown,False
+msftconnecttest.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,,TLSv1.3,True
+msftncsi.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,,TLSv1.3,True
+msidentity.com,unknown,unknown,,unknown,False
+msn.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 02,private,True,TLSv1.3,True
+mtgglobals.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+mts.ru,GlobalSign nv-sa GlobalSign GCC R3 DV TLS CA 2020,third,,TLSv1.3,True
+mydramawave.com,DigiCert Inc Encryption Everywhere DV TLS CA - G2,third,False,TLSv1.2,True
+myhuaweicloud.com,DigiCert Inc Secure Site CA,third,,TLSv1.2,True
+mynetname.net,unknown,unknown,,unknown,False
+myqcloud.com,unknown,unknown,,unknown,False
+myshopify.com,Let's Encrypt YE2,third,,TLSv1.3,True
+mythad.com,unknown,unknown,,unknown,False
+mzstatic.com,Apple Inc. Apple Public Server RSA CA 1 - G1,private,,TLSv1.3,True
+naver.com,Let's Encrypt YE1,third,,TLSv1.3,True
+ndcpp-os.com,unknown,unknown,,unknown,False
+ne.jp,Let's Encrypt YR2,third,,TLSv1.3,True
+nel.goog,unknown,unknown,,unknown,False
+nelreports.net,unknown,unknown,,unknown,False
+netflix.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,,TLSv1.3,True
+netflix.net,Google Trust Services WR1,third,,TLSv1.3,True
+netgear.com,Amazon Amazon RSA 2048 M04,third,False,TLSv1.2,True
+networklinks.space,Let's Encrypt YR1,third,,TLSv1.3,True
+newrelic.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.2,True
+newsroom.bi,GlobalSign nv-sa GlobalSign Atlas R3 DV TLS CA 2025 Q3,third,True,TLSv1.3,True
+nextcloud.com,Let's Encrypt YE2,third,,TLSv1.3,True
+nextlgsdp.com,unknown,unknown,,unknown,False
+nflxext.com,unknown,unknown,,unknown,False
+nflximg.com,Netflix Inc Netflix Internal Services Intermediate Prod CA V10,private,,TLSv1.3,True
+nflxso.net,unknown,unknown,,unknown,False
+nflxvideo.net,unknown,unknown,,unknown,False
+ninjarmm.com,Let's Encrypt YE1,third,True,TLSv1.3,True
+nintendo.net,unknown,unknown,,unknown,False
+nist.gov,Let's Encrypt YE2,third,,TLSv1.3,True
+no-ip.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,False,TLSv1.2,True
+norton.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,True,TLSv1.3,True
+notion.com,Google Trust Services WE1,third,,TLSv1.3,True
+nr-data.net,unknown,unknown,,unknown,False
+ns1p.net,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+ntp.br,Let's Encrypt YR2,third,,TLSv1.3,True
+ntp.org,Let's Encrypt YR2,third,False,TLSv1.2,True
+ntppool.org,Certainly Certainly Intermediate R1,unknown,,TLSv1.3,True
+nubank.com.br,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+nvidia.com,Amazon Amazon RSA 2048 M01,third,False,TLSv1.2,True
+nytimes.com,DigiCert Inc Thawte TLS RSA CA G1,third,True,TLSv1.3,True
+oaistatic.com,Let's Encrypt YE2,third,,TLSv1.3,True
+oculus.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+office.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 10,private,True,TLSv1.3,True
+office.net,unknown,unknown,,unknown,False
+office365.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 02,private,True,TLSv1.3,True
+ok.ru,Hellenic Academic and Research Institutions CA HARICA DV TLS RSA,unknown,,TLSv1.3,True
+okcdn.ru,infrastructure,infrastructure,,unknown,False
+okta.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+okx.com,DigiCert Inc GeoTrust TLS RSA CA G1,third,,TLSv1.3,True
+omnitagjs.com,unknown,unknown,,unknown,False
+omtrdc.net,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.2,True
+on.aws,unknown,unknown,,unknown,False
+one.one,Let's Encrypt YR2,third,,TLSv1.3,True
+onedrive.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 16,unknown,True,TLSv1.3,True
+onelink.me,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+oneme.ru,unknown,unknown,,unknown,False
+onesignal.com,Google Trust Services WE1,third,True,TLSv1.3,True
+onetag-sys.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,,TLSv1.3,True
+onetrust.com,Google Trust Services WE1,third,,TLSv1.3,True
+onetrust.io,unknown,unknown,,unknown,False
+online-metrix.net,unknown,unknown,,unknown,False
+openai.com,Google Trust Services WE1,third,,TLSv1.3,True
+opendns.com,Let's Encrypt R13,third,False,TLSv1.2,True
+openstreetmap.org,Let's Encrypt YR1,third,,TLSv1.3,True
+openwebmp.com,unknown,unknown,,unknown,False
+openx.net,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.3,True
+opera-api.com,unknown,unknown,,unknown,False
+opera-api2.com,unknown,unknown,,unknown,False
+opera.com,Trust Provider B.V. Trust Provider B.V. TLS RSA CA G1,unknown,True,TLSv1.3,True
+optimizely.com,Let's Encrypt YR2,third,,TLSv1.3,True
+oracle.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,False,TLSv1.2,True
+oraclecloud.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,False,TLSv1.2,True
+orange.fr,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+outbrain.com,Let's Encrypt YR1,third,True,TLSv1.3,True
+outlook.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+overwolf.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+ovscdns.net,infrastructure,infrastructure,,unknown,False
+oxylabs.io,Google Trust Services WE1,third,,TLSv1.3,True
+ozon.ru,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.3,True
+ozone.ru,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.3,True
+pages.dev,Google Trust Services WE1,third,,TLSv1.3,True
+palmplaystore.com,"DigiCert, Inc. GeoTrust G2 TLS CN RSA4096 SHA256 2022 CA1",third,False,TLSv1.2,True
+paloaltonetworks.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+pandora.com,DigiCert Inc Thawte TLS RSA CA G1,third,False,TLSv1.2,True
+pangle.io,unknown,unknown,,unknown,False
+paypal.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+pbstck.com,unknown,unknown,,unknown,False
+peacocktv.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+pemsrv.com,unknown,unknown,,unknown,False
+pendo.io,Google Trust Services WR3,third,,TLSv1.3,True
+perplexity.ai,Google Trust Services WE1,private,,TLSv1.3,True
+phantom.app,Google Trust Services WE1,third,,TLSv1.3,True
+phncdn.com,infrastructure,infrastructure,,unknown,False
+pinimg.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+pinterest.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+pki.goog,Google Trust Services WE2,private,,TLSv1.3,True
+playfabapi.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 04,unknown,,TLSv1.3,True
+playrix.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+playstation.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,False,TLSv1.2,True
+playstation.net,unknown,unknown,,unknown,False
+plex.tv,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+pluto.tv,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,True,TLSv1.3,True
+polymarket.com,Let's Encrypt YE1,third,,TLSv1.3,True
+posthog.com,Let's Encrypt YR2,third,,TLSv1.3,True
+postrelease.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+presage.io,Gandi Gandi RSA Domain Validation Secure Server CA 3,unknown,,TLSv1.3,True
+primis.tech,"GoDaddy.com, Inc. Go Daddy Secure Certificate Authority - G2",unknown,False,TLSv1.2,True
+privacy-center.org,Amazon Amazon RSA 2048 M01,third,,TLSv1.2,True
+privacy-mgmt.com,unknown,unknown,,unknown,False
+privacymanager.io,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+prodregistryv2.org,Let's Encrypt YR1,third,,TLSv1.3,True
+protechts.net,Google Trust Services WR3,third,,TLSv1.3,True
+pstatic.net,unknown,unknown,,unknown,False
+publicnode.com,Let's Encrypt YE2,third,,TLSv1.3,True
+pubmatic.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+pubmnet.com,unknown,unknown,,unknown,False
+pubnative.net,Google Trust Services WE1,third,True,TLSv1.3,True
+pullcf.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.2,True
+pullcm.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.2,True
+pusher.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+pv-cdn.net,infrastructure,infrastructure,,unknown,False
+pvp.net,unknown,unknown,,unknown,False
+px-cloud.net,Google Trust Services WR3,third,,TLSv1.3,True
+qlivecdn.com,infrastructure,infrastructure,,unknown,False
+qq.com,"DigiCert, Inc. DigiCert Secure Site OV G2 TLS CN RSA4096 SHA256 2022 CA1",third,False,TLSv1.2,True
+qualtrics.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+quantcount.com,Let's Encrypt YR1,third,,TLSv1.2,True
+quantserve.com,Let's Encrypt YR1,third,,TLSv1.3,True
+quantummetric.com,Let's Encrypt YR2,third,,TLSv1.3,True
+rainberrytv.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+rapid7.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+ravm.tv,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+rbxcdn.com,infrastructure,infrastructure,,unknown,False
+recaptcha.net,Google Trust Services WE2,third,,TLSv1.3,True
+redd.it,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+reddit.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+redditmedia.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+redditstatic.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+revenuecat.com,Let's Encrypt YR1,third,,TLSv1.3,True
+rfihub.com,unknown,unknown,,unknown,False
+richaudience.com,Amazon Amazon ECDSA 256 M01,unknown,,TLSv1.3,True
+ring.com,Amazon Amazon RSA 2048 M01,third,True,TLSv1.3,True
+riotcdn.net,infrastructure,infrastructure,,unknown,False
+riotgames.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,,TLSv1.3,True
+rlcdn.com,infrastructure,infrastructure,,unknown,False
+roblox.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,True,TLSv1.3,True
+rocket-cdn.com,infrastructure,infrastructure,,unknown,False
+roku.com,Google Trust Services WE1,third,,TLSv1.3,True
+rubiconproject.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+run.app,Google Trust Services WE2,third,,TLSv1.3,True
+rustore.ru,Hellenic Academic and Research Institutions CA HARICA DV TLS RSA,unknown,False,TLSv1.2,True
+safebrowsing.apple,unknown,unknown,,unknown,False
+safedk.com,unknown,unknown,,unknown,False
+salesforce.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,True,TLSv1.3,True
+samba.tv,Let's Encrypt YE1,third,,TLSv1.3,True
+samsung.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,False,TLSv1.2,True
+samsungacr.com,unknown,unknown,,unknown,False
+samsungads.com,Sectigo Limited Sectigo Public Server Authentication CA DV R36,third,False,TLSv1.2,True
+samsungapis.com,unknown,unknown,,unknown,False
+samsungapps.com,unknown,unknown,,unknown,False
+samsungcloud.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,,TLSv1.3,True
+samsungcloud.tv,unknown,unknown,,unknown,False
+samsungcloudsolution.com,unknown,unknown,,unknown,False
+samsungcloudsolution.net,unknown,unknown,,unknown,False
+samsungconsent.com,unknown,unknown,,unknown,False
+samsungdm.com,unknown,unknown,,unknown,False
+samsungelectronics.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,False,TLSv1.2,True
+samsungiotcloud.com,unknown,unknown,,unknown,False
+samsungnyc.com,unknown,unknown,,unknown,False
+samsungosp.com,DigiCert Inc Thawte TLS RSA CA G1,third,,TLSv1.2,True
+samsungqbe.com,unknown,unknown,,unknown,False
+sascdn.com,infrastructure,infrastructure,,unknown,False
+sc-cdn.net,infrastructure,infrastructure,,unknown,False
+sc-gw.com,unknown,unknown,,unknown,False
+sc-static.net,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+scdn.co,infrastructure,infrastructure,,unknown,False
+scorecardresearch.com,Sectigo Limited Sectigo Public Server Authentication CA DV R36,third,True,TLSv1.3,True
+script.ac,unknown,unknown,,unknown,False
+sectigo.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,True,TLSv1.2,True
+secu100.net,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.2,True
+seedtag.com,Google Trust Services WE1,third,,TLSv1.3,True
+segment.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+segment.io,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+semasio.net,unknown,unknown,,unknown,False
+sentinelone.net,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,,TLSv1.3,True
+sentry.io,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+seznam.cz,Let's Encrypt YR2,third,,TLSv1.3,True
+sfx.ms,unknown,unknown,,unknown,False
+shalltry.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+sharepoint.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 10,private,True,TLSv1.3,True
+sharethis.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+sharethrough.com,Google Trust Services WE1,third,,TLSv1.3,True
+shein.com,"DigiCert, Inc. DigiCert Secure Site OV G2 TLS CN RSA4096 SHA256 2022 CA1",third,,TLSv1.3,True
+shifen.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.2,True
+shodan.io,Google Trust Services WE1,third,,TLSv1.3,True
+shop.app,Google Trust Services WE1,third,,TLSv1.3,True
+shopee.co.id,GlobalSign nv-sa GlobalSign GCC R6 AlphaSSL CA 2025,third,,TLSv1.3,True
+shopee.com.br,GlobalSign nv-sa GlobalSign GCC R6 AlphaSSL CA 2025,third,,TLSv1.3,True
+shopee.io,unknown,unknown,,unknown,False
+shopeemobile.com,Let's Encrypt YR1,third,,TLSv1.3,True
+shopify.com,Google Trust Services WE1,third,,TLSv1.3,True
+shopifysvc.com,unknown,unknown,,unknown,False
+signal.org,Google Trust Services WE1,third,,TLSv1.3,True
+sina.com.cn,"DigiCert, Inc. GeoTrust G2 TLS CN RSA4096 SHA256 2022 CA1",third,,TLSv1.3,True
+singular.net,Let's Encrypt YE2,third,,TLSv1.3,True
+sitescout.com,Let's Encrypt YR1,third,,TLSv1.3,True
+skype.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 02,private,,TLSv1.3,True
+slack.com,Let's Encrypt YR2,third,,TLSv1.3,True
+slackb.com,Let's Encrypt YR1,third,,TLSv1.3,True
+smaato.net,unknown,unknown,,unknown,False
+smadex.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+smartadserver.com,Google Trust Services WR3,third,,TLSv1.3,True
+smartthings.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+smilewanted.com,Google Trust Services WE1,third,,TLSv1.3,True
+snapchat.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+snapcraft.io,Let's Encrypt YR1,third,,TLSv1.3,True
+snapkit.com,Google Trust Services WR3,third,,TLSv1.3,True
+snssdk.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.3,True
+sogou.com,"DigiCert, Inc. DigiCert Secure Site OV G2 TLS CN RSA4096 SHA256 2022 CA1",third,False,TLSv1.2,True
+sonobi.com,Starfield Technologies Starfield TLS Intermediate CA DV - R1v1,third,,TLSv1.3,True
+sophos.com,Let's Encrypt YR2,third,,TLSv1.3,True
+soundcloud.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+spamhaus.org,Let's Encrypt YR2,third,,TLSv1.3,True
+sparteo.com,Let's Encrypt YR2,third,,TLSv1.3,True
+speedtest.net,GlobalSign nv-sa GlobalSign Atlas R3 DV TLS CA 2025 Q3,third,True,TLSv1.3,True
+split.io,Let's Encrypt YE1,third,,TLSv1.3,True
+splunkcloud.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.2,True
+spo-msedge.net,unknown,unknown,,unknown,False
+spot.im,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+spotify.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+spotifycdn.com,infrastructure,infrastructure,,unknown,False
+springserve.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+ssl-images-amazon.com,unknown,unknown,,unknown,False
+stackadapt.com,Let's Encrypt YR1,third,,TLSv1.3,True
+starlink.com,Let's Encrypt YR2,third,,TLSv1.3,True
+startappservice.com,Let's Encrypt YR2,third,,TLSv1.3,True
+static.microsoft,unknown,unknown,,unknown,False
+statuspage.io,Amazon Amazon ECDSA 256 M04,unknown,,TLSv1.3,True
+steamcommunity.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,True,TLSv1.3,True
+steamcontent.com,unknown,unknown,,unknown,False
+steampowered.com,Let's Encrypt YR1,third,,TLSv1.3,True
+steamserver.net,unknown,unknown,,unknown,False
+steamstatic.com,unknown,unknown,,unknown,False
+stripchat.com,Google Trust Services WE1,third,,TLSv1.3,True
+stripe.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,,TLSv1.3,True
+stripe.network,DigiCert Inc DigiCert EV RSA CA G2,third,,TLSv1.3,True
+strpst.com,unknown,unknown,,unknown,False
+supabase.co,Let's Encrypt YR1,third,,TLSv1.3,True
+supercell.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+supersonicads.com,unknown,unknown,,unknown,False
+susercontent.com,unknown,unknown,,unknown,False
+svc.ms,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 10,unknown,,TLSv1.3,True
+swishapps.ai,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,True,TLSv1.3,True
+synology.com,Amazon Amazon RSA 2048 M01,third,False,TLSv1.2,True
+t-online.de,Let's Encrypt E7,third,,TLSv1.3,True
+t.co,Let's Encrypt YE2,third,,TLSv1.3,True
+t.me,"GoDaddy.com, Inc. Go Daddy Secure Certificate Authority - G2",private,,TLSv1.3,True
+taboola.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+tailscale.com,Let's Encrypt YR1,third,,TLSv1.3,True
+taobao.com,GlobalSign nv-sa GlobalSign GCC R3 OV TLS CA 2024,third,,TLSv1.3,True
+tapad.com,Google Trust Services WR3,third,,TLSv1.3,True
+target.com,GlobalSign nv-sa GlobalSign Atlas R3 OV TLS CA 2025 Q3,third,True,TLSv1.3,True
+tawk.to,Google Trust Services WE1,third,,TLSv1.3,True
+tbcache.com,unknown,unknown,,unknown,False
+teads.tv,Amazon Amazon RSA 2048 M04,third,False,TLSv1.2,True
+teamviewer.com,Sectigo Limited Sectigo Public Server Authentication CA DV R36,third,,TLSv1.3,True
+telegram.org,"GoDaddy.com, Inc. Go Daddy Secure Certificate Authority - G2",unknown,,TLSv1.3,True
+telephony.goog,Google Trust Services WR2,third,False,TLSv1.2,True
+temu.com,GoDaddy.com GoDaddy TLS Intermediate CA DV - R1v1,unknown,True,TLSv1.3,True
+tencent-cloud.net,unknown,unknown,,unknown,False
+tencent.com,GlobalSign nv-sa GlobalSign Atlas R3 OV TLS CA 2026 Q2,third,,TLSv1.2,True
+tenda.com.cn,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.3,True
+tesla.com,Let's Encrypt YR2,third,,TLSv1.3,True
+themoviedb.org,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+tiktok.com,DigiCert Inc RapidSSL TLS ECC CA G1,third,,TLSv1.3,True
+tiktokcdn-eu.com,infrastructure,infrastructure,,unknown,False
+tiktokcdn-us.com,infrastructure,infrastructure,,unknown,False
+tiktokcdn.com,infrastructure,infrastructure,,unknown,False
+tiktokglobalshopv.com,DigiCert Inc RapidSSL TLS ECC CA G1,third,True,TLSv1.3,True
+tiktokpangle-cdn-us.com,infrastructure,infrastructure,,unknown,False
+tiktokpangle.us,unknown,unknown,,unknown,False
+tiktokrow-cdn.com,infrastructure,infrastructure,,unknown,False
+tiktokv.com,DigiCert Inc RapidSSL TLS ECC CA G1,third,,TLSv1.3,True
+tiktokv.eu,unknown,unknown,,unknown,False
+tiktokv.us,unknown,unknown,,unknown,False
+tiktokw.us,DigiCert Inc RapidSSL TLS ECC CA G1,third,,TLSv1.3,True
+tiqcdn.com,infrastructure,infrastructure,,unknown,False
+tizen.org,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+tm-azurefd.net,unknown,unknown,,unknown,False
+tmdb.org,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+tospotify.com,unknown,unknown,,unknown,False
+tp-link.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+tplinkcloud.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,False,TLSv1.2,True
+tplinknbu.com,unknown,unknown,,unknown,False
+tq-tungsten.com,unknown,unknown,,unknown,False
+tradingview.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+tradplusad.com,DigiCert Inc Encryption Everywhere DV TLS CA - G2,third,False,TLSv1.2,True
+trafficjunky.net,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,,TLSv1.3,True
+trafficmanager.net,unknown,unknown,,unknown,False
+traffmonetizer.com,GoGetSSL GoGetSSL RSA DV SSL CA 2,unknown,,TLSv1.3,True
+tremorhub.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+trendmicro.com,Sectigo Limited Sectigo Public Server Authentication CA OV E36,third,,TLSv1.3,True
+tribalfusion.com,"GoDaddy.com, Inc. Go Daddy Secure Certificate Authority - G2",unknown,,TLSv1.3,True
+trip.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,False,TLSv1.2,True
+truecaller.com,Amazon Amazon RSA 2048 M04,third,False,TLSv1.2,True
+trustarc.com,Google Trust Services WE1,third,True,TLSv1.3,True
+truste.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+trustedstack.com,Google Trust Services WE1,third,,TLSv1.3,True
+trustpilot.com,Amazon Amazon RSA 2048 M01,third,False,TLSv1.2,True
+tsyndicate.com,Let's Encrypt YE2,third,,TLSv1.3,True
+ttdns2.com,unknown,unknown,,unknown,False
+ttlivecdn.com,infrastructure,infrastructure,,unknown,False
+ttvnw.net,unknown,unknown,,unknown,False
+ttwstatic.com,unknown,unknown,,unknown,False
+tubi.io,unknown,unknown,,unknown,False
+tumblr.com,Let's Encrypt YE2,third,,TLSv1.3,True
+turn.com,unknown,unknown,,unknown,False
+twc.com,GlobalSign nv-sa GlobalSign ECC OV SSL CA 2018,third,,TLSv1.3,True
+twilio.com,Amazon Amazon RSA 2048 M01,third,False,TLSv1.2,True
+twimg.com,unknown,unknown,,unknown,False
+twitch.tv,GlobalSign nv-sa GlobalSign Atlas R3 DV TLS CA 2026 Q2,third,True,TLSv1.3,True
+twitter.com,Let's Encrypt YR1,third,,TLSv1.3,True
+typekit.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+typekit.net,unknown,unknown,,unknown,False
+uber.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+ubi.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+ubnt.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+ubuntu.com,Let's Encrypt YR1,third,,TLSv1.3,True
+ueiwsp.com,"GoDaddy.com, Inc. Go Daddy Secure Certificate Authority - G2",unknown,True,TLSv1.3,True
+ui.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+uisp.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+umeng.com,GlobalSign nv-sa GlobalSign GCC R3 OV TLS CA 2024,third,,TLSv1.2,True
+unifi-ai.com,Let's Encrypt YR1,third,,TLSv1.3,True
+unisoc.com,GlobalSign nv-sa GlobalSign GCC R3 DV TLS CA 2020,third,,TLSv1.2,True
+unity3d.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.2,True
+unpkg.com,Google Trust Services WE1,third,,TLSv1.3,True
+unrulymedia.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+uol.com.br,DigiCert Inc RapidSSL TLS RSA CA G1,third,False,TLSv1.2,True
+urbanairship.com,Google Trust Services WR3,third,,TLSv1.3,True
+ureca-lab.com,unknown,unknown,,unknown,False
+useinsider.com,Google Trust Services WE1,third,True,TLSv1.3,True
+userapi.com,Hellenic Academic and Research Institutions CA HARICA DV TLS RSA,unknown,,TLSv1.3,True
+usercentrics.eu,Google Trust Services WR3,third,,TLSv1.3,True
+usercontent.goog,Google Trust Services WE2,third,,TLSv1.3,True
+v-videoapp.com,Google Trust Services WR1,third,False,TLSv1.2,True
+verisign.com,DigiCert Inc DigiCert EV RSA CA G2,third,,TLSv1.3,True
+verkada.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+via.google,Google Trust Services WR2,third,,TLSv1.3,True
+viber.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+vidaahub.com,unknown,unknown,,unknown,False
+vimeo.com,Google Trust Services WE1,third,,TLSv1.3,True
+virtualearth.net,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 16,unknown,True,TLSv1.3,True
+visualstudio.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 02,unknown,True,TLSv1.3,True
+visualwebsiteoptimizer.com,Let's Encrypt YR1,third,,TLSv1.3,True
+vivo.com.cn,"DigiCert, Inc. DigiCert Secure Site OV G2 TLS CN RSA4096 SHA256 2022 CA1",third,False,TLSv1.2,True
+vivoglobal.com,"DigiCert, Inc. DigiCert Secure Site OV G2 TLS CN RSA4096 SHA256 2022 CA1",third,False,TLSv1.2,True
+vk-analytics.ru,unknown,unknown,,unknown,False
+vk.com,Google Trust Services WR1,third,,TLSv1.3,True
+vk.ru,Let's Encrypt YR2,third,,TLSv1.3,True
+vkuserphoto.ru,Hellenic Academic and Research Institutions CA HARICA DV TLS RSA,unknown,,TLSv1.3,True
+volces.com,unknown,unknown,,unknown,False
+volcfcdndvs.com,infrastructure,infrastructure,,unknown,False
+vscode-cdn.net,infrastructure,infrastructure,,unknown,False
+vungle.com,Let's Encrypt YE1,third,,TLSv1.3,True
+w3.org,Google Trust Services WE1,third,,TLSv1.3,True
+wac-msedge.net,unknown,unknown,,unknown,False
+walmart.com,GlobalSign nv-sa GlobalSign ECC OV SSL CA 2018,third,True,TLSv1.3,True
+walmartimages.com,unknown,unknown,,unknown,False
+wattpad.com,Amazon Amazon RSA 2048 M02,third,,TLSv1.3,True
+wb.ru,Let's Encrypt YE2,third,,TLSv1.3,True
+wbbasket.ru,unknown,unknown,,unknown,False
+wbx2.com,unknown,unknown,,unknown,False
+weather.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,True,TLSv1.3,True
+webex.com,IdenTrust HydrantID Server CA O1,unknown,True,TLSv1.2,True
+wechat.com,"DigiCert, Inc. DigiCert Secure Site OV G2 TLS CN RSA4096 SHA256 2022 CA1",third,,TLSv1.3,True
+weplayapp.com,GlobalSign nv-sa GlobalSign GCC R3 DV TLS CA 2020,third,,TLSv1.3,True
+whatsapp.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+whatsapp.net,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+wikimedia.org,Let's Encrypt YE1,third,,TLSv1.3,True
+wikipedia.org,Let's Encrypt YE1,third,,TLSv1.3,True
+wildberries.ru,Let's Encrypt YR2,third,,TLSv1.3,True
+windows.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 04,private,,TLSv1.3,True
+windows.net,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 16,private,,TLSv1.3,True
+windowsupdate.com,unknown,unknown,,unknown,False
+withgoogle.com,Google Trust Services WE2,private,,TLSv1.3,True
+wordpress.com,Let's Encrypt YE2,third,,TLSv1.3,True
+workers.dev,Google Trust Services WE1,third,,TLSv1.3,True
+wp.com,Let's Encrypt YE1,third,,TLSv1.3,True
+wps.cn,"DigiCert, Inc. GeoTrust G2 TLS CN RSA4096 SHA256 2022 CA1",third,,TLSv1.3,True
+wps.com,"DigiCert, Inc. GeoTrust G2 TLS CN RSA4096 SHA256 2022 CA1",third,False,TLSv1.2,True
+wsdvs.com,unknown,unknown,,unknown,False
+wshareit.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,,TLSv1.3,True
+wyzecam.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+x.com,Let's Encrypt E7,third,,TLSv1.3,True
+xboxlive.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 16,unknown,,TLSv1.3,True
+xboxservices.com,unknown,unknown,,unknown,False
+xhamster.com,Let's Encrypt E8,third,,TLSv1.3,True
+xhcdn.com,infrastructure,infrastructure,,unknown,False
+xhscdn.com,infrastructure,infrastructure,,unknown,False
+xiaohongshu.com,"DNSPod, Inc. DNSPod TLS RSA CA 2025",unknown,,TLSv1.3,True
+xiaomi.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,True,TLSv1.2,True
+xiaomi.net,DigiCert Inc RapidSSL TLS RSA CA G1,third,True,TLSv1.2,True
+xnxx-cdn.com,infrastructure,infrastructure,,unknown,False
+xvideos-cdn.com,infrastructure,infrastructure,,unknown,False
+xxpkg.com,Kuaishou cert.kuaishou.com,unknown,False,TLSv1.2,True
+ya.ru,GlobalSign nv-sa GlobalSign ECC OV SSL CA 2018,third,,TLSv1.3,True
+yahoo.co.jp,"Cybertrust Japan Co., Ltd. Cybertrust Japan SureServer CA G4",unknown,True,TLSv1.3,True
+yahoo.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+yahoodns.net,unknown,unknown,,unknown,False
+yammer.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 10,unknown,True,TLSv1.3,True
+yandex.com,GlobalSign nv-sa GlobalSign ECC OV SSL CA 2018,third,,TLSv1.3,True
+yandex.net,GlobalSign nv-sa GlobalSign ECC OV SSL CA 2018,third,,TLSv1.3,True
+yandex.ru,GlobalSign nv-sa GlobalSign ECC OV SSL CA 2018,third,,TLSv1.3,True
+yandexcloud.net,unknown,unknown,,unknown,False
+yastatic.net,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.3,True
+yellowblue.io,unknown,unknown,,unknown,False
+yieldmo.com,Let's Encrypt YR2,third,,TLSv1.3,True
+yimg.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+yimg.jp,unknown,unknown,,unknown,False
+yotpo.com,Amazon Amazon RSA 2048 M04,third,False,TLSv1.2,True
+youtube-nocookie.com,Google Trust Services WR2,private,,TLSv1.3,True
+youtube.com,Google Trust Services WE2,private,,TLSv1.3,True
+ys7.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.3,True
+ytimg.com,unknown,unknown,,unknown,False
+yximgs.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,,TLSv1.2,True
+zdassets.com,unknown,unknown,,unknown,False
+zefrdata.com,Google Trust Services WE1,third,,TLSv1.3,True
+zendesk.com,Let's Encrypt YE1,third,,TLSv1.3,True
+zijieapi.com,unknown,unknown,,unknown,False
+zoho.com,Sectigo Limited Sectigo Public Server Authentication CA DV R36,third,,TLSv1.3,True
+zoom.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.2,True
+zoom.us,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+zpath.net,unknown,unknown,,unknown,False
+zscaler.net,unknown,unknown,,unknown,False

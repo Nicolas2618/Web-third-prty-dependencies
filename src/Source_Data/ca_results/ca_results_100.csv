@@ -1,0 +1,101 @@
+domain,CA Name,type,Stapled,SSL or TLS,HTTPS Enabled
+googleapis.com,Google Trust Services WE2,private,,TLSv1.3,True
+microsoft.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 04,private,True,TLSv1.3,True
+cloudflare.com,Google Trust Services WE1,third,,TLSv1.3,True
+gstatic.com,Google Trust Services WE2,private,,TLSv1.3,True
+apple.com,Apple Inc. Apple Public EV Server ECC CA 1 - G1,private,True,TLSv1.3,True
+google.com,Google Trust Services WE2,private,,TLSv1.3,True
+facebook.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+amazonaws.com,Amazon Amazon RSA 2048 M04,private,,TLSv1.3,True
+googlevideo.com,Google Trust Services WR2,private,,TLSv1.3,True
+fbcdn.net,infrastructure,infrastructure,,unknown,False
+amazon.com,DigiCert Inc GeoTrust TLS RSA CA G1,third,True,TLSv1.3,True
+youtube.com,Google Trust Services WE2,private,,TLSv1.3,True
+instagram.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+whatsapp.net,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+live.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 16,private,True,TLSv1.3,True
+doubleclick.net,Google Trust Services WE2,private,,TLSv1.3,True
+bing.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 02,private,True,TLSv1.3,True
+apple-dns.net,infrastructure,infrastructure,,unknown,False
+netflix.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,,TLSv1.3,True
+akadns.net,infrastructure,infrastructure,,unknown,False
+ntp.org,Let's Encrypt YR2,third,False,TLSv1.2,True
+googleusercontent.com,Google Trust Services WE2,private,,TLSv1.3,True
+icloud.com,Apple Inc. Apple Public Server ECC CA 1 - G1,private,True,TLSv1.3,True
+googlesyndication.com,Google Trust Services WE2,private,,TLSv1.3,True
+cdninstagram.com,infrastructure,infrastructure,,unknown,False
+chatgpt.com,Google Trust Services WE1,third,,TLSv1.3,True
+cloudflare-dns.com,SSL Corp SSL.com SSL Intermediate CA ECC R2,third,True,TLSv1.3,True
+akamai.net,infrastructure,infrastructure,,unknown,False
+aaplimg.com,unknown,unknown,,unknown,False
+tiktokcdn.com,infrastructure,infrastructure,,unknown,False
+tiktokv.com,DigiCert Inc RapidSSL TLS ECC CA G1,third,,TLSv1.3,True
+cloudfront.net,infrastructure,infrastructure,,unknown,False
+ui.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+ytimg.com,unknown,unknown,,unknown,False
+akamaiedge.net,infrastructure,infrastructure,,unknown,False
+edgcdn.net,infrastructure,infrastructure,,unknown,False
+yahoo.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+gvt2.com,unknown,unknown,,unknown,False
+spotify.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+fastly.net,Certainly Certainly Intermediate R1,unknown,True,TLSv1.2,True
+roblox.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,True,TLSv1.3,True
+baidu.com,GlobalSign nv-sa GlobalSign RSA OV SSL CA 2018,third,False,TLSv1.2,True
+office.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 10,private,True,TLSv1.3,True
+sentry.io,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+wikipedia.org,Let's Encrypt YE1,third,,TLSv1.3,True
+criteo.com,Let's Encrypt YR2,third,,TLSv1.3,True
+app-analytics-services.com,Google Trust Services WE2,third,,TLSv1.3,True
+app-measurement.com,Google Trust Services WE2,private,,TLSv1.3,True
+gvt1.com,unknown,unknown,,unknown,False
+prodregistryv2.org,Let's Encrypt YR1,third,,TLSv1.3,True
+steamserver.net,unknown,unknown,,unknown,False
+dns.google,Google Trust Services WE2,private,,TLSv1.3,True
+one.one,Let's Encrypt YR2,third,,TLSv1.3,True
+google-analytics.com,Google Trust Services WE2,private,,TLSv1.3,True
+msftncsi.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,,TLSv1.3,True
+snapchat.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+applovin.com,Google Trust Services WR3,third,,TLSv1.3,True
+3gppnetwork.org,unknown,unknown,,unknown,False
+appsflyersdk.com,Amazon Amazon RSA 2048 M02,third,,TLSv1.3,True
+trafficmanager.net,unknown,unknown,,unknown,False
+azure.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 04,private,,TLSv1.3,True
+whatsapp.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,,TLSv1.3,True
+googletagmanager.com,Google Trust Services WE2,private,,TLSv1.3,True
+windows.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 04,private,,TLSv1.3,True
+amazon-adsystem.com,Amazon Amazon RSA 2048 M01,private,,TLSv1.3,True
+msn.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 02,private,True,TLSv1.3,True
+googleadservices.com,Google Trust Services WE2,private,,TLSv1.3,True
+ggpht.com,unknown,unknown,,unknown,False
+oxylabs.io,Google Trust Services WE1,third,,TLSv1.3,True
+amazon.dev,unknown,unknown,,unknown,False
+linkedin.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+windows.net,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 16,private,,TLSv1.3,True
+unity3d.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.2,True
+microsoftonline.com,unknown,unknown,,unknown,False
+a2z.com,unknown,unknown,,unknown,False
+adtrafficquality.google,Google Trust Services WE2,private,,TLSv1.3,True
+xiaomi.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,True,TLSv1.2,True
+playstation.net,unknown,unknown,,unknown,False
+skype.com,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 02,private,,TLSv1.3,True
+rubiconproject.com,Amazon Amazon RSA 2048 M01,third,,TLSv1.3,True
+capcutapi.com,unknown,unknown,,unknown,False
+vungle.com,Let's Encrypt YE1,third,,TLSv1.3,True
+msftconnecttest.com,DigiCert Inc DigiCert Global G3 TLS ECC SHA384 2020 CA1,third,,TLSv1.3,True
+taboola.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+windowsupdate.com,unknown,unknown,,unknown,False
+digicert.com,DigiCert Inc DigiCert EV RSA CA G2,third,,TLSv1.3,True
+gmail.com,Google Trust Services WE2,private,,TLSv1.3,True
+cloud.microsoft,Microsoft Corporation Microsoft TLS G2 RSA CA OCSP 10,private,,TLSv1.3,True
+qq.com,"DigiCert, Inc. DigiCert Secure Site OV G2 TLS CN RSA4096 SHA256 2022 CA1",third,False,TLSv1.2,True
+tiktok.com,DigiCert Inc RapidSSL TLS ECC CA G1,third,,TLSv1.3,True
+aws.dev,unknown,unknown,,unknown,False
+miui.com,DigiCert Inc RapidSSL TLS RSA CA G1,third,False,TLSv1.2,True
+cdn-apple.com,infrastructure,infrastructure,,unknown,False
+pubmatic.com,Amazon Amazon RSA 2048 M04,third,,TLSv1.3,True
+adsrvr.org,GlobalSign nv-sa GlobalSign GCC R3 DV TLS CA 2020,third,,TLSv1.3,True
+avast.com,Sectigo Limited Sectigo Public Server Authentication CA OV R36,third,True,TLSv1.3,True
+avsxappcaptiveportal.com,unknown,unknown,,unknown,False
+android.com,Google Trust Services WE2,private,,TLSv1.3,True
+reddit.com,DigiCert Inc DigiCert Global G2 TLS RSA SHA256 2020 CA1,third,True,TLSv1.3,True
+chirpbooks.com,Amazon Amazon RSA 2048 M04,private,,TLSv1.3,True

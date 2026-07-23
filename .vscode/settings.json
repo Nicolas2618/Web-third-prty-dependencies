@@ -1,5 +1,5 @@
 {
-    "python.defaultInterpreterPath": ".venv\\Scripts\\python.exe",
+    "python.defaultInterpreterPath": "C:/ProgramData/anaconda3/python.exe",
     "python.testing.unittestArgs": [
         "-v",
         "-s",
@@ -9,6 +9,7 @@
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true,
-    "python-envs.defaultEnvManager": "ms-python.python:venv",
-    "python.REPL.enableREPLSmartSend": false
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python.REPL.enableREPLSmartSend": false,
+    "python-envs.defaultPackageManager": "ms-python.python:conda"
 }

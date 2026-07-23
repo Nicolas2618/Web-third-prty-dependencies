@@ -7,7 +7,6 @@ import aiodns
 import asyncio
 import subprocess
 import aiohttp
-import aiodns
 import ssl
 import socket
 import json
@@ -20,12 +19,8 @@ from dataclasses import dataclass, field
 from typing import Optional
 import tldextract
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
-import circlify
 import numpy as np
 import pandas as pd
-from urllib.parse import urlparse
-from playwright.sync_api import sync_playwright
 #endregion
 
 # Fix for Windows ProactorEventLoop "ConnectionResetError"
@@ -52,14 +47,36 @@ class CDNResult:
 #---------------------------------------------------------------------------------------------------------------------------------------------------#
 # Async Helpers
 #---------------------------------------------------------------------------------------------------------------------------------------------------#
+async def _query_record(resolver, domain: str, record_type: str):
+    if hasattr(resolver, "query_dns"):
+        return await resolver.query_dns(domain, record_type)
+    if hasattr(resolver, "query"):
+        return await resolver.query(domain, record_type)
+    raise AttributeError("DNS resolver does not support query_dns() or query()")
+
+
+def _normalise_answer(result) -> list:
+    if result is None:
+        return []
+    if hasattr(result, "answer"):
+        return list(result.answer or [])
+    if isinstance(result, list):
+        return result
+    return [result]
+
+
 async def get_soa_async(resolver: aiodns.DNSResolver, domain: str) -> dict:
     try:
-        res = await resolver.query_dns(domain, 'SOA')
-        if not res.answer: return None
-        data = res.answer [0].data
+        res = await _query_record(resolver, domain, 'SOA')
+        records = _normalise_answer(res)
+        if not records:
+            return None
+        data = getattr(records[0], "data", None)
+        if data is None:
+            return None
         return {
-            "mname": (data.mname or "").rstrip('.').lower(),
-            "rname": (data.rname or "").rstrip('.').lower(),
+            "mname": (getattr(data, "mname", None) or "").rstrip('.').lower(),
+            "rname": (getattr(data, "rname", None) or "").rstrip('.').lower(),
         }
     except Exception:
         return None
@@ -69,9 +86,16 @@ async def get_cnames_async(resolver: aiodns.DNSResolver, domain: str) -> list[st
     current = domain
     try:
         for _ in range(10):
-            res = await resolver.query_dns(current, 'CNAME')
-            if not res.answer: break
-            cname = res.answer[0].data.cname.rstrip('.')
+            res = await _query_record(resolver, current, 'CNAME')
+            records = _normalise_answer(res)
+            if not records:
+                break
+            record = records[0]
+            data = getattr(record, "data", None)
+            cname = getattr(data, "cname", None) or getattr(record, "cname", None)
+            if not cname:
+                break
+            cname = cname.rstrip('.')
             cnames.append(cname)
             current = cname
     except Exception:
@@ -80,38 +104,38 @@ async def get_cnames_async(resolver: aiodns.DNSResolver, domain: str) -> list[st
 
 async def resolve_a_async(resolver: aiodns.DNSResolver, domain: str) -> list[str]:
     try:
-        res = await resolver.query_dns(domain, 'A')
-        # Only pull 'address' if the record has that attribute (skips CNAMEs in the answer)
+        res = await _query_record(resolver, domain, 'A')
+        records = _normalise_answer(res)
         return [
-            r.data.address 
-            for r in res.answer 
-            if hasattr(r.data, 'address')
+            getattr(getattr(r, "data", None), "address", None) or getattr(r, "host", None)
+            for r in records
+            if getattr(getattr(r, "data", None), "address", None) or getattr(r, "host", None)
         ]
     except Exception as e:
-        # Suppress common "No Data" errors to keep terminal clean
         if "returned answer with no data" not in str(e) and "not found" not in str(e):
             print(f"[DNS ERROR] {domain}: {e}")
         return []
 
 async def resolve_aaaa_async(resolver: aiodns.DNSResolver, domain: str) -> list[str]:
     try:
-        res = await resolver.query_dns(domain, 'AAAA')
+        res = await _query_record(resolver, domain, 'AAAA')
+        records = _normalise_answer(res)
         return [
-            r.data.address 
-            for r in res.answer 
-            if hasattr(r.data, 'address')
+            getattr(getattr(r, "data", None), "address", None) or getattr(r, "host", None)
+            for r in records
+            if getattr(getattr(r, "data", None), "address", None) or getattr(r, "host", None)
         ]
     except Exception:
         return []
 
 async def get_ns_async(resolver: aiodns.DNSResolver, domain: str) -> list[str]:
     try:
-        res = await resolver.query_dns(domain, "NS")
-        # NS records use the 'host' attribute
+        res = await _query_record(resolver, domain, "NS")
+        records = _normalise_answer(res)
         return [
-            r.data.host.rstrip(".").lower() 
-            for r in res.answer 
-            if hasattr(r.data, 'host')
+            (getattr(getattr(r, "data", None), "host", None) or getattr(r, "host", None) or "").rstrip(".").lower()
+            for r in records
+            if (getattr(getattr(r, "data", None), "host", None) or getattr(r, "host", None))
         ]
     except Exception:
         return []
@@ -119,10 +143,13 @@ async def get_ns_async(resolver: aiodns.DNSResolver, domain: str) -> list[str]:
 async def get_ptr_async(resolver, ip):
     try:
         reversal = ".".join(reversed(ip.split("."))) + ".in-addr.arpa"
-        res = await resolver.query_dns(reversal, 'PTR')
-        if res.answer and hasattr(res.answer[0].data, 'ptrname'):
-            return res.answer[0].data.ptrname.lower()
-        return None
+        res = await _query_record(resolver, reversal, 'PTR')
+        records = _normalise_answer(res)
+        if not records:
+            return None
+        data = getattr(records[0], "data", None)
+        ptrname = getattr(data, "ptrname", None) or getattr(records[0], "ptrname", None)
+        return ptrname.lower() if ptrname else None
     except Exception:
         return None
     
@@ -178,7 +205,6 @@ async def fetch_headers_async(
     domain: str, 
     timeout: int = 10
 ) -> dict:
-    """Uses GET instead of HEAD to ensure CDN headers are triggered"""
     for scheme in ["https", "http"]:
         url = f"{scheme}://{domain}"
         try:
@@ -710,15 +736,13 @@ async def classify_cdn_dynamic(
     if parent_identity in w_tld:
         return "private"
     
-    # 1b. Reverse Pattern Match (e.g., is 'facebook.com' a known domain for 'meta'?)
+    # 2. Reverse Pattern Match (e.g., is 'facebook.com' a known domain for 'meta'?)
     if parent_identity in CDN_CNAME_PATTERNS:
         for pat in CDN_CNAME_PATTERNS[parent_identity]:
             if pat in w_tld or w_tld in pat:
                 return "private"
 
-    # 2. Ownership Verification (The "Managed DNS" Fix)
-    # We only mark as 'private' if the Website's RDAP Organization explicitly matches the CDN owner.
-    # We NO LONGER check NS or SOA here, as those often indicate third-party usage.
+    # 3. Ownership Verification
     if website_org:
         org_text = website_org.lower()
         # Check against known official owner names
@@ -731,12 +755,12 @@ async def classify_cdn_dynamic(
         if parent_identity in org_text:
             return "private"
     
-    # 3. CNAME Suffix Match (Self-hosting check)
+    # 4. CNAME Suffix Match (Self-hosting check)
     for cname in cnames:
         if get_tld(cname).lower() == w_tld:
             return "private"
 
-    # 4. SAN Match
+    # 5. SAN Match
     if w_tld in san_tlds:
         return "private"
 
@@ -777,55 +801,34 @@ async def process_domain_async(session, resolver, domain, cdn_ip_ranges):
 
         detected_cdns = {}
         
-        # --- NEW STEP: SSL ISSUER CHECK ---
-        if ca_name:
-            ca_id = identity_from_text(ca_name)
-            if ca_id:
-                detected_cdns[ca_id] = await classify_cdn_dynamic(
-                    ca_id, domain, cnames, san_tlds, resolver, session, 
-                    website_soa=soa, website_org=website_org, website_ns=ns_records
-                )
-                step_id += "step .1 (SSL), "
-        
-        # --- STEP 0: TRUE OWNERSHIP CHECK (TLD & Domain Name) ---
+        # --- STEP 1: TRUE OWNERSHIP CHECK (TLD & Domain Name) ---
         # Only mark as private here if the domain itself is a known infrastructure domain.
         infra_tlds = {".google": "google", ".apple": "apple", ".microsoft": "microsoft", ".netflix": "netflix"}
         
         for tld, identity in infra_tlds.items():
             if domain.lower().endswith(tld):
                 detected_cdns[identity] = "private"
-                step_id += "step 0, "
+                step_id += "step 1, "
                 break
         
-        # Check if the domain is a known CDN-owned domain (e.g., fbcdn.net)
+        # --- STEP 2: Check if the domain is a known CDN-owned domain (e.g., fbcdn.net) ---
         if not detected_cdns:
             for cdn_id, patterns in CDN_CNAME_PATTERNS.items():
                 if any(pat == base_domain for pat in patterns):
                     detected_cdns[cdn_id] = "private"
-                    step_id += "step 0, "
+                    step_id += "step 2, "
                     break
 
-        # --- STEP 0.25: DOMAIN KEYWORD CLASSIFICATION ---
-        # Instead of forcing 'private', let the classifier decide.
+        # --- STEP 3: DOMAIN KEYWORD CLASSIFICATION ---
         domain_id = identity_from_text(domain)
         if domain_id and domain_id not in detected_cdns:
             detected_cdns[domain_id] = await classify_cdn_dynamic(
                 domain_id, domain, cnames, san_tlds, resolver, session, 
                 website_soa=soa, website_org=website_org, website_ns=ns_records
             )
-            step_id += "step .25, "
+            step_id += "step 3, "
 
-        # --- STEP 0.5: RDAP ORG CHECK ---
-        if website_org:
-            org_id = identity_from_text(website_org)
-            if org_id and org_id not in detected_cdns:
-                detected_cdns[org_id] = await classify_cdn_dynamic(
-                    org_id, domain, cnames, san_tlds, resolver, session, 
-                    website_soa=soa, website_org=website_org, website_ns=ns_records
-                )
-                step_id += "step .5, "
-
-        # --- STEP 0.75: NAMESERVER & SOA PATTERN CHECK ---
+        # --- STEP 4: NAMESERVER PATTERN CHECK ---
         # Check NS records for specific CDN patterns
         ns_cdn = detect_cdn_from_ns(ns_records)
         if ns_cdn and ns_cdn not in detected_cdns:
@@ -833,8 +836,9 @@ async def process_domain_async(session, resolver, domain, cdn_ip_ranges):
                 ns_cdn, domain, cnames, san_tlds, resolver, session, 
                 website_soa=soa, website_org=website_org, website_ns=ns_records
             )
-            step_id += "step .75 (NS), "
+            step_id += "step 4 (NS), "
 
+        # --- STEP 5: SOA PATTERN CHECK ---
         # Check SOA Mname (Primary Master) for CDN identity
         if soa and soa.get("mname"):
             soa_id = identity_from_text(soa["mname"])
@@ -843,9 +847,9 @@ async def process_domain_async(session, resolver, domain, cdn_ip_ranges):
                     soa_id, domain, cnames, san_tlds, resolver, session, 
                     website_soa=soa, website_org=website_org, website_ns=ns_records
                 )
-                step_id += "step .8 (SOA), "
+                step_id += "step 5 (SOA), "
 
-        # --- RULES 1-3: CNAME, HEADERS, IP RANGES ---
+        # --- RULES 6: CNAME ---
         # In process_domain_async, replace your Step 1 loop with this:
         for cname in cnames:
             cname_clean = cname.rstrip(".")  # DNS trailing dot fix
@@ -855,25 +859,27 @@ async def process_domain_async(session, resolver, domain, cdn_ip_ranges):
                     cdn, domain, cnames, san_tlds, resolver, session,
                     website_soa=soa, website_org=website_org, website_ns=ns_records
                 )
-                step_id += "step 1, "
+                step_id += "step 6, "
 
+        # --- RULES 7: HEADERS ---
         cdn = detect_cdn_from_headers(headers)
         if cdn and cdn not in detected_cdns:
             detected_cdns[cdn] = await classify_cdn_dynamic(
                 cdn, domain, cnames, san_tlds, resolver, session, 
                 website_soa=soa, website_org=website_org, website_ns=ns_records
             )
-            step_id += "step 2, "
+            step_id += "step 7, "
 
+        # --- RULES 8: IP RANGES ---
         cdn = detect_cdn_from_ip(ips, cdn_ip_ranges)
         if cdn and cdn not in detected_cdns:
             detected_cdns[cdn] = await classify_cdn_dynamic(
                 cdn, domain, cnames, san_tlds, resolver, session, 
                 website_soa=soa, website_org=website_org, website_ns=ns_records
             )
-            step_id += "step 3, "
+            step_id += "step 8, "
 
-        # --- STEP 4: ASN & PTR ---
+        # --- STEP 9: ASN & PTR ---
         if ips:
             ips_to_check = ips if not detected_cdns else ips[:3]
             for ip in ips_to_check:
@@ -887,7 +893,7 @@ async def process_domain_async(session, resolver, domain, cdn_ip_ranges):
                         infra_identity, domain, cnames, san_tlds, resolver, session, 
                         website_soa=soa, website_org=website_org, website_ns=ns_records
                     )
-                    step_id += "step 4, "
+                    step_id += "step 9, "
                     break 
 
         # --- FINAL RESULT CALCULATION ---
@@ -915,8 +921,8 @@ async def process_domain_async(session, resolver, domain, cdn_ip_ranges):
 # Main
 #---------------------------------------------------------------------------------------------------------------------------------------------------#
 async def main_async():
-    input_path  = "src/Source_Data/top-100-domains.csv" 
-    output_path = "src/Source_Data/cdn_results_100.csv"
+    input_path  = "src/Source_Data/top_domains/top-100000-domains.csv" 
+    output_path = "src/Source_Data/cdn_results/cdn_results_100000.csv"
 
     with open(input_path, "r", newline="") as f:
         domains = [row["domain"].strip() for row in csv.DictReader(f)]
@@ -1082,10 +1088,10 @@ def four_corners_graph():
 
 def four_bar_cdn():
     dfs = [
-        pd.read_csv("src/Source_Data/cdn_results_100.csv"),
-        pd.read_csv("src/Source_Data/cdn_results_1000.csv"),
-        pd.read_csv("src/Source_Data/cdn_results_10000.csv"),
-        pd.read_csv("src/Source_Data/cdn_results_10000.csv")
+        pd.read_csv("src/Source_Data/cdn_results/cdn_results_100.csv"),
+        pd.read_csv("src/Source_Data/cdn_results/cdn_results_1000.csv"),
+        pd.read_csv("src/Source_Data/cdn_results/cdn_results_10000.csv"),
+        pd.read_csv("src/Source_Data/cdn_results/cdn_results_100000.csv")
     ]
 
     ranks = ["100", "1000", "10000", "100000"]
