@@ -213,7 +213,6 @@ def dig_cname(domain: str, timeout: int = 5) -> Optional[str]:
         return None
 #endregion
 
-
 #region CA Helpers
 #########################################################################################################################################
 #CA Helpers
@@ -430,10 +429,6 @@ def is_public_ca_name(ca_name: str) -> bool:
     return any(keyword in name for keyword in PUBLIC_CA_KEYWORDS)
 #endregion
 
-
-
-
-
 #region Classify CA
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #Classify_CA
@@ -517,10 +512,6 @@ def classify_ca(
     return "unknown"
  
 #endregion
-
-
-
-
 
 #region Measure CA
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
@@ -607,12 +598,12 @@ def main():
                 "CA Name":     ca_result.ca_name,
                 "type":        ca_result.ca_type,
                 "Stapled": ca_result.ocsp_stapling,
-                "SSL or TLS": ca_result.ssl_or_tls,
+                "TLS": ca_result.ssl_or_tls,
                 "HTTPS Enabled": ca_result.https_enabled,
             })
             
     with open(output_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["domain", "CA Name", "type", "Stapled", "SSL or TLS", "HTTPS Enabled"])
+        writer = csv.DictWriter(f, fieldnames=["domain", "CA Name", "type", "Stapled", "TLS", "HTTPS Enabled"])
         writer.writeheader()
         writer.writerows(rows)
 
@@ -620,182 +611,11 @@ def main():
 #endregion
 
 
-
-
-
-#region Data Visualization
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
-#Data Visualization
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
-def data_vis(input_file):
-    df = pa.read_csv(input_file)
-
-    # # ----- Type pie -----
-    # plt.figure(figsize=(8, 8))
-
-    # df["type"].value_counts().plot.pie(
-    #     autopct="%1.1f%%",
-    #     ylabel="",
-    #     fontsize = 22
-    # )
-
-    # plt.title("CA Type Distribution", fontsize=26)
-    # plt.show()
-
-    # # ----- CA Name pie -----
-    # ca_counts = (
-    # df["CA Name"]
-    # .fillna("Unknown")
-    # .replace("", "Unknown")
-    # .value_counts())
-
-    # top_n = 100
-
-    # if len(ca_counts) > top_n:
-    #     other = ca_counts.iloc[top_n:].sum()
-    #     ca_counts = pa.concat([
-    #         ca_counts.iloc[:top_n],
-    #         pa.Series({"Other": other})
-    #     ])
-
-    # plt.figure(figsize=(10, 10))
-
-    # ca_counts.plot.pie(
-    #     autopct="%1.1f%%",
-    #     ylabel=""
-    # )
-
-    # plt.title("Certificate Authority Distribution")
-    
-    # #Making a bar chart showing the exact counts of types
-    # plt.figure(figsize=(10, 6))
-    # df["type"].value_counts().plot(kind="bar")
-    # plt.title("CA Type Distribution")
-    # plt.xlabel("Type")
-    # plt.ylabel("Count")
-
-    # #Pie chart for TLS/SSL
-    # plt.figure(figsize=(8, 8))
-    # df["SSL or TLS"].value_counts().plot.pie(
-    #     autopct="%1.1f%%",
-    #     ylabel=""
-    # )
-    # plt.title("TLS/SSL Distribution")
-
-    # --- Proportional Area / Bubble Chart for CA Name ---
-    ca_counts = (
-        df["CA Name"]
-        .fillna("Unknown")
-        .replace("", "Unknown")
-        .value_counts()
-    )
-
-    # Split into top 5 and "Other"
-    top5 = ca_counts.head(5)
-    other_count = ca_counts.iloc[5:].sum()
-
-    # Combine into final series
-    if other_count > 0:
-        import pandas as pd
-        ca_counts = pd.concat([top5, pd.Series({"Other": other_count})])
-    else:
-        ca_counts = top5
-
-    labels = ca_counts.index.tolist()
-    values = ca_counts.values.tolist()
-
-    # circlify expects values sorted descending
-    sorted_pairs = sorted(zip(values, labels), reverse=True)
-    sorted_values, sorted_labels = zip(*sorted_pairs)
-
-    # Compute packed circle layout
-    circles = circlify.circlify(
-        list(sorted_values),
-        show_enclosure=False,
-        target_enclosure=circlify.Circle(x=0, y=0, r=1)  # adjust as needed
-    )
-
-    # Reverse so largest circle matches first label
-    circles = circles[::-1]
-
-    fig, ax = plt.subplots(figsize=(12, 12))
-    ax.set_aspect("equal")
-    ax.axis("off")
-    fig.patch.set_facecolor("#F5F6FA")
-    ax.set_facecolor("#F5F6FA")
-
-    DARK_BLUE = "#070BE7"
-    TEAL      = "#5FB6E9"
-    WHITE     = "#FFFFFF"
-
-    max_val = sorted_values[0]
-
-    for circle, label, value in zip(circles, sorted_labels, sorted_values):
-        x, y, r = circle.x, circle.y, circle.r
-        color = DARK_BLUE if value == max_val else TEAL
-
-        patch = plt.Circle((x, y), r, color=color, alpha=0.92, zorder=2)
-        ax.add_patch(patch)
-
-        # Label sizing based on circle radius
-        fontsize = 24
-
-        # Only label if circle is large enough
-        if r > 0.04:
-            # Truncate long names
-            short_label = label if len(label) <= 18 else label[:16] + "…"
-            ax.text(
-                x, y + r * 0.12,
-                short_label,
-                ha="center", va="center",
-                fontsize=fontsize,
-                color=WHITE,
-                fontweight="bold",
-                zorder=3,
-                wrap=False
-            )
-            ax.text(
-                x, y - r * 0.28,
-                f"{value:,}",
-                ha="center", va="center",
-                fontsize=fontsize * 0.85,
-                color=WHITE,
-                alpha=0.85,
-                zorder=3
-            )
-
-    # Fit axes tightly around packed circles
-    lim = max(abs(c.x) + c.r for c in circles) * 1.05
-    ax.set_xlim(-lim, lim)
-    ax.set_ylim(-lim, lim)
-
-    plt.title(
-        "Certificate Authority Distribution",
-        fontsize=26,
-        fontweight="bold",
-        pad=16,
-        color="#060E77"
-    )
-    plt.tight_layout()
-
-    plt.show()
-#endregion
-
-
-
-
-
 #region Starter
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #Starter
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 if __name__ == "__main__":
-    #full thing
-    output = main()
-    data_vis(output)
-    
-    # quick vis
-    #data_vis("src/Source_Data/ca_results_100.csv")
+    main()
 
 #endregion
-
