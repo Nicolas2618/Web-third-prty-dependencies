@@ -504,9 +504,11 @@ def classify_ca(
 #Measure CA
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
-def measure_ca(website: str) -> "CAResult":
+def measure_ca(website: str) -> CAResult:
     result = CAResult(website=website)
  
+    # Short-circuit for CDN/DNS infrastructure domains that don't serve
+    # a real HTTPS endpoint of their own (e.g. akadns.net, cloudfront.net).
     if is_infrastructure_domain(website):
         result.ca_name = "infrastructure"
         result.ca_type = "infrastructure"
@@ -522,18 +524,17 @@ def measure_ca(website: str) -> "CAResult":
     result.ca_url = ssl_info.get("ca_url") or ""
     result.ssl_or_tls = ssl_info.get("tls_or_ssl") or "unknown"
  
-    # Use the OCSP result already gathered inside get_ssl_info() instead
-    # of opening a second, redundant connection via check_ocsp_stapling().
-    # That second connection was the more likely one to get throttled/
-    # reset by the server, and its result was the one actually kept --
-    # this fixes that by keeping the first (already-successful) result.
-    result.ocsp_stapling = ssl_info.get("ocsp_stapled")
+    # Keep the real tri-state result (True / False / None) instead of
+    # coercing None into a falsy bool.
+    result.ocsp_stapling = check_ocsp_stapling(website)
  
     result.https_enabled = bool(ssl_info.get("tls_or_ssl"))
  
     san_tlds = ssl_info.get("san_tlds", [])
     result.ca_type = classify_ca(result.ca_url or "", website, san_tlds, result.ca_name)
  
+    # Critical dependency: third-party CA AND stapling CONFIRMED absent.
+    # (ocsp_stapling is None -> undetermined -> not a confirmed critical dependency)
     result.critical_dependency = (
         result.ca_type == "third" and result.ocsp_stapling is False
     )
