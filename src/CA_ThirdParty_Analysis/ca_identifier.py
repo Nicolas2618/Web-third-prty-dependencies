@@ -264,9 +264,12 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
       - CA issuer common name
       - OCSP URLs
       - CRL distribution points
-      - Whether OCSP stapling is active
-    Returns a dict; empty dict on failure.
+      - Whether OCSP stapling is active (tri-state: True/False/None)
+    Returns a dict; empty/default dict on failure.
     """
+    import ssl
+    import socket
+ 
     result = {
         "san_tlds": [],
         "ca_name": None,
@@ -274,7 +277,7 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
         "tls_or_ssl": None,
         "ocsp_urls": [],
         "crl_urls": [],
-        "ocsp_stapled": False,
+        "ocsp_stapled": None,  # None = undetermined, distinct from confirmed False
     }
     try:
         ctx = ssl.create_default_context()
@@ -282,14 +285,13 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
         ctx.verify_mode = ssl.CERT_NONE
         with socket.create_connection((domain, 443), timeout=timeout) as sock:
             with ctx.wrap_socket(sock, server_hostname=domain) as ssock:
-                #print(f"Negotiated Protocol Version: {ssock.version()}")
                 result["tls_or_ssl"] = f"{ssock.version()}"
                 cert_der = ssock.getpeercert(binary_form=True)
                 if cert_der is None:
                     return result
-
+ 
                 x509_cert = x509.load_der_x509_certificate(cert_der)
-
+ 
                 # SANs
                 try:
                     san_ext = x509_cert.extensions.get_extension_for_class(
@@ -301,27 +303,9 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
                     })
                 except x509.ExtensionNotFound:
                     result["san_tlds"] = []
-
+ 
                 # Issuer / CA name
                 issuer = x509_cert.issuer
-
-                # Prefer Organization Name (O), then Common Name (CN), then Organizational Unit (OU).
-                '''ca_name = None
-                for attribute in issuer:
-                    if attribute.oid == NameOID.ORGANIZATION_NAME and attribute.value:
-                        ca_name = attribute.value
-                        break
-                if not ca_name:
-                    for attribute in issuer:
-                        if attribute.oid == NameOID.COMMON_NAME and attribute.value:
-                            ca_name = attribute.value
-                            break
-                if not ca_name:
-                    for attribute in issuer:
-                        if attribute.oid == NameOID.ORGANIZATIONAL_UNIT_NAME and attribute.value:
-                            ca_name = attribute.value
-                            break'''
-
                 org_name = None
                 common_name = None
                 for attribute in issuer:
@@ -329,34 +313,33 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
                         org_name = attribute.value
                     if attribute.oid == NameOID.COMMON_NAME and attribute.value:
                         common_name = attribute.value
-
+ 
                 if org_name and common_name:
                     ca_name = f"{org_name} {common_name}"
                 elif org_name or common_name:
                     ca_name = org_name or common_name
                 else:
+                    ca_name = None
                     for attribute in issuer:
                         if attribute.oid == NameOID.ORGANIZATIONAL_UNIT_NAME and attribute.value:
                             ca_name = attribute.value
                             break
-
-                # Fallback: join any available issuer attribute values (previous behaviour).
+ 
                 if not ca_name:
                     parts = [attr.value for attr in issuer if getattr(attr, "value", None)]
                     ca_name = " | ".join(parts)
-
+ 
                 result["ca_name"] = ca_name
-
-                # Try to resolve the CA issuer location from the certificate's AIA extension.
+ 
                 if not result["ca_url"]:
                     result["ca_url"] = getCA_URL(domain)
-
-                # OCSP / CRL from caIssuers / OCSP extension (not always in stdlib cert dict)
-                # Use openssl CLI for richer extension data
+ 
     except Exception as e:
         print(f"[SSL ERROR] {domain}: {type(e).__name__}: {e}. Except 1")
-
-    # Supplement with openssl for OCSP stapling check
+ 
+    # OCSP stapling check + OCSP/CRL URL extraction via openssl CLI.
+    # This is the ONLY OCSP check now -- measure_ca() reads this result
+    # directly instead of making a second, redundant connection.
     try:
         cmd = [
             "openssl", "s_client", "-connect", f"{domain}:443",
@@ -366,11 +349,14 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
             cmd, input=b"", capture_output=True, timeout=timeout + 5
         )
         output = proc.stdout.decode(errors="replace") + proc.stderr.decode(errors="replace")
-
-        if "OCSP response:" in output and "no response sent" not in output.lower():
+ 
+        if "OCSP response: no response sent" in output.lower():
+            result["ocsp_stapled"] = False
+        elif "OCSP response:" in output:
             result["ocsp_stapled"] = True
-
-        # Extract OCSP URL
+        # else: leave as None -- handshake/openssl output was ambiguous,
+        # genuinely undetermined rather than a confirmed False.
+ 
         for line in output.splitlines():
             if "OCSP - URI:" in line:
                 url = line.split("URI:")[-1].strip()
@@ -381,9 +367,9 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
             if "CRL - URI:" in line or ("URI:" in line and ".crl" in line.lower()):
                 url = line.split("URI:")[-1].strip()
                 result["crl_urls"].append(url)
-    except Exception as e:
-        pass
-
+    except Exception:
+        pass  # ocsp_stapled stays None -- undetermined, not False
+ 
     return result
 
 def check_ocsp_stapling(hostname, port=443, timeout=10):
@@ -508,11 +494,9 @@ def classify_ca(
 #Measure CA
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
-def measure_ca(website: str) -> CAResult:
+def measure_ca(website: str) -> "CAResult":
     result = CAResult(website=website)
  
-    # Short-circuit for CDN/DNS infrastructure domains that don't serve
-    # a real HTTPS endpoint of their own (e.g. akadns.net, cloudfront.net).
     if is_infrastructure_domain(website):
         result.ca_name = "infrastructure"
         result.ca_type = "infrastructure"
@@ -528,17 +512,18 @@ def measure_ca(website: str) -> CAResult:
     result.ca_url = ssl_info.get("ca_url") or ""
     result.ssl_or_tls = ssl_info.get("tls_or_ssl") or "unknown"
  
-    # Keep the real tri-state result (True / False / None) instead of
-    # coercing None into a falsy bool.
-    result.ocsp_stapling = check_ocsp_stapling(website)
+    # Use the OCSP result already gathered inside get_ssl_info() instead
+    # of opening a second, redundant connection via check_ocsp_stapling().
+    # That second connection was the more likely one to get throttled/
+    # reset by the server, and its result was the one actually kept --
+    # this fixes that by keeping the first (already-successful) result.
+    result.ocsp_stapling = ssl_info.get("ocsp_stapled")
  
     result.https_enabled = bool(ssl_info.get("tls_or_ssl"))
  
     san_tlds = ssl_info.get("san_tlds", [])
     result.ca_type = classify_ca(result.ca_url or "", website, san_tlds, result.ca_name)
  
-    # Critical dependency: third-party CA AND stapling CONFIRMED absent.
-    # (ocsp_stapling is None -> undetermined -> not a confirmed critical dependency)
     result.critical_dependency = (
         result.ca_type == "third" and result.ocsp_stapling is False
     )
