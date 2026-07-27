@@ -732,14 +732,21 @@ async def classify_cdn_dynamic(
     # Resolve the "Parent Identity" (e.g., 'azure' -> 'microsoft')
     parent_identity = CDN_ALIASES.get(cdn_name_lower, cdn_name_lower)
     
-    # 1. Domain/TLD Match (e.g., 'google.com' or 'dns.google')
+    # 1. Self-Identity Match (The "YouTube/WhatsApp/Bing" Fix)
+    # Check if the website domain itself maps to the same identity as the CDN
+    website_identity = identity_from_text(website)
+    if website_identity == parent_identity:
+        return "private"
+
+    # 2. Domain/TLD String Match (e.g., 'google' in 'google.com')
     if parent_identity in w_tld:
         return "private"
     
-    # 2. Reverse Pattern Match (e.g., is 'facebook.com' a known domain for 'meta'?)
+    # 3. Reverse Pattern Match (Check if website TLD is a known infra domain for this CDN)
     if parent_identity in CDN_CNAME_PATTERNS:
         for pat in CDN_CNAME_PATTERNS[parent_identity]:
-            if pat in w_tld or w_tld in pat:
+            # Exact match on the registered domain is safer than 'in'
+            if pat == w_tld:
                 return "private"
 
     # 3. Ownership Verification
@@ -905,7 +912,7 @@ async def process_domain_async(session, resolver, domain, cdn_ip_ranges):
             cdns=list(detected_cdns.keys()),
             cdn_types=detected_cdns,
             uses_third_party=len(third_party_cdns) > 0,
-            critical_dependency=len(third_party_cdns) > 0 and len(private_cdns) == 0,
+            critical_dependency=len(third_party_cdns) == 1 and len(detected_cdns) == 1,
             redundant=len(detected_cdns) > 1,
             multiple_third = len(third_party_cdns) > 1,
             step_ids=step_id
@@ -1160,7 +1167,7 @@ def four_bar_cdn():
                     rotation=90)
 
     plt.tight_layout()
-    plt.savefig("src/Source_Data/cdn_datavis/cdn_four_bar.png", dpi=300)
+    plt.savefig("src/Source_Data/cdn_datavis/cdn_four_bar1.png", dpi=300)
     plt.show()
 #endregion
 
