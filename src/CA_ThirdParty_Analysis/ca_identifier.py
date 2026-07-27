@@ -386,42 +386,32 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
 
     return result
 
-def check_ocsp_stapling(hostname, port=443):
+def check_ocsp_stapling(hostname, port=443, timeout=10):
     """
-    Checks if a website supports OCSP Stapling using OpenSSL.
+    Checks if a website supports OCSP Stapling using OpenSSL safely.
     """
-    command = f"echo | openssl s_client -connect {hostname}:{port} -status"
-    
+    cmd = [
+        "openssl", "s_client", "-connect", f"{hostname}:{port}",
+        "-status", "-servername", hostname
+    ]
     try:
-        # Run the command and capture the output
+        # Pass "Q\n" to gracefully close the s_client interactive session
         result = subprocess.run(
-            command, 
-            shell=True, 
-            capture_output=True, 
-            text=True, 
-            timeout=10
+            cmd,
+            input=b"Q\n",
+            capture_output=True,
+            timeout=timeout
         )
-        
-        output = result.stdout + result.stderr
-        
-        # Look for the OCSP response block
-        if "OCSP response: no response sent" in output:
-            print(f"[{hostname}] OCSP Stapling is NOT enabled.")
+        output = result.stdout.decode(errors="replace") + result.stderr.decode(errors="replace")
+
+        if "OCSP response: no response sent" in output or "No OCSP response received" in output:
             return False
-        elif "OCSP Response Data:" in output:
-            print(f"[{hostname}] OCSP Stapling IS enabled!")
-            
-            # (Optional) Extract the validation status
-            match = re.search(r"Cert Status: (.+)", output)
-            if match:
-                print(f"Certificate Status: {match.group(1)}")
+        elif "OCSP Response Data:" in output or "OCSP response:" in output:
             return True
         else:
-            #print(f"[{hostname}] Could not determine OCSP status (Handshake may have failed).")
             return None
             
-    except subprocess.TimeoutExpired:
-        print("Command timed out.")
+    except (subprocess.TimeoutExpired, Exception):
         return None
 
 def is_public_ca_name(ca_name: str) -> bool:
@@ -574,8 +564,8 @@ def measure_ca(website: str) -> CAResult:
 #Main
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 def main():
-    input_path  = "src/Source_Data/top_10000_domains.csv"
-    output_path = "src/Source_Data/ca_results_10000.csv"
+    input_path  = "src/Source_Data/top_domains/top-100-domains.csv"
+    output_path = "src/Source_Data/ca_results/ca_results_100.csv"
  
     rows = []
  
