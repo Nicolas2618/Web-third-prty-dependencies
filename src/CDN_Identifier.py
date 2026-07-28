@@ -21,6 +21,7 @@ import tldextract
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import circlify
 #endregion
 
 # Fix for Windows ProactorEventLoop "ConnectionResetError"
@@ -990,6 +991,45 @@ async def main_async():
     print(f"\n✅ Complete — {len(results)} processed, {len(failed)} failed")
 #endregion
 
+def cleaning():
+    input_path = "src/Source_Data/cdn_results/cdn_results_100.csv"
+    output_path = "src/Source_Data/cdn_results/cdn_results_100_cleaned.csv"
+
+    #Goes through and removes any rows with no cdns
+    with open(input_path, "r", newline="") as f:
+        reader = csv.DictReader(f)
+        cleaned_rows = [row for row in reader if row["cdns"]]
+
+    with open(output_path, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=cleaned_rows[0].keys())
+        writer.writeheader()
+        writer.writerows(cleaned_rows)
+
+def extract_provider_domains(input_path, output_path):
+    """
+    Reads a results CSV and returns a new CSV containing only the domains 
+    that are identified as the CDN providers themselves (marked as 'private').
+    """
+    # Load the results
+    df = pd.read_csv(input_path)
+    
+    CDNS = []
+
+    #Checks the cdns column of each row and adds the cdn to the list if it is not already in the list
+    for index, row in df.iterrows():
+        cdns = row['cdns'].split('|') if pd.notna(row['cdns']) else []
+        for cdn in cdns:
+            if cdn not in CDNS:
+                CDNS.append(cdn)
+
+    #The CDNs list is then added to a new CSV with one column being the cdn name and one provider per column
+    provider_df = pd.DataFrame({'cdn_provider': CDNS}) 
+    
+    print(f"✅ Extraction Complete:")
+    print(f"Total domains analyzed: {len(df)}")
+    print(f"CDN Provider domains found: {len(provider_df)}")
+    print(f"Saved to: {output_path}")
+
 #region Data Visualization
 #---------------------------------------------------------------------------------------------------------------------------------------------------#
 # Data Visualization
@@ -1095,10 +1135,10 @@ def four_corners_graph():
 
 def four_bar_cdn():
     dfs = [
-        pd.read_csv("src/Source_Data/cdn_results/cdn_results_100.csv"),
-        pd.read_csv("src/Source_Data/cdn_results/cdn_results_1000.csv"),
-        pd.read_csv("src/Source_Data/cdn_results/cdn_results_10000.csv"),
-        pd.read_csv("src/Source_Data/cdn_results/cdn_results_100000.csv")
+        pd.read_csv("src/Source_Data/cdn_results/cdn_results_100_cleaned.csv"),
+        pd.read_csv("src/Source_Data/cdn_results/cdn_results_1000_cleaned.csv"),
+        pd.read_csv("src/Source_Data/cdn_results/cdn_results_10000_cleaned.csv"),
+        pd.read_csv("src/Source_Data/cdn_results/cdn_results_100000_cleaned.csv")
     ]
 
     ranks = ["100", "1000", "10000", "100000"]
@@ -1150,9 +1190,15 @@ def four_bar_cdn():
     ax.set_xticklabels(ranks)
     ax.set_xlabel("Cloudflare Rank", fontsize=12)
     ax.set_ylabel("Percentage of Websites", fontsize=12)
-    ax.set_ylim(0, 100)
+    ax.set_ylim(0, 115)
 
-    ax.legend(loc="upper left", ncol=2)
+    ax.legend(
+        loc="lower center",
+        bbox_to_anchor=(0.5, 1.02),
+        ncol=2,          # 2 columns = 2×2 grid with 4 items
+        fontsize=18,
+        borderaxespad=0
+    )
 
     # Add values above bars
     for bars in [b1, b2, b3, b4]:
@@ -1163,11 +1209,85 @@ def four_bar_cdn():
                     f"{h:.1f}",
                     ha="center",
                     va="bottom",
-                    fontsize=8,
+                    fontsize=15,
                     rotation=90)
 
-    plt.tight_layout()
+    plt.tight_layout(rect=[0, 0, 1, 0.95])
     plt.savefig("src/Source_Data/cdn_datavis/cdn_four_bar1.png", dpi=300)
+    plt.show()
+
+
+DEFAULT_INPUT_PATH = "src/Source_Data/cdn_results/cdn_results_100000_cleaned.csv"
+
+# ---------------------------------------------------------------------------
+# Data loading
+# ---------------------------------------------------------------------------
+def load_data(input_path: str = DEFAULT_INPUT_PATH) -> pd.DataFrame:
+    return pd.read_csv(input_path)
+
+# ---------------------------------------------------------------------------
+# Chart 5: CDN name bubble / proportional-area chart
+# ---------------------------------------------------------------------------
+def plot_cdn_bubble_chart(df: pd.DataFrame, top_n: int = 10) -> None:
+    cdn_counts = df["cdns"].fillna("Unknown").replace("", "Unknown").value_counts()
+
+    top = cdn_counts.head(top_n)
+    other_count = cdn_counts.iloc[top_n:].sum()
+    cdn_counts = pd.concat([top, pd.Series({"Other": other_count})]) if other_count > 0 else top
+
+    labels = cdn_counts.index.tolist()
+    values = cdn_counts.values.tolist()
+
+    # circlify expects values sorted descending
+    sorted_pairs = sorted(zip(values, labels), reverse=True)
+    sorted_values, sorted_labels = zip(*sorted_pairs)
+
+    circles = circlify.circlify(
+        list(sorted_values),
+        show_enclosure=False,
+        target_enclosure=circlify.Circle(x=0, y=0, r=1),
+    )
+    circles = circles[::-1]  # largest circle matches first label
+
+    fig, ax = plt.subplots(figsize=(12, 12))
+    ax.set_aspect("equal")
+    ax.axis("off")
+    fig.patch.set_facecolor("#F5F6FA")
+    ax.set_facecolor("#F5F6FA")
+
+    DARK_BLUE = "#070BE7"
+    TEAL = "#5FB6E9"
+    WHITE = "#FFFFFF"
+    max_val = sorted_values[0]
+
+    for circle, label, value in zip(circles, sorted_labels, sorted_values):
+        x, y, r = circle.x, circle.y, circle.r
+        color = DARK_BLUE if value == max_val else TEAL
+
+        ax.add_patch(plt.Circle((x, y), r, color=color, alpha=0.92, zorder=2))
+
+        if r > 0.04:  # only label circles large enough to read
+            short_label = label if len(label) <= 18 else label[:16] + "…"
+            ax.text(
+                x, y + r * 0.12, short_label,
+                ha="center", va="center", fontsize=24,
+                color=WHITE, fontweight="bold", zorder=3,
+            )
+            ax.text(
+                x, y - r * 0.28, f"{value:,}",
+                ha="center", va="center", fontsize=24 * 0.85,
+                color=WHITE, alpha=0.85, zorder=3,
+            )
+
+    lim = max(abs(c.x) + c.r for c in circles) * 1.05
+    ax.set_xlim(-lim, lim)
+    ax.set_ylim(-lim, lim)
+
+    plt.title(
+        "CDN Distribution",
+        fontsize=26, fontweight="bold", pad=16, color="#060E77",
+    )
+    plt.tight_layout()
     plt.show()
 #endregion
 
@@ -1178,5 +1298,11 @@ def four_bar_cdn():
 if __name__ == "__main__":
     #asyncio.run(main_async())
     #four_corners_graph()
-    four_bar_cdn()
+    #cleaning()
+    #four_bar_cdn()
+    #extract_provider_domains("src/Source_Data/cdn_results/cdn_results_100000.csv", 
+    #                        "src/Source_Data/cdn_results/only_cdn_providers.csv")
+    df = load_data(DEFAULT_INPUT_PATH)
+    plot_cdn_bubble_chart(df)
+
 #endregion
