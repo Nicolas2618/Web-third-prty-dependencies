@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 import circlify
 
 
-DEFAULT_INPUT_PATH = "src/Source_Data/ca_results/ca_results_1000.csv"
+DEFAULT_INPUT_PATH = "src/Source_Data/ca_results/ca_results_10000.csv"
 
 
 # ---------------------------------------------------------------------------
@@ -104,7 +104,7 @@ def plot_https_distribution(df: pd.DataFrame) -> None:
 # Chart 3: TLS / SSL version distribution (bar)
 # ---------------------------------------------------------------------------
 def plot_tls_distribution(df: pd.DataFrame) -> None:
-    tls_counts = df["SSL or TLS"].value_counts()
+    tls_counts = df["TLS"].value_counts()
 
     plt.figure(figsize=(10, 8))
     bars = plt.bar(tls_counts.index, tls_counts.values, color="#033819", edgecolor="#FFFFFF")
@@ -116,54 +116,112 @@ def plot_tls_distribution(df: pd.DataFrame) -> None:
     plt.tight_layout()
     plt.show()
 
+#----------------------------------------------------------------------------
+# Chart 4: CA third-party dependency and TLS adoption across different sample sizes (bar)
+#----------------------------------------------------------------------------
+def compute_four_bar():
+    dfs = [
+        pd.read_csv("src/Source_Data/ca_results/ca_results_100.csv"),
+        pd.read_csv("src/Source_Data/ca_results/ca_results_1000.csv"),
+        pd.read_csv("src/Source_Data/ca_results/ca_results_10000.csv"),
+    ]
 
-# ---------------------------------------------------------------------------
-# Chart 4: Summary metrics across the whole sample (bar)
-# ---------------------------------------------------------------------------
-def plot_summary_metrics(df: pd.DataFrame) -> None:
-    total = len(df)
+    ranks = ["100 Domains", "1,000 Domains", "10,000 Domains"]
 
-    #https_pct = (df["HTTPS Enabled"] == True).mean() * 100          
-    third_party_pct = (df["type"] == "third").mean() * 100
-    tls_pct = (df["SSL or TLS"] != "unknown").mean() * 100
+    third_party = []
+    tls13 = []
+    tls12 = []
+    https = []
 
-    # Stapled is tri-state: True / False / None (undetermined). After a
-    # CSV round-trip, pandas may read these back as bool, string
-    # ("True"/"False"), or NaN depending on dtype inference -- so compare
-    # against the string form of True rather than the Python bool, to
-    # avoid silently under-counting confirmed-stapled rows.
-    stapled_col = df["Stapled"].astype(str).str.strip().str.lower()
-    ocsp_stapling_pct = (stapled_col == "true").mean() * 100
+    for df in dfs:
+        third_party.append((df["type"] == "third").mean() * 100)
+        tls13.append((df["TLS"] == "TLSv1.3").mean() * 100)
+        tls12.append((df["TLS"] == "TLSv1.2").mean() * 100)
 
-    categories = ["Third-Party CA", "TLS Usage", "OCSP Use"]
-    percentages = [third_party_pct, tls_pct, ocsp_stapling_pct]
-    colors = ["#056686", "#07A69E", "#4056B9", "#3CCAA1"]
+    x = np.arange(len(ranks))
+    bar_width = 0.2
 
-    fig, ax = plt.subplots(figsize=(10, 8))
-    bars = ax.bar(categories, percentages, color=colors, edgecolor="black", width=0.5)
-    ax.bar_label(bars, fmt="%.1f%%", padding=3, fontsize=12)
+    fig, ax = plt.subplots(figsize=(12, 8))
 
-    ax.set_xlabel("Metric", fontweight="bold", fontsize=15)
+    b1 = ax.bar(x - 1.5 * bar_width, third_party, bar_width,
+                label = "Third-Party Dependency CA",
+                hatch = "///",
+                edgecolor = "black",
+                color = "#056686")
+
+    btwo = ax.bar(x - 0.5 * bar_width, tls13, bar_width,
+                    label = "TLS v1.3 Adoption",
+                    hatch = "\\\\",
+                    edgecolor = "black",
+                    color = "#07A69E")
+
+    b3 = ax.bar(x + 0.5 * bar_width, tls12, bar_width,
+                    label = "TLS v1.2 Adoption",
+                    hatch = "++",
+                    edgecolor = "black",
+                    color = "#4056B9")
+
+    
+    ax.set_xticks(x)
+    ax.set_xticklabels(ranks)
     ax.set_ylabel("Percentage of Domains (%)", fontweight="bold", fontsize=15)
-    ax.set_title(
-        f"Certificate & TLS Adoption ({total} Domains)",
-        fontweight="bold",
-        fontsize=14,
-    )
+    ax.set_xlabel("Cloudflare Top Rank", fontweight="bold", fontsize=15)
+    ax.set_title("CA Third-Party Dependency and TLS Adoption Across Different Sample Sizes", fontweight="bold", fontsize=14)
     ax.set_ylim(0, 100)
+
+    ax.legend(loc = "upper left", fontsize=12)
+
+    # Add percentage labels on top of each bar
+    for bars in [b1, btwo, b3]:
+        for bar in bars:
+            h = bar.get_height()
+            ax.text(bar.get_x() + bar.get_width() / 2, h + 1, f"{h:.1f}%", ha='center', va='bottom', fontsize=10)
+
     plt.tight_layout()
     plt.show()
-
 
 # ---------------------------------------------------------------------------
 # Chart 5: CA name bubble / proportional-area chart
 # ---------------------------------------------------------------------------
 def plot_ca_name_bubble_chart(df: pd.DataFrame, top_n: int = 5) -> None:
-    ca_counts = df["CA Name"].fillna("Unknown").replace("", "Unknown").value_counts()
+    """
+    Groups CA names by parent brand (e.g., all 'Amazon RSA 2048 MXX' 
+    become 'Amazon') and renders them as a proportional bubble chart.
+    """
 
-    top = ca_counts.head(top_n)
-    other_count = ca_counts.iloc[top_n:].sum()
-    ca_counts = pd.concat([top, pd.Series({"Other": other_count})]) if other_count > 0 else top
+    # 1. Define a helper to normalize CA names into parent brands
+    def simplify_ca(name):
+        if pd.isna(name) or name.strip() == "":
+            return "Unknown"
+        name = name.strip()
+        # Special multi-word brands that shouldn't be split on the first word
+        if "Let's Encrypt" in name:
+            return "Let's Encrypt"
+        if "Google Trust" in name or name.startswith("Google"):
+            return "Google"
+        if "DigiCert" in name:
+            return "DigiCert"
+        if "Amazon" in name:
+            return "Amazon"
+        if "Sectigo" in name:
+            return "Sectigo"
+        if "GlobalSign" in name:
+            return "GlobalSign"
+        if "GoDaddy" in name or "Starfield" in name:
+            return "GoDaddy"
+        if "Microsoft" in name:
+            return "Microsoft"
+        if "Cloudflare" in name:
+            return "Cloudflare"
+        # Fallback: take the first word as the brand
+        return name.split()[0]
+
+    # 2. Apply the simplification, then count
+    ca_counts = df["CA Name"].apply(simplify_ca).value_counts()
+
+    # 3. Keep only the top N brands (no "Other" bucket)
+    ca_counts = ca_counts.head(top_n)
+    print(f"Top {top_n} Grouped CAs by count:\n{ca_counts}\n")
 
     labels = ca_counts.index.tolist()
     values = ca_counts.values.tolist()
@@ -182,12 +240,12 @@ def plot_ca_name_bubble_chart(df: pd.DataFrame, top_n: int = 5) -> None:
     fig, ax = plt.subplots(figsize=(12, 12))
     ax.set_aspect("equal")
     ax.axis("off")
-    fig.patch.set_facecolor("#F5F6FA")
-    ax.set_facecolor("#F5F6FA")
+    fig.patch.set_facecolor("white")
+    ax.set_facecolor("white")
 
-    DARK_BLUE = "#070BE7"
-    TEAL = "#5FB6E9"
-    WHITE = "#FFFFFF"
+    DARK_BLUE = "#B5B682"
+    TEAL = "#FEDC97"
+    WHITE = "black"
     max_val = sorted_values[0]
 
     for circle, label, value in zip(circles, sorted_labels, sorted_values):
@@ -200,12 +258,14 @@ def plot_ca_name_bubble_chart(df: pd.DataFrame, top_n: int = 5) -> None:
             short_label = label if len(label) <= 18 else label[:16] + "…"
             ax.text(
                 x, y + r * 0.12, short_label,
-                ha="center", va="center", fontsize=24,
+                ha="center", va="center",
+                fontsize=r * 85,          # ← scales text to bubble size
                 color=WHITE, fontweight="bold", zorder=3,
             )
             ax.text(
                 x, y - r * 0.28, f"{value:,}",
-                ha="center", va="center", fontsize=24 * 0.85,
+                ha="center", va="center",
+                fontsize=r * 70,          # ← scales count text too
                 color=WHITE, alpha=0.85, zorder=3,
             )
 
@@ -215,8 +275,88 @@ def plot_ca_name_bubble_chart(df: pd.DataFrame, top_n: int = 5) -> None:
 
     plt.title(
         "Certificate Authority Distribution",
-        fontsize=26, fontweight="bold", pad=16, color="#060E77",
+        fontsize=26, fontweight="bold", pad=10, color="#060E77",
     )
+    plt.tight_layout()
+    plt.show()
+#----------------------------------------------------------------------------
+# Chart 4: Comparative Metrics across Sample Sizes
+#----------------------------------------------------------------------------
+def plot_comparative_metrics():
+    """
+    Compares Third-Party Dependency and TLS adoption across different 
+    Cloudflare rank samples (100, 1k, 10k). 
+    
+    Applies filter_classified to each to ensure percentages are consistent 
+    with the individual charts.
+    """
+    file_configs = [
+        ("src/Source_Data/ca_results/ca_results_100.csv", "Top 100"),
+        ("src/Source_Data/ca_results/ca_results_1000.csv", "Top 1,000"),
+        ("src/Source_Data/ca_results/ca_results_10000.csv", "Top 10,000")
+    ]
+
+    ranks = []
+    third_party = []
+    tls13 = []
+    tls12 = []
+
+    for path, label in file_configs:
+        try:
+            # Load and apply the same filter used in other charts for consistency
+            df_raw = pd.read_csv(path)
+            df = filter_classified(df_raw)
+            
+            ranks.append(label)
+            third_party.append((df["type"] == "third").mean() * 100)
+            tls13.append((df["TLS"] == "TLSv1.3").mean() * 100)
+            tls12.append((df["TLS"] == "TLSv1.2").mean() * 100)
+        except FileNotFoundError:
+            print(f"Warning: Could not find {path}, skipping in comparison.")
+
+    if not ranks:
+        return
+
+    x = np.arange(len(ranks))
+    bar_width = 0.25
+
+    fig, ax = plt.subplots(figsize=(14, 8))
+    fig.patch.set_facecolor("white")
+    ax.set_facecolor("white")
+
+    # Using the color palette from your other charts (Teal and Blues)
+    b1 = ax.bar(x - bar_width, third_party, bar_width,
+                label="Third-Party Dependency",
+                hatch="//", edgecolor="black", color="white")
+
+    b2 = ax.bar(x, tls13, bar_width,
+                label="TLS v1.3 Adoption",
+                hatch="||", edgecolor="black", color="white")
+
+    b3 = ax.bar(x + bar_width, tls12, bar_width,
+                label="TLS v1.2 Adoption",
+                hatch="++", edgecolor="black", color="white")
+
+    # Formatting
+    ax.set_xticks(x)
+    ax.set_xticklabels(ranks, fontsize=12, fontweight="bold")
+    ax.set_xlabel("Cloudflare Top Rank", fontweight="bold", fontsize=14)
+    ax.set_ylabel("Percentage of Classified Domains (%)", fontweight="bold", fontsize=14)
+    ax.set_title("CA Dependency and TLS Adoption by Sample Size", 
+                 fontweight="bold", fontsize=18, pad=20, color="#060E77")
+    ax.set_ylim(0, 110) # Extra room for labels
+    ax.legend(loc="upper right", frameon=True, fontsize=11)
+
+    # Add percentage labels on top of each bar
+    for rects in [b1, b2, b3]:
+        for rect in rects:
+            height = rect.get_height()
+            ax.annotate(f'{height:.1f}%',
+                        xy=(rect.get_x() + rect.get_width() / 2, height),
+                        xytext=(0, 3),  # 3 points vertical offset
+                        textcoords="offset points",
+                        ha='center', va='bottom', fontsize=10, fontweight="bold")
+
     plt.tight_layout()
     plt.show()
 
@@ -227,12 +367,11 @@ def plot_ca_name_bubble_chart(df: pd.DataFrame, top_n: int = 5) -> None:
 def run_all(input_path: str = DEFAULT_INPUT_PATH) -> None:
     df = load_data(input_path)
     df = filter_classified(df)
-    plot_ca_type_distribution(df)
-    plot_https_distribution(df)
-    plot_tls_distribution(df)
-    plot_summary_metrics(df)
+    #plot_ca_type_distribution(df)
+    #plot_https_distribution(df)
+    #plot_tls_distribution(df)
+   # compute_four_bar()
     plot_ca_name_bubble_chart(df)
-
-
+    #plot_comparative_metrics()
 if __name__ == "__main__":
     run_all()
