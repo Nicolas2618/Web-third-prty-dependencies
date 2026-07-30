@@ -1163,7 +1163,7 @@ def four_bar_cdn():
     x = np.arange(len(ranks))
     width = 0.18
 
-    fig, ax = plt.subplots(figsize=(8,6))
+    fig, ax = plt.subplots(figsize=(14, 8))
 
     b1 = ax.bar(x - 1.5*width, third_party, width,
                 label="3rd Party Dependency",
@@ -1190,6 +1190,7 @@ def four_bar_cdn():
                 color="white")
 
     ax.set_xticks(x)
+    ax.set_title("CDN Third-Party Analysis Across Sample Sizes", fontsize = 26, pad = 16)
     ax.set_xticklabels(ranks)
     ax.set_xlabel("Cloudflare Rank", fontsize=12)
     ax.set_ylabel("Percentage of Websites", fontsize=12)
@@ -1197,12 +1198,13 @@ def four_bar_cdn():
     plt.title("CDN Third Party Analysis Acroos Sample Sizes", fontsize= 18)
 
     ax.legend(
-        loc="lower center",
-        bbox_to_anchor=(0.5, 0.02),
-        ncol=2,          # 2 columns = 2×2 grid with 4 items
-        fontsize=18,
-        borderaxespad=0
-    )
+                title = 'Metric',
+                loc = "upper left",
+                bbox_to_anchor = (0, 1),
+                ncol = 1,          
+                fontsize = 18,
+                borderaxespad = 0
+            )
 
     # Add values above bars
     for bars in [b1, b2, b3, b4]:
@@ -1235,9 +1237,11 @@ def load_data(input_path: str = DEFAULT_INPUT_PATH) -> pd.DataFrame:
 def plot_cdn_bubble_chart(df: pd.DataFrame, top_n: int = 10) -> None:
     cdn_counts = df["cdns"].fillna("Unknown").replace("", "Unknown").value_counts()
 
-    top = cdn_counts.head(top_n)
-    other_count = cdn_counts.iloc[top_n:].sum()
-    cdn_counts = pd.concat([top, pd.Series({"Other": other_count})]) if other_count > 0 else top
+    cdn_counts = cdn_counts.head(top_n)
+
+    #top = cdn_counts.head(top_n)
+    #other_count = cdn_counts.iloc[top_n:].sum()
+    #cdn_counts = pd.concat([top, pd.Series({"Other": other_count})]) if other_count > 0 else top
 
     labels = cdn_counts.index.tolist()
     values = cdn_counts.values.tolist()
@@ -1256,12 +1260,12 @@ def plot_cdn_bubble_chart(df: pd.DataFrame, top_n: int = 10) -> None:
     fig, ax = plt.subplots(figsize=(12, 12))
     ax.set_aspect("equal")
     ax.axis("off")
-    fig.patch.set_facecolor("#F5F6FA")
-    ax.set_facecolor("#F5F6FA")
+    fig.patch.set_facecolor("white")
+    ax.set_facecolor("white")
 
-    DARK_BLUE = "#070BE7"
-    TEAL = "#5FB6E9"
-    WHITE = "#FFFFFF"
+    DARK_BLUE = "#B5B682"
+    TEAL = "#FEDC97"
+    WHITE = "black"
     max_val = sorted_values[0]
 
     for circle, label, value in zip(circles, sorted_labels, sorted_values):
@@ -1274,22 +1278,22 @@ def plot_cdn_bubble_chart(df: pd.DataFrame, top_n: int = 10) -> None:
             short_label = label if len(label) <= 18 else label[:16] + "…"
             ax.text(
                 x, y + r * 0.12, short_label,
-                ha="center", va="center", fontsize=24,
+                ha="center", va="center", fontsize=r * 90,
                 color=WHITE, fontweight="bold", zorder=3,
             )
             ax.text(
                 x, y - r * 0.28, f"{value:,}",
-                ha="center", va="center", fontsize=24 * 0.85,
+                ha="center", va="center", fontsize=r * 75,
                 color=WHITE, alpha=0.85, zorder=3,
             )
 
-    lim = max(abs(c.x) + c.r for c in circles) * 1.05
+    lim = max(abs(c.x) + c.r for c in circles) * 1
     ax.set_xlim(-lim, lim)
     ax.set_ylim(-lim, lim)
 
     plt.title(
         "CDN Distribution",
-        fontsize=26, fontweight="bold", pad=16, color="#060E77",
+        fontsize=26, fontweight="bold", pad=0, color="black",
     )
     plt.tight_layout()
     plt.show()
@@ -1305,8 +1309,8 @@ if __name__ == "__main__":
     #cleaning()
     four_bar_cdn()
     #extract_provider_domains("src/Source_Data/cdn_results/cdn_results_100000.csv", 
-                            #"src/Source_Data/cdn_results/only_cdn_providers.csv")
-    #df = load_data(DEFAULT_INPUT_PATH)
-    #plot_cdn_bubble_chart(df)
+    #                        "src/Source_Data/cdn_results/only_cdn_providers.csv")
+    df = load_data(DEFAULT_INPUT_PATH)
+    plot_cdn_bubble_chart(df)
 
 #endregion
