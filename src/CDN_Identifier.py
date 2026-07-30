@@ -1007,27 +1007,30 @@ def cleaning():
 
 def extract_provider_domains(input_path, output_path):
     """
-    Reads a results CSV and returns a new CSV containing only the domains 
-    that are identified as the CDN providers themselves (marked as 'private').
+    Reads a results CSV and returns a new CSV containing 
+    the unique CDN provider names found across all domains.
     """
-    # Load the results
     df = pd.read_csv(input_path)
-    
-    CDNS = []
 
-    #Checks the cdns column of each row and adds the cdn to the list if it is not already in the list
+    # Use a set for efficient deduplication
+    cdn_set = set()
+
     for index, row in df.iterrows():
         cdns = row['cdns'].split('|') if pd.notna(row['cdns']) else []
         for cdn in cdns:
-            if cdn not in CDNS:
-                CDNS.append(cdn)
+            cdn_stripped = cdn.strip()  # Remove whitespace
+            if cdn_stripped:            # Skip empty strings
+                cdn_set.add(cdn_stripped)
 
-    #The CDNs list is then added to a new CSV with one column being the cdn name and one provider per column
-    provider_df = pd.DataFrame({'cdn_provider': CDNS}) 
-    
+    # Convert to sorted DataFrame for clean output
+    provider_df = pd.DataFrame({'cdn_provider': sorted(cdn_set)})
+
+    # ✅ Actually save the file
+    provider_df.to_csv(output_path, index=False)
+
     print(f"✅ Extraction Complete:")
     print(f"Total domains analyzed: {len(df)}")
-    print(f"CDN Provider domains found: {len(provider_df)}")
+    print(f"Unique CDN providers found: {len(provider_df)}")
     print(f"Saved to: {output_path}")
 
 #region Data Visualization
@@ -1160,7 +1163,7 @@ def four_bar_cdn():
     x = np.arange(len(ranks))
     width = 0.18
 
-    fig, ax = plt.subplots(figsize=(8,6))
+    fig, ax = plt.subplots(figsize=(14, 8))
 
     b1 = ax.bar(x - 1.5*width, third_party, width,
                 label="3rd Party Dependency",
@@ -1187,18 +1190,21 @@ def four_bar_cdn():
                 color="white")
 
     ax.set_xticks(x)
+    ax.set_title("CDN Third-Party Analysis Across Sample Sizes", fontsize = 26, pad = 16)
     ax.set_xticklabels(ranks)
     ax.set_xlabel("Cloudflare Rank", fontsize=12)
     ax.set_ylabel("Percentage of Websites", fontsize=12)
     ax.set_ylim(0, 115)
+    plt.title("CDN Third Party Analysis Acroos Sample Sizes", fontsize= 18)
 
     ax.legend(
-        loc="lower center",
-        bbox_to_anchor=(0.5, 1.02),
-        ncol=2,          # 2 columns = 2×2 grid with 4 items
-        fontsize=18,
-        borderaxespad=0
-    )
+                title = 'Metric',
+                loc = "upper left",
+                bbox_to_anchor = (0, 1),
+                ncol = 1,          
+                fontsize = 18,
+                borderaxespad = 0
+            )
 
     # Add values above bars
     for bars in [b1, b2, b3, b4]:
@@ -1212,7 +1218,7 @@ def four_bar_cdn():
                     fontsize=15,
                     rotation=90)
 
-    plt.tight_layout(rect=[0, 0, 1, 0.95])
+    plt.tight_layout(rect=[0, 0, 1, 1])
     plt.savefig("src/Source_Data/cdn_datavis/cdn_four_bar1.png", dpi=300)
     plt.show()
 
@@ -1301,7 +1307,7 @@ if __name__ == "__main__":
     #asyncio.run(main_async())
     #four_corners_graph()
     #cleaning()
-    #four_bar_cdn()
+    four_bar_cdn()
     #extract_provider_domains("src/Source_Data/cdn_results/cdn_results_100000.csv", 
     #                        "src/Source_Data/cdn_results/only_cdn_providers.csv")
     df = load_data(DEFAULT_INPUT_PATH)

@@ -1,51 +1,42 @@
-DOMAIN,NAMESERVER,TYPE,REASON,PROVIDER,DEPENDENCY,REDUNDANT,ENTITY_COUNT
-bsky.app,ns-757.awsdns-30.net,third,SOA mname points to third party: awsdns-58,awsdns-58,No critical dependency,False,1
-bsky.network,ns-1103.awsdns-09.org,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
-bsky.social,ns-1657.awsdns-15.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
-discord.com,gabe.ns.cloudflare.com,third,SOA mname points to third party: cloudflare,cloudflare,Critical dependency,False,1
-discord.media,gabe.ns.cloudflare.com,third,SOA mname points to third party: cloudflare,cloudflare,Critical dependency,False,1
-discordapp.com,gabe.ns.cloudflare.com,third,SOA mname points to third party: cloudflare,cloudflare,Critical dependency,False,1
-douyin.com,vip4.alidns.com,third,SOA mname points to third party: ali,ali,Critical dependency,False,1
-douyincdn.com,vip3.alidns.com,third,SOA mname points to third party: ali,ali,Critical dependency,False,1
-facebook-hardware.com,d.ns.facebook.com,private,"Domanin name is contained in the nameserver, signaling ownership",facebook.com,Critical dependency,False,1
-facebook.com,b.ns.facebook.com,private,NS TLD matches domain TLD,facebook.com,Critical dependency,False,1
-fbsbx.com,c.ns.facebook.com,third,SOA mname points to third party: facebook,facebook,Critical dependency,False,1
-flickr.com,ns-1244.awsdns-27.org,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
-foursquare.com,ns-91.awsdns-11.com,third,SOA mname points to third party: awsdns-27,awsdns-27,No critical dependency,False,1
-instagram.com,b.ns.instagram.com,private,NS TLD matches domain TLD,instagram.com,Critical dependency,False,1
-kakao.com,ns2.kakao.com,private,NS TLD matches domain TLD,kakao.com,Critical dependency,False,1
-line.me,ans2.linecorp.com,private,"Domanin name is contained in the nameserver, signaling ownership",linecorp.com,No critical dependency,False,1
-linkedin.com,ns4-42.azure-dns.info,third,SOA mname points to third party: nsone,nsone,No critical dependency,True,2
-mastodon.social,ns1.exoscale.net,third,SOA mname points to third party: exoscale,exoscale,Critical dependency,True,4
-meetup.com,ns-1378.awsdns-44.org,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
-myspace.com,ns-cloud-a4.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,Critical dependency,False,1
-nextdoor.com,ns-1479.awsdns-56.org,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
-ok.ru,ns1.ok.ru,private,NS TLD matches domain TLD,ok.ru,Critical dependency,False,1
-pinterest.com,ns9.pinterest.com,private,NS TLD matches domain TLD,pinterest.com,Critical dependency,False,1
-quora.com,ns-673.awsdns-20.net,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
-reddit.com,ns-378.awsdns-47.com,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
-redditmedia.com,ns-264.awsdns-33.com,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
-redditstatic.com,ns-585.awsdns-09.net,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
-signal.org,zita.ns.cloudflare.com,third,SOA mname points to third party: cloudflare,cloudflare,Critical dependency,False,1
-snapchat.com,ns-220.awsdns-27.com,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
-t.me,ns-cloud-b1.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,Critical dependency,False,1
-telegram.me,ns-cloud-d4.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,Critical dependency,False,1
-telegram.org,ns-cloud-b3.googledomains.com,third,SOA mname points to third party: googledomains,googledomains,Critical dependency,False,1
-threads.net,c.ns.facebook.com,third,SOA mname points to third party: facebook,facebook,Critical dependency,False,1
-tiktok.com,a12-66.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
-tiktokshop.com,a2-67.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
-tiktokv.com,a1-97.akam.net,third,SOA mname points to third party: akam,akam,Critical dependency,False,1
-truthsocial.com,eve.ns.cloudflare.com,third,SOA mname points to third party: cloudflare,cloudflare,Critical dependency,False,1
-tumblr.com,ns1.tumblr.com,private,NS TLD matches domain TLD,tumblr.com,Critical dependency,False,1
-twitch.tv,ns-664.awsdns-19.net,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
-twitter.com,c.r06.twtrdns.net,third,SOA mname points to third party: twtr,twtr,Critical dependency,False,1
-viber.com,ns-1545.awsdns-01.co.uk,third,SOA mname points to third party: aws,aws,No critical dependency,False,1
-vk.com,ns2.vk.com,private,NS TLD matches domain TLD,vk.com,Critical dependency,False,1
-wechat.com,ns4.wechat.com,private,NS TLD matches domain TLD,wechat.com,Critical dependency,False,1
-weibo.com,ns3.sina.com.cn,private,Domain has HTTPS and NS TLD is contained in SAN,,No critical dependency,False,1
-weibocdn.com,ns2.sina.com.cn,third,SOA mname points to third party: com,com,Critical dependency,False,1
-weixin.com,ns4.qq.com,private,Domain has HTTPS and NS TLD is contained in SAN,,Critical dependency,False,1
-whatsapp.com,d.ns.whatsapp.net,private,"Domanin name is contained in the nameserver, signaling ownership",whatsapp.net,Critical dependency,False,1
-whatsapp.net,b.ns.whatsapp.net,private,NS TLD matches domain TLD,whatsapp.net,Critical dependency,False,1
-x.com,c.r10.twtrdns.net,third,SOA mname points to third party: twtr,twtr,Critical dependency,False,1
-xiaohongshu.com,ns4.dnsv5.com,third,SOA mname points to third party: dnsv5,dnsv5,Critical dependency,False,1
+website,cdns,cdn_types,uses_third_party,critical_dependency,redundant,mult_third,step_id
+bsky.app,amazon,"{""amazon"": ""third""}",True,True,False,False,"step 5 (SOA), "
+bsky.network,amazon,"{""amazon"": ""third""}",True,True,False,False,"step 5 (SOA), "
+bsky.social,amazon,"{""amazon"": ""third""}",True,True,False,False,"step 5 (SOA), "
+discord.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,False,"step 5 (SOA), "
+discord.media,cloudflare,"{""cloudflare"": ""third""}",True,True,False,False,"step 5 (SOA), "
+discordapp.com,discord|cloudflare,"{""discord"": ""private"", ""cloudflare"": ""third""}",True,False,True,False,"step 2, step 5 (SOA), "
+facebook-hardware.com,meta,"{""meta"": ""private""}",False,False,False,False,"step 3, "
+facebook.com,meta,"{""meta"": ""private""}",False,False,False,False,"step 3, "
+fbsbx.com,meta,"{""meta"": ""private""}",False,False,False,False,"step 2, "
+flickr.com,amazon,"{""amazon"": ""third""}",True,True,False,False,"step 5 (SOA), "
+foursquare.com,amazon|fastly,"{""amazon"": ""private"", ""fastly"": ""private""}",False,False,True,False,"step 5 (SOA), step 7, "
+instagram.com,meta,"{""meta"": ""private""}",False,False,False,False,"step 3, "
+line.me,amazon,"{""amazon"": ""third""}",True,True,False,False,"step 6, "
+linkedin.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,False,"step 6, "
+mastodon.social,fastly,"{""fastly"": ""third""}",True,True,False,False,"step 6, "
+meetup.com,amazon|fastly,"{""amazon"": ""third"", ""fastly"": ""third""}",True,False,True,True,"step 5 (SOA), step 6, "
+myspace.com,google,"{""google"": ""private""}",False,False,False,False,"step 5 (SOA), "
+nextdoor.com,amazon,"{""amazon"": ""third""}",True,True,False,False,"step 5 (SOA), "
+pinterest.com,twitter|fastly,"{""twitter"": ""private"", ""fastly"": ""private""}",False,False,True,False,"step 6, step 6, "
+quora.com,amazon|cloudflare,"{""amazon"": ""third"", ""cloudflare"": ""third""}",True,False,True,True,"step 5 (SOA), step 6, "
+reddit.com,amazon|fastly,"{""amazon"": ""third"", ""fastly"": ""third""}",True,False,True,True,"step 5 (SOA), step 6, "
+redditmedia.com,amazon|fastly,"{""amazon"": ""third"", ""fastly"": ""third""}",True,False,True,True,"step 5 (SOA), step 6, "
+redditstatic.com,amazon|fastly,"{""amazon"": ""third"", ""fastly"": ""third""}",True,False,True,True,"step 5 (SOA), step 6, "
+signal.org,cloudflare,"{""cloudflare"": ""third""}",True,True,False,False,"step 5 (SOA), "
+snapchat.com,amazon|twitter,"{""amazon"": ""private"", ""twitter"": ""private""}",False,False,True,False,"step 5 (SOA), step 6, "
+t.me,telegram|google,"{""telegram"": ""private"", ""google"": ""third""}",True,False,True,False,"step 2, step 5 (SOA), "
+telegram.me,google,"{""google"": ""private""}",False,False,False,False,"step 5 (SOA), "
+telegram.org,google,"{""google"": ""third""}",True,True,False,False,"step 5 (SOA), "
+threads.net,meta,"{""meta"": ""private""}",False,False,False,False,"step 5 (SOA), "
+tiktok.com,tiktok|akamai,"{""tiktok"": ""private"", ""akamai"": ""third""}",True,False,True,False,"step 3, step 6, "
+tiktokshop.com,tiktok|akamai,"{""tiktok"": ""private"", ""akamai"": ""third""}",True,False,True,False,"step 3, step 6, "
+tiktokv.com,bytedance|tiktok|akamai,"{""bytedance"": ""private"", ""tiktok"": ""private"", ""akamai"": ""third""}",True,False,True,False,"step 2, step 3, step 6, "
+truthsocial.com,cloudflare,"{""cloudflare"": ""third""}",True,True,False,False,"step 5 (SOA), "
+twitch.tv,amazon|fastly,"{""amazon"": ""third"", ""fastly"": ""third""}",True,False,True,True,"step 5 (SOA), step 6, "
+viber.com,amazon|akamai,"{""amazon"": ""third"", ""akamai"": ""third""}",True,False,True,True,"step 5 (SOA), step 6, "
+wechat.com,twitter,"{""twitter"": ""third""}",True,True,False,False,"step 6, "
+weibocdn.com,weibo,"{""weibo"": ""private""}",False,False,False,False,"step 2, "
+weixin.com,tencent,"{""tencent"": ""third""}",True,True,False,False,"step 6, "
+whatsapp.com,meta,"{""meta"": ""private""}",False,False,False,False,"step 3, "
+whatsapp.net,meta,"{""meta"": ""private""}",False,False,False,False,"step 3, "
+x.com,cloudflare,"{""cloudflare"": ""private""}",False,False,False,False,"step 7, "
