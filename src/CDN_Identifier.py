@@ -1189,8 +1189,8 @@ def four_bar_cdn():
     ax.set_xticks(x)
     ax.set_title("CDN Third-Party Analysis Across Sample Sizes", fontsize = 26, pad = 16)
     ax.set_xticklabels(ranks)
-    ax.set_xlabel("Cloudflare Rank", fontsize=12)
-    ax.set_ylabel("Percentage of Websites", fontsize=12)
+    ax.set_xlabel("Cloudflare Rank", fontsize=22)
+    ax.set_ylabel("Percentage of Websites", fontsize=22)
     ax.set_ylim(0, 115)
 
     ax.legend(
@@ -1198,7 +1198,7 @@ def four_bar_cdn():
                 loc = "upper left",
                 bbox_to_anchor = (0, 1),
                 ncol = 1,          
-                fontsize = 18,
+                fontsize = 20,
                 borderaxespad = 0
             )
 

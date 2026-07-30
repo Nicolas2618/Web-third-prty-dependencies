@@ -365,15 +365,15 @@ def plot_dependency_breakdown(df: pd.DataFrame):
 
 def main():
     # Cross-file summary (100 / 1k / 10k / 100k) -- one consistent set of computed metrics
-    plot_summary_comparison(FILES)
+    #plot_summary_comparison(FILES)
 
 
     # Detailed charts on a single sample (change the key below to switch files)
-    #df = load_data(FILES["100,000 Domains"])
+    df = load_data(FILES["100,000 Domains"])
     #plot_type_pie(df)
     #plot_top_providers(df, top_n=5)
     #plot_provider_bubble(df)
-    #plot_dependency_breakdown(df)
+    plot_dependency_breakdown(df)
 
 
 if __name__ == "__main__":

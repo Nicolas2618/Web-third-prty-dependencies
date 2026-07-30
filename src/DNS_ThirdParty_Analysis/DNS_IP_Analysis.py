@@ -100,7 +100,7 @@ LABEL_MAP = {
 }
 display_labels = [LABEL_MAP.get(label, label) for label in top.index]
 
-colors = ['#008000', '#1baf7a']
+colors = ['///', '+++++']
 
 fig, ax = plt.subplots(figsize=(14, 12))
 
