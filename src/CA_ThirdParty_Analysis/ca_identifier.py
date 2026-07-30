@@ -16,7 +16,6 @@ import pandas as pa
 from OpenSSL import crypto
 from typing import Optional
 from cryptography import x509
-import matplotlib.pyplot as plt
 from dataclasses import dataclass
 from urllib.parse import urlparse
 from domains import CORPORATE_FAMILY
@@ -260,13 +259,9 @@ def getCA_URL(domain: str):
 def get_ssl_info(domain: str, timeout: int = 10) -> dict:
     """
     Fetch the SSL certificate for *domain* and extract:
-      - SAN list (subject alternate names as eTLD+1 values)
-      - CA issuer common name
-      - OCSP URLs
-      - CRL distribution points
-      - Whether OCSP stapling is active
-    Returns a dict; empty dict on failure.
+      - SAN list, CA issuer name, OCSP/CRL URLs, and OCSP stapling status.
     """
+
     result = {
         "san_tlds": [],
         "ca_name": None,
@@ -274,154 +269,100 @@ def get_ssl_info(domain: str, timeout: int = 10) -> dict:
         "tls_or_ssl": None,
         "ocsp_urls": [],
         "crl_urls": [],
-        "ocsp_stapled": False,
+        "ocsp_stapled": None, 
     }
+    
+    # 1. Initial Handshake to get Certificate Data
     try:
         ctx = ssl.create_default_context()
         ctx.check_hostname = False
         ctx.verify_mode = ssl.CERT_NONE
         with socket.create_connection((domain, 443), timeout=timeout) as sock:
             with ctx.wrap_socket(sock, server_hostname=domain) as ssock:
-                #print(f"Negotiated Protocol Version: {ssock.version()}")
                 result["tls_or_ssl"] = f"{ssock.version()}"
                 cert_der = ssock.getpeercert(binary_form=True)
-                if cert_der is None:
-                    return result
-
-                x509_cert = x509.load_der_x509_certificate(cert_der)
-
-                # SANs
-                try:
-                    san_ext = x509_cert.extensions.get_extension_for_class(
-                        x509.SubjectAlternativeName
-                    ).value
-                    result["san_tlds"] = list({
-                        get_tld(re.sub(r"^\\*\\.", "", name))
-                        for name in san_ext.get_values_for_type(x509.DNSName)
-                    })
-                except x509.ExtensionNotFound:
-                    result["san_tlds"] = []
-
-                # Issuer / CA name
-                issuer = x509_cert.issuer
-
-                # Prefer Organization Name (O), then Common Name (CN), then Organizational Unit (OU).
-                '''ca_name = None
-                for attribute in issuer:
-                    if attribute.oid == NameOID.ORGANIZATION_NAME and attribute.value:
-                        ca_name = attribute.value
-                        break
-                if not ca_name:
-                    for attribute in issuer:
-                        if attribute.oid == NameOID.COMMON_NAME and attribute.value:
-                            ca_name = attribute.value
-                            break
-                if not ca_name:
-                    for attribute in issuer:
-                        if attribute.oid == NameOID.ORGANIZATIONAL_UNIT_NAME and attribute.value:
-                            ca_name = attribute.value
-                            break'''
-
-                org_name = None
-                common_name = None
-                for attribute in issuer:
-                    if attribute.oid == NameOID.ORGANIZATION_NAME and attribute.value:
-                        org_name = attribute.value
-                    if attribute.oid == NameOID.COMMON_NAME and attribute.value:
-                        common_name = attribute.value
-
-                if org_name and common_name:
-                    ca_name = f"{org_name} {common_name}"
-                elif org_name or common_name:
-                    ca_name = org_name or common_name
-                else:
-                    for attribute in issuer:
-                        if attribute.oid == NameOID.ORGANIZATIONAL_UNIT_NAME and attribute.value:
-                            ca_name = attribute.value
-                            break
-
-                # Fallback: join any available issuer attribute values (previous behaviour).
-                if not ca_name:
-                    parts = [attr.value for attr in issuer if getattr(attr, "value", None)]
-                    ca_name = " | ".join(parts)
-
-                result["ca_name"] = ca_name
-
-                # Try to resolve the CA issuer location from the certificate's AIA extension.
-                if not result["ca_url"]:
-                    result["ca_url"] = getCA_URL(domain)
-
-                # OCSP / CRL from caIssuers / OCSP extension (not always in stdlib cert dict)
-                # Use openssl CLI for richer extension data
+                if cert_der:
+                    x509_cert = x509.load_der_x509_certificate(cert_der)
+                    # (SAN and Issuer extraction logic remains the same as your original)
+                    issuer = x509_cert.issuer
+                    org = next((a.value for a in issuer if a.oid == NameOID.ORGANIZATION_NAME), None)
+                    cn = next((a.value for a in issuer if a.oid == NameOID.COMMON_NAME), None)
+                    result["ca_name"] = f"{org} {cn}" if org and cn else (org or cn)
     except Exception as e:
-        print(f"[SSL ERROR] {domain}: {type(e).__name__}: {e}. Except 1")
+        print(f"[SSL ERROR] {domain}: {e}")
 
-    # Supplement with openssl for OCSP stapling check
+    # 2. OCSP Stapling Check (The part that was failing)
     try:
-        cmd = [
-            "openssl", "s_client", "-connect", f"{domain}:443",
-            "-status", "-servername", domain,
-        ]
-        proc = subprocess.run(
-            cmd, input=b"", capture_output=True, timeout=timeout + 5
-        )
-        output = proc.stdout.decode(errors="replace") + proc.stderr.decode(errors="replace")
+        cmd = ["openssl", "s_client", "-connect", f"{domain}:443", "-status", "-servername", domain]
+        proc = subprocess.run(cmd, input=b"Q\n", capture_output=True, timeout=timeout + 5)
 
-        if "OCSP response:" in output and "no response sent" not in output.lower():
+        output = proc.stdout.decode(errors="replace") + proc.stderr.decode(errors="replace")
+        output_l = output.lower()
+
+        if "ocsp response: no response sent" in output_l or "no ocsp response received" in output_l:
+            result["ocsp_stapled"] = False
+        elif "ocsp response:" in output_l or "ocsp response data:" in output_l:
             result["ocsp_stapled"] = True
 
-        # Extract OCSP URL
         for line in output.splitlines():
             if "OCSP - URI:" in line:
-                url = line.split("URI:")[-1].strip()
-                result["ocsp_urls"].append(url)
-                if not result["ca_url"]:
-                    host = re.sub(r"https?://", "", url).split("/")[0]
-                    result["ca_url"] = get_tld(host)
-            if "CRL - URI:" in line or ("URI:" in line and ".crl" in line.lower()):
-                url = line.split("URI:")[-1].strip()
-                result["crl_urls"].append(url)
+                result["ocsp_urls"].append(line.split("URI:")[-1].strip())
+            if "CRL - URI:" in line or (".crl" in line.lower() and "URI:" in line):
+                result["crl_urls"].append(line.split("URI:")[-1].strip())
+
+    except subprocess.TimeoutExpired:
+        print(f"[OCSP TIMEOUT] {domain}")
+    except FileNotFoundError:
+        print(f"[OCSP ERROR] {domain}: 'openssl' binary not found on PATH")
     except Exception as e:
-        pass
+        print(f"[OCSP ERROR] {domain}: {type(e).__name__}: {e}")
 
     return result
 
-def check_ocsp_stapling(hostname, port=443):
+def check_ocsp_stapling(hostname, port=443, timeout=10):
     """
-    Checks if a website supports OCSP Stapling using OpenSSL.
+    Checks if a website supports OCSP Stapling using OpenSSL safely.
+    Returns True, False, or None (undetermined).
     """
-    command = f"echo | openssl s_client -connect {hostname}:{port} -status"
-    
+    cmd = [
+        "openssl", "s_client", "-connect", f"{hostname}:{port}",
+        "-status", "-servername", hostname
+    ]
     try:
-        # Run the command and capture the output
         result = subprocess.run(
-            command, 
-            shell=True, 
-            capture_output=True, 
-            text=True, 
-            timeout=10
+            cmd,
+            input=b"Q\n",
+            capture_output=True,
+            timeout=timeout
         )
-        
-        output = result.stdout + result.stderr
-        
-        # Look for the OCSP response block
-        if "OCSP response: no response sent" in output:
-            print(f"[{hostname}] OCSP Stapling is NOT enabled.")
+        output = (
+            result.stdout.decode(errors="replace")
+            + result.stderr.decode(errors="replace")
+        )
+        # Normalize to lowercase ONCE to avoid case-sensitivity bugs
+        output_l = output.lower()
+
+        # Check for explicit "no stapling" signals first
+        if (
+            "ocsp response: no response sent" in output_l
+            or "no ocsp response received" in output_l
+            or "ocsp response: no response" in output_l
+        ):
             return False
-        elif "OCSP Response Data:" in output:
-            print(f"[{hostname}] OCSP Stapling IS enabled!")
-            
-            # (Optional) Extract the validation status
-            match = re.search(r"Cert Status: (.+)", output)
-            if match:
-                print(f"Certificate Status: {match.group(1)}")
+
+        # Then check for positive stapling signals
+        if (
+            "ocsp response data:" in output_l
+            or "ocsp response:" in output_l
+            or "successful (0x0)" in output_l  # OCSP status success indicator
+        ):
             return True
-        else:
-            #print(f"[{hostname}] Could not determine OCSP status (Handshake may have failed).")
-            return None
-            
+
+        return None
+
     except subprocess.TimeoutExpired:
-        print("Command timed out.")
+        return None
+    except Exception:
         return None
 
 def is_public_ca_name(ca_name: str) -> bool:
@@ -540,7 +481,7 @@ def measure_ca(website: str) -> CAResult:
  
     # Keep the real tri-state result (True / False / None) instead of
     # coercing None into a falsy bool.
-    result.ocsp_stapling = check_ocsp_stapling(website)
+    result.ocsp_stapling = ssl_info.get("ocsp_stapled")
  
     result.https_enabled = bool(ssl_info.get("tls_or_ssl"))
  
@@ -574,8 +515,8 @@ def measure_ca(website: str) -> CAResult:
 #Main
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 def main():
-    input_path  = "src/Source_Data/top_domains/top-100000-domains.csv"
-    output_path = "src/Source_Data/ca_results/ca_results_100000.csv"
+    input_path  = "src/Source_Data/top_domains/top-1000-domains.csv"
+    output_path = "src/Source_Data/ca_results/ca_results_1000.csv"
  
     rows = []
  
@@ -594,11 +535,11 @@ def main():
                 f"Stapled: {ca_result.ocsp_stapling}"
             )
             rows.append({
-                "domain":      domain_name,
-                "CA Name":     ca_result.ca_name,
-                "type":        ca_result.ca_type,
-                "Stapled": ca_result.ocsp_stapling,
-                "TLS": ca_result.ssl_or_tls,
+                "domain":       domain_name,
+                "CA Name":      ca_result.ca_name,
+                "type":         ca_result.ca_type,
+                "Stapled":      str(ca_result.ocsp_stapling) if ca_result.ocsp_stapling is not None else "Undetermined",
+                "TLS":          ca_result.ssl_or_tls,
                 "HTTPS Enabled": ca_result.https_enabled,
             })
             

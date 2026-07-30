@@ -35,6 +35,7 @@ FILES = {
     "100 Domains": "src/Source_Data/DNS_Identifier_Results_100_domains.csv",
     "1,000 Domains": "src/Source_Data/DNS_Identifier_Results_1k_domains.csv",
     "10,000 Domains": "src/Source_Data/DNS_Identifier_Results_10k_domains.csv",
+    "100,000 Domains": "src/Source_Data/DNS_Identifier_Results_resolved_100k_other.csv"
 }
 
 PROVIDER_ALIASES = {
@@ -151,7 +152,7 @@ def compute_metrics(csv_path: str) -> dict:
 def plot_summary_comparison(files: dict = FILES):
     """100 / 1k / 10k grouped bar chart -- percentages computed live from the CSVs."""
     labels, third_party, critical, redundant = [], [], [], []
-
+ 
     for label, path in files.items():
         m = compute_metrics(path)
         labels.append(label)
@@ -162,24 +163,52 @@ def plot_summary_comparison(files: dict = FILES):
               f"third_party={m['third_party_pct']:.1f}%, "
               f"critical={m['critical_pct']:.1f}% of third-party, "
               f"redundant={m['redundant_pct']:.1f}%")
-
+ 
     bar_width = 0.2
     x = np.arange(len(labels))
+ 
+    plt.figure(figsize=(14, 8))
+    b1 = plt.bar(x - 1.5 * bar_width, third_party, bar_width, label='3rd Party Dependency', hatch = "///",
+                    edgecolor = "black",
+                    color = "white")
+    b2 = plt.bar(x - 0.5 * bar_width, critical, bar_width, label='Critical Dependency', hatch = "||||",
+                        edgecolor = "black",
+                        color = "white")
+    b3 = plt.bar(x + 0.5 * bar_width, redundant, bar_width, label='Redundancy', hatch = "++",
+                        edgecolor = "black",
+                        color = "white")
 
-    plt.figure(figsize=(10, 6))
-    b1 = plt.bar(x - 1.5 * bar_width, third_party, bar_width, label='3rd Party Dependency', color='forestgreen')
-    b2 = plt.bar(x - 0.5 * bar_width, critical, bar_width, label='Critical Dependency', color='teal')
-    b3 = plt.bar(x + 0.5 * bar_width, redundant, bar_width, label='Redundancy', color='purple')
-    plt.bar_label(b1, padding=3, fontsize=12)
-    plt.bar_label(b2, padding=3, fontsize=12)
-    plt.bar_label(b3, padding=3, fontsize=12)
+    # Add values above bars
+    for bars in [b1, b2, b3]:
+        for bar in bars:
+            h = bar.get_height()
+            plt.text(bar.get_x() + bar.get_width()/2,
+                    h + 1,
+                    f"{h:.1f}",
+                    ha="center",
+                    va="bottom",
+                    fontsize=18,
+                    rotation=90)
+ 
+    plt.xlabel('Cloudflare Top Rank', fontsize = 22)
+    plt.ylabel('Percentage of Domains', fontsize = 22)
+    plt.title('DNS Third-Party Analysis Across Sample Sizes', fontsize = 26, pad=16)
+    plt.xticks(x, labels, fontsize=18)
+    plt.yticks(fontsize=16)
+    plt.ylim(0, 115)
 
-    plt.xlabel('Cloudflare Top Rank')
-    plt.ylabel('Percentage of Domains')
-    plt.title('DNS Third-Party Analysis')
-    plt.xticks(x, labels)
-    plt.legend(title='Metric')
-    plt.tight_layout()
+
+    plt.legend(
+            title = 'Metric',
+            loc = "upper left",
+            bbox_to_anchor = (0, 1),
+            ncol = 1,          
+            fontsize = 18,
+            borderaxespad = 0
+        )
+    plt.tight_layout(rect=[0, 0, 1, 0.95])
+ 
+    plt.savefig('DNS_four_bar.png', dpi=300, bbox_inches='tight')
     plt.show()
 
 
@@ -335,14 +364,15 @@ def plot_dependency_breakdown(df: pd.DataFrame):
 # ------------------------------------------------------------------
 
 def main():
-    # Cross-file summary (100 / 1k / 10k) -- one consistent set of computed metrics
-    plot_summary_comparison(FILES)
+    # Cross-file summary (100 / 1k / 10k / 100k) -- one consistent set of computed metrics
+    #plot_summary_comparison(FILES)
+
 
     # Detailed charts on a single sample (change the key below to switch files)
-    df = load_data(FILES["10,000 Domains"])
-    plot_type_pie(df)
-    plot_top_providers(df, top_n=5)
-    plot_provider_bubble(df)
+    df = load_data(FILES["100,000 Domains"])
+    #plot_type_pie(df)
+    #plot_top_providers(df, top_n=5)
+    #plot_provider_bubble(df)
     plot_dependency_breakdown(df)
 
 
