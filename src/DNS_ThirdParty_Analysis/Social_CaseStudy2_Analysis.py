@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('src/Source_Data/DNS_Identifier_Results_10k_domains.csv', sep=',')
+df = pd.read_csv('src/Source_Data/cdn_results/cdn_results_10000_cleaned.csv', sep=',')
 
 # Use a set to automatically dedupe, then convert to list
 social_media_domains = list({
@@ -19,15 +19,15 @@ social_media_domains = list({
 print(f"Number of target domains in list: {len(social_media_domains)}")
 
 # ✅ Exact match instead of substring match
-filtered = df[df['DOMAIN'].str.lower().isin(social_media_domains)]
+filtered = df[df['website'].str.lower().isin(social_media_domains)]
 
 # Deduplicate on DOMAIN
-unique_social_media_domains = filtered.drop_duplicates(subset=['DOMAIN'])
+unique_social_media_domains = filtered.drop_duplicates(subset=['website'])
 
 print(f"Unique Social Media domains found: {len(unique_social_media_domains)}")
 
 # Show which ones from your list are MISSING from the CSV (helpful for debugging)
-found = set(unique_social_media_domains['DOMAIN'].str.lower())
+found = set(unique_social_media_domains['website'].str.lower())
 missing = set(social_media_domains) - found
 print(f"Domains in your list but NOT in the CSV ({len(missing)}):")
 for d in sorted(missing):
@@ -36,5 +36,5 @@ for d in sorted(missing):
 unique_social_media_domains.to_csv('src/Source_Data/Social_Media_Domains_Analysis.csv', index=False)
 
 df2 = pd.read_csv('src/Source_Data/Social_Media_Domains_Analysis.csv', sep=',')
-dependencies = df2['TYPE'].value_counts()
+dependencies = df2['cdn_types'].value_counts()
 print(f"Dependency types:\n{dependencies}")

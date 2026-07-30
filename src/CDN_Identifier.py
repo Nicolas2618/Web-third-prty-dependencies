@@ -1160,7 +1160,7 @@ def four_bar_cdn():
     x = np.arange(len(ranks))
     width = 0.18
 
-    fig, ax = plt.subplots(figsize=(8,6))
+    fig, ax = plt.subplots(figsize=(14, 8))
 
     b1 = ax.bar(x - 1.5*width, third_party, width,
                 label="3rd Party Dependency",
@@ -1187,18 +1187,20 @@ def four_bar_cdn():
                 color="white")
 
     ax.set_xticks(x)
+    ax.set_title("CDN Third-Party Analysis Across Sample Sizes", fontsize = 26, pad = 16)
     ax.set_xticklabels(ranks)
     ax.set_xlabel("Cloudflare Rank", fontsize=12)
     ax.set_ylabel("Percentage of Websites", fontsize=12)
     ax.set_ylim(0, 115)
 
     ax.legend(
-        loc="lower center",
-        bbox_to_anchor=(0.5, 1.02),
-        ncol=2,          # 2 columns = 2×2 grid with 4 items
-        fontsize=18,
-        borderaxespad=0
-    )
+                title = 'Metric',
+                loc = "upper left",
+                bbox_to_anchor = (0, 1),
+                ncol = 1,          
+                fontsize = 18,
+                borderaxespad = 0
+            )
 
     # Add values above bars
     for bars in [b1, b2, b3, b4]:
@@ -1301,10 +1303,10 @@ if __name__ == "__main__":
     #asyncio.run(main_async())
     #four_corners_graph()
     #cleaning()
-    #four_bar_cdn()
+    four_bar_cdn()
     #extract_provider_domains("src/Source_Data/cdn_results/cdn_results_100000.csv", 
     #                        "src/Source_Data/cdn_results/only_cdn_providers.csv")
-    df = load_data(DEFAULT_INPUT_PATH)
-    plot_cdn_bubble_chart(df)
+    #df = load_data(DEFAULT_INPUT_PATH)
+    #plot_cdn_bubble_chart(df)
 
 #endregion
