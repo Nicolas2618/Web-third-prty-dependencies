@@ -1234,7 +1234,7 @@ def load_data(input_path: str = DEFAULT_INPUT_PATH) -> pd.DataFrame:
 # ---------------------------------------------------------------------------
 # Chart 5: CDN name bubble / proportional-area chart
 # ---------------------------------------------------------------------------
-def plot_cdn_bubble_chart(df: pd.DataFrame, top_n: int = 10) -> None:
+def plot_cdn_bubble_chart(df: pd.DataFrame, top_n: int = 7) -> None:
     cdn_counts = df["cdns"].fillna("Unknown").replace("", "Unknown").value_counts()
 
     cdn_counts = cdn_counts.head(top_n)
@@ -1257,7 +1257,7 @@ def plot_cdn_bubble_chart(df: pd.DataFrame, top_n: int = 10) -> None:
     )
     circles = circles[::-1]  # largest circle matches first label
 
-    fig, ax = plt.subplots(figsize=(12, 12))
+    fig, ax = plt.subplots(figsize=(14, 8))
     ax.set_aspect("equal")
     ax.axis("off")
     fig.patch.set_facecolor("white")
@@ -1297,6 +1297,7 @@ def plot_cdn_bubble_chart(df: pd.DataFrame, top_n: int = 10) -> None:
     )
     plt.tight_layout()
     plt.show()
+
 #endregion
 
 #region Runner
@@ -1307,7 +1308,7 @@ if __name__ == "__main__":
     #asyncio.run(main_async())
     #four_corners_graph()
     #cleaning()
-    four_bar_cdn()
+    #four_bar_cdn()
     #extract_provider_domains("src/Source_Data/cdn_results/cdn_results_100000.csv", 
     #                        "src/Source_Data/cdn_results/only_cdn_providers.csv")
     df = load_data(DEFAULT_INPUT_PATH)

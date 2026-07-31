@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 import circlify
 
 
-DEFAULT_INPUT_PATH = "src/Source_Data/ca_results/ca_results_10000.csv"
+DEFAULT_INPUT_PATH = "src/Source_Data/ca_results/ca_results_100000.csv"
 
 
 # ---------------------------------------------------------------------------
@@ -124,14 +124,14 @@ def compute_four_bar():
         pd.read_csv("src/Source_Data/ca_results/ca_results_100.csv"),
         pd.read_csv("src/Source_Data/ca_results/ca_results_1000.csv"),
         pd.read_csv("src/Source_Data/ca_results/ca_results_10000.csv"),
+        pd.read_csv("src/Source_Data/ca_results/ca_results_100000.csv")
     ]
 
-    ranks = ["100 Domains", "1,000 Domains", "10,000 Domains"]
+    ranks = ["100 Domains", "1,000 Domains", "10,000 Domains", "100,000 Domains"]
 
     third_party = []
     tls13 = []
     tls12 = []
-    https = []
 
     for df in dfs:
         third_party.append((df["type"] == "third").mean() * 100)
@@ -141,33 +141,33 @@ def compute_four_bar():
     x = np.arange(len(ranks))
     bar_width = 0.2
 
-    fig, ax = plt.subplots(figsize=(12, 8))
+    fig, ax = plt.subplots(figsize=(14, 8))
 
     b1 = ax.bar(x - 1.5 * bar_width, third_party, bar_width,
                 label = "Third-Party Dependency CA",
                 hatch = "///",
                 edgecolor = "black",
-                color = "#056686")
+                color = "white")
 
     btwo = ax.bar(x - 0.5 * bar_width, tls13, bar_width,
                     label = "TLS v1.3 Adoption",
                     hatch = "\\\\",
                     edgecolor = "black",
-                    color = "#07A69E")
+                    color = "white")
 
     b3 = ax.bar(x + 0.5 * bar_width, tls12, bar_width,
                     label = "TLS v1.2 Adoption",
                     hatch = "++",
                     edgecolor = "black",
-                    color = "#4056B9")
+                    color = "white")
 
     
     ax.set_xticks(x)
     ax.set_xticklabels(ranks)
     ax.set_ylabel("Percentage of Domains (%)", fontweight="bold", fontsize=15)
     ax.set_xlabel("Cloudflare Top Rank", fontweight="bold", fontsize=15)
-    ax.set_title("CA Third-Party Dependency and TLS Adoption Across Different Sample Sizes", fontweight="bold", fontsize=14)
-    ax.set_ylim(0, 100)
+    ax.set_title("CA Third-Party Dependency and TLS Adoption Across Different Sample Sizes", fontweight="bold", fontsize=20)
+    ax.set_ylim(0, 115)
 
     ax.legend(loc = "upper left", fontsize=12)
 
@@ -293,7 +293,8 @@ def plot_comparative_metrics():
     file_configs = [
         ("src/Source_Data/ca_results/ca_results_100.csv", "Top 100"),
         ("src/Source_Data/ca_results/ca_results_1000.csv", "Top 1,000"),
-        ("src/Source_Data/ca_results/ca_results_10000.csv", "Top 10,000")
+        ("src/Source_Data/ca_results/ca_results_10000.csv", "Top 10,000"),
+        ("src/Source_Data/ca_results/ca_results_100000.csv", "Top 100,000")
     ]
 
     ranks = []
@@ -318,7 +319,7 @@ def plot_comparative_metrics():
         return
 
     x = np.arange(len(ranks))
-    bar_width = 0.25
+    bar_width = 0.20
 
     fig, ax = plt.subplots(figsize=(14, 8))
     fig.patch.set_facecolor("white")
@@ -343,21 +344,24 @@ def plot_comparative_metrics():
     ax.set_xlabel("Cloudflare Top Rank", fontweight="bold", fontsize=14)
     ax.set_ylabel("Percentage of Classified Domains (%)", fontweight="bold", fontsize=14)
     ax.set_title("CA Dependency and TLS Adoption by Sample Size", 
-                 fontweight="bold", fontsize=18, pad=20, color="#060E77")
-    ax.set_ylim(0, 110) # Extra room for labels
-    ax.legend(loc="upper right", frameon=True, fontsize=11)
+                 fontweight="bold", fontsize=20, pad=20, color="black")
+    ax.set_ylim(0, 130) # Extra room for labels
+    ax.legend(loc="upper left", frameon=True, fontsize=18)
 
-    # Add percentage labels on top of each bar
-    for rects in [b1, b2, b3]:
-        for rect in rects:
-            height = rect.get_height()
-            ax.annotate(f'{height:.1f}%',
-                        xy=(rect.get_x() + rect.get_width() / 2, height),
-                        xytext=(0, 3),  # 3 points vertical offset
-                        textcoords="offset points",
-                        ha='center', va='bottom', fontsize=10, fontweight="bold")
+    # Add values above bars
+    for bars in [b1, b2, b3]:
+        for bar in bars:
+            h = bar.get_height()
+            plt.text(bar.get_x() + bar.get_width()/2,
+                    h + 1,
+                    f"{h:.1f}",
+                    ha="center",
+                    va="bottom",
+                    fontsize=18,
+                    rotation=90)
 
     plt.tight_layout()
+    plt.savefig('CA_four_bar_comparison.png', dpi=300, bbox_inches='tight')
     plt.show()
 
 
@@ -365,13 +369,13 @@ def plot_comparative_metrics():
 # Run the full suite
 # ---------------------------------------------------------------------------
 def run_all(input_path: str = DEFAULT_INPUT_PATH) -> None:
-    df = load_data(input_path)
-    df = filter_classified(df)
+    #df = load_data(input_path)
+    #df = filter_classified(df)
     #plot_ca_type_distribution(df)
     #plot_https_distribution(df)
     #plot_tls_distribution(df)
-   # compute_four_bar()
-    plot_ca_name_bubble_chart(df)
-    #plot_comparative_metrics()
+    #compute_four_bar()
+    #plot_ca_name_bubble_chart(df)
+    plot_comparative_metrics()
 if __name__ == "__main__":
     run_all()
