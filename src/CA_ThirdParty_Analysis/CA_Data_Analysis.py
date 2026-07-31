@@ -242,17 +242,12 @@ def plot_ca_name_bubble_chart(df: pd.DataFrame, top_n: int = 7) -> None:
     ax.axis("off")
     fig.patch.set_facecolor("white")
     ax.set_facecolor("white")
-
-    DARK_BLUE = "#B5B682"
-    TEAL = "#FEDC97"
     WHITE = "black"
-    max_val = sorted_values[0]
 
-    BG = "#63676F"
     PALETTE = [
-        "#B5B682", "#FEDC97", "#B5B682",
         "#FEDC97", "#B5B682", "#FEDC97",
-        "#B5B682", "#FEDC97", "#B5B682", "#FEDC97"
+        "#B5B682", "#B5B682", "#FEDC97",
+        "#FEDC97"
     ]
     TEXT_LIGHT = "#FDFEFEDD"
 
@@ -281,10 +276,9 @@ def plot_ca_name_bubble_chart(df: pd.DataFrame, top_n: int = 7) -> None:
     ax.set_xlim(-lim, lim)
     ax.set_ylim(-lim, lim)
 
-    plt.title(
-        "Certificate Authority Distribution",
-        fontsize=26, fontweight="bold", pad=10, color="#060E77",
-    )
+    plt.title("Certificate Authority Distribution", fontsize=30, fontweight="bold", color="black", y = 1.05)
+    plt.suptitle(f'80,366 classified domains (out of 100k)', fontsize=20, y=0.92)
+
     plt.tight_layout()
     plt.savefig("src/Source_Data/ca_datavis/ca_bubble.png", dpi=300)
     plt.show()
@@ -378,13 +372,13 @@ def plot_comparative_metrics():
 # Run the full suite
 # ---------------------------------------------------------------------------
 def run_all(input_path: str = DEFAULT_INPUT_PATH) -> None:
-    #df = load_data(input_path)
-    #df = filter_classified(df)
+    df = load_data(input_path)
+    df = filter_classified(df)
     #plot_ca_type_distribution(df)
     #plot_https_distribution(df)
     #plot_tls_distribution(df)
     #compute_four_bar()
-    #plot_ca_name_bubble_chart(df)
-    plot_comparative_metrics()
+    plot_ca_name_bubble_chart(df)
+    #plot_comparative_metrics()
 if __name__ == "__main__":
     run_all()

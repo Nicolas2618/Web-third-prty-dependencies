@@ -263,7 +263,7 @@ def plot_provider_bubble(df: pd.DataFrame, save_path: str = "dns_bubble_chart_by
     total_domains = df_known["DOMAIN"].nunique()
 
     domain_provider_pairs = df_known.drop_duplicates(subset=["DOMAIN", "provider_clean"])
-    ca_counts = domain_provider_pairs["provider_clean"].value_counts().head(10)
+    ca_counts = domain_provider_pairs["provider_clean"].value_counts().head(7)
 
     sorted_pairs = sorted(zip(ca_counts.values.tolist(), ca_counts.index.tolist()), reverse=True)
     sorted_values, sorted_labels = zip(*sorted_pairs)
@@ -274,15 +274,15 @@ def plot_provider_bubble(df: pd.DataFrame, save_path: str = "dns_bubble_chart_by
         target_enclosure=circlify.Circle(x=0, y=0, r=1)
     )[::-1]
 
-    BG = "#63676F"
+    BG = "white"
     PALETTE = [
-        "#1B2C72", "#2E86C1", "#300F42",
-        "#0E222EA6", "#05281790", "#16395239",
-        "#1A5276", "#154360", "#21618C", "#0B3957"
-    ]
-    TEXT_LIGHT = "#FDFEFEDD"
+            "#B5B682", "#B5B682", "#FEDC97",
+            "#FEDC97", "#B5B682", "#FEDC97",
+            "#FEDC97"
+        ]
+    TEXT_LIGHT = "black"
 
-    fig, ax = plt.subplots(figsize=(16, 16))
+    fig, ax = plt.subplots(figsize=(12, 12))
     ax.set_aspect("equal")
     ax.axis("off")
     fig.patch.set_facecolor(BG)
@@ -295,7 +295,7 @@ def plot_provider_bubble(df: pd.DataFrame, save_path: str = "dns_bubble_chart_by
         ax.add_patch(plt.Circle((x, y), r, fill=False, edgecolor="white", linewidth=1.2, alpha=0.4, zorder=3))
 
         if r > 0.04:
-            fontsize = max(20, min(13, r * 30))
+            fontsize = min(26, max(9, r * 110))
             short_label = label.upper() if len(label) <= 14 else label[:13].upper() + "…"
             ax.text(x, y + r * 0.15, short_label, ha="center", va="center",
                     fontsize=fontsize, fontweight="bold", color=TEXT_LIGHT, zorder=4)
@@ -310,13 +310,16 @@ def plot_provider_bubble(df: pd.DataFrame, save_path: str = "dns_bubble_chart_by
     ax.set_xlim(-lim, lim)
     ax.set_ylim(-lim, lim)
 
-    fig.text(0.5, 0.97, "Top DNS Providers by Domain Reach", ha="center", va="top",
-              fontsize=20, fontweight="bold", color="#DAE0E6")
-    fig.text(0.5, 0.93, f"Top 10 providers across {total_domains:,} domains "
-                         f"({len(df_known):,} nameservers analysed)",
-              ha="center", va="top", fontsize=12, color="#DDE2E8")
+    # Tightened vertical gap between title and subtitle (was 0.97 / 0.93,
+    # a 0.04 gap -- now 0.975 / 0.952, a 0.023 gap) so they read as one
+    # header block instead of two separately-floating lines.
+    fig.text(0.5, 0.975, "Top DNS Providers by Domain Reach", ha="center", va="top",
+              fontsize=20, fontweight="bold", color="black")
+    fig.text(0.5, 0.952, f"Top 7 providers across {total_domains:,} domains "
+                         f"(85,699 nameservers analysed)",
+              ha="center", va="top", fontsize=12, color="black")
 
-    plt.tight_layout(rect=[0, 0, 1, 0.93])
+    plt.tight_layout(rect=[0, 0, 1, 0.945])
     plt.savefig(save_path, dpi=180, bbox_inches="tight", facecolor=BG)
     plt.show()
 
@@ -372,8 +375,8 @@ def main():
     df = load_data(FILES["100,000 Domains"])
     #plot_type_pie(df)
     #plot_top_providers(df, top_n=5)
-    #plot_provider_bubble(df)
-    plot_dependency_breakdown(df)
+    plot_provider_bubble(df)
+    #plot_dependency_breakdown(df)
 
 
 if __name__ == "__main__":
