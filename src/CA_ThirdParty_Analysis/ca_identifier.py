@@ -21,6 +21,7 @@ from urllib.parse import urlparse
 from domains import CORPORATE_FAMILY
 import matplotlib.patches as mpatches
 from cryptography.x509.oid import ExtensionOID, AuthorityInformationAccessOID, NameOID
+import pandas as pd
 #endregion
 
 #region Data classes
@@ -551,12 +552,50 @@ def main():
     return output_path
 #endregion
 
+def extract_provider_domains(input_path, output_path):
+    """
+    Reads a results CSV and returns a new CSV containing 
+    the unique CA provider names found across all domains.
+    """
+    df = pd.read_csv(input_path)
+
+    # Use a set for efficient deduplication
+    ca_set = set()
+
+    # Check if the column exists (case-sensitive check)
+    column_to_use = 'CA Name' 
+    if column_to_use not in df.columns:
+        print(f"❌ Error: Column '{column_to_use}' not found.")
+        print(f"Available columns are: {list(df.columns)}")
+        return
+
+    for index, row in df.iterrows():
+        ca = row[column_to_use]
+        if pd.notna(ca):
+            ca_stripped = str(ca).strip() # Remove whitespace
+            if ca_stripped:               # Skip empty strings
+                ca_set.add(ca_stripped)
+
+    # Convert to sorted DataFrame for clean output
+    # Changed column name to 'ca_provider' to match the context
+    provider_df = pd.DataFrame({'ca_provider': sorted(ca_set)})
+
+    # Save the file
+    provider_df.to_csv(output_path, index=False)
+
+    print(f"✅ Extraction Complete:")
+    print(f"Total domains analyzed: {len(df)}")
+    print(f"Unique CA providers found: {len(provider_df)}")
+    print(f"Saved to: {output_path}")
+
 
 #region Starter
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #Starter
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 if __name__ == "__main__":
-    main()
+    #main()
+    extract_provider_domains("src/Source_Data/ca_results/ca_results_100000.csv", 
+                               "src/Source_Data/ca_results/only_ca_providers.csv")
 
 #endregion

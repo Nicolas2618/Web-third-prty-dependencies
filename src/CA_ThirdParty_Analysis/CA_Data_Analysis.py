@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 import circlify
 
 
-DEFAULT_INPUT_PATH = "src/Source_Data/ca_results/ca_results_10000.csv"
+DEFAULT_INPUT_PATH = "src/Source_Data/ca_results/ca_results_100000.csv"
 
 
 # ---------------------------------------------------------------------------
@@ -183,7 +183,7 @@ def compute_four_bar():
 # ---------------------------------------------------------------------------
 # Chart 5: CA name bubble / proportional-area chart
 # ---------------------------------------------------------------------------
-def plot_ca_name_bubble_chart(df: pd.DataFrame, top_n: int = 5) -> None:
+def plot_ca_name_bubble_chart(df: pd.DataFrame, top_n: int = 7) -> None:
     """
     Groups CA names by parent brand (e.g., all 'Amazon RSA 2048 MXX' 
     become 'Amazon') and renders them as a proportional bubble chart.
@@ -248,11 +248,19 @@ def plot_ca_name_bubble_chart(df: pd.DataFrame, top_n: int = 5) -> None:
     WHITE = "black"
     max_val = sorted_values[0]
 
-    for circle, label, value in zip(circles, sorted_labels, sorted_values):
-        x, y, r = circle.x, circle.y, circle.r
-        color = DARK_BLUE if value == max_val else TEAL
+    BG = "#63676F"
+    PALETTE = [
+        "#B5B682", "#FEDC97", "#B5B682",
+        "#FEDC97", "#B5B682", "#FEDC97",
+        "#B5B682", "#FEDC97", "#B5B682", "#FEDC97"
+    ]
+    TEXT_LIGHT = "#FDFEFEDD"
 
-        ax.add_patch(plt.Circle((x, y), r, color=color, alpha=0.92, zorder=2))
+    for i, (circle, label, value) in enumerate(zip(circles, sorted_labels, sorted_values)):
+        x, y, r = circle.x, circle.y, circle.r
+        color = PALETTE[i % len(PALETTE)]
+        ax.add_patch(plt.Circle((x, y), r, color=color, alpha=0.93, zorder=2))
+        ax.add_patch(plt.Circle((x, y), r, fill=False, edgecolor="white", linewidth=1.2, alpha=0.4, zorder=3))
 
         if r > 0.04:  # only label circles large enough to read
             short_label = label if len(label) <= 18 else label[:16] + "…"
@@ -278,6 +286,7 @@ def plot_ca_name_bubble_chart(df: pd.DataFrame, top_n: int = 5) -> None:
         fontsize=26, fontweight="bold", pad=10, color="#060E77",
     )
     plt.tight_layout()
+    plt.savefig("src/Source_Data/ca_datavis/ca_bubble.png", dpi=300)
     plt.show()
 #----------------------------------------------------------------------------
 # Chart 4: Comparative Metrics across Sample Sizes
